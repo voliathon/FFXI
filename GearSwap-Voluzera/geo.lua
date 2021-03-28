@@ -16,7 +16,7 @@ function get_sets()
 
     -- Fast Cast for Geomancer --
     sets.FastCast = {
-		main="Solstice",
+		main="Idris",
 		sub="Genmei Shield",	
 		range="Dunna",
 		head="Merlinic Hood",
@@ -34,7 +34,7 @@ function get_sets()
 
 	-- Geomancer Spells
     sets.Geomancy = {
-		main="Solstice",
+		main="Idris",
 		sub="Genmei Shield",
 		range="Dunna",
         head="Azimuth Hood +1",
@@ -96,10 +96,10 @@ function get_sets()
 		main="Daybreak",
 		sub="Genmei Shield",
         head="Vanya Hood",
-		body="Heka's Kalasiris",
+		body="Chironic doublet",
 		hands="Telchine gloves",
-		ring1="Stikini ring +1",
-		ring2="Veneficium Ring", 
+		right_ring="Stikini ring +1",
+		left_ring="Veneficium Ring", 
 		waist="Austerity belt+1", 
 		back="Pahtli Cape",
 		legs="Geomancy pants +1",
@@ -125,7 +125,7 @@ function get_sets()
 		head="Merlinic Hood",
 		body="Merlinic Jubbah",
 		hands="Merlinic Dastanas",
-		legs="Merlinic Shalwar",
+		legs="Ea slops +1",
 		feet="Merlinic Crackows",
 		neck="Saevus pendant +1",
 		waist="Refoccilation stone",
@@ -152,8 +152,8 @@ function get_sets()
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Jhakri Ring",
+		left_ring="Jhakri Ring",
+		right_ring="Stikini ring +1",
 		back="Seshaw cape"
 	}
 
@@ -163,15 +163,15 @@ function get_sets()
 		range="Dunna",
 		head="Befouled Crown",
 		body="Ischemia Chasu.",
-		hands="Merlinic Dastanas",
+		hands="Regal cuffs",
 		legs="Merlinic Shalwar",
 		feet="Bagua Sandals +1",
 		neck="Sanctity Necklace",
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Jhakri Ring",
+		left_ring="Jhakri ring",
+		right_ring="Stikini Ring +1",
 		back="Seshaw cape"
 	}
 
@@ -202,13 +202,13 @@ function get_sets()
 
 	-- PDT Set
     sets.PDT = {
-		main="Solstice",
+		main="Idris",
 		sub="Genmei Shield",	
 		range="Dunna",
 		head="Befouled Crown",
-		body="Jhakri Robe +2",
+		body="Annointed Kalasiris",
 		hands="Bagua Mitaines +1",
-		legs="Assid. Pants +1",
+		legs="Ea slops +1",
 		feet="Azimuth Gaiters +1",
 		neck="Loricate torque +1",
 		waist="Isa Belt",
@@ -221,7 +221,7 @@ function get_sets()
 
     -- .Pet sets are for when Luopan is present.
     sets.PetDT = {
-		main="Solstice",
+		main="Idris",
 		sub="Genmei Shield",	
 		range="Dunna",
 		head="Azimuth Hood +1",
@@ -240,13 +240,13 @@ function get_sets()
 
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
-		main="Solstice",
+		main="Idris",
 		sub="Genmei Shield",
 		range="Dunna",
-		head="Befouled Crown",
-		body="Bagua Tunic +1",
+		head="Befouled Crown",		
+		body="Annointed Kalasiris",
 		hands="Bagua Mitaines +1",
-		legs="Assid. Pants +1",
+		legs="Ea slops +1",
 		feet="Azimuth Gaiters +1",
 		neck="Loricate torque +1",
 		waist="Slipor Sash",
@@ -268,7 +268,7 @@ function get_sets()
 		head="Befouled crown",
 		body="Jhakri robe +2",
 		hands="Bagua mitaines +1",
-		left_ring="Stikini ring +1"
+		right_ring="Stikini ring +1"
 	})
 	
 	
@@ -295,8 +295,8 @@ function get_sets()
 	 }
 	 
 	 
-	 sets.Solstice = {
-		main="Solstice",
+	 sets.Idris = {
+		main="Idris",
 		sub="Genmei Shield"
 	 }
 
@@ -318,6 +318,8 @@ function precast(spell,abil)
 	--Enhancing Magic Check
 	if spell.skill == 'Enhancing Magic' then
 		equip(sets.Enhancing)
+	elseif spell.skill == 'Enfeebling Magic' then
+		equip(sets.Enfeebling)
 	elseif spell.action_type == 'Magic' then
 		equip(sets.FastCast)
 	end
@@ -348,13 +350,16 @@ function midcast(spell)
 		equip(sets.Stoneskin)
 	end
 	if spell.name == 'Entrust' then
-		equip(sets.Solstice)
+		equip(sets.Idris)
 	end
 	if spell.type == 'Geomancy' then
 	    equip(sets.Geomancy)
 	end
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
+	end
+	if spell.skill == 'Elemental Magic' then
+		equip(sets.ElementalMagic)
 	end
 end
 
@@ -403,16 +408,4 @@ windower.register_event('status change', function()
 		send_command('@input /tell <me> Wakies Wakies Voluzera We hit 0 HP on accident. We shall live forever!!!')
 	end
 end)
-
-
-function equip_beatstick(spell)
-    if spell.target.type == 'MONSTER' then
-	 --Need to add another if statement for lullaby here and any other logic that we can think of for debuffing on Bard
-		equip(sets.MagicAccuracy,{range="Daurdabla",ammo="empty"})
-		Idris = 'ON'
-		Gjallarhorn = 'OFF'
-	else
-		equip(sets.Songs)
-	end
-end
 
