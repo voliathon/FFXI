@@ -1,0 +1,12 @@
+input /ma "Aquaveil" <me>; wait 9
+input /ja "lux" <me>; wait 5; 
+input /ma "Crusade" <me>; wait 9;
+input /ja "lux" <me>; wait 5;
+input /ja "lux" <me>; wait 5; 
+input /ma "phalanx" <me>; wait 9; 
+input /ja "Meditate" <me>; wait 2;
+input /ja "Hasso" <me>; wait 1;
+input /ma "Temper" <me>; wait 9;
+input /ma "Refresh" <me>; wait 11;
+input /ma "Shock Spikes" <me>; wait 9
+input /ma "Blink" <me>

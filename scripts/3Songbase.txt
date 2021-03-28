@@ -1,0 +1,14 @@
+input /ja "nightingale" <me>; wait 2; 
+input /ja "troubadour" <me>; wait 1; 
+input /ja "marcato" <me>; wait 2; 
+input /ma "honor march" <me>; wait 9; 
+input /equip Range "Gjallarhorn"; wait 1;
+input /ma "victory march" <me>; wait 9; 
+input /equip Range "Blurred Harp"; wait 1;
+input /ma "valor minuet v" <me>; wait 9; 
+input /equip Range "Gjallarhorn"; wait 1;
+input /ja "pianissimo" <me>; wait 1; 
+input /ma "mage\'s ballad III" Ygnas; wait 9; 
+input /ma "valor minuet v" <me>; wait 9
+input /ja "pianissimo" <me>; wait 1; 
+input /ma "mage\'s ballad III" Yoran-Oran
