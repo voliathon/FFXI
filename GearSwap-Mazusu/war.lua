@@ -1,9 +1,9 @@
 function get_sets()
 -- Set macro book/set --
-    send_command('input /macro book 15;wait .1;input /macro set 13')
+    send_command('input /macro book 13;wait .1;input /macro set 1')
 	
     sets.precast = {}
-    sets.precast.Berserk = {hands="Pummeler's Lorica +3--"}
+    sets.precast.Berserk = {hands="Pummeler's Lorica +3"}
     sets.precast['Mighty Strikes'] = {}
     sets.Waltz = {}
     
@@ -15,18 +15,18 @@ function get_sets()
     sets.WS = {
 		sub="Utu Grip",
 		ammo="Knobkierrie",
-		head={ name="Valorous Mask", augments={'VIT+9','Magic dmg. taken -2%','Weapon skill damage +8%','Accuracy+20 Attack+20'}},
-		body="Nzingha Cuirass",
-		hands={ name="Valorous Mitts", augments={'Attack+25','Weapon skill damage +3%','STR+14','Accuracy+10'}},
-		legs="Pumm. Cuisses +3",
-		feet="Pumm. Calligae +3",
+		head={ name="Valorous Mask", augments={'VIT+9','Magic dmg. taken -2%','Weapon skill damage +8%','Accuracy+20 Attack+20',}},
+		body="Pumm. Lorica +3",
+		hands={ name="Valorous Mitts", augments={'Rng.Atk.+11','Pet: STR+5','Weapon skill damage +6%','Accuracy+15 Attack+15','Mag. Acc.+17 "Mag.Atk.Bns."+17',}},
+		legs={ name="Argosy Breeches +1", augments={'STR+12','Attack+25','"Store TP"+6',}},
+		feet="Sulev. Leggings +2",
 		neck="Fotia Gorget",
-		waist="Ioskeha Belt +1",
+		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		right_ear="Telos Earring",
+		right_ear="Thrud Earring",
 		left_ring="Regal Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%'}}
+		back={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
     }
     
     sets.TP = {

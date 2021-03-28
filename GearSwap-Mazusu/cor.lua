@@ -1,36 +1,104 @@
---Editing the fuck out of this shit.. 5/1/2020
---Moved around functionality so it's just easy to read and we can look at the meat and potatoes...
+-- The super duper awesome corsair script
+-- by Voliathon
 
-function get_sets()
-    --generic mote shit cause why the fuck not
-    mote_include_version = 2
-    include('Mote-Include.lua');
+--Took this idea from the previous lua script I got off the net and rolled with it. Mazusu has 7 unique Corsair Camulus's Capes >.<
+function CamulusCapes()
+	CamulusCape = {}
+    CamulusCape.storetp={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+9','"Store TP"+10'} }
+    CamulusCape.ranged_ws={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'} }	
+    CamulusCape.matk={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Damage taken-5%'} }
+    CamulusCape.str_ws={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%'} }
+    CamulusCape.melee_double_attack={ name="Camulus's Mantle", augments={'DEX+20','DEX+10','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'} }
+	CamulusCape.snapshot={ name="Camulus's Mantle", augments={'"Snapshot"+10',} }
+	-- DEX 20 DEX 10 ACC/ATT+20 STP+10 DT-5
 end
 
---Took this idea from the precious lua script I got off the net and rolled with it. Mazusu has 7 unique Corsair capes >.<
-local capes = {
-    storetp={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+9','"Store TP"+10'} },
-    ranged_ws={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'} },	
-    matk={ name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Damage taken-5%'} },
-    str_ws={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%'} },
-    melee_double_attack={ name="Camulus's Mantle", augments={'DEX+20','DEX+10','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'} },
-	snapshot={ name="Camulus's Mantle", augments={'"Snapshot"+10',} },
-	-- DEX 20 DEX 10 ACC/ATT+20 STP+10 DT-5
-}
+-- Herculean Gear Function for tracking what I could use on Corsair  -- This Function code be taken out and put in a stand alone lua script to be used between other lua scripts.
+-- Basically that would provide easier maintenance
+function HerculeanGear()
+    HercHead = {}
+	HercBody = {}
+    HercHands = {}
+    HercLegs = {}
+    HercFeet = {}
+	
+	--Commenting out any Herculean sets that we don't use in this script.  It makes it easier to track what all we have vs what we use.
+     --HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
+    --HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
+	HercHead.WSD = { name="Herculean Helm", augments={'Accuracy+25 Attack+25','Weapon skill damage +4%','STR+1','Accuracy+14'}}
+    --HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
+	
+	--HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12'}}
+    HercHands.TP = {name="Herculean Gloves", augments={'Accuracy+20 Attack+11','"Triple Atk."+3'}}
+	
+    HercLegs.WSD = { name="Herculean Trousers", augments={'Rng.Acc.+8 Rng.Atk.+8','Weapon skill damage +4%','DEX+5','Rng.Acc.+11','Rng.Atk.+15'}}
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +4%','CHR+5','"Mag.Atk.Bns."+7'}}
+	--Need to get TA 4%
+	HercLegs.TP = { name="Herculean Trousers", augments={'"Triple Atk."+3','DEX+5','Accuracy+13','Attack+11'}}
+	
+    --HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
+	HercFeet.Refresh = { name="Herculean Boots", augments={'STR+5','Attack+3','"Refresh"+1','Accuracy+9 Attack+9','Mag. Acc.+2 "Mag.Atk.Bns."+2'}}
+    HercFeet.TP = { name="Herculean Boots", augments={'"Triple Atk."+4','DEX+5','Accuracy+7','Attack+10'}}
+    HercFeet.WSD = { name="Herculean Boots", augments={'"Occult Acumen"+9','STR+9','Weapon skill damage +8%','Accuracy+20 Attack+20'}}
+	
+end
 
-local herc = {
+function get_sets()
+	-- Set macro book/set --
+    send_command('input /macro book 19;wait .1;input /macro set 1')
+	
+	-- Binds for switching weapon modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	
+	-- Binds for switching gear sets
+    send_command('bind !f9 gs c toggle engage set')
+	send_command('bind ^f9 gs c reverse engage set')
+	
+	
+	-- Initialize all of the Herculean gear we've got stored up
+	HerculeanGear()
+	-- Initialize any Camulus capes that we need to use 
+	CamulusCapes()
 
-}
+	-- Job Abilities
+    sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +1", hands="Lanun gants +3" })
+    sets.RandomDeal = set_combine(sets.DamageTaken, { body="Lanun Frac +3" })
+    sets.WildCard = set_combine(sets.DamageTaken, { feet="Lanun Bottes +3" })
+    sets.SnakeEye = set_combine(sets.DamageTaken, { legs="Lanun Trews +3" })
+    sets.Fold = set_combine(sets.DamageTaken, { hands="Lanun Gants +3" })
+	
+	-- Maximizing Corsair Rolls
+	sets.CorsairRoll = {
+		main={name="Rostam",bag="Wardrobe 4"},
+        -- phantom roll effects +50 (chance to proc job-present-boost)
+        head = "Lanun Tricorne +3",
+        -- phantom roll +7
+        neck="Regal Necklace",
+        -- increased area of effect
+        left_ring="Luzaf's Ring",
+		--phantom roll +5
+		right_ring="Barataria Ring",
+        -- duration +50
+        hands="Chasseur's Gants +1",
+        -- duration +30
+        back=CamulusCape.matk,
+		-- duration +20
+		range='Compensator'
+    }
+	
+	-- Specific Rolls
+	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +1" })
+    sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +1" })
+    sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +1"})
+    sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chas. Culottes +1" })
+    sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet = "Chass. Bottes +1" })
 
---TODO :  Fix the fuck out of herculean gear. Fuck that shit sucks...
-
-function init_gear_sets()
-    -- Setup macros page on Mazusu
-    set_macro_page(1, 19)
-
+	
+	
 	-- This base set shit really needs Malignance Gear instead of Ambuscade
     sets.DamageTaken = {
-        head="Meghanada Visor +2",
+        head="Malignance chapeau",
         body="Malignance Tabard",
         hands="Meg. Gloves +2",
         legs="Meg. Chausses +2",
@@ -41,66 +109,31 @@ function init_gear_sets()
         right_ear="Steelflash Earring",
         left_ring="Defending Ring",
         right_ring="Paguroidea Ring",
-        back=capes.melee_double_attack
-    };
-
-    state.CombatWeapon = M{
-        ["description"] = "Weapon Mode",
-        "Death Penalty",
-        "Armageddon",
-        "Savage Blade",
-        "Single Wield"
+        back=CamulusCape.melee_double_attack
     }
+	
+   -- +18% runspeed
+    sets.idle = set_combine(sets.DamageTaken, { legs="Carmine Cuisses +1" });
 
-    sets.weapons = {}
-    sets.weapons.bullet = {
-        waist="Liv. Bul. Pouch"
-    }
-    sets.weapons["Death Penalty"] = {
-        main="Naegling",
-        sub="Rostam",
-        range="Death Penalty"
-    }
-    sets.weapons["Single Wield"] = {
-        --main="Kustawi +1",
-        --sub="Nusku Shield",
-        range="Death Penalty"
-	}
-    sets.weapons["Savage Blade"] = {
-        main="Naegling",
-        sub="Fettering Blade",
-        range="Anarchy +2"
-    }
+    sets.resting = set_combine(sets.DamageTaken, {});
 
-    state.CombatWeapon:set("Death Penalty")
+    sets.FastCast = set_combine(sets.DamageTaken,{
+		-- fast cast +12
+		head="Carmine Mask",
+		-- fast cast +4
+		neck = "Voltsurge Torque",
+		-- fast cast +3
+		body="Samnuha Coat",
+		-- Fast cast +2
+		right_ear="Loquac. Earring",
+		-- fast cast 2
+		left_ring="Prolix Ring",
+		-- fast cast 4
+		right_ring="Kishar Ring"
+	})	
+	
 
-    sets.precast.RA = set_combine(sets.DamageTaken,{
-            -- COR gifts: 10 snapshot
-            -- Flurry is 15, flurry II is 30
-            -- Snapshot +10
-            head="Taeon chapeau",
-            -- Snapshot +12
-            body="Oshosi Vest",
-            -- snapshot +2, racc +15
-            neck="Commodore Charm +2",
-            -- Snapshot +8, rapid shot +11
-            hands="Carmine Fin. Ga. +1",
-            -- Snapshot +10, recycle +15
-            legs="Adhemar Kecks +1",
-            -- Snapshot +10
-            feet="Meg. Jam. +2",
-            -- Rapid shot +5
-            waist="Yemaya Belt",
-            -- Snapshot 10
-            back=capes.snapshot
-
-            -- Total: 68.5
-            -- Cap with no buffs: 70
-            -- Cap with flurry: 55
-            -- Cap with flurry II: 40
-        }
-    );
-
+	
 	--Quick Draw damage is calculated similar to magic damage by multiplying the following factors in order and flooring after each step.
 	--    Base Damage = [(Gun DMG + Bullet DMG) * 2] (Multiple gear listed below add 10 DMG to Base Damage.)
 	--    resist
@@ -108,218 +141,48 @@ function init_gear_sets()
 	--    Day & Weather
 	--    Player MAB / Target MDB
 	--    Affinity
-    sets.precast.JA.QuickDraw = set_combine(sets.DamageTaken,{
-            -- macc +25, matk +35
-            ammo="Living Bullet",
-            head="Herculean Helm",
-            -- matk +61
-            body="Lanun Frac +3",
-            -- matk +42, store tp +6
-            hands="Carmine Fin. Ga. +1",
-            --legs=herc_matk.legs,
-            -- Quickdraw +25
-            --feet="Chass. Bottes +1",
-            -- matk 10, macc 10
-            neck="Sanctity Necklace",
-            -- matk 7, macc 7
-            waist="Eschan Stone",
-            -- matk 10
-            left_ear="Friomisi Earring",
-            -- matk 6
-            right_ear="Hecate's Earring",
-            -- matk +10
-            left_ring="Dingir Ring",
-            -- macc 3, matk 3
-            right_ring="Kishar ring",
-            -- Store TP +10
-            capes.storetp
-        }
-    );
+    sets.QuickDraw = set_combine(sets.DamageTaken,{
+		ammo="Living Bullet",
+		head="Herculean Helm",
+		body="Lanun Frac +3",
+		hands="Carmine Fin. Ga. +1",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Friomisi Earring",
+		right_ear="Hecate's Earring",
+		left_ring="Dingir Ring",
+		right_ring="Kishar ring",
+		back=CamulusCape.storetp
+    })
 	
 	
-    sets.precast.JA.QuickDrawAcc = set_combine(sets.precast.QuickDraw, {
-        -- macc +56
+    sets.QuickDrawAcc = set_combine(sets.QuickDraw, {
         head="Laksa. Tricorne +2",
-        -- macc +15
         neck="Commodore Charm +2",
-        -- macc +53
         --hands="Laksa. Gants +2",
-        -- macc +50
         legs="Malignance Tights",
-        -- macc +52
         feet="Laksa. Boots +3",
-        -- macc +10
         left_ear="Digni. Earring",
-        -- set bonus
         left_ring="Regal Ring",
-        -- macc +7
         right_ring="Etana Ring",
-        -- AF set bonus + regal ring = 30 macc
-    })
-
-    -- +18% runspeed
-    sets.idle = set_combine(sets.DamageTaken, { legs="Carmine Cuisses +1" });
-
-    sets.resting = set_combine(sets.DamageTaken, {});
-
-    state.OffenseMode:options(
-        "No haste",
-        "Low haste",
-        "Medium haste",
-        "Full haste",
-        "Single Wield"
-    )
-
-	-- This needs to be the best TP set imaginable. TA, DW, Quadruple shit, Double attack. Really push this shit!
-    sets.engaged = set_combine(sets.DamageTaken, {
-        head="Adhemar Bonnet +1",
-        body="Adhemar Jacket +1",
-        hands="Floral Gauntlets",
-        legs="Meg. Chausses +2",
-        neck="Lissome necklace",
-        left_ear="Suppanomimi",
-        right_ear="Cessance Earring",
-        left_ring="Petrov Ring",
-        right_ring="Epona's Ring",
-        waist="Windbuffet belt +1",
-        back=capes.melee_double_attack
-    });
+    })	
 	
+
+	-- PRECAST LOGIC
+	sets.precast = {}
+    sets.precast.RA = set_combine(sets.DamageTaken,{
+		head="Taeon chapeau",
+		body="Oshosi Vest +1",
+		neck="Commodore Charm +2",
+		hands="Carmine Fin. Ga. +1",
+		legs="Adhemar Kecks +1",
+		feet="Meg. Jam. +2",
+		waist="Yemaya Belt",
+		back=CamulusCape.snapshot
+    })
+
 	
-    sets.engaged["No haste"] = set_combine(sets.engaged, {})
-    sets.engaged["Low haste"] = set_combine(sets.engaged, {})
-    sets.engaged["Medium haste"] = set_combine(sets.engaged, { 
-		-- TA +4, store TP +7
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'} }
-    })
-    sets.engaged["Full haste"] = set_combine(sets.engaged["Medium haste"], {
-        -- TA +6, acc +35
-        --feet=herc_tp.feet,
-        -- DA +5
-        right_ear="Brutal Earring",
-        waist="Windbuffet Belt +1"
-    })
-    sets.engaged["Single Wield"] = set_combine(sets.engaged, {
-        -- Dual wield +6
-        legs={
-            name="Carmine Cuisses +1",
-            augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}
-        },
-        -- TA +6, acc +35
-        --feet=herc_tp.feet,
-        -- TA +2, QA +2
-        waist="Windbuffet Belt +1",
-        -- DA +5
-        left_ear="Brutal Earring"
-    })
-
-    -- Hybrid melee sets
-    sets.engaged.Hybrid = set_combine(sets.engaged, {
-        neck="Loricate Torque +1",
-        legs="Malignance Tights",
-        right_ring="Defending Ring"
-    })
-	
-	--I really don't know what this strange for loop does but it works in a magical fashion
-    for _, setname in ipairs({
-        "No haste", "Low haste", "Medium haste", "Full haste", "Single Wield"
-    }) do
-        local set = sets.engaged[setname]
-        set.Hybrid = set_combine(set, sets.engaged.Hybrid)
-    end
-
-    -- Acc swaps
-    state.AccSwaps = M{['description'] = 'Acc Swaps'}
-    state.AccSwaps:options("None", "MediumAcc", "HighAcc")
-    
-
-    sets.acc = {}
-    sets.acc.None = {
-        -- Baseline acc: 1132
-    }
-    sets.acc.MediumAcc = {
-        -- Baseline acc: 1197
-        head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3'}},
-        legs="Malignance Tights",
-        waist="Olseni Belt",
-        left_ear="Digni. Earring"
-    }
-    sets.acc.HighAcc = {
-        -- Baseline acc: 1258
-        --sub="Eletta Knife",
-        head={ name="Carmine Mask", augments={'Accuracy+15','Mag. Acc.+10','"Fast Cast"+3'}},
-        hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
-        legs="Malignance Tights",
-        feet="Meg. Jam. +2",
-        waist="Olseni Belt",
-        left_ear="Digni. Earring",
-        left_ring="Cacoethic Ring +1",
-        right_ring="Cacoethic Ring"
-    }
-
-
-
-    sets.midcast.RA = set_combine(sets.DamageTaken,{
-            -- racc +48, ratk +44
-            head="Meghanada Visor +2",
-            -- racc +46, store TP +6, crit +9
-            body="Mummu Jacket +2",
-            -- racc +47, ratk +43
-            hands="Meg. Gloves +2",
-            -- racc +50, Store TP +10
-            legs="Malignance Tights",
-            -- racc +46, ratk +42
-            feet="Meg. Jam. +2",
-            -- racc +30, ratk 30, store tp +8
-            neck="Iskur Gorget",
-            -- racc +10, ratk +10, store tp +4
-            waist="Yemaya Belt",
-            -- ratk +25, AGI+10, matk +10, recycle +10
-            left_ring="Dingir Ring",
-            -- AGI +10, store TP +5
-            right_ring="Ilabrat Ring",
-            -- ratk +4, store tp +4, agi +2
-            left_ear="Neritic Earring",
-            -- racc +7, ratk +7, store tp +4
-            right_ear="Enervating Earring",
-            -- racc +30, ratk 20, AGI +20, store tp +10
-            back=capes.storetp
-        }
-    );
-
-    sets.midcast.RA.TripleShot = set_combine(
-        sets.midcast.RA,
-        {
-            -- Triple shot +4, Triple Shot Damage +10
-            head="Oshosi Mask",
-            -- Triple shot +12
-            body="Chasseur's Frac +1",
-            -- Racc 44, ratk 76, might become quad shot
-            hands="Lanun Gants +3",
-            -- Snapshot +10, Triple shot +5
-            legs="Oshosi Trousers",
-            -- racc +4, store tp +2
-            right_ear="Volley Earring",
-            -- Triple Shot +5
-            back=capes.storetp
-        }
-    )
-
-    sets.midcast.RA.TripleShotCrit = set_combine(
-        sets.midcast.RA.TripleShot,
-        {
-            head="Meghanada Visor +2",
-            body="Meg. Cuirie +2",
-            hands="Mummu Wrists +2",
-            legs="Darraigner's Brais",
-            feet="Oshosi Leggings",
-            left_ring="Mummu Ring",
-            right_ring="Begrudging Ring",
-            -- TODO: K. Kachina Belt +1
-            -- TODO: Critrate cape
-        }
-    )
-
+	--Weaponskill Gloriness	
     sets.precast.WS = set_combine(sets.DamageTaken, {
         -- wsd +10%
         body="Laksa. Frac +3",
@@ -336,35 +199,34 @@ function init_gear_sets()
     })
 
     sets.precast.WS.Magic = set_combine(sets.precast.WS,{
-            -- macc +25, matk +35
-            ammo="Living Bullet",
-            --head=herc_matk.head,
-            -- matk +29, macc +30
-            body="Samnuha Coat",
-            --hands=herc_matk.hands,
-            --legs=herc_matk.legs,
-            -- matk +48, WSD+5
-            feet="Lanun Bottes +3",
-            -- WS boost
-            neck="Fotia Gorget",
-            -- WS boost
-            waist="Fotia Belt",
-            -- matk 10
-            left_ear="Friomisi Earring",
-            -- matk 8
-            right_ear="Hecate's Earring",
-            -- ratk +25, matk +10, agi +10, recycle +10
-            left_ring="Dingir Ring",
-            -- macc 3, matk 3, AGI 5
-            right_ring="Arvina Ringlet +1",
-            -- macc 20, mdam 20, wsdam 10, AGI 20
-            back=capes.matk
-        }
-    )
+		-- macc +25, matk +35
+		ammo="Living Bullet",
+		--head=herc_matk.head,
+		-- matk +29, macc +30
+		body="Samnuha Coat",
+		--hands=herc_matk.hands,
+		--legs=herc_matk.legs,
+		-- matk +48, WSD+5
+		feet="Lanun Bottes +3",
+		-- WS boost
+		neck="Fotia Gorget",
+		-- WS boost
+		waist="Fotia Belt",
+		-- matk 10
+		left_ear="Friomisi Earring",
+		-- matk 8
+		right_ear="Hecate's Earring",
+		-- ratk +25, matk +10, agi +10, recycle +10
+		left_ring="Dingir Ring",
+		-- macc 3, matk 3, AGI 5
+		right_ring="Arvina Ringlet +1",
+		-- macc 20, mdam 20, wsdam 10, AGI 20
+		back=CamulusCape.matk
+	})
 
 	--Wildfire and 
-    sets.precast.WS.Marksmanship = set_combine(sets.midcast.RA, {
-        ammo=HighDamAmmo,
+    sets.precast.WS.Marksmanship = set_combine(sets.precast.RA, {
+        ammo="",
         -- racc 27, ratk 72
         head="Lanun Tricorne +3",
         -- racc 57, ratk 35, wsd +10%
@@ -381,411 +243,317 @@ function init_gear_sets()
         -- Ratk +20, AGI+10
         right_ring="Regal Ring",
         -- racc 20, ratk 20, wsd +10%
-        back=capes.ranged_ws
-    });
+        back=CamulusCape.ranged_ws
+    })
 
-    sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS.Magic,{
-            -- macc +25, matk +35
-            ammo="Living Bullet",
-            body="Lanun Frac +3"
-        }
-    );
-    sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS["Wildfire"],{
-            -- macc +25, matk +35
-            ammo="Living Bullet",
-            head="Pixie Hairpin +1",
-            neck="Sanctity Necklace",
-            right_ear="Moonshade Earring",
-            right_ring="Archon Ring",
-            -- AGI +10
-            waist="Svelt. Gouriz +1"
-        }
-    );
-    sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.Marksmanship,{
-			left_ear="Moonshade Earring",
-        }
-    )
+	--Wildfire
+    sets.Wildfire = set_combine(sets.precast.WS.Magic,{
+		-- macc +25, matk +35
+		ammo="Living Bullet",
+		body="Lanun Frac +3"
+	})
+	
+	--Leaden Salute
+    sets.LeadenSalute = set_combine(sets.Wildfire,{
+		ammo="Living Bullet",
+		head="Pixie Hairpin +1",
+		neck="Sanctity Necklace",
+		right_ear="Moonshade Earring",
+		right_ring="Archon Ring",
+		waist="Svelt. Gouriz +1"
+	})
 
-    sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS,{
-            head="Meghanada Visor +2",
-            body="Laksa. Frac +3",
-            hands="Meg. Gloves +2",
-            legs="Meg. Chausses +2",
-            feet="Lanun Bottes +3",
-            waist="Prosilio Belt +1",
-			left_ear="Moonshade Earring",
-            right_ear="Ishvara Earring",
-            left_ring="Regal Ring",
-            right_ring="Apate Ring",
-            back=capes.str_ws
-        }
-    )
+	--Last Stand
+    sets.LastStand = set_combine(sets.precast.WS.Marksmanship,{
+		left_ear="Moonshade Earring"
+	})
 
-    sets.precast.FC = set_combine(sets.DamageTaken,{
-            -- fast cast +12
-            head="Carmine Mask",
-            -- fast cast +4
-            neck = "Voltsurge Torque",
-            -- fast cast +3
-            body="Samnuha Coat",
-            -- Fast cast +2
-            right_ear="Loquac. Earring",
-            -- fast cast 2
-            left_ring="Prolix Ring",
-            -- fast cast 4
-            right_ring="Kishar Ring"
-        }
-    );
+	--Savage Blade
+    sets.SavageBlade = set_combine(sets.precast.WS,{
+		head="Malignance chapeau",
+		body="Laksa. Frac +3",
+		hands="Meg. Gloves +2",
+		legs="Meg. Chausses +2",
+		feet="Lanun Bottes +3",
+		waist="Prosilio Belt +1",
+		left_ear="Moonshade Earring",
+		right_ear="Ishvara Earring",
+		left_ring="Regal Ring",
+		right_ring="Apate Ring",
+		back=CamulusCape.str_ws
+	})
 
-    sets.precast.CorsairRoll = {
-        -- phantom roll effects +50 (chance to proc job-present-boost)
-        head = "Lanun Tricorne +3",
-        -- phantom roll +7
-        neck="Regal Necklace",
-        -- increased area of effect
-        left_ring="Luzaf's Ring",
-		--phantom roll +5
-		right_ring="Barataria Ring",
-        -- duration +50
-        hands="Chasseur's Gants +1",
-        -- duration +30
-        back=capes.matk,
-		-- duration +20
-		range='Compensator'
-    }
 
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(
-        sets.precast.CorsairRoll, { head="Chass. Tricorne +1" }
-    )
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(
-        sets.precast.CorsairRoll, { hands="Chasseur's Gants +1" }
-    )
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(
-        sets.precast.CorsairRoll, {body="Chasseur's Frac +1"}
-    )
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(
-        sets.precast.CorsairRoll, { legs="Chas. Culottes +1" }
-    )
-    --sets.precast.CorsairRoll["Courser's Roll"] = set_combine(
-    --    sets.precast.CorsairRoll, { feet = "Chass. Bottes +1" }
-    --)
+	
+	--MIDCAST LOGIC OF DOOM
+	sets.midcast = {}
+    sets.midcast.RA = set_combine(sets.DamageTaken,{
+		-- racc +48, ratk +44
+		head="Malignance chapeau",
+		-- racc +46, store TP +6, crit +9
+		body="Mummu Jacket +2",
+		-- racc +47, ratk +43
+		hands="Meg. Gloves +2",
+		-- racc +50, Store TP +10
+		legs="Malignance Tights",
+		-- racc +46, ratk +42
+		feet="Meg. Jam. +2",
+		-- racc +30, ratk 30, store tp +8
+		neck="Iskur Gorget",
+		-- racc +10, ratk +10, store tp +4
+		waist="Yemaya Belt",
+		-- ratk +25, AGI+10, matk +10, recycle +10
+		left_ring="Dingir Ring",
+		-- AGI +10, store TP +5
+		right_ring="Ilabrat Ring",
+		-- ratk +4, store tp +4, agi +2
+		left_ear="Neritic Earring",
+		-- racc +7, ratk +7, store tp +4
+		right_ear="Enervating Earring",
+		-- racc +30, ratk 20, AGI +20, store tp +10
+		back=CamulusCape.storetp
+	})
 
-    sets.precast.JA['Triple Shot'] = set_combine(
-        sets.DamageTaken, { body="Chasseur's Frac +1" }
-    )
-    sets.precast.JA['Random Deal'] = set_combine(
-        sets.DamageTaken, { body="Lanun Frac +3" }
-    )
-    sets.precast.JA['Wild Card'] = set_combine(
-        sets.DamageTaken, { feet="Lanun Bottes +3" }
-    )
-    sets.precast.JA['Snake Eye'] = set_combine(
-        sets.DamageTaken, { legs="Lanun Trews +3" }
-    )
-    sets.precast.JA['Fold'] = {}
-    sets.precast.JA['Fold'].DoubleBust = set_combine(
-        sets.DamageTaken, { hands="Lanun Gants +3" }
-    )
+    sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA,{
+		-- Triple shot +4, Triple Shot Damage +10
+		head="Oshosi Mask",
+		-- Triple shot +12
+		body="Chasseur's Frac +1",
+		-- Racc 44, ratk 76, might become quad shot
+		hands="Lanun Gants +3",
+		-- Snapshot +10, Triple shot +5
+		legs="Oshosi Trousers",
+		-- racc +4, store tp +2
+		right_ear="Volley Earring",
+		-- Triple Shot +5
+		back=CamulusCape.storetp
+	})
 
-    -- Need (haste_factor * dual_wield_factor) <= 0.2
-    local gear_haste_cap = 256
-    local magic_haste_cap = 448
+    sets.midcast.RA.TripleShotCrit = set_combine(sets.midcast.RA.TripleShot,{
+		head="Malignance chapeau",
+		body="Meg. Cuirie +2",
+		hands="Mummu Wrists +2",
+		legs="Darraigner's Brais",
+		feet="Oshosi Leggings",
+		left_ring="Mummu Ring",
+		right_ring="Begrudging Ring",
+		-- TODO: K. Kachina Belt +1
+		-- TODO: Critrate cape
+	})	
+	
+	--Engaged Sets--
+	sets.engaged = {}
+--				    	    1		     2           3 		   	   		 			4 				   5			6
+	sets.engaged.index = {'Movement', 'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'RangedAccuracy'}
+	engaged_ind = 1 
+	
+		-- This needs to be the best TP set imaginable. TA, DW, Quadruple shit, Double attack. Really push this shit!
+    sets.engaged.TP = set_combine(sets.DamageTaken, {
+        head="Adhemar Bonnet +1",
+        body="Adhemar Jacket +1",
+        hands="Floral Gauntlets",
+        legs="Meg. Chausses +2",
+        neck="Lissome necklace",
+        left_ear="Suppanomimi",
+        right_ear="Cessance Earring",
+        left_ring="Petrov Ring",
+        right_ring="Epona's Ring",
+        waist="Windbuffet belt +1",
+        back=CamulusCape.melee_double_attack
+    })
+	
+	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.DamageTaken, {})
+	sets.engaged.TakingLessMagicDamage = set_combine(sets.DamageTaken, {})
+	
+	sets.engaged.Accuracy = set_combine(sets.DamageTaken, {})
+	sets.engaged.RangedAccuracy = set_combine(sets.DamageTaken, {})
+	sets.engaged.Movement = set_combine(sets.idle, {})
+	
+	
+	
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'DWSavageCOR','SavageCORShield','Tauret','FomalhautRostamShield','DeathPenaltyRostamShield','FomalhautDivergence','DeathPenaltyDivergence'}
+	weapon_ind = 1
+	
+	sets.weapon.DWSavageCOR = {
+		main="Naegling",
+		sub="Blurred Knife +1",
+		range="Anarchy +2"
+	}
 
-    function calc_delay()
-        local gear_haste = 0
-        local magic_haste = 0
-        local ja_haste = 0
-        local dw_level = 0
-        
-        if player.sub_job == "NIN" then
-            dw_level = dw_level + 256
-        elseif player.sub_job == "DNC" then
-            dw_level = dw_level + 154
-        end
+	sets.weapon.SavageCORShield = {
+		main="Naegling",
+		sub="Nusku Shield",
+		range="Anarchy +2"
+	}
+	
+	sets.weapon.Tauret = {
+		main="Tauret",
+		sub="Blurred Knife +1",
+		range="Anarchy +2"
+	}
+	
+	sets.weapon.FomalhautRostamShield = {
+		main={name="Rostam",bag="Wardrobe 3"},
+		sub="Nusku Shield",
+		range="Fomalhaut"
+	}
+	
+	sets.weapon.DeathPenaltyRostamShield = {
+		main={name="Rostam",bag="Wardrobe 3"},
+		sub="Nusku Shield",
+		range="Death Penalty"
+	}
+	
+	sets.weapon.FomalhautDivergence = {
+		main={name="Rostam",bag="Wardrobe 3"},
+		sub={name="Rostam",bag="Wardrobe 4"},
+		range="Fomalhaut"
+	}
 
-        --  Haste I is 150/1024
-        --  Haste II is 307/1024
-        --  Idris GEO-haste is 418/1024
-        --  Advancing march is 108/1024
-        --  Vicotory march is 163/1024
-        -- Honor march is 126/1024
-        -- Magic haste cap is 448/1024
-        -- Gear haste cap is 256/1024
-
-        -- NIN subjob dual wield is 256/1024
-        -- DNC subjob dual wield is 154/1024
-
-    end
-
+	sets.weapon.DeathPenaltyDivergence = {
+		main={name="Rostam",bag="Wardrobe 3"},
+		sub={name="Rostam",bag="Wardrobe 4"},
+		range="Death Penalty"
+	}	
+	
 end
 
-function customize_melee_set(set)
-    print("Customizin")
-    -- Adjust melee sets with acc swaps
-    local acc_swaps = sets.acc[state.AccSwaps.value or ""]
-    if acc_swaps then
-        return set_combine(set, acc_swaps)
-    end
-end
 
-function stop_wasting_bullets(eventArgs)
-    local ammo = player.equipment.ammo
-    if table.contains(DontWasteBullets, ammo) then
-        add_to_chat(
-            128,
-            'Cancelling ranged attack, ' .. ammo .. ' equipped'
-        );
-        equip({ ammo = CheapAmmo })
-        eventArgs.cancel = true
-        return true;
-    end
-    return false
-end
+--Precast Function
+function precast(spell,abil)
 
-function job_pretarget(spell, eventArgs)
-    if table.contains(magic_ws, spell.english)
-       and not sets.precast.WS[spell.english] then
-        classes.CustomClass = "Magic"
-    end
-    if spell.action_type == 'Ranged Attack' then
-        classes.CustomRangedGroups:clear()
+	--Weapon skill lookups
+	if spell.name == "Savage Blade" then
+		equip(sets.SavageBlade)
+	end
+	if spell.name == "Leaden Salute" then
+		equip(sets.LeadenSalute)
+	end
+	if spell.name == "Last Stand" then
+		equip(sets.LastStand)
+	end
+	if spell.name == "Wildfire" then
+		equip(sets.Wildfire)
+	end
+
+ --Corsair Rolls	
+	if string.find(spell.english,'Blitzer') then
+		equip(sets.BlitzersRoll)
+	elseif string.find(spell.english,'Allies') then
+		equip(sets.AlliesRoll)
+	elseif string.find(spell.english,'Tactician') then
+		equip(sets.TacticiansRoll)
+	elseif string.find(spell.english,'Caster') then
+		equip(sets.CastersRoll)
+	elseif string.find(spell.english,'Courser') then
+		equip(sets.CoursersRoll)
+	end
+	
+	if string.find(spell.english,'Roll') or spell.name == "Double-Up" then
+		equip(sets.CorsairRoll)
+	end
+	
+	
+	if spell.name == "Random Deal" then
+		equip(sets.RandomDeal)
+	end
+	if spell.name == "Wild Card" then
+		equip(sets.WildCard)
+	end
+	if spell.name == "Snake Eye" then
+		equip(sets.SnakeEye)
+	end
+	if spell.name == "Fold" then
+		equip(sets.Fold)
+	end
+	if spell.name == "Triple Shot" then
+		equip(sets.TripleShot)
+	end
+	
+	
+	 if spell.action_type == 'Ranged Attack' then
+       --classes.CustomRangedGroups:clear()
         if buffactive['Triple Shot'] then
             if buffactive['Aftermath: Lv.3'] then
-                classes.CustomRangedGroups:append("TripleShotCrit")
+               -- classes.CustomRangedGroups:append("TripleShotCrit")
             else
-                classes.CustomRangedGroups:append("TripleShot")
+                --classes.CustomRangedGroups:append("TripleShot")
             end
         end
     end
+	
 end
 
-function job_precast(spell, eventArgs)
-    if '/weaponskill' == spell.prefix then
-        if table.contains(marksmanship_ws, spell.english) then
-            if stop_wasting_bullets(eventArgs) then
-                return;
-            end
-        end
-       --equip(get_day_and_weather_gear(spell))
-    elseif '/range' == spell.prefix then
-        if stop_wasting_bullets(eventArgs) then
-            return;
-        end
-    elseif '/magic' == spell.prefix  then
-        -- Show recast for any spell
-        send_command('input /recast "' .. spell.name .. '"');
-    elseif '/jobability' == spell.prefix  then
-        if string.endswith(spell.name, ' Roll') then
-            local rollData = LuckyRolls[spell.english];
-            if rollData then
-                CurrentRoll = spell.english;
-                CurrentLucky = rollData.lucky
-                CurrentUnlucky = rollData.unlucky
 
-                add_to_chat(128, (
-                    CurrentRoll .. ': ' ..
-                    'Lucky: ' .. CurrentLucky .. ', ' ..
-                    'Unlucky: ' .. CurrentUnlucky
-                ));
-            else
-                add_to_chat(128, 'Unknown roll ' .. spell.name);
-            end
-        elseif 'Double-Up' == spell.name then
-            add_to_chat(128,
-                'Double-Up on ' .. CurrentRoll .. ': ' ..
-                'Lucky: ' .. CurrentLucky .. ', ' ..
-                'Unlucky: ' .. CurrentUnlucky
-            );
-        elseif spell.english:endswith(' Shot') then
-            --equip(get_day_and_weather_gear(spell))
-        end
+
+
+--Midcast Function
+function midcast(spell,abil)
+
+end
+
+
+
+
+--Aftercast Function
+function aftercast(spell)
+  equip_current()
+  --Just running a lil somethin-somethin to track Shadows
+  if string.find(spell.name,'Utsusemi') and not spell.interrupted then
+    if spell.name == 'Utsusemi: Ichi' then
+      ShadowType = 'Ichi'
+    elseif spell.name == 'Utsusemi: Ni' then
+      ShadowType = 'Ni'
     end
-end
-
-function job_post_precast(spell, eventArgs)
-    if '/weaponskill' == spell.prefix then
-        --equip(get_day_and_weather_gear(spell))
-    elseif '/jobability' == spell.prefix  then
-        if spell.english:endswith(' Shot') then
-           --equip(get_day_and_weather_gear(spell))
-        end
-    end
-end
-
-function job_post_midcast(spell, eventArgs)
---    if '/magic' == spell.prefix  then
---        equip(get_day_and_weather_gear(spell))
---    end
+  end
 end
 
 
-function job_aftercast(spell, eventArgs)
-	equip(sets.engaged.Hybrid)
+--This function should only get kicked off when you're engaging.  
+--If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--But I don't want to fuck myself by ignoring the engaged check.
+--I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+function equip_current()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
+	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 end
 
-function filtered_action(spell)
-    -- Trigger updateammo by trying to cast Thunder IV
-    if(spell.name == "Thunder IV") then
-        cancel_spell();
-        self_command("updateammo");
-        return;
-    end
+--Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
+function self_command(command)
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
+	elseif command == 'toggle engage set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse engage set' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	end
 end
 
-function job_self_command(command, eventArgs)
-    if "updateammo" == command then
-        local sacks = {
-            player.inventory,
-            player.wardrobe, player.wardrobe2,
-            player.wardrobe3, player.wardrobe4,
-        }
-        for i, ammo in ipairs(CheapAmmoList) do
-            for i, sack in ipairs(sacks) do
-                if sack[ammo] then
-                    CheapAmmo = ammo;
-                    break
-                end
-            end
-        end
-        for i, ammo in ipairs(HighDamageAmmoList) do
-            for i, sack in ipairs(sacks) do
-                if sack[ammo] then
-                    HighDamAmmo = ammo;
-                    break
-                end
-            end
-        end
-        QuickDrawAmmo = HighDamAmmo;
-        for i, ammo in ipairs(QuickDrawAmmoList) do
-            for i, sack in ipairs(sacks) do
-                if sack[ammo] then
-                    QuickDrawAmmo = ammo;
-                    break
-                end
-            end
-        end
 
-        add_to_chat(128, "Ammo summary:");
-        add_to_chat(128, "- High Damage Ammo: " .. HighDamAmmo);
-        add_to_chat(128, "- Quick Draw Ammo:  " .. QuickDrawAmmo);
-        add_to_chat(128, "- Cheap Ammo:       " .. CheapAmmo);
-    end
-end
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
+	end
+end)
 
-function job_setup()
-    -- Variables
-    CurrentRoll = nil;
-    CurrentLucky = 0;
-    CurrentUnlucky = 0;
 
-    CheapAmmoList = {
-        "Divine Bullet",
-        "Devastating Bullet",
-        "Orichalc. Bullet",
-        "Steel Bullet",
-        "Bullet",
-        "Paktong Bullet",
-        "Iron Bullet",
-        "Bronze Bullet",
-        "Tin Bullet",
-        "Eminent Bullet",
-    };
-
-    HighDamageAmmoList = {
-        "Bronze Bullet",
-        "Tin Bullet",
-        "Bullet",
-        "Paktong Bullet",
-        "Iron Bullet",
-        "Corsair Bullet",
-        "Steel Bullet",
-        "Orichalc. Bullet",
-        "Midrium Bullet",
-        "Eminent Bullet",
-        "Divine Bullet",
-        "Devastating Bullet",
-    };
-
-    -- QuickDrawAmmo defaults to HighDamAmmo, but uses these if available:
-    QuickDrawAmmoList = {
-        "Orichalc. Bullet",
-        "Eminent Bullet",
-        "Animikii Bullet",
-        "Living Bullet",
-    };
-
-    DontWasteBullets = T{
-        "Oberon's Bullet",
-        "Animikii Bullet",
-    };
-
-    -- Fallbacks for unconfigured ammo
-    CheapAmmo = "Devastating Bullet";
-    HighDamAmmo = "Devastating Bullet";
-    QuickDrawAmmo = "Animikii Bullet";
-
-    job_self_command("updateammo");
-
-    marksmanship_ws = T{
-        'Hot Shot',
-        'Split Shot',
-        'Sniper Shot',
-        'Slug Shot',
-        'Blast Shot',
-        'Heavy Shot',
-        'Detonator',
-        'Numbing Shot',
-        'Last Stand',
-        'Coronach',
-        'Trueflight',
-        'Leaden Salute',
-        'Wildfire'
-    }
-
-    LuckyRolls = {
-        ["Magus's Roll"]        = { lucky = 2, unlucky = 6 },
-        ["Choral Roll"]         = { lucky = 2, unlucky = 6 },
-        ["Samurai Roll"]        = { lucky = 2, unlucky = 6 },
-        ["Scholar's Roll"]      = { lucky = 2, unlucky = 6 },
-        ["Caster's Roll"]       = { lucky = 2, unlucky = 7 },
-        ["Companion's Roll"]    = { lucky = 2, unlucky = 10 },
-        ["Healer's Roll"]       = { lucky = 3, unlucky = 7 },
-        ["Monk's Roll"]         = { lucky = 3, unlucky = 7 },
-        ["Drachen Roll"]        = { lucky = 3, unlucky = 7 },
-        ["Gallant's Roll"]      = { lucky = 3, unlucky = 7 },
-        ["Dancer's Roll"]       = { lucky = 3, unlucky = 7 },
-        ["Bolter's Roll"]       = { lucky = 3, unlucky = 9 },
-        ["Courser's Roll"]      = { lucky = 3, unlucky = 9 },
-        ["Allies' Roll"]        = { lucky = 3, unlucky = 10 },
-        ["Ninja Roll"]          = { lucky = 4, unlucky = 8 },
-        ["Hunter's Roll"]       = { lucky = 4, unlucky = 8 },
-        ["Chaos Roll"]          = { lucky = 4, unlucky = 8 },
-        ["Puppet Roll"]         = { lucky = 4, unlucky = 8 },
-        ["Beast Roll"]          = { lucky = 4, unlucky = 8 },
-        ["Warlock's Roll"]      = { lucky = 4, unlucky = 8 },
-        ["Blitzer's Roll"]      = { lucky = 4, unlucky = 9 },
-        ["Miser's Roll"]        = { lucky = 5, unlucky = 7 },
-        ["Tactician's Roll"]    = { lucky = 5, unlucky = 8 },
-        ["Corsair's Roll"]      = { lucky = 5, unlucky = 9 },
-        ["Evoker's Roll"]       = { lucky = 5, unlucky = 9 },
-        ["Rogue's Roll"]        = { lucky = 5, unlucky = 9 },
-        ["Fighter's Roll"]      = { lucky = 5, unlucky = 9 },
-        ["Wizard's Roll"]       = { lucky = 5, unlucky = 9 }
-    }
-
-    -- Add missing spell mappings
-    extra_spell_mappings = {
-        ['Light Shot'] = 'QuickDrawAcc', ['Dark Shot'] = 'QuickDrawAcc',
-        ['Earth Shot'] = 'QuickDraw', ['Water Shot'] = 'QuickDraw',
-        ['Wind Shot'] = 'QuickDraw', ['Fire Shot'] = 'QuickDraw',
-        ['Ice Shot'] = 'QuickDraw', ['Thunder Shot'] = 'QuickDraw',
-    }
-    for k,v in pairs(extra_spell_mappings) do spell_maps[k] = v end
-
-    magic_ws = {
-        'Leaden Salute', 'Wildfire', 'Red Lotus Blade', 'Burning Blade',
-        'Hot Shot', 'Shining Blade', 'Aeolian Edge', 'Cyclone',
-        'Gust Slash', 'Energy Drain', 'Energy Steal'
-    }
-
-end
