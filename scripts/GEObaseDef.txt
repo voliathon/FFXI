@@ -1,0 +1,9 @@
+input /ma "haste" <me>; wait 6;
+input /ma "barblizzara" <me>; wait 6;
+input /ma "barparalyzra" <me>; wait 8;
+input /ma "indi-barrier" <me>; wait 7;
+input /ma "stoneskin" <me>; wait 8;
+input /ma "geo-wilt" <me>
+
+ 
+

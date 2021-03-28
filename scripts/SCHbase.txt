@@ -1,7 +1,8 @@
 input /ja "Sublimation" <me>; wait 3;
 input /ja "Light Arts" <me>; wait 2;
-input /ma "Aquaveil" <me>; wait 8;
+input /ma "Aquaveil" <me>; wait 9;
 input /ja "Accession" <me>; wait 2;
+input /ja "Perpetuance" <me>; wait 2;
 input /ma "Regen V" <me>; wait 8;
 input /ja "Accession" <me>; wait 2;
 input /ma "Adloquium" <me>; wait 8;
@@ -9,6 +10,7 @@ input /ma "Thunderstorm II" <me>; wait 8;
 input /ja "Accession" <me>; wait 2;
 input /ma "Stoneskin" <me>; wait 9;
 input /ma "Haste" <me>; wait 8;
-input /ja "Dark Arts" <me>; wait 3;
-input /ma "klimaform" <me>; wait 7;
-input /ma "Shock Spikes" <me>; wait 9
+input /ja "Addendum: White" <me>;
+//input /ja "Dark Arts" <me>; wait 3;
+//input /ma "klimaform" <me>; wait 7;
+//input /ma "Shock Spikes" <me>; wait 9

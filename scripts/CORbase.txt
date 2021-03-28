@@ -1,4 +1,4 @@
-lua load autocor;
+lua reload autocor;
 wait .1;
 cor on;
 wait 120;

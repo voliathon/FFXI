@@ -1,8 +1,8 @@
 send @all /echo Base buffs for RUN, BRD, COR;
-send voluzera exec SCHbase;
+send voluzera exec GEObase;
 wait .1;
 send voliathon exec RUNbase;
 wait .1;
 send mazusu exec CORbase;
 wait .1;
-send azureus exec 4SongNitro;
+send azureus exec 4SongNitroAtt;
