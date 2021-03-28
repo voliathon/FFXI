@@ -124,8 +124,8 @@ function get_sets()
 	waist="Fotia Belt",
 	left_ear="Ishvara earring",
 	right_ear="Moonshade Earring",
-	right_ring="Epaminondas's Ring",
-	left_ring="Flamma Ring",
+	right_ring="Flamma Ring",
+	left_ring="Epaminondas's Ring",
     back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
   }
 

@@ -93,7 +93,7 @@ function get_sets()
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
-		feet="Ken. Sune-Ate +1",
+		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		neck="Moonlight Nodowa",
 		waist="Chaac Belt",
 		left_ear="Cessance Earring",

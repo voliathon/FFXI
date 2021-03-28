@@ -78,7 +78,7 @@ function get_sets()
 		head={ name="Herculean Helm", augments={'Accuracy+3','MND+15','"Treasure Hunter"+1','Accuracy+13 Attack+13','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		body="Adhemar Jacket +1",
 		hands="Plun. Armlets +1",
-		feet="Skulk. Poulaines +1",
+		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		neck="Sanctity Necklace",
 		waist="Chaac Belt",
 		left_ear="Dudgeon Earring",
@@ -289,7 +289,7 @@ function get_sets()
 		waist="Grunfeld Rope",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Patricius Ring",
+		left_ring="Moonlight ring",
 		right_ring="Defending Ring",
 		back="Repulse Mantle"
 	}
@@ -305,7 +305,7 @@ function get_sets()
 		waist="Grunfeld Rope",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Patricius Ring",
+		left_ring="Moonlight ring",
 		right_ring="Defending Ring",
 		back="Repulse Mantle"
 	})
