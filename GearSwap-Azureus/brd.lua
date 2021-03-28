@@ -171,15 +171,15 @@ function get_sets()
     ammo="Ginsen",
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
-    hands={ name="Chironic Gloves", augments={'Accuracy+24','Quadruple Attack +2','Accuracy+16 Attack+16','Mag. Acc.+13 "Mag.Atk.Bns."+13'}},
+    hands="Ayanmo manopolas +2",
     legs="Aya. Cosciales +2",
     feet="Aya. Gambieras +2",
-    neck="Clotharius Torque",
+    neck="Bard's charm +2",
     waist="Windbuffet Belt",
     left_ear="Brutal Earring",
     right_ear="Telos Earring",
     left_ring="Hetairoi Ring",
-    right_ring="Rajas Ring",
+    right_ring="Chirich Ring +1",
     back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}} 
   }
   
@@ -188,15 +188,15 @@ function get_sets()
     ammo="Ginsen",
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
-    hands={ name="Chironic Gloves", augments={'Accuracy+24','Quadruple Attack +2','Accuracy+16 Attack+16','Mag. Acc.+13 "Mag.Atk.Bns."+13'}},
+    hands="Ayanmo manopolas +2",
     legs="Aya. Cosciales +2",
     feet="Aya. Gambieras +2",
-    neck="Iqabi Necklace",
+    neck="Bard's charm +2",
     waist="Eschan Stone",
     left_ear="Zennaroi Earring",
     right_ear="Telos Earring",
-    left_ring="Patricius Ring",
-    right_ring="Fortified Ring",
+    left_ring="Chirich Ring +1",
+    right_ring="Chirich Ring +1",
     back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}  
   }
   
@@ -255,7 +255,7 @@ function get_sets()
     ammo="Ginsen",
     head={ name="Chironic Hat", augments={'Pet: "Store TP"+2','Enmity+3','Weapon skill damage +6%','Accuracy+15 Attack+15'}},
     body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9'}},
-    hands="Aya. Manopolas +2",
+    hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7'}},
     legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
     feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17'}},
     neck="Fotia Gorget",
