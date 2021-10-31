@@ -119,7 +119,7 @@ function get_sets()
 
     sets.FastCast = set_combine(sets.DamageTaken,{
 		-- fast cast +12
-		head="Carmine Mask",
+		head="Carmine Mask +1",
 		-- fast cast +4
 		neck = "Voltsurge Torque",
 		-- fast cast +3
