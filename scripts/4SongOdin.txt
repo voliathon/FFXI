@@ -1,14 +1,12 @@
 input /equip Range "Marsyas"; wait 2; 
 input /ma "honor march" <me>; wait 8; 
 input /equip Range "Gjallarhorn"; wait 2;
-input /ma "victory march" <me>; wait 8; 
+input /ma "Sentinel's Scherzo" <me>; wait 8; 
 input /equip Range "Daurdabla"; wait 2;
 input /ma "Knight's Minne V" <me>; wait 10;
 input /equip Range "Daurdabla"; wait 2;
-input /ma "Knight's Minne IV" <me>; wait 8;
+input /ma "Valor Minuet V" <me>; wait 8;
 input /equip Range "Gjallarhorn"; wait 2;
 input /ma "Knight's Minne V" <me>; wait 10; 
-input /ma "Knight's Minne IV" <me>; wait 7;
-input /ja "pianissimo" <me>; wait 1; 
-input /ma "mage\'s ballad III" Ygnas; wait 3;
+input /ma "Valor Minuet V" <me>; wait 7;
 input /ma "Stoneskin" <me>

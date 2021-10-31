@@ -1,4 +1,5 @@
-input /ma "Barsleep" <me>; wait 7;
+input /ma "Barparalyze" <me>; wait 7;
+input /ma "Barblizzard" <me>; wait 5;
 input /ma "Aquaveil" <me>; wait 9;
 input /ma "Blink" <me>; wait 9;
 input /ja "Lux" <me>; wait 5; 

@@ -1,9 +1,8 @@
 input /ma "haste" <me>; wait 6;
 input /ma "barblizzara" <me>; wait 6;
-input /ma "indi-fury" <me>; wait 7;
+input /ma "indi-barrier" <me>; wait 7;
 input /ma "stoneskin" <me>; wait 8;
-input /ma "geo-barrier" <me>; wait 7;
 input /ja "entrust" <me>; wait 3;
-input /ma "indi-wilt" Voliathon;
+input /ma "indi-attunement" Tibent;
  
 
