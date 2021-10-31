@@ -100,7 +100,7 @@ function get_sets()
 	}
 	
 	 sets.engaged.Defense = {
-		 ammo="Yetshila",
+		 ammo="Yetshila +1",
 		 head="Malignance Chapeau",
 		 body="Malignance tabard",
 		 hands="Malignance gloves",
@@ -151,19 +151,19 @@ function get_sets()
 ---- .:: Weapon Skill Sets ::. ---->
     -- .::Generic Sets::. --
     sets.WSD = {	
-		ammo="Yetshila",
-		head="Adhemar Bonnet +1",
-		body="Herculean Vest",
-		hands="Meg. Gloves +2",
-		legs="Malignance tights",
-		feet="Malignance boots",
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Moonshade Earring",
-		right_ear="Ishvara Earring",
-		left_ring="Mummu Ring",
-		right_ring="Rajas Ring",
-		back="Toutatis's Cape"
+    ammo="Yetshila +1",
+    head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}},
+    body={ name="Herculean Vest", augments={'"Rapid Shot"+2','Pet: AGI+6','Weapon skill damage +6%','Accuracy+6 Attack+6'}},
+    hands="Meg. Gloves +2",
+    legs={ name="Herculean Trousers", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','DEX+10','Accuracy+5'}},
+    feet="Malignance Boots",
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+    right_ear="Ishvara Earring",
+    left_ring="Epaminondas's Ring",
+    right_ring="Defending Ring",
+    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
 	}
 	
     sets.Aeolian = {	
@@ -190,7 +190,7 @@ function get_sets()
 	sets.precast = {}
 	sets.precast.Fastcast = {}
 	sets.precast['Utsusemi'] = {	
-		ammo="Yetshila",
+		ammo="Yetshila +1",
 		head="Adhemar Bonnet +1",
 		body="Adhemar Jacket +1",
 		hands="Mummu Wrists +2",

@@ -61,7 +61,7 @@ function get_sets()
     right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
     right_ring="Rahab Ring",
-    back="Seshaw Cape",
+    back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}
   }
   
   --Stoneskin Set
@@ -77,7 +77,7 @@ function get_sets()
     right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
     right_ring="Rahab Ring",
-    back="Perimede Cape"  
+    back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}  
   }
  
   --Magic Accuracy for those pesky songs that don't want to stick--
@@ -93,14 +93,14 @@ function get_sets()
     right_ear="Digni. Earring",
     left_ring="Sangoma Ring",
     right_ring="Stikini Ring +1",
-    back={ name="Rhapsode's Cape", augments={'HP+17','Mag. Acc.+2','Enmity-1','Damage taken-1%'}}
+    back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}
   }
   
   --Maximizing Song Potency first then duration-- 
   sets.Songs = {
-    head="Bihu Roundlet +1",
+    head="Fili calot +1",
     body="Fili Hongreline +1",
-    hands="Inyan. Dastanas +2",
+    hands="Fili manchettes +1",
     legs="Inyanga Shalwar +2",
     feet="Brioso Slippers +2",
     neck="Mnbw. Whistle +1",
@@ -109,7 +109,7 @@ function get_sets()
     right_ear="Loquac. Earring",
     left_ring="Lebeche Ring",
     right_ring="Stikini Ring +1",
-    back="Kumbira Cape"
+    back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}
   }
   
   sets.Cure = {
@@ -168,7 +168,6 @@ function get_sets()
   
   --TP Set--
   sets.engaged.TP = {
-    ammo="Ginsen",
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
     hands="Ayanmo manopolas +2",
@@ -185,7 +184,6 @@ function get_sets()
   
   --Accuracy Set--
   sets.engaged.Accuracy = {
-    ammo="Ginsen",
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
     hands="Ayanmo manopolas +2",
@@ -201,7 +199,6 @@ function get_sets()
   }
   
   sets.engaged.TakingLessPhysicalDamage = {
-    ammo="Staunch Tathlum",
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
     hands="Aya. Manopolas +2",
@@ -232,7 +229,6 @@ function get_sets()
   }
   
   sets.engaged.Refresh = {
-    ammo="Staunch Tathlum",
     head={ name="Chironic Hat", augments={'Pet: Haste+2','Crit. hit damage +3%','"Refresh"+1','Accuracy+15 Attack+15','Mag. Acc.+17 "Mag.Atk.Bns."+17'}},
     body="Annoint. Kalasiris",
     hands={ name="Chironic Gloves", augments={'Crit.hit rate+4','Weapon Skill Acc.+4','"Refresh"+1','Accuracy+2 Attack+2','Mag. Acc.+17 "Mag.Atk.Bns."+17'}},
@@ -251,20 +247,21 @@ function get_sets()
   sets.WS = {}
 
   --multi, Shoha, Fudo, Kasha need STR for the modifier
+  -- 81 WSD 5/29/2021
   sets.WSD = {
     ammo="Ginsen",
-    head={ name="Chironic Hat", augments={'Pet: "Store TP"+2','Enmity+3','Weapon skill damage +6%','Accuracy+15 Attack+15'}},
-    body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9'}},
-    hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7'}},
-    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
-    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17'}},
-    neck="Fotia Gorget",
-    waist="Fotia Belt",
-    left_ear="Ishvara Earring",
+    head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%'}}, --8
+    body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9'}}, --9
+    hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7'}}, --7
+    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+10 "Mag.Atk.Bns."+5'}}, --10
+    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17'}}, --10
+    neck="Fotia Gorget", --10
+    waist="Fotia Belt", --10
+    left_ear="Ishvara Earring", --2
     right_ear="Moonshade Earring",
     left_ring="Hetairoi Ring",
-    right_ring="Epaminondas's Ring",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+    right_ring="Epaminondas's Ring", --5
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}} --10
   }
   
 
@@ -288,29 +285,6 @@ end
 
 
 function precast(spell,abil)
-	--Enhancing Magic Check
-	if spell.skill == 'Enhancing Magic' then
-		equip(sets.Enhancing)
-	end
-	if spell.name == 'Nightingale' then
-		equip(sets.FastCast,sets.JA.Nightingale)
-	end 
-	if spell.name == 'Troubadour' then
-		equip(sets.FastCast,sets.JA.Troubadour)
-	end
-	if spell.name == 'Soul Voice' then
-		equip(sets.FastCast,sets.JA.SoulVoice)
-	end
-	if spell.type == 'BardSong' then
-		if spell.name == 'Honor March' then
-			equip(sets.FastCast,{range="Marsyas",ammo="empty"})
-		end
-	equip(sets.FastCast)
-	elseif spell.action_type == 'Magic' then
-		equip(sets.FastCast)
-	end
-		--Can add stuff here for other magic. Doesn't have to go to idle at all
-	
 	--equips favorite Instrument if disarmed
 	if player.equipment.range == "empty" or player.equipment.sub == "empty" then
 		if spell.name == 'Honor March' then
@@ -326,8 +300,24 @@ function precast(spell,abil)
 		end
 		
 	end
+	if spell.type == 'BardSong' then
+		if spell.name == 'Honor March' then
+			equip(sets.FastCast,{range="Marsyas",ammo="empty"})
+		end
+	end
+	if spell.name == 'Nightingale' then
+		equip(sets.JA.Nightingale)
+	end 
+	if spell.name == 'Troubadour' then
+		equip(sets.JA.Troubadour)
+	end
+	if spell.name == 'Soul Voice' then
+		equip(sets.JA.SoulVoice)
+	end
+
+	
 	--WS Lookups
-	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
+	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" or spell.name == "Savage Blade" then
 		equip(sets.WSD)
 	end
 	-- Add logic for Waltz
@@ -335,12 +325,6 @@ function precast(spell,abil)
   
   
 end
-
---We need to do some thinking and testing for this set...
-function aftercast(spell)
-	equip_current()
-end
-
 
 function midcast(spell)
 	if string.find(spell.english,'Cur') then 
@@ -351,15 +335,31 @@ function midcast(spell)
 	end
 	if spell.type == 'BardSong' then
 	  if string.find(spell.english,'lull') then
-	    sets.Sleep()
+	    equip(sets.Sleep)
 	  else
-		equip_song_gear(spell)
+		equip(sets.Songs)
 	  end
 	end
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
 	end
+	--Enhancing Magic Check
+	if spell.skill == 'Enhancing Magic' then
+		equip(sets.Enhancing)
+	end
 end
+
+
+--We need to do some thinking and testing for this set...
+function aftercast(spell)
+	if string.find(spell.english,'Warp') then
+		--do fuck all nothing
+	else
+		equip_current()
+	end
+end
+
+
 
 
 --This function should only get kicked off when you're engaging.  
