@@ -73,25 +73,25 @@ function get_sets()
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Ashera Harness",
-		hands="Malignance gloves",
-		legs="Ken. Hakama +1",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Loricate Torque +1",
+		neck={ name="Loricate Torque +1", augments={'Path: A'}},
 		waist="Moonbow Belt +1",
-		left_ear="Infused Earring",
+		left_ear="Cryptic Earring",
 		right_ear="Genmei Earring",
 		left_ring="Fortified Ring",
 		right_ring="Defending Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}	
+		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
 	}
     
 	sets.TP.Accuracy = set_combine(sets.TP.BadAss, {})
 	
 	sets.TP.TH = {
 		ammo="Ginsen",
-		head={ name="Herculean Helm", augments={'Accuracy+3','MND+15','"Treasure Hunter"+1','Accuracy+13 Attack+13','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
+		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
 		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
+		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
 		legs="Ken. Hakama +1",
 		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		neck="Moonlight Nodowa",
@@ -100,7 +100,7 @@ function get_sets()
 		right_ear="Brutal Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}	
+		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
 	}
 
 	--Victory Smite --- STR 80%
@@ -119,16 +119,16 @@ function get_sets()
 	
 	sets.WS.VictorySmite = {
 		ammo="Amar Cluster",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
-		body="Ken. Samue +1",
+		head="Hes. Crown +2",
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
 		hands="Ken. Tekko +1",
 		legs="Kendatsuba hakama +1",
 		feet="Ken. Sune-Ate +1",
 		neck="Fotia Gorget",
-		waist="Moonbow Belt +1",
+		waist="Fotia Belt",
 		right_ear="Brutal Earring",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-		left_ring="Rajas Ring",
+		left_ring="Chirich Ring +1",
 		right_ring="Epaminondas's Ring",
 		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
 	}
@@ -141,7 +141,7 @@ function get_sets()
 		legs="Hiza. Hizayoroi +2",
 		feet="Ken. Sune-Ate +1",
 		neck="Fotia Gorget",
-		waist="Moonbow Belt +1",
+		waist="Fotia Belt",
 		right_ear="Ishvara Earring",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Rajas Ring",

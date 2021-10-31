@@ -32,24 +32,24 @@ function get_sets()
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}
   }
   
   --offensive melee set
   sets.TP.BadAss = {
     ammo="Ginsen",
-    head="Adhemar Bonnet +1",
-    body="Ashera harness",
-    hands="Adhemar wristbands +1",
-    legs="Meg. Chausses +2",
-    feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},
-    neck="Anu Torque",
+    head="Flam. Zucchetto +2",
+    body="Kubira Meikogai",
+    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
+    feet="Flam. Gambieras +2",
+    neck="Clotharius Torque",
     waist="Ioskeha Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Cessance Earring",
-    left_ring="Moonlight Ring",
+    left_ear="Cessance Earring",
+    right_ear="Brutal Earring",
+    left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+    back="Moonbeam Cape"
   }
 
   --Tank Gear
@@ -66,7 +66,7 @@ function get_sets()
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}
   }
 
   --MDT melee set
@@ -83,7 +83,7 @@ function get_sets()
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}
   }
   
   sets.TP.Accuracy = {
@@ -115,7 +115,7 @@ function get_sets()
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}} 
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}} 
   }
 
   --Weaponskill Sets--
@@ -124,35 +124,35 @@ function get_sets()
   --multi, carries FTP -- Need STR for the modifier
   sets.Resolution = {
     ammo="Yetshila +1",
-    head="Adhemar Bonnet +1",
-    body="Lustratio Harness +1",
-    hands="Adhemar wristbands +1",
-    legs="Meghanada Chausses +2",
-    feet="Carmine greaves +1",
+    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
+    body={ name="Lustr. Harness +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}},
+    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
+    feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
     neck="Fotia Gorget",
-	waist="Fotia Belt",
-    left_ear="Brutal Earring",
-    right_ear="Moonshade Earring",
+    waist="Fotia Belt",
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    left_ring="Epaminondas's Ring",
     right_ring="Rajas Ring",
-    left_ring="Moonlight Ring",
-    back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+    back="Moonbeam Cape"
   }
 
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
   sets.Single = {
     ammo="Yetshila +1",
-    head={ name="Lustratio Cap +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
-    body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}},
-    hands="Meg. Gloves +2",
-    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
-    feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
+    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
+    body={ name="Lustr. Harness +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}},
+    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
+    feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-    right_ear="Ishvara Earring",
-    left_ring="Rajas Ring",
-    right_ring="Epaminondas's Ring",
-    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    left_ring="Epaminondas's Ring",
+    right_ring="Rajas Ring",
+    back="Moonbeam Cape"
   }
 
   --added effect
@@ -288,7 +288,7 @@ function get_sets()
     right_ear="Halasz Earring",
     left_ring="Stikini Ring +1",
     right_ring="Stikini Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}
  }
 
  --88 SIR
@@ -323,7 +323,7 @@ function get_sets()
     right_ear="Earthcry Earring",
     left_ring="Stikini Ring +1",
     right_ring="Stikini Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}  
   }
 
 end
@@ -398,7 +398,7 @@ function precast(spell,abil)
   if spell.name == 'Resolution' then
     equip(sets.Resolution)
   end
-  if spell.name == 'Dimidiation' or spell.name == 'Spinning Slash'  then
+  if spell.name == 'Dimidiation' or spell.name == 'Spinning Slash' or spell.name == 'Savage Blade' then
     equip(sets.Single)
   end
   if spell.name == 'Shockwave' then

@@ -1,157 +1,26 @@
--------------------------------------------------------------------------------------------------------------------
--- Bullshit functions that are needed for this fucking thing to work
--------------------------------------------------------------------------------------------------------------------
-
--- Initialization function for this job file.
 function get_sets()
---This needs to be version 2.  The reason is version 1 is deprecated and there is no version 3.
---Mote is a fucking scumbag and never made shit even easier.
-    mote_include_version = 2
-
-    -- Load and initialize the include file.
-	--The mote-Include has other fucking includes inside of it such as rules, states, classes, sets
-	--bullshit proprietary stuff specifically for ffxi.
-    include('Mote-Include.lua')
-end
-
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
-function job_setup()
-    indi_timer = ''
-    indi_duration = 180
-end
-
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file<-LOL @ this bullshit template name.
--------------------------------------------------------------------------------------------------------------------
-
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-function user_setup()
-    state.OffenseMode:options('None', 'Normal')
-    state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'PDT')
-
-    gear.default.weaponskill_waist = "Fotia Belt"
-
-    select_default_macro_book()
-end
-
-
--- Define sets and vars used by this job file.
-function init_gear_sets()
-
-    ------------------------------------------------------------------------------------------------------------------
-    -- Precast sets
-    ------------------------------------------------------------------------------------------------------------------
-
-
-    -- Fast Cast for Black Mage --
-    sets.precast.FC = {
-		main="Lathi",
-		sub="Tzacab Grip",
-		head="Merlinic Hood",
-		body="Shango Robe",
-		hands="Amalric gages",
-		legs="Merlinic shalwar",
-		feet="Merlinic Crackows",
-		waist="Witful Belt",
-		left_ear="Loquac. Earring",
-		right_ear="Magnetic earring",
-		left_ring="Venficium ring",
-		back="Perimede cape"
-	}
-
-
-    sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-		main="Lathi",
-		sub="Tzacab Grip",
-		body="Heka's Kalasiris",
-		back="Pahtli Cape",
-		legs="Merlinic shalwar",
-		feet="Vanya Clogs"
-	})
-
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {ear1="Barkarole earring"})
-
-    -- sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
-
-
-    ------------------------------------------------------------------------------------------------------------------
-    -- Midcasting Sets
-    ------------------------------------------------------------------------------------------------------------------
-
-
-	-- Enhancing Spells \\Generalized//
-    sets.midcast['Enhancing Magic'] = {
-		main="Lathi",
-		sub="Tzacab Grip",
-		ammo="Clarus stone",
-		head="Befouled Crown",
-		body="Shango Robe",
-		feet="Regal pumps +1",
-		waist="Austerity Belt +1",
-		left_ear="Magnetic Earring",
-		right_ear="Loquacious Earring",
-		left_ring="Veneficium Ring",
-		right_ring="Stikini Ring",
-		back="Perimede Cape"
-	}
+-- Set macro book/set --
+    send_command('input /macro book 2;wait .1;input /macro set 1')
 	
-	sets.midcast.Stoneskin = {
-		main="Lathi",
-		sub="Tzacab Grip",
-		ammo="Clarus stone",
-		head="Umuthi Hat",
-		body="Shango Robe",
-		hands="Carapacho Cuffs",
-		feet="Regal pumps +1",
-		waist="Austerity Belt +1",
-		left_ear="Magnetic Earring",
-		right_ear="Earthcry Earring",
-		left_ring="Veneficium Ring",
-		right_ring="Stikini Ring",
-		back="Perimede Cape"	
-	}
+	-- Binds for BoomBoom
+	--Toggle BoomBoom sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+  	send_command('bind ^f8 gs c C8') 
+    send_command('bind !f9 gs c toggle BoomBoom set')
+	send_command('bind ^f9 gs c reverse BoomBoom set')
 
-	-- Haste
-    sets.midcast.Haste = sets.midcast['Enhancing Magic']
+	-- BoomBoom --
+	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
+	ShadowType = 'None'
+	
+  --BoomBoom Sets--
+  sets.BoomBoom = {}
+  sets.BoomBoom.index = {'Nuke', 'MagicBurst', 'DamageTaken', 'TP', 'Refresh'}
+  BoomBoom_ind = 1
 
-	-- Flurry
-    sets.midcast.Flurry = sets.midcast['Enhancing Magic']
-
-
-
-	-- We gota cure the shit out of people. I'm making the cures count.  Fuck that half ass cure shit.
-    sets.midcast.Cure = {
-		main="Lathi",
-		sub="Tzacab Grip",
-        head="Vanya Hood",
-		body="Heka's Kalasiris",
-		hands="Telchine gloves",
-		ring1="Stikini Ring",
-		ring2="Veneficium Ring", 
-		waist="Austerity belt+1", 
-		back="Pahtli Cape",
-		legs="Merlinic shalwar",
-		feet="Vanya Clogs"
-	}
-
-	-- Curaga the mother fuckers
-    sets.midcast.Curaga = sets.midcast.Cure
-
-	-- Protecting the party
-    sets.midcast.Protectra = {
-		ring1="Sheltered Ring"
-	}
-
-	-- MDF the party
-    sets.midcast.Shellra = {
-		ring1="Sheltered Ring"
-	}
-
-  	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
-	sets.midcast['Elemental Magic'] = {
-		main="Lathi",
-		sub="Tzacab Grip",		
+    	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
+	sets.BoomBoom.Nuke = {
+		main="Grioavolr",
+		sub="Elder's grip +1",		
 		ammo="Dosis Tathlum",
 		head="Merlinic Hood",
 		body="Merlinic Jubbah",
@@ -163,37 +32,130 @@ function init_gear_sets()
 		left_ear="Barkaro. Earring",
 		right_ear="Halasz Earring",
 		left_ring="Fenrir Ring +1",
-		right_ring="Stikini ring",
+		right_ring="Stikini Ring +1",
 		back="Bane cape"
 	}
-
-	-- TODO I'm not too familiar with this .Resistance stuff.  Need to look into it sometime.  Pack on the fucking MACC and Elemental skill if shit resists.
-    -- sets.midcast['Elemental Magic'].Resistant = {
-		-- main="Lathi",
-		-- sub="Ammurapi Shield",
-		-- ammo="Pemphredo Tathlum",
-		-- head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+27','Magic burst mdg.+11%','INT+8','Mag. Acc.+15',}},
-		-- body={ name="Merlinic Jubbah", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst mdg.+10%','CHR+3','"Mag.Atk.Bns."+14',}},
-		-- hands={ name="Amalric Gages", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-		-- legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+28','Magic burst mdg.+11%','Mag. Acc.+4',}},
-		-- feet={ name="Merlinic Crackows", augments={'Mag. Acc.+21 "Mag.Atk.Bns."+21','Magic burst mdg.+9%','INT+5','Mag. Acc.+2','"Mag.Atk.Bns."+4',}},
-		-- neck="Mizu. Kubikazari",
-		-- waist="Refoccilation Stone",
-		-- left_ear="Barkaro. Earring",
-		-- right_ear="Friomisi Earring",
-		-- left_ring="Shiva Ring",
-		-- right_ring="Mujin Band",
-		-- back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10',}},
-	-- }
-
-    -- sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
-    -- sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {sub="Wizzan Grip"})
-
 	
+	sets.BoomBoom.MagicBurst = {}
+	
+	
+	-- DamageTaken Set
+    sets.BoomBoom.DamageTaken = {
+		main="Malignance Pole",
+		sub="Elder's grip +1",
+		head="Befouled Crown",
+		body="Shamash Robe",
+		hands="Amalric gages +1",
+		legs="Assid. Pants +1",
+		feet="Amalric nails +1",
+		neck="Loricate torque +1",
+		waist="Isa Belt",
+		left_ear="Hearty Earring",
+		right_ear="Moonshade Earring",
+		left_ring="Patricius Ring",
+		right_ring="Defending Ring",
+		back="Repulse Mantle"
+	}
+	
+    -- When Voliathon is engaged in battle, this set kicks in...
+    sets.BoomBoom.TP = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
+		ammo="Staunch Tathlum",
+		head="Jhakri Coronal +2",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
+		neck="Loricate torque +1",
+		waist="Grunfeld Rope",
+		left_ear="Steelflash Earring",
+		right_ear="Bladeborn Earring",
+		left_ring="Patricius Ring",
+		right_ring="Defending Ring"
+	}  
+	
+	
+    -- Fast Cast for Black Mage --
+    sets.FastCast = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
+		head="Merlinic Hood",
+		body="Shango Robe",
+		hands="Amalric gages +1",
+		legs="Merlinic shalwar",
+		feet="Merlinic Crackows",
+		waist="Witful Belt",
+		left_ear="Loquac. Earring",
+		right_ear="Magnetic earring",
+		left_ring="Venficium ring",
+		back="Perimede cape"
+	}
+
+
+	-- Enhancing Spells \\Generalized//
+    sets.Enhancing = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
+		ammo="Clarus stone",
+		head="Befouled Crown",
+		body="Shango Robe",
+		feet="Regal pumps +1",
+		waist="Austerity Belt +1",
+		left_ear="Magnetic Earring",
+		right_ear="Loquacious Earring",
+		left_ring="Veneficium Ring",
+		right_ring="Stikini Ring +1",
+		back="Perimede Cape"
+	}
+
+	-- Stoneskin
+	sets.Stoneskin = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
+		ammo="Clarus stone",
+		head="Umuthi Hat",
+		body="Shango Robe",
+		hands="Carapacho Cuffs",
+		feet="Regal pumps +1",
+		waist="Austerity Belt +1",
+		left_ear="Magnetic Earring",
+		right_ear="Earthcry Earring",
+		left_ring="Veneficium Ring",
+		right_ring="Stikini Ring +1",
+		back="Perimede Cape"	
+	}
+
+
+	-- We gota cure the shit out of people. I'm making the cures count.  Fuck that half ass cure shit.
+    sets.Cure = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
+        head="Vanya Hood",
+		body="Heka's Kalasiris",
+		hands="Telchine gloves",
+		ring1="Stikini Ring +1",
+		ring2="Veneficium Ring", 
+		waist="Austerity belt+1", 
+		back="Pahtli Cape",
+		legs="Merlinic shalwar",
+		feet="Vanya Clogs"
+	}
+
+	-- Protecting the party
+    sets.Protectra = {
+		ring1="Sheltered Ring"
+	}
+
+	-- MDF the party
+    sets.Shellra = {
+		ring1="Sheltered Ring"
+	}
+
 	-- Dark Magic for Impact, Drain, Aspir... Shit like that
-    sets.midcast['Dark Magic'] = {
-		main="Lathi",
-		sub="Tzacab Grip",
+    sets.DarkMagic = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
 		head="Merlinic hood",
 		body="Shango robe",
 		hands="Merlinic Dastanas",
@@ -203,16 +165,16 @@ function init_gear_sets()
 		waist="Aswang Sash",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
 		right_ring="Fenrir Ring +1",
 		back="Bane cape"
 	}
 
 	-- Enfeebling the fuck out of things is the name of the game sometimes...  
 	--This set allows for better odds when people don't want to fucking play the game
-    sets.midcast['Enfeebling Magic'] = {
-		main="Lathi",
-		sub="Tzacab Grip",
+    sets.EnfeeblingMagic = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
 		head="Befouled Crown",
 		body="Ischemia Chasu.",
 		hands="Merlinic Dastanas",
@@ -221,15 +183,15 @@ function init_gear_sets()
 		waist="Aswang Sash",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
 		right_ring="Fenrir Ring +1",
 		back="Bane cape"
 	}
 
 	-- Drain Set and Aspir
-    sets.midcast.Drain = {
-		main="Lathi",
-		sub="Tzacab Grip",
+    sets.Drain = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
 		head="Merlinic hood",
 		body="Shango Robe",
 		hands="Merlinic Dastanas",
@@ -239,23 +201,16 @@ function init_gear_sets()
 		waist="Aswang Sash",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
 		right_ring="Fenrir Ring +1",
 		back="Bane cape"
 	}
 
 	-- Aspir uses the same Drain set
-    sets.midcast.Aspir = sets.midcast.Drain
+    sets.Aspir = sets.Drain
 	
-
-	-- TODO - I don't know if this is needed. It might be some hacky shit cause the fuck was too lazy to add Aspir III to the list of 
-	-- known FFXI spells that reside in MOTE-Spells or some shit like that. Fuck I don't want to even look. A bullshit comment like this
-	-- takes longer to come up with than to just fucking look.
-    sets.midcast['Aspir III'] = sets.midcast.Drain
-
-
 	-- Impact whenever the fuck I get the damn cloak
-    sets.midcast.Impact = {    
+    sets.Impact = {    
       body="Twilight Cloak",
 	}
 
@@ -276,10 +231,10 @@ function init_gear_sets()
 	}
 
 
-    -- When idled, I jump into this set... Maybe...
-    sets.idle = {
-		main="Lathi",
-		sub="Tzacab Grip",
+    -- When idled, I jump into Refresh
+    sets.Refresh = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
 		head="Befouled Crown",
 		body="Ischemia chasuble",
 		legs="Assid. Pants +1",
@@ -292,114 +247,22 @@ function init_gear_sets()
 		back="Repulse Mantle"
 	}
 
-	-- PDT Set
-    sets.idle.PDT = {
-		main="Lathi",
-		sub="Tzacab Grip",
-		head="Befouled Crown",
-		body="Merlinic jubbah",
-		hands="Amalric Gages",
-		legs="Assid. Pants +1",
-		feet="Amalric nails",
-		neck="Loricate torque +1",
-		waist="Isa Belt",
-		left_ear="Hearty Earring",
-		right_ear="Moonshade Earring",
-		left_ring="Patricius Ring",
-		right_ring="Defending Ring",
-		back="Repulse Mantle"
-	}
 
-     
-
-    -- PDT Set
-    sets.defense.PDT = {
-		main="Lathi",
-		sub="Tzacab Grip",
-		head="Befouled Crown",
-		body="Merlinic jubbah",
-		hands="Amalric Gages",
-		legs="Assid. Pants +1",
-		feet="Amalric nails",
-		neck="Loricate torque +1",
-		waist="Isa Belt",
-		left_ear="Hearty Earring",
-		right_ear="Moonshade Earring",
-		left_ring="Patricius Ring",
-		right_ring="Defending Ring",
-		back="Repulse Mantle"
-	}
-
-	-- Magic Defense and Magic Defense Set
-    sets.defense.MDT = {
-		main="Lathi",
-		sub="Tzacab Grip",
-		head="Befouled Crown",
-		body="Merlinic jubbah",
-		hands="Amalric Gages",
-		legs="Assid. Pants +1",
-		feet="Amalric nails",
-		neck="Loricate torque +1",
-		waist="Slipor Sash",
-		left_ear="Hearty Earring",
-		right_ear="Moonshade Earring",
-		left_ring="Yacuruna Ring",
-		right_ring="Defending Ring",
-		back="Mubvumbamiri Mantle"
-	}
-
-		
-	-- When I gotta kite shite, I put on my Sandals and shit...
-   -- sets.Kiting = {feet="Geomancy Sandals +1"}
-
-    
-	-- Latent Refresh Bullshit
-	--sets.latent_refresh = {waist="Fucho-no-obi"}
-
-
-    --------------------------------------
-    -- Engaged sets
-    --------------------------------------
-
-    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-    -- sets if more refined versions aren't defined.
-    -- If you create a set with both offense and defense modes, the offense mode should be first.
-    -- EG: sets.engaged.Dagger.Accuracy.Evasion
-
-	
-    -- When Voliathon is engaged in battle, this set kicks in...
-    sets.engaged = {
-		main="Lathi",
-		sub="Tzacab Grip",
-		ammo="Staunch Tathlum",
-		head="Jhakri Coronal",
-		body="Jhakri Robe",
-		hands="Jhakri Cuffs",
-		legs="Jhakri Slops",
-		feet="Jhakri Pigaches +1",
-		neck="Loricate torque +1",
-		waist="Grunfeld Rope",
-		left_ear="Steelflash Earring",
-		right_ear="Bladeborn Earring",
-		left_ring="Patricius Ring",
-		right_ring="Defending Ring",
-		back="Mecisto. Mantle"
-	}
 
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
 
-	-- All Weaponskills for Geomancer unless explicitly defined below sets.precast.WS 
-     sets.precast.WS = {
-		main="Lathi",
-		sub="Tzacab Grip",
+	-- All Weaponskills for Black Mage unless explicitly defined below sets.precast.WS 
+     sets.WS = {
+		main="Grioavolr",
+		sub="Elder's grip +1",
 		ammo="Amar Cluster",
-		head="Jhakri Coronal",
-		body="Jhakri Robe",
-		hands="Jhakri Cuffs",
-		legs="Jhakri Slops",
-		feet="Jhakri Pigaches +1",
+		head="Jhakri Coronal +2",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Steelflash Earring",
@@ -409,112 +272,206 @@ function init_gear_sets()
 		back="Mecisto. Mantle"
 	 }
 
-    -- Flash Nova Weaponskill
-    -- sets.precast.WS['Flash Nova'] = {
-		-- ammo="Dosis Tathlum",
-        -- head="Hagondes Hat",
-		-- neck="Eddy Necklace",
-		-- ear1="Friomisi Earring",
-		-- ear2="Crematio Earring",
-        -- body="Hagondes Coat",
-		-- hands="Yaoyotl Gloves",
-		-- ring1="Acumen Ring",
-		-- ring2="Strendu Ring",
-        -- back="Toro Cape",
-		-- waist="Snow Belt",
-		-- legs="Hagondes Pants",
-		-- feet="Hagondes Sabots"
-	-- }
 
 end
 
--------------------------------------------------------------------------------------------------------------------
--- Job-specific hooks for standard casting events.
--------------------------------------------------------------------------------------------------------------------
 
-function job_aftercast(spell, action, spellMap, eventArgs)
-    if not spell.interrupted then
-        if spell.english:startswith('Indi') then
-            if not classes.CustomIdleGroups:contains('Indi') then
-                classes.CustomIdleGroups:append('Indi')
-            end
-            send_command('@timers d "'..indi_timer..'"')
-            indi_timer = spell.english
-            send_command('@timers c "'..indi_timer..'" '..indi_duration..' down spells/00136.png')
-        elseif spell.english == 'Sleep' or spell.english == 'Sleepga' then
-            send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 60 down spells/00220.png')
-        elseif spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
-            send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 90 down spells/00220.png')
+function precast(spell,abil)
+
+	-- Dancer Abilities --
+  if string.find(spell.english, 'Waltz') then
+	equip(sets.JA.Waltz)
+  end	
+  
+  --equips favorite weapon if disarmed
+  if player.equipment.main == "empty" or player.equipment.sub == "empty" then
+    equip({main="Grioavolr",sub="Utu Grip"})
+    add_to_chat(158,'Grioavolr Weapon: [ON]')
+	Lionheart = 'OFF'
+  end
+  
+  if spell.skill == 'Enhancing Magic' then
+	equip(sets.precast)
+  end
+  if spell.action_type == 'Magic' then
+    equip(sets.Utility.PDT,sets.precast)
+  end
+  
+  
+  if spell.name == 'Lunge' or spell.name == 'Swipe' then
+    equip(sets.JA.Lunge)
+  end
+  --prevents Valiance/Vallation/Liement from being prevented by each other (cancels whichever is active)
+  if spell.name == 'Valiance' or spell.name == 'Vallation' or spell.name == 'Liement' then
+    if buffactive['Valiance'] then
+      cast_delay(0.2)
+      windower.ffxi.cancel_buff(535)
+    elseif buffactive['Vallation'] then
+      cast_delay(0.2)
+      windower.ffxi.cancel_buff(531)
+    elseif buffactive['Liement'] then
+      cast_delay(0.2)
+      windower.ffxi.cancel_buff(537)
+    end
+  end
+  if spell.name == 'Vallation' or spell.name == 'Valiance' then
+    equip(sets.Enmity,sets.JA.Vallation)
+  end
+  if spell.name == 'Pflug' then
+    equip(sets.Enmity,sets.JA.Pflug)
+  end
+  if spell.name == 'Elemental Sforzo' or spell.name == 'Liement' then
+    equip(sets.Enmity,{body="Futhark coat +1"})
+  end
+  if spell.name == 'Gambit' then
+    equip(sets.Enmity,sets.JA.Gambit)
+  end
+  if spell.name == 'Embolden' then
+    equip({back={ name="Evasionist's Cape", augments={'Enmity+5','"Embolden"+14','"Dbl.Atk."+2','Damage taken-3%'}}})
+  end  
+  if spell.name == 'Rayke' then
+    equip(sets.Enmity,sets.JA.Rayke)
+  end
+  if spell.name == 'Battuta' then
+    equip(sets.Enmity,sets.JA.Battuta)
+  end
+  if spell.name == 'Vivacious Pulse' then
+    equip(sets.Enmity,sets.JA.Pulse)
+  end
+  if spell.name == 'One for All' or spell.name == 'Embolden' or spell.name == 'Odyllic Subterfuge' or spell.name == 'Warcry'
+    or spell.name == 'Swordplay' or spell.name == 'Meditate' or spell.name == 'Provoke' then
+    equip(sets.Enmity, {hands="Futhark mitons +1"})
+  end
+  if spell.name == 'Resolution' then
+    equip(sets.Resolution)
+  end
+  if spell.name == 'Dimidiation' or spell.name == 'Spinning Slash'  then
+    equip(sets.Single)
+  end
+  if spell.name == 'Shockwave' then
+    equip(sets.Shockwave)
+  end
+  if spell.name == 'Herculean Slash' or spell.name == 'Freezebite' or spell.name == 'Frostbite' then
+    equip(sets.HercSlash)
+  end
+
+  --prevents casting Utsusemi if you already have 3 or more shadows
+  if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
+    cancel_spell()
+  end
+    --Utsusemi Check
+  if string.find(spell.name,'Utsusemi') then
+    equip({neck="Magoraga Beads"})
+  end
+  
+  if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
+    if BoomBoom_ind == 4 then
+      equip(sets.Utility.MDT) else
+      equip(sets.Utility.PDT)
+    end
+  end
+end
+
+
+
+--Should NOT put Job Abilities here.  Ony Magic Fren!  Fren is Doggo Speak for Friend
+function midcast(spell,act,arg)
+  if spell.skill == 'Elemental Magic' then
+    equip(sets.JA.Lunge)
+  end
+
+  if spell.skill == 'Enhancing Magic' then
+	if spell.name == 'Phalanx' then
+		equip(sets.SIR,sets.Phalanx)
+	end
+	if spell.name == "Blink" or spell.name == "Stoneskin" then
+      equip(sets.SIR,sets.Stoneskin)
+	end
+	if spell.name == 'Foil' then
+	  equip(sets.SIR,sets.enmity)
+	end
+    if string.find(spell.name,'Refresh') then
+	  equip(sets.SIR,sets.Enhancing)
+    end
+    if string.find(spell.name,'Regen') then
+      equip(sets.SIR,sets.Enhancing)
+    end
+  
+  end
+  
+  if spell.name == 'Flash' or spell.name == "Stun" then
+    equip(sets.Enmity)
+  end
+  if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then
+    equip(sets.MagicAcc)
+  end
+
+end
+
+
+function aftercast(spell)
+  equip_current()
+  --Just running a lil somethin-somethin to track Shadows
+  if string.find(spell.name,'Utsusemi') and not spell.interrupted then
+    if spell.name == 'Utsusemi: Ichi' then
+      ShadowType = 'Ichi'
+    elseif spell.name == 'Utsusemi: Ni' then
+      ShadowType = 'Ni'
+    end
+  end
+end
+
+
+--This function should only get kicked off when you're engaging.  
+--If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--But I don't want to fuck myself by ignoring the engaged check.
+--I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+function equip_current()
+	equip(sets.BoomBoom[sets.BoomBoom.index[BoomBoom_ind]]) 
+end
+
+--Function use for Changing the BoomBoom Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
+function self_command(command)
+	if command == 'C8' then -- Lionheart to Grioavolr --	
+        if Lionheart == 'ON' then
+            Lionheart = 'OFF'
+			equip({main="Grioavolr", sub="Utu Grip"})
+            add_to_chat(158,'Grioavolr Weapon: [ON]')
+			add_to_chat(123,'Lionheart Weapon: [OFF]')
+		else
+            Lionheart = 'ON'
+			equip({main="Lionheart", sub="Utu Grip"})
+            add_to_chat(158,'Lionheart Weapon: [ON]')
+            add_to_chat(123,'Grioavolr Weapon: [OFF]')				
         end
-    elseif not player.indi then
-        classes.CustomIdleGroups:clear()
-    end
+       -- status_change(player.status)
+	elseif command == 'toggle BoomBoom set' then
+		BoomBoom_ind = BoomBoom_ind -1
+		if BoomBoom_ind == 0 then BoomBoom_ind = #sets.BoomBoom.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.BoomBoom.index[BoomBoom_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse BoomBoom set' then
+		BoomBoom_ind = BoomBoom_ind +1
+		if BoomBoom_ind > #sets.BoomBoom.index then BoomBoom_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.BoomBoom.index[BoomBoom_ind]..' ----->')
+		equip_current()
+	end
 end
 
 
--------------------------------------------------------------------------------------------------------------------
--- Job-specific hooks for non-casting events.
--------------------------------------------------------------------------------------------------------------------
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
+	end
+end)
 
--- Called when a player gains or loses a buff.
--- buff == buff gained or lost
--- gain == true if the buff was gained, false if it was lost.
-function job_buff_change(buff, gain)
-    if player.indi and not classes.CustomIdleGroups:contains('Indi')then
-        classes.CustomIdleGroups:append('Indi')
-        handle_equipping_gear(player.status)
-    elseif classes.CustomIdleGroups:contains('Indi') and not player.indi then
-        classes.CustomIdleGroups:clear()
-        handle_equipping_gear(player.status)
-    end
-end
 
-function job_state_change(stateField, newValue, oldValue)
-    if stateField == 'Offense Mode' then
-        if newValue == 'Normal' then
-            disable('main','sub','range')
-        else
-            enable('main','sub','range')
-        end
-    end
-end
 
--------------------------------------------------------------------------------------------------------------------
--- User code that supplements standard library decisions.
--------------------------------------------------------------------------------------------------------------------
 
-function job_get_spell_map(spell, default_spell_map)
-    if spell.action_type == 'Magic' then
-        if spell.skill == 'Enfeebling Magic' then
-            if spell.type == 'WhiteMagic' then
-                return 'MndEnfeebles'
-            else
-                return 'IntEnfeebles'
-            end
-        end
-    end
-end
-
-function customize_idle_set(idleSet)
-    if player.mpp < 51 then
-        idleSet = set_combine(idleSet, sets.latent_refresh)
-    end
-    return idleSet
-end
-
--- Called by the 'update' self-command.
-function job_update(cmdParams, eventArgs)
-    classes.CustomIdleGroups:clear()
-    if player.indi then
-        classes.CustomIdleGroups:append('Indi')
-    end
-end
-
--- Function to display the current relevant user state when doing an update.
-function display_current_job_state(eventArgs)
-    display_current_caster_state()
-    eventArgs.handled = true
-end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.

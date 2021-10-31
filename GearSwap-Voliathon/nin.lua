@@ -24,14 +24,14 @@ function get_sets()
     --One WS Set to Rule them all. Fuck it...for now...
     sets.WS = {
 		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
 		legs="Hiza. Hizayoroi +2",
 		feet="Ken. Sune-Ate +1",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		right_ear="Ishvara Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Epaminondas's Ring",
@@ -56,11 +56,11 @@ function get_sets()
     
 	sets.NUKE = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Herculean Helm", augments={'Magic burst dmg.+7%','STR+7','Mag. Acc.+10','"Mag.Atk.Bns."+11',}},
-		body={ name="Herculean Vest", augments={'Accuracy+24','Magic burst dmg.+7%','"Mag.Atk.Bns."+15',}},
-		hands={ name="Herculean Gloves", augments={'Accuracy+9','Magic burst dmg.+7%','"Mag.Atk.Bns."+4',}},
-		legs={ name="Herculean Trousers", augments={'Magic burst dmg.+7%','Mag. Acc.+12','"Mag.Atk.Bns."+10',}},
-		feet={ name="Adhe. Gamashes +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}},
+		head={ name="Herculean Helm", augments={'Magic burst dmg.+7%','STR+7','Mag. Acc.+10','"Mag.Atk.Bns."+11'}},
+		body={ name="Herculean Vest", augments={'Accuracy+24','Magic burst dmg.+7%','"Mag.Atk.Bns."+15'}},
+		hands={ name="Herculean Gloves", augments={'Accuracy+9','Magic burst dmg.+7%','"Mag.Atk.Bns."+4'}},
+		legs={ name="Herculean Trousers", augments={'Magic burst dmg.+7%','Mag. Acc.+12','"Mag.Atk.Bns."+10'}},
+		feet={ name="Adhe. Gamashes +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20'}},
 		neck="Sanctity Necklace",
 		waist="Fotia Belt",
 		left_ear="Hecate's Earring",

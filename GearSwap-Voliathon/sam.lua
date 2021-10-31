@@ -1,6 +1,6 @@
 function get_sets()
 -- Set macro book/set --
-    send_command('input /macro book 18;wait .1;input /macro set 1')
+    send_command('input /macro book 7;wait .1;input /macro set 1')
 	
 	-- Binds for modes
 	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
@@ -114,18 +114,18 @@ function get_sets()
   --multi, Shoha, Fudo, Kasha need STR for the modifier
   sets.Single = {
 	main="Dojikiri Yasutsuna",
-	ammo="Ginsen",
-	head="Valorous mask",
-	body="Valorous Mail",
-	hands="Valorous mitts",
-	legs="Hizamaru hizayoroi +2",
-	feet="Valorous Greaves",
-	neck="Fotia gorget",
-	waist="Fotia Belt",
-	left_ear="Ishvara earring",
-	right_ear="Moonshade Earring",
-	right_ring="Flamma Ring",
-	left_ring="Epaminondas's Ring",
+    ammo="Ginsen",
+    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%'}},
+    body={ name="Valorous Mail", augments={'Accuracy+18','Weapon skill damage +4%','Attack+5'}},
+    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12'}},
+    legs="Hiza. Hizayoroi +2",
+    feet={ name="Valorous Greaves", augments={'Weapon skill damage +3%','Mag. Acc.+16','"Treasure Hunter"+1','Accuracy+13 Attack+13','Mag. Acc.+19 "Mag.Atk.Bns."+19'}},
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+    left_ring="Epaminondas's Ring",
+    right_ring="Flamma Ring",
     back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
   }
 

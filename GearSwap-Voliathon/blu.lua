@@ -85,18 +85,19 @@ function get_sets()
 	
 	--Fast Cast
 	sets.FastCast = {
-		-- ammo="Pemphredo Tathlum",
-		-- head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
-		-- body="Pinga Tunic",
-		-- hands="Leyline gloves",
-		-- legs="Pinga Pants",
-		-- feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-		-- neck="Mirage Stole +2",
-		-- waist="Kasiri Belt",
-		-- left_ear="Loquac. Earring",
-		-- right_ear="Mendi. Earring",
-		-- left_ring="Kishar Ring",
-		-- back=Rosmerta.Int
+		ammo="Staunch Tathlum +1",
+		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
+		body="Dread Jupon",
+		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
+		legs="Malignance Tights",
+		feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20'}},
+		neck={ name="Loricate Torque +1", augments={'Path: A'}},
+		waist="Witful Belt",
+		left_ear="Loquac. Earring",
+		right_ear="Halasz Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Veneficium Ring",
+		back="Perimede Cape"
     }
 	
 	-- Enhancing
@@ -107,33 +108,33 @@ function get_sets()
 	-- Magic Accuracy
     sets.MagicAccuracy = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Herculean Helm", augments={'Accuracy+3','MND+15','"Treasure Hunter"+1','Accuracy+13 Attack+13','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
-		body={ name="Samnuha Coat", augments={'Mag. Acc.+8','"Mag.Atk.Bns."+11','"Dual Wield"+2',}},
-		hands={ name="Helios Gloves", augments={'"Mag.Atk.Bns."+25','Magic crit. hit rate +7','Mag. crit. hit dmg. +10%',}},
-		legs={ name="Hagondes Pants", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+29',}},
-		feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+		head="Malignance Chapeau",
+		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
+		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
+		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
+		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
 		neck="Nefarious Collar",
 		waist="Yamabuki-no-Obi",
-		left_ear="Halasz Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Fenrir Ring +1",
-		right_ring="Stikini Ring",
+		left_ear="Digni. Earring",
+		right_ear="Hecate's Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Fenrir Ring +1",
 		back="Toro Cape"
     }	
 	
 	--Engaged Sets--
 	sets.engaged = {}
---				    	    1		     2             					 3 		   		5 			6
-	sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Refresh', 'Movement'}
+--				    	    1		     2             					 3 		   		5 			6		 7
+	sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Refresh', 'Movement', 'TH'}
 	engaged_ind = 1 	
 	
     sets.engaged.TP = {
 		ammo="Ginsen",
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2',}},
+		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
+		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
+		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},
 		neck="Clotharius Torque",
 		waist="Grunfeld Rope",
 		left_ear="Dudgeon Earring",
@@ -149,12 +150,12 @@ function get_sets()
 		head="Malignance Chapeau",
 		body="Shamash Robe",
 		hands="Malignance Gloves",
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Loricate Torque +1",
 		waist="Flume Belt",
 		left_ear="Genmei Earring",
-		right_ear="Hearty Earring",
+		right_ear="Odnowa Earring +1",
 		left_ring="Patricius Ring",
 		right_ring="Defending Ring",
 		back="Moonbeam Cape"
@@ -166,12 +167,12 @@ function get_sets()
 		head="Malignance Chapeau",
 		body="Shamash Robe",
 		hands="Malignance Gloves",
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Loricate Torque +1",
 		waist="Flume Belt",
 		left_ear="Genmei Earring",
-		right_ear="Hearty Earring",
+		right_ear="Odnowa Earring +1",
 		left_ring="Patricius Ring",
 		right_ring="Defending Ring",
 		back="Moonbeam Cape"
@@ -179,16 +180,36 @@ function get_sets()
 	
 
 	sets.engaged.Refresh = {
-		head={ name="Amalric Coif", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15'}},
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
 		body="Shamash Robe",
-		feet=HercFeet.Refresh,
+		hands="Malignance Gloves",
+		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		feet="Malignance Boots",
 		neck="Sanctity Necklace",
-		waist="Fucho-no-Obi",
-		left_ear="Infused Earring",
+		waist="Flume Belt +1",
+		left_ear="Genmei Earring",
+		right_ear="Infused Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
+		right_ring="Chirich Ring +1",
+		back="Repulse Mantle"
 	}
-	
+
+	sets.engaged.TH = {
+		ammo="Staunch Tathlum +1",
+		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
+		body="Shamash Robe",
+		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
+		legs="Malignance Tights",
+		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
+		neck={ name="Loricate Torque +1", augments={'Path: A'}},
+		waist="Chaac Belt",
+		left_ear="Genmei Earring",
+		right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
+		left_ring="Stikini Ring +1",
+		right_ring="Defending Ring",
+		back="Moonbeam Cape"
+	}
 	-- If you're not first, you're last
     sets.engaged.Movement = {legs="Carmine Cuisses +1"}
 	
@@ -255,17 +276,17 @@ function get_sets()
     -- Magical Spells --
     sets.BlueMagicMagical = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Herculean Helm", augments={'Accuracy+3','MND+15','"Treasure Hunter"+1','Accuracy+13 Attack+13','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
-		body={ name="Samnuha Coat", augments={'Mag. Acc.+8','"Mag.Atk.Bns."+11','"Dual Wield"+2',}},
-		hands={ name="Helios Gloves", augments={'"Mag.Atk.Bns."+25','Magic crit. hit rate +7','Mag. crit. hit dmg. +10%',}},
-		legs={ name="Hagondes Pants", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+29',}},
-		feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
+		head="Malignance Chapeau",
+		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
+		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
+		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
+		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
 		neck="Nefarious Collar",
 		waist="Yamabuki-no-Obi",
-		left_ear="Halasz Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Fenrir Ring +1",
-		right_ring="Stikini Ring",
+		left_ear="Digni. Earring",
+		right_ear="Hecate's Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Fenrir Ring +1",
 		back="Toro Cape"
     }
 	
@@ -292,18 +313,18 @@ function get_sets()
 	-- Cure spells
     sets.BlueMageCures = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Herculean Helm", augments={'Accuracy+3','MND+15','"Treasure Hunter"+1','Accuracy+13 Attack+13','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
+		head="Malignance Chapeau",
 		body="Shamash Robe",
 		hands="Telchine Gloves",
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-		feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
+		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
 		neck="Sanctity Necklace",
 		waist="Witful Belt",
-		left_ear="Mendi. Earring",
-		right_ear="Magnetic Earring",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring",
-		back="Tempered Cape +1"	
+		left_ear="Magnetic Earring",
+		right_ear="Mendi. Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Ephedra Ring",
+		back="Tempered Cape +1"
     }
 
 	
@@ -313,14 +334,14 @@ function get_sets()
     sets.WSD = {
 		ammo="Amar Cluster",
 		head="Malignance Chapeau",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11',}},
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
 		hands="Malignance Gloves",
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Ishvara Earring",
-		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Epaminondas's Ring",
 		right_ring="Rajas Ring",
 		back="Vespid Mantle"
@@ -329,14 +350,14 @@ function get_sets()
     sets.ChantduCygne = {
 		ammo="Amar Cluster",
 		head="Malignance Chapeau",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11',}},
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
 		hands="Malignance Gloves",
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Ishvara Earring",
-		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Epaminondas's Ring",
 		right_ring="Rajas Ring",
 		back="Vespid Mantle"
