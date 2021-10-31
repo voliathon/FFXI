@@ -131,7 +131,7 @@ function get_sets()
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Halasz Earring",
-		left_ring="Jhakri Ring",
+		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
 		back="Seshaw cape"
 	}
