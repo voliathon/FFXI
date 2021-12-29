@@ -140,7 +140,7 @@ function get_sets()
 
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
   sets.Single = {
-    ammo="Yetshila +1",
+    ammo="Knobkierrie",
     head={ name="Lustratio Cap +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
     body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}},
     hands="Meg. Gloves +2",
@@ -157,11 +157,11 @@ function get_sets()
 
   --added effect
   sets.Shockwave = {
-    ammo="Yetshila +1",
+    ammo="Knobkierrie",
     head="Adhemar Bonnet +1",
     body="Herculean vest",
     hands="Meg. Gloves +2",
-    legs="Herculean trousers",
+    legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
     feet="Ayanmo gambieras +2",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
@@ -174,11 +174,11 @@ function get_sets()
 
   --magic WS
   sets.HercSlash = {
-    ammo="Yetshila +1",
+    ammo="Knobkierrie",
 	head="Adhemar Bonnet +1",
     body="Herculean vest",
     hands="Meg. Gloves +2",
-    legs="Herculean trousers",
+    legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
     left_ear="Crematio Earring",
@@ -249,7 +249,7 @@ function get_sets()
 	
 	
   sets.JA.Lunge = {}
-  sets.JA.Vallation = {body="Runeist Coat +2",legs="Futhark Trousers +1"}
+  sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +1"}
   sets.JA.Gambit = {hands="Runeist's mitons +2"}
   sets.JA.Rayke = {feet="Futhark boots +1"}
   sets.JA.Battuta = {head="Futhark bandeau +1"}
@@ -280,7 +280,7 @@ function get_sets()
     head={ name="Fu. Bandeau +1", augments={'Enhances "Battuta" effect'}},
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3'}},
     hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect'}},
+    legs={ name="Herculean Trousers", augments={'Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Pet: Accuracy+16 Pet: Rng. Acc.+16','Phalanx +4','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
     feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Siegel Sash",
@@ -429,6 +429,28 @@ end
 
 --Should NOT put Job Abilities here.  Ony Magic Fren!  Fren is Doggo Speak for Friend
 function midcast(spell,act,arg)
+--Unsure if needed cause it should be good enough for precast....
+  --prevents Valiance/Vallation/Liement from being prevented by each other (cancels whichever is active)
+  if spell.name == 'Valiance' or spell.name == 'Vallation' or spell.name == 'Liement' then
+    if buffactive['Valiance'] then
+      cast_delay(0.2)
+      windower.ffxi.cancel_buff(535)
+    elseif buffactive['Vallation'] then
+      cast_delay(0.2)
+      windower.ffxi.cancel_buff(531)
+    elseif buffactive['Liement'] then
+      cast_delay(0.2)
+      windower.ffxi.cancel_buff(537)
+    end
+  end
+  if spell.name == 'Vallation' or spell.name == 'Valiance' then
+    equip(sets.Enmity,sets.JA.Vallation)
+  end
+  if spell.name == 'Pflug' then
+    equip(sets.Enmity,sets.JA.Pflug)
+  end  
+  
+  
   if spell.skill == 'Elemental Magic' then
     equip(sets.JA.Lunge)
   end
@@ -458,7 +480,8 @@ function midcast(spell,act,arg)
   if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then
     equip(sets.MagicAcc)
   end
-
+  
+  
 end
 
 
