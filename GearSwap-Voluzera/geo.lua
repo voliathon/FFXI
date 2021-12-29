@@ -44,7 +44,7 @@ function get_sets()
 		hands="Geomancy Mitaines +1",
         back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}},
 		waist="Austerity Belt +1",
-		legs="Geomancy Pants +1",
+		legs="Geomancy Pants +2",
 		feet="Azimuth Gaiters +1"
 	}
 
@@ -56,7 +56,7 @@ function get_sets()
 		head="Befouled Crown",
 		body="Shango Robe",
 		hands="Bagua Mitaines +1",
-		legs="Geomancy pants +1",
+		legs="Geomancy Pants +2",
 		feet="Regal pumps +1",
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
@@ -74,7 +74,7 @@ function get_sets()
 		head="Umuthi Hat",
 		body="Shango Robe",
 		hands="Carapacho Cuffs",
-		legs="Geomancy pants +1",
+		legs="Geomancy Pants +2",
 		feet="Regal pumps +1",
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
@@ -102,7 +102,7 @@ function get_sets()
 		left_ring="Veneficium Ring", 
 		waist="Austerity belt+1", 
 		back="Pahtli Cape",
-		legs="Geomancy pants +1",
+		legs="Geomancy Pants +2",
 		feet="Vanya Clogs"
 	}
 
@@ -144,7 +144,7 @@ function get_sets()
 		sub="Genmei Shield",	
 		range="Dunna",
 		head="Bagua Galero +1",
-		body="Geo. Tunic +1",
+		body="Geo. Tunic +2",
 		hands="Merlinic Dastanas",
 		legs="Merlinic Shalwar",
 		feet="Merlinic Crackows",
@@ -225,8 +225,8 @@ function get_sets()
 		sub="Genmei Shield",	
 		range="Dunna",
 		head="Azimuth Hood +1",
-		body="Geo. Tunic +1",
-		hands="Geo. Mitaines +1",
+		body="Geo. Tunic +2",
+		hands="Geo. Mitaines +3",
 		legs="Assid. Pants +1",
 		feet="Bagua Sandals +1",
 		neck="Loricate torque +1",
@@ -259,7 +259,7 @@ function get_sets()
 
 		
 	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {feet="Geomancy Sandals +1"}
+    sets.Kiting = {feet="Geomancy Sandals +2"}
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
