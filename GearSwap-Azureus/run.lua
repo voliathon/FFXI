@@ -27,7 +27,8 @@ function get_sets()
   sets.TP.BadAss = {
     ammo="Yamarang",
     head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
-    body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6'}},
+    head="Adhemar Bonnet +1",
+    body="Ayanmo Corazza +2",
     hands="Turms Mittens +1",
     legs="Meg. Chausses +2",
     feet={ name="Herculean Boots", augments={'Rng.Atk.+24','Attack+30','"Store TP"+10','Accuracy+20 Attack+20'}},
@@ -37,7 +38,7 @@ function get_sets()
     right_ear="Telos Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Moonbeam Cape"
+    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
   }
 
   --Tank Gear
@@ -60,7 +61,7 @@ function get_sets()
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
     ammo="Staunch Tathlum",
-    head="Meghanada Visor +2",
+    head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
     body="Ayanmo Corazza +2",
     hands="Turms Mittens +1",
     legs="Meg. Chausses +2",
@@ -76,7 +77,7 @@ function get_sets()
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    head="Turms cap +1",
+    head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
     body="Ashera harness",
     hands="Turms Mittens +1",
     legs="Meg. Chausses +2",
@@ -104,14 +105,14 @@ function get_sets()
     body={ name="Herculean Vest", augments={'"Rapid Shot"+2','Pet: AGI+6','Weapon skill damage +6%','Accuracy+6 Attack+6'}},
     hands="Meg. Gloves +2",
     legs={ name="Herculean Trousers", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','DEX+10','Accuracy+5'}},
-    feet={ name="Herculean Boots", augments={'Rng.Atk.+24','Attack+30','"Store TP"+10','Accuracy+20 Attack+20'}},
+    feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','DEX+8','Attack+14'}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear="Odr Earring",
-    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+    right_ear="Ishvara Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Chirich Ring +1",
-    back="Moonbeam Cape"
+    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
   }
 
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
@@ -121,14 +122,14 @@ function get_sets()
     body={ name="Herculean Vest", augments={'"Rapid Shot"+2','Pet: AGI+6','Weapon skill damage +6%','Accuracy+6 Attack+6'}},
     hands="Meg. Gloves +2",
     legs={ name="Herculean Trousers", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','DEX+10','Accuracy+5'}},
-    feet={ name="Herculean Boots", augments={'Rng.Atk.+24','Attack+30','"Store TP"+10','Accuracy+20 Attack+20'}},
+    feet={ name="Herculean Boots", augments={'Weapon skill damage +4%','DEX+8','Attack+14'}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    left_ear="Ishvara Earring",
-    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+    left_ear="Odr Earring",
+    right_ear="Moonshade Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Chirich Ring +1",
-    back="Moonbeam Cape"
+    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
   }
 
   --added effect
@@ -201,7 +202,7 @@ function get_sets()
   }
   
   sets.Enhancing = {
-    ammo="Staunch Tathlum +1",
+    ammo="Staunch Tathlum",
     head="Erilaz Galea +1",
     body="Dread Jupon",
     hands="Regal Gauntlets",
@@ -212,7 +213,7 @@ function get_sets()
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
     left_ring="Moonlight Ring",
-    right_ring="Stikini Ring"
+    right_ring="Stikini Ring +1"
   }
 
   --Job Ability Sets--
@@ -236,7 +237,7 @@ function get_sets()
   --Precast Sets--
   --Fast Cast set
   sets.precast = {
-    ammo="Staunch Tathlum +1",
+    ammo="Staunch Tathlum",
     head="Rune. Bandeau +1",
     body="Dread Jupon",
     hands="Regal Gauntlets",
@@ -247,37 +248,40 @@ function get_sets()
     left_ear="Mimir Earring",
     right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring"
+    right_ring="Stikini Ring +1"
   }
 
   --Phalanx--
   sets.Phalanx = {
     ammo="Staunch Tathlum",
-    head="Futhark bandeau +1",
-    body={ name="Herculean Vest", augments={'Pet: STR+9','Accuracy+9','Phalanx +5','Accuracy+5 Attack+5',}},
-    hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
-    legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
-    feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
+    head={ name="Taeon Chapeau", augments={'Evasion+20','Spell interruption rate down -10%','Phalanx +3'}},
+    body={ name="Herculean Vest", augments={'Pet: STR+9','Accuracy+9','Phalanx +5','Accuracy+5 Attack+5'}},
+    hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3'}},
+    legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3'}},
+    feet={ name="Herculean Boots", augments={'Crit.hit rate+3','Rng.Acc.+20','Phalanx +4','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
     neck="Incanter's Torque",
     waist="Siegel Sash",
     left_ear="Loquac. Earring",
     right_ear="Magnetic Earring",
-    left_ring="Evanescence Ring",
+    left_ring="Sangoma Ring",
     right_ring="Stikini Ring +1",
     back="Moonbeam Cape"
  }
 
- --88 SIR
+ --86 SIR
  sets.SIR = {
-    ammo="Staunch Tathlum +1", --11
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
-    hands="Regal Gauntlets", --10
+    ammo="Staunch Tathlum", --10
+    head={ name="Taeon Chapeau", augments={'Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}, --10
+    body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}}, --9
+    hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}}, --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck={ name="Loricate Torque +1", augments={'Path: A',}}, --5
-    waist="Audumbla sash", --10
+    feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}}, --9
+    neck="Voltsurge Torque",
+    waist="Siegel Sash",
     left_ear="Halasz Earring", --5
-    right_ear="Magnetic Earring" --8
+    right_ear="Magnetic Earring", --8
+    left_ring="Lebeche Ring",
+    right_ring="Evanescence Ring", --5
  }
  
   --Enmity set for high hate generating spells and JAs
@@ -287,19 +291,15 @@ function get_sets()
   sets.MagicAcc = {}
 
   sets.Stoneskin = {
-    ammo="Staunch Tathlum +1",
+    ammo="Staunch Tathlum",
     head="Rune. Bandeau +1",
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
     neck={ name="Loricate Torque +1", augments={'Path: A',}},
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Earthcry Earring",
     left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
+    right_ring="Stikini Ring +1",
   }
 
 end

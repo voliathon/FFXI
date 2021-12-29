@@ -36,7 +36,7 @@ function get_sets()
     head="Inyanga Tiara +2",
     body="Inyanga Jubbah +2",
     hands="Inyan. Dastanas +2",
-    legs="Inyanga Shalwar +2",
+    legs="Brioso Cannions +3",
     feet="Fili Cothurnes +1",
     neck="Loricate Torque +1",
     waist="Flume Belt",
@@ -84,9 +84,9 @@ function get_sets()
   sets.MagicAccuracy = {
     head="Inyanga Tiara +2",
     body={ name="Chironic Doublet", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','"Cure" potency +8%','CHR+1','Mag. Acc.+13','"Mag.Atk.Bns."+4'}},
-    hands="Brioso Cuffs +2",
-    legs="Inyanga Shalwar +2",
-    feet="Aya. Gambieras +2",
+    hands="Brioso Cuffs +3",
+    legs="Brioso Cannions +3",
+    feet="Brioso Slippers +3",
     neck="Mnbw. Whistle +1",
     waist="Luminary Sash",
     left_ear="Musical Earring",
@@ -102,7 +102,7 @@ function get_sets()
     body="Fili Hongreline +1",
     hands="Fili manchettes +1",
     legs="Inyanga Shalwar +2",
-    feet="Brioso Slippers +2",
+    feet="Brioso Slippers +3",
     neck="Mnbw. Whistle +1",
     waist="Kobo Obi",
     left_ear="Musical Earring",
@@ -143,7 +143,7 @@ function get_sets()
   }
 
   sets.Sleep = set_combine(sets.MagicAccuracy, { 
-	hands="Brioso Cuffs +2",
+	hands="Brioso Cuffs +3",
 	range="Daurdabla",
 	main="Carnwenhan"
   
@@ -202,7 +202,7 @@ function get_sets()
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
     hands="Aya. Manopolas +2",
-    legs="Aya. Cosciales +2",
+    legs="Brioso Cannions +3",
     feet="Aya. Gambieras +2",
     neck="Loricate Torque +1",
     waist="Flume Belt",
@@ -217,7 +217,7 @@ function get_sets()
     head="Inyanga Tiara +2",
     body="Inyanga Jubbah +2",
     hands="Inyan. Dastanas +2",
-    legs="Inyanga Shalwar +2",
+    legs="Brioso Cannions +3",
     feet="Fili Cothurnes +1",
     neck="Loricate Torque +1",
     waist="Flume Belt",
@@ -334,7 +334,7 @@ function midcast(spell)
 		equip(sets.Stoneskin)
 	end
 	if spell.type == 'BardSong' then
-	  if string.find(spell.english,'lull') then
+	  if string.find(spell.english,'Lullaby') then
 	    equip(sets.Sleep)
 	  else
 		equip(sets.Songs)
@@ -342,6 +342,9 @@ function midcast(spell)
 	end
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
+	end
+	if string.find(spell.english,'Warp') then 
+		--DO NOTHING
 	end
 	--Enhancing Magic Check
 	if spell.skill == 'Enhancing Magic' then
