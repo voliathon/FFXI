@@ -8,6 +8,7 @@ wait .1;
 //send azureus exec 5SongSVNitro;
 //send azureus exec 5SongNitro;
 send azureus exec 4SongNitroAtt
+//send azureus exec 4Songbase
 
 //The Darksmith quest
 

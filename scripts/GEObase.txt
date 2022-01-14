@@ -1,6 +1,6 @@
 input /ma "haste" <me>; wait 6;
-input /ma "barblizzardra" <me>; wait 6;
-input /ma "indi-fury" <me>; wait 7;
+input /ma "barthundera" <me>; wait 6;
+input /ma "indi-regen" <me>; wait 7;
 input /ma "stoneskin" <me>; wait 8;
 input /ja "entrust" <me>; wait 6;
 input /ma "Indi-wilt" Voliathon;
