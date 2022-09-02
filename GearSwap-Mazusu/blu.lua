@@ -123,8 +123,8 @@ function get_sets()
 	
 	--Engaged Sets--
 	sets.engaged = {}
---				    	    1		     2             					 3 		   		4 			5 			6
-	sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'Movement'}
+--				    	    1		     2             					 3 		   		4 			5 			6			7
+	sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'Movement', 'Evasion'}	
 	engaged_ind = 1 	
 	
     sets.engaged.TP = {
@@ -195,7 +195,7 @@ function get_sets()
 	}
 	
 	sets.engaged.Refresh = {
-		head={ name="Amalric Coif", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15'}},
+		head="Rawhide mask",
 		body="Assim. Jubbah +3",
 		feet=HercFeet.Refresh,
 		neck="Sanctity Necklace",
@@ -206,13 +206,49 @@ function get_sets()
 	}
 	
 	-- If you're not first, you're last
-    sets.engaged.Movement = {legs="Carmine Cuisses +1"}
+    sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
+		legs="Carmine Cuisses +1"
+	})
+	
+	sets.engaged.Evasion = {
+		ammo="Staunch Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Loricate Torque +1",
+		waist="Reiki Yotai",
+		left_ear="Eabani Earring",
+		right_ear="Ethereal Earring",
+		left_ring="Defending Ring",
+		right_ring="Ilabrat Ring",
+		back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10'}}
+	}
+	
 	
 	-- Darkness is spreading...
 	-- Tenebral Crush
     sets.DarkMagic = {
 		head="Pixie Hairpin +1",
     }
+	
+	sets.CruelJoke = {
+		ammo="Pemphredo Tathlum",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Nyame Gauntlets",
+		legs={ name="Luhlaza Shalwar +3", augments={'Enhances "Assimilation" effect'}},
+		feet={ name="Herculean Boots", augments={'"Triple Atk."+4','DEX+5','Accuracy+7','Attack+10'}},
+		neck={ name="Mirage Stole +2", augments={'Path: A'}},
+		waist="Luminary Sash",
+		left_ear="Digni. Earring",
+		right_ear="Regal Earring",
+		left_ring="Kishar Ring",
+		right_ring="Lebeche Ring",
+		back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Haste+10'}}
+		-- Look in Aurist's Cape +1 9/1/2022-
+	}	
 	
 	-- Blue Mage Skill
     sets.BlueMagicSkill = {
@@ -490,6 +526,10 @@ end)
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 -- Could've created a mapper and done it faster most likely but meh.  This is easier for people to understand with less coding experience
 function BlueMageSpellLogic(spell)
+		if spell.name == 'Cruel Joke' then
+		equip(sets.CruelJoke)
+	end
+	
     -- Physical spells with no particular (or known) stat mods //sets.BlueMagicPhysical
     if spell.name == 'Bilgestorm' then
 		equip(sets.BlueMagicPhysical)
