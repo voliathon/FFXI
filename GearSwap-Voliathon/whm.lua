@@ -1,54 +1,52 @@
+-- White Mage GearSwap by Voliathon
+-- Abbreviation 	WHM
+-- Japanese 	白魔道士 (白)
+-- Japanese Romaji 	Shiromadoushi (Shiro)
+
 function get_sets()
 	-- Set macro book/set --
-    send_command('input /macro book 5;wait .1;input /macro set 1')
+    send_command('input /macro book 1;wait .1;input /macro set 2')
 	
 	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
     send_command('bind !f9 gs c toggle Engaged set')
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
+	
+	
     -- Job Abilities for Geomancer --
     sets.Bolster = {body="Bagua Tunic +1"}
-    sets.LifeCycle = {body="Geomancy Tunic +1", back="Nantosuelta's Cape"}
+    sets.LifeCycle = {body="Geomancy Tunic +3", back="Nantosuelta's Cape"}
     sets.FullCircle = {head="Azimuth Hood +1"}
     sets.CurativeRecantation = {hands="Bagua Mitaines +1"}
     sets.MendingHalation = {legs="Bagua Pants"}
     sets.RadialArcana = {feet="Bagua Sandals +1"}
+	
+	-- Cursna
+	-- Regen
+	-- Devotion
+	-- Benediction
+	-- Barspells
+	-- Divine
+	-- Enhancing
+	-- Enfeebling
 
     -- Fast Cast for Geomancer --
     sets.FastCast = {
-		main="Idris",
-		sub="Genmei Shield",	
-		range="Dunna",
-		head="Merlinic Hood",
+		ammo="Pemphredo Tathlum",
+		head={ name="Piety Cap +1", augments={'Enhances "Devotion" effect',}},
 		body="Shango Robe",
-		hands="Amalric gages",
-		legs="Geo. Pants +1",
-		feet="Merlinic Crackows",
+		hands="Gende. Gages +1",
+		legs="Sifahir Slacks",
+		feet="Hygieia Clogs +1",
+		neck="Voltsurge Torque",
 		waist="Witful Belt",
 		left_ear="Loquac. Earring",
-		right_ear="Infused earring",
-		left_ring="Venficium ring",
-		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}}
-	}
-
-
-	-- Geomancer Spells
-    sets.Geomancy = {
-		main="Idris",
-		sub="Genmei Shield",
-		range="Dunna",
-        head="Azimuth Hood +1",
-		left_ear="Infused Earring",
-		right_ear="Gifted Earring",
+		right_ear="Malignance Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini ring +1",
-        body="Bagua Tunic +1",
-		hands="Geomancy Mitaines +1",
-        back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}},
-		waist="Austerity Belt +1",
-		legs="Geomancy Pants +2",
-		feet="Azimuth Gaiters +1"
+		right_ring="Stikini Ring +1",
+		back="Pahtli Cape"
 	}
+
 
 	-- Enhancing Spells \\Generalized//
     sets.EnhancingMagic = {
@@ -63,7 +61,7 @@ function get_sets()
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Loquacious Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Veneficium Ring",
 		right_ring="Stikini ring +1",
 		back="Perimede Cape"
 	}
@@ -81,7 +79,7 @@ function get_sets()
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Earthcry Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Veneficium Ring",
 		right_ring="Stikini ring +1",
 		back="Perimede Cape"	
 	}
@@ -101,7 +99,7 @@ function get_sets()
 		body="Chironic doublet",
 		hands="Telchine gloves",
 		right_ring="Stikini ring +1",
-		left_ring="Stikini Ring +1", 
+		left_ring="Veneficium Ring", 
 		waist="Austerity belt+1", 
 		back="Pahtli Cape",
 		legs="Geomancy Pants +2",
@@ -125,7 +123,7 @@ function get_sets()
 		sub="Genmei Shield",	
 		ammo="Dosis Tathlum",
 		head="Merlinic Hood",
-		body="Merlinic Jubbah",
+		body="Shamash robe",
 		hands="Merlinic Dastanas",
 		legs="Ea slops +1",
 		feet="Merlinic Crackows",
@@ -146,7 +144,7 @@ function get_sets()
 		sub="Genmei Shield",	
 		range="Dunna",
 		head="Bagua Galero +1",
-		body="Geo. Tunic +2",
+		body="Geomancy tunic +3",
 		hands="Merlinic Dastanas",
 		legs="Merlinic Shalwar",
 		feet="Merlinic Crackows",
@@ -154,7 +152,7 @@ function get_sets()
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Jhakri Ring",
 		right_ring="Stikini ring +1",
 		back="Seshaw cape"
 	}
@@ -172,7 +170,7 @@ function get_sets()
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Jhakri ring",
 		right_ring="Stikini Ring +1",
 		back="Seshaw cape"
 	}
@@ -184,91 +182,68 @@ function get_sets()
 	}
 
 
-    -- /heal the damn MP/HP up.
+    -- Heal the damn MP/HP up.
     sets.heal = {
 		range="Dunna",
 		head="Befouled Crown",
-		body="Shamash Robe",
-		hands="Merlinic Dastanas",
+		body="Jhakri robe +2",
+		hands="Bagua Mitaines +1",
 		legs="Assid. Pants +1",
 		feet="Bagua Sandals +1",
 		neck="Sanctity Necklace",
 		waist="Austerity Belt +1",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring="Sheltered Ring",
+		right_ring="Paguroidea Ring",
 		back="Felicitas cape +1"
 	}
 
 
 	-- PDT Set
     sets.PDT = {
-		main="Idris",
-		sub="Genmei Shield",	
-		range="Dunna",
-		head="Befouled Crown",
-		body="Shamash robe",
-		hands="Bagua Mitaines +1",
-		legs="Ea slops +1",
-		feet="Azimuth Gaiters +1",
-		neck="Loricate torque +1",
-		waist="Isa Belt",
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		body="Shamash Robe",
+		hands="Nyame gauntlets",
+		legs="Nyame flanchard",
+		feet="Nyame sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
 		left_ring="Fortified Ring",
 		right_ring="Defending Ring",
-		back="Solemnity cape"
-	}
-
-    -- .Pet sets are for when Luopan is present.
-    sets.PetDT = {
-		main="Idris",
-		sub="Genmei Shield",	
-		range="Dunna",
-		head="Azimuth Hood +1",
-		body="Shamash robe-",
-		hands="Geo. Mitaines +3",
-		legs="Assid. Pants +1",
-		feet="Bagua Sandals +1",
-		neck="Loricate torque +1",
-		waist="Isa Belt",
-		left_ear="Genmei Earring",
-		right_ear="Infused Earring",
-		left_ring="Yacuruna Ring",
-		right_ring="Defending Ring",
-		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}}
+		back="Solemnity Cape"
 	}
 
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
-		main="Idris",
-		sub="Genmei Shield",
-		range="Dunna",
-		head="Befouled Crown",		
-		body="Shamash robe",
-		hands="Bagua Mitaines +1",
-		legs="Ea slops +1",
-		feet="Azimuth Gaiters +1",
-		neck="Loricate torque +1",
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		body="Shamash Robe",
+		hands="Nyame gauntlets",
+		legs="Nyame flanchard",
+		feet="Nyame sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
 		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
-		left_ring="Yacuruna Ring",
+		left_ring="Fortified Ring",
 		right_ring="Defending Ring",
-		back="Mubvumbamiri Mantle"
+		back="Solemnity Cape"
 	}
 
 		
 	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {feet="Geomancy Sandals +2"}
+    sets.Kiting = {feet="Geomancy Sandals +3"}
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
 		main="Daybreak",
 		sub="Genmei shield",
 		head="Befouled crown",
-		body="Shamash robe",
+		body="Jhakri robe +2",
 		hands="Bagua mitaines +1",
 		right_ring="Stikini ring +1"
 	})
@@ -297,18 +272,17 @@ function get_sets()
 	 }
 	 
 	 
-	 sets.Idris = {
-		main="Idris",
+	 sets.Yagrush = set_combine(sets.FastCast,  {
+		main="Yagrush",
 		sub="Genmei Shield"
-	 }
+	 })
 
 	  -- Engaged Sets Toggle--
 	sets.engaged = {}
-	sets.engaged.index = {'Movement','PETDT', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	sets.engaged.index = {'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
 	engaged_ind = 1  	 
 	 
 	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.PETDT = set_combine(sets.PetDT, {})
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
 	sets.engaged.Accuracy = {}
@@ -351,11 +325,8 @@ function midcast(spell)
 	if spell.name == 'Stoneskin' then
 		equip(sets.Stoneskin)
 	end
-	if spell.name == 'Entrust' then
-		equip(sets.Idris)
-	end
-	if spell.type == 'Geomancy' then
-	    equip(sets.Geomancy)
+	if spell.name == 'Erase' or spell.name == 'Paralyna' or spell.name == 'Blindna' or spell.name == 'Viruna' or spell.name == 'Stona' or spell.name == 'Silena' or spell.name == 'Poisona' then
+		equip(sets.Yagrush)
 	end
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)

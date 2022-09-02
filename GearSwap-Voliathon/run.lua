@@ -1,6 +1,6 @@
 function get_sets()
 -- Set macro book/set --
-    send_command('input /macro book 17;wait .1;input /macro set 1')
+    send_command('input /macro book 17;wait .1;input /macro set 2')
 	
 	-- Binds for modes
 	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
@@ -21,11 +21,11 @@ function get_sets()
 
   sets.TP.Movement = {
     ammo="Staunch Tathlum +1",
-    head="Turms cap +1",
+    head="Nyame Helm",
     body="Ashera Harness",
-    hands="Turms mittens +1",
+    hands="Erilaz Gauntlets +2",
     legs="Carmine Cuisses +1",
-    feet="Turms leggings +1",
+    feet="Erilaz Greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
     left_ear="Odnowa Earring",
@@ -41,7 +41,7 @@ function get_sets()
     head="Adhemar Bonnet +1",
     body="Ashera harness",
     hands="Adhemar wristbands +1",
-    legs="Meg. Chausses +2",
+    legs="Erilaz leg guards +2",
     feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},
     neck="Anu Torque",
     waist="Ioskeha Belt +1",
@@ -55,11 +55,11 @@ function get_sets()
   --Tank Gear
   sets.TP.Tank = {
     ammo="Staunch Tathlum +1",
-    head="Turms cap +1",
-    body="Ashera Harness",
-    hands="Turms mittens +1",
-    legs="Erilaz leg guards +1",
-    feet="Turms leggings +1",
+	head="Nyame Helm",
+    body="Runeist's coat +3",
+    hands="Erilaz Gauntlets +2",
+    legs="Erilaz leg guards +2",
+    feet="Erilaz greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
     left_ear="Odnowa Earring",
@@ -72,11 +72,11 @@ function get_sets()
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
     ammo="Staunch Tathlum +1",
-    head="Turms cap +1",
-    body="Ashera Harness",
-    hands="Turms mittens +1",
-    legs="Erilaz leg guards +1",
-    feet="Turms leggings +1",
+	head="Nyame Helm",
+    body="Runeist's coat +3",
+    hands="Erilaz Gauntlets +2",
+    legs="Erilaz leg guards +2",
+    feet="Erilaz greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
     left_ear="Odnowa Earring",
@@ -88,11 +88,11 @@ function get_sets()
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    head="Turms cap +1",
+    head="Nyame Helm",
     body="Ashera harness",
-    hands="Turms Mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Turms Leggings +1",
+    hands="Erilaz Gauntlets +2",
+    legs="Erilaz leg guards +2",
+    feet="Erilaz greaves +2",
     neck="Subtlety Spec.",
     waist="Ioskeha Belt +1",
     left_ear="Heartseeker Earring",
@@ -127,7 +127,7 @@ function get_sets()
     head="Adhemar Bonnet +1",
     body="Lustratio Harness +1",
     hands="Adhemar wristbands +1",
-    legs="Meghanada Chausses +2",
+    legs="Erilaz leg guards +2",
     feet="Carmine greaves +1",
     neck="Fotia Gorget",
 	waist="Fotia Belt",
@@ -160,9 +160,9 @@ function get_sets()
     ammo="Knobkierrie",
     head="Adhemar Bonnet +1",
     body="Herculean vest",
-    hands="Meg. Gloves +2",
-    legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-    feet="Ayanmo gambieras +2",
+    hands="Erilaz Gauntlets +2",
+    legs="Erilaz leg guards +2",
+    feet="Erilaz greaves +2",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
     left_ear="Crematio Earring",
@@ -176,9 +176,10 @@ function get_sets()
   sets.HercSlash = {
     ammo="Knobkierrie",
 	head="Adhemar Bonnet +1",
-    body="Herculean vest",
-    hands="Meg. Gloves +2",
-    legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
+	body="Nyame mail",
+    hands="Erilaz Gauntlets +2",
+    legs="Erilaz leg guards +2",
+    feet="Erilaz greaves +2",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
     left_ear="Crematio Earring",
@@ -193,35 +194,35 @@ function get_sets()
   --full PDT set for when stunned, etc.
   sets.Utility.PDT = {
     ammo="Staunch Tathlum +1",
-    head="Futhark bandeau +1",
-    body="Futhark coat +1",
-    hands="Turms mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Erilaz Greaves +1",
+	head="Nyame Helm",
+    body="Runeist's coat +3",
+    hands="Erilaz Gauntlets +2",
+    legs="Erilaz leg guards +2",
+    feet="Erilaz greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
     left_ear="Odnowa Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-    back="Moonbeam Cape"
+    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
   }
 
   --full MDT set for when stunned, etc
   sets.Utility.MDT = {
     ammo="Staunch Tathlum +1",
-    head="Erilaz galea +1",
-    body="Futhark coat +1",
-    hands="Turms mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Erilaz Greaves +1",
+	head="Nyame Helm",
+    body="Runeist's coat +3",
+    hands="Erilaz Gauntlets +2",
+    legs="Erilaz leg guards +2",
+    feet="Erilaz greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
     left_ear="Odnowa Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-    back="Moonbeam Cape"
+    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
   }
   
   sets.Enhancing = {
@@ -305,7 +306,14 @@ function get_sets()
  }
  
   --Enmity set for high hate generating spells and JAs
-  sets.Enmity = {back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%',}}, waist="Sinew Belt", legs="Erilaz Leg Guards +1", neck="Warder's Charm", body="Emet Harness +1"}
+  sets.Enmity = {
+	back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%'}}, 
+	waist="Sinew Belt", 
+	legs="Erilaz Leg Guards +2", 
+	neck="Warder's Charm", 
+	body="Emet Harness +1",     
+	feet="Erilaz greaves +2"
+  }
 
   --Magic acc for enfeebles, handy for VW
   sets.MagicAcc = {}
@@ -487,6 +495,9 @@ end
 
 function aftercast(spell)
   equip_current()
+  if (spell.english == 'Battuta') then
+		equip({hands="Turms mittens +1", feet="Turms leggings +1"})
+  end
   --Just running a lil somethin-somethin to track Shadows
   if string.find(spell.name,'Utsusemi') and not spell.interrupted then
     if spell.name == 'Utsusemi: Ichi' then
@@ -505,6 +516,9 @@ end
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
+	if (buffactive['Battuta']) then
+		equip({hands="Turms mittens +1", feet="Turms leggings +1"})
+	end
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket

@@ -16,7 +16,7 @@ function get_sets()
 	Godhands = 'OFF' -- Toogle on/off the Godhands and Spharai via ctrl + F8
 		
     sets.precast = {}
-    sets.precast.Boost = {hands="Hes. Gloves +1"}
+    sets.precast.Boost = {hands="Anchorite's Gloves +3"}
     sets.precast.Chakra = {body="Anchorite's Cyclas +1",hands="Hes. Gloves +1"}
     sets.precast.Counterstance = {feet="Hesychast's Gaiters +1"}
     sets.precast.Focus = {head="Anchorite's Crown +1"}
@@ -134,10 +134,10 @@ function get_sets()
 	}
 	
 	sets.WS.FinalHeaven = {
-		ammo="Amar Cluster",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
-		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
+		ammo="Knobkierrie",
+		head="Hesychast's crown +2",
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
+		hands="Anchorite's gloves +3",
 		legs="Hiza. Hizayoroi +2",
 		feet="Ken. Sune-Ate +1",
 		neck="Fotia Gorget",
