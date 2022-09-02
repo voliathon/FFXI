@@ -10,16 +10,17 @@ function HerculeanGear()
     HercLegs = {}
     HercFeet = {}
 	
-	HercHead.WSD={ name="Herculean Helm", augments={'Attack+20','Weapon skill damage +3%','Accuracy+15'}}
+	HercHead.WSD={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}}
 
-    HercBody.WSD={ name="Herculean Vest", augments={'Accuracy+12','Weapon skill damage +5%','STR+4'}}
+    --HercBody.WSD={ name="Herculean Vest", augments={'Accuracy+12','Weapon skill damage +5%','STR+4'}}
 
     HercHands.TP={ name="Herculean Gloves", augments={'Rng.Atk.+24','"Triple Atk."+3','DEX+2','Accuracy+11','Attack+9'}}
 
     HercLegs.TP={ name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9'}}
-	HercLegs.WSD={ name="Herculean Trousers", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','DEX+10','Accuracy+5'}}
+	HercLegs.WSD={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}}
 
     HercFeet.TP={ name="Herculean Boots", augments={'Weapon Skill Acc.+9','MND+4','Quadruple Attack +2','Accuracy+9 Attack+9'}}
+	HercFeet.WSD={name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9'}}
 	
 end
 
@@ -28,7 +29,7 @@ end
 function RosmertaCapes()
     Rosmerta = {}
     Rosmerta.TP = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
-    Rosmerta.WSD = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon -skill damage +10%'}}
+    Rosmerta.WSD = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 end
 
 
@@ -79,16 +80,16 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4'}},
 		body="Pinga Tunic",
-		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
+		hands={ name="Rawhide Gloves", augments={'Mag. Acc.+15','INT+7','MND+7'}},
 		legs="Pinga Pants",
 		feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20'}},
 		neck="Voltsurge Torque",
-		waist="Rumination Sash",
+		waist="Witful Belt",
 		left_ear="Loquac. Earring",
-		right_ear="Magnetic Earring",
-		left_ring="Rahab Ring",
-		right_ring="Stikini Ring +1",
-		back="Moonbeam Cape"
+		right_ear="Enchntr. Earring +1",
+		left_ring="Stikini Ring +1",
+		right_ring="Rahab Ring",
+		back="Perimede Cape"
     }
 	
 	-- Enhancing
@@ -115,20 +116,19 @@ function get_sets()
 	
 	--Engaged Sets--
 	sets.engaged = {}
---				    	    1		     2             					 3 		   		4 			5 			6
-	sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'Movement'}
+--				    	    1		     2             					 3 		   		4 			5 			6			7
+	sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'Movement', 'Evasion'}
 	engaged_ind = 1 	
 	
     sets.engaged.TP = {
 		ammo="Ginsen",
-		head="Adhemar Bonnet +1",
-		body="Adhemar Jacket +1",
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
-		--Samnuha Tights perfect augments will go here, maybe Malignance tights are better than the HercLegs.TP
-		legs=HercLegs.TP,
-		feet=HercFeet.TP,
+		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs={ name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9',}},
+		feet={ name="Herculean Boots", augments={'Rng.Atk.+24','Attack+30','"Store TP"+10','Accuracy+20 Attack+20',}},
 		neck="Clotharius Torque",
-		waist="Windbuffet Belt",
+		waist="Windbuffet Belt +1",
 		left_ear="Suppanomimi",
 		right_ear="Telos Earring",
 		left_ring="Epona's Ring",
@@ -139,12 +139,12 @@ function get_sets()
 	-- Let's Turtle Yo!
     sets.engaged.TakingLessPhysicalDamage = {
 		ammo="Staunch Tathlum",
-		head="Aya. Zucchetto +2",
-		body="Shamash Robe",
-		hands="Aya. Manopolas +2",
-		legs="Malignance tights",
-		feet="Aya. Gambieras +2",
-		neck="Loricate Torque +1",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
 		waist="Flume Belt",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
@@ -156,11 +156,11 @@ function get_sets()
 	-- Fuck taking Magic Damage
 	sets.engaged.TakingLessMagicDamage = {
 		ammo="Staunch Tathlum",
-		head="Aya. Zucchetto +2",
-		body="Ayanmo Corazza +2",
-		hands="Aya. Manopolas +2",
-		legs="Malignance tights",
-		feet="Aya. Gambieras +2",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 		neck="Loricate Torque +1",
 		waist="Flume Belt",
 		left_ear="Genmei Earring",
@@ -171,35 +171,52 @@ function get_sets()
 	}
 	
 	sets.engaged.Accuracy = {
-		ammo="Ginsen",
-		head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
-		body={ name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
-		legs="Malignance tights",
-		feet="Aya. Gambieras +2",
-		neck="Iqabi necklace",
-		waist="Eschan stone",
+		ammo="Falcon Eye",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
 		left_ear="Digni. Earring",
 		right_ear="Telos Earring",
---		left_ring="Chirich Ring +1",
-		right_ring="Rajas Ring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
 		back=Rosmerta.TP	
 	}
 	
-	sets.engaged.Refresh = {
-		head="Amalric Coif +1",
-		body="Shamash Robe",
-		feet=HercFeet.Refresh,
+	sets.engaged.Refresh = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
+		head="Rawhide mask",
+		body="Jhakri Robe +2",
 		neck="Sanctity Necklace",
 		legs="Rawhide trousers",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Paguroidea Ring"
-	}
+		right_ring="Woltaris Ring"
+	})
 	
 	-- If you're not first, you're last
-    sets.engaged.Movement = {legs="Carmine Cuisses +1"}
+    sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
+		legs="Carmine Cuisses +1"
+	})
+	
+	sets.engaged.Evasion = {
+		ammo="Staunch Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Bathy Choker +1",
+		waist="Flume Belt",
+		left_ear="Eabani Earring",
+		right_ear="Infused Earring",
+		left_ring="Defending Ring",
+		right_ring="Chirich Ring +1",
+		back="Kumbira Cape"	
+	}
 	
 	-- Darkness is spreading...
 	-- Tenebral Crush
@@ -210,26 +227,43 @@ function get_sets()
 	-- Blue Mage Skill
     sets.BlueMagicSkill = {
         neck="Incanter's Torque",
-        body="Assimilator's Jubbah +2",
+        body="Assimilator's Jubbah +3",
         back="Cornflower Cape"
     }
+	
+	sets.CruelJoke = {
+		ammo="Pemphredo Tathlum",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance boots",
+		neck="Incanter's Torque",
+		waist="Luminary Sash",
+		left_ear="Digni. Earring",
+		right_ear="Enchntr. Earring +1",
+		left_ring="Stikini Ring +1",
+		right_ring="Rahab Ring",
+		-- Get Aurist's Cape +1 9/1/2022
+		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}}	
+	}
 
     -- Custom Physical Magic --
 	-- This one atm is STR/Attack based
     sets.BlueMagicPhysical = {
-		ammo="Floestone",
-		head="Luh. Keffiyeh +3",
-		body="Luhlaza Jubbah +1",
-		hands="Luh. Bazubands +3",
-		legs="Jhakri Slops +2",
-		feet="Luhlaza Charuqs +3",
-		neck="Mirage Stole +2",
-		waist="Prosilio Belt +1",
+		ammo="Ginsen",
+		head="Malignance Chapeau",
+		body="Assim. Jubbah +3",
+		hands="Malignance Gloves",
+		legs="Hashishin Tayt +1",
+		feet="Malignance Boots",
+		neck="Incanter's Torque",
+		waist="Grunfeld Rope",
 		left_ear="Digni. Earring",
 		right_ear="Telos Earring",
-		left_ring="Ilabrat Ring",
-		right_ring="Ifrit Ring +1",
-		back=Rosmerta.WSD
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
     }
 
 	-- Only Heavy Strike will hit this set
@@ -266,15 +300,15 @@ function get_sets()
 		head="Jhakri Coronal +2",
 		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
 		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
-		legs="Luhlaza shalwar +3",
+		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
 		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
-		neck="Mirage Stole +2",
-		waist="Yamabuki-no-Obi",
-		left_ear="Regal Earring",
+		neck="Sanctity Necklace",
+		waist="Luminary Sash",
+		left_ear="Choleric Earring",
 		right_ear="Friomisi Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		--back=Rosmerta.Int
+		right_ring="Locus Ring",
+		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}}
     }
 	
     sets.BlueMagicMagicalResistant = set_combine(sets.BlueMagicMagical,{})
@@ -300,18 +334,18 @@ function get_sets()
 	-- Cure spells
     sets.BlueMageCures = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
+		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6'}},
 		body="Pinga Tunic",
-		hands={ name="Telchine Gloves", augments={'Pet: "Regen"+3','Enh. Mag. eff. dur. +10',}},
+		hands={ name="Telchine Gloves", augments={'Accuracy+15','Song spellcasting time -5%','Enh. Mag. eff. dur. +10'}},
 		legs="Pinga Pants",
-		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
-		neck="Imbodla Necklace",
-		waist="Yamabuki-no-Obi",
+		feet="Skaoi Boots",
+		neck="Incanter's Torque",
+		waist="Witful Belt",
 		left_ear="Mendi. Earring",
-		right_ear="Friomisi Earring",
+		right_ear="Magnetic Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		--back=Rosmerta.Int		
+		right_ring="Lebeche Ring",
+		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}}	
     }
 
 	
@@ -319,18 +353,18 @@ function get_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 	-- WSD covers Savage Blade and Expiacion
     sets.WSD = {
-		ammo="Floestone",
+		ammo="Ginsen",
 		head=HercHead.WSD,
 		body="Assim. Jubbah +3",
 		hands="Jhakri Cuffs +2",
-		legs={ name="Luhlaza Shalwar +3", augments={'Enhances "Assimilation" effect'}},
+		legs=HercLegs.WSD,
 		feet=HercFeet.WSD,
-		neck="Mirage Stole +2",
+		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
-		right_ring="Ifrit Ring +1",
+		right_ring="Hetairoi Ring",
 		back=Rosmerta.WSD
     }
 
@@ -482,6 +516,10 @@ end)
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 -- Could've created a mapper and done it faster most likely but meh.  This is easier for people to understand with less coding experience
 function BlueMageSpellLogic(spell)
+	if spell.name == 'Cruel Joke' then
+		equip(sets.CruelJoke)
+	end
+
     -- Physical spells with no particular (or known) stat mods //sets.BlueMagicPhysical
     if spell.name == 'Bilgestorm' then
 		equip(sets.BlueMagicPhysical)
@@ -663,6 +701,5 @@ function BlueMageSpellLogic(spell)
 			equip(sets.BlueMagicSkill)
 	end
 
-	
 	
 end

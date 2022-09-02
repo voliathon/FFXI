@@ -33,11 +33,11 @@ function get_sets()
 	
   --Idle Set--
   sets.Idle = {
-    head="Inyanga Tiara +2",
-    body="Inyanga Jubbah +2",
-    hands="Inyan. Dastanas +2",
-    legs="Brioso Cannions +3",
-    feet="Fili Cothurnes +1",
+    head="Fili calot +2",
+	body="Nyame mail",
+    hands="Fili Manchettes +2",
+	legs="Nyame flanchard",
+	feet="Nyame sollerets",
     neck="Loricate Torque +1",
     waist="Flume Belt",
     left_ear="Genmei Earring",
@@ -82,8 +82,8 @@ function get_sets()
  
   --Magic Accuracy for those pesky songs that don't want to stick--
   sets.MagicAccuracy = {
-    head="Inyanga Tiara +2",
-    body={ name="Chironic Doublet", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','"Cure" potency +8%','CHR+1','Mag. Acc.+13','"Mag.Atk.Bns."+4'}},
+    head="Fili calot +2",
+    body="Brioso Justaucorps +3",
     hands="Brioso Cuffs +3",
     legs="Brioso Cannions +3",
     feet="Brioso Slippers +3",
@@ -98,15 +98,15 @@ function get_sets()
   
   --Maximizing Song Potency first then duration-- 
   sets.Songs = {
-    head="Fili calot +1",
-    body="Fili Hongreline +1",
-    hands="Fili manchettes +1",
+    head="Fili calot +2",
+    body="Fili Hongreline +2",
+    hands="Fili Manchettes +2",
     legs="Inyanga Shalwar +2",
     feet="Brioso Slippers +3",
     neck="Mnbw. Whistle +1",
     waist="Kobo Obi",
     left_ear="Musical Earring",
-    right_ear="Loquac. Earring",
+    right_ear="Fili Earring",
     left_ring="Lebeche Ring",
     right_ring="Stikini Ring +1",
     back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}
@@ -143,7 +143,11 @@ function get_sets()
   }
 
   sets.Sleep = set_combine(sets.MagicAccuracy, { 
+    head="Fili calot +2",
 	hands="Brioso Cuffs +3",
+	body="Brioso Justaucorps +3",
+	feet="Brioso Slippers +3",
+	legs="Inyanga Shalwar +2",
 	range="Daurdabla",
 	main="Carnwenhan"
   
@@ -170,11 +174,11 @@ function get_sets()
   sets.engaged.TP = {
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
-    hands="Ayanmo manopolas +2",
-    legs="Aya. Cosciales +2",
-    feet="Aya. Gambieras +2",
+    hands="Fili Manchettes +2",
+	legs="Nyame flanchard",
+	feet="Nyame sollerets",
     neck="Bard's charm +2",
-    waist="Windbuffet Belt",
+    waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Telos Earring",
     left_ring="Hetairoi Ring",
@@ -184,14 +188,14 @@ function get_sets()
   
   --Accuracy Set--
   sets.engaged.Accuracy = {
-    head="Aya. Zucchetto +2",
-    body="Ayanmo Corazza +2",
-    hands="Ayanmo manopolas +2",
+    head="Fili Calot +2",
+    body="Fili Hongreline +2",
+    hands="Fili Manchettes +2",
     legs="Aya. Cosciales +2",
     feet="Aya. Gambieras +2",
     neck="Bard's charm +2",
     waist="Eschan Stone",
-    left_ear="Zennaroi Earring",
+    left_ear="Dignitary's Earring",
     right_ear="Telos Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
@@ -199,11 +203,11 @@ function get_sets()
   }
   
   sets.engaged.TakingLessPhysicalDamage = {
-    head="Aya. Zucchetto +2",
-    body="Ayanmo Corazza +2",
-    hands="Aya. Manopolas +2",
-    legs="Brioso Cannions +3",
-    feet="Aya. Gambieras +2",
+    head="Fili Calot +2",
+    body="Nyame Mail",
+    hands="Fili Manchettes +2",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Loricate Torque +1",
     waist="Flume Belt",
     left_ear="Genmei Earring",
@@ -214,17 +218,17 @@ function get_sets()
   }
   
   sets.engaged.TakingLessMagicDamage = {
-    head="Inyanga Tiara +2",
-    body="Inyanga Jubbah +2",
-    hands="Inyan. Dastanas +2",
-    legs="Brioso Cannions +3",
-    feet="Fili Cothurnes +1",
+    head="Fili Calot +2",
+    body="Nyame Mail",
+    hands="Fili Manchettes +2",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Loricate Torque +1",
     waist="Flume Belt",
     left_ear="Genmei Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Defending Ring",
-    right_ring="Woltaris ring",
+    right_ring="Fortified ring",
     back="Moonbeam Cape"
   }
   
@@ -336,6 +340,8 @@ function midcast(spell)
 	if spell.type == 'BardSong' then
 	  if string.find(spell.english,'Lullaby') then
 	    equip(sets.Sleep)
+	  elseif string.find(spell.english,'Elegy') then
+		equip(sets.MagicAccuracy)
 	  else
 		equip(sets.Songs)
 	  end
