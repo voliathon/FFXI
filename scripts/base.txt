@@ -1,5 +1,6 @@
 send @all /echo Base buffs for RUN, BRD, COR;
 send voluzera exec GEObase;
+//send voluzera exec 3Songbase
 wait .1;
 send voliathon exec RUNbase;
 wait .1;
@@ -8,7 +9,10 @@ wait .1;
 //send azureus exec 5SongSVNitro;
 //send azureus exec 5SongNitro;
 send azureus exec 4SongNitroAtt
+//send azureus exec 4SongNitroDef
 //send azureus exec 4Songbase
 
 //The Darksmith quest
 
+
+//console send @others //exec stopFollow
