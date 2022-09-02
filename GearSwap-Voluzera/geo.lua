@@ -8,10 +8,10 @@ function get_sets()
 	
     -- Job Abilities for Geomancer --
     sets.Bolster = {body="Bagua Tunic +1"}
-    sets.LifeCycle = {body="Geomancy Tunic +1", back="Nantosuelta's Cape"}
-    sets.FullCircle = {head="Azimuth Hood +1"}
+    sets.LifeCycle = {body="Geomancy Tunic +3", back="Nantosuelta's Cape"}
+    sets.FullCircle = {head="Azimuth Hood +2"}
     sets.CurativeRecantation = {hands="Bagua Mitaines +1"}
-    sets.MendingHalation = {legs="Bagua Pants"}
+    sets.MendingHalation = {legs="Bagua Pants +1"}
     sets.RadialArcana = {feet="Bagua Sandals +1"}
 
     -- Fast Cast for Geomancer --
@@ -19,16 +19,18 @@ function get_sets()
 		main="Idris",
 		sub="Genmei Shield",	
 		range="Dunna",
-		head="Merlinic Hood",
-		body="Shango Robe",
-		hands="Amalric gages",
-		legs="Geo. Pants +1",
-		feet="Merlinic Crackows",
+		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+29','Magic burst dmg.+5%','INT+8','Mag. Acc.+13'}},
+		body={ name="Merlinic Jubbah", augments={'Mag. Acc.+7','Magic burst dmg.+11%','INT+9','"Mag.Atk.Bns."+11'}},
+		hands="Geo. Mitaines +3",
+		legs="Geomancy Pants +2",
+		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Magic burst dmg.+5%','CHR+6','Mag. Acc.+9','"Mag.Atk.Bns."+12'}},
+		neck="Voltsurge Torque",
 		waist="Witful Belt",
-		left_ear="Loquac. Earring",
-		right_ear="Infused earring",
-		left_ring="Venficium ring",
-		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}}
+		left_ear="Malignance Earring",
+		right_ear="Enchntr. Earring +1",
+		left_ring="Stikini Ring +1",
+		right_ring="Evanescence Ring",
+		back="Perimede Cape"
 	}
 
 
@@ -37,142 +39,135 @@ function get_sets()
 		main="Idris",
 		sub="Genmei Shield",
 		range="Dunna",
-        head="Azimuth Hood +1",
-		left_ear="Infused Earring",
+        head="Azimuth Hood +2",
+		neck="Sanctity necklace",
+		left_ear="Malignance Earring",
 		right_ear="Gifted Earring",
+		left_ring="Stikini ring +1",
+		right_ring="Stikini ring",
         body="Bagua Tunic +1",
-		hands="Geomancy Mitaines +1",
+		hands="Geo. Mitaines +3",
         back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}},
 		waist="Austerity Belt +1",
-		legs="Geomancy Pants +2",
-		feet="Azimuth Gaiters +1"
+		legs="Azimuth Tights +1",
+		feet="Azimuth Gaiters +2"
 	}
 
 	-- Enhancing Spells \\Generalized//
     sets.EnhancingMagic = {
 		main="Daybreak",
 		sub="Genmei Shield",
-		ammo="Clarus stone",
-		head="Befouled Crown",
-		body="Shango Robe",
-		hands="Bagua Mitaines +1",
-		legs="Geomancy Pants +2",
-		feet="Regal pumps +1",
-		waist="Austerity Belt +1",
-		left_ear="Infused Earring",
-		right_ear="Loquacious Earring",
-		left_ring="Veneficium Ring",
-		right_ring="Stikini ring +1",
+		ammo="Impatiens",
+		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9'}},
+		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9'}},
+		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8'}},
+		legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10'}},
+		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +8'}},
+		neck="Enhancing Torque",
+		waist="Witful Belt",
+		left_ear="Malignance Earring",
+		right_ear="Enchntr. Earring +1",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring",
 		back="Perimede Cape"
 	}
 
 	-- Stoneskin
-	sets.Stoneskin = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Clarus stone",
+	sets.Stoneskin = set_combine(sets.EnhancingMagic,  {
 		head="Umuthi Hat",
-		body="Shango Robe",
 		hands="Carapacho Cuffs",
-		legs="Geomancy Pants +2",
-		feet="Regal pumps +1",
-		waist="Austerity Belt +1",
-		left_ear="Infused Earring",
 		right_ear="Earthcry Earring",
-		left_ring="Veneficium Ring",
-		right_ring="Stikini ring +1",
+		left_ring="Stikini ring +1",
+		right_ring="Stikini ring",
+		waist="Siegel Sash",
+		legs="Geomancy pants +2",
 		back="Perimede Cape"	
-	}
-
-	sets.Enhancing = {}
-
+	})
 
 	-- Entrust 
 	sets.Entrust = {
 		main="Solstice"
 	}
 
-    sets.Cure = {
+    sets.Cure = set_combine(sets.EnhancingMagic,  {
 		main="Daybreak",
 		sub="Genmei Shield",
-        head="Vanya Hood",
-		body="Chironic doublet",
-		hands="Telchine gloves",
-		right_ring="Stikini ring +1",
-		left_ring="Veneficium Ring", 
-		waist="Austerity belt+1", 
-		back="Pahtli Cape",
-		legs="Geomancy Pants +2",
-		feet="Vanya Clogs"
-	}
+		ammo="Impatiens",
+		head="Befouled Crown",
+		body="Annoint. Kalasiris",
+		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8'}},
+		legs="Gyve Trousers",
+		feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6'}},
+		neck="Voltsurge Torque",
+		waist="Acerbic Sash +1",
+		left_ear="Malignance Earring",
+		right_ear="Halasz Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring",
+		back="Perimede Cape"
+	})
 
 
 	-- Protecting the party
-    sets.Protect = {
+    sets.Protect = set_combine(sets.EnhancingMagic,  {
 		ring1="Sheltered Ring"
-	}
+	})
 
 	-- MDF the party
-    sets.Shell = {
+    sets.Shell = set_combine(sets.EnhancingMagic,  {
 		ring1="Sheltered Ring"
-	}
+	})
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		main="Daybreak",
 		sub="Genmei Shield",	
-		ammo="Dosis Tathlum",
-		head="Merlinic Hood",
-		body="Merlinic Jubbah",
-		hands="Merlinic Dastanas",
-		legs="Ea slops +1",
-		feet="Merlinic Crackows",
-		neck="Saevus pendant +1",
-		waist="Refoccilation stone",
-		left_ear="Barkaro. Earring",
+		ammo="Sroda tathlum",
+		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+29','Magic burst dmg.+5%','INT+8','Mag. Acc.+13'}},
+		body="Shamash Robe",
+		hands={ name="Merlinic Dastanas", augments={'Mag. Acc.+6 "Mag.Atk.Bns."+6','Magic burst dmg.+8%','INT+8','"Mag.Atk.Bns."+15'}},
+		legs="Ea Slops +1",
+		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Magic burst dmg.+5%','CHR+6','Mag. Acc.+9','"Mag.Atk.Bns."+12'}},
+		neck="Mizu. Kubikazari",
+		waist="Refoccilation Stone",
+		left_ear="Genmei Earring",
 		right_ear="Halasz Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
-		back="Seshaw cape"
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring",
+		back="Seshaw Cape"
 	}
-	
-	sets.MagicAccuracy = {}
-
 	
     sets.DarkMagic = {
 		main="Daybreak",
 		sub="Genmei Shield",	
-		range="Dunna",
+		ammo="Sroda tathlum",
 		head="Bagua Galero +1",
-		body="Geo. Tunic +2",
+		body="Geomancy tunic +3",
 		hands="Merlinic Dastanas",
-		legs="Merlinic Shalwar",
+		legs="Azimuth tights +2",
 		feet="Merlinic Crackows",
-		neck="Saevus Pendant +1",
 		waist="Refoccilation stone",
-		left_ear="Barkaro. Earring",
-		right_ear="Gwati Earring",
-		left_ring="Jhakri Ring",
-		right_ring="Stikini ring +1",
-		back="Seshaw cape"
+		left_ring="Stikini ring +1",
+		right_ring="Stikini ring",
+		back="Perimede cape"
 	}
 
     sets.Enfeebling = {
 		main="Daybreak",
-		sub="Genmei Shield",	
-		range="Dunna",
+		sub="Genmei Shield",
+		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3'}},
 		head="Befouled Crown",
-		body="Ischemia Chasu.",
-		hands="Regal cuffs",
-		legs="Merlinic Shalwar",
-		feet="Bagua Sandals +1",
+		body="Geomancy Tunic +3",
+		hands="Regal Cuffs",
+		legs="Ea Slops +1",
+		feet={ name="Bagua Sandals +1", augments={'Enhances "Radial Arcana" effect'}},
 		neck="Sanctity Necklace",
-		waist="Refoccilation stone",
-		left_ear="Barkaro. Earring",
-		right_ear="Gwati Earring",
-		left_ring="Jhakri ring",
-		right_ring="Stikini Ring +1",
-		back="Seshaw cape"
+		waist="Refoccilation Stone",
+		left_ear="Malignance Earring",
+		right_ear="Digni. Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring",
+		back="Seshaw Cape"
 	}
 
 
@@ -186,8 +181,8 @@ function get_sets()
     sets.heal = {
 		range="Dunna",
 		head="Befouled Crown",
-		body="Shamash Robe",
-		hands="Merlinic Dastanas",
+		body="Jhakri robe +2",
+		hands="Bagua Mitaines +1",
 		legs="Assid. Pants +1",
 		feet="Bagua Sandals +1",
 		neck="Sanctity Necklace",
@@ -205,11 +200,11 @@ function get_sets()
 		main="Idris",
 		sub="Genmei Shield",	
 		range="Dunna",
-		head="Befouled Crown",
-		body="Annointed Kalasiris",
-		hands="Bagua Mitaines +1",
-		legs="Ea slops +1",
-		feet="Azimuth Gaiters +1",
+		head="Azimuth Hood +2",
+		body="Nyame mail",
+		hands="Nyame gauntlets",
+		legs="Nyame flanchard",
+		feet="Azimuth gaiters +2",
 		neck="Loricate torque +1",
 		waist="Isa Belt",
 		left_ear="Genmei Earring",
@@ -224,15 +219,15 @@ function get_sets()
 		main="Idris",
 		sub="Genmei Shield",	
 		range="Dunna",
-		head="Azimuth Hood +1",
-		body="Geo. Tunic +2",
+		head="Azimuth Hood +2",
+		body="Shamash robe",
 		hands="Geo. Mitaines +3",
 		legs="Assid. Pants +1",
 		feet="Bagua Sandals +1",
 		neck="Loricate torque +1",
 		waist="Isa Belt",
 		left_ear="Genmei Earring",
-		right_ear="Infused Earring",
+		right_ear="Hypaspist Earring",
 		left_ring="Yacuruna Ring",
 		right_ring="Defending Ring",
 		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}}
@@ -243,28 +238,26 @@ function get_sets()
 		main="Idris",
 		sub="Genmei Shield",
 		range="Dunna",
-		head="Befouled Crown",		
-		body="Annointed Kalasiris",
-		hands="Bagua Mitaines +1",
-		legs="Ea slops +1",
-		feet="Azimuth Gaiters +1",
+		head="Azimuth Hood +2",		
+		body="Nyame mail",
+		hands="Nyame gauntlets",
+		legs="Nyame flanchard",
+		feet="Azimuth gaiters +2",
 		neck="Loricate torque +1",
 		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
 		left_ring="Yacuruna Ring",
 		right_ring="Defending Ring",
-		back="Mubvumbamiri Mantle"
+		back="Solemnity cape"
 	}
 
 		
 	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {feet="Geomancy Sandals +2"}
+    sets.Kiting = {feet="Geomancy Sandals +3"}
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		main="Daybreak",
-		sub="Genmei shield",
 		head="Befouled crown",
 		body="Jhakri robe +2",
 		hands="Bagua mitaines +1",
@@ -277,21 +270,19 @@ function get_sets()
     ------------------------------------------------------------------------------------------------------------------
 
 	-- All Weaponskills for Geomancer unless explicitly defined below sets.precast.WS 
-     sets.WS = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Amar Cluster",
-		head="Jhakri Coronal +2",
+     sets.WSD = {
+		head="Azimuth Hood +2",
 		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
-		legs="Jhakri Slops +2",
-		feet="Jhakri Pigaches +2",
+		hands="Geo. Mitaines +3",
+		legs="Ea Slops +1",
+		feet="Azimuth gaiters +2",
 		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Steelflash Earring",
-		right_ear="Bladeborn Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Karieyh Ring"
+		waist="Cetl Belt",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Ishvara Earring",
+		left_ring="Epaminondas's Ring",
+		right_ring="Chirich Ring +1",
+		back="Solemnity Cape"
 	 }
 	 
 	 
@@ -309,7 +300,7 @@ function get_sets()
 	sets.engaged.PETDT = set_combine(sets.PetDT, {})
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
-	sets.engaged.Accuracy = {}
+	sets.engaged.Accuracy = set_combine(sets.PDT, {})
 	sets.engaged.Refresh = set_combine(sets.Refresh, {})
 	 
 end
@@ -317,7 +308,7 @@ end
 function precast(spell,abil)
 	--Enhancing Magic Check
 	if spell.skill == 'Enhancing Magic' then
-		equip(sets.Enhancing)
+		equip(sets.EnhancingMagic)
 	elseif spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
 	elseif spell.action_type == 'Magic' then

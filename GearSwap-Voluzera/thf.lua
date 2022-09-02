@@ -43,11 +43,11 @@ function get_sets()
     sets.engaged = {}
 	sets.engaged.TP = {
 		ammo="Aurgelmir Orb",
-		head={ name="Herculean Helm", augments={'Attack+22','"Triple Atk."+3','DEX+9','Accuracy+5',}},
+		head={ name="Herculean Helm", augments={'Attack+22','"Triple Atk."+3','DEX+9','Accuracy+5'}},
 		body="Malignance Tabard",
-		hands={ name="Floral Gauntlets", augments={'Rng.Acc.+15','Accuracy+15','"Triple Atk."+3','Magic dmg. taken -4%',}},
-		legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
-		feet={ name="Herculean Boots", augments={'Attack+17','"Triple Atk."+3','STR+10','Accuracy+3',}},
+		hands={ name="Floral Gauntlets", augments={'Rng.Acc.+15','Accuracy+15','"Triple Atk."+3','Magic dmg. taken -4%'}},
+		legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2'}},
+		feet={ name="Herculean Boots", augments={'Attack+17','"Triple Atk."+3','STR+10','Accuracy+3'}},
 		neck="Anu Torque",
 		waist="Sinew Belt",
 		left_ear="Brutal Earring",
@@ -74,19 +74,19 @@ function get_sets()
 	}
 	
 	sets.engaged.TH = {
-		ammo="Staunch Tathlum +1",
-		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','CHR+7','"Treasure Hunter"+2',}},
-		body={ name="Herculean Vest", augments={'Mag. crit. hit dmg. +2%','Pet: Attack+5 Pet: Rng.Atk.+5','"Treasure Hunter"+2',}},
-		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
-		legs={ name="Herculean Trousers", augments={'Rng.Atk.+13','"Mag.Atk.Bns."+14','"Treasure Hunter"+2',}},
+		head={ name="Herculean Helm", augments={'Accuracy+9 Attack+9','CHR+7','"Treasure Hunter"+2'}},
+		body={ name="Herculean Vest", augments={'Mag. crit. hit dmg. +2%','Pet: Attack+5 Pet: Rng.Atk.+5','"Treasure Hunter"+2'}},
+		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect'}},
+		legs={ name="Herculean Trousers", augments={'Rng.Atk.+13','"Mag.Atk.Bns."+14','"Treasure Hunter"+2'}},
 		feet="Mummu Gamash. +2",
-		neck="Loricate Torque +1",
-		waist="Sinew Belt",
-		left_ear="Brutal Earring",
-		right_ear="Odr Earring",
-		left_ring="Defending Ring",
-		right_ring="Chirich Ring +1",
-		back="Agema Cape"
+		neck="Sanctity Necklace",
+		waist="Chaac Belt",
+		left_ear="Dudgeon Earring",
+		right_ear="Heartseeker Earring",
+		left_ring="Moonbeam Ring",
+		right_ring="Defending Ring",
+		back="Moonbeam Cape",
+		ammo="Aurgelmir Orb"
 	}
 	
 	sets.engaged.ACC =  {
@@ -157,11 +157,11 @@ function get_sets()
     -- .::Generic Sets::. --
     sets.WS = {	
 		ammo="Yetshila",
-		head={ name="Herculean Helm", augments={'Weapon skill damage +5%','STR+10','Attack+1',}},
-		body={ name="Herculean Vest", augments={'INT+9','Pet: "Mag.Atk.Bns."+2','Weapon skill damage +9%','Accuracy+16 Attack+16','Mag. Acc.+1 "Mag.Atk.Bns."+1',}},
+		head={ name="Herculean Helm", augments={'Weapon skill damage +5%','STR+10','Attack+1'}},
+		body={ name="Herculean Vest", augments={'INT+9','Pet: "Mag.Atk.Bns."+2','Weapon skill damage +9%','Accuracy+16 Attack+16','Mag. Acc.+1 "Mag.Atk.Bns."+1'}},
 		hands="Meg. Gloves +2",
-		legs="Mummu Kecks +2",
-		feet={ name="Herculean Boots", augments={'Accuracy+4 Attack+4','Weapon skill damage +5%','STR+10','Accuracy+7',}},
+		legs={ name="Herculean Trousers", augments={'Mag. Acc.+16','Blood Pact Dmg.+2','Weapon skill damage +8%'}},
+		feet={ name="Herculean Boots", augments={'Accuracy+4 Attack+4','Weapon skill damage +5%','STR+10','Accuracy+7'}},
 		neck="Fotia Gorget",
 		waist="Sinew Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
@@ -230,7 +230,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Mummu Kecks +2",
-		feet="Malignance Boots",
+		feet="Jute Boots +1",
 		neck="Loricate Torque +1",
 		waist="Flume Belt",
 		left_ear="Infused Earring",
