@@ -54,7 +54,7 @@ function get_sets()
     body="Zendik Robe",
     hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
     legs="Aya. Cosciales +2",
-    feet={ name="Kaykaus Boots", augments={'Mag. Acc.+15','"Cure" potency +5%','"Fast Cast"+3'}},
+    feet="Fili cothurnes +2",
     neck="Voltsurge Torque",
     waist="Embla Sash",
     left_ear="Mendi. Earring",
@@ -167,7 +167,7 @@ function get_sets()
 
   -- Engaged Sets Toggle--
   sets.engaged = {}
-  sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+  sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'Movement'}
   engaged_ind = 1    
   
   --TP Set--
@@ -192,7 +192,7 @@ function get_sets()
     body="Fili Hongreline +2",
     hands="Fili Manchettes +2",
     legs="Aya. Cosciales +2",
-    feet="Aya. Gambieras +2",
+    feet="Fili Cothurnes +2",
     neck="Bard's charm +2",
     waist="Eschan Stone",
     left_ear="Dignitary's Earring",
@@ -205,7 +205,7 @@ function get_sets()
   sets.engaged.TakingLessPhysicalDamage = {
     head="Fili Calot +2",
     body="Nyame Mail",
-    hands="Fili Manchettes +2",
+    hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Loricate Torque +1",
@@ -246,6 +246,10 @@ function get_sets()
     right_ring="Stikini Ring +1",
     back="Kumbira Cape"  
   }
+  
+  sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
+	feet="Fili cothurnes +2"
+  })
   
   --Weaponskill Sets--
   sets.WS = {}
