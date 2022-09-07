@@ -218,7 +218,7 @@ function get_sets()
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck="Loricate Torque +1",
-		waist="Reiki Yotai",
+		waist="Kasiri belt",
 		left_ear="Eabani Earring",
 		right_ear="Ethereal Earring",
 		left_ring="Defending Ring",

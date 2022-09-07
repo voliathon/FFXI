@@ -90,7 +90,7 @@ function get_sets()
 	-- Specific Rolls
 	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +1" })
     sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +2" })
-    sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +1"})
+    sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +2"})
     sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
     sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet = "Chass. Bottes +1" })
 
@@ -335,7 +335,7 @@ function get_sets()
 		-- Triple shot +4, Triple Shot Damage +10
 		head="Oshosi Mask",
 		-- Triple shot +12
-		body="Chasseur's Frac +1",
+		body="Chasseur's Frac +2",
 		-- Racc 44, ratk 76, might become quad shot
 		hands="Lanun Gants +3",
 		-- Snapshot +10, Triple shot +5
