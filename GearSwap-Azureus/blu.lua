@@ -61,7 +61,7 @@ function get_sets()
 	--Job Ability Sets--
 	sets.JA = {}
     sets.JA.BurstAffinity = {} 
-    sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2"}
+    sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2", head="Hashishin kavuk +2"}
     sets.JA.Diffusion = {}
     sets.JA.Enchainment = {body="Luhlaza Jubbah +1"}
     sets.JA.Efflux = {back=Rosmerta.WSD, legs="Hashishin Tayt +1"}
@@ -233,7 +233,7 @@ function get_sets()
 	
 	sets.CruelJoke = {
 		ammo="Pemphredo Tathlum",
-		head="Malignance Chapeau",
+		head="Hashishin kavuk +2",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -297,7 +297,7 @@ function get_sets()
     -- Magical Spells --
     sets.BlueMagicMagical = {
 		ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +2",
+		head="Hashishin kavuk +2",
 		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
 		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
@@ -354,7 +354,7 @@ function get_sets()
 	-- WSD covers Savage Blade and Expiacion
     sets.WSD = {
 		ammo="Ginsen",
-		head=HercHead.WSD,
+		head="Hashishin kavuk +2",
 		body="Assim. Jubbah +3",
 		hands="Jhakri Cuffs +2",
 		legs=HercLegs.WSD,
@@ -370,7 +370,7 @@ function get_sets()
 
     sets.ChantduCygne = {
 		ammo="Ginsen",
-		head="Adhemar Bonnet +1",
+		head="Hashishin kavuk +2",
 		body="Abnoba Kaftan",
 		hands="Adhemar Wrist. +1",
 		legs=HercLegs.TP,
