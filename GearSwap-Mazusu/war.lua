@@ -7,6 +7,23 @@ function get_sets()
     sets.precast['Mighty Strikes'] = {}
     sets.Waltz = {}
     
+	 sets.Idle = {
+		sub="Utu Grip",
+		ammo="Staunch Tathlum",
+		head="Sulevia's Mask +2",
+		body="Tartarus Platemail",
+		hands="Sulev. Gauntlets +2",
+		legs="Sulev. Cuisses +2",
+		feet="Sulev. Leggings +2",
+		neck="Loricate Torque +1",
+		waist="Flume Belt +1",
+		left_ear="Odnowa Earring +1",
+		right_ear="Infused Earring",
+		left_ring="Defending Ring",
+		right_ring="Moonbeam Ring",
+		back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}}
+    }
+	
 	--WS Chart for WAR
 	--Upheavel --- 
 		
@@ -29,7 +46,13 @@ function get_sets()
 		back={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
     }
     
-    sets.TP = {
+	  -- Engaged Sets Toggle--
+	sets.engaged = {}
+	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	engaged_ind = 1  
+    
+    
+    sets.engaged.TP = {
 		sub="Utu Grip",
 		ammo="Ginsen",
 		head="Flam. Zucchetto +2",
@@ -45,26 +68,8 @@ function get_sets()
 		right_ring="Flamma Ring",
 		back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+2','"Dbl.Atk."+10',}}
     }
-    
-    sets.status = {}
-    sets.status.Engaged = sets.TP
-    
-    sets.status.Idle = {
-		sub="Utu Grip",
-		ammo="Staunch Tathlum",
-		head="Sulevia's Mask +2",
-		body="Tartarus Platemail",
-		hands="Sulev. Gauntlets +2",
-		legs="Sulev. Cuisses +2",
-		feet="Sulev. Leggings +2",
-		neck="Loricate Torque +1",
-		waist="Flume Belt +1",
-		left_ear="Odnowa Earring +1",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Moonbeam Ring",
-		back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}}
-    }
+	
+	
 	
 	  --Job Ability Sets--
   sets.JA = {}
@@ -87,14 +92,48 @@ function precast(spell)
 	end
 end
 
-function aftercast(spell)
-    if sets.status[player.status] then
-        equip(sets.status[player.status])
-    end
+--This function should only get kicked off when you're engaging.  
+--If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--But I don't want to fuck myself by ignoring the engaged check.
+--I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+function equip_current()
+	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 end
 
-function status_change(new,old)
-    if sets.status[new] then
-        equip(sets.status[new])
-    end
+
+--Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
+function self_command(command)
+	if command == 'C7' then -- Mecistopins Mantle toggle 
+		if Capacity == 'OFF' then
+			Capacity = 'ON'
+			equip({back="Mecistopins mantle"})
+            add_to_chat(158,'Capacity mantle: [ON]')
+		else
+			Capacity = 'OFF'
+			equip_current()
+   		    add_to_chat(123,'Capacity mantle: [OFF]')
+		end
+	elseif command == 'toggle Engaged set' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	end	 
 end
+
+
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+		send_command('@input /tell <me> Wakies Wakies Voreus We hit 0 HP on accident. We shall live forever!!!')
+	end
+end)
+
