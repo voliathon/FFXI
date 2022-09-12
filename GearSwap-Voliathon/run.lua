@@ -218,8 +218,8 @@ function get_sets()
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Sheltered Ring"
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"}
   }
 
 
@@ -227,7 +227,7 @@ function get_sets()
   sets.FastCast = {
     ammo="Staunch Tathlum +1",
     head="Rune. Bandeau +2",
-    body="Dread Jupon",
+    body="Erilaz surcoat +2",
     hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
     feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
@@ -235,8 +235,8 @@ function get_sets()
     waist="Siegel Sash",
     left_ear="Mimir Earring",
     right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring"
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
   }
 
   --Phalanx--
@@ -250,9 +250,9 @@ function get_sets()
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
-    right_ear="Halasz Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
+    right_ear="Mimir Earring",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
  }
 
@@ -294,8 +294,8 @@ function get_sets()
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Earthcry Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
   }
 
