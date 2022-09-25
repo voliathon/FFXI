@@ -1,6 +1,6 @@
 function get_sets()
 -- Set macro book/set --
-    send_command('input /macro book 18;wait .1;input /macro set 1')
+    send_command('input /macro book 7;wait .1;input /macro set 1')
 	
 	-- Binds for modes
 	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
@@ -15,20 +15,21 @@ function get_sets()
 	
   --Idle Sets--
   sets.Idle = {
-	main="Dojikiri Yasutsuna",
-	ammo="Staunch tathlum",
-	head="Genmei Kabuto",
-	body="Tartarus platemail",
-	hands="Kendatsuba tekko +1",
-	legs="Ryuo hakama +1",
-	feet="Ken. Sune-Ate +1",
-	neck="Samurai's nodowa +1",
-	waist="Ioskeha Belt",
-	left_ear="Infused Earring",
-	right_ear="Genmei Earring",
-	left_ring="Regal Ring",
-	right_ring="Defending Ring",
-	back="Moonbeam cape"
+    main={ name="Dojikiri Yasutsuna", augments={'Path: A',}},
+    sub="Utu Grip",
+    ammo="Ginsen",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck={ name="Sam. Nodowa +2", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Brutal Earring",
+    right_ear={ name="Kasuga Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+6','Mag. Acc.+6',}},
+    left_ring="Regal Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
 
   --TP Sets--
@@ -39,73 +40,77 @@ function get_sets()
 
   --offensive melee set
   sets.TP.BadAss = {
-	main="Dojikiri Yasutsuna",
-	ammo="Ginsen",
-	head="Flamma zucchetto +2",
-	body="Kendatsuba samue +1",
-	hands="Wakido kote +3",
-	legs="Ryuo hakama +1",
-	feet="Flamma Gambieras +2",
-	neck="Samurai's nodowa +1",
-	waist="Ioskeha Belt",
-	left_ear="Telos earring",
-	right_ear="Brutal Earring",
-	left_ring="Ilabrat Ring",
-	right_ring="Niqmaddu ring",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
+    main={ name="Dojikiri Yasutsuna", augments={'Path: A',}},
+    sub="Utu Grip",
+    ammo="Ginsen",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Ryuo hakama +1",
+    feet="Nyame Sollerets",
+    neck={ name="Sam. Nodowa +2", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Brutal Earring",
+    right_ear={ name="Kasuga Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+6','Mag. Acc.+6',}},
+    left_ring="Regal Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
 
   --Tank Gear
   sets.TP.Tank = {
-	main="Dojikiri Yasutsuna",
-	ammo="Staunch tathlum +1",
-	head="Kendatsuba jinpachi +1",
-	body="Tartarus platemail",
-	hands="Wakido kote +3",
-	legs="Ryuo hakama +1",
-	feet="Flamma gambieras +2",
-	neck="Loricate torque +1",
-	waist="Ioskeha Belt",
-	left_ear="Infused Earring",
-	right_ear="Genmei Earring",
-	left_ring="Chirich Ring +1",
-	right_ring="Defending Ring",
-	back="Moonbeam cape"
+    main={ name="Dojikiri Yasutsuna", augments={'Path: A',}},
+    sub="Utu Grip",
+    ammo="Ginsen",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck={ name="Sam. Nodowa +2", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Brutal Earring",
+    right_ear={ name="Kasuga Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+6','Mag. Acc.+6',}},
+    left_ring="Regal Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
 
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
-	main="Dojikiri Yasutsuna",
-	ammo="Staunch tathlum +1",
-	head="Kendatsuba jinpachi +1",
-	body="Tartarus platemail",
-	hands="Wakido kote +3",
-	legs="Ryuo hakama +1",
-	feet="Ken. Sune-Ate +1",
-	neck="Loricate torque +1",
-	waist="Ioskeha Belt",
-	left_ear="Infused Earring",
-	right_ear="Genmei Earring",
-	left_ring="Chirich Ring +1",
-	right_ring="Defending Ring",
-	back="Moonbeam cape"
+    main={ name="Dojikiri Yasutsuna", augments={'Path: A',}},
+    sub="Utu Grip",
+    ammo="Ginsen",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck={ name="Sam. Nodowa +2", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Brutal Earring",
+    right_ear={ name="Kasuga Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+6','Mag. Acc.+6',}},
+    left_ring="Regal Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
   
   sets.TP.Accuracy = {
-	main="Dojikiri Yasutsuna",
-	ammo="Amar cluster",
-	head="Kendatsuba jinpachi +1",
-	body="Kendatsuba samue +1",
-	hands="Wakido kote +3",
-	legs="Ryuo hakama +1",
-	feet="Ken. Sune-Ate +1",
-	neck="Samurai's nodowa +1",
-	waist="Ioskeha Belt",
-	left_ear="Cessance earring",
-	right_ear="Brutal Earring",
-	left_ring="Chirich Ring +1",
-	right_ring="Chirich Ring +1",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
+    main={ name="Dojikiri Yasutsuna", augments={'Path: A',}},
+    sub="Utu Grip",
+    ammo="Ginsen",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck={ name="Sam. Nodowa +2", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Brutal Earring",
+    right_ear={ name="Kasuga Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+6','Mag. Acc.+6',}},
+    left_ring="Regal Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
 
   --Weaponskill Sets--
@@ -113,20 +118,21 @@ function get_sets()
 
   --multi, Shoha, Fudo, Kasha need STR for the modifier
   sets.Single = {
-	main="Dojikiri Yasutsuna",
-	ammo="Knobkierrie",
-	head="Valorous mask",
-	body="Kendatsuba samue +1",
-	hands="Valorous mitts",
-	legs="Wakido haidate +3",
-	feet="Valorous greaves",
-	neck="Samurai's Nodowa +1",
-	waist="Fotia Belt",
-	left_ear="Ishvara earring",
-	right_ear="Moonshade Earring",
-	right_ring="Epaminondas's Ring",
-	left_ring="Regal Ring",
-    back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+    main={ name="Dojikiri Yasutsuna", augments={'Path: A',}},
+    sub="Utu Grip",
+    ammo="Knobkierrie",
+    head={ name="Valorous Mask", augments={'VIT+9','Magic dmg. taken -2%','Weapon skill damage +8%','Accuracy+20 Attack+20',}},
+    body={ name="Valorous Mail", augments={'INT+3','Magic dmg. taken -1%','Weapon skill damage +10%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+    hands={ name="Valorous Mitts", augments={'Rng.Atk.+11','Pet: STR+5','Weapon skill damage +6%','Accuracy+15 Attack+15','Mag. Acc.+17 "Mag.Atk.Bns."+17',}},
+    legs={ name="Ryuo Hakama +1", augments={'Accuracy+25','"Store TP"+5','Phys. dmg. taken -4',}},
+    feet={ name="Valorous Greaves", augments={'Mag. Acc.+20','"Store TP"+1','Weapon skill damage +9%',}},
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear="Thrud Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Regal Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
   }
 
   --Job Ability Sets--
@@ -139,7 +145,7 @@ function get_sets()
 	
   sets.JA.Sengikori = {feet="Kasuga sune-ate +1"}	
   sets.JA.Meditate = {head="Wakido kabuto +1", hands="Sao. Kote +2"}
-  sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +1", feet="Wakido sune-ate +2"}
+  sets.JA.Hasso = {hands="Wakido kote +1", legs="Kasuga haidate +1", feet="Wakido sune-ate +2"}
   sets.JA.WardingCircle = {head="Wakido kabuto +1"}
   sets.JA.ThirdEye = {legs="Sakonji Haidate"}
   sets.JA.Sekkanoki = {hands="Kasuga kote +1"}
