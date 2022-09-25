@@ -112,6 +112,10 @@ function get_sets()
     back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}
   }
   
+  sets.Ballad = set_combine(sets.Songs, { 
+	legs="Fili Rhingrave +2"
+  })
+  
   sets.Cure = {
     head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%'}},
     body={ name="Kaykaus Bliaut", augments={'MP+60','"Cure" potency +5%','"Conserve MP"+6'}},
@@ -191,7 +195,7 @@ function get_sets()
     head="Fili Calot +2",
     body="Fili Hongreline +2",
     hands="Fili Manchettes +2",
-    legs="Aya. Cosciales +2",
+    legs="Fili Rhingrave +2",
     feet="Fili Cothurnes +2",
     neck="Bard's charm +2",
     waist="Eschan Stone",
@@ -206,7 +210,7 @@ function get_sets()
     head="Fili Calot +2",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
+    legs="Fili Rhingrave +2",
     feet="Nyame Sollerets",
     neck="Loricate Torque +1",
     waist="Flume Belt",
@@ -221,7 +225,7 @@ function get_sets()
     head="Fili Calot +2",
     body="Nyame Mail",
     hands="Fili Manchettes +2",
-    legs="Nyame Flanchard",
+    legs="Fili Rhingrave +2",
     feet="Nyame Sollerets",
     neck="Loricate Torque +1",
     waist="Flume Belt",
@@ -254,7 +258,8 @@ function get_sets()
   --Weaponskill Sets--
   sets.WS = {}
 
-  --multi, Shoha, Fudo, Kasha need STR for the modifier
+  --I got lazy about the WeaponSkill for now. Any WS will come to this set for the time being.  It's not ideal by any means.
+  --It will do us justice on Savage Blade as an example
   -- 81 WSD 5/29/2021
   sets.WSD = {
     ammo="Ginsen",
@@ -346,6 +351,8 @@ function midcast(spell)
 	    equip(sets.Sleep)
 	  elseif string.find(spell.english,'Elegy') then
 		equip(sets.MagicAccuracy)
+	  elseif string.find(spell.english,'Ballad') then
+	    equip(sets.Ballad)
 	  else
 		equip(sets.Songs)
 	  end
