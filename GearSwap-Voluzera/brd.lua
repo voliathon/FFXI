@@ -99,7 +99,7 @@ function get_sets()
   --Maximizing Song Potency first then duration-- 
   sets.Songs = {
     head="Fili calot +2",
-    body="Fili Hongreline +1",
+    body="Fili Hongreline",
     hands="Fili manchettes +1",
     legs="Inyanga Shalwar +2",
     feet="Brioso Slippers +3",
@@ -173,11 +173,11 @@ function get_sets()
   sets.engaged.TP = {
     head="Aya. Zucchetto +2",
     body="Ayanmo Corazza +2",
-    hands="Ayanmo manopolas +2",
-    legs="Aya. Cosciales +2",
-    feet="Aya. Gambieras +2",
+    hands="Fili Manchettes +2",
+	legs="Nyame flanchard",
+	feet="Nyame sollerets",
     neck="Bard's charm +2",
-    waist="Windbuffet Belt",
+    waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Telos Earring",
     left_ring="Hetairoi Ring",
@@ -187,14 +187,14 @@ function get_sets()
   
   --Accuracy Set--
   sets.engaged.Accuracy = {
-    head="Fili calot +2",
-    body="Ayanmo Corazza +2",
-    hands="Ayanmo manopolas +2",
-    legs="Aya. Cosciales +2",
-    feet="Aya. Gambieras +2",
+    head="Fili Calot +2",
+    body="Fili Hongreline +2",
+    hands="Fili Manchettes +2",
+    legs="Fili Rhingrave +2",
+    feet="Fili Cothurnes +2",
     neck="Bard's charm +2",
     waist="Eschan Stone",
-    left_ear="Zennaroi Earring",
+    left_ear="Dignitary's Earring",
     right_ear="Telos Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
@@ -202,11 +202,11 @@ function get_sets()
   }
   
   sets.engaged.TakingLessPhysicalDamage = {
-    head="Fili calot +2",
-    body="Ayanmo Corazza +2",
-    hands="Aya. Manopolas +2",
-    legs="Brioso Cannions +3",
-    feet="Aya. Gambieras +2",
+    head="Nyame helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame flanchard",
+    feet="Nyame Sollerets",
     neck="Loricate Torque +1",
     waist="Flume Belt",
     left_ear="Genmei Earring",
@@ -217,17 +217,17 @@ function get_sets()
   }
   
   sets.engaged.TakingLessMagicDamage = {
-    head="Fili calot +2",
-    body="Inyanga Jubbah +2",
-    hands="Inyan. Dastanas +2",
-    legs="Brioso Cannions +3",
-    feet="Fili Cothurnes +1",
+    head="Nyame helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame flanchard",
+    feet="Nyame Sollerets",
     neck="Loricate Torque +1",
     waist="Flume Belt",
     left_ear="Genmei Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Defending Ring",
-    right_ring="Woltaris ring",
+    right_ring="Fortified ring",
     back="Moonbeam Cape"
   }
   

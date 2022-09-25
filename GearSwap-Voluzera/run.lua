@@ -16,18 +16,18 @@ function get_sets()
   --Idle Sets--
   sets.Idle = {
     ammo="Staunch Tathlum +1",
-	head="Runeist's bandeau +2",
-    body="Meghanada cuirie +2",
-    hands="Meghanada Gloves +2",
-    legs="Carmine cuisses +1",
-    feet="Ayanmo Gambieras +2",
-    neck="Sanctity Necklace",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Loricate Torque +1",
     waist="Ioskeha Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Dignitary's Earring",
+    left_ear="Infused Earring",
+    right_ear="Odr Earring",
     left_ring="Moonbeam Ring",
     right_ring="Defending Ring",
-    back="Agema cape"
+    back="Agema Cape"
   }
 
   --TP Sets--
@@ -56,51 +56,51 @@ function get_sets()
   --Tank Gear
   sets.TP.Tank = {
     ammo="Staunch Tathlum +1",
-    head="Runeist's bandeau +2",
-    body="Runeist's coat +2",
-    hands="Runeist's mitons +2",
-    legs="Runeist's trousers +2",
-    feet="Runeist's boots +2",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Loricate Torque +1",
-	waist="Ioskeha Belt +1",
+    waist="Ioskeha Belt +1",
     left_ear="Infused Earring",
-    right_ear="Hearty Earring",
+    right_ear="Odr Earring",
     left_ring="Moonbeam Ring",
     right_ring="Defending Ring",
-    back="Agema cape"
+    back="Agema Cape"
   }
 
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
     ammo="Staunch Tathlum +1",
-    head="Runeist's bandeau +2",
-    body="Runeist's coat +2",
-    hands="Runeist's mitons +2",
-    legs="Runeist's trousers +2",
-    feet="Runeist's boots +2",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Loricate Torque +1",
-	waist="Ioskeha Belt +1",
+    waist="Ioskeha Belt +1",
     left_ear="Infused Earring",
-    right_ear="Hearty Earring",
+    right_ear="Odr Earring",
     left_ring="Moonbeam Ring",
     right_ring="Defending Ring",
-    back="Agema cape"
+    back="Agema Cape"
   }
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    head="Meghanada Visor +2",
-    body="Meghanada cuirie +2",
-    hands="Meghanada Gloves +2",
-    legs="Meg. Chausses +2",
-    feet="Aya. Gambieras +2",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Subtlety Spec.",
     waist="Ioskeha Belt +1",
-    left_ear="Heartseeker Earring",
+    left_ear="Odr Earring",
     right_ear="Dignitary's Earring",
     left_ring="Moonbeam Ring",
     right_ring="Defending Ring",
-    back="Agema cape"
+    back="Agema Cape"
   }
 
   --Weaponskill Sets--
@@ -109,52 +109,52 @@ function get_sets()
   --multi, carries FTP -- Need STR for the modifier
   sets.Resolution = {
     ammo="Yetshila",
-    head="Herculean Helm",
-    body="Meghanada cuirie +2",
-    hands="Herculean gloves",
-    legs="Herculean trousers",
-    feet="Herculean boots",
-    neck="Fotia Gorget",
-	waist="Ioskeha belt +1",
+    head={ name="Herculean Helm", augments={'Chance of successful block +2','"Dual Wield"+1','Weapon skill damage +8%',}},
+    body={ name="Herculean Vest", augments={'INT+9','Pet: "Mag.Atk.Bns."+2','Weapon skill damage +9%','Accuracy+16 Attack+16','Mag. Acc.+1 "Mag.Atk.Bns."+1',}},
+    hands={ name="Herculean Gloves", augments={'Spell interruption rate down -9%','"Store TP"+2','Weapon skill damage +7%','Accuracy+4 Attack+4',}},
+    legs={ name="Herculean Trousers", augments={'Mag. Acc.+16','Blood Pact Dmg.+2','Weapon skill damage +8%',}},
+    feet={ name="Herculean Boots", augments={'Accuracy+4 Attack+4','Weapon skill damage +5%','STR+10','Accuracy+7',}},
+    neck="Clotharius Torque",
+    waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
-    right_ear="Moonshade Earring",
+    right_ear="Odr Earring",
+    left_ring="Ifrit Ring +1",
     right_ring="Rajas Ring",
-    left_ring="Begrudging Ring",
-    back="Agema cape"
+    back="Vespid Mantle"
   }
 
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
   sets.Single = {
     ammo="Yetshila",
-    head="Runeist's bandeau +2",
-    body="Meghanada Cuirie +2",
-    hands="Meg. Gloves +2",
-    legs="Meg. Chausses +2",
-    feet="Ayanmo Gambieras +2",
+    head={ name="Herculean Helm", augments={'Chance of successful block +2','"Dual Wield"+1','Weapon skill damage +8%',}},
+    body={ name="Herculean Vest", augments={'INT+9','Pet: "Mag.Atk.Bns."+2','Weapon skill damage +9%','Accuracy+16 Attack+16','Mag. Acc.+1 "Mag.Atk.Bns."+1',}},
+    hands={ name="Herculean Gloves", augments={'Spell interruption rate down -9%','"Store TP"+2','Weapon skill damage +7%','Accuracy+4 Attack+4',}},
+    legs={ name="Herculean Trousers", augments={'Mag. Acc.+16','Blood Pact Dmg.+2','Weapon skill damage +8%',}},
+    feet={ name="Herculean Boots", augments={'Accuracy+4 Attack+4','Weapon skill damage +5%','STR+10','Accuracy+7',}},
     neck="Fotia Gorget",
-	waist="Ioskeha belt +1",
-    left_ear="Moonshade Earring",
-    right_ear="Ishvara Earring",
-    left_ring="Begrudging Ring",
-    right_ring="Moonbeam Ring",
-    back={ name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    waist="Ioskeha Belt +1",
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Epaminondas's Ring",
+    right_ring="Chirich Ring +1",
+    back="Vespid Mantle"
   }
 
   --added effect
   sets.Shockwave = {
-    ammo="Yetshila",
-    head="Runeist's bandeau +2",
-    body="Meghanada Cuirie +2",
-    hands="Meg. Gloves +2",
-    legs="Herculean trousers",
-    feet="Ayanmo gambieras +2",
-    neck="Fotia Gorget",
-    waist="Ioskeha Belt +1",
-    left_ear="Crematio Earring",
-    right_ear="Friomisi Earring",
+    ammo="Ginsen",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Sanctity Necklace",
+    waist="Kentarch Belt",
+    left_ear="Odr Earring",
+    right_ear="Digni. Earring",
     left_ring="Moonbeam Ring",
-    right_ring="Fenrir Ring +1",
-    back="Toro Cape"
+    right_ring="Chirich Ring +1",
+    back="Vespid Mantle"
   }
 
   --magic WS
