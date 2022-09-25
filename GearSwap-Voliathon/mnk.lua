@@ -23,7 +23,7 @@ function get_sets()
     sets.precast.Dodge = {feet="Anchorite's Gaiters +1"}
     sets.precast.Mantra = {feet="Hes. Gaiters +1"}
     sets.precast.Footwork = {feet="Anchorite's gaiters +1"}
-	sets.precast.Impetus={body="Bhikku Cyclas +1"}
+	sets.precast.Impetus={body="Bhikku Cyclas +2"}
     sets.precast['Hundred Fists'] = {legs="Hes. Hose +1"}
     sets.Waltz = {head="Mummu bonnet+2"}	
 	
@@ -52,7 +52,7 @@ function get_sets()
     sets.TP.Impetus = {
 		ammo="Ginsen",
 		head="Kendatsuba jinpachi +1",
-		body="Bhikku Cyclas +1",
+		body="Bhikku Cyclas +2",
 		hands="Kendatsuba tekko +1",
 		legs="Kendatsuba hakama +1",
 		feet="Kendatsuba sune-ate +1",
@@ -71,18 +71,18 @@ function get_sets()
 	
 	sets.TP.Tank = {
 		ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",
-		body="Ashera Harness",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck={ name="Loricate Torque +1", augments={'Path: A'}},
+		head="Nyame helm",
+		body="Nyame mail",
+		hands="Nyame gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Warder Charm +1",
 		waist="Moonbow Belt +1",
-		left_ear="Cryptic Earring",
-		right_ear="Genmei Earring",
+		left_ear="Odnowa Earring +1",
+		right_ear="Tuisto Earring",
 		left_ring="Fortified Ring",
 		right_ring="Defending Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+		back="Moonlight cape"
 	}
     
 	sets.TP.Accuracy = set_combine(sets.TP.BadAss, {})
@@ -90,7 +90,7 @@ function get_sets()
 	sets.TP.TH = {
 		ammo="Ginsen",
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
-		body="Ken. Samue +1",
+		body="Bhikku Cyclas +2",
 		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
 		legs="Ken. Hakama +1",
 		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
@@ -120,7 +120,7 @@ function get_sets()
 	sets.WS.VictorySmite = {
 		ammo="Amar Cluster",
 		head="Hes. Crown +2",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
+		body="Bhikku Cyclas +2",
 		hands="Ken. Tekko +1",
 		legs="Kendatsuba hakama +1",
 		feet="Ken. Sune-Ate +1",
@@ -136,7 +136,7 @@ function get_sets()
 	sets.WS.FinalHeaven = {
 		ammo="Knobkierrie",
 		head="Hesychast's crown +2",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
+		body="Bhikku Cyclas +2",
 		hands="Anchorite's gloves +3",
 		legs="Hiza. Hizayoroi +2",
 		feet="Ken. Sune-Ate +1",
@@ -184,7 +184,7 @@ end
 
 function aftercast(spell)
 	if (spell.english == 'Impetus') then
-		equip({body="Bhikku Cyclas +1"})
+		equip({body="Bhikku Cyclas +2"})
 	else
 		equip_current()	
 	end
@@ -194,7 +194,7 @@ end
 function equip_current()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
 	if (buffactive['Impetus']) then
-		equip({body="Bhikku Cyclas +1"})
+		equip({body="Bhikku Cyclas +2"})
 	end
 end
 

@@ -16,19 +16,20 @@ function get_sets()
   --Idle Sets--
   sets.Idle = {
 	main="Dojikiri Yasutsuna",
-	ammo="Staunch tathlum +1",
-	head="Genmei Kabuto",
-	body="Ashura harness",
-	hands="Kendatsuba tekko +1",
-	legs="Kendatsuba hakama +1",
-	feet="Ken. Sune-Ate +1",
-	neck="Moonlight nodowa",
-	waist="Ioskeha Belt +1",
-	left_ear="Infused Earring",
-	right_ear="Genmei Earring",
-	left_ring="Fortified Ring",
-	right_ring="Defending Ring",
-	back="Moonbeam cape"
+	sub="Utu grip",
+    ammo="Staunch Tathlum +1",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Infused Earring",
+    right_ear="Genmei Earring",
+    left_ring="Fortified Ring",
+    right_ring="Defending Ring",
+    back="Moonlight cape"
   }
 
   --TP Sets--
@@ -58,37 +59,39 @@ function get_sets()
   --Tank Gear
   sets.TP.Tank = {
 	main="Dojikiri Yasutsuna",
-	ammo="Staunch tathlum +1",
-	head="Genmei Kabuto",
-	body="Ashura harness",
-	hands="Kendatsuba tekko +1",
-	legs="Kendatsuba hakama +1",
-	feet="Flamma gambieras +2",
-	neck="Loricate torque +1",
-	waist="Ioskeha Belt +1",
-	left_ear="Infused Earring",
-	right_ear="Genmei Earring",
-	left_ring="Fortified Ring",
-	right_ring="Defending Ring",
-	back="Moonbeam cape"
+	sub="Utu grip",
+    ammo="Staunch Tathlum +1",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Infused Earring",
+    right_ear="Genmei Earring",
+    left_ring="Fortified Ring",
+    right_ring="Defending Ring",
+    back="Moonlight cape"
   }
 
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
 	main="Dojikiri Yasutsuna",
+	sub="Utu grip",
 	ammo="Staunch tathlum +1",
-	head="Genmei Kabuto",
-	body="Ashura harness",
-	hands="Kendatsuba tekko +1",
-	legs="Kendatsuba hakama +1",
-	feet="Ken. Sune-Ate +1",
-	neck="Loricate torque +1",
-	waist="Ioskeha Belt +1",
-	left_ear="Infused Earring",
-	right_ear="Genmei Earring",
-	left_ring="Fortified Ring",
-	right_ring="Defending Ring",
-	back="Moonbeam cape"
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Infused Earring",
+    right_ear="Genmei Earring",
+    left_ring="Fortified Ring",
+    right_ring="Defending Ring",
+    back="Moonlight cape"
   }
   
   sets.TP.Accuracy = {
@@ -113,20 +116,21 @@ function get_sets()
 
   --multi, Shoha, Fudo, Kasha need STR for the modifier
   sets.Single = {
-	main="Dojikiri Yasutsuna",
-    ammo="Ginsen",
-    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%'}},
-    body={ name="Valorous Mail", augments={'Accuracy+18','Weapon skill damage +4%','Attack+5'}},
-    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12'}},
+    main="Dojikiri Yasutsuna",
+    sub="Utu Grip",
+    ammo="Knobkierrie",
+    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
+    body={ name="Valorous Mail", augments={'Accuracy+18','Weapon skill damage +4%','Attack+5',}},
+    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
     legs="Hiza. Hizayoroi +2",
-    feet={ name="Valorous Greaves", augments={'Weapon skill damage +3%','Mag. Acc.+16','"Treasure Hunter"+1','Accuracy+13 Attack+13','Mag. Acc.+19 "Mag.Atk.Bns."+19'}},
+    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear="Ishvara Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     left_ring="Epaminondas's Ring",
-    right_ring="Flamma Ring",
-    back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+    right_ring="Chirich Ring +1",
+    back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
   }
 
   --Job Ability Sets--

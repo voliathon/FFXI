@@ -1,34 +1,81 @@
+--Food to Eat
+--    Recomended:
+--    Miso Ramen
+    -- Stats: HP+100, STR+5, VIT+5, DEF+10% (Max. 170), "Magic Def. Bonus"+5, Magic Evasion +10% (Max. 50),"Resist Slow" +10.
+        -- The best defensive tanking food there is. It couples HP+, Defense, and Magic Evasion+ all into one food.
+            -- Purchased from the Auction House. Crafted only.
+    -- Om. Sandwich
+    -- Stats: HP+11% (Max. 150), VIT+7, MND+7, Accuracy+11% (Max. 80), DEF+11% (Max. 120), Enmity+4.
+        -- Introduced in The Voracious Resurgence missionline. Comparable to Miso Ramen in HP and Defense; exchanging Magic Evasion and Magic Defense Bonus for Accuracy and Enmity.
+        -- Purchased from the Auction House. Crafted only.
+
+-- Alternatives:
+
+    -- Black Curry
+    -- Stats: (DEX+2, VIT+4, INT+1, Accuracy+5, Ranged Accuracy+5, Evasion+5, DEF+15% (Max. 180), "Resist Sleep"+3, HP recovered while healing +2, MP recovered while healing +1)
+        -- The next best thing. This food actually has 10 more defense than Miso Ramen, but lacks the other benefits. The silver lining is that they are a fourth to a fifth the price of Miso depending on the market.
+            -- Purchased from the Curio Moogle for 4,000 gil, 48,000 a stack.
+    -- Tavnazian Taco
+    -- Stats: (HP+20, MP+20, DEX+4, VIT+6, AGI+4, CHR+4, DEF+25% (Max. 150), HP and MP recovered while healing +1)
+        -- The once famous food. There is no reason to really use this anymore, but if you are a lower level it will grant more defense than one of these higher level items given its lower cap, but higher percentage increase.
+            -- Purchased from the Curio Moogle for 4,000 gil, 48,000 a stack.
+    -- Rabbit Pie
+    -- Stats: (STR+5 VIT+5 INT-2 Attack+25% (Max. 100) Ranged Attack+25% (Max. 100) DEF+25% (Max. 100))
+        -- An honorable mention. The attack and defense parameters aren't as high given it's hybrid status but definitely worth looking at.
+            -- Purchased from Curio Moogle for 3,000 gil, 36,000 gil a stack.
+    -- Fried Popoto
+    -- Stats: (HP +30, VIT +2, Element: Fire +20, Defense +20% (Cap:145), Subtle Blow +8)
+        -- This food is as cheap as it gets, excluding the crystal it costs less than 300 gil to make 6 of these a synth. Making these in bulk to store and use for Ambuscade spam and similar events will cost you next to nothing. Even if you have to shout and pay a level 90+ cook 50-100k to make them for you. It would still only cost you roughly 10-20k a stack of Fried Popotos.
+            -- Purchased from the Auction House, crafted only.
+
+-- Created by Voliathon
+-- Modified 9/13/2022
+
 function get_sets()
 -- Set macro book/set --
-    send_command('input /macro book 11;wait .1;input /macro set 1')
-	
+	send_command('input /macro book 11;wait .1;input /macro set 1')
+
 	-- Binds for modes
+	--Swapping Shields
+	send_command('bind ^f7 gs c C7') 
+	--Swapping Swords
+	send_command('bind ^f8 gs c C8') 
 	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-  	send_command('bind ^f8 gs c C8') 
-    send_command('bind !f9 gs c toggle TP set')
+	send_command('bind !f9 gs c toggle TP set')
 	send_command('bind ^f9 gs c reverse TP set')
 
 	-- Modes --
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang via ctrl + F8
+	Aegis = 'OFF'
 	ShadowType = 'None'
 	
+  --Job Ability Sets--
+  sets.JA = {}
+  
+  -- Dancer's Abilities --
+  sets.JA.Waltz = {legs="Dashing subligar"}
+  sets.JA.Step = 	{}
+  sets.JA.Stun = {}
+	
+	
+
   --TP Sets--
   sets.TP = {}
---					  1		   2              3 				   4 		    5		     6
-  sets.TP.index = {'Movement', 'BadAss', 'Tank', 'TakingLessMagicDamage', 'Accuracy', 'TreasureHunter'}
+--					  1		   2              3 		   4		  5 		  6		        7
+  sets.TP.index = {'Movement', 'BadAss', 'OldTurtle', 'NewTurtle', 'Evasion', 'Accuracy', 'TreasureHunter'}
   TP_ind = 1
 
   sets.TP.Movement = {
     ammo="Staunch Tathlum +1",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    feet="Sakpata's Leggings",
     neck={ name="Loricate Torque +1", augments={'Path: A',}},
     waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
+    left_ear="Hearty Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
@@ -38,39 +85,23 @@ function get_sets()
   
   --offensive melee set
   sets.TP.BadAss = {
+    ammo="Staunch Tathlum +1",
     head="Flam. Zucchetto +2",
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    hands="Regal Gauntlets",
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-    neck="Clotharius Torque",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Flam. Gambieras +2",
+    neck="Loricate Torque +1",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
-    right_ear="Suppanomimi",
-    left_ring="Moonlight Ring",
+    right_ear="Cessance earring",
+    left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
     back="Moonlight Cape"
   }
 
-  --Tank Gear
-  sets.TP.Tank = {
-    ammo="Staunch Tathlum +1",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
-    waist="Flume Belt +1",
-    left_ear="Hearty Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring="Moonlight Ring",
-    right_ring="Fortified Ring",
-    back="Moonlight Cape"
-  }
-
-  --MDT melee set
-  sets.TP.TakingLessMagicDamage = {
+  --Old Tank Gear
+  sets.TP.OldTurtle = {
     ammo="Staunch Tathlum +1",
     head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
@@ -86,20 +117,47 @@ function get_sets()
     back="Moonlight Cape"
   }
   
+  --New Tank Gear
+  sets.TP.NewTurtle = {
+    ammo="Staunch Tathlum +1",
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Flume Belt +1",
+    left_ear="Tuisto Earring",
+    right_ear="Cryptic Earring",
+    left_ring="Moonlight Ring",
+    right_ring="Fortified Ring",
+    back="Moonlight Cape"
+  }  
+
+  --Evasion
+  sets.TP.Evasion = {
+    ammo="Staunch Tathlum +1",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Flume Belt +1",
+    left_ear="Tuisto Earring",
+    right_ear="Cryptic earring",
+    left_ring="Moonlight Ring",
+    right_ring="Fortified Ring",
+    back="Moonlight Cape"
+  }
+  
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    head="Turms cap +1",
-    body="Ashera harness",
-    hands="Turms Mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Turms Leggings +1",
     neck="Subtlety Spec.",
-    waist="Ioskeha Belt +1",
     left_ear="Heartseeker Earring",
     right_ear="Cessance Earring",
     left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
-    back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+    right_ring="Chirich Ring +1"
   }
   
   sets.TP.TreasureHunter = {
@@ -109,7 +167,7 @@ function get_sets()
   --Weaponskill Sets--
   sets.WS = {}
 
-  --multi, carries FTP -- Need STR for the modifier
+  --Atonement, Enmity is the modifier
   sets.Atonement = {
     ammo="Amar Cluster",
     head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
@@ -117,7 +175,7 @@ function get_sets()
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Warder's Charm",
+    neck="Warder's Charm +1",
     waist="Grunfeld Rope",
     left_ear="Cryptic Earring",
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -126,12 +184,12 @@ function get_sets()
     back="Vespid Mantle"
   }
 
-  --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
-  sets.Single = {
-    ammo="Ginsen",
+  --STR and WSD gears
+  sets.STRWSD = {
+    ammo="Amar Cluster",
     head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
     body={ name="Lustr. Harness +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}},
-    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
     legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
     feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
     neck="Fotia Gorget",
@@ -144,42 +202,6 @@ function get_sets()
   }
 
 
-  sets.Utility = {}
-  
-  --full PDT set for when stunned, etc.
-  sets.Utility.PDT = {
-    ammo="Staunch Tathlum +1",
-    head="Futhark bandeau +1",
-    body="Futhark coat +1",
-    hands="Turms mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Erilaz Greaves +1",
-    neck="Loricate torque +1",
-    waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-    back="Moonbeam Cape"
-  }
-
-  --full MDT set for when stunned, etc
-  sets.Utility.MDT = {
-    ammo="Staunch Tathlum +1",
-    head="Erilaz galea +1",
-    body="Futhark coat +1",
-    hands="Turms mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Erilaz Greaves +1",
-    neck="Loricate torque +1",
-    waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-    back="Moonbeam Cape"
-  }
-  
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
     head="Erilaz Galea +1",
@@ -195,27 +217,8 @@ function get_sets()
     right_ring="Stikini Ring"
   }
 
-  --Job Ability Sets--
-  sets.JA = {}
-  
-  -- Dancer's Abilities --
-  sets.JA.Waltz = {legs="Dashing subligar"}
-  sets.JA.Step = 	{}
-  sets.JA.Stun = {}
-	
-	
-  sets.JA.Lunge = {}
-  sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +1"}
-  sets.JA.Gambit = {hands="Runeist's mitons +2"}
-  sets.JA.Rayke = {feet="Futhark boots +1"}
-  sets.JA.Battuta = {head="Futhark bandeau +1"}
-  sets.JA.Pflug = {feet="Runeist bottes +2"}
-  sets.JA.Pulse = {head="Erilaz Galea +1",legs="Runeist Trousers +2"}
-  sets.JA.Swordplay = {hands="Futhark mitons +1"}
-
-  --Precast Sets--
-  --Fast Cast set
-  sets.precast = {
+  --FastCast set
+  sets.FastCast = {
     ammo="Staunch Tathlum +1",
     hands="Regal Gauntlets",
     feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
@@ -229,19 +232,21 @@ function get_sets()
 
   --Phalanx--
   sets.Phalanx = {
+    main="Sakpata's Sword",
+    sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%',}},
     ammo="Staunch Tathlum +1",
-    head={ name="Odyssean Helm", augments={'Mag. Acc.+14','"Fast Cast"+2','Phalanx +1','Accuracy+19 Attack+19','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    head="Yorium Barbuta",
+    body="Yorium Cuirass",
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    legs="Sakpata's Cuisses",
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Warder's Charm",
+    neck="Voltsurge Torque",
     waist="Audumbla Sash",
     left_ear="Mimir Earring",
-    right_ear="Friomisi Earring",
+    right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
     right_ring="Stikini Ring +1",
-    back="Moonlight Cape"
+    back="Weard Mantle"
  }
 
  --88 SIR
@@ -265,7 +270,7 @@ function get_sets()
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Warder's Charm",
+    neck="Warder's Charm +1",
     waist="Grunfeld Rope",
     left_ear="Cryptic Earring",
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -295,9 +300,8 @@ function get_sets()
 
 end
 
-
+-- Precast Logic --
 function precast(spell,abil)
-
 	-- Dancer Abilities --
   if string.find(spell.english, 'Waltz') then
 	equip(sets.JA.Waltz)
@@ -305,24 +309,20 @@ function precast(spell,abil)
   
   --equips favorite weapon if disarmed
   if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip({main="Burtgang",sub="Utu Grip"})
+    equip({main="Burtgang",sub="Aegis"})
     add_to_chat(158,'Burtgang Weapon: [ON]')
 	Naegling = 'OFF'
   end
   
-  if spell.skill == 'Enhancing Magic' then
-	equip(sets.precast)
+  if spell.skill == 'Enhancing Magic' or spell.action_type == 'Magic' then
+	equip(sets.FastCast)
   end
-  if spell.action_type == 'Magic' then
-    equip(sets.Utility.PDT,sets.precast)
-  end
-  
-  
+   
   if spell.name == 'Atonement' then
-    equip(sets.Single)
+    equip(sets.Atonement)
   end
   if spell.name == 'Savage Blade' then
-    equip(sets.Single)
+    equip(sets.STRWSD)
   end
   --prevents casting Utsusemi if you already have 3 or more shadows
   if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
@@ -335,22 +335,19 @@ function precast(spell,abil)
   
   if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
     if TP_ind == 4 then
-      equip(sets.Utility.MDT) else
-      equip(sets.Utility.PDT)
+      equip(sets.Evasion)
     end
   end
+  
 end
 
 
 
---Should NOT put Job Abilities here.  Ony Magic Fren!  Fren is Doggo Speak for Friend
+-- Midcast
 function midcast(spell,act,arg)
---Unsure if needed cause it should be good enough for precast....
-
- 
   if spell.skill == 'Enhancing Magic' then
 	if spell.name == 'Phalanx' then
-		equip(sets.SIR,sets.Phalanx)
+		equip(sets.Phalanx)
 	end
 	if spell.name == "Blink" or spell.name == "Stoneskin" then
       equip(sets.SIR,sets.Stoneskin)
@@ -370,7 +367,6 @@ function midcast(spell,act,arg)
   if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then
     equip(sets.MagicAcc)
   end
-  
   
 end
 
@@ -394,6 +390,7 @@ end
 --I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
+	weaponSelector()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
 end
 
@@ -402,17 +399,17 @@ end
 --158 is a green color for the text output
 function self_command(command)
 	if command == 'C8' then -- Naegling to Burtgang --	
-        if Naegling == 'ON' then
-            Naegling = 'OFF'
-			equip({main="Burtgang"})
-            add_to_chat(158,'Burtgang Weapon: [ON]')
-			add_to_chat(123,'Naegling Weapon: [OFF]')
-		else
-            Naegling = 'ON'
-			equip({main="Naegling"})
-            add_to_chat(158,'Naegling Weapon: [ON]')
-            add_to_chat(123,'Burtgang Weapon: [OFF]')				
-        end
+      if Naegling == 'ON' then
+		Naegling = 'OFF'
+		equip({main="Burtgang"})
+		add_to_chat(158,'Burtgang Weapon: [ON]')
+		add_to_chat(123,'Naegling Weapon: [OFF]')
+	  else
+		Naegling = 'ON'
+		equip({main="Naegling"})
+		add_to_chat(158,'Naegling Weapon: [ON]')
+		add_to_chat(123,'Burtgang Weapon: [OFF]')				
+	  end
        -- status_change(player.status)
 	elseif command == 'toggle TP set' then
 		TP_ind = TP_ind -1
@@ -425,6 +422,34 @@ function self_command(command)
 		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
 		equip_current()
 	end
+	if command == 'C7' then
+	  if Aegis == 'ON' then
+	    Aegis = 'OFF'
+		equip({sub="Priwen"})
+		add_to_chat(158,'Priwen Shield: [ON]')
+		add_to_chat(123,'Aegis Shield: [OFF]')
+	  else
+        Aegis = 'ON'
+        equip({sub="Aegis"})		
+		add_to_chat(123,'Priwen Shield: [OFF]')
+		add_to_chat(158,'Aegis Shield: [ON]')
+	  end
+   end
+end
+
+function weaponSelector()
+  if Naegling == 'ON' then
+	equip({main="Naegling"})
+  else
+	equip({main="Burtgang"})
+  end
+  
+  if Aegis == 'ON' then
+	equip({sub="Aegis"})
+  else
+	equip({sub="Priwen"})		
+  end
+  
 end
 
 

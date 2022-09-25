@@ -1,6 +1,6 @@
 function get_sets()
 	-- Set macro book/set --
-    send_command('input /macro book 5;wait .1;input /macro set 1')
+    send_command('input /macro book 1;wait .1;input /macro set 2')
 	
 	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
     send_command('bind !f9 gs c toggle Engaged set')
@@ -205,20 +205,20 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		main="Idris",
-		sub="Genmei Shield",	
+		sub="Genmei Shield",
 		range="Dunna",
-		head="Befouled Crown",
-		body="Shamash robe",
-		hands="Bagua Mitaines +1",
-		legs="Ea slops +1",
-		feet="Azimuth Gaiters +1",
-		neck="Loricate torque +1",
-		waist="Isa Belt",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
 		left_ring="Fortified Ring",
 		right_ring="Defending Ring",
-		back="Solemnity cape"
+		back="Moonlight Cape"
 	}
 
     -- .Pet sets are for when Luopan is present.
@@ -245,18 +245,19 @@ function get_sets()
 		main="Idris",
 		sub="Genmei Shield",
 		range="Dunna",
-		head="Befouled Crown",		
-		body="Shamash robe",
-		hands="Bagua Mitaines +1",
-		legs="Ea slops +1",
-		feet="Azimuth Gaiters +1",
-		neck="Loricate torque +1",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
 		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
-		left_ring="Yacuruna Ring",
+		left_ring="Fortified Ring",
 		right_ring="Defending Ring",
-		back="Mubvumbamiri Mantle"
+		back="Moonlight Cape"
+
 	}
 
 		
