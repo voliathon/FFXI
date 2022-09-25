@@ -23,7 +23,7 @@ function get_sets()
 		body="Shango Robe",
 		hands="Amalric gages",
 		legs="Geo. Pants +1",
-		feet="Merlinic Crackows",-
+		feet="Merlinic Crackows",
 		waist="Witful Belt",
 		left_ear="Loquac. Earring",
 		right_ear="Infused earring",
@@ -47,7 +47,7 @@ function get_sets()
 		hands="Geo. Mitaines +3",
         back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}},
 		waist="Austerity Belt +1",
-		legs="Geomancy Pants +2",
+		legs="Azimuth tights +2",
 		feet="Azimuth gaiters +2"
 	}
 
@@ -126,9 +126,9 @@ function get_sets()
 		sub="Genmei Shield",	
 		ammo="Dosis Tathlum",
 		head="Merlinic Hood",
-		body="Shamash robe",
+		body="Azimuth coat +2",
 		hands="Azimuth gloves +2",
-		legs="Ea slops +1",
+		legs="Azimuth tights +2=-",
 		feet="Merlinic Crackows",
 		neck="Saevus pendant +1",
 		waist="Refoccilation stone",
@@ -147,10 +147,10 @@ function get_sets()
 		sub="Genmei Shield",	
 		range="Dunna",
 		head="Bagua Galero +1",
-		body="Geomancy tunic +3",
+		body="Azimuth coat +2",
 		hands="Merlinic Dastanas",
-		legs="Merlinic Shalwar",
-		feet="Merlinic Crackows",
+		legs="Azimuth tights +2",
+		feet="Azimuth gaiters +2",
 		neck="Saevus Pendant +1",
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
@@ -164,10 +164,10 @@ function get_sets()
 		main="Daybreak",
 		sub="Genmei Shield",	
 		range="Dunna",
-		head="Befouled Crown",
-		body="Ischemia Chasu.",
+		head="Azimuth hood +2",
+		body="Azimuth coat +2",
 		hands="Azimuth gloves +2",
-		legs="Merlinic Shalwar",
+		legs="Azimuth tights +2",
 		feet="Azimuth gaiters +2",
 		neck="Sanctity Necklace",
 		waist="Refoccilation stone",
@@ -228,9 +228,9 @@ function get_sets()
 		sub="Genmei Shield",	
 		range="Dunna",
 		head="Azimuth Hood +2",
-		body="Shamash robe",
+		body="Nyame mail",
 		hands="Geo. Mitaines +3",
-		legs="Assid. Pants +1",
+		legs="Nyame flanchard",
 		feet="Bagua Sandals +1",
 		neck="Loricate torque +1",
 		waist="Isa Belt",
@@ -262,7 +262,7 @@ function get_sets()
 
 		
 	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {feet="Geomancy Sandals +3"}
+    sets.Kiting = {feet="Geomancy Sandals +2"}
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
