@@ -61,7 +61,9 @@ load Guildwork
 lua load equipviewer
 lua load skillchains
 lua load sparks
-lua load XIPivot
+//lua load XIPivot
 lua load Assist
 lua load superwarp
 //lua load empypoptracker
+lua load htmb
+//lua load ruptchat

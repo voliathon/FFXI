@@ -1,11 +1,11 @@
-input /ma "Barparalyze" <me>; wait 7;
+input /ma "Barpetrify" <me>; wait 7;
 input /ma "Barthunder" <me>; wait 5;
 input /ma "Aquaveil" <me>; wait 9;
 input /ma "Blink" <me>; wait 9;
-input /ja "Tellus" <me>; wait 5; 
+input /ja "Sulpor" <me>; wait 5; 
 input /ma "Crusade" <me>; wait 9;
-input /ja "Tellus" <me>; wait 6;
-input /ja "Tellus" <me>; wait 5; 
+input /ja "Sulpor" <me>; wait 6;
+input /ja "Sulpor" <me>; wait 5; 
 input /ja "Meditate" <me>; wait 2;
 input /ja "Hasso" <me>; wait 1;
 input /ma "Temper" <me>; wait 9;
