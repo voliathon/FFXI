@@ -6,12 +6,12 @@ function get_sets()
 	-- Toggle Mecistopins mantle
 	send_command('bind ^f7 gs c C7')
 	
-	-- Toggle Instrument F8 Key
-	send_command('bind !f8 gs c Toggle Instruments') 
-	send_command('bind ^f8 gs c Reverse Toggle Instruments')
+	-- Toggle Weapon F8 Key
+	send_command('bind !f8 gs c C8') 
+	send_command('bind ^f8 gs c Reverse Toggle Weapon')
 	
 	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c toggle Engaged set')
+    send_command('bind !f9 gs c C9')
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
 	-- Modes --
@@ -278,22 +278,44 @@ function get_sets()
   }
   
 
-  -- Instrument Toggle--
-  sets.instrument = {}
-  sets.instrument.index = {'Gjallarhorn', 'Daurdabla', 'Marsyas'}
-  instrument_ind = 1     
+ --TODO - Get 1000TP Bonus offhand Weapon
+  -- Weapon Toggle--
+  sets.weapon = {}
+  sets.weapon.index = {'CarnwenhanShield', 'CarnwenhanCrep', 'TwashtarShield','TwashtarCrep','NaeglingShield','NaeglingCrep','TauretShield','TauretCrep'}
+  weapon_ind = 1     
   
- sets.instrument.Gjallarhorn = {
-	range="Gjallarhorn"
+ sets.weapon.CarnwenhanShield = {
+	main="Carnwenhan",
+	sub="Genmei shield"
  } 
- sets.instrument.Daurdabla = {
-	range="Daurdabla"
+ sets.weapon.CarnwenhanCrep = {
+	main="Daurdabla",
+	sub="Crepuscular Knife"
  }
- sets.instrument.Marsyas = {
-	range="Marsyas"
+ sets.weapon.TwashtarShield = {
+	main="Twashtar",
+	sub="Genmei shield"
  } 
-
- 
+ sets.weapon.TwashtarCrep = {
+	main="Twashtar",
+	sub="Crepuscular Knife"
+ }  
+ sets.weapon.NaeglingShield = {
+	main="Naegling",
+	sub="Genmei shield"
+ } 
+ sets.weapon.NaeglingCrep = {
+	main="Naegling",
+	sub="Crepuscular Knife"
+ } 
+ sets.weapon.TauretShield = {
+	main="Tauret",
+	sub="Genmei shield"
+ } 
+ sets.weapon.TauretCrep = {
+	main="Tauret",
+	sub="Crepuscular Knife"
+ } 
 end
 
 
@@ -315,7 +337,7 @@ function precast(spell,abil)
 	end
 	if spell.type == 'BardSong' then
 		if spell.name == 'Honor March' then
-			equip(sets.FastCast,{range="Marsyas",ammo="empty"})
+			equip(sets.FastCast,{main="Carnwenhan",range="Marsyas",ammo="empty"})
 		end
 	end
 	if spell.name == 'Nightingale' then
@@ -348,13 +370,13 @@ function midcast(spell)
 	end
 	if spell.type == 'BardSong' then
 	  if string.find(spell.english,'Lullaby') then
-	    equip(sets.Sleep)
+	    equip(sets.Sleep,{main="Carnwenhan"})
 	  elseif string.find(spell.english,'Elegy') then
-		equip(sets.MagicAccuracy)
+		equip(sets.MagicAccuracy,{main="Carnwenhan"})
 	  elseif string.find(spell.english,'Ballad') then
-	    equip(sets.Ballad)
+	    equip(sets.Ballad,{main="Carnwenhan",})
 	  else
-		equip(sets.Songs)
+		equip(sets.Songs,{main="Carnwenhan"})
 	  end
 	end
 	if spell.name == 'Cursna' then
@@ -389,10 +411,11 @@ end
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip_weapon()
 end
 
-function equip_instrument()
-	equip(sets.instrument[sets.instrument.index[instrument_ind]])
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
 --Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
@@ -409,17 +432,17 @@ function self_command(command)
 			equip_current()
    		    add_to_chat(123,'Capacity mantle: [OFF]')
 		end
-	elseif command == 'Toggle Instruments' then -- Gjallarhorn to Daurdabla to Marsyas --	
-		instrument_ind = instrument_ind +1
-		if instrument_ind > #sets.instrument.index then instrument_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.instrument.index[instrument_ind]..' ----->')
-		equip_instrument()
-	elseif command == 'Reverse Toggle Instruments' then -- Gjallarhorn to Daurdabla to Marsyas --
-		instrument_ind = instrument_ind -1
-		if instrument_ind == 0 then instrument_ind = #sets.instrument.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.instrument.index[instrument_ind]..' ----->')
-		equip_instrument()
-	elseif command == 'toggle Engaged set' then
+	elseif command == 'C8' then -- Toggling Weapons--	
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')

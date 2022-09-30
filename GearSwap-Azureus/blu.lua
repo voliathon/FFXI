@@ -101,7 +101,7 @@ function get_sets()
     sets.MagicAccuracy = {
 		ammo="Pemphredo Tathlum",
 		head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
-		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		body="Hashishin mintan +2",
 		hands="Regal Cuffs",
 		legs="Malignance Tights",
 		feet="Aya. Gambieras +2",
@@ -140,7 +140,7 @@ function get_sets()
     sets.engaged.TakingLessPhysicalDamage = {
 		ammo="Staunch Tathlum",
 		head="Nyame Helm",
-		body="Nyame Mail",
+		body="Hashishin mintan +2",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
@@ -188,7 +188,7 @@ function get_sets()
 	
 	sets.engaged.Refresh = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
 		head="Rawhide mask",
-		body="Jhakri Robe +2",
+		body="Hashishin mintan +2",
 		neck="Sanctity Necklace",
 		legs="Rawhide trousers",
 		waist="Fucho-no-Obi",
@@ -234,7 +234,7 @@ function get_sets()
 	sets.CruelJoke = {
 		ammo="Pemphredo Tathlum",
 		head="Hashishin kavuk +2",
-		body="Malignance Tabard",
+		body="Hashishin mintan +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance boots",
@@ -298,7 +298,7 @@ function get_sets()
     sets.BlueMagicMagical = {
 		ammo="Pemphredo Tathlum",
 		head="Hashishin kavuk +2",
-		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
+		body="Hashishin mintan +2",
 		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
 		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
