@@ -22,8 +22,9 @@ function get_sets()
     sets.precast.Focus = {head="Anchorite's Crown +1"}
     sets.precast.Dodge = {feet="Anchorite's Gaiters +1"}
     sets.precast.Mantra = {feet="Hes. Gaiters +1"}
-    sets.precast.Footwork = {feet="Anchorite's gaiters +1"}
+    sets.precast.Footwork = {feet="Bhikku gaiters +1"}
 	sets.precast.Impetus={body="Bhikku Cyclas +2"}
+	sets.precast.PerfectCounter={head="Bhikku Crown +1"}
     sets.precast['Hundred Fists'] = {legs="Hes. Hose +1"}
     sets.Waltz = {head="Mummu bonnet+2"}	
 	

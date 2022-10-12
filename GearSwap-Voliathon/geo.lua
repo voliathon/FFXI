@@ -9,7 +9,7 @@ function get_sets()
     -- Job Abilities for Geomancer --
     sets.Bolster = {body="Bagua Tunic +1"}
     sets.LifeCycle = {body="Geomancy Tunic +1", back="Nantosuelta's Cape"}
-    sets.FullCircle = {head="Azimuth Hood +1"}
+    sets.FullCircle = {head="Azimuth Hood +2"}
     sets.CurativeRecantation = {hands="Bagua Mitaines +1"}
     sets.MendingHalation = {legs="Bagua Pants"}
     sets.RadialArcana = {feet="Bagua Sandals +1"}
@@ -37,7 +37,7 @@ function get_sets()
 		main="Idris",
 		sub="Genmei Shield",
 		range="Dunna",
-        head="Azimuth Hood +1",
+        head="Azimuth Hood +2",
 		left_ear="Infused Earring",
 		right_ear="Gifted Earring",
 		left_ring="Stikini Ring +1",
@@ -47,7 +47,7 @@ function get_sets()
         back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}},
 		waist="Austerity Belt +1",
 		legs="Geomancy Pants +2",
-		feet="Azimuth Gaiters +1"
+		feet="Azimuth Hood +2"
 	}
 
 	-- Enhancing Spells \\Generalized//
@@ -226,8 +226,8 @@ function get_sets()
 		main="Idris",
 		sub="Genmei Shield",	
 		range="Dunna",
-		head="Azimuth Hood +1",
-		body="Shamash robe-",
+		head="Azimuth Hood +2",
+		body="Shamash robe",
 		hands="Geo. Mitaines +3",
 		legs="Assid. Pants +1",
 		feet="Bagua Sandals +1",

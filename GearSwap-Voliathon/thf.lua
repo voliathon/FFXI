@@ -78,7 +78,7 @@ function get_sets()
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
 		body="Adhemar Jacket +1",
 		hands="Plun. Armlets +1",
-		feet="Skulk. Poulaines +1",
+		feet="Skulk. Poulaines +2",
 		neck="Sanctity Necklace",
 		waist="Chaac Belt",
 		left_ear="Dudgeon Earring",
@@ -120,7 +120,7 @@ function get_sets()
 	
     sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], {  -- Add TH gears --
 	    hands="Plun. Armlets +1",
-	    feet="Skulker's Poulaines +1"})
+	    feet="Skulker's Poulaines +2"})
 		
 		
     sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
@@ -128,7 +128,7 @@ function get_sets()
 	
     sets.JA.TATH = set_combine(sets.JA['Trick Attack'], {  -- Add TH gears --
 	    hands="Pillager's Armlets +1",
-		feet="Skulker's Poulaines +1"
+		feet="Skulker's Poulaines +2"
 	})
 	
 	
@@ -144,7 +144,7 @@ function get_sets()
 	}
 	
 	--sets.JA['Mug'] = {head="Plun. Bonnet +1"}
-	sets.JA['Despoil'] = {feet="Skulker's Poulaines +1"}
+	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
 	
 	--sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
 	sets.JA['Flee'] = {feet="Pill. Poulaines"}
