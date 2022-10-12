@@ -60,11 +60,11 @@ function get_sets()
 
 	--Job Ability Sets--
 	sets.JA = {}
-    sets.JA.BurstAffinity = {} 
+    sets.JA.BurstAffinity = {legs="Assimilator's shalwar +2",feet="Hashishin basmak +2"} 
     sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2", head="Hashishin kavuk +2"}
     sets.JA.Diffusion = {}
     sets.JA.Enchainment = {body="Luhlaza Jubbah +1"}
-    sets.JA.Efflux = {back=Rosmerta.WSD, legs="Hashishin Tayt +1"}
+    sets.JA.Efflux = {back=Rosmerta.WSD, legs="Hashishin Tayt +2"}
 	sets.JA.AzureLore = {}
 	sets.JA.Assimilation = {}
 	
@@ -100,11 +100,11 @@ function get_sets()
 	-- Magic Accuracy
     sets.MagicAccuracy = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
+		head="Hashishin Kavuk +2",
 		body="Hashishin mintan +2",
-		hands="Regal Cuffs",
-		legs="Malignance Tights",
-		feet="Aya. Gambieras +2",
+		hands="Hashishin Bazubands +2",
+		legs="Hashishin Tayt +2",
+		feet="Hashishin basmak +2",
 		neck="Incanter's Torque",
 		waist="Luminary Sash",
 		left_ear="Digni. Earring",
@@ -141,8 +141,8 @@ function get_sets()
 		ammo="Staunch Tathlum",
 		head="Nyame Helm",
 		body="Hashishin mintan +2",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
+		hands="Hashishin Bazubands +2",
+		legs="Hashishin Tayt +2",
 		feet="Nyame Sollerets",
 		neck={ name="Loricate Torque +1", augments={'Path: A',}},
 		waist="Flume Belt",
@@ -159,7 +159,7 @@ function get_sets()
 		head="Nyame Helm",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
+		legs="Hashishin Tayt +2",
 		feet="Nyame Sollerets",
 		neck="Loricate Torque +1",
 		waist="Flume Belt",
@@ -175,7 +175,7 @@ function get_sets()
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
-		legs="Malignance Tights",
+		legs="Hashishin Tayt +2",
 		feet="Malignance Boots",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
@@ -228,6 +228,8 @@ function get_sets()
     sets.BlueMagicSkill = {
         neck="Incanter's Torque",
         body="Assimilator's Jubbah +3",
+		hands="Hashishin Bazubands +2",
+		legs="Hashishin Tayt +2",
         back="Cornflower Cape"
     }
 	
@@ -235,9 +237,9 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Hashishin kavuk +2",
 		body="Hashishin mintan +2",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance boots",
+		hands="Hashishin Bazubands +2",
+		legs="Hashishin Tayt +2",
+		feet="Hashishin basmak +2",
 		neck="Incanter's Torque",
 		waist="Luminary Sash",
 		left_ear="Digni. Earring",
@@ -254,8 +256,8 @@ function get_sets()
 		ammo="Ginsen",
 		head="Malignance Chapeau",
 		body="Assim. Jubbah +3",
-		hands="Malignance Gloves",
-		legs="Hashishin Tayt +1",
+		hands="Hashishin Bazubands +2",
+		legs="Hashishin Tayt +2",
 		feet="Malignance Boots",
 		neck="Incanter's Torque",
 		waist="Grunfeld Rope",
@@ -299,9 +301,9 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Hashishin kavuk +2",
 		body="Hashishin mintan +2",
-		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
-		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
-		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
+		hands="Hashishin Bazubands +2",
+		legs="Hashishin Tayt +2",
+		feet="Hashishin basmak +2",
 		neck="Sanctity Necklace",
 		waist="Luminary Sash",
 		left_ear="Choleric Earring",
