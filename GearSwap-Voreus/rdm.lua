@@ -24,7 +24,7 @@ function get_sets()
 		neck="Incanter's Torque",
 		waist="Embla Sash",
 		left_ear="Snotra Earring",
-		right_ear="Vor Earring",
+		right_ear="Lethargy Earring",
 		left_ring="Kishar Ring",
 		right_ring="Freke Ring",
 		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
@@ -42,7 +42,7 @@ function get_sets()
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
-		right_ear="Andoaa Earring",
+		right_ear="Lethargy Earring",
 		left_ring="Stikini Ring",
 		right_ring="Stikini Ring",
 		back="Fi follet cape +1"
