@@ -1,5 +1,5 @@
 input /ma "haste" <me>; wait 6;
-input /ma "barfira" <me>; wait 6;
+input /ma "barwatera" <me>; wait 6;
 input /ma "indi-fury" <me>; wait 7;
 input /ja "Entrust" <me>; wait 3;
 input /ma "Indi-wilt" Voliathon;

@@ -1,0 +1,6 @@
+input /ma "Fantod" <me>; wait 6;
+input /ma "Occultation" <me>; wait 6;
+input /ma "Barrier Tusk" <me>; wait 7;
+input /ma "Battery Charge" <me>;
+ 
+
