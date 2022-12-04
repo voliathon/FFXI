@@ -34,7 +34,7 @@ function get_sets()
   --Idle Set--
   sets.Idle = {
     head="Fili calot +2",
-	body="Nyame mail",
+	body="Ashera harness",
     hands="Fili Manchettes +2",
 	legs="Nyame flanchard",
 	feet="Nyame sollerets",
@@ -177,7 +177,7 @@ function get_sets()
   --TP Set--
   sets.engaged.TP = {
     head="Aya. Zucchetto +2",
-    body="Ayanmo Corazza +2",
+    body="Ashera harness",
     hands="Fili Manchettes +2",
 	legs="Nyame flanchard",
 	feet="Nyame sollerets",
@@ -193,7 +193,7 @@ function get_sets()
   --Accuracy Set--
   sets.engaged.Accuracy = {
     head="Fili Calot +2",
-    body="Fili Hongreline +2",
+    body="Ashera harness",
     hands="Fili Manchettes +2",
     legs="Fili Rhingrave +2",
     feet="Fili Cothurnes +2",
@@ -208,7 +208,7 @@ function get_sets()
   
   sets.engaged.TakingLessPhysicalDamage = {
     head="Fili Calot +2",
-    body="Nyame Mail",
+    body="Ashera harness",
     hands="Nyame Gauntlets",
     legs="Fili Rhingrave +2",
     feet="Nyame Sollerets",
@@ -289,7 +289,7 @@ function get_sets()
 	sub="Genmei shield"
  } 
  sets.weapon.CarnwenhanCrep = {
-	main="Daurdabla",
+	main="Carnwenhan",
 	sub="Crepuscular Knife"
  }
  sets.weapon.TwashtarShield = {

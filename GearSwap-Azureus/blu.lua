@@ -305,7 +305,7 @@ function get_sets()
 		legs="Hashishin Tayt +2",
 		feet="Hashishin basmak +2",
 		neck="Sanctity Necklace",
-		waist="Luminary Sash",
+		waist="Orpheus's sash",
 		left_ear="Choleric Earring",
 		right_ear="Friomisi Earring",
 		left_ring="Stikini Ring +1",
@@ -330,7 +330,7 @@ function get_sets()
     sets.Stun = set_combine(sets.FastCast,{})
         
     sets.TenebralCrush = set_combine(sets.BlueMagicMagical,{
-        head="Pixie Hairpin +1", lring="Archon ring"
+        head="Pixie Hairpin +1", lring="Archon ring", waist="Orpheus's sash"
      })
 
 	-- Cure spells
@@ -392,7 +392,7 @@ function get_sets()
 	-- 1000 TP 50% Drained
 	-- 2000 TP 100% Drained
     sets.SanguineBlade = set_combine(sets.BlueMagicMagical,{
-		head="Pixie Hairpin +1", lring="Archon ring"
+		head="Pixie Hairpin +1", lring="Archon ring", waist="Orpheus's sash"
 	})
 
 

@@ -54,7 +54,7 @@ function get_sets()
 	sets.engaged.TH = {
 		ammo="Ginsen",
 		head="Adhemar Bonnet +1",
-		body="Adhemar Jacket +1",
+		body="Ashera Harness",
 		hands="Plun. Armlets +1",
 		legs="Malignance tights",
 		feet="Mummu Gamash. +2",
@@ -86,7 +86,7 @@ function get_sets()
 	sets.engaged.ACC =  {
 		ammo="Amar cluster",
 		head="Malignance Chapeau",
-		body="Adhemar Jacket +1",
+		body="Ashera Harness",
 		hands="Mummu Wrists +2",
 		legs="Malignance tights",
 		feet="Malignance boots",
