@@ -7,10 +7,12 @@ function get_sets()
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
     -- Job Abilities for Red Mage --
-    sets.Chainspell = {body="Bagua Tunic +1"}
-    sets.Stymie = {body="Geomancy Tunic +3", back="Nantosuelta's Cape"}
-    sets.Spontaneity = {head="Azimuth Hood +1"}
-    sets.Composure = {hands="Bagua Mitaines +1"}
+    sets.Chainspell = {body="Vitiation tabard +1"}
+    sets.Stymie = {}
+    sets.Spontaneity = {}
+    sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +2",hands="Lethargy gantherots +2",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +2"}
+	sets.Saboteur = {hands="Lethargy gantherots +2"}
+	sets.Dispel = {neck="Duelist's torque +2"}
 
 
     -- Fast Cast for Red Mage --
@@ -32,13 +34,29 @@ function get_sets()
 
 
 	-- Enhancing Spells \\Generalized//
-    sets.Enhancing = {
+    sets.SelfEnhancing = {
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9'}},
 		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10'}},
 		hands="Atrophy Gloves +3",
 		legs="Atrophy Tights +3",
 		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10'}},
+		neck={ name="Dls. Torque +2", augments={'Path: A'}},
+		waist="Embla Sash",
+		left_ear="Mimir Earring",
+		right_ear="Lethargy Earring",
+		left_ring="Stikini Ring",
+		right_ring="Stikini Ring",
+		back="Fi follet cape +1"
+	}
+	
+	sets.Enhancing = {
+		ammo="Pemphredo Tathlum",
+		head="Lethargy chappel +2",
+		body="Lethargy sayon +2",
+		hands="Lethargy gantherots +2",
+		legs="Lethargy fuseau +2",
+		feet="Lethargy Houseaux +2",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
@@ -55,10 +73,10 @@ function get_sets()
 	
 	sets.TP = {
 		range="Ullr",
-		head="Aya. Zucchetto +2",
-		body="Ayanmo Corazza +2",
-		hands="Aya. Manopolas +2",
-		legs="Carmine Cuisses +1",
+		head="Lethargy chappel +2",
+		body="Lethargy sayon +2",
+		hands="Lethargy gantherots +2",
+		legs="Lethargy fuseau +2",
 		feet="Malignance boots",
 		neck="Anu Torque",
 		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
@@ -99,11 +117,11 @@ function get_sets()
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		ammo="Dosis Tathlum",
-		head="Merlinic Hood",
-		body="Shamash robe",
-		hands="Merlinic Dastanas",
-		legs="Ea slops +1",
-		feet="Merlinic Crackows",
+		head="Lethargy chappel +2",
+		body="Lethargy sayon +2",
+		hands="Lethargy gantherots +2",
+		legs="Lethargy fuseau +2",
+		feet="Lethargy Houseaux +2",
 		neck="Saevus pendant +1",
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
@@ -119,9 +137,9 @@ function get_sets()
 
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Regal Gem",
-		head="Vitiation chapeau +1-",
-		body="Atrophy Tabard +3",
-		hands="Jhakri Cuffs +2",
+		head="Vitiation chapeau +1",
+		body="Lethargy sayon +2",
+		hands="Lethargy gantherots +2",
 		legs={ name="Chironic Hose", augments={'Attack+14','Mag. Acc.+13','"Treasure Hunter"+1','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		feet="Vitiation Boots +1",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
@@ -149,9 +167,9 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		ammo="Homiliary",
-		head="Nyame Helm",
-		body="Nyame mail",
-		hands="Nyame gauntlets",
+		head="Lethargy chappel +2",
+		body="Lethargy sayon +2",
+		hands="Lethargy gantherots +2",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
 		neck="Loricate Torque +1",
@@ -200,8 +218,8 @@ function get_sets()
 		head="Aya. Zucchetto +2",
 		body="Ayanmo Corazza +2",
 		hands="Atrophy Gloves +3",
-		legs="Atrophy Tights +3",
-		feet="Atro. Boots +3",
+		legs="Jhakri slops +2",
+		feet="Lethargy Houseaux +2",
 		neck="Combatant's Torque",
 		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
 		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250'}},
@@ -232,10 +250,12 @@ function precast(spell,abil)
 --EN Spells
 --Boost Spells
 --Phalanx
---Dispel
 
+	--Composure Lookups
+	if spell.name == "Composure" then
+		equip(sets.Composure)
 	--Enhancing Magic Check
-	if spell.skill == 'Enhancing Magic' then
+	elseif spell.skill == 'Enhancing Magic' then
 		equip(sets.Enhancing)
 	elseif spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
@@ -246,7 +266,7 @@ function precast(spell,abil)
 	
 
 	--WS Lookups
-	if spell.name == "Hexa Strike" then
+	if spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
 		equip(sets.WSD)
 	end
 	-- Add logic for Waltz
@@ -277,6 +297,9 @@ function midcast(spell)
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
 	end	
+	if spell.name == "Dispel" then
+		equip(sets.Dispel)
+	end
 end
 
 
