@@ -1,336 +1,340 @@
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-function user_setup()
-	-- Options: Override default values
-    state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
-    state.HybridMode:options('Normal','PDT')
-    state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder')
-	state.IdleMode:options('Normal', 'Sphere')
-    state.PhysicalDefenseMode:options('PDT')
-	state.MagicalDefenseMode:options('MDT')
-	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Aeneas','MagicWeapons','LowBuff','Throwing')
-
-    state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
-	state.AmbushMode = M(false, 'Ambush Mode')
-
-	gear.da_jse_back = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-	gear.wsd_jse_back = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
-
-    -- Additional local binds
-    send_command('bind ^` input /ja "Flee" <me>')
-    send_command('bind !` input /ra <t>')
-	send_command('bind @` gs c cycle SkillchainMode')
-	send_command('bind @f10 gs c toggle AmbushMode')
-	send_command('bind ^backspace gs c weapons Throwing;gs c update')
-	send_command('bind !backspace input /ja "Hide" <me>')
-	send_command('bind !r gs c weapons MagicWeapons;gs c update')
-	send_command('bind ^\\\\ input /ja "Despoil" <t>')
-	send_command('bind !\\\\ input /ja "Mug" <t>')
-
-    select_default_macro_book()
+--https://www.bg-wiki.com/bg/Community_Thief_Guide#TP_Sets
+-- Will eventually get more and more gear that is mentioned from the community Thief Site...
+function user_unload()
+    send_command('unbind ^f9')
+    send_command('unbind ^f10')
 end
 
--- Define sets and vars used by this job file.
-function init_gear_sets()
-    --------------------------------------
-    -- Special sets (required by rules)
-    --------------------------------------
-
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {head="Wh. Rarab Cap +1",hands="Plunderer's Armlets",feet="Skulk. Poulaines +2"})
-    sets.ExtraRegen = {}
-    sets.Kiting = {feet="Skadi's Jambeaux +1"}
-
-	sets.buff.Doom = set_combine(sets.buff.Doom, {})
-	sets.buff.Sleep = {head="Frenzy Sallet"}
+function get_sets()
+-- Set macro book/set --
+    send_command('input /macro book 1;wait .1;input /macro set 1') -- set macro book/set here --	
 	
-    sets.buff['Sneak Attack'] = {}
-    sets.buff['Trick Attack'] = {}
-		
-    -- Extra Melee sets.  Apply these on top of melee sets.
-    sets.Knockback = {}
-	sets.Suppa = {ear1="Suppanomimi", ear2="Sherida Earring"}
-	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
-	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
-	sets.Ambush = {} --body="Plunderer's Vest +1"
+-- Binds for modes
+    send_command('bind ^f8 gs c C8')
+	send_command('bind ^f9 gs c C9') 
+
+	-- Modes --
+    EngagedIndex = 1
+    EngagedArray = {"TH","Solo","ACC", "Defense"}	-- Press ctrl + F10 for Engaged Array --
+	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --		
+
+
+	-- Utilities --	
+    SA = false
+    TA = false	
+
+	-- Ability Mapping --
+	THStep = S{"Quickstep","Box Step","Stutter Step","Animated Flourish"}
+
+	---- .:: TP Sets ::. ----->
+    sets.engaged = {}
+	sets.engaged.Solo = {
+		ammo="Ginsen",
+		head="Adhemar Bonnet +1",
+		--Pillager's Vest +3 in time...
+		body="Adhemar Jacket +1",
+		hands="Adhemar Wristbands +1",
+		--Samnuha Tights - Perfect Augments
+		legs="Malignance tights",
+		--Plunderer's Poulaines +3
+		feet="Malignance boots",
+		neck="Sanctity Necklace",
+		--Reiki Yotai
+		waist="Grunfeld Rope",
+		--Sherida Earring
+		left_ear="Brutal Earring",
+		--Dedition Earring
+		right_ear="Cessance Earring",
+		left_ring="Epona's Ring",
+		right_ring="Hetairoi Ring",
+		--Toutatis's Cape  DEX +20, Acc +30, Atk +20, STP +10
+		back="Canny Cape"
+	}
 	
-	-- Weapons sets
-	sets.weapons.Aeneas = {main="Aeneas",sub="Taming Sari"}
-	sets.weapons.LowBuff = {main="Aeneas",sub="Blurred Knife +1"}
-	sets.weapons.MagicWeapons = {main="Malevolence",sub="Malevolence"}
-	sets.weapons.Throwing = {main="Aeneas",sub="Taming Sari",range="Comet Tail",ammo=empty}
+	sets.engaged.TH = {
+		ammo="Ginsen",
+		head="Adhemar Bonnet +1",
+		body="Ashera Harness",
+		hands="Plun. Armlets +1",
+		legs="Malignance tights",
+		feet="Mummu Gamash. +2",
+		neck="Sanctity Necklace",
+		waist="Chaac Belt",
+		left_ear="Brutal Earring",
+		right_ear="Cessance Earring",
+		left_ring="Epona's Ring",
+		right_ring="Hetairoi Ring",
+		back="Canny Cape"
+	}
 	
-    -- Actions we want to use to tag TH.
-    sets.precast.Step = {ammo="Falcon Eye",
-        head="Dampening Tam",neck="Combatant's Torque",ear1="Telos Earring",ear2="Digni. Earring",
-        body="Mummu Jacket +2",hands="Adhemar Wrist. +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.da_jse_back,waist="Olseni Belt",legs="Mummu Kecks +2",feet=gear.herculean_acc_feet}
-		
-    sets.precast.JA['Violent Flourish'] = {ammo="Falcon Eye",
-        head="Dampening Tam",neck="Combatant's Torque",ear1="Telos Earring",ear2="Digni. Earring",
-        body="Mummu Jacket +2",hands="Adhemar Wrist. +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.da_jse_back,waist="Olseni Belt",legs="Mummu Kecks +2",feet=gear.herculean_acc_feet}
-		
-	sets.precast.JA['Animated Flourish'] = sets.TreasureHunter
-	sets.precast.JA.Provoke = sets.TreasureHunter
-
-    --------------------------------------
-    -- Precast sets
-    --------------------------------------
-
-    -- Precast sets to enhance JAs
-    sets.precast.JA['Collaborator'] = {} --head="Skulker's Bonnet"
-    sets.precast.JA['Accomplice'] = {} --head="Skulker's Bonnet"
-    sets.precast.JA['Flee'] = {} --feet="Pillager's Poulaines +1"
-    sets.precast.JA['Hide'] = {} --body="Pillager's Vest +1"
-    sets.precast.JA['Conspirator'] = {} --body="Skulker's Vest"
-    sets.precast.JA['Steal'] = {hands="Pill. Armlets +1"}
-	sets.precast.JA['Mug'] = {}
-    sets.precast.JA['Despoil'] = {legs="Skulker's Culottes",feet="Skulk. Poulaines +2"}
-    sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
-    sets.precast.JA['Feint'] = {} -- {legs="Assassin's Culottes +2"}
-
-    sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
-    sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
-
-    -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Yamarang",
-        head="Mummu Bonnet +2",neck="Unmoving Collar +1",ear1="Enchntr. Earring +1",ear2="Handler's Earring +1",
-        body=gear.herculean_waltz_body,hands=gear.herculean_waltz_hands,ring1="Defending Ring",ring2="Valseur's Ring",
-        back="Moonlight Cape",waist="Chaac Belt",legs="Dashing Subligar",feet=gear.herculean_waltz_feet}
-
-	sets.Self_Waltz = {head="Mummu Bonnet +2",body="Passion Jacket",ring1="Asklepian Ring"}
-		
-    -- Don't need any special gear for Healing Waltz.
-    sets.precast.Waltz['Healing Waltz'] = {}
-
-
-    -- Fast cast sets for spells
-    sets.precast.FC = {ammo="Impatiens",
-		head=gear.herculean_fc_head,neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
-		body="Dread Jupon",hands="Leyline Gloves",ring1="Lebeche Ring",ring2="Prolix Ring",
-		legs="Rawhide Trousers"}
-
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Passion Jacket"})
-
-
-    -- Ranged snapshot gear
-    sets.precast.RA = {range="Comet Tail"}
-
-
-    -- Weaponskill sets
-
-    -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Falcon Eye",
-        head="Dampening Tam",neck="Caro Necklace",ear1="Brutal Earring",ear2="Sherida Earring",
-        body="Adhemar Jacket +1",hands="Meg. Gloves +2",ring1="Ilabrat Ring",ring2="Regal Ring",
-        back=gear.da_jse_back,waist="Grunfeld Rope",legs="Samnuha Tights",feet=gear.herculean_wsd_feet}
-    sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque"})
-    sets.precast.WS.Acc = set_combine(sets.precast.WS, {neck="Combatant's Torque",ear1="Telos Earring",body="Meg. Cuirie +2",waist="Olseni Belt",legs="Meg. Chausses +2",feet=gear.herculean_acc_feet})
-	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {neck="Combatant's Torque",ear1="Telos Earring",body="Meg. Cuirie +2",waist="Olseni Belt",legs="Meg. Chausses +2",feet=gear.herculean_acc_feet})
-
-    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {head="Lilitu Headpiece",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring", ring1="Epaminondos's Ring", body="Adhemar Jacket +1",back=gear.wsd_jse_back})
-    sets.precast.WS["Rudra's Storm"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {head="Lilitu Headpiece",neck="Caro Necklace",ear1="Moonshade Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
-    sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS.Acc, {ear1="Moonshade Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
-	sets.precast.WS["Rudra's Storm"].FullAcc = set_combine(sets.precast.WS.FullAcc, {back=gear.wsd_jse_back})
-    sets.precast.WS["Rudra's Storm"].Fodder = set_combine(sets.precast.WS["Rudra's Storm"], {body=gear.herculean_wsd_body})
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
-    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
-    sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
-
-    sets.precast.WS["Mandalic Stab"] = set_combine(sets.precast.WS, {head="Lilitu Headpiece",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
-    sets.precast.WS["Mandalic Stab"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {head="Lilitu Headpiece",neck="Caro Necklace",ear1="Moonshade Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
-    sets.precast.WS["Mandalic Stab"].Acc = set_combine(sets.precast.WS.Acc, {ear1="Moonshade Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
-	sets.precast.WS["Mandalic Stab"].FullAcc = set_combine(sets.precast.WS.FullAcc, {back=gear.wsd_jse_back})
-    sets.precast.WS["Mandalic Stab"].Fodder = set_combine(sets.precast.WS["Mandalic Stab"], {body=gear.herculean_wsd_body})
-    sets.precast.WS["Mandalic Stab"].SA = set_combine(sets.precast.WS["Mandalic Stab"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
-    sets.precast.WS["Mandalic Stab"].TA = set_combine(sets.precast.WS["Mandalic Stab"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
-    sets.precast.WS["Mandalic Stab"].SATA = set_combine(sets.precast.WS["Mandalic Stab"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
-
-    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Lilitu Headpiece",neck="Caro Necklace",ear1="Moonshade Earring",ear2="Ishvara Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
-    sets.precast.WS["Shark Bite"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {head="Lilitu Headpiece",neck="Caro Necklace",ear1="Moonshade Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
-    sets.precast.WS["Shark Bite"].Acc = set_combine(sets.precast.WS.Acc, {ear1="Moonshade Earring",body="Meg. Cuirie +2",back=gear.wsd_jse_back})
-	sets.precast.WS["Shark Bite"].FullAcc = set_combine(sets.precast.WS.FullAcc, {back=gear.wsd_jse_back})
-    sets.precast.WS["Shark Bite"].Fodder = set_combine(sets.precast.WS["Shark Bite"], {body=gear.herculean_wsd_body})
-    sets.precast.WS["Shark Bite"].SA = set_combine(sets.precast.WS["Shark Bite"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
-    sets.precast.WS["Shark Bite"].TA = set_combine(sets.precast.WS["Shark Bite"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
-    sets.precast.WS["Shark Bite"].SATA = set_combine(sets.precast.WS["Shark Bite"].Fodder, {ammo="Yetshila",head="Adhemar Bonnet +1",body="Meg. Cuirie +2",legs="Darraigner's Brais"})
+	--Accuracy Max
+	-- Aeneas
+    -- Twashtar (Level 119 III)
+    -- C. Palug Stone
+    -- Pill. Bonnet +3
+    -- Pillager's Vest +3
+    -- Pill. Armlets +3
+    -- Pill. Culottes +3
+    -- Plun. Poulaines +3
+    -- Asn. Gorget +2 DEX/AGI +15, TA +4
+    -- Sherida Earring
+    -- Telos Earring
+    -- Ilabrat Ring
+    -- Regal Ring
+    -- Kentarch Belt +1
+    -- Toutatis's Cape DEX +20, Acc +30, Atk +20, STP +10
+	sets.engaged.ACC =  {
+		ammo="Amar cluster",
+		head="Malignance Chapeau",
+		body="Ashera Harness",
+		hands="Mummu Wrists +2",
+		legs="Malignance tights",
+		feet="Malignance boots",
+		neck="Subtlety Spec.",
+		waist="Grunfeld Rope",
+		left_ear="Brutal Earring",
+		right_ear="Cessance Earring",
+		left_ring="Mummu Ring",
+		right_ring="Beeline Ring",
+		back="Canny Cape"
+	}
 	
-    sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {ammo="Yetshila",head="Adhemar Bonnet +1",neck="Fotia Gorget",body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Begrudging Ring",waist="Fotia Belt",legs="Darraigner's Brais",feet="Mummu Gamash. +2"})
-    sets.precast.WS['Evisceration'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {head="Adhemar Bonnet +1",neck="Fotia Gorget",body="Abnoba Kaftan",hands="Mummu Wrists +2",ring1="Begrudging Ring",waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"})
-    sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS.Acc, {head="Mummu Bonnet +2",ring1="Begrudging Ring",neck="Fotia Gorget",body="Sayadio's Kaftan",hands="Mummu Wrists +2",waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"})
-	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, {head="Mummu Bonnet +2",body="Mummu Jacket +2",hands="Mummu Wrists +2",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"})
-	sets.precast.WS['Evisceration'].Fodder = set_combine(sets.precast.WS['Evisceration'], {})
-    sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Fodder, {})
-    sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'].Fodder, {})
-    sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Fodder, {})
+	 sets.engaged.Defense = {
+		 ammo="Yetshila +1",
+		 head="Malignance Chapeau",
+		 body="Malignance tabard",
+		 hands="Malignance gloves",
+		 legs="Malignance tights",
+		 feet="Malignance boots",
+		 neck="Loricate Torque +1",
+		 waist="Grunfeld Rope",
+		 left_ear="Infused Earring",
+		 right_ear="Hearty Earring",
+		 left_ring="Patricius Ring",
+		 right_ring="Defending Ring",
+		 back="Repulse Mantle"
+	 }	
+	
+	
+---- .:: Job Abilities Sets ::. ---->
+    sets.JA = {}
+	
+    -- Dancer's Abilities --
+    sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
+	sets.JA.Step = 	{}
+    sets.JA.Stun = {}
+	
+	
+	-- Thief's Abilities --
+    sets.JA['Sneak Attack'] = {}
+    sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], { hands="Plun. Armlets +1", feet="Skulker's Poulaines +1"})
 
-    sets.precast.WS['Last Stand'] = {
-        head="Mummu Bonnet +2",neck="Fotia Gorget",ear1="Clearview Earring",ear2="Neritic Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Apate Ring",ring2="Regal Ring",
-        back=gear.wsd_jse_back,waist="Fotia Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
-
-    sets.precast.WS['Aeolian Edge'] = {ammo="Seeth. Bomblet +1",
-        head=gear.herculean_nuke_head,neck="Baetyl Pendant",ear1="Friomisi Earring",ear2="Crematio Earring",
-        body="Samnuha Coat",hands="Leyline Gloves",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
-        back=gear.wsd_jse_back,waist="Chaac Belt",legs=gear.herculean_wsd_legs,feet=gear.herculean_nuke_feet}
-
-    sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
-
-	-- Swap to these on Moonshade using WS if at 3000 TP
-	sets.MaxTP = {ear1="Ishvara Earring",ear2="Sherida Earring"}
-	sets.AccMaxTP = {ear1="Zennaroi Earring",ear2="Sherida Earring"}
-
-    --------------------------------------
-    -- Midcast sets
-    --------------------------------------
-
-    sets.midcast.FastRecast = {
-        head=gear.herculean_fc_head,neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquacious Earring",
-        body="Dread Jupon",hands="Leyline Gloves",ring1="Defending Ring",ring2="Prolix Ring",
-        back="Moonlight Cape",waist="Tempus Fugit",legs="Rawhide Trousers",feet=gear.herculean_dt_feet}
-
-    -- Specific spells
-	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {back="Mujin Mantle"})
-
-	sets.midcast.Dia = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
-	sets.midcast.Diaga = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
-	sets.midcast['Dia II'] = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
-	sets.midcast.Bio = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
-	sets.midcast['Bio II'] = set_combine(sets.midcast.FastRecast, sets.TreasureHunter)
-
-    -- Ranged gear
-
-    sets.midcast.RA = {
-        head="Mummu Bonnet +2",neck="Combatant's Torque",ear1="Clearview Earring",ear2="Neritic Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Apate Ring",ring2="Regal Ring",
-        back=gear.da_jse_back,waist="Chaac Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
-
-    sets.midcast.RA.Acc = {
-        head="Mummu Bonnet +2",neck="Combatant's Torque",ear1="Clearview Earring",ear2="Neritic Earring",
-        body="Mummu Jacket +2",hands="Mummu Wrists +2",ring1="Apate Ring",ring2="Regal Ring",
-        back=gear.da_jse_back,waist="Chaac Belt",legs="Mummu Kecks +2",feet="Mummu Gamash. +2"}
-
-    --------------------------------------
-    -- Idle/resting/defense sets
-    --------------------------------------
-
-    -- Resting sets
-    sets.resting = {}
-
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-
-    sets.idle = {ammo="Staunch Tathlum",
-        head="Dampening Tam",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Meg. Cuirie +2",hands=gear.herculean_dt_hands,ring1="Defending Ring",ring2="Sheltered Ring",
-        back="Moonlight Cape",waist="Flume Belt",legs=gear.herculean_dt_legs,feet=gear.herculean_dt_feet}
+    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
+	
+	
+    sets.JA.TATH = set_combine(sets.JA['Trick Attack'], { hands="Pillager's Armlets +1", feet="Skulker's Poulaines +1"})
+	
+	
+    sets.JA.SATA = set_combine(sets.JA['Sneak Attack'], {})
+	--sets.JA["Assassin's Charge"] = {feet="Plun. Poulaines +1"}
+	sets.JA['Feint'] = {legs="Plun. Culottes +1"}
+	--sets.JA['Conspirator'] = {body="Raider's Vest +2"}
+	sets.JA['Steal'] = { hands="Pill. Armlets +1", legs="Pill. Culottes", feet="Pill. Poulaines", neck="Pentalagus charm"}
+	--sets.JA['Mug'] = {head="Plun. Bonnet +1"}
+	sets.JA['Despoil'] = {feet="Skulker's Poulaines +1"}
+	--sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
+	sets.JA['Flee'] = {feet="Pill. Poulaines"}
+	sets.JA['Hide'] = {body="Pillager's Vest"}
+	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +1"}
+	
+	
+---- .:: Weapon Skill Sets ::. ---->
+    -- .::Generic Sets::. --
+    sets.WSD = {	
+    ammo="Yetshila +1",
+    head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}},
+    body={ name="Herculean Vest", augments={'"Rapid Shot"+2','Pet: AGI+6','Weapon skill damage +6%','Accuracy+6 Attack+6'}},
+    hands="Meg. Gloves +2",
+    legs={ name="Herculean Trousers", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','DEX+10','Accuracy+5'}},
+    feet="Malignance Boots",
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+    right_ear="Ishvara Earring",
+    left_ring="Epaminondas's Ring",
+    right_ring="Defending Ring",
+    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+	}
+	
+    sets.Aeolian = {	
+		ammo="Dosis tathlum",
+		head="Malignance Chapeau",
+		body="Herculean Vest",
+		hands="Mummu Wrists +2",
+		legs="Mummu kecks +2",
+		feet="Mummu Gamash. +2",
+		neck="Sanctity Necklace",
+		waist="Fotia Belt",
+		left_ear="Hecate's Earring",
+		right_ear="Friomisi Earring",
+		left_ring="Fenrir Ring +1",
+		right_ring="Karieyh Ring",
+		back="Toro cape"
+	}
+	
+---- .:: Preshot Sets ::. ---->
+	sets.preshot = {}
+	sets.preshot.RA = {}	
+	
+---- .:: Precast Sets ::. ---->
+	sets.precast = {}
+	sets.precast.Fastcast = {}
+	sets.precast['Utsusemi'] = {	
+		ammo="Yetshila +1",
+		head="Adhemar Bonnet +1",
+		body="Adhemar Jacket +1",
+		hands="Mummu Wrists +2",
+		legs="Malignance tights",
+		feet="Mummu Gamash. +2",
+		neck="Sanctity Necklace",
+		waist="Ninurta's Sash",
+		left_ear="Loquac. Earring",
+		right_ear="Magnetic Earring",
+		left_ring="Veneficium Ring",
+		right_ring="Rajas Ring",
+		back="Repulse Mantle"
+	}
 		
-    sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
-
-    sets.idle.Weak = set_combine(sets.idle, {})
-
-	sets.DayIdle = {}
-	sets.NightIdle = {}
-
-    -- Defense sets
-
-    sets.defense.PDT = {ammo="Staunch Tathlum",
-        head="Dampening Tam",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Meg. Cuirie +2",hands=gear.herculean_dt_hands,ring1="Defending Ring",ring2="Dark Ring",
-        back="Shadow Mantle",waist="Flume Belt",legs=gear.herculean_dt_legs,feet=gear.herculean_dt_feet}
-
-    sets.defense.MDT = {ammo="Staunch Tathlum",
-        head="Dampening Tam",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-        body="Meg. Cuirie +2",hands="Floral Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-        back="Engulfer Cape +1",waist="Engraved Belt",legs=gear.herculean_dt_legs,feet="Ahosi Leggings"}
-		
-	sets.defense.MEVA = {ammo="Staunch Tathlum",
-		head=gear.herculean_fc_head,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		body="Adhemar Jacket +1",hands="Leyline Gloves",ring1="Vengeful Ring",ring2="Purity Ring",
-		back="Mujin Mantle",waist="Engraved Belt",legs="Mummu Kecks +2",feet="Ahosi Leggings"}
-
-
-    --------------------------------------
-    -- Melee sets  
-    --------------------------------------
-
-    -- Normal melee group
-    sets.engaged = {
-        ammo="Ginsen",
-        head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        body={ name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        --hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-        hands=gear.adhemar_acc_hands,
-        legs=gear.herculean_ta_legs_high_acc,
-        --feet={ name="Herculean Boots", augments={'Attack+28','"Triple Atk."+1','STR+10','Accuracy+14',}},
-        feet=gear.herculean_ta_feet_high_acc,
-        neck="Asperity Necklace",
-        waist="Windbuffet Belt +1",
-        left_ear="Telos Earring",
-        right_ear="Suppanomimi",
-        left_ring="Rajas Ring",
-        right_ring="Epona's Ring",
-        back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}, 
-    }
-		
-    sets.engaged.SomeAcc = {ammo="Yamarang",
-        head="Dampening Tam",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Sherida Earring",
-        body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.da_jse_back,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
-    
-	sets.engaged.Acc = {ammo="Yamarang",
-        head="Dampening Tam",neck="Combatant's Torque",ear1="Telos Earring",ear2="Suppanomimi",
-        body="Mummu Jacket +2",hands="Floral Gauntlets",ring1="Ilabrat Ring",ring2="Regal Ring",
-        back=gear.da_jse_back,waist="Olseni Belt",legs="Meg. Chausses +2",feet=gear.herculean_acc_feet}
-		
-    sets.engaged.FullAcc = {ammo="Falcon Eye",
-        head="Dampening Tam",neck="Combatant's Torque",ear1="Telos Earring",ear2="Digni. Earring",
-        body="Mummu Jacket +2",hands="Adhemar Wrist. +1",ring1="Ramuh Ring +1",ring2="Ramuh Ring +1",
-        back=gear.da_jse_back,waist="Olseni Belt",legs="Mummu Kecks +2",feet=gear.herculean_acc_feet}
-
-    sets.engaged.Fodder = {ammo="Yamarang",
-        head="Dampening Tam",neck="Ainia Collar",ear1="Brutal Earring",ear2="Sherida Earring",
-        body="Adhemar Jacket +1",hands="Adhemar Wrist. +1",ring1="Petrov Ring",ring2="Epona's Ring",
-        back=gear.da_jse_back,waist="Reiki Yotai",legs="Samnuha Tights",feet=gear.herculean_ta_feet}
-
-    sets.engaged.PDT = {ammo="Staunch Tathlum",
-        head="Dampening Tam",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Defending Ring",ring2="Moonbeam Ring",
-        back="Moonlight Cape",waist="Flume Belt",legs="Meg. Chausses +2",feet="Ahosi Leggings"}
-
-    sets.engaged.SomeAcc.PDT = {ammo="Staunch Tathlum",
-        head="Dampening Tam",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonlight Cape",waist="Flume Belt",legs="Meg. Chausses +2",feet="Ahosi Leggings"}
-		
-    sets.engaged.Acc.PDT = {ammo="Staunch Tathlum",
-        head="Dampening Tam",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonlight Cape",waist="Flume Belt",legs="Meg. Chausses +2",feet="Ahosi Leggings"}
-
-    sets.engaged.FullAcc.PDT = {ammo="Staunch Tathlum",
-        head="Dampening Tam",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
-        back="Moonlight Cape",waist="Olseni Belt",legs="Meg. Chausses +2",feet="Ahosi Leggings"}
-		
-    sets.engaged.Fodder.PDT = {ammo="Staunch Tathlum",
-        head="Dampening Tam",neck="Loricate Torque +1",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-        body="Meg. Cuirie +2",hands="Meg. Gloves +2",ring1="Defending Ring",ring2="Dark Ring",
-        back="Moonlight Cape",waist="Flume Belt",legs="Meg. Chausses +2",feet=gear.herculean_dt_feet}
-		
+---- .:: Midshot Sets ::. ---->	
+	sets.midshot = {}
+	sets.midshot.RA = {}	
+	
+---- .:: Midcast Sets ::. ---->	
+	sets.midcast = {}
+	sets.midcast.RA = {}
+	sets.midcast.Ninjutsu = {}
+	sets.midcast['Utsusemi'] = set_combine(sets.precast['Utsusemi'], {})
+	
 end
 
--- Select default macro book on initial load or subjob change.
-function select_default_macro_book()
-    -- Default macro set/book
-    if player.sub_job == 'DNC' then
-        set_macro_page(1, 5)
-    elseif player.sub_job == 'WAR' then
-        set_macro_page(1, 5)
-    elseif player.sub_job == 'NIN' then
-        set_macro_page(1, 5)
-    else
-        set_macro_page(1, 5)
-    end
-end
+
+-- Precast Function --
+function precast(spell,action)
+    -- Dancer Abilities --
+    if string.find(spell.english, 'Waltz') then
+	    equip(sets.JA.Waltz)
+    elseif spell.english == 'Violent Flourish' then
+        equip(sets.JA.Stun)
+	elseif THStep:contains(spell.name) then
+        equip(sets.JA.Step)	
+	-- Thief Abilities --
+	elseif spell.type == 'JobAbility' then
+	        equip(sets.JA[spell.english])
+        if spell.english=="Sneak Attack" then 	
+            SA = true
+		else 
+            SA = false		
+        end
+		
+        if spell.english=="Trick Attack" then 	
+			TA = true
+		else
+            TA = false		
+        end
+
+	-- Weapon Skill --
+	-- 80% DEX Modifier Rudra's Storm
+	-- 50% DEX Modifier Evisceration
+	-- 60% DEX Modifier Mandalic Stab
+    elseif spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mandalic Stab" then
+		equip(sets.WSD)
+
+	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
+	elseif spell.name == "Aeolian Edge" then
+		equip(sets.Aeolian)
+
+	elseif spell.action_type == 'Ranged Attack' then
+	    equip(sets.preshot.RA)
+
+	-- Ninja Spells --
+	elseif spell.skill == 'Ninjutsu' then
+	    equip(sets.precast.Fastcast)
+		if string.find(spell.english, 'Utsusemi') then
+		    equip(sets.precast['Utsusemi'])
+		end
+	end	
+end	
+
+
+-- Midcast Functions --
+function midcast(spell,action)
+	-- Ranged Attacks --
+    if spell.action_type == 'Ranged Attack' then
+	    equip(sets.midshot.RA)
+	-- Ninja Spells --
+    elseif spell.skill == 'Ninjutsu' then
+	    equip(sets.midcast.Ninjutsu)
+		if string.find(spell.english, 'Utsusemi') then
+		    equip(sets.midcast['Utsusemi'])
+		end
+	end		
+end	
+
+
+-- Aftercast Functions --
+function aftercast(spell,action)
+    status_change(player.status)    	
+end	
+
+
+-- Status Changes --	
+function status_change(new,tab,old)
+	if Capacity == 'ON' then
+		equip{back="Mecisto. Mantle"}
+		disable('back')
+	else
+		enable('back')
+	end	
+	if EngagedArray[EngagedIndex] == 'TH' then
+		equip(sets.engaged.TH)	
+	elseif EngagedArray[EngagedIndex] == 'Solo' then
+		equip(sets.engaged.Solo)	
+	elseif EngagedArray[EngagedIndex] == 'ACC' then
+		equip(sets.engaged.ACC)
+	elseif EngagedArray[EngagedIndex] == 'Defense' then
+		equip(sets.engaged.Defense)	
+	elseif SA then
+		if EngagedArray[EngagedIndex] == 'TH' then
+			equip(sets.JA.SATH)
+		else
+			equip(sets.JA['Sneak Attack'])
+		end		
+	elseif TA then
+		if EngagedArray[EngagedIndex] == 'TH' then
+			equip(sets.JA.TATH)
+		else
+			equip(sets.JA['Trick Attack'])
+		end	
+	elseif buffactive == 'Feint' then
+		equip(sets.JA[spell.name])
+	end			
+end	
+
+
+-- Modes functions --
+function self_command(command)	
+	if command == 'C9' then -- Offense Cycle --
+        EngagedIndex = (EngagedIndex % #EngagedArray) + 1
+        status_change(player.status)
+        add_to_chat(158,'TP Set: ' .. EngagedArray[EngagedIndex])			
+    elseif command == 'C8' then -- Capacity toggle --
+        if Capacity == 'ON' then
+            Capacity = 'OFF'
+            add_to_chat(123,'Capacity Set: [OFF]')
+        else
+            Capacity = 'ON'
+            add_to_chat(158,'Capacity Set: [ON]')
+        end
+        status_change(player.status)
+	end
+end	
