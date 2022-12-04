@@ -282,7 +282,7 @@ function get_sets()
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20'}},
 		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
 		neck="Nefarious Collar",
-		waist="Yamabuki-no-Obi",
+		waist="Orpheus's Sash",
 		left_ear="Digni. Earring",
 		right_ear="Hecate's Earring",
 		left_ring="Stikini Ring +1",

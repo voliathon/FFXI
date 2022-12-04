@@ -29,15 +29,13 @@
             -- Purchased from the Auction House, crafted only.
 
 -- Created by Voliathon
--- Modified 9/13/2022
+-- Modified 11/29/2022
 
 function get_sets()
 -- Set macro book/set --
-	send_command('input /macro book 11;wait .1;input /macro set 1')
+	send_command('input /macro book 12;wait .1;input /macro set 1')
 
 	-- Binds for modes
-	--Swapping Shields
-	send_command('bind ^f7 gs c C7') 
 	--Swapping Swords
 	send_command('bind ^f8 gs c C8') 
 	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
@@ -47,7 +45,6 @@ function get_sets()
 	-- Modes --
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang via ctrl + F8
-	Aegis = 'OFF'
 	ShadowType = 'None'
 	
   --Job Ability Sets--
@@ -62,8 +59,8 @@ function get_sets()
 
   --TP Sets--
   sets.TP = {}
---					  1		   2              3 		   4		  5 		  6		        7			    8
-  sets.TP.index = {'Movement', 'BadAss', 'OldTurtle', 'NewTurtle', 'Evasion', 'Accuracy', 'TreasureHunter', 'Reraise'}
+--					  1		   2              3 		   4		  5 		  6		           7
+  sets.TP.index = {'Movement', 'BadAss', 'NewTurtle', 'Evasion', 'Accuracy', 'TreasureHunter', 'Reraise'}
   TP_ind = 1
 
   sets.TP.Movement = {
@@ -85,38 +82,20 @@ function get_sets()
   
   --offensive melee set
   sets.TP.BadAss = {
-    ammo="Staunch Tathlum +1",
+    ammo="Ginsen",
     head="Flam. Zucchetto +2",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Flam. Gambieras +2",
-    neck="Loricate Torque +1",
-    waist="Sailfi Belt +1",
+    neck="Sanctity Necklace",
+    waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
-    right_ear="Cessance earring",
+    right_ear="Heathen's Earring",
     left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
-    back="Moonlight Cape"
+    right_ring="Chirich Ring +1"
   }
 
-  --Old Tank Gear
-  sets.TP.OldTurtle = {
-    ammo="Staunch Tathlum +1",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
-    waist="Flume Belt +1",
-    left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring="Moonlight Ring",
-    right_ring="Fortified Ring",
-    back="Moonlight Cape"
-  }
-  
   --New Tank Gear
   sets.TP.NewTurtle = {
     ammo="Staunch Tathlum +1",
@@ -153,9 +132,15 @@ function get_sets()
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Subtlety Spec.",
-    left_ear="Heartseeker Earring",
-    right_ear="Cessance Earring",
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Heathen's Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1"
   }
@@ -327,8 +312,8 @@ function precast(spell,abil)
   
   --equips favorite weapon if disarmed
   if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip({main="Burtgang",sub="Aegis"})
-    add_to_chat(158,'Burtgang Weapon: [ON]')
+    equip({main="Crepuscular scythe",sub="Utu grip"})
+    add_to_chat(158,'Crepuscular scythe: [ON]')
 	Naegling = 'OFF'
   end
   
@@ -416,17 +401,19 @@ end
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C8' then -- Naegling to Burtgang --	
+	if command == 'C8' then -- Naegling to Crepuscular scythe --	
       if Naegling == 'ON' then
 		Naegling = 'OFF'
-		equip({main="Burtgang"})
-		add_to_chat(158,'Burtgang Weapon: [ON]')
+		equip({main="Crepuscular scythe"})
+		equip({sub="Utu grip"})
+		add_to_chat(158,'Crepuscular scythe: [ON]')
 		add_to_chat(123,'Naegling Weapon: [OFF]')
 	  else
 		Naegling = 'ON'
 		equip({main="Naegling"})
+		equip({sub="Blurred shield +1"})
 		add_to_chat(158,'Naegling Weapon: [ON]')
-		add_to_chat(123,'Burtgang Weapon: [OFF]')				
+		add_to_chat(123,'Crepuscular scythe: [OFF]')				
 	  end
        -- status_change(player.status)
 	elseif command == 'toggle TP set' then
@@ -440,32 +427,16 @@ function self_command(command)
 		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
 		equip_current()
 	end
-	if command == 'C7' then
-	  if Aegis == 'ON' then
-	    Aegis = 'OFF'
-		equip({sub="Priwen"})
-		add_to_chat(158,'Priwen Shield: [ON]')
-		add_to_chat(123,'Aegis Shield: [OFF]')
-	  else
-        Aegis = 'ON'
-        equip({sub="Aegis"})		
-		add_to_chat(123,'Priwen Shield: [OFF]')
-		add_to_chat(158,'Aegis Shield: [ON]')
-	  end
-   end
+
 end
 
 function weaponSelector()
   if Naegling == 'ON' then
 	equip({main="Naegling"})
+	equip({sub="Blurred shield +1"})
   else
-	equip({main="Burtgang"})
-  end
-  
-  if Aegis == 'ON' then
-	equip({sub="Aegis"})
-  else
-	equip({sub="Priwen"})		
+	equip({main="Crepuscular scythe"})
+	equip({sub="Utu grip"})
   end
   
 end

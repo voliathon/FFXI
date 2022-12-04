@@ -210,16 +210,33 @@ function get_sets()
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
     head="Erilaz galea +2",
-    body="Dread Jupon",
+    body="Erilaz surcoat +2",
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
     feet="Carmine greaves +1",
-    neck="Sanctity Necklace",
+    neck="Voltsurge Torque",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
     left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"}
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+	back="Solemnity cape"
+  }
+
+  sets.Regen = {
+    ammo="Staunch Tathlum +1",
+    head="Runeist's bandeau +2",
+    body="Erilaz surcoat +2",
+    hands="Regal Gauntlets",
+    legs="Futhark Trousers +1",
+    feet="Carmine greaves +1",
+    neck="Voltsurge Torque",
+    waist="Sroda Belt",
+    left_ear="Magnetic Earring",
+    right_ear="Erilaz Earring",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+	back="Solemnity cape"
   }
 
 
@@ -320,7 +337,7 @@ function precast(spell,abil)
 	equip(sets.FastCast)
   end
   if spell.action_type == 'Magic' then
-    equip(sets.TP.EvasionTank,sets.precast)
+    equip(sets.FastCast)
   end
   
   
@@ -441,8 +458,11 @@ function midcast(spell,act,arg)
 	  equip(sets.SIR,sets.Enhancing)
     end
     if string.find(spell.name,'Regen') then
-      equip(sets.SIR,sets.Enhancing)
+      equip(sets.SIR,sets.Regen)
     end
+	if string.find(spell.name,'Protect') then
+		equip(sets.Enhancing)
+	end
   
   end
   

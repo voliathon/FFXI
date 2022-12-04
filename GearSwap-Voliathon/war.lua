@@ -20,102 +20,102 @@ function get_sets()
   TP_ind = 1
 
   sets.TP.Movement = {
-    ammo="Staunch Tathlum +1",
-    head="Turms cap +1",
-    body="Ashera Harness",
-    hands="Turms mittens +1",
-    legs="Carmine Cuisses +1",
-    feet="Turms leggings +1",
-    neck="Loricate torque +1",
-    waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}
+    ammo="Ginsen",
+    head="Flam. Zucchetto +2",
+    body="Sakpata's breastplate",
+    hands="Sakpata's gauntlets",
+    legs="Sakpata's cuisses",
+    feet="Hermes' sandals",
+    neck="Clotharius Torque",
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Boii Earring",
+    left_ring="Chirich Ring +1",
+    right_ring="Chirich Ring +1",
+    back="Moonlight Cape"
   }
   
   --offensive melee set
   sets.TP.BadAss = {
     ammo="Ginsen",
     head="Flam. Zucchetto +2",
-    body="Kubira Meikogai",
-    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
-    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
+    body="Sakpata's breastplate",
+    hands="Sakpata's gauntlets",
+    legs="Sakpata's cuisses",
     feet="Flam. Gambieras +2",
     neck="Clotharius Torque",
     waist="Ioskeha Belt +1",
-    left_ear="Cessance Earring",
-    right_ear="Brutal Earring",
+    left_ear="Brutal Earring",
+    right_ear="Boii Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Moonbeam Cape"
+    back="Moonlight Cape"
   }
 
   --Tank Gear
   sets.TP.Tank = {
     ammo="Staunch Tathlum +1",
-    head="Turms cap +1",
-    body="Ashera Harness",
-    hands="Turms mittens +1",
-    legs="Erilaz leg guards +1",
-    feet="Turms leggings +1",
-    neck="Loricate torque +1",
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
     waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
-    right_ear="Odnowa Earring +1",
+    left_ear="Tuisto Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}
+    right_ring="Fortified Ring",
+    back="Engulfer Cape +1"
   }
 
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
     ammo="Staunch Tathlum +1",
-    head="Turms cap +1",
-    body="Ashera Harness",
-    hands="Turms mittens +1",
-    legs="Erilaz leg guards +1",
-    feet="Turms leggings +1",
-    neck="Loricate torque +1",
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
     waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
-    right_ear="Odnowa Earring +1",
+    left_ear="Tuisto Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}
+    right_ring="Fortified Ring",
+    back="Engulfer Cape +1"
   }
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    head="Turms cap +1",
-    body="Ashera harness",
-    hands="Turms Mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Turms Leggings +1",
-    neck="Subtlety Spec.",
+    head="Flam. Zucchetto +2",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Flam. Gambieras +2",
+    neck="Sanctity Necklace",
     waist="Ioskeha Belt +1",
-    left_ear="Heartseeker Earring",
-    right_ear="Cessance Earring",
+    left_ear="Tuisto Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+    back="Vespid Mantle"
   }
   
   sets.TP.TreasureHunter = {
-    ammo="Staunch Tathlum +1",
-    head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
-    body="Ashera Harness",
-    hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
-    feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
+    ammo="Amar Cluster",
+    head="Flam. Zucchetto +2",
+    body="Volte Jupon",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Flam. Gambieras +2",
+    neck="Sanctity Necklace",
     waist="Chaac Belt",
-    left_ear="Odnowa Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
-    left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}} 
+    left_ear="Tuisto Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Chirich Ring +1",
+    right_ring="Chirich Ring +1",
+    back="Vespid Mantle"
   }
 
   --Weaponskill Sets--
@@ -123,107 +123,72 @@ function get_sets()
 
   --multi, carries FTP -- Need STR for the modifier
   sets.Resolution = {
-    ammo="Yetshila +1",
-    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-    body={ name="Lustr. Harness +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}},
-    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
-    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-    feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
+    ammo="Knobkierrie",
+    head="Flam. Zucchetto +2",
+    body="Hjarrandi Breast.",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Flam. Gambieras +2",
     neck="Fotia Gorget",
-    waist="Fotia Belt",
-    left_ear="Ishvara Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    waist="Ioskeha Belt +1",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear={ name="Boii Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
     left_ring="Epaminondas's Ring",
     right_ring="Rajas Ring",
-    back="Moonbeam Cape"
+    back="Vespid Mantle"
   }
 
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
   sets.Single = {
-    ammo="Yetshila +1",
+    ammo="Knobkierrie",
     head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-    body={ name="Lustr. Harness +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}},
-    hands={ name="Valorous Mitts", augments={'"Dual Wield"+1','Enmity-1','Weapon skill damage +6%','Accuracy+18 Attack+18','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
-    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-    feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
+    body="Hjarrandi Breast.",
+    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+    legs="Nyame Flanchard",
+    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    left_ear="Ishvara Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear={ name="Boii Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
     left_ring="Epaminondas's Ring",
     right_ring="Rajas Ring",
-    back="Moonbeam Cape"
+    back="Vespid Mantle"
   }
 
-  --added effect
+  --Stat Modifier: 	30% STR / 30% MND   Sleep Weaponskill
   sets.Shockwave = {
-    ammo="Yetshila +1",
-    head="Adhemar Bonnet +1",
-    body="Herculean vest",
-    hands="Meg. Gloves +2",
-    legs="Herculean trousers",
-    feet="Ayanmo gambieras +2",
+    ammo="Pemphredo Tathlum",
+    head="Sakpata's Helm",
+    body="Crepuscular Mail",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
     neck="Fotia Gorget",
-    waist="Ioskeha Belt +1",
-    left_ear="Crematio Earring",
-    right_ear="Friomisi Earring",
-    left_ring="Moonlight Ring",
-    right_ring="Fenrir Ring +1",
-    back="Toro Cape"
+    waist="Orpheus's sash",
+    left_ear="Digni. Earring",
+    right_ear="Gwati Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back="Engulfer Cape +1"
   }
 
   --magic WS
   sets.HercSlash = {
-    ammo="Yetshila +1",
-	head="Adhemar Bonnet +1",
-    body="Herculean vest",
-    hands="Meg. Gloves +2",
-    legs="Herculean trousers",
+    ammo="Pemphredo Tathlum",
+    head="Sakpata's Helm",
+    body="Crepuscular Mail",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",
     neck="Fotia Gorget",
-    waist="Ioskeha Belt +1",
-    left_ear="Crematio Earring",
-    right_ear="Friomisi Earring",
-    left_ring="Moonlight Ring",
-    right_ring="Fenrir Ring +1",
-    back="Toro Cape"
+    waist="Orpheus's sash",
+    left_ear="Digni. Earring",
+    right_ear="Gwati Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back="Engulfer Cape +1"
   }
 
-  sets.Utility = {}
-  
-  --full PDT set for when stunned, etc.
-  sets.Utility.PDT = {
-    ammo="Staunch Tathlum +1",
-    head="Futhark bandeau +1",
-    body="Futhark coat +1",
-    hands="Turms mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Erilaz Greaves +1",
-    neck="Loricate torque +1",
-    waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-    back="Moonbeam Cape"
-  }
-
-  --full MDT set for when stunned, etc
-  sets.Utility.MDT = {
-    ammo="Staunch Tathlum +1",
-    head="Erilaz galea +1",
-    body="Futhark coat +1",
-    hands="Turms mittens +1",
-    legs="Meg. Chausses +2",
-    feet="Erilaz Greaves +1",
-    neck="Loricate torque +1",
-    waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-    back="Moonbeam Cape"
-  }
-  
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
     head="Erilaz Galea +1",
@@ -347,50 +312,10 @@ function precast(spell,abil)
 	equip(sets.precast)
   end
   if spell.action_type == 'Magic' then
-    equip(sets.Utility.PDT,sets.precast)
+    equip(sets.precast)
   end
   
   
-  if spell.name == 'Lunge' or spell.name == 'Swipe' then
-    equip(sets.JA.Lunge)
-  end
-  --prevents Valiance/Vallation/Liement from being prevented by each other (cancels whichever is active)
-  if spell.name == 'Valiance' or spell.name == 'Vallation' or spell.name == 'Liement' then
-    if buffactive['Valiance'] then
-      cast_delay(0.2)
-      windower.ffxi.cancel_buff(535)
-    elseif buffactive['Vallation'] then
-      cast_delay(0.2)
-      windower.ffxi.cancel_buff(531)
-    elseif buffactive['Liement'] then
-      cast_delay(0.2)
-      windower.ffxi.cancel_buff(537)
-    end
-  end
-  if spell.name == 'Vallation' or spell.name == 'Valiance' then
-    equip(sets.Enmity,sets.JA.Vallation)
-  end
-  if spell.name == 'Pflug' then
-    equip(sets.Enmity,sets.JA.Pflug)
-  end
-  if spell.name == 'Elemental Sforzo' or spell.name == 'Liement' then
-    equip(sets.Enmity,{body="Futhark coat +1"})
-  end
-  if spell.name == 'Gambit' then
-    equip(sets.Enmity,sets.JA.Gambit)
-  end
-  if spell.name == 'Embolden' then
-    equip({back={ name="Evasionist's Cape", augments={'Enmity+5','"Embolden"+14','"Dbl.Atk."+2','Damage taken-3%'}}})
-  end  
-  if spell.name == 'Rayke' then
-    equip(sets.Enmity,sets.JA.Rayke)
-  end
-  if spell.name == 'Battuta' then
-    equip(sets.Enmity,sets.JA.Battuta)
-  end
-  if spell.name == 'Vivacious Pulse' then
-    equip(sets.Enmity,sets.JA.Pulse)
-  end
   if spell.name == 'One for All' or spell.name == 'Embolden' or spell.name == 'Odyllic Subterfuge' or spell.name == 'Warcry'
     or spell.name == 'Swordplay' or spell.name == 'Meditate' or spell.name == 'Provoke' then
     equip(sets.Enmity, {hands="Futhark mitons +1"})
@@ -419,8 +344,8 @@ function precast(spell,abil)
   
   if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
     if TP_ind == 4 then
-      equip(sets.Utility.MDT) else
-      equip(sets.Utility.PDT)
+      equip(sets.TP.Tank) else
+      equip(sets.TP.Tank)
     end
   end
 end
@@ -429,28 +354,6 @@ end
 
 --Should NOT put Job Abilities here.  Ony Magic Fren!  Fren is Doggo Speak for Friend
 function midcast(spell,act,arg)
-  if spell.skill == 'Elemental Magic' then
-    equip(sets.JA.Lunge)
-  end
-
-  if spell.skill == 'Enhancing Magic' then
-	if spell.name == 'Phalanx' then
-		equip(sets.SIR,sets.Phalanx)
-	end
-	if spell.name == "Blink" or spell.name == "Stoneskin" then
-      equip(sets.SIR,sets.Stoneskin)
-	end
-	if spell.name == 'Foil' then
-	  equip(sets.SIR,sets.enmity)
-	end
-    if string.find(spell.name,'Refresh') then
-	  equip(sets.SIR,sets.Enhancing)
-    end
-    if string.find(spell.name,'Regen') then
-      equip(sets.SIR,sets.Enhancing)
-    end
-  
-  end
   
   if spell.name == 'Flash' or spell.name == "Stun" then
     equip(sets.Enmity)
