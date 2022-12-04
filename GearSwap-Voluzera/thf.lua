@@ -44,7 +44,7 @@ function get_sets()
 	sets.engaged.TP = {
 		ammo="Aurgelmir Orb",
 		head={ name="Herculean Helm", augments={'Attack+22','"Triple Atk."+3','DEX+9','Accuracy+5'}},
-		body="Malignance Tabard",
+		body="Ashera Harness",
 		hands={ name="Floral Gauntlets", augments={'Rng.Acc.+15','Accuracy+15','"Triple Atk."+3','Magic dmg. taken -4%'}},
 		legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2'}},
 		feet={ name="Herculean Boots", augments={'Attack+17','"Triple Atk."+3','STR+10','Accuracy+3'}},
@@ -60,7 +60,7 @@ function get_sets()
 	sets.engaged.Defense = {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		body="Ashera Harness",
 		hands="Malignance Gloves",
 		legs="Mummu Kecks +2",
 		feet="Malignance Boots",
@@ -227,7 +227,7 @@ function get_sets()
 	sets.aftercast.Idle = {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		body="Ashera Harness",
 		hands="Malignance Gloves",
 		legs="Mummu Kecks +2",
 		feet="Jute Boots +1",
@@ -243,7 +243,7 @@ function get_sets()
 	sets.aftercast.Defense = set_combine(sets.aftercast.Idle, {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		body="Ashera Harness",
 		hands="Malignance Gloves",
 		legs="Mummu Kecks +2",
 		feet="Malignance Boots",

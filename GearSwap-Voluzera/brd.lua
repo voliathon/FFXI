@@ -34,10 +34,10 @@ function get_sets()
   --Idle Set--
   sets.Idle = {
     head="Fili calot +2",
-    body="Inyanga Jubbah +2",
+    body="Fili hongreline +2",
     hands="Inyan. Dastanas +2",
     legs="Brioso Cannions +3",
-    feet="Fili Cothurnes +1",
+    feet="Fili Cothurnes +2",
     neck="Loricate Torque +1",
     waist="Flume Belt",
     left_ear="Genmei Earring",
@@ -83,7 +83,7 @@ function get_sets()
   --Magic Accuracy for those pesky songs that don't want to stick--
   sets.MagicAccuracy = {
     head="Fili calot +2",
-    body="Brioso Justaucorps +3",
+    body="Fili hongreline +2",
     hands="Brioso Cuffs +3",
     legs="Brioso Cannions +3",
     feet="Brioso Slippers +3",
@@ -99,10 +99,10 @@ function get_sets()
   --Maximizing Song Potency first then duration-- 
   sets.Songs = {
     head="Fili calot +2",
-    body="Fili Hongreline",
-    hands="Fili manchettes +1",
+    body="Fili Hongreline +2",
+    hands="Fili manchettes +2",
     legs="Inyanga Shalwar +2",
-    feet="Brioso Slippers +3",
+    feet="Fili Cothurnes +2",-
     neck="Mnbw. Whistle +1",
     waist="Kobo Obi",
     left_ear="Musical Earring",
