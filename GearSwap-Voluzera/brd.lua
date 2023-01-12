@@ -102,7 +102,7 @@ function get_sets()
     body="Fili Hongreline +2",
     hands="Fili manchettes +2",
     legs="Inyanga Shalwar +2",
-    feet="Fili Cothurnes +2",-
+    feet="Fili Cothurnes +2",
     neck="Mnbw. Whistle +1",
     waist="Kobo Obi",
     left_ear="Musical Earring",
@@ -172,7 +172,7 @@ function get_sets()
   --TP Set--
   sets.engaged.TP = {
     head="Aya. Zucchetto +2",
-    body="Ayanmo Corazza +2",
+    body="Ashera Harness",
     hands="Fili Manchettes +2",
 	legs="Nyame flanchard",
 	feet="Nyame sollerets",
@@ -188,7 +188,7 @@ function get_sets()
   --Accuracy Set--
   sets.engaged.Accuracy = {
     head="Fili Calot +2",
-    body="Fili Hongreline +2",
+    body="Ashera Harness",
     hands="Fili Manchettes +2",
     legs="Fili Rhingrave +2",
     feet="Fili Cothurnes +2",
@@ -252,19 +252,19 @@ function get_sets()
   --multi, Shoha, Fudo, Kasha need STR for the modifier
   -- 81 WSD 5/29/2021
   sets.WSD = {
-    ammo="Ginsen",
-    head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%'}}, --8
-    body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9'}}, --9
-    hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7'}}, --7
-    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+10 "Mag.Atk.Bns."+5'}}, --10
-    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17'}}, --10
-    neck="Fotia Gorget", --10
-    waist="Fotia Belt", --10
-    left_ear="Ishvara Earring", --2
-    right_ear="Moonshade Earring",
-    left_ring="Hetairoi Ring",
-    right_ring="Epaminondas's Ring", --5
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}} --10
+    ammo="Aurgelmir Orb",
+    head="Nyame Helm",
+    body="Ashera Harness",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Fotia Gorget",
+    waist="Cetl Belt",
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Ifrit Ring +1",
+    right_ring="Epaminondas's Ring",
+    back="Vespid Mantle"
   }
   
 

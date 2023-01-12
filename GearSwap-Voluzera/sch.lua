@@ -38,39 +38,20 @@ function get_sets()
 	}
 
 
-	-- Geomancer Spells
-    sets.Geomancy = {
-		main="Idris",
-		sub="Genmei Shield",
-		range="Dunna",
-        head="Azimuth Hood +3",
-		neck="Sanctity necklace",
-		left_ear="Malignance Earring",
-		right_ear="Gifted Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring",
-        body="Bagua Tunic +1",
-		hands="Geo. Mitaines +3",
-        back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}},
-		waist="Austerity Belt +1",
-		legs="Azimuth Tights +1",
-		feet="Azimuth Gaiters +2"
-	}
-
 	-- Enhancing Spells \\Generalized//
     sets.EnhancingMagic = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Impatiens",
-		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9'}},
-		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9'}},
-		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8'}},
-		legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10'}},
-		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +8'}},
+		main="Pedagogy Staff",
+		sub="Clerisy strap",
+		ammo="Staunch Tathlum +1",
+		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
+		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}},
+		legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
+		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +8',}},
 		neck="Enhancing Torque",
-		waist="Witful Belt",
-		left_ear="Malignance Earring",
-		right_ear="Enchntr. Earring +1",
+		waist="Siegel Sash",
+		left_ear="Andoaa Earring",
+		right_ear={ name="Arbatel Earring", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+9',}},
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring",
 		back="Perimede Cape"
@@ -84,7 +65,6 @@ function get_sets()
 		left_ring="Stikini ring +1",
 		right_ring="Stikini ring",
 		waist="Siegel Sash",
-		legs="Geomancy pants +2",
 		back="Perimede Cape"	
 	})
 
@@ -124,20 +104,18 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Daybreak",
-		sub="Genmei Shield",	
-		ammo="Sroda tathlum",
-		head={ name="Merlinic Hood", augments={'Mag. Acc.+28','Magic burst dmg.+11%','INT+3','"Mag.Atk.Bns."+15'}},
-		body="Azimuth coat +2",
-		hands="Azimuth gloves +2",
-		legs="Azimuth tights +2",
-		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Magic burst dmg.+7%','Mag. Acc.+7','"Mag.Atk.Bns."+11'}},
-		neck="Mizu. Kubikazari",
+		ammo="Sroda Tathlum",
+		head={ name="Merlinic Hood", augments={'Mag. Acc.+28','Magic burst dmg.+11%','INT+3','"Mag.Atk.Bns."+15',}},
+		body={ name="Merlinic Jubbah", augments={'Mag. Acc.+7','Magic burst dmg.+11%','INT+9','"Mag.Atk.Bns."+11',}},
+		hands={ name="Merlinic Dastanas", augments={'Mag. Acc.+6 "Mag.Atk.Bns."+6','Magic burst dmg.+8%','INT+8','"Mag.Atk.Bns."+15',}},
+		legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+26','Magic burst dmg.+11%','Mag. Acc.+10',}},
+		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Magic burst dmg.+7%','Mag. Acc.+7','"Mag.Atk.Bns."+11',}},
+		neck={ name="Argute Stole +1", augments={'Path: A',}},
 		waist="Refoccilation Stone",
-		left_ear="Malignance- Earring",
-		right_ear="Halasz Earring",
+		left_ear="Malignance Earring",
+		right_ear={ name="Arbatel Earring", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+9',}},
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring",
+		right_ring="Jhakri Ring",
 		back="Seshaw Cape"
 	}
 	
@@ -201,71 +179,57 @@ function get_sets()
 
 	-- PDT Set
     sets.PDT = {
-		main="Idris",
-		sub="Genmei Shield",	
-		range="Dunna",
-		head="Azimuth Hood +3",
-		body="Nyame mail",
-		hands="Azimuth gloves +2",
-		legs="Nyame flanchard",
-		feet="Azimuth gaiters +2",
-		neck="Loricate torque +1",
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
 		waist="Isa Belt",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
-		left_ring="Fortified Ring",
-		right_ring="Defending Ring",
-		back="Solemnity cape"
-	}
-
-    -- .Pet sets are for when Luopan is present.
-    sets.PetDT = {
-		main="Idris",
-		sub="Genmei Shield",	
-		range="Dunna",
-		head="Azimuth Hood +3",
-		body="Shamash robe",
-		hands="Geo. Mitaines +3",
-		legs="Assid. Pants +1",
-		feet="Bagua Sandals +1",
-		neck="Loricate torque +1",
-		waist="Isa Belt",
-		left_ear="Genmei Earring",
-		right_ear="Hypaspist Earring",
-		left_ring="Yacuruna Ring",
-		right_ring="Defending Ring",
-		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}}
+		left_ring="Stikini Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Solemnity Cape"
 	}
 
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
-		main="Idris",
-		sub="Genmei Shield",
-		range="Dunna",
-		head="Azimuth Hood +3",		
-		body="Nyame mail",
-		hands="Nyame gauntlets",
-		legs="Nyame flanchard",
-		feet="Azimuth gaiters +2",
-		neck="Loricate torque +1",
-		waist="Slipor Sash",
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		waist="Isa Belt",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
-		left_ring="Yacuruna Ring",
-		right_ring="Defending Ring",
-		back="Solemnity cape"
+		left_ring="Stikini Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Solemnity Cape"
 	}
 
 		
 	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {feet="Geomancy Sandals +3"}
+    sets.Kiting = {feet="Herald's Gaiters"}
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		head="Befouled crown",
+		ammo="Staunch Tathlum +1",
+		head="Befouled Crown",
 		body="Jhakri robe +2",
-		hands="Bagua mitaines +1",
-		right_ring="Stikini ring +1"
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet={ name="Chironic Slippers", augments={'Attack+22','Pet: Mag. Acc.+27','"Refresh"+2','Mag. Acc.+13 "Mag.Atk.Bns."+13',}},
+		neck="Sanctity Necklace",
+		waist="Isa Belt",
+		left_ear="Infused Earring",
+		right_ear={ name="Arbatel Earring", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+9',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Solemnity Cape"
 	})
 	
 	
@@ -297,11 +261,10 @@ function get_sets()
 
 	  -- Engaged Sets Toggle--
 	sets.engaged = {}
-	sets.engaged.index = {'Movement','PETDT', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	sets.engaged.index = {'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
 	engaged_ind = 1  	 
 	 
 	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.PETDT = set_combine(sets.PetDT, {})
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
 	sets.engaged.Accuracy = set_combine(sets.PDT, {})
@@ -343,12 +306,6 @@ function midcast(spell)
 	end
 	if spell.name == 'Stoneskin' then
 		equip(sets.Stoneskin)
-	end
-	if spell.name == 'Entrust' then
-		equip(sets.Idris)
-	end
-	if spell.type == 'Geomancy' then
-	    equip(sets.Geomancy)
 	end
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
