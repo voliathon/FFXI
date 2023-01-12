@@ -24,9 +24,9 @@ function get_sets()
 	
   sets.JA.Lunge = {}
   sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +1"}
-  sets.JA.Gambit = {hands="Runeist's mitons +2"}
+  sets.JA.Gambit = {hands="Runeist mitons +2"}
   sets.JA.Rayke = {feet="Futhark boots +1"}
-  sets.JA.Battuta = {head="Futhark bandeau +1"}
+  sets.JA.Battuta = {head="Futhark bandeau +3"}
   sets.JA.Pflug = {feet="Runeist bottes +2"}
   sets.JA.Pulse = {head="Erilaz galea +2",legs="Runeist Trousers +2"}
   sets.JA.Swordplay = {hands="Futhark mitons +1"}	
@@ -47,7 +47,7 @@ function get_sets()
     feet="Erilaz Greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
+    left_ear="Tuisto Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
@@ -75,13 +75,13 @@ function get_sets()
   sets.TP.Hybrid = {
     ammo="Staunch Tathlum +1",
 	head="Nyame Helm",
-    body="Runeist's coat +3",
+    body="Runeist coat +3",
     hands="Erilaz Gauntlets +2",
     legs="Erilaz leg guards +2",
     feet="Erilaz greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
+    left_ear="Tuisto Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
@@ -91,7 +91,7 @@ function get_sets()
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
     head="Erilaz Galea +2",
-    body="Runeist's Coat +3",
+    body="Runeist Coat +3",
     hands="Erilaz Gauntlets +2",
     legs="Eri. Leg Guards +2",
     feet="Erilaz Greaves +2",
@@ -113,7 +113,7 @@ function get_sets()
     feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Chaac Belt",
-    left_ear="Odnowa Earring",
+    left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
@@ -225,7 +225,7 @@ function get_sets()
 
   sets.Regen = {
     ammo="Staunch Tathlum +1",
-    head="Runeist's bandeau +2",
+    head="Runeist bandeau +2",
     body="Erilaz surcoat +2",
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
@@ -256,10 +256,10 @@ function get_sets()
     right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
   }
 
-  --Phalanx--
+  --Phalanx--  23
   sets.Phalanx = {
     ammo="Staunch Tathlum +1",
-    head={ name="Fu. Bandeau +2", augments={'Enhances "Battuta" effect'}},
+    head="Futhark Bandeau +3",
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3'}},
     hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
     legs={ name="Herculean Trousers", augments={'Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Pet: Accuracy+16 Pet: Rng. Acc.+16','Phalanx +4','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
@@ -314,6 +314,11 @@ function get_sets()
     left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
     right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
+  }
+  
+  
+  sets.Cure = {
+  
   }
 
 end
@@ -480,7 +485,7 @@ end
 function aftercast(spell)
   equip_current()
   if (spell.english == 'Battuta') then
-		equip({hands="Turms mittens +1", feet="Turms leggings +1"})
+		equip({hands="Turms mittens +1", feet="Turms leggings +1", left_ear="Cryptic earring"})
   end
   --Just running a lil somethin-somethin to track Shadows
   if string.find(spell.name,'Utsusemi') and not spell.interrupted then
@@ -501,7 +506,7 @@ end
 function equip_current()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
 	if (buffactive['Battuta']) then
-		equip({hands="Turms mittens +1", feet="Turms leggings +1"})
+		equip({hands="Turms mittens +1", feet="Turms leggings +1", left_ear="Cryptic earring"})
 	end
 end
 

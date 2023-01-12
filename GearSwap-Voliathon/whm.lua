@@ -237,8 +237,7 @@ function get_sets()
 		
 	-- When I gotta kite shite, I put on my Sandals and shit...
     sets.Kiting = {feet="Geomancy Sandals +3"}
-
-    
+	
 	sets.Refresh = set_combine(sets.PDT,  {
 		main="Daybreak",
 		sub="Genmei shield",
@@ -254,21 +253,36 @@ function get_sets()
     ------------------------------------------------------------------------------------------------------------------
 
 	-- All Weaponskills for Geomancer unless explicitly defined below sets.precast.WS 
-     sets.WS = {
-		main="Daybreak",
-		sub="Genmei Shield",
+     sets.WSD = {
 		ammo="Amar Cluster",
-		head="Jhakri Coronal +2",
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
-		legs="Jhakri Slops +2",
-		feet="Jhakri Pigaches +2",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Steelflash Earring",
-		right_ear="Bladeborn Earring",
-		left_ring="K'ayres Ring",
-		right_ring="Karieyh Ring"
+		waist="Grunfeld Rope",
+		left_ear="Ishvara Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		left_ring="Epaminondas's Ring",
+		right_ring="Chirich Ring +1",
+		back="Moonlight Cape"
+	 }
+	 
+	 sets.MysticBoon = {
+		ammo="Amar Cluster",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Fotia Gorget",
+		waist="Grunfeld Rope",
+		left_ear="Ishvara Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		left_ring="Epaminondas's Ring",
+		right_ring="Chirich Ring +1",
+		back="Moonlight Cape"	 
 	 }
 	 
 	 
@@ -279,9 +293,24 @@ function get_sets()
 
 	  -- Engaged Sets Toggle--
 	sets.engaged = {}
-	sets.engaged.index = {'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	sets.engaged.index = {'TP','Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
 	engaged_ind = 1  	 
 	 
+	sets.engaged.TP = {
+		ammo="Amar Cluster",
+		head="Aya. Zucchetto +2",
+		body="Ayanmo Corazza +2",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Aya. Gambieras +2",
+		neck="Sanctity Necklace",
+		waist="Grunfeld Rope",
+		left_ear="Brutal Earring",
+		right_ear="Cessance Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Moonlight Cape"	
+	}
 	sets.engaged.Movement = set_combine(sets.Kiting, {})
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
@@ -291,12 +320,7 @@ function get_sets()
 end
 
 function precast(spell,abil)
-	--Enhancing Magic Check
-	if spell.skill == 'Enhancing Magic' then
-		equip(sets.Enhancing)
-	elseif spell.skill == 'Enfeebling Magic' then
-		equip(sets.Enfeebling)
-	elseif spell.action_type == 'Magic' then
+	if spell.action_type == 'Magic' then
 		equip(sets.FastCast)
 	end
 		--Can add stuff here for other magic. Doesn't have to go to idle at all
@@ -306,36 +330,47 @@ function precast(spell,abil)
 	if spell.name == "Hexa Strike" then
 		equip(sets.WSD)
 	end
+	if spell.name == "Mystic Boon" then
+		equip(sets.MysticBoon)
+	end	
 	-- Add logic for Waltz
 	-- Add logic for Utsusemi
   
   
 end
 
---We need to do some thinking and testing for this set...
-function aftercast(spell)
-	equip_current()
-end
-
-
 function midcast(spell)
+	--Enhancing Magic Check
+	if spell.skill == 'Enhancing Magic' then
+		if string.find(spell.english, 'Bar') then
+			equip(sets.BarSpells)
+		elseif string.find(spell.english, 'Boost') then
+			equip(sets.BoostSpells)
+		else
+			equip(sets.Enhancing)
+		end
+	end
+	if spell.skill == 'Enfeebling Magic' then
+		equip(sets.Enfeebling)
+	end
 	if string.find(spell.english,'Cur') then 
 		equip(sets.Cure)
 	end
 	if spell.name == 'Stoneskin' then
 		equip(sets.Stoneskin)
 	end
-	if spell.name == 'Erase' or spell.name == 'Paralyna' or spell.name == 'Blindna' or spell.name == 'Viruna' or spell.name == 'Stona' or spell.name == 'Silena' or spell.name == 'Poisona' then
-		equip(sets.Yagrush)
-	end
-	if spell.name == 'Cursna' then
-		equip(sets.Cursna)
-	end
 	if spell.skill == 'Elemental Magic' then
 		equip(sets.ElementalMagic)
 	end
+	if string.find(spell.english, 'na') then
+		equip(sets.Yagrush)
+	end
 end
 
+--We need to do some thinking and testing for this set...
+function aftercast(spell)
+	equip_current()
+end
 
 --This function should only get kicked off when you're engaging.  
 --If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
