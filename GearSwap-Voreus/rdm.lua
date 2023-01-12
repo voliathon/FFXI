@@ -10,7 +10,7 @@ function get_sets()
     sets.Chainspell = {body="Vitiation tabard +1"}
     sets.Stymie = {}
     sets.Spontaneity = {}
-    sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +2",hands="Lethargy gantherots +2",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +2"}
+    sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +3",hands="Lethargy gantherots +2",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +2"}
 	sets.Saboteur = {hands="Lethargy gantherots +2"}
 	sets.Dispel = {neck="Duelist's torque +2"}
 
@@ -53,7 +53,7 @@ function get_sets()
 	sets.Enhancing = {
 		ammo="Pemphredo Tathlum",
 		head="Lethargy chappel +2",
-		body="Lethargy sayon +2",
+		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +2",
 		legs="Lethargy fuseau +2",
 		feet="Lethargy Houseaux +2",
@@ -74,7 +74,7 @@ function get_sets()
 	sets.TP = {
 		range="Ullr",
 		head="Lethargy chappel +2",
-		body="Lethargy sayon +2",
+		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +2",
 		legs="Lethargy fuseau +2",
 		feet="Malignance boots",
@@ -118,7 +118,7 @@ function get_sets()
 	sets.ElementalMagic = {
 		ammo="Dosis Tathlum",
 		head="Lethargy chappel +2",
-		body="Lethargy sayon +2",
+		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +2",
 		legs="Lethargy fuseau +2",
 		feet="Lethargy Houseaux +2",
@@ -138,7 +138,7 @@ function get_sets()
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Regal Gem",
 		head="Vitiation chapeau +1",
-		body="Lethargy sayon +2",
+		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +2",
 		legs={ name="Chironic Hose", augments={'Attack+14','Mag. Acc.+13','"Treasure Hunter"+1','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		feet="Vitiation Boots +1",
@@ -168,7 +168,7 @@ function get_sets()
     sets.PDT = {
 		ammo="Homiliary",
 		head="Lethargy chappel +2",
-		body="Lethargy sayon +2",
+		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +2",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
@@ -204,7 +204,7 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		body="Jhakri robe +2"
+		body="Lethargy sayon +3"
 	})
 	
 	
