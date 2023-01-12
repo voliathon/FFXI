@@ -24,7 +24,7 @@ function get_sets()
     head="Sakpata's helm",
     body="Sakpata's breastplate",
     hands="Sakpata's gauntlets",
-    legs="Sakpata's cuisses",
+    legs="Carmine cuisses +1",
     feet="Hermes' sandals",
     neck="Clotharius Torque",
     waist="Ioskeha Belt +1",
@@ -37,16 +37,16 @@ function get_sets()
   
   --offensive melee set
   sets.TP.BadAss = {
-    ammo="Ginsen",
+	ammo="Ginsen",
     head="Flam. Zucchetto +2",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
     feet="Flam. Gambieras +2",
-    neck="Clotharius Torque",
+    neck="Anu Torque",
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Telos Earring",
-    right_ear="Brutal Earring",
+    right_ear="Sherida Earring",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
     back="Solemnity Cape"
@@ -55,44 +55,44 @@ function get_sets()
   --Tank Gear
   sets.TP.Tank = {
     ammo="Staunch Tathlum",
-    head="Sakpata's Helm",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Loricate Torque +1",
-    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    waist="Isa Belt",
     left_ear="Eabani Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+2','"Dbl.Atk."+10',}}
+    back="Solemnity Cape"
   }
 
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
     ammo="Staunch Tathlum",
-    head="Sakpata's Helm",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Loricate Torque +1",
-    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    waist="Isa Belt",
     left_ear="Eabani Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+2','"Dbl.Atk."+10',}}
+    back="Solemnity Cape"
   }
   
   sets.TP.Accuracy = {
-    ammo="Seeth. Bomblet +1",
+    ammo="Ginsen",
     head="Flamma Zucchetto +2",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Flamma gambieras +2",
     neck="Sanctity Necklace",
     waist="Kentarch Belt",
     left_ear="Telos Earring",
@@ -102,13 +102,13 @@ function get_sets()
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+2','"Dbl.Atk."+10',}}
   }
   
-  sets.TP.TreasureHunter = {
-    ammo="Seeth. Bomblet +1",
-    head="Sakpata's Helm",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+  sets.TP.TreasureHunter = {  
+    ammo="Ginsen",
+    head="Flamma Zucchetto +2",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Flamma gambieras +2",
     neck="Sanctity Necklace",
     waist="Chaac Belt",
     left_ear="Telos Earring",
@@ -121,55 +121,39 @@ function get_sets()
   --Weaponskill Sets--
   sets.WS = {}
   
-  -- Stat Modifier: 	73~85% VIT
-  sets.Upheaval = {
+  -- Stat Modifier: 	73~85% STR
+  sets.Stardiver = {
+    ammo="Knobkierrie",
+    head={ name="Valorous Mask", augments={'VIT+9','Magic dmg. taken -2%','Weapon skill damage +8%','Accuracy+20 Attack+20',}},
+    body={ name="Valorous Mail", augments={'INT+3','Magic dmg. taken -1%','Weapon skill damage +10%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+    hands={ name="Valorous Mitts", augments={'Rng.Atk.+11','Pet: STR+5','Weapon skill damage +6%','Accuracy+15 Attack+15','Mag. Acc.+17 "Mag.Atk.Bns."+17',}},
+    legs="Nyame Flanchard",
+    feet="Sulev. Leggings +2",
+    neck="Fotia Gorget",
+    waist="Fotia belt",
+    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    right_ear="Sherida Earring",
+    left_ring="Regal Ring",
+    right_ring="Niqmaddu Ring",
+    back="Solemnity Cape"
+  }
+
+
+  --STR 40% DEX 40% 
+  sets.SonicThrust = {
     ammo="Knobkierrie",
     head={ name="Valorous Mask", augments={'VIT+9','Magic dmg. taken -2%','Weapon skill damage +8%','Accuracy+20 Attack+20',}},
     body="Pummeler's lorica +3",
     hands="Sakpata's Gauntlets",
     legs="Pumm. Cuisses +3",
-    feet="Sulevia's leggings +2",
+    feet={ name="Valorous Greaves", augments={'Mag. Acc.+20','"Store TP"+1','Weapon skill damage +9%',}},
     neck="Fotia Gorget",
     waist="Sailfi Belt +1",
     left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
     right_ear="Thrud Earring",
     left_ring="Regal Ring",
     right_ring="Niqmaddu Ring",
-    back={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}  
-  }
-
-  --multi, carries FTP -- Need STR for the modifier
-  sets.Resolution = {
-    ammo="Yetshila +1",
-    head="Sakpata's Helm",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
-    neck="Fotia Gorget",
-    waist="Fotia Belt",
-    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-    right_ear="Ishvara Earring",
-    left_ring="Epaminondas's Ring",
-    right_ring="Hetairoi Ring",
-    back="Moonbeam Cape"
-  }
-
-  --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
-  sets.Single = {
-    ammo="Knobkierrie",
-    head={ name="Valorous Mask", augments={'VIT+9','Magic dmg. taken -2%','Weapon skill damage +8%','Accuracy+20 Attack+20',}},
-    body={ name="Valorous Mail", augments={'INT+3','Magic dmg. taken -1%','Weapon skill damage +10%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
-    hands={ name="Argosy Mufflers +1", augments={'STR+20','"Dbl.Atk."+3','Haste+3%',}},
-    legs="Sakpata's Cuisses",
-    feet={ name="Valorous Greaves", augments={'Mag. Acc.+20','"Store TP"+1','Weapon skill damage +9%',}},
-    neck="Fotia Gorget",
-    waist="Fotia Belt",
-    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-    right_ear="Thrud Earring",
-    left_ring="Regal Ring",
-    right_ring="Niqmaddu Ring",
-    back="Solemnity Cape"
+    back={ name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
   }
 
     --One WS Set to Rule them all. Fuck it...for now...
@@ -177,39 +161,6 @@ function get_sets()
 
     }
 
-  --Stat Modifier: 	30% STR / 30% MND   Sleep Weaponskill
-  sets.Shockwave = {
-    ammo="Pemphredo Tathlum",
-    head="Sakpata's Helm",
-    body="Crepuscular Mail",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
-    neck="Fotia Gorget",
-    waist="Orpheus's sash",
-    left_ear="Digni. Earring",
-    right_ear="Gwati Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
-    back="Engulfer Cape +1"
-  }
-
-  --magic WS
-  sets.HercSlash = {
-    ammo="Pemphredo Tathlum",
-    head="Sakpata's Helm",
-    body="Crepuscular Mail",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
-    neck="Fotia Gorget",
-    waist="Orpheus's sash",
-    left_ear="Digni. Earring",
-    right_ear="Gwati Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
-    back="Engulfer Cape +1"
-  }
 
   sets.Enhancing = {
     ammo="Staunch Tathlum",
@@ -337,26 +288,19 @@ function precast(spell,abil)
     equip(sets.precast)
   end
   
+  --if spell.name == 'Jump' then
+--	equip(sets.Jump)
+ -- end
   
-  if spell.name == 'One for All' or spell.name == 'Embolden' or spell.name == 'Odyllic Subterfuge' or spell.name == 'Warcry'
-    or spell.name == 'Swordplay' or spell.name == 'Meditate' or spell.name == 'Provoke' then
-    equip(sets.Enmity, {hands="Futhark mitons +1"})
+  if spell.name == 'Stardiver' or spell.name == 'Drakesbane' or spell.name == 'Impulse Drive' or 
+		spell.name == 'Wheeling Thrust' or spell.name == 'Skewer' or spell.name == 'Leg Sweep' then
+    equip(sets.Stardiver)
   end
-  if spell.name == 'Upheaval' then
-    equip(sets.Upheaval)
+
+  if spell.name == 'Sonic Thrust' or spell.name == 'Penta Thrust' or spell.name == 'Double Thrust' then
+    equip(sets.SonicThrust)
   end
-  if spell.name == 'Resolution' then
-    equip(sets.Resolution)
-  end
-  if spell.name == 'Dimidiation' or spell.name == 'Spinning Slash' or spell.name == 'Savage Blade' then
-    equip(sets.Single)
-  end
-  if spell.name == 'Shockwave' then
-    equip(sets.Shockwave)
-  end
-  if spell.name == 'Herculean Slash' or spell.name == 'Freezebite' or spell.name == 'Frostbite' then
-    equip(sets.HercSlash)
-  end
+
 
   --prevents casting Utsusemi if you already have 3 or more shadows
   if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then

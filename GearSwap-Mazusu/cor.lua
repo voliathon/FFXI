@@ -80,7 +80,7 @@ function get_sets()
 		--phantom roll +5
 		right_ring="Barataria Ring",
         -- duration +55
-        hands="Chasseur's Gants +2",
+        hands="Chasseur's Gants +3",
         -- duration +30
         back=CamulusCape.matk,
 		-- duration +20
@@ -89,7 +89,7 @@ function get_sets()
 	
 	-- Specific Rolls
 	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +1" })
-    sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +2" })
+    sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +3" })
     sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +2"})
     sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
     sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet = "Chass. Bottes +1" })
@@ -205,7 +205,7 @@ function get_sets()
 		-- matk +29, macc +30
 		body="Samnuha Coat",
 		-- 52 macc, 8% WSD
-		hands="Chasseur's Gants +2",
+		hands="Chasseur's Gants +3",
 		--hands=herc_matk.hands,
 		legs="Chasseur's Culottes +2",
 		--legs=herc_matk.legs,
@@ -236,7 +236,7 @@ function get_sets()
         --legs=herc_ratk.legs,
 		legs="Chasseur's Culottes +2",
 		--  racc 52 , ratt 52 macc, 8% WSD
-		hands="Chasseur's Gants +2",
+		hands="Chasseur's Gants +3",
         -- wsd +10,
         feet="Lanun Bottes +3",
         -- WS boost
@@ -257,7 +257,7 @@ function get_sets()
 		ammo="Living Bullet",
 		body="Lanun Frac +3",
 		legs="Chasseur's Culottes +2",
-		hands="Chasseur's Gants +2"
+		hands="Chasseur's Gants +3"
 	})
 	
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
@@ -267,7 +267,7 @@ function get_sets()
 --		head={ name="Herculean Helm", augments={'Spell interruption rate down -8%','Mag. crit. hit dmg. +10%','Mag. Acc.+9 "Mag.Atk.Bns."+9'}},
 		body="Lanun Frac +3",
 		--  racc 52 , ratt 52 macc, 8% WSD
-		hands="Chasseur's Gants +2",
+		hands="Chasseur's Gants +3",
 		legs="Chasseur's Culottes +2",
 		feet="Lanun Bottes +3",
 		neck="Comm. Charm +2",
@@ -288,8 +288,7 @@ function get_sets()
     sets.SavageBlade = set_combine(sets.precast.WS,{
 		head=HercHead.WSD,
 		body="Laksa. Frac +3",
-		--  racc 52 , ratt 52 macc, 8% WSD
-		hands="Chasseur's Gants +2",
+		hands="Chasseur's Gants +3",
 		legs="Samnuha Tights",
 		feet="Lanun Bottes +3",
 		waist="Fotia Belt",
@@ -309,8 +308,8 @@ function get_sets()
 		head="Chasseur's tricorne +2",
 		-- racc +46, store TP +6, crit +9
 		body="Mummu Jacket +2",
-		--  racc 52 , ratt 52 macc, 8% WSD
-		hands="Chasseur's Gants +2",
+		
+		hands="Chasseur's Gants +3",
 		-- racc +50, Store TP +10
 		legs="Chasseur's Culottes +2",
 		-- racc +46, ratk +42
@@ -350,7 +349,7 @@ function get_sets()
 		head="Malignance chapeau",
 		body="Meg. Cuirie +2",
 		--  racc 52 , ratt 52 macc, 8% WSD, crit rate 7%
-		hands="Chasseur's Gants +2",
+		hands="Chasseur's Gants +3",
 		legs="Darraigner's Brais",
 		feet="Oshosi Leggings",
 		left_ring="Mummu Ring",
@@ -384,7 +383,7 @@ function get_sets()
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.DamageTaken, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.DamageTaken, {})
 	
-	sets.engaged.Accuracy = set_combine(sets.DamageTaken, {})
+	sets.engaged.Accuracy = set_combine(sets.DamageTaken, {hands="Chasseur's Gants +3"})
 	sets.engaged.RangedAccuracy = set_combine(sets.DamageTaken, {})
 	sets.engaged.Movement = set_combine(sets.idle, {})
 	
