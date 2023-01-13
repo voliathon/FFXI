@@ -18,4 +18,4 @@ input /ma "phalanx II" voluzera; wait 5;
 input /ma "haste II" voluzera; wait 5; 
 input /ma "refresh III" voluzera; wait 5; 
 
-input /ma "Enthunder" <me>
+input /ma "Enthunder 2" <me>

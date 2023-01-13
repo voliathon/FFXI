@@ -14,6 +14,7 @@ send azureus exec 4SongNitroAtt;
 //send azureus exec 4SongNitroDef;
 //send azureus exec 4Songbase;
 //send azureus exec OdysseySongs;
+//send azureus exec 4SongNitroVagary;
 wait .1;
 send voreus exec RDMbase;
 
