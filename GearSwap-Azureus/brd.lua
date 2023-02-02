@@ -99,7 +99,7 @@ function get_sets()
   --Maximizing Song Potency first then duration-- 
   sets.Songs = {
     head="Fili calot +2",
-    body="Fili Hongreline +2",
+    body="Fili Hongreline +3",
     hands="Fili Manchettes +2",
     legs="Inyanga Shalwar +2",
     feet="Brioso Slippers +3",
