@@ -199,7 +199,7 @@ function get_sets()
     legs="Erilaz leg guards +2",
     feet="Erilaz greaves +2",
     neck="Fotia Gorget",
-    waist="Ioskeha Belt +1",
+    waist="Orpheus's sash",
     left_ear="Crematio Earring",
     right_ear="Friomisi Earring",
     left_ring="Moonlight Ring",
@@ -273,7 +273,7 @@ function get_sets()
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
  }
 
- --103 SIR
+ --108 SIR-
  sets.SIR = {
     ammo="Staunch Tathlum +1", --11
 	head="Erilaz galea +2", --15
@@ -281,7 +281,7 @@ function get_sets()
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck={ name="Loricate Torque +1", augments={'Path: A',}}, --5
+    neck="Moonbeam necklace", --10
     waist="Audumbla sash", --10
     left_ear="Halasz Earring", --5
     right_ear="Magnetic Earring" --8
@@ -292,7 +292,7 @@ function get_sets()
 	back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%'}}, 
 	waist="Sinew Belt", 
 	legs="Erilaz Leg Guards +2", 
-	neck="Warder's Charm", 
+	neck="Moonbeam necklace", 
 	body="Emet Harness +1",     
 	feet="Erilaz greaves +2"
   }

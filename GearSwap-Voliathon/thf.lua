@@ -15,7 +15,7 @@ function get_sets()
 
 	-- Modes --
     EngagedIndex = 1
-    EngagedArray = {"TH","Solo","Party","ACC"}	-- Press ctrl + F10 for Engaged Array --
+    EngagedArray = {"TreasureHunter","TP","Defense","Accuracy"}	-- Press ctrl + F10 for Engaged Array --
 	Defense = 'OFF' -- Toogle on/off the DT set via ctrl + F9
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --		
 
@@ -34,61 +34,59 @@ function get_sets()
 
 	-- Ability Mapping --
 	THStep = S{"Quickstep","Box Step","Stutter Step","Animated Flourish"}
-	-- Area mapping --	
-    Town = S{"Ru'Lude Gardens","Upper Jeuno","Lower Jeuno","Port Jeuno","Port Windurst","Windurst Waters","Windurst Woods","Windurst Walls","Heavens Tower",
-	         "Port San d'Oria","Northern San d'Oria","Southern San d'Oria","Port Bastok","Bastok Markets","Bastok Mines","Metalworks","Aht Urhgan Whitegate",
-	         "Tavnazian Safehold","Nashmau","Selbina","Mhaura","Norg","Eastern Adoulin","Western Adoulin","Kazham","Heavens Tower"}
+
 
 	---- .:: TP Sets ::. ----->
     sets.engaged = {}
-	sets.engaged.Solo = {
-		ammo="Yetshila +1",
-		head="Adhemar Bonnet +1",
-		body="Adhemar Jacket +1",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance boots",
-		neck="Sanctity Necklace",
-		waist="Grunfeld Rope",
-		left_ear="Dudgeon Earring",
-		right_ear="Heartseeker Earring",
-		left_ring="Mummu Ring",
-		right_ring="Rajas Ring",
-		back="Canny Cape"
+	sets.engaged.TP = {
+		ammo="Ginsen",
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		legs="Meg. Chausses +2",
+		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2',}},
+		neck="Clotharius Torque",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Suppanomimi",
+		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back={ name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3','Crit. hit damage +2%',}}
 	}
 	
-	sets.engaged.Party = {
-		ammo="Yetshila +1",
-		head="Adhemar Bonnet +1",
-		body="Adhemar Jacket +1",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance boots",
-		neck="Sanctity Necklace",
-		waist="Grunfeld Rope",
-		left_ear="Dudgeon Earring",
-		right_ear="Heartseeker Earring",
-		left_ring="Mummu Ring",
-		right_ring="Rajas Ring",
-		back="Canny Cape"
-	}
-	
-	sets.engaged.TH = {
-		ammo="Yetshila +1",
-		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
-		body="Adhemar Jacket +1",
-		hands="Plun. Armlets +1",
+	sets.engaged.Defense = {
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
 		feet="Skulk. Poulaines +2",
-		neck="Sanctity Necklace",
-		waist="Chaac Belt",
-		left_ear="Dudgeon Earring",
-		right_ear="Heartseeker Earring",
-		left_ring="Beeline Ring",
-		right_ring="Defending Ring",
-		back="Canny Cape"
+		neck="Loricate torque +1",
+		waist="Flume Belt +1",
+		left_ear="Suppanomimi",
+		right_ear="Cessance Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Engulfer Cape +1"
 	}
 	
-	sets.engaged.ACC =  {
+	sets.engaged.TreasureHunter = {
+		ammo="Yetshila +1",
+		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
+		body="Volte Jupon",
+		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
+		legs="Nyame Flanchard",
+		feet="Skulk. Poulaines +2",
+		neck="Anu Torque",
+		waist="Chaac Belt",
+		left_ear="Suppanomimi",
+		right_ear="Cessance Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Defending Ring",
+		back={ name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3','Crit. hit damage +2%',}}
+	}
+	
+	sets.engaged.Accuracy =  {
 		ammo="Amar cluster",
 		head="Mummu Bonnet +2",
 		body="Adhemar Jacket +1",
@@ -154,98 +152,71 @@ function get_sets()
 	
 ---- .:: Weapon Skill Sets ::. ---->
     -- .::Generic Sets::. --
-    sets.WS = {	
+	
+	sets.Evisceration  = {
 		ammo="Yetshila +1",
-		head="Adhemar Bonnet +1",
-		body="Herculean Vest",
-		hands="Meg. Gloves +2",
-		legs="Malignance Tights",
-		feet="Malignance boots",
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
+		legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
+		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear="Bladeborn Earring",
-		right_ear="Steelflash Earring",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		right_ear="Ishvara Earring",
 		left_ring="Mummu Ring",
 		right_ring="Epaminondas's Ring",
-		back="Toutatis's Cape"
+		back={ name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}	
+	}
+	
+	sets.Rudra = {
+		ammo="Yetshila +1",
+		head="Nyame Helm",
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
+		hands="Meg. Gloves +2",
+		legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
+		feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
+		neck="Sanctity Necklace",
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		right_ear="Ishvara Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Epaminondas's Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}	
+	}
+	
+    sets.WS = {	
+		ammo="Yetshila +1",
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
+		legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
+		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		right_ear="Ishvara Earring",
+		left_ring="Mummu Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}
 	}
 
     sets.Aeolian = {	
-		ammo="Dosis tathlum",
-		head="Mummu Bonnet +2",
-		body="Herculean Vest",
-		hands="Malignance Gloves",
-		legs="Mummu kecks +2",
-		feet="Malignance boots",
+		ammo="Pemphredo Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 		neck="Sanctity Necklace",
-		waist="Fotia Belt",
-		left_ear="Hecate's Earring",
+		waist="Orpheus's Sash",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		right_ear="Friomisi Earring",
-		left_ring="Fenrir Ring +1",
-		right_ring="Karieyh Ring",
-		back="Toro cape"
+		left_ring="Stikini Ring +1",
+		right_ring="Epaminondas's Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}
 	}
 	
-	sets.WS.Party = {}
-	sets.WS.Acc = {}
-	sets.WS.SA = {}
-	sets.WS.TA = {}
-	sets.WS.SATA = {}
-	-- .::Specific Sets::. --
-	-- Evisceration --
-	sets.WS['Evisceration'] = set_combine(sets.WS, {})
-	sets.WS.Party['Evisceration'] = set_combine(sets.WS['Evisceration'], {})
-	sets.WS.Acc['Evisceration'] = set_combine(sets.WS['Evisceration'], {})
-	sets.WS.SA['Evisceration'] = set_combine(sets.WS['Evisceration'], {})
-	sets.WS.TA['Evisceration'] = set_combine(sets.WS['Evisceration'], {})
-	sets.WS.SATA['Evisceration'] = set_combine(sets.WS['Evisceration'], {})
-	
-	-- Exenterator --
-	sets.WS['Exenterator'] = set_combine(sets.WS, {})
-	sets.WS.Party['Exenterator'] = set_combine(sets.WS['Exenterator'], {})
-	sets.WS.Acc['Exenterator'] = set_combine(sets.WS['Exenterator'], {})
-	sets.WS.SA['Exenterator'] = set_combine(sets.WS['Exenterator'], {})
-	sets.WS.TA['Exenterator'] = set_combine(sets.WS['Exenterator'], {})
-	sets.WS.SATA['Exenterator'] = set_combine(sets.WS['Exenterator'], {})	
-    
-	-- Mandalic Stab --
-	sets.WS['Mandalic Stab'] = set_combine(sets.WS, {})
-	sets.WS.Party['Mandalic Stab'] = set_combine(sets.WS['Mandalic Stab'], {})
-	sets.WS.Acc['Mandalic Stab'] = set_combine(sets.WS['Mandalic Stab'], {})
-	sets.WS.SA['Mandalic Stab'] = set_combine(sets.WS['Mandalic Stab'], {})
-	sets.WS.TA['Mandalic Stab'] = set_combine(sets.WS['Mandalic Stab'], {})
-	sets.WS.SATA['Mandalic Stab'] = set_combine(sets.WS['Mandalic Stab'], {})
-	
-	-- Rudra's Storm --
-	sets.WS["Rudra's Storm"] = set_combine(sets.WS, {})
-	sets.WS.Party["Rudra's Storm"] = set_combine(sets.WS, {})
-	sets.WS.Acc["Rudra's Storm"] = set_combine(sets.WS.Party["Rudra's Storm"], {})
-	sets.WS.SA["Rudra's Storm"] = set_combine(sets.WS.Party["Rudra's Storm"], {})
-	sets.WS.TA["Rudra's Storm"] = set_combine(sets.WS.Party["Rudra's Storm"], {})
-	sets.WS.SATA["Rudra's Storm"] = set_combine(sets.WS.Party["Rudra's Storm"], {})
-	
-	-- Aeolian Edge
-	sets.WS["Aeolian Edge"] = set_combine(sets.Aeolian, {})
-	sets.WS.Party["Aeolian Edge"] = set_combine(sets.WS, {})
-	sets.WS.Acc["Aeolian Edge"] = set_combine(sets.WS.Party["Aeolian Edge"], {})
-	sets.WS.SA["Aeolian Edge"] = set_combine(sets.WS.Party["Aeolian Edge"], {})
-	sets.WS.TA["Aeolian Edge"] = set_combine(sets.WS.Party["Aeolian Edge"], {})
-	sets.WS.SATA["Aeolian Edge"] = set_combine(sets.WS.Party["Aeolian Edge"], {})
-	
-	-- Mercy Stroke --
-	sets.WS['Mercy Stroke'] = {}
-	sets.WS.Party['Mercy Stroke'] = {}
-	sets.WS.Acc['Mercy Stroke'] = {}
-	sets.WS.SA['Mercy Stroke'] = {}
-	sets.WS.TA['Mercy Stroke'] = {}
-	sets.WS.SATA['Mercy Stroke'] = {}	
-	
-	-- Aolian Edge --
-	sets.WS['Aolian Edge'] = {}
-	
----- .:: Preshot Sets ::. ---->
-	sets.preshot = {}
-	sets.preshot.RA = {}	
 	
 ---- .:: Precast Sets ::. ---->
 	sets.precast = {}
@@ -276,85 +247,34 @@ function get_sets()
 	sets.midcast.Ninjutsu = {}
 	sets.midcast['Utsusemi'] = set_combine(sets.precast['Utsusemi'], {})
 	
----- .:: Idle Sets ::. ---->
-    sets.aftercast = {}
-	sets.aftercast.Idle = {
-		ammo="Yetshila +1",
-		head="Malignance chapeau",
-		body="Ashera harness",
-		hands="Malignance gloves",
-		legs="Malignance Tights",
-		feet="Jute Boots +1",
-		neck="Loricate torque +1",
-		waist="Grunfeld Rope",
-		left_ear="Infused Earring",
-		right_ear="Hearty Earring",
-		left_ring="Moonlight ring",
-		right_ring="Defending Ring",
-		back="Repulse Mantle"
-	}
-	sets.aftercast.Town = {feet="Jute Boots +1"}
-	sets.aftercast.Defense = set_combine(sets.aftercast.Idle, {
-		ammo="Yetshila +1",
-		head="Malignance chapeau",
-		body="Ashera harness",
-		hands="Malignance gloves",
-		legs="Malignance Tights",
-		feet="Jute Boots +1",
-		neck="Loricate torque +1",
-		waist="Grunfeld Rope",
-		left_ear="Infused Earring",
-		right_ear="Hearty Earring",
-		left_ring="Moonlight ring",
-		right_ring="Defending Ring",
-		back="Repulse Mantle"
-	})
 end
 
 
 -- Precast Functions --
 function precast(spell,action)
     -- Dancer Abilities --
-    if string.find(spell.english, 'Waltz') then
+    if string.find(spell.name, 'Waltz') then
 	    equip(sets.JA.Waltz)
-    elseif spell.english == 'Violent Flourish' then
+    elseif spell.name == 'Violent Flourish' then
         equip(sets.JA.Stun)
-	elseif THStep:contains(spell.name) then
-        equip(sets.JA.Step)	
 	-- Thief Abilities --
 	elseif spell.type == 'JobAbility' then
-	        equip(sets.JA[spell.english])
-        if spell.english=="Sneak Attack" then 	
-            SA = true
-		else 
-            SA = false		
-        end
-        if spell.english=="Trick Attack" then 	
-			TA = true
-		else
-            TA = false		
-        end
+	        equip(sets.JA[spell.name])
     -- Weapon Skill --
     elseif spell.type == 'WeaponSkill' then
-            equip(sets.WS[spell.english])
-	    if EngagedArray[EngagedIndex] == 'Party' then
-            equip(sets.WS.Party[spell.english])
-	    elseif EngagedArray[EngagedIndex] == 'ACC' then			
-			equip(sets.WS.Acc[spell.english])			
-		elseif SA == 'true' then
-		    equip(sets.WS.SA[spell.english])
-		elseif TA == 'true' then
-            equip(sets.WS.TA[spell.english])
-		elseif SA == 'true' and TA == 'true' then
-            equip(sets.WS.SATA[spell.english])	
-		end			
-	-- Ranged Attacks --
-    elseif spell.action_type == 'Ranged Attack' then
-	    equip(sets.preshot.RA)
+			if spell.name == "Evisceration" then
+				equip(sets.Evisceration)
+			elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
+				equip(sets.Rudra)
+			elseif spell.name == 'Aeolian Edge' then
+				equip(sets.Aeolian)
+			else
+				equip(sets.WS)
+			end
 	-- Ninja Spells --
 	elseif spell.skill == 'Ninjutsu' then
 	    equip(sets.precast.Fastcast)
-		if string.find(spell.english, 'Utsusemi') then
+		if string.find(spell.name, 'Utsusemi') then
 		    equip(sets.precast['Utsusemi'])
 		end
 	end	
@@ -363,30 +283,15 @@ end
 
 -- Midcast Functions --
 function midcast(spell,action)
-	-- Ranged Attacks --
-    if spell.action_type == 'Ranged Attack' then
-	    equip(sets.midshot.RA)
-	-- Ninja Spells --
-    elseif spell.skill == 'Ninjutsu' then
-	    equip(sets.midcast.Ninjutsu)
-		if string.find(spell.english, 'Utsusemi') then
-		    equip(sets.midcast['Utsusemi'])
-		end
-	end		
+
 end	
 
 
 -- Aftercast Functions --
 function aftercast(spell,action)
--- Idle rules --
-    if player.status == 'Idle' then
-	    equip(sets.aftercast.Idle)
-	    if Town:contains(world.zone) then
-            equip(sets.aftercast.Town)
-        end	
-	    status_change(player.status)	
+    status_change(player.status)	
 -- TP Rules --		
-    elseif player.status == 'Engaged' then
+    if player.status == 'Engaged' then
 	    if Capacity == 'ON' then
             equip{back="Mecisto. Mantle"}
 		    disable('back')
@@ -394,14 +299,14 @@ function aftercast(spell,action)
 	        enable('back')
 		end	
 	    status_change(player.status)				
-	    if EngagedArray[EngagedIndex] == 'TH' then
-		    equip(sets.engaged.Solo)	
-	    elseif EngagedArray[EngagedIndex] == 'Solo' then
-            equip(sets.engaged.Solo)			
-	    elseif EngagedArray[EngagedIndex] == 'Party' then
-            equip(sets.engaged.Party)			
-	    elseif EngagedArray[EngagedIndex] == 'ACC' then
-            equip(sets.engaged.ACC)		
+	    if EngagedArray[EngagedIndex] == 'TreasureHunter' then
+		    equip(sets.engaged.TP)	
+	    elseif EngagedArray[EngagedIndex] == 'TP' then
+            equip(sets.engaged.TP)			
+	    elseif EngagedArray[EngagedIndex] == 'Defense' then
+            equip(sets.engaged.Defense)			
+	    elseif EngagedArray[EngagedIndex] == 'Accuracy' then
+            equip(sets.engaged.Accuracy)		
 	    end	
 	    status_change(player.status)		
 	end	
@@ -410,36 +315,31 @@ end
 
 -- Status Changes --	
 function status_change(new,tab,old)
--- Idle rules --
-    if new == 'Idle' then
-	    equip(sets.aftercast.Idle)
-	    if Town:contains(world.zone) then
-            equip(sets.aftercast.Town)
-        end	
+
 -- TP rules --		
-	elseif new == 'Engaged' then
+	if new == 'Engaged' then
 		if Capacity == 'ON' then
             equip{back="Mecisto. Mantle"}
 			disable('back')
 		else
 		    enable('back')
 		end	
-	    if EngagedArray[EngagedIndex] == 'TH' then
-		    equip(sets.engaged.TH)	
-	    elseif EngagedArray[EngagedIndex] == 'Solo' then
-            equip(sets.engaged.Solo)			
-	    elseif EngagedArray[EngagedIndex] == 'Party' then
-            equip(sets.engaged.Party)			
-	    elseif EngagedArray[EngagedIndex] == 'ACC' then
-            equip(sets.engaged.ACC)	
+	    if EngagedArray[EngagedIndex] == 'TreasureHunter' then
+		    equip(sets.engaged.TreasureHunter)	
+	    elseif EngagedArray[EngagedIndex] == 'TP' then
+            equip(sets.engaged.TP)			
+	    elseif EngagedArray[EngagedIndex] == 'Defense' then
+            equip(sets.engaged.Defense)			
+	    elseif EngagedArray[EngagedIndex] == 'Accuracy' then
+            equip(sets.engaged.Accuracy)	
         elseif SA then
-	        if EngagedArray[EngagedIndex] == 'TH' then
+	        if EngagedArray[EngagedIndex] == 'TreasureHunter' then
 			    equip(sets.JA.SATH)
 			else
                 equip(sets.JA['Sneak Attack'])
 			end		
 		elseif TA then
-	        if EngagedArray[EngagedIndex] == 'TH' then
+	        if EngagedArray[EngagedIndex] == 'TreasureHunter' then
 			    equip(sets.JA.TATH)
 		    else
                 equip(sets.JA['Trick Attack'])
@@ -447,7 +347,9 @@ function status_change(new,tab,old)
         elseif buffactive == 'Feint' then
             equip(sets.JA[spell.name])
         end		
-	end	
+	else
+		equip(sets.engaged.Defense)
+	end
 end	
 
 
@@ -460,7 +362,7 @@ function self_command(command)
         else
             Defense = 'ON'
             add_to_chat(158,'DT Set: [ON]')
-	        equip(sets.aftercast.Defense)			
+	        equip(sets.engaged.Defense)			
         end
         status_change(player.status)	
 	elseif command == 'C10' then -- Offense Cycle --
@@ -479,34 +381,4 @@ function self_command(command)
 	end
 end	
 
-
--- Automatically changes Idle gears if you zone in or out of town --
-windower.register_event('zone change', function()
-	if Town:contains(world.zone) then
-        equip(sets.aftercast.Town)
-    else
-        equip(sets.aftercast.Idle)
-    end	
-end)
-
-
--- Handles SA/TA so it doesn't switch gears until the buff is off --
-function buff_change(buff,gain)
-    buff = string.lower(buff)
-    if buff == "sneak attack" then
-        SA = gain
-    elseif buff == "trick attack" then
-        TA = gain
-	end
-    if not midaction() then
-        status_change(player.status)
-    end		
-end	
-
-
--- Checks for SA/TA Buffs --	
-function job_handle_equipping_gear(playerStatus, eventArgs)
-    check_buff('Sneak Attack', eventArgs)
-    check_buff('Trick Attack', eventArgs)
-end
 
