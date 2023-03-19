@@ -31,7 +31,7 @@ function get_sets()
 	CamulusCapes()
 
 	-- Job Abilities
-    sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +1", hands="Lanun Gants +2" })
+    sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +2", hands="Lanun Gants +2", back=CamulusCape.melee_double_attack })
     sets.RandomDeal = set_combine(sets.DamageTaken, { body="Lanun Frac +2" })
     sets.WildCard = set_combine(sets.DamageTaken, { feet="Lanun Bottes +2" })
     sets.SnakeEye = set_combine(sets.DamageTaken, { legs="Lanun Trews +2" })
@@ -39,7 +39,7 @@ function get_sets()
 	
 	-- Maximizing Corsair Rolls
 	sets.CorsairRoll = {
-		main={name="Rostam",bag="Wardrobe 3"},
+		main="Rostam",
         -- phantom roll effects +50 (chance to proc job-present-boost)
         head = "Lanun Tricorne +2",
         -- phantom roll +7
@@ -47,9 +47,9 @@ function get_sets()
         -- increased area of effect
         left_ring="Luzaf's Ring",
 		--phantom roll +5
-		right_ring="Barataria Ring",
+		--right_ring="Barataria Ring",
         -- duration +55
-        hands="Chasseur's Gants +1",
+        hands="Chasseur's Gants +2",
         -- duration +30
 --        back=CamulusCape.matk,
 		-- duration +20
@@ -57,52 +57,37 @@ function get_sets()
     }
 	
 	-- Specific Rolls
-	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +1" })
-    sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +1" })
-    sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +1"})
-    sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +1" })
-    sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet = "Chass. Bottes +1" })
+	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +2" })
+    sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +2" })
+    sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +2"})
+    sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
+    sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet="Chass. Bottes +2" })
 
+	sets.QuickDraw = {
+	
+	}
+	
 	
 	
 	-- Damage Taken
     sets.DamageTaken = {
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		head="Chass. Tricorne +2",
+		body="Chasseur's Frac +2",
 		hands="Nyame Gauntlets",
 		legs="Malignance Tights",
 		feet="Nyame Sollerets",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Flume Belt",
-		left_ear="Genmei Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Fortified Ring",
-		back="Moonbeam Cape"
+		neck="Loricate Torque +1",
+		waist="Sailfi Belt +1",
+		left_ear="Hearty Earring",
+		right_ear="Sanare Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Fortified Ring"
     }
 	
    -- +18% runspeed
     sets.idle = set_combine(sets.DamageTaken, { legs="Carmine Cuisses +1" });
 
-    sets.resting = set_combine(sets.DamageTaken, {});
 
-    sets.FastCast = set_combine(sets.DamageTaken,{
-		-- fast cast +12
-		head="Carmine Mask +1",
-		-- fast cast +4
-		neck = "Voltsurge Torque",
-		-- fast cast +3
-		body="Samnuha Coat",
-		-- Fast cast +2
-		right_ear="Loquac. Earring",
-		-- fast cast 2
-		left_ring="Prolix Ring",
-		-- fast cast 4
-		right_ring="Kishar Ring"
-	})	
-	
-
-	
 	--Quick Draw damage is calculated similar to magic damage by multiplying the following factors in order and flooring after each step.
 	--    Base Damage = [(Gun DMG + Bullet DMG) * 2] (Multiple gear listed below add 10 DMG to Base Damage.)
 	--    resist
@@ -124,28 +109,11 @@ function get_sets()
 		back=CamulusCape.storetp
     })
 	
-	
-    sets.QuickDrawAcc = set_combine(sets.QuickDraw, {
-        head="Laksa. Tricorne +2",
-        neck="Commodore Charm +2",
-        --hands="Laksa. Gants +2",
-        legs="Malignance Tights",
-        feet="Laksa. Boots +3",
-        left_ear="Digni. Earring",
-        left_ring="Regal Ring",
-        right_ring="Etana Ring",
-    })	
-	
-
-
-
-
-	
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
-		body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
-		hands={ name="Herculean Gloves", augments={'MND+6','CHR+8','Weapon skill damage +5%','Accuracy+17 Attack+17','Mag. Acc.+17 "Mag.Atk.Bns."+17',}},
+		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
+		hands="Chasseur's Gants +2",
 		legs="Osh. Trousers +1",
 		feet={ name="Lanun Bottes +2", augments={'Enhances "Wild Card" effect',}},
 		neck="Sanctity Necklace",
@@ -165,10 +133,13 @@ function get_sets()
 	})
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
+	--3/14/2023
+	--RACC: 1114  RATT: 1179   WSD: 76%
+	--AGI 113 +221
     sets.LastStand = {
 		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
-		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
-		hands="Meg. Gloves +2",
+		body="Laksamana's frac +3",
+		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
 		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
 		neck="Fotia Gorget",
@@ -181,12 +152,15 @@ function get_sets()
 	}
 
 	--Savage Blade  50% STR / 50% MND
+	--3/14/2023
+	--STR: 102 +183
+	--WSD: 66%
     sets.SavageBlade = {
 		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
-		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
-		hands="Meg. Gloves +2",
+		body="Laksamana's frac +3",
+		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-		feet={ name="Lanun Bottes +2", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9'}},
 		neck="Fotia Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -196,10 +170,9 @@ function get_sets()
 		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	}
 
-	-- PRECAST LOGIC
-	sets.precast = {}
-	--Snapshot Magic goes here
-    sets.precast.RA = set_combine(sets.DamageTaken,{
+
+	--Snapshot Magic goes here - Precast Magic
+    sets.Snapshot = set_combine(sets.DamageTaken,{
 		head="Oshosi Mask +1",
 		body="Oshosi Vest +1",
 		hands={ name="Lanun Gants +2", augments={'Enhances "Fold" effect',}},
@@ -211,8 +184,7 @@ function get_sets()
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Camulus's Mantle", augments={'"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
---		back=CamulusCape.snapshot
+		back=CamulusCape.melee_double_attack
     })
 
 	
@@ -241,13 +213,6 @@ function get_sets()
 		feet="Osh. Leggings +1"
 	})
 
-    sets.midcast.RA.TripleShotCrit = set_combine(sets.midcast.RA.TripleShot,{
-		head="Oshosi Mask +1",
-		body="Nisroch jerkin",
-		hands="Oshosi Gloves +1",
-		legs="Osh. Trousers +1",
-		feet="Osh. Leggings +1"
-	})	
 	
 	--Engaged Sets--
 	sets.engaged = {}
@@ -274,7 +239,7 @@ function get_sets()
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.DamageTaken, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.DamageTaken, {})
 	
-	sets.engaged.Accuracy = set_combine(sets.DamageTaken, {hands="Chasseur's Gants +1"})
+	sets.engaged.Accuracy = set_combine(sets.DamageTaken, {hands="Chasseur's Gants +2"})
 	sets.engaged.RangedAccuracy = set_combine(sets.DamageTaken, {})
 	sets.engaged.Movement = set_combine(sets.idle, {})
 	
@@ -288,19 +253,19 @@ function get_sets()
 	sets.weapon.DWSavageCOR = {
 		main="Naegling",
 		sub="Crepuscular Knife",
-		range="Anarchy +2"
+		range="Fomalhaut"
 	}
 
 	sets.weapon.SavageCORShield = {
 		main="Naegling",
 		sub="Nusku Shield",
-		range="Anarchy +2"
+		range="Fomalhaut"
 	}
 	
 	sets.weapon.Tauret = {
 		main="Tauret",
 		sub="Crepuscular Knife",
-		range="Anarchy +2"
+		range="Fomalhaut"
 	}
 	
 	sets.weapon.FomalhautRostamShield = {
@@ -332,11 +297,12 @@ end
 
 --Precast Function
 function precast(spell,abil)
-
-	--Weapon skill lookups
-	if spell.name == "Savage Blade" then
-		equip(sets.SavageBlade)
+	--If pew pew we want to do range stuffs here
+	if spell.action_type == 'Ranged Attack' then
+		--Regular Pew Pew Action outside of WS - Snapshot Glory
+		equip(sets.Snapshot)
 	end
+	
 	if spell.name == "Leaden Salute" then
 		equip(sets.LeadenSalute)
 	end
@@ -346,8 +312,15 @@ function precast(spell,abil)
 	if spell.name == "Wildfire" then
 		equip(sets.Wildfire)
 	end
+	
 
- --Corsair Rolls	
+	--Weapon skill lookups
+	if spell.name == "Savage Blade" then
+		equip(sets.SavageBlade)
+	end
+	
+
+	--Corsair Rolls	
 	if string.find(spell.english,'Blitzer') then
 		equip(sets.BlitzersRoll)
 	elseif string.find(spell.english,'Allies') then
@@ -359,12 +332,11 @@ function precast(spell,abil)
 	elseif string.find(spell.english,'Courser') then
 		equip(sets.CoursersRoll)
 	end
-	
 	if string.find(spell.english,'Roll') or spell.name == "Double-Up" then
 		equip(sets.CorsairRoll)
 	end
 	
-	
+	--Corsair Job Abilities
 	if spell.name == "Random Deal" then
 		equip(sets.RandomDeal)
 	end
@@ -378,18 +350,23 @@ function precast(spell,abil)
 		equip(sets.Fold)
 	end
 	if spell.name == "Triple Shot" then
-		equip(sets.TripleShot)
+		equip(sets.midcast.RA.TripleShot)
 	end
-	
 	
 end
 
 
 
-
 --Midcast Function
 function midcast(spell,abil)
-
+	--TODO - Pop into Midcast.RA logic
+	if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' then
+		if (buffactive['Triple Shot']) then
+			equip(sets.midcast.RA.TripleShot)
+		else
+			equip(sets.midcast.RA)
+		end
+	end
 end
 
 
@@ -398,7 +375,12 @@ end
 --Aftercast Function
 function aftercast(spell)
   equip_current()
-
+  --NOTE - Something to think about...
+  --This could be an issue if you need DT while Triple Shot is up. Frac+2 is fine. 
+  --I'm taking the stance I'd rather see this gear when Triple Shot is up as compared to not seeing it
+  if (buffactive['Triple Shot']) then
+	equip({body="Chasseur's Frac +2", hands="Lanun Gants +2"})
+  end
 end
 
 
@@ -410,9 +392,7 @@ end
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
-	if (buffactive['Triple Shot']) then
-		equip({body="Chasseur's Frac +1", hands="Lanun Gants +2"})
-	end
+
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
@@ -446,7 +426,7 @@ end
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
+	send_command('@input /tell <me> Wakies Wakies Baby Girl.  Daddy will not let this stand!')
 	end
 end)
 

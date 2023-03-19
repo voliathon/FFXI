@@ -57,7 +57,7 @@ function get_sets()
 		body="Ashera Harness",
 		hands="Plun. Armlets +1",
 		legs="Malignance tights",
-		feet="Mummu Gamash. +2",
+		feet="Skulker's Poulaines +2",
 		neck="Sanctity Necklace",
 		waist="Chaac Belt",
 		left_ear="Brutal Earring",
@@ -105,7 +105,7 @@ function get_sets()
 		 body="Malignance tabard",
 		 hands="Malignance gloves",
 		 legs="Malignance tights",
-		 feet="Malignance boots",
+		 feet="Skulker's Poulaines +2",
 		 neck="Loricate Torque +1",
 		 waist="Grunfeld Rope",
 		 left_ear="Infused Earring",
@@ -127,12 +127,13 @@ function get_sets()
 	
 	-- Thief's Abilities --
     sets.JA['Sneak Attack'] = {}
-    sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], { hands="Plun. Armlets +1", feet="Skulker's Poulaines +1"})
+    sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], { hands="Plun. Armlets +1", feet="Skulker's Poulaines +2"})
 
+    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
     sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
 	
 	
-    sets.JA.TATH = set_combine(sets.JA['Trick Attack'], { hands="Pillager's Armlets +1", feet="Skulker's Poulaines +1"})
+    sets.JA.TATH = set_combine(sets.JA['Trick Attack'], { hands="Pillager's Armlets +1", feet="Skulker's Poulaines +2"})
 	
 	
     sets.JA.SATA = set_combine(sets.JA['Sneak Attack'], {})
@@ -141,7 +142,7 @@ function get_sets()
 	--sets.JA['Conspirator'] = {body="Raider's Vest +2"}
 	sets.JA['Steal'] = { hands="Pill. Armlets +1", legs="Pill. Culottes", feet="Pill. Poulaines", neck="Pentalagus charm"}
 	--sets.JA['Mug'] = {head="Plun. Bonnet +1"}
-	sets.JA['Despoil'] = {feet="Skulker's Poulaines +1"}
+	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
 	--sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
 	sets.JA['Flee'] = {feet="Pill. Poulaines"}
 	sets.JA['Hide'] = {body="Pillager's Vest"}
@@ -151,19 +152,19 @@ function get_sets()
 ---- .:: Weapon Skill Sets ::. ---->
     -- .::Generic Sets::. --
     sets.WSD = {	
-    ammo="Yetshila +1",
-    head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}},
-    body={ name="Herculean Vest", augments={'"Rapid Shot"+2','Pet: AGI+6','Weapon skill damage +6%','Accuracy+6 Attack+6'}},
-    hands="Meg. Gloves +2",
-    legs={ name="Herculean Trousers", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','DEX+10','Accuracy+5'}},
-    feet="Malignance Boots",
-    neck="Fotia Gorget",
-    waist="Fotia Belt",
-    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
-    right_ear="Ishvara Earring",
-    left_ring="Epaminondas's Ring",
-    right_ring="Defending Ring",
-    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+		ammo="Yetshila +1",
+		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}},
+		body={ name="Herculean Vest", augments={'"Rapid Shot"+2','Pet: AGI+6','Weapon skill damage +6%','Accuracy+6 Attack+6'}},
+		hands="Meg. Gloves +2",
+		legs={ name="Herculean Trousers", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','DEX+10','Accuracy+5'}},
+		feet="Malignance Boots",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+		right_ear="Ishvara Earring",
+		left_ring="Epaminondas's Ring",
+		right_ring="Defending Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
 	}
 	
     sets.Aeolian = {	
@@ -174,7 +175,7 @@ function get_sets()
 		legs="Mummu kecks +2",
 		feet="Mummu Gamash. +2",
 		neck="Sanctity Necklace",
-		waist="Fotia Belt",
+		waist="Orpheus's sash",
 		left_ear="Hecate's Earring",
 		right_ear="Friomisi Earring",
 		left_ring="Fenrir Ring +1",
