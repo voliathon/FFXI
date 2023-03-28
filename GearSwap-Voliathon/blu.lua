@@ -68,13 +68,13 @@ function get_sets()
 
 	--Job Ability Sets--
 	sets.JA = {}
-    -- sets.JA.BurstAffinity = {legs="Assimilator's Shalwar +2"}
-    -- sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2"}
-    -- sets.JA.Diffusion = {feet="Luhlaza Charuqs +3"}
-    -- sets.JA.Enchainment = {body="Luhlaza Jubbah +3"}
-    -- sets.JA.Efflux = {back=Rosmerta.Int}
-	-- sets.JA.AzureLore = {hands="Luhlaza bazubands +3"}
-	-- sets.JA.Assimilation = {legs="Luhlaza Shalwar +3"}
+    sets.JA.BurstAffinity = {legs="Assimilator's Shalwar +2",feet="Hashishin basmak +2"}
+    sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2", head="Hashishin kavuk +2"}
+    sets.JA.Diffusion = {feet="Luhlaza Charuqs +1"}
+    sets.JA.Enchainment = {body="Luhlaza Jubbah +1"}
+    sets.JA.Efflux = {legs="Hashishin tayt +2"}
+	sets.JA.AzureLore = {hands="Luhlaza bazubands"}
+	sets.JA.Assimilation = {legs="Luhlaza Shalwar"}
 	
     --sets.TreasureHunter = {head="White rarab cap +1", waist="Chaac Belt"}	
 	
