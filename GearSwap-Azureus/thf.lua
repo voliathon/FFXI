@@ -15,7 +15,7 @@ function get_sets()
 
 	-- Modes --
     EngagedIndex = 1
-    EngagedArray = {"TH","Solo","ACC", "Defense"}	-- Press ctrl + F10 for Engaged Array --
+    EngagedArray = {"TH","TP","Accuracy", "Tank", "Evasion"}	-- Press ctrl + F10 for Engaged Array --
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --		
 
 
@@ -28,94 +28,87 @@ function get_sets()
 
 	---- .:: TP Sets ::. ----->
     sets.engaged = {}
-	sets.engaged.Solo = {
-		ammo="Ginsen",
-		head="Adhemar Bonnet +1",
-		--Pillager's Vest +3 in time...
-		body="Adhemar Jacket +1",
-		hands="Adhemar Wristbands +1",
-		--Samnuha Tights - Perfect Augments
-		legs="Malignance tights",
-		--Plunderer's Poulaines +3
-		feet="Malignance boots",
-		neck="Sanctity Necklace",
-		--Reiki Yotai
-		waist="Grunfeld Rope",
-		--Sherida Earring
-		left_ear="Brutal Earring",
-		--Dedition Earring
-		right_ear="Cessance Earring",
-		left_ring="Epona's Ring",
-		right_ring="Hetairoi Ring",
-		--Toutatis's Cape  DEX +20, Acc +30, Atk +20, STP +10
-		back="Canny Cape"
-	}
 	
 	sets.engaged.TH = {
 		ammo="Ginsen",
-		head="Adhemar Bonnet +1",
-		body="Ashera Harness",
-		hands="Plun. Armlets +1",
-		legs="Malignance tights",
-		feet="Skulker's Poulaines +2",
-		neck="Sanctity Necklace",
+		head="Mummu Bonnet +2",
+		body="Volte Jupon",
+		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect'}},
+		legs="Volte Hose",
+		feet="Skulk. Poulaines +2",
+		neck="Anu Torque",
 		waist="Chaac Belt",
 		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
+		right_ear="Odr Earring",
 		left_ring="Epona's Ring",
+		right_ring="Hetairoi Ring"
+	}
+	
+	sets.engaged.TP = {
+		ammo="Ginsen",
+		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs="Samnuha tights",
+		feet="Malignance Boots",
+		neck="Clotharius Torque",
+		waist="Windbuffet Belt +1",
+		left_ear="Brutal Earring",
+		right_ear="Telos Earring",
+		left_ring="Chirich Ring +1",
 		right_ring="Hetairoi Ring",
 		back="Canny Cape"
 	}
 	
-	--Accuracy Max
-	-- Aeneas
-    -- Twashtar (Level 119 III)
-    -- C. Palug Stone
-    -- Pill. Bonnet +3
-    -- Pillager's Vest +3
-    -- Pill. Armlets +3
-    -- Pill. Culottes +3
-    -- Plun. Poulaines +3
-    -- Asn. Gorget +2 DEX/AGI +15, TA +4
-    -- Sherida Earring
-    -- Telos Earring
-    -- Ilabrat Ring
-    -- Regal Ring
-    -- Kentarch Belt +1
-    -- Toutatis's Cape DEX +20, Acc +30, Atk +20, STP +10
-	sets.engaged.ACC =  {
-		ammo="Amar cluster",
+	sets.engaged.Accuracy =  {
+		ammo="Yamarang",
 		head="Malignance Chapeau",
-		body="Ashera Harness",
-		hands="Mummu Wrists +2",
-		legs="Malignance tights",
-		feet="Malignance boots",
-		neck="Subtlety Spec.",
-		waist="Grunfeld Rope",
-		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
-		left_ring="Mummu Ring",
-		right_ring="Beeline Ring",
-		back="Canny Cape"
+		body="Malignance Tabard",
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Odr Earring",
+		right_ear="Telos Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
 	}
-	
-	 sets.engaged.Defense = {
-		 ammo="Yetshila +1",
+
+	 sets.engaged.Tank = {
+		 ammo="Staunch tathlum",
 		 head="Malignance Chapeau",
 		 body="Malignance tabard",
 		 hands="Malignance gloves",
 		 legs="Malignance tights",
 		 feet="Skulker's Poulaines +2",
 		 neck="Loricate Torque +1",
-		 waist="Grunfeld Rope",
+		 waist="Flume belt",
 		 left_ear="Infused Earring",
-		 right_ear="Hearty Earring",
-		 left_ring="Patricius Ring",
+		 right_ear="Eabani Earring",
+		 left_ring="Fortified Ring",
 		 right_ring="Defending Ring",
 		 back="Repulse Mantle"
 	 }	
 	
+	sets.engaged.Evasion = {
+		ammo="Yamarang",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Warder's Charm",
+		waist="Kasiri Belt",
+		left_ear="Eabani Earring",
+		right_ear="Infused Earring",
+		left_ring="Defending Ring",
+		right_ring="Fortified Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+	}	
 	
+
 ---- .:: Job Abilities Sets ::. ---->
     sets.JA = {}
 	
@@ -153,34 +146,50 @@ function get_sets()
     -- .::Generic Sets::. --
     sets.WSD = {	
 		ammo="Yetshila +1",
-		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}},
-		body={ name="Herculean Vest", augments={'"Rapid Shot"+2','Pet: AGI+6','Weapon skill damage +6%','Accuracy+6 Attack+6'}},
+		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
+		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
 		hands="Meg. Gloves +2",
-		legs={ name="Herculean Trousers", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','DEX+10','Accuracy+5'}},
+		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
+		neck="Fotia Gorget",
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Odr Earring",
+		left_ring="Epaminondas's Ring",
+		right_ring="Hetairoi Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+	}
+	
+	sets.Evisceration = {
+		ammo="Yetshila +1",
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs="Meg. Chausses +2",
 		feet="Malignance Boots",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
-		right_ear="Ishvara Earring",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Odr Earring",
 		left_ring="Epaminondas's Ring",
-		right_ring="Defending Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+		right_ring="Hetairoi Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}	
 	}
 	
     sets.Aeolian = {	
-		ammo="Dosis tathlum",
-		head="Malignance Chapeau",
-		body="Herculean Vest",
-		hands="Mummu Wrists +2",
-		legs="Mummu kecks +2",
-		feet="Mummu Gamash. +2",
-		neck="Sanctity Necklace",
-		waist="Orpheus's sash",
-		left_ear="Hecate's Earring",
+		ammo="Pemphredo Tathlum",
+		head="Nyame Helm",
+		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
+		neck="Baetyl Pendant",
+		waist="Orpheus's Sash",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
-		left_ring="Fenrir Ring +1",
-		right_ring="Karieyh Ring",
-		back="Toro cape"
+		left_ring="Epaminondas's Ring",
+		right_ring="Dingir Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
 	}
 	
 ---- .:: Preshot Sets ::. ---->
@@ -244,10 +253,13 @@ function precast(spell,action)
         end
 
 	-- Weapon Skill --
-	-- 80% DEX Modifier Rudra's Storm
-	-- 50% DEX Modifier Evisceration
+	-- 50% DEX Modifier Evisceration / Crits per hits
+	elseif spell.name =="Evisceration" then
+		equip(sets.Evisceration)
+	
+	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
 	-- 60% DEX Modifier Mandalic Stab
-    elseif spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mandalic Stab" then
+    elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
 		equip(sets.WSD)
 
 	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
@@ -298,12 +310,14 @@ function status_change(new,tab,old)
 	end	
 	if EngagedArray[EngagedIndex] == 'TH' then
 		equip(sets.engaged.TH)	
-	elseif EngagedArray[EngagedIndex] == 'Solo' then
-		equip(sets.engaged.Solo)	
-	elseif EngagedArray[EngagedIndex] == 'ACC' then
-		equip(sets.engaged.ACC)
-	elseif EngagedArray[EngagedIndex] == 'Defense' then
-		equip(sets.engaged.Defense)	
+	elseif EngagedArray[EngagedIndex] == 'TP' then
+		equip(sets.engaged.TP)	
+	elseif EngagedArray[EngagedIndex] == 'Accuracy' then
+		equip(sets.engaged.Accuracy)
+	elseif EngagedArray[EngagedIndex] == 'Tank' then
+		equip(sets.engaged.Tank)
+	elseif EngagedArray[EngagedIndex] == 'Evasion' then
+		equip(sets.engaged.Evasion)		
 	elseif SA then
 		if EngagedArray[EngagedIndex] == 'TH' then
 			equip(sets.JA.SATH)

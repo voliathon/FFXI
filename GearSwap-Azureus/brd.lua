@@ -237,15 +237,15 @@ function get_sets()
   }
   
   sets.engaged.Refresh = {
-    head={ name="Chironic Hat", augments={'Pet: Haste+2','Crit. hit damage +3%','"Refresh"+1','Accuracy+15 Attack+15','Mag. Acc.+17 "Mag.Atk.Bns."+17'}},
+    head="Volte beret",
     body="Annoint. Kalasiris",
-    hands={ name="Chironic Gloves", augments={'Crit.hit rate+4','Weapon Skill Acc.+4','"Refresh"+1','Accuracy+2 Attack+2','Mag. Acc.+17 "Mag.Atk.Bns."+17'}},
+    hands="Volte gloves",
     legs="Assid. Pants +1",
     feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
     neck="Bathy Choker +1",
     waist="Fucho-no-Obi",
     left_ear="Infused Earring",
-    right_ear="Genmei Earring",
+    right_ear="Fili Earring",
     left_ring="Woltaris Ring",
     right_ring="Stikini Ring +1",
     back="Kumbira Cape"  
