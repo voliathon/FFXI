@@ -26,7 +26,7 @@ function get_sets()
 		head={ name="Merlinic Hood", augments={'Mag. Acc.+28','Magic burst dmg.+11%','INT+3','"Mag.Atk.Bns."+15'}},
 		body={ name="Merlinic Jubbah", augments={'Mag. Acc.+7','Magic burst dmg.+11%','INT+9','"Mag.Atk.Bns."+11'}},
 		hands="Geo. Mitaines +3",
-		legs="Geomancy Pants +2",
+		legs="Geomancy Pants +3",
 		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Magic burst dmg.+7%','Mag. Acc.+7','"Mag.Atk.Bns."+11'}},
 		neck="Voltsurge Torque",
 		waist="Witful Belt",
@@ -84,7 +84,7 @@ function get_sets()
 		left_ring="Stikini ring +1",
 		right_ring="Stikini ring",
 		waist="Siegel Sash",
-		legs="Geomancy pants +2",
+		legs="Geomancy Pants +3",
 		back="Perimede Cape"	
 	})
 
