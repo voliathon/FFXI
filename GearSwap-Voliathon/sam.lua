@@ -13,24 +13,6 @@ function get_sets()
 	ShiningOne = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F9
 	ShadowType = 'None'
 	
-  --Idle Sets--
-  sets.Idle = {
-	sub="Utu grip",
-    ammo="Staunch Tathlum +1",
-    head="Nyame Helm",
-    body="Nyame Mail",
-    hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
-    feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
-    waist="Ioskeha Belt +1",
-    left_ear="Infused Earring",
-    right_ear="Genmei Earring",
-    left_ring="Fortified Ring",
-    right_ring="Defending Ring",
-    back="Moonlight cape"
-  }
-
   --TP Sets--
   sets.TP = {}
 --					  1		   2              3 				   4 		  5			   6
@@ -43,7 +25,7 @@ function get_sets()
 	ammo="Ginsen",
 	head="Flamma zucchetto +2",
 	body="Kasuga domaru +2",
-	hands="Kasuga kote +2",
+	hands="Wakido kote +3",
 	legs="Kasuga haidate +2",
 	feet="Flamma Gambieras +2",
 	neck="Samurai's nodowa +2",
@@ -52,7 +34,7 @@ function get_sets()
 	right_ear="Brutal Earring",
 	left_ring="Chirich Ring +1",
 	right_ring="Flamma ring",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
   }
 
   --Tank Gear
@@ -64,7 +46,7 @@ function get_sets()
     hands="Nyame Gauntlets",
 	legs="Kasuga haidate +2",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Ioskeha Belt +1",
     left_ear="Infused Earring",
     right_ear="Genmei Earring",
@@ -82,7 +64,7 @@ function get_sets()
     hands="Nyame Gauntlets",
 	legs="Kasuga haidate +2",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Ioskeha Belt +1",
     left_ear="Infused Earring",
     right_ear="Genmei Earring",
@@ -100,7 +82,7 @@ function get_sets()
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Ioskeha Belt +1",
     left_ear="Infused Earring",
     right_ear="Genmei Earring",
@@ -173,10 +155,10 @@ function get_sets()
   sets.JA.Stun = {}
 	
   sets.JA.Sengikori = {feet="Kasuga sune-ate +2"}	
-  sets.JA.Meditate = {head="Wakido kabuto +1", hands="Sao. Kote +2"}
-  sets.JA.Hasso = {hands="Wakido kote +1", legs="Kasuga haidate +2", feet="Wakido sune-ate +2"}
-  sets.JA.WardingCircle = {head="Wakido kabuto +1"}
-  sets.JA.ThirdEye = {legs="Sakonji Haidate"}
+  sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
+  sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +2", feet="Wakido sune-ate +2"}
+  sets.JA.WardingCircle = {head="Wakido kabuto +2"}
+  sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
   sets.JA.Sekkanoki = {hands="Kasuga kote +2"}
  
 end

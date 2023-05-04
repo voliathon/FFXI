@@ -15,8 +15,8 @@ function get_sets()
 
 	-- Modes --
     EngagedIndex = 1
-    EngagedArray = {"TreasureHunter","TP","Defense","Accuracy"}	-- Press ctrl + F10 for Engaged Array --
-	Defense = 'OFF' -- Toogle on/off the DT set via ctrl + F9
+    EngagedArray = {"TH","TP","Accuracy", "Tank", "Evasion"}	-- Press ctrl + F10 for Engaged Array --
+
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --		
 
 	-- Gears --
@@ -38,6 +38,22 @@ function get_sets()
 
 	---- .:: TP Sets ::. ----->
     sets.engaged = {}
+	sets.engaged.TH = {
+		ammo="Yetshila +1",
+		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
+		body="Volte Jupon",
+		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
+		legs="Malignance tights",
+		feet="Skulk. Poulaines +2",
+		neck="Anu Torque",
+		waist="Chaac Belt",
+		left_ear="Suppanomimi",
+		right_ear="Cessance Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Defending Ring",
+		back={ name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3','Crit. hit damage +2%',}}
+	}
+	
 	sets.engaged.TP = {
 		ammo="Ginsen",
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
@@ -51,38 +67,6 @@ function get_sets()
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3','Crit. hit damage +2%',}}
-	}
-	
-	sets.engaged.Defense = {
-		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Skulk. Poulaines +2",
-		neck="Loricate torque +1",
-		waist="Flume Belt +1",
-		left_ear="Suppanomimi",
-		right_ear="Cessance Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
-		back="Engulfer Cape +1"
-	}
-	
-	sets.engaged.TreasureHunter = {
-		ammo="Yetshila +1",
-		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
-		body="Volte Jupon",
-		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
-		legs="Nyame Flanchard",
-		feet="Skulk. Poulaines +2",
-		neck="Anu Torque",
-		waist="Chaac Belt",
-		left_ear="Suppanomimi",
-		right_ear="Cessance Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Defending Ring",
 		back={ name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3','Crit. hit damage +2%',}}
 	}
 	
@@ -100,7 +84,40 @@ function get_sets()
 		left_ring="Mummu Ring",
 		right_ring="Beeline Ring",
 		back="Canny Cape"
+	}	
+	
+	sets.engaged.Tank = {
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Skulk. Poulaines +2",
+		neck="Loricate torque +1",
+		waist="Flume Belt +1",
+		left_ear="Suppanomimi",
+		right_ear="Cessance Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Engulfer Cape +1"
 	}
+	
+	sets.engaged.Evasion = {
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Skulk. Poulaines +2",
+		neck="Loricate torque +1",
+		waist="Flume Belt +1",
+		left_ear="Suppanomimi",
+		right_ear="Cessance Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Engulfer Cape +1"
+	}
+
 	
 	
 ---- .:: Job Abilities Sets ::. ---->
@@ -289,87 +306,53 @@ end
 
 -- Aftercast Functions --
 function aftercast(spell,action)
-    status_change(player.status)	
--- TP Rules --		
-    if player.status == 'Engaged' then
-	    if Capacity == 'ON' then
-            equip{back="Mecisto. Mantle"}
-		    disable('back')
-	    else
-	        enable('back')
-		end	
-	    status_change(player.status)				
-	    if EngagedArray[EngagedIndex] == 'TreasureHunter' then
-		    equip(sets.engaged.TP)	
-	    elseif EngagedArray[EngagedIndex] == 'TP' then
-            equip(sets.engaged.TP)			
-	    elseif EngagedArray[EngagedIndex] == 'Defense' then
-            equip(sets.engaged.Defense)			
-	    elseif EngagedArray[EngagedIndex] == 'Accuracy' then
-            equip(sets.engaged.Accuracy)		
-	    end	
-	    status_change(player.status)		
-	end	
+    status_change(player.status)    	
 end	
 
 
 -- Status Changes --	
 function status_change(new,tab,old)
-
--- TP rules --		
-	if new == 'Engaged' then
-		if Capacity == 'ON' then
-            equip{back="Mecisto. Mantle"}
-			disable('back')
-		else
-		    enable('back')
-		end	
-	    if EngagedArray[EngagedIndex] == 'TreasureHunter' then
-		    equip(sets.engaged.TreasureHunter)	
-	    elseif EngagedArray[EngagedIndex] == 'TP' then
-            equip(sets.engaged.TP)			
-	    elseif EngagedArray[EngagedIndex] == 'Defense' then
-            equip(sets.engaged.Defense)			
-	    elseif EngagedArray[EngagedIndex] == 'Accuracy' then
-            equip(sets.engaged.Accuracy)	
-        elseif SA then
-	        if EngagedArray[EngagedIndex] == 'TreasureHunter' then
-			    equip(sets.JA.SATH)
-			else
-                equip(sets.JA['Sneak Attack'])
-			end		
-		elseif TA then
-	        if EngagedArray[EngagedIndex] == 'TreasureHunter' then
-			    equip(sets.JA.TATH)
-		    else
-                equip(sets.JA['Trick Attack'])
-            end	
-        elseif buffactive == 'Feint' then
-            equip(sets.JA[spell.name])
-        end		
+	if Capacity == 'ON' then
+		equip{back="Mecisto. Mantle"}
+		disable('back')
 	else
-		equip(sets.engaged.Defense)
-	end
+		enable('back')
+	end	
+	if EngagedArray[EngagedIndex] == 'TH' then
+		equip(sets.engaged.TH)	
+	elseif EngagedArray[EngagedIndex] == 'TP' then
+		equip(sets.engaged.TP)	
+	elseif EngagedArray[EngagedIndex] == 'Accuracy' then
+		equip(sets.engaged.Accuracy)
+	elseif EngagedArray[EngagedIndex] == 'Tank' then
+		equip(sets.engaged.Tank)
+	elseif EngagedArray[EngagedIndex] == 'Evasion' then
+		equip(sets.engaged.Evasion)		
+	elseif SA then
+		if EngagedArray[EngagedIndex] == 'TH' then
+			equip(sets.JA.SATH)
+		else
+			equip(sets.JA['Sneak Attack'])
+		end		
+	elseif TA then
+		if EngagedArray[EngagedIndex] == 'TH' then
+			equip(sets.JA.TATH)
+		else
+			equip(sets.JA['Trick Attack'])
+		end	
+	elseif buffactive == 'Feint' then
+		equip(sets.JA[spell.name])
+	end			
 end	
 
 
 -- Modes functions --
 function self_command(command)	
-	if command == 'C9' then -- Defense Cycle --	
-        if Defense == 'ON' then
-            Defense = 'OFF'
-            add_to_chat(123,'DT Set: [OFF]')
-        else
-            Defense = 'ON'
-            add_to_chat(158,'DT Set: [ON]')
-	        equip(sets.engaged.Defense)			
-        end
-        status_change(player.status)	
-	elseif command == 'C10' then -- Offense Cycle --
+	if command == 'C9' then -- Offense Cycle --
         EngagedIndex = (EngagedIndex % #EngagedArray) + 1
         status_change(player.status)
         add_to_chat(158,'TP Set: ' .. EngagedArray[EngagedIndex])			
-    elseif command == 'C11' then -- Capacity toggle --
+    elseif command == 'C8' then -- Capacity toggle --
         if Capacity == 'ON' then
             Capacity = 'OFF'
             add_to_chat(123,'Capacity Set: [OFF]')

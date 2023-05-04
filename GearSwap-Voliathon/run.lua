@@ -60,8 +60,8 @@ function get_sets()
     head="Adhemar Bonnet +1",
     body="Ashera harness",
     hands="Adhemar wristbands +1",
-    legs="Erilaz leg guards +2",
-    feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},
+    legs="Erilaz leg guards +3",
+    feet={ name="Herculean Boots", augments={'Accuracy+20','"Triple Atk."+3','Attack+15'}},
     neck="Anu Torque",
     waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
@@ -77,7 +77,7 @@ function get_sets()
 	head="Nyame Helm",
     body="Runeist coat +3",
     hands="Erilaz Gauntlets +2",
-    legs="Erilaz leg guards +2",
+    legs="Erilaz leg guards +3",
     feet="Erilaz greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
@@ -93,7 +93,7 @@ function get_sets()
     head="Erilaz Galea +2",
     body="Runeist Coat +3",
     hands="Erilaz Gauntlets +2",
-    legs="Eri. Leg Guards +2",
+    legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +2",
     neck="Subtlety Spec.",
     waist="Ioskeha Belt +1",
@@ -109,7 +109,7 @@ function get_sets()
     head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
     body="Nyame Mail",
     hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+    legs="Erilaz leg guards +3",
     feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Chaac Belt",
@@ -136,16 +136,17 @@ function get_sets()
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}	
   }
 
+
+
   --Weaponskill Sets--
-  sets.WS = {}
 
   --multi, carries FTP -- Need STR for the modifier
   sets.Resolution = {
     ammo="Yetshila +1",
-    head="Adhemar Bonnet +1",
+    head={ name="Herculean Helm", augments={'Attack+20','Weapon skill damage +4%','STR+10'}},
     body="Lustratio Harness +1",
     hands="Adhemar wristbands +1",
-    legs="Erilaz leg guards +2",
+    legs="Erilaz leg guards +3",
     feet="Carmine greaves +1",
     neck="Fotia Gorget",
 	waist="Fotia Belt",
@@ -159,7 +160,7 @@ function get_sets()
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
   sets.Single = {
     ammo="Knobkierrie",
-    head={ name="Lustratio Cap +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
+    head={ name="Herculean Helm", augments={'Weapon skill damage +5%','DEX+10','Attack+5'}},
     body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}},
     hands="Meg. Gloves +2",
     legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
@@ -179,7 +180,7 @@ function get_sets()
     head="Adhemar Bonnet +1",
     body="Herculean vest",
     hands="Erilaz Gauntlets +2",
-    legs="Erilaz leg guards +2",
+    legs="Erilaz leg guards +3",
     feet="Erilaz greaves +2",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
@@ -196,7 +197,7 @@ function get_sets()
 	head="Adhemar Bonnet +1",
 	body="Nyame mail",
     hands="Erilaz Gauntlets +2",
-    legs="Erilaz leg guards +2",
+    legs="Erilaz leg guards +3",
     feet="Erilaz greaves +2",
     neck="Fotia Gorget",
     waist="Orpheus's sash",
@@ -291,7 +292,7 @@ function get_sets()
   sets.Enmity = {
 	back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%'}}, 
 	waist="Sinew Belt", 
-	legs="Erilaz Leg Guards +2", 
+	legs="Erilaz leg guards +3", 
 	neck="Moonbeam necklace", 
 	body="Emet Harness +1",     
 	feet="Erilaz greaves +2"
