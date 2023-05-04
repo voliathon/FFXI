@@ -1,21 +1,23 @@
 send @all /echo Base buffs for RUN, BRD, COR, RDM;
-send voluzera exec GEObase;
+//send voluzera exec GEObase;
 //send voluzera exec 3Songbase;
 wait .1;
-send voliathon exec RUNbase;
+//send voliathon exec RUNbase;
+send voliathon exec NINbase;
 wait .1;
-send mazusu exec CORbase;
+//send mazusu exec CORbase;
 //send mazusu exec BLUbase;
 wait .1;
+send azureus exec BLUbase;
 //send azureus exec 5SongSVNitro;
 //send azureus exec 5SongNitro;
-send azureus exec 4SongNitroAtt;
+//send azureus exec 4SongNitroAtt;
 //send azureus exec Slower4SongNitroAtt
 //send azureus exec 4SongNitroDef;
 //send azureus exec 4Songbase;
 //send azureus exec OdysseySongs;
 //send azureus exec 4SongNitroVagary;
-wait .1;
-send voreus exec RDMbase;
+//wait .1;
+//send voreus exec RDMbase;
 
 //console send @others //exec stopFollow

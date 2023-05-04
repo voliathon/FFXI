@@ -33,6 +33,7 @@ bind f11 game_forceambientlight
 bind f12 showfps
 bind sysrq screenshot png hide
 bind ^v paste
+
 echo Toggle Lighting = F11 (Bump mapping must be off to work properly)
 echo Toggle FPS = F12
 echo DrawDistance Lv 10: Alt-F10
@@ -57,13 +58,11 @@ bind !f4 input /ta <a23>
 bind !f5 input /ta <a24>
 bind !f6 input /ta <a25>
 
-load Guildwork
-lua load equipviewer
+//load Guildwork
 lua load skillchains
-lua load sparks
+//lua load sparks
 //lua load XIPivot
 lua load Assist
 lua load superwarp
 //lua load empypoptracker
-lua load htmb
-//lua load ruptchat
+//lua load htmb
