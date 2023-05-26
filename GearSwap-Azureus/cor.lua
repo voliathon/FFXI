@@ -9,7 +9,7 @@ function CamulusCapes()
     CamulusCape.matk={ name="Camulus's Mantle", augments={'Weapon skill damage +10%'} }
     CamulusCape.str_ws={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'} }
     CamulusCape.melee_double_attack={ name="Camulus's Mantle", augments={'"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
---	CamulusCape.snapshot={ name="Camulus's Mantle", augments={'"Snapshot"+10',} }
+	CamulusCape.snapshot={ name="Camulus's Mantle", augments={'"Snapshot"+10'}}
 	-- DEX 20 DEX 10 ACC/ATT+20 STP+10 DT-5
 end
 
@@ -63,11 +63,6 @@ function get_sets()
     sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
     sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet="Chass. Bottes +2" })
 
-	sets.QuickDraw = {
-	
-	}
-	
-	
 	
 	-- Damage Taken
     sets.DamageTaken = {
@@ -95,24 +90,26 @@ function get_sets()
 	--    Day & Weather
 	--    Player MAB / Target MDB
 	--    Affinity
-    sets.QuickDraw = set_combine(sets.DamageTaken,{
+    sets.QuickDraw = {
 		ammo="Living Bullet",
-		head="Chasseur's tricorne +2",
-		body="Lanun Frac +2",
-		hands="Carmine Fin. Ga. +1",
+		head="Laksamana's tricorne +3",
+		body="Chasseur's frac +2",
+		hands="Chasseur's gants +2",
+		legs="Chasseur's Culottes +2",
+		feet="Chasseur's Bottes +2",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
 		right_ear="Hecate's Earring",
 		left_ring="Dingir Ring",
-		right_ring="Kishar ring",
-		back=CamulusCape.storetp
-    })
+		right_ring="Kishar ring"
+--		back=CamulusCape.storetp
+    }
 	
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
-		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
+		body="Lanun Frac +2",
 		hands="Chasseur's Gants +2",
 		legs="Osh. Trousers +1",
 		feet={ name="Lanun Bottes +2", augments={'Enhances "Wild Card" effect',}},
@@ -172,11 +169,11 @@ function get_sets()
 
 
 	--Snapshot Magic goes here - Precast Magic
-    sets.Snapshot = set_combine(sets.DamageTaken,{
-		head="Oshosi Mask +1",
+    sets.Snapshot = {
+		head="Chasseur's tricorne +2",
 		body="Oshosi Vest +1",
-		hands={ name="Lanun Gants +2", augments={'Enhances "Fold" effect',}},
-		legs="Osh. Trousers +1",
+		hands="Lanun Gants +2",
+		legs="Laksamana's Trews +3",
 		feet="Meg. Jam. +2",
 		neck="Clotharius Torque",
 		waist="K. Kachina Belt +1",
@@ -184,8 +181,8 @@ function get_sets()
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",
 		right_ring="Hetairoi Ring",
-		back=CamulusCape.melee_double_attack
-    })
+		back=CamulusCape.snapshot
+    }
 
 	
 	

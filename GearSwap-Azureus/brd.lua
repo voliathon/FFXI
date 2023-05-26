@@ -31,26 +31,9 @@ function get_sets()
 	sets.JA.Stun = {}	
   
 	
-  --Idle Set--
-  sets.Idle = {
-    head="Fili calot +2",
-	body="Ashera harness",
-    hands="Fili Manchettes +2",
-	legs="Nyame flanchard",
-	feet="Nyame sollerets",
-    neck="Loricate Torque +1",
-    waist="Flume Belt",
-    left_ear="Genmei Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Defending Ring",
-    right_ring="Woltaris ring",
-    back="Moonbeam Cape"
-  }
-
-  
   --Fast Cast Set--
   sets.FastCast = {
-    head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%'}},
+    head="Bunzi's Hat",
     body="Zendik Robe",
     hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
     legs="Aya. Cosciales +2",
@@ -137,7 +120,7 @@ function get_sets()
     hands="Inyan. Dastanas +2",
     legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}},
     feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6'}},
-    neck="Nodens Gorget",
+    neck="Incanter's Torque",
     waist="Gishdubar Sash",
     left_ear="Healing Earring",
     right_ear="Magnetic Earring",
@@ -176,16 +159,16 @@ function get_sets()
   
   --TP Set--
   sets.engaged.TP = {
-    head="Aya. Zucchetto +2",
+    head="Bunzi's hat",
     body="Ashera harness",
-    hands="Fili Manchettes +2",
+    hands="Bunzi's gloves",
 	legs="Nyame flanchard",
 	feet="Nyame sollerets",
     neck="Bard's charm +2",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Telos Earring",
-    left_ring="Hetairoi Ring",
+    left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
     back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}} 
   }

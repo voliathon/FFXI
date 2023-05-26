@@ -1,1047 +1,566 @@
--------------------------------------------------------------------------------------------------------------------
--- Setup functions for this job.  Generally should not be modified.
--------------------------------------------------------------------------------------------------------------------
---[[
-        Custom commands:
- 
-        Shorthand versions for each strategem type that uses the version appropriate for
-        the current Arts.
- 
-                                        Light Arts              Dark Arts
- 
-        gs c scholar light              Light Arts/Addendum
-        gs c scholar dark                                       Dark Arts/Addendum
-        gs c scholar cost               Penury                  Parsimony
-        gs c scholar speed              Celerity                Alacrity
-        gs c scholar aoe                Accession               Manifestation
-        gs c scholar power              Rapture                 Ebullience
-        gs c scholar duration           Perpetuance
-        gs c scholar accuracy           Altruism                Focalization
-        gs c scholar enmity             Tranquility             Equanimity
-        gs c scholar skillchain                                 Immanence
-        gs c scholar addendum           Addendum: White         Addendum: Black
---]]
- 
- 
- 
--- Initialization function for this job file.
+-- The Official Azureus Scholar Lua Script of Awesome
+-- Created by Voliathon
+-- Level 1
+
+    -- Liquefaction: Stone > Fire, or Thunder > Fire.
+    -- Scission: Fire > Stone, or Aero > Stone.
+    -- Reverberation: Stone > Water, or Luminohelix > Water.
+    -- Detonation: Stone > Aero, or Thunder > Wind.
+    -- Induration: Water > Blizzard.
+    -- Impaction: Water > Thunder, or Blizzard > Thunder.
+    -- Transfixion: Noctohelix > Luminohelix.
+    -- Compression: Blizzard > Noctohelix.
+
+-- Level 2
+
+    -- Fragmentation: Blizzard > Water
+    -- Fusion: Fire > Thunder
+    -- Gravitation: Aero > Noctohelix
+    -- Distortion: Luminohelix > Stone
+
+-- How it looks in a Macro
+
+    -- Here is an example of what an Immanence macro should look like:
+
+        -- /ja “Immanence” <me> <wait1>
+        -- /ma “Fire” <t> <wait5>
+        -- /ja “Immanence” <me> <wait1>
+        -- /ma “Thunder” <t>
+
+    -- Using a standard macro, this leaves 2 lines open for announcing "Opening" and "Closing".
+    -- In cases when opening with a Helix, set the wait period to 7 seconds.
+
 function get_sets()
-    mote_include_version = 2
- 
-    -- Load and initialize the include file.
-    include('Mote-Include.lua')
-end
- 
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
-function job_setup()
-    info.addendumNukes = S{"Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV", "Stone V", "Water V", 
-	"Aero V", "Fire V", "Blizzard V", "Thunder V"}
-    state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
-    update_active_strategems()
-end
- 
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
- 
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-function user_setup()
-    state.OffenseMode:options('None', 'Normal')
-    state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'PDT')
-    state.MagicBurst = M(false, 'Magic Burst')
- 
-    info.low_nukes = S{"Stone", "Water", "Aero", "Fire", "Blizzard", "Thunder"}
-    info.mid_nukes = S{"Stone II", "Water II", "Aero II", "Fire II", "Blizzard II", "Thunder II", "Stone III", "Water III", 
-	"Aero III", "Fire III", "Blizzard III", "Thunder III", "Stone IV", "Water IV", "Aero IV", "Fire IV", 	"Blizzard IV", "Thunder IV",}
-    info.high_nukes = S{"Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
- 
-    send_command('bind ^` input /ma Stun <t>')
- 
-end
- 
-function user_unload()
-    send_command('unbind ^`')
-end
- 
- 
--- Define sets and vars used by this job file.
-function init_gear_sets()
- 
-    -- Precast sets to enhance JAs
-	sets.precast.JA['Tabula Rasa'] = {legs="Peda. Pants +1"}
-	sets.precast.JA['Enlightenment'] = {body="Peda. Gown +1"}
-
-    -- Fast cast sets for spells
- 
-    sets.precast.FC = {
-		neck="Incanter's Torque",
-		main="Bolelabunga",
-		sub="Genbu's Shield",
-		ammo="Incantor Stone",
-		head="Vanya Hood",
-		body="Shango Robe",
-		hands="Gende. Gages +1",
-		legs="Kaykaus Tights",
-		feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+13','"Fast Cast"+4','MND+1','Mag. Acc.+11',}},
-		neck="Voltsurge Torque",
-		waist="Witful Belt",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Evanescence Ring",
-		right_ring="Prolix Ring",
-		back="Perimede Cape"
-	}   
-
-	sets.midcast.Stoneskin = {
-        head="Umuthi Hat",
-		ear1="Earthcry Earring",
-        body="Kaykaus Bliaut",
-		hands="Inyanga Dastanas +1",
-        legs="Kaykaus Tights",
-		feet="Artsieq Boot"
-	}
+	-- Set macro book/set --
+    send_command('input /macro book 8;wait .1;input /macro set 1')
+	
+	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+    send_command('bind !f9 gs c toggle Engaged set')
+	send_command('bind ^f9 gs c reverse Engaged set')
+	
+	-- We gotta have a Burst Mode
+    -- This is used when I want force burst gear sets on nukes	
+	send_command('bind !f9 gs c toggle Engaged set')
+	send_command('bind ^f9 gs c reverse Engaged set')
+	
+    -- Job Abilities for Scholar --
+    sets.Ebullience = {head="Arbatel Bonnet +2"}
+    sets.Rapture = {head="Arbatel Bonnet +2"}
+    sets.Perpetuance = {hands="Arbatel Bracers +2"}
+    sets.Immanence = {hands="Arbatel Bracers +2"}
+    sets.Penury = {legs="Arbatel Pants +1"}
+    sets.Parsimony = {legs="Arbatel Pants +1"}
+    sets.Celerity = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
+    sets.Alacrity = {head="Nahtirah Hat",feet="Pedagogy Loafers +1"}
+    sets.Stormsurge = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
+    sets.Klimaform = {feet="Arbatel Loafers +1"}
 
 
-	sets.precast.FC.Cure = set_combine(sets.precast.FC, {body="Heka's Kalasiris",back="pahtli Cape", legs="Nabu's Shalwar"})
-    sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], {head=empty,body="Twilight Cloak"})
-	sets.precast.FC.Stoneskin = set_combine(sets.precast.FC, {head="Umuthi Hat",ear1="Earthcry Earring"})
-	sets.precast.FC.Grimoire = {head="Peda. M.Board +1", feet="Acad. Loafers +1"}
-    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {waist="Channeler's Stone"})
- 
-   -- Weaponskill sets
-    -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {}
- 
-    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-    sets.precast.WS['Myrkr'] = {
+	sets.Duration = {
+		main="Musa",
+		sub="Clerisy strap",
 		ammo="Pemphredo Tathlum",
-		head="Amalric Coif", 
-		body="Amalric Doublet", 
-		hands="Amalric Gages", 
-		legs="Amalric Slops", 
-		feet="Amalric Nails", 
-		neck="Sanctity Necklace",
-		waist="Luminary Sash",
-		left_ear="Loquac. Earring",
-		right_ear="Etiolation Earring",
-		left_ring="Fortified Ring",
-		right_ring="Mephitas's Ring",
-		back="Pahtli Cape"
-	}
-     
-     
-    -- Midcast Sets
- 
- 
-    sets.midcast.Cure = {
-		main="Keraunos",
-		sub="Dominie's Grip",
-		ammo="Incantor Stone",
-		head="Kaykaus Mitra", 
-		body="Chironic Doublet", 
-		hands="Telchine Gloves", 
-		legs="Kaykaus Tights", 
-		feet="Kaykaus Boots", 
+	    head={ name="Telchine Cap", augments={'"Fast Cast"+3','Enh. Mag. eff. dur. +9',}},
+		body={ name="Telchine Chas.", augments={'"Cure" potency +5%','Enh. Mag. eff. dur. +9',}},
+		hands={ name="Telchine Gloves", augments={'Accuracy+15','Song spellcasting time -5%','Enh. Mag. eff. dur. +10',}},
+		legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Fast Cast"+4','Enh. Mag. eff. dur. +10',}},
+		feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','Song spellcasting time -7%','Enh. Mag. eff. dur. +10',}},
 		neck="Incanter's Torque",
-		waist="Bishop's Sash",
+		waist="Embla Sash",
 		left_ear="Mendi. Earring",
-		right_ear="Healing Earring",
-		left_ring="Globidonta Ring",
-		right_ring="Sirona's Ring",
-		back="Pahtli Cape"
+		right_ear="Magnetic Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 	}
-    
-	sets.midcast.CureWithLightWeather = {
-		main="Keraunos",
-		sub="Dominie's Grip",
-		ammo="Incantor Stone",
-		head="Kaykaus Mitra", 
-		body="Chironic Doublet", 
-		hands="Telchine Gloves", 
-		legs="Kaykaus Tights", 
-		feet="Kaykaus Boots", 
-		neck="Incanter's Torque",
-		waist="Bishop's Sash",
-		left_ear="Mendi. Earring",
-		right_ear="Healing Earring",
-		left_ring="Globidonta Ring",
-		right_ring="Sirona's Ring",
-		back="Pahtli Cape"
+	
+    -- Fast Cast for Scholar --
+    sets.FastCast = {
+		ammo="Pemphredo Tathlum",
+		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
+		body="Zendik Robe",
+		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%',}},
+		legs="Pinga Pants",
+		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+		neck="Argute stole +2",
+		waist="Embla Sash",
+		left_ear="Malignance Earring",
+		right_ear="Loquac. Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Locus Ring",
+		back="Perimede Cape"
 	}
- 
-    sets.midcast.Curaga = sets.midcast.Cure
- 
-    sets.midcast.Regen = {
-		main="Bolelabunga",
-		sub="Genbu's Shield", 
-		ammo="Incantor Stone",
-		head="Arbatel Bonnet +1",
-		body="Telchine Chas.", 
-		hands="Telchine Gloves", 
-		legs="Telchine Braconi", 
-		feet="Telchine Pigaches", 
-		neck="Incanter's Torque",
+	
+
+	-- Stoneskin
+	sets.Stoneskin = set_combine(sets.FastCast,  {
+		hands="Carapacho Cuffs",
+		legs="Doyen Pants",
+		neck="Nodens Gorget",
 		waist="Siegel Sash",
-		left_ear="Magnetic Earring",
-		right_ear="Halasz Earring",
-		left_ring="Evanescence Ring",
-		right_ring="Prolix Ring",
-		back="Bookworm's Cape"
-	}
+	})
 	
-    sets.midcast.Cursna = {
-		main="Akademos",
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Kaykaus Mitra", 
-		body="Peda. Gown +1", 
-		hands="Chironic Gloves",
-		legs="Kaykaus Tights", 
-		feet="Peda. Loafers +1", 
-		neck="Malison Medallion",
-		waist="Bishop's Sash",
-		left_ear="Halasz Earring",
-		right_ear="Healing Earring",
-		left_ring="Saida Ring",
-		right_ring="Sirona's Ring",
-		back="Oretan. Cape +1"
-	}
+	-- Hitting the Duration set due to longer enhancing duration gear
+	sets.Aquaveil = set_combine(sets.Duration,  {
+		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
+		hands="Regal Cuffs",
+		waist="Emphatikos Rope",
+	})
 	
-    sets.midcast['Enhancing Magic'] = {
-		main="Kirin's Pole",
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Telchine Cap",
-		body="Telchine Chas.", 
-		hands="Telchine Gloves", 
-		legs="Telchine Braconi", 
-		feet="Telchine Pigaches",
-		neck="Incanter's Torque",
-		waist="Olympus Sash",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Prolix Ring",
-		right_ring="Veneficium Ring",
-		back="Perimede Cape"
-	}
- 
-
- 
-    sets.midcast.Storm =  {
-		main="Akademos", 
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Telchine Cap", 
-		body="Telchine Chas.",
-		hands="Telchine Gloves",
-		legs="Telchine Braconi",
-		neck="Incanter's Torque",
-		waist="Olympus Sash",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Prolix Ring",
-		right_ring="Veneficium Ring",
-		back="Perimede Cape",
-		feet="Peda. Loafers +1"
-
-	}
-     
-    sets.midcast.Klimaform = {
-		main="Akademos", 
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Telchine Cap", 
-		body="Telchine Chas.", 
-		hands="Telchine Gloves", 
-		legs="Telchine Braconi", 
-		neck="Incanter's Torque",
-		waist="Olympus Sash",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Prolix Ring",
-		right_ring="Veneficium Ring",
-		back="Perimede Cape",
-		feet="Arbatel Loafers"
-	}	
-     
-    sets.midcast.Protect = {
-		main="Kirin's Pole",
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Telchine Cap", 
-		body="Telchine Chas.", 
-		hands="Telchine Gloves", 
-		legs="Telchine Braconi", 
-		feet="Telchine Pigaches", 
-		neck="Incanter's Torque",
-		waist="Olympus Sash",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Prolix Ring",
-		right_ring="Veneficium Ring",
-		back="Perimede Cape"
-	}
-	
-    sets.midcast.Protectra = {
-		main="Kirin's Pole",
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Telchine Cap", 
-		body="Telchine Chas.", 
-		hands="Telchine Gloves", 
-		legs="Telchine Braconi", 
-		feet="Telchine Pigaches", 
-		neck="Incanter's Torque",
-		waist="Olympus Sash",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Prolix Ring",
-		right_ring="Veneficium Ring",
-		back="Perimede Cape"
-	}
- 
-    sets.midcast.Shell =  {
-		main="Kirin's Pole", 
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Telchine Cap", 
-		body="Telchine Chas.",
-		hands="Telchine Gloves", 
-		legs="Telchine Braconi", 
-		feet="Telchine Pigaches", 
-		neck="Incanter's Torque",
-		waist="Olympus Sash",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Prolix Ring",
-		right_ring="Veneficium Ring",
-		back="Perimede Cape"
-	}
-	
-    sets.midcast.Refresh =  {
-		main="Akademos", 
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Amalric Coif",
-		body="Telchine Chas.", 
-		hands=="Telchine Gloves", 
-		legs="Telchine Braconi", 
-		neck="Incanter's Torque",
-		waist="Olympus Sash",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Prolix Ring",
-		right_ring="Veneficium Ring",
-		back="Perimede Cape",
-		feet="Telchine Pigaches"
-	}	
-   
-    sets.midcast.Storm = {
-		main="Akademos",
-		sub="Clerisy Strap",
-		ammo="Incantor Stone",
-		head="Telchine Cap", 
-		body="Telchine Chas.", 
-		hands="Telchine Gloves", 
-		legs="Telchine Braconi", 
-		feet="Peda. Loafers +1", 
-		neck="Incanter's Torque",
-		waist="Olympus Sash",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Loquac. Earring",
-		left_ring="Prolix Ring",
-		right_ring="Veneficium Ring",
-		back="Twilight Cape"
-    }
- 
-    -- Custom spell classes
-    sets.midcast.MndEnfeebles = {
-		main="Twebuliij", 
-		sub="Clerisy Strap",
+    sets.Cure = set_combine(sets.FastCast,  {
+	    main="Daybreak",
+		sub="Culminus",
 		ammo="Pemphredo Tathlum",
-		head="Merlinic Hood", 
-		body="Chironic Doublet", 
-		hands="Chironic Gloves", 
-		legs="Psycloth Lappas", 
-		feet="Jhakri Pigaches +1",
+		head={ name="Kaykaus Mitra", augments={'MP+60','MND+10','Mag. Acc.+15',}},
+		body="Arbatel Gown +2",
+		hands="Nyame Gauntlets",
+		legs="Pinga Pants",
+		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
 		neck="Incanter's Torque",
-		waist="Tengu-no-Obi",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Gwati Earring",
-		left_ring="Sangoma Ring",
-		right_ring="Etana Ring",
-		back="Lugh's Cape"
-	}
- 
-    sets.midcast.IntEnfeebles = {
-		main="Akademos", 
-		sub="Clerisy Strap",
-		ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +1",
-		body="Chironic Doublet",
-		hands="Chironic Gloves", 
-		legs="Psycloth Lappas", 
-		feet="Jhakri Pigaches +1",
-		neck="Incanter's Torque",
-		waist="Channeler's Stone",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Gwati Earring",
-		left_ring="Evanescence Ring",
-		right_ring="Sangoma Ring",
-		back="Lugh's Cape" 
-    }
- 
-    sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
-     
-    sets.midcast.Kaustra = {
-		main="Akademos", 
-		sub="Niobid Strap",
-		ammo="Pemphredo Tathlum",
-		head="Merlinic Hood",
-		body="Merlinic Jubbah", 
-		hands="Amalric Gages",
-		legs="Amalric Slops",
-		feet="Amalric Nails", 
-		neck="Mizu. Kubikazari",
-		waist="Eschan Stone",
-		left_ear="Halasz Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Mujin Band",
-		right_ring="Locus Ring",
-		back="Bookworm's Cape"
-    }
- 
-    sets.midcast['Dark Magic'] = {
-		main="Akademos",
-		sub="Niobid Strap",
-		ammo="Pemphredo Tathlum",
-		head="Merlinic Hood", 
-		body="Merlinic Jubbah",
-		hands="Amalric Gages", 
-		legs="Amalric Slops",
-		feet="Amalric Nails", 
-		neck="Mizu. Kubikazari",
-		waist="Eschan Stone",
-		left_ear="Halasz Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Mujin Band",
-		right_ring="Locus Ring",
-		back=="Bookworm's Cape"
-    }
-     
- 
-    sets.midcast.Drain = {
-	    main="Akademos", 
-		sub="Clerisy Strap",
-		ammo="Pemphredo Tathlum",
-		head="Merlinic Hood", 
-		body=="Chironic Doublet", 
-		hands="Chironic Gloves", 
-		legs="Psycloth Lappas", 
-		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','CHR+4','Mag. Acc.+6','"Mag.Atk.Bns."+6',}},
-		neck="Incanter's Torque",
-		waist="Fucho-no-Obi",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Gwati Earring",
-		left_ring="Evanescence Ring",
-		right_ring="Sangoma Ring",
-		back="Lugh's Cape" 
-    }
- 
-    sets.midcast.Aspir = sets.midcast.Drain
- 
-    sets.midcast.Stun = {
-		main="Akademos", 
-		sub="Clerisy Strap",
-		ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +1",
-		body="Chironic Doublet", 
-		hands="Chironic Gloves", 
-		legs="Psycloth Lappas",
-		feet="Jhakri Pigaches +1",
-		neck="Incanter's Torque",
-		waist="Channeler's Stone",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Gwati Earring",
-		left_ring="Evanescence Ring",
-		right_ring="Sangoma Ring",
-		back="Lugh's Cape"
-    }
-    
- 
- 
-    -- Elemental Magic sets are default for handling low-tier nukes.
-    sets.midcast['Elemental Magic'] = {
-		main="Akademos", 
-		sub="Niobid Strap",
-		ammo="Pemphredo Tathlum",
-		head="Merlinic Hood", 
-		body="Merlinic Jubbah", 
-		hands="Amalric Gages", 
-		legs="Amalric Slops", 
-		feet="Amalric Nails",
-		neck="Mizu. Kubikazari",
-		waist="Eschan Stone",
-		left_ear="Halasz Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Mujin Band",
-		right_ring="Locus Ring",
-		back="Bookworm's Cape" 
-    }
-
-    sets.midcast.Impact = {}
-     
-    sets.midcast.Helix = {
-		main="Akademos",
-		sub="Niobid Strap",
-		ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +1",
-		body="Merlinic Jubbah", 
-		hands="Chironic Gloves",
-		legs="Amalric Slops", 
-		feet="Amalric Nails", 
-		neck="Sanctity Necklace",
-		waist="Channeler's Stone",
-		left_ear="Friomisi Earring",
-		right_ear="Gwati Earring",
-		left_ring="Acumen Ring",
-		right_ring="Locus Ring",
-		back="Bookworm's Cape" 
-    }
-	
-    sets.midcast.Noctohelix = {
-		main="Akademos", 
-		sub="Niobid Strap",
-		ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +1",
-		body="Merlinic Jubbah", 
-		hands="Chironic Gloves", 
-		legs="Amalric Slops", 
-		feet="Amalric Nails",
-		neck="Sanctity Necklace",
-		waist="Channeler's Stone",
-		left_ear="Friomisi Earring",
-		right_ear="Gwati Earring",
-		left_ring="Acumen Ring",
-		right_ring="Locus Ring",
-		back="Bookworm's Cape" 
-    }
-    
- 
-    -- Resting sets
-    sets.resting = {
-		main="Boonwell Staff",
-		sub="Mensch Strap",
-		ammo="Mana Ampulla",
-		head="Kaykaus Mitra", 
-		body="Chironic Doublet", 
-		hands="Telchine Gloves", 
-		legs="Kaykaus Tights", 
-		feet="Kaykaus Boots",
-		neck="Eidolon Pendant +1",
-		waist="Bishop's Sash",
-		left_ear="Magnetic Earring",
-		right_ear="Infused Earring",
-		left_ring="Globidonta Ring",
-		right_ring="Sirona's Ring",
-		back="Mecisto. Mantle"
-    }
- 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
- 
-    sets.idle.Town = {
-		main="Bolelabunga",
-		sub="Genbu's Shield", 
-		ammo="Incantor Stone",
-		head="Acad. Mortar. +1",
-		body="Peda. Gown +1", 
-		hands="Chironic Gloves",
-		legs="Assid. Pants +1",
-		feet="Mallquis Clogs +1",
-		neck="Sanctity Necklace",
-		waist="Fucho-no-Obi",
-		left_ear="Savant's Earring",
-		right_ear="Infused Earring",
-		left_ring="Etana Ring",
-		right_ring="Paguroidea Ring",
-		back="Mecisto. Mantle" 
-	}
-	
-    sets.idle.Field = {
-		main="Bolelabunga",
-		sub="Genbu's Shield",
-		ammo="Brigantia Pebble",
-		head="Befouled Crown",
-		body="Jhakri Robe +2",
-		hands="Chironic Gloves", 
-		legs="Assid. Pants +1",
-		feet="Mallquis Clogs +1",
-		neck="Twilight Torque",
-		waist="Fucho-no-Obi",
-		left_ear="Hearty Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Paguroidea Ring",
-		back="Mecisto. Mantle"
-	}
- 
-    sets.idle.Field.Stun = {
-		main="Akademos", 
-		sub="Clerisy Strap",
-		ammo="Pemphredo Tathlum",
-		head="Jhakri Coronal +1",
-		body="Chironic Doublet", 
-		hands="Chironic Gloves", 
-		legs="Psycloth Lappas", 
-		feet="Jhakri Pigaches +1",
-		neck="Incanter's Torque",
-		waist="Channeler's Stone",
-		left_ear="Enchntr. Earring +1",
-		right_ear="Gwati Earring",
-		left_ring="Evanescence Ring",
-		right_ring="Sangoma Ring",
-		back=="Lugh's Cape" 
-	}
- 
-    sets.idle.Weak = {
-		main="Bolelabunga",
-		sub="Genbu's Shield",
-		ammo="Brigantia Pebble",
-		head="Befouled Crown",
-		body="Jhakri Robe +2",
-		hands="Chironic Gloves", 
-		legs="Assid. Pants +1",
-		feet="Mallquis Clogs +1",
-		neck="Twilight Torque",
-		waist="Fucho-no-Obi",
-		left_ear="Hearty Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Paguroidea Ring",
-		back="Mecisto. Mantle"
-	}
-	
- 
-    sets.defense.PDT = {
-		main="Bolelabunga",
-		sub="Genbu's Shield",
-		ammo="Brigantia Pebble",
-		head="Befouled Crown",
-		body="Jhakri Robe +2",
-		hands="Chironic Gloves", 
-		legs="Assid. Pants +1",
-		feet="Mallquis Clogs +1",
-		neck="Twilight Torque",
-		waist="Fucho-no-Obi",
-		left_ear="Hearty Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Paguroidea Ring",
-		back="Mecisto. Mantle"
-	}
- 
-    sets.defense.MDT = {
-		main="Bolelabunga",
-		sub="Genbu's Shield",
-		ammo="Brigantia Pebble",
-		head="Befouled Crown",
-		body="Jhakri Robe +2",
-		hands="Chironic Gloves", 
-		legs="Assid. Pants +1",
-		feet="Mallquis Clogs +1",
-		neck="Twilight Torque",
-		waist="Fucho-no-Obi",
-		left_ear="Hearty Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Paguroidea Ring",
-		back="Mecisto. Mantle"
-	}
- 
-    sets.Kiting = {feet="Herald's Gaiters"}
- 
-    sets.latent_refresh = {waist="Fucho-no-obi"}
- 
-    -- Engaged sets
- 
-    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-    -- sets if more refined versions aren't defined.
-    -- If you create a set with both offense and defense modes, the offense mode should be first.
-    -- EG: sets.engaged.Dagger.Accuracy.Evasion
- 
-    -- Normal melee group
-    sets.engaged = { main={ name="Grioavolr", augments={'Magic burst mdg.+9%','INT+13','Mag. Acc.+30','"Mag.Atk.Bns."+26','Magic Damage +4',}},
-		sub="Niobid Strap",
-		ammo="Pemphredo Tathlum",
-		head={ name="Chironic Hat", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','"Drain" and "Aspir" potency +9','CHR+1','Mag. Acc.+12',}},
-		body={ name="Witching Robe", augments={'MP+40','Mag. Acc.+12','"Mag.Atk.Bns."+8',}},
-		hands={ name="Chironic Gloves", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','INT+6','Mag. Acc.+10','"Mag.Atk.Bns."+14',}},
-		legs="Assid. Pants +1",
-		feet={ name="Amalric Nails", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-		neck="Sanctity Necklace",
 		waist="Luminary Sash",
-		left_ear="Magnetic Earring",
-		right_ear="Infused Earring",
-		left_ring="Sheltered ring",
-		right_ring="Shneddick Ring",
-		back="Solemnity Cape"
+		left_ear="Mendi. Earring",
+		right_ear="Magnetic Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back="Pahtli Cape"
+	})
+
+	-- Protecting the party
+    sets.Protect = set_combine(sets.FastCast,  {
+		ring1="Sheltered Ring"
+	})
+	
+	--Regen Max Duration
+	sets.Regen = set_combine(sets.Duration,  {
+		main="Musa",
+		sub="Clerisy strap",
+		head="Arbatel Bonnet +2",
+		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
+	})
+
+	
+	-- MDF the party
+    sets.Shell = set_combine(sets.FastCast,  {
+		ring1="Sheltered Ring"
+	})
+
+  	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
+	sets.ElementalMagic = {
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Sroda Tathlum",
+		head="Agwu's Cap",
+		body="Agwu's Robe",
+		hands="Arbatel Bracers +2",
+		legs="Agwu's Slops",
+		feet="Agwu's Pigaches",
+		neck="Argute stole +2",
+		waist="Tengu-no-Obi",
+		left_ear="Malignance Earring",
+		right_ear="Halasz Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Lugh's Cape", augments={'INT+8','Mag. Acc+7 /Mag. Dmg.+7','Mag. Acc.+8',}}
 	}
- 
- 
- 
-    -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Ebullience'] = {head="Arbatel Bonnet +1"}
-    sets.buff['Rapture'] = {head="Arbatel Bonnet +1"}
-    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
-    sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
-    sets.buff['Penury'] = {legs="Arbatel Pants +1"}
-    sets.buff['Parsimony'] = {legs="Arbatel Pants +1"}
-    sets.buff['Celerity'] = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
-    sets.buff['Alacrity'] = {head="Nahtirah Hat",feet="Pedagogy Loafers +1"}
-    sets.buff['Stormsurge'] = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
-    sets.buff['Klimaform'] = {feet="Arbatel Loafers"}
- 
-    sets.buff.FullSublimation = {head="Academic's Mortarboard +1",ear1="Savant's Earring",body="Pedagogy Gown +1"}
-    sets.buff.PDTSublimation = {head="Academic's Mortarboard +1",ear1="Savant's Earring"}
- 
-    sets.magic_burst ={ 
-		main="Akademos",
-		sub="Niobid Strap",
-		ammo="Pemphredo Tathlum",
-		head="Merlinic Hood",
-		body="Merlinic Jubbah",
-		hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-		legs={ name="Amalric Slops", augments={'MP+60','"Mag.Atk.Bns."+20','Enmity-5',}},
-		feet={ name="Amalric Nails", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Conserve MP"+6'}},
-		neck="Mizu. Kubikazari",
-		waist="Eschan Stone",
-		left_ear="Halasz Earring",
-		right_ear="Friomisi Earring",
+	
+	-- sets.Burst = {
+		-- main="Bunzi's Rod",
+		-- sub="Ammurapi Shield",
+		-- ammo="Sroda Tathlum",
+		-- head="Agwu's Cap",
+		-- body="Agwu's Robe",
+		-- hands="Arbatel Bracers +2",
+		-- legs="Agwu's Slops",
+		-- feet="Agwu's Pigaches",
+		-- neck="Argute stole +2",
+		-- waist="Tengu-no-Obi",
+		-- left_ear="Malignance Earring",
+		-- right_ear="Halasz Earring",
+		-- left_ring="Mujin band",
+		-- right_ring="Locus Ring",
+		-- back={ name="Lugh's Cape", augments={'INT+8','Mag. Acc+7 /Mag. Dmg.+7','Mag. Acc.+8',}}	
+	
+	-- }
+	
+	sets.Kaustra = {
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Sroda Tathlum",
+		head="Pixie Hairpin +1",
+		body="Agwu's Robe",
+		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		feet="Agwu's Pigaches",
+		neck="Argute stole +2",
+		waist="Tengu-no-Obi",
+		left_ear="Malignance Earring",
+		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring",
-		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}
+		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10',}}	
 	}
-     
-    --sets.buff['Sandstorm'] = {feet="Desert Boots"}
+	
+    sets.DarkMagic = {
+
+	}
+
+    sets.Enfeebling = set_combine(sets.FastCast,  {
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head="Arbatel Bonnet +2",
+		body="Arbatel Gown +2",
+		hands="Arbatel Bracers +2",
+		legs="Agwu's Slops",
+		feet="Agwu's Pigaches",
+		neck={ name="Argute Stole +2", augments={'Path: A',}},
+		waist="Luminary Sash",
+		left_ear="Crep. Earring",
+		right_ear="Malignance Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Lugh's Cape", augments={'INT+8','Mag. Acc+7 /Mag. Dmg.+7','Mag. Acc.+8',}}
+	})
+
+
+	-- Impact ugh mutha-fucka
+    sets.Impact = set_combine(sets.Kaustra,  {  
+      body="Twilight Cloak"
+	})
+
+
+    -- /heal the damn MP/HP up.
+    sets.heal = {
+
+	}
+
+	sets.TP = set_combine(sets.PDT,  {
+		main="Malignance Pole",
+		sub="Mensch Strap +1",
+		ammo="Crepuscular Pebble",
+		head="Arbatel Bonnet +2",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Clotharius Torque",
+		waist="Windbuffet Belt +1",
+		left_ear="Crep. Earring",
+		right_ear="Telos Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Moonbeam Cape"	
+	})
+
+	-- PDT Set
+    sets.PDT = {
+		main="Malignance Pole",
+		sub="Mensch Strap +1",
+		ammo="Staunch Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Sanctity Necklace",
+		waist="Emphatikos Rope",
+		left_ear="Infused Earring",
+		right_ear="Hearty Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Kumbira Cape"
+	}
+
+	-- Magic Defense and Magic Defense Set
+    sets.MDT = {
+		main="Malignance Pole",
+		sub="Mensch Strap +1",
+		ammo="Staunch Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Sanctity Necklace",
+		waist="Emphatikos Rope",
+		left_ear="Infused Earring",
+		right_ear="Hearty Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Kumbira Cape"
+	}
+
+		
+	-- When I gotta kite shite, I put on my Sandals and shit...
+    sets.Kiting = set_combine(sets.PDT,  {
+		feet="Crier's gaiters"
+	})
+
+    
+	sets.Refresh = set_combine(sets.PDT,  {
+		main="Bolelabunga",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum",
+		head="Volte Beret",
+		body="Jhakri Robe +2",
+		hands="Volte Gloves",
+		legs="Assid. Pants +1",
+		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		neck="Sanctity Necklace",
+		waist="Fucho-no-Obi",
+		left_ear="Infused Earring",
+		right_ear="Hearty Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back="Kumbira Cape"
+	})
+	
+	
+    ------------------------------------------------------------------------------------------------------------------
+    -- Weaponskill sets
+    ------------------------------------------------------------------------------------------------------------------
+
+	-- All Weaponskills for Red Mage unless explicitly defined below sets.precast.WS 
+	sets.WSD = {
+		ammo="Crepuscular Pebble",
+		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+		body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9',}},
+		hands="Jhakri Cuffs +2",
+		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Ishvara Earring",
+		left_ring="Epaminondas's Ring",
+		right_ring="Chirich Ring +1",
+		back="Moonbeam Cape"
+	}
+	
+	sets.Cataclysm = {
+		ammo="Pemphredo Tathlum",
+		head="Pixie Hairpin +1",
+		body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9',}},
+		hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7',}},
+		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+		neck={ name="Argute Stole +2", augments={'Path: A',}},
+		waist="Orpheus's Sash",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Friomisi Earring",
+		left_ring="Epaminondas's Ring",
+		right_ring="Hetairoi Ring",
+		back={ name="Lugh's Cape", augments={'INT+8','Mag. Acc+7 /Mag. Dmg.+7','Mag. Acc.+8',}}	
+	}
+	 
+	sets.Myrkr = {
+		head="Pixie Hairpin +1",
+		body="Arbatel Gown +2",
+		hands="Regal Cuffs",
+		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		feet="Skaoi Boots",
+		neck="Sanctity Necklace",
+		waist="Mujin Obi",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Halasz Earring",
+		left_ring="Sangoma Ring",
+		right_ring="Mephitas's Ring +1",
+		back="Pahtli Cape"	
+	} 
+
+	  -- Engaged Sets Toggle--
+	sets.engaged = {}
+	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	engaged_ind = 1  	 
+	 
+	sets.engaged.TP = set_combine(sets.TP, {}) 
+	sets.engaged.Movement = set_combine(sets.Kiting, {})
+	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
+	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
+	sets.engaged.Accuracy = {}
+	sets.engaged.Refresh = set_combine(sets.Refresh, {})
+	 
 end
- 
--------------------------------------------------------------------------------------------------------------------
--- Job-specific hooks for standard casting events.
--------------------------------------------------------------------------------------------------------------------
- 
--- Run after the general midcast() is done.
-function job_post_midcast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Magic' then
-        apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
-    end
-	--TODO
-	--FIX this shit below..  The logic is funky
-    if spell.element == world.day_element or spell.element == world.weather_element then
-        if info.low_nukes:contains(spell.english) then 
-        equip(sets.midcast['Elemental Magic'], {ring1="Zodiac Ring",back="Twilight Cape"})
-            elseif info.high_nukes:contains(spell.english) then
-            equip(sets.midcast['Elemental Magic'].HighTierNuke, {ring1="Zodiac Ring",back="Twilight Cape"})
-        end
-    end
-    if spell.skill == 'Elemental Magic' then
-        if state.MagicBurst.value then
-        equip(sets.magic_burst)
-        end
-    end
-    if spell.skill == 'Enhancing Magic' then
-        equip(sets.midcast.EnhancingDuration)
-    end
-    if spellMap == 'Cure' and spell.target.type == 'SELF' then
-        equip(sets.midcast.CureSelf)
-    end
+
+function precast(spell,abil)
+	
+	--Scholar Job Abilities
+	if spell.name == 'Immanence' then
+		equip(sets.Immanence)
+	end
+	if spell.name == 'Ebullience' then
+		equip(sets.Ebullience)
+	end
+	if spell.name == 'Rapture' then
+		equip(sets.Rapture)
+	end
+	if spell.name == 'Perpetuance' then
+		equip(sets.Perpetuance)
+	end
+	if spell.name == 'Penury' then
+		equip(sets.Penury)
+	end
+	if spell.name == 'Parsimony' then
+		equip(sets.Parsimony)
+	end
+	if spell.name == 'Celerity' then
+		equip(sets.Celerity)
+	end
+	if spell.name == 'Alacrity' then
+		equip(sets.Alacrity)
+	end
+	if spell.name == 'Stormsurge' then
+		equip(sets.Stormsurge)
+	end
+	
+	
+	if spell.skill == 'Enhancing Magic' then
+		equip(sets.FastCast)
+	elseif spell.skill == 'Enfeebling Magic' then
+		equip(sets.FastCast)
+	elseif spell.action_type == 'Magic' then
+		equip(sets.FastCast)
+	end
+		
+	--Can add stuff here for other magic. Doesn't have to go to idle at all
+	
+
+	--WS Lookups
+	if spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Rock Crusher" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Earth Crusher" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Starburst" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Sunburst" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Shell Crusher" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Full Swing" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Spirit Taker" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Retribution" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Omniscience" then
+		equip(sets.WSD)
+	end
+	if spell.name == "Cataclysm" then
+		equip(sets.Cataclysm)
+	end
+	if spell.name == "Myrkr" then
+		equip(sets.Myrkr)
+	end
+	if spell.name == "Shattersoul" then
+		equip(sets.WSD)
+	end
+	-- Add logic for Waltz
+	-- Add logic for Utsusemi
+  
 end
- 
--------------------------------------------------------------------------------------------------------------------
--- Job-specific hooks for non-casting events.
--------------------------------------------------------------------------------------------------------------------
- 
--- Called when a player gains or loses a buff.
--- buff == buff gained or lost
--- gain == true if the buff was gained, false if it was lost.
-function job_buff_change(buff, gain)
-    if buff == "Sublimation: Activated" then
-        handle_equipping_gear(player.status)
-    end
+
+
+function midcast(spell)
+
+	if spell.name == 'Klimaform' then
+		equip(sets.Klimaform)
+	end
+	
+	if string.find(spell.english,'storm') then 
+		equip(sets.Duration)
+	end
+	if spell.name == 'Adloquium' or spell.name == 'Embrava' or string.find(spell.english,'Animus') then 
+		equip(sets.Duration)
+	end
+
+
+	if string.find(spell.english,'Cur') then 
+		equip(sets.Cure)
+	end
+	if spell.name == 'Stoneskin' then
+		equip(sets.Stoneskin)
+	end
+	if string.find(spell.english,'Regen') then 
+		equip(sets.Regen)
+	end
+	if spell.name == 'Aquaveil' then
+		equip(sets.Aquaveil)
+	end
+	if spell.name == 'Cursna' then
+		--TODO - Add a Cursna set 5/26/2023
+		equip(sets.FastCast)
+	end
+	if spell.name == "Dispel" then
+		equip(sets.Enfeebling)
+	end
+	if string.find(spell.english,'Kaustra') then 
+		equip(sets.Kaustra)
+	end
+	if spell.skill == 'Elemental Magic' then
+		equip(sets.ElementalMagic)
+	end
+	if spell.skill == 'Enfeebling Magic' then
+		equip(sets.Enfeebling)
+	end	
 end
- 
--- Handle notifications of general user state change.
-function job_state_change(stateField, newValue, oldValue)
-    if stateField == 'Offense Mode' then
-        if newValue == 'Normal' then
-            disable('main','sub','range')
-        else
-            enable('main','sub','range')
-        end
-    end
+
+--We need to do some thinking and testing for this set...
+function aftercast(spell)
+	equip_current()
 end
- 
--------------------------------------------------------------------------------------------------------------------
--- User code that supplements standard library decisions.
--------------------------------------------------------------------------------------------------------------------
- 
--- Custom spell mapping.
-function job_get_spell_map(spell, default_spell_map)
-    if spell.action_type == 'Magic' then
-        if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
-            if world.weather_element == 'Light' then
-                return 'CureWithLightWeather'
-            end
-        elseif spell.skill == 'Enfeebling Magic' then
-            if spell.type == 'WhiteMagic' then
-                return 'MndEnfeebles'
-            else
-                return 'IntEnfeebles'
-            end
-        elseif spell.skill == 'Elemental Magic' then
-            if info.low_nukes:contains(spell.english) then
-                return 'LowTierNuke'
-            elseif info.mid_nukes:contains(spell.english) then
-                return 'MidTierNuke'
-            elseif info.high_nukes:contains(spell.english) then
-                return 'HighTierNuke'
-            end
-        end
-    end
+
+
+--This function should only get kicked off when you're engaging.  
+--If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--But I don't want to fuck myself by ignoring the engaged check.
+--I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+function equip_current()
+	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 end
- 
-function customize_idle_set(idleSet)
-    if state.Buff['Sublimation: Activated'] then
-        if state.IdleMode.value == 'Normal' then
-            idleSet = set_combine(idleSet, sets.buff.FullSublimation)
-        elseif state.IdleMode.value == 'PDT' then
-            idleSet = set_combine(idleSet, sets.buff.PDTSublimation)
-        end
-    end
- 
-    if player.mpp < 51 then
-        idleSet = set_combine(idleSet, sets.latent_refresh)
-    end
- 
-    return idleSet
+
+
+--Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
+function self_command(command)
+	if command == 'C7' then -- Mecistopins Mantle toggle 
+		if Capacity == 'OFF' then
+			Capacity = 'ON'
+			equip({back="Mecistopins mantle"})
+            add_to_chat(158,'Capacity mantle: [ON]')
+		else
+			Capacity = 'OFF'
+			equip_current()
+   		    add_to_chat(123,'Capacity mantle: [OFF]')
+		end
+	elseif command == 'toggle Engaged set' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	end	 
 end
- 
--- Called by the 'update' self-command.
-function job_update(cmdParams, eventArgs)
-    if cmdParams[1] == 'user' and not (buffactive['light arts']      or buffactive['dark arts'] or
-                       buffactive['addendum: white'] or buffactive['addendum: black']) then
-        if state.IdleMode.value == 'Stun' then
-            send_command('@input /ja "Dark Arts" <me>')
-        else
-            send_command('@input /ja "Light Arts" <me>')
-        end
-    end
- 
-    update_active_strategems()
-    update_sublimation()
-end
- 
--- Function to display the current relevant user state when doing an update.
--- Return true if display was handled, and you don't want the default info shown.
-function display_current_job_state(eventArgs)
-    display_current_caster_state()
-    eventArgs.handled = true
-end
- 
--------------------------------------------------------------------------------------------------------------------
--- User code that supplements self-commands.
--------------------------------------------------------------------------------------------------------------------
- 
--- Called for direct player commands.
-function job_self_command(cmdParams, eventArgs)
-    if cmdParams[1]:lower() == 'scholar' then
-        handle_strategems(cmdParams)
-        eventArgs.handled = true
-    end
-end
- 
--------------------------------------------------------------------------------------------------------------------
--- Utility functions specific to this job.
--------------------------------------------------------------------------------------------------------------------
- 
--- Reset the state vars tracking strategems.
-function update_active_strategems()
-    state.Buff['Ebullience'] = buffactive['Ebullience'] or false
-    state.Buff['Rapture'] = buffactive['Rapture'] or false
-    state.Buff['Perpetuance'] = buffactive['Perpetuance'] or false
-    state.Buff['Immanence'] = buffactive['Immanence'] or false
-    state.Buff['Penury'] = buffactive['Penury'] or false
-    state.Buff['Parsimony'] = buffactive['Parsimony'] or false
-    state.Buff['Celerity'] = buffactive['Celerity'] or false
-    state.Buff['Alacrity'] = buffactive['Alacrity'] or false
- 
-    state.Buff['Klimaform'] = buffactive['Klimaform'] or false
-end
- 
-function update_sublimation()
-    state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
-end
- 
--- Equip sets appropriate to the active buffs, relative to the spell being cast.
-function apply_grimoire_bonuses(spell, action, spellMap)
-    if state.Buff.Perpetuance and spell.type =='WhiteMagic' and spell.skill == 'Enhancing Magic' then
-        equip(sets.buff['Perpetuance'])
-    end
-    if state.Buff.Rapture and (spellMap == 'Cure' or spellMap == 'Curaga') then
-        equip(sets.buff['Rapture'])
-    end
-    if spell.skill == 'Elemental Magic' and spellMap ~= 'ElementalEnfeeble' then
-        if state.Buff.Ebullience and spell.english ~= 'Impact' then
-            equip(sets.buff['Ebullience'])
-        end
-        if state.Buff.Immanence then
-            equip(sets.buff['Immanence'])
-        end
-        if state.Buff.Klimaform and spell.element == world.weather_element then
-            equip(sets.buff['Klimaform'])
-        end
-    end
- 
-    if state.Buff.Penury then equip(sets.buff['Penury']) end
-    if state.Buff.Parsimony then equip(sets.buff['Parsimony']) end
-    if state.Buff.Celerity then equip(sets.buff['Celerity']) end
-    if state.Buff.Alacrity then equip(sets.buff['Alacrity']) end
-end
- 
- 
-function display_current_caster_state()
-    local msg = ''
- 
-    if state.OffenseMode.value ~= 'None' then
-        msg = msg .. 'Melee'
- 
-        if state.CombatForm.has_value then
-            msg = msg .. ' (' .. state.CombatForm.value .. ')'
-        end
-         
-        msg = msg .. ', '
-    end
- 
-    msg = msg .. 'Idle ['..state.IdleMode.value..'], Casting ['..state.CastingMode.value..']'
- 
-    add_to_chat(122, msg)
-    local currentStrats = get_current_strategem_count()
-    local arts
-    if buffactive['Light Arts'] or buffactive['Addendum: White'] then
-        arts = 'Light Arts'
-    elseif buffactive['Dark Arts'] or buffactive['Addendum: Black'] then
-        arts = 'Dark Arts'
-    else
-        arts = 'No Arts Activated'
-    end
-    add_to_chat(122, 'Current Available Strategems: ['..currentStrats..'], '..arts..'')
-end
- 
--- General handling of strategems in an Arts-agnostic way.
--- Format: gs c scholar <strategem>
-function handle_strategems(cmdParams)
-    -- cmdParams[1] == 'scholar'
-    -- cmdParams[2] == strategem to use
-    if not cmdParams[2] then
-        add_to_chat(123,'Error: No strategem command given.')
-        return
-    end
- 
-    local currentStrats = get_current_strategem_count()
-    local newStratCount = currentStrats - 1
-    local strategem = cmdParams[2]:lower()
-     
-    if currentStrats > 0 and strategem ~= 'light' and strategem ~= 'dark' then
-        add_to_chat(122, '***Current Charges Available: ['..newStratCount..']***')
-    elseif currentStrats == 0 then
-        add_to_chat(122, '***Out of strategems! Canceling...***')
-        return
-    end
- 
-    if strategem == 'light' then
-        if buffactive['light arts'] then
-            send_command('input /ja "Addendum: White" <me>')
-            add_to_chat(122, '***Current Charges Available: ['..newStratCount..']***')
-        elseif buffactive['addendum: white'] then
-            add_to_chat(122,'Error: Addendum: White is already active.')
-        elseif buffactive['dark arts']  or buffactive['addendum: black'] then
-            send_command('input /ja "Light Arts" <me>')
-            add_to_chat(122, '***Changing Arts! Current Charges Available: ['..currentStrats..']***')
-        else
-            send_command('input /ja "Light Arts" <me>')
-        end
-    elseif strategem == 'dark' then
-        if buffactive['dark arts'] then
-            send_command('input /ja "Addendum: Black" <me>')
-            add_to_chat(122, '***Current Charges Available: ['..newStratCount..']***')
-        elseif buffactive['addendum: black'] then
-            add_to_chat(122,'Error: Addendum: Black is already active.')
-        elseif buffactive['light arts'] or buffactive['addendum: white'] then
-            send_command('input /ja "Dark Arts" <me>')
-            add_to_chat(122, '***Changing Arts! Current Charges Available: ['..currentStrats..']***')
-        else
-            send_command('input /ja "Dark Arts" <me>')
-        end
-    elseif buffactive['light arts'] or buffactive['addendum: white'] then
-        if strategem == 'cost' then
-            send_command('@input /ja Penury <me>')
-        elseif strategem == 'speed' then
-            send_command('@input /ja Celerity <me>')
-        elseif strategem == 'aoe' then
-            send_command('@input /ja Accession <me>')
-        elseif strategem == 'power' then
-            send_command('@input /ja Rapture <me>')
-        elseif strategem == 'duration' then
-            send_command('@input /ja Perpetuance <me>')
-        elseif strategem == 'accuracy' then
-            send_command('@input /ja Altruism <me>')
-        elseif strategem == 'enmity' then
-            send_command('@input /ja Tranquility <me>')
-        elseif strategem == 'skillchain' then
-            add_to_chat(122,'Error: Light Arts does not have a skillchain strategem.')
-        elseif strategem == 'addendum' then
-            send_command('@input /ja "Addendum: White" <me>')
-        else
-            add_to_chat(123,'Error: Unknown strategem ['..strategem..']')
-        end
-    elseif buffactive['dark arts']  or buffactive['addendum: black'] then
-        if strategem == 'cost' then
-            send_command('@input /ja Parsimony <me>')
-        elseif strategem == 'speed' then
-            send_command('@input /ja Alacrity <me>')
-        elseif strategem == 'aoe' then
-            send_command('@input /ja Manifestation <me>')
-        elseif strategem == 'power' then
-            send_command('@input /ja Ebullience <me>')
-        elseif strategem == 'duration' then
-            add_to_chat(122,'Error: Dark Arts does not have a duration strategem.')
-        elseif strategem == 'accuracy' then
-            send_command('@input /ja Focalization <me>')
-        elseif strategem == 'enmity' then
-            send_command('@input /ja Equanimity <me>')
-        elseif strategem == 'skillchain' then
-            send_command('@input /ja Immanence <me>')
-        elseif strategem == 'addendum' then
-            send_command('@input /ja "Addendum: Black" <me>')
-        else
-            add_to_chat(123,'Error: Unknown strategem ['..strategem..']')
-        end
-    else
-        add_to_chat(123,'No arts has been activated yet.')
-    end
-end
- 
-function get_current_strategem_count()
-    local allRecasts = windower.ffxi.get_ability_recasts()
-    local stratsRecast = allRecasts[231]
- 
-    local maxStrategems = math.floor(player.main_job_level + 10) / 20
- 
-    local fullRechargeTime = 5*33
- 
-    local currentCharges = math.floor(maxStrategems - maxStrategems * stratsRecast / fullRechargeTime)
-     
-    return currentCharges
-end
- 
+
+
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+		send_command('@input /tell <me> We shall live forever!!!  It is time to get back up and try again')
+	end
+end)
