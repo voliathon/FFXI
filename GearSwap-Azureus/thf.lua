@@ -33,7 +33,7 @@ function get_sets()
 		ammo="Ginsen",
 		head="Mummu Bonnet +2",
 		body="Volte Jupon",
-		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect'}},
+		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect'}},
 		legs="Volte Hose",
 		feet="Skulk. Poulaines +2",
 		neck="Anu Torque",
@@ -120,7 +120,7 @@ function get_sets()
 	
 	-- Thief's Abilities --
     sets.JA['Sneak Attack'] = {}
-    sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], { hands="Plun. Armlets +1", feet="Skulker's Poulaines +2"})
+    sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], { hands="Plun. Armlets +3", feet="Skulker's Poulaines +2"})
 
     sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
     sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
@@ -139,7 +139,7 @@ function get_sets()
 	--sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
 	sets.JA['Flee'] = {feet="Pill. Poulaines"}
 	sets.JA['Hide'] = {body="Pillager's Vest"}
-	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +1"}
+	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	
 	
 ---- .:: Weapon Skill Sets ::. ---->

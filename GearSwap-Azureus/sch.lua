@@ -90,6 +90,9 @@ function get_sets()
 		back="Perimede Cape"
 	}
 	
+	sets.Sublimation = {
+		head="Academic's Mortarboard +3"
+	}
 
 	-- Stoneskin
 	sets.Stoneskin = set_combine(sets.FastCast,  {

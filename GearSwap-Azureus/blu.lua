@@ -12,12 +12,9 @@ function HerculeanGear()
 	
 	HercHead.WSD={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}}
 
-    --HercBody.WSD={ name="Herculean Vest", augments={'Accuracy+12','Weapon skill damage +5%','STR+4'}}
-
     HercHands.TP={ name="Herculean Gloves", augments={'Rng.Atk.+24','"Triple Atk."+3','DEX+2','Accuracy+11','Attack+9'}}
 
     HercLegs.TP={ name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9'}}
-	HercLegs.WSD={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}}
 
     HercFeet.TP={ name="Herculean Boots", augments={'Weapon Skill Acc.+9','MND+4','Quadruple Attack +2','Accuracy+9 Attack+9'}}
 	HercFeet.WSD={name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9'}}
@@ -359,7 +356,7 @@ function get_sets()
 		head="Hashishin kavuk +2",
 		body="Assim. Jubbah +3",
 		hands="Jhakri Cuffs +2",
-		legs=HercLegs.WSD,
+		legs="Luhlaza Shalwar +3",
 		feet=HercFeet.WSD,
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -386,7 +383,9 @@ function get_sets()
 		back=Rosmerta.WSD		
 	}
 	
-	sets.Requiescat = {}
+	sets.Requiescat = set_combine(sets.WSD,{
+	
+	})
 
 	-- MAB effects this, 50% MND 30% STR
 	-- 1000 TP 50% Drained
