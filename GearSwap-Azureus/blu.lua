@@ -37,18 +37,14 @@ function get_sets()
 	-- Set macro book/set --
     send_command('input /macro book 13;wait .1;input /macro set 1')
 	
-	-- Binds for modes
-		-- Toggle Mecistopins mantle
-	send_command('bind ^f7 gs c C7')
+	-- Binds for switching weapon modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
 	
-	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-  	send_command('bind ^f8 gs c C8') 
-    send_command('bind !f9 gs c toggle Engaged set')
-	send_command('bind ^f9 gs c reverse Engaged set')
+	-- Binds for switching gear sets
+    send_command('bind !f9 gs c toggle engage set')
+	send_command('bind ^f9 gs c reverse engage set')
 	
-	-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F7 if you want to be in Capacity mode  --	
-	Naegling = 'OFF' -- Toogle on/off the Naegling and Maxentius via ctrl + F8
 	
 	-- Let's initialize all of the Herculean gear we've got stored up
 	HerculeanGear()
@@ -394,6 +390,35 @@ function get_sets()
 		head="Pixie Hairpin +1", lring="Archon ring", waist="Orpheus's sash"
 	})
 
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'TizonaNaegling','TizonaThibron','TizonaBunzi','NaeglingThibron','MaxentiusBunzi'}
+	weapon_ind = 1
+	
+	sets.weapon.TizonaNaegling = {
+		main="Tizona",
+		sub="Naegling"
+	}
+
+	sets.weapon.TizonaThibron = {
+		main="Tizona",
+		sub="Thibron"
+	}
+	
+	sets.weapon.TizonaBunzi = {
+		main="Tizona",
+		sub="Bunzi's Rod"
+	}
+	
+	sets.weapon.MaxentiusBunzi = {
+		main="Maxentius",
+		sub="Bunzi's Rod"
+	}
+
+	sets.weapon.NaeglingThibron = {
+		main="Naegling",
+		sub="Thibron"
+	}
 
 end
 
@@ -461,49 +486,38 @@ end
 --I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 end
 
 --Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
+--Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
 function self_command(command)
-	if command == 'C7' then -- Mecistopins Mantle toggle 
-		if Capacity == 'OFF' then
-			Capacity = 'ON'
-			equip({back="Mecistopins mantle"})
-            add_to_chat(158,'Capacity mantle: [ON]')
-		else
-			Capacity = 'OFF'
-			equip_current()
-   		    add_to_chat(123,'Capacity mantle: [OFF]')
-		end
-	 elseif command == 'C8' then -- Maxentius to Naegling --	
-         if  Naegling == 'OFF' then 
-             Naegling = 'ON'
-			 equip({sub="Naegling"})
-             add_to_chat(158,'Naegling Weapon: [ON]')
-			 add_to_chat(123,'Maxentius Weapon: [OFF]')
-			 Maxentius = 'OFF'
-		 else
-			 Naegling = 'OFF'
-             Maxentius = 'ON'
-			 equip({sub="Maxentius"})
-             add_to_chat(158,'Maxentius: [ON]')
-             add_to_chat(123,'Naegling Weapon: [OFF]')				
-        
-		 end
-	elseif command == 'toggle Engaged set' then
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
+	elseif command == 'toggle engage set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse engage set' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse Engaged set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
-		equip_current()
-	end	 
+	end
 end
 
 
