@@ -41,7 +41,8 @@ function get_sets()
 		left_ear="Brutal Earring",
 		right_ear="Odr Earring",
 		left_ring="Epona's Ring",
-		right_ring="Hetairoi Ring"
+		right_ring="Hetairoi Ring",
+		back="Relucent cape"
 	}
 	
 	sets.engaged.TP = {
@@ -57,7 +58,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Hetairoi Ring",
-		back="Canny Cape"
+		back="Relucent cape"
 	}
 	
 	sets.engaged.Accuracy =  {
@@ -105,7 +106,7 @@ function get_sets()
 		right_ear="Infused Earring",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+		back="Relucent cape"
 	}	
 	
 
