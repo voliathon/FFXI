@@ -82,7 +82,7 @@ function get_sets()
   
   --offensive melee set
   sets.TP.BadAss = {
-    ammo="Ginsen",
+    ammo="Coiste Bodhar",
     head="Flam. Zucchetto +2",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
@@ -172,7 +172,7 @@ function get_sets()
     head="Ratri Sallet +1",
     body="Ignominy cuirass +3",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
-    legs="Sakpata's Cuisses",
+    legs="Fallen's flanchard +3",
     feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
     neck="Abyssal Bead Necklace +2",
     waist="Sailfi Belt +1",
@@ -189,7 +189,7 @@ function get_sets()
     head="Ratri Sallet +1",
     body="Ignominy cuirass +3",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
-    legs="Sakpata's Cuisses",
+    legs="Fallen's flanchard +3",
     feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
     neck="Abyssal Bead Necklace +2",
     waist="Fotia Belt",
@@ -294,6 +294,8 @@ function get_sets()
     right_ring="Stikini Ring",
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
   }
+  
+  sets.DarkMagic = {}
 
 end
 
@@ -345,6 +347,10 @@ end
 
 -- Midcast
 function midcast(spell,act,arg)
+  if spell.skill == 'Dark Magic' then
+	equip(sets.DarkMagic)
+  end
+
   if spell.skill == 'Enhancing Magic' then
 	if spell.name == 'Phalanx' then
 		equip(sets.Phalanx)
@@ -361,7 +367,7 @@ function midcast(spell,act,arg)
   if spell.name == 'Flash' or spell.name == "Stun" then
     equip(sets.Enmity)
   end
-  if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then
+  if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' then
     equip(sets.MagicAcc)
   end
   
