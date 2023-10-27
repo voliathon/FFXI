@@ -18,7 +18,6 @@ function get_sets()
 	-- Modes --
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Naegling = 'OFF' -- Toogle on/off the Naegling and Heishi Shorinken via ctrl + F8
-	ShadowType = 'None'	
 		
 	--Job Ability Sets--
 	sets.JA = {}
@@ -55,8 +54,25 @@ function get_sets()
 	--offensive melee set
 	sets.TP.BadAss = {
 		ammo="Ginsen",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}},
+		head="Hattori Zukin +2",
+		body="Hachiya chainmail +3",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
+		left_ear="Brutal Earring",
+		right_ear="Cessance Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+	    back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+	}
+
+	--Hybrid Gear
+	sets.TP.Hybrid = {
+		ammo="Ginsen",
+		head="Hattori Zukin +2",
+		body="Ashera Harness",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
@@ -66,28 +82,12 @@ function get_sets()
 		right_ear="Cessance Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-	    back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
-	}
-
-	--Hybrid Gear
-	sets.TP.Hybrid = {
-		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
-		body="Runeist coat +3",
-		hands="Erilaz Gauntlets +2",
-		legs="Erilaz leg guards +2",
-		feet="Erilaz greaves +2",
-		neck="Loricate torque +1",
-		waist="Flume Belt +1",
-		left_ear="Tuisto Earring",
-		right_ear="Odnowa Earring +1",
-		left_ring="Moonlight Ring",
-		right_ring="Defending Ring",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}
 
 	sets.TP.Accuracy = {
 		ammo="Amar Cluster",
+		head="Hattori Zukin +2",
 		neck="Subtlety Spec.",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
@@ -112,7 +112,7 @@ function get_sets()
 
 	sets.TP.EvasionTank = {
 		ammo="Amar Cluster",
-		head="Malignance Chapeau",
+		head="Hattori Zukin +2",
 		body="Ashera Harness",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -145,170 +145,143 @@ function get_sets()
 	
 	sets.SavageBlade = {
 		ammo="Yetshila +1",
-		head={ name="Herculean Helm", augments={'Attack+20','Weapon skill damage +4%','STR+10'}},
-		body="Lustratio Harness +1",
-		hands="Adhemar wristbands +1",
-		legs="Erilaz leg guards +2",
-		feet="Carmine greaves +1",
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear="Brutal Earring",
-		right_ear="Moonshade Earring",
-		right_ring="Rajas Ring",
-		left_ring="Moonlight Ring",
-		back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+		head="Hachiya hatsuburi +3",
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11',}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		legs="Hiza. Hizayoroi +2",
+		feet="Hattori kyahan +2",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear="Ishvara Earring",
+		left_ring="Rajas Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
 	}
 
 
 	sets.Ten = {
-		ammo="Knobkierrie",
-		head={ name="Herculean Helm", augments={'Weapon skill damage +5%','DEX+10','Attack+5'}},
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}},
-		hands="Meg. Gloves +2",
-		legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
-		feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		ammo="Yetshila +1",
+		head="Hachiya hatsuburi +3",
+		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11',}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		legs="Hiza. Hizayoroi +2",
+		feet="Hattori kyahan +2",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		right_ear="Ishvara Earring",
 		left_ring="Rajas Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
 	}
 
 	--Blade: Shun
 	sets.Shun = {
-		ammo="Knobkierrie",
-		head="Adhemar Bonnet +1",
-		body="Nyame mail",
-		hands="Erilaz Gauntlets +2",
-		legs="Erilaz leg guards +2",
-		feet="Erilaz greaves +2",
-		neck="Fotia Gorget",
-		waist="Orpheus's sash",
-		left_ear="Crematio Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Moonlight Ring",
-		right_ring="Fenrir Ring +1",
-		back="Toro Cape"
+		ammo="Yetshila +1",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Hattori kyahan +2",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear="Brutal Earring",
+		left_ring="Rajas Ring",
+		right_ring="Mummu Ring",
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
 	}
 	
 	--Blade: Hi
 	sets.Hi = {
-		ammo="Knobkierrie",
-		head="Adhemar Bonnet +1",
-		body="Nyame mail",
-		hands="Erilaz Gauntlets +2",
-		legs="Erilaz leg guards +2",
-		feet="Erilaz greaves +2",
-		neck="Fotia Gorget",
-		waist="Orpheus's sash",
-		left_ear="Crematio Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Moonlight Ring",
-		right_ring="Fenrir Ring +1",
-		back="Toro Cape"
+		ammo="Yetshila +1",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Hattori kyahan +2",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear="Brutal Earring",
+		left_ring="Rajas Ring",
+		right_ring="Mummu Ring",
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
 	}	
 
-	--Take/To/Chi
-	sets.TakiToChi = {
-		ammo="Knobkierrie",
-		head="Adhemar Bonnet +1",
-		body="Herculean vest",
-		hands="Erilaz Gauntlets +2",
-		legs="Erilaz leg guards +2",
-		feet="Erilaz greaves +2",
-		neck="Fotia Gorget",
-		waist="Ioskeha Belt +1",
-		left_ear="Crematio Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Moonlight Ring",
-		right_ring="Fenrir Ring +1",
+	--Take/To/Chi/Yu
+	sets.TakiToChiYu = {
+		ammo="Pemphredo Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Sanctity Necklace",
+		waist="Grunfeld Rope",
+		left_ear="Hecate's Earring",
+		right_ear={ name="Hattori Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+9','Mag. Acc.+9',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back="Toro Cape"
 	}
 
 	--Blade: Ku
 	sets.Ku = {
-		ammo="Knobkierrie",
-		head="Adhemar Bonnet +1",
-		body="Nyame mail",
-		hands="Erilaz Gauntlets +2",
-		legs="Erilaz leg guards +2",
-		feet="Erilaz greaves +2",
-		neck="Fotia Gorget",
-		waist="Orpheus's sash",
-		left_ear="Crematio Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Moonlight Ring",
-		right_ring="Fenrir Ring +1",
-		back="Toro Cape"
+		ammo="Yetshila +1",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Hattori kyahan +2",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist="Grunfeld Rope",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear="Brutal Earring",
+		left_ring="Rajas Ring",
+		right_ring="Mummu Ring",
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
 	}
 
 	--Blade: Kamu
 	sets.Kamu = {
-		ammo="Knobkierrie",
-		head="Adhemar Bonnet +1",
-		body="Nyame mail",
-		hands="Erilaz Gauntlets +2",
-		legs="Erilaz leg guards +2",
-		feet="Erilaz greaves +2",
-		neck="Fotia Gorget",
-		waist="Orpheus's sash",
-		left_ear="Crematio Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Moonlight Ring",
-		right_ring="Fenrir Ring +1",
+		ammo="Pemphredo Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Sanctity Necklace",
+		waist="Grunfeld Rope",
+		left_ear="Hecate's Earring",
+		right_ear={ name="Hattori Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+9','Mag. Acc.+9',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back="Toro Cape"
 	}	
-
-	sets.Enhancing = {
-		ammo="Staunch Tathlum +1",
-		head="Erilaz galea +2",
-		body="Erilaz surcoat +2",
-		hands="Regal Gauntlets",
-		legs="Futhark Trousers +1",
-		feet="Carmine greaves +1",
-		neck="Voltsurge Torque",
-		waist="Siegel Sash",
-		left_ear="Magnetic Earring",
-		right_ear="Halasz Earring",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back="Solemnity cape"
-	}
-
-	sets.Regen = {
-		ammo="Staunch Tathlum +1",
-		head="Runeist bandeau +2",
-		body="Erilaz surcoat +2",
-		hands="Regal Gauntlets",
-		legs="Futhark Trousers +1",
-		feet="Carmine greaves +1",
-		neck="Voltsurge Torque",
-		waist="Sroda Belt",
-		left_ear="Magnetic Earring",
-		right_ear="Erilaz Earring",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back="Solemnity cape"
-	}
 
 
 	--Fast Cast set
 	sets.FastCast = {
 		ammo="Staunch Tathlum +1",
-		head="Rune. Bandeau +2",
-		body="Erilaz surcoat +2",
-		hands="Regal Gauntlets",
-		legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-		feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-		neck="Loricate Torque +1",
-		waist="Siegel Sash",
-		left_ear="Mimir Earring",
-		right_ear="Loquac. Earring",
+		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
+		body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Voltsurge Torque",
+		waist="Ninurta's Sash",
+		left_ear="Loquac. Earring",
+		right_ear="Magnetic Earring",
 		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
 		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		back="Solemnity Cape"
 	}
+	
+	sets.Utsusemi = set_combine(sets.FastCast,  {
+		feet="Hattori kyahan +2"
+	})	
 
 	--Phalanx--  23
 	sets.Phalanx = {
@@ -341,42 +314,15 @@ function get_sets()
 		right_ear="Magnetic Earring" --8
 	}
 
-	--Enmity set for high hate generating spells and JAs
-	sets.Enmity = {
-		back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%'}}, 
-		waist="Sinew Belt", 
-		legs="Erilaz Leg Guards +2", 
-		neck="Moonbeam necklace", 
-		body="Emet Harness +1",     
-		feet="Erilaz greaves +2"
-	}
-
 	--Magic acc for enfeebles, handy for VW
 	sets.MagicAcc = {}
-
-	sets.Stoneskin = {
-		ammo="Staunch Tathlum +1",
-		head="Rune. Bandeau +2",
-		body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-		hands="Regal Gauntlets",
-		legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-		feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Siegel Sash",
-		left_ear="Magnetic Earring",
-		right_ear="Earthcry Earring",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
-	}
-
 
 	sets.Cure = {}
 
 	sets.NUKE = {
 		ammo="Pemphredo Tathlum",
 		head="Nyame Helm",
-		body={ name="Herculean Vest", augments={'Accuracy+24','Magic burst dmg.+7%','"Mag.Atk.Bns."+15',}},
+		body="Samnuha coat",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
@@ -385,7 +331,8 @@ function get_sets()
 		left_ear="Hecate's Earring",
 		right_ear="Friomisi Earring",
 		left_ring="Fenrir Ring +1",
-		right_ring="Stikini Ring +1"
+		right_ring="Locus Ring",
+		back="Toro cape"
 	}
 
 
@@ -400,16 +347,14 @@ function precast(spell)
 		Naegling = 'OFF'
 	end
 	
-	--prevents casting Utsusemi if you already have 3 or more shadows
-	if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
-		cancel_spell()
-	end
+	if string.find(spell.english,'Utsusemi') then
+        equip(sets.Utsusemi)
+    end
+	
 
 
 	if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
-		if TP_ind == 4 then
-			equip(sets.TP.EvasionTank) 
-		end
+		equip(sets.TP.EvasionTank) 
 	end
 	
 	 
@@ -428,8 +373,9 @@ function precast(spell)
 		equip(sets.Shun)
 	elseif spell.name == 'Blade: Hi' then
 		equip(sets.Hi)
-	elseif spell.name == 'Blade: Teki' or spell.name == 'Blade: To' or spell.name == 'Blade: Chi' then
-		equip(sets.TekiToChi)
+	elseif spell.name == 'Blade: Teki' or spell.name == 'Blade: To' or 
+	spell.name == 'Blade: Chi' or spell.name == 'Blade: Yu' then
+		equip(sets.TekiToChiYu)
 	elseif spell.name == 'Blade: Ku' then
 		equip(sets.Ku)
 	elseif spell.name == 'Blade: Kamu' then
@@ -439,27 +385,18 @@ end
 
 function midcast(spell)
 
-	--Utsusemi
-	
-	
+	--Utsusemi --Add the empy Feet when I get em
+	if string.find(spell.english,'Utsusemi') then
+        equip(sets.Utsusemi)
+    end	
 
 	--Ninjustu Damaging Spells will be a last check
 	checkNinjutsuElementals(spell)
+
 end
 
 function aftercast(spell)
   equip_current()
-  if (spell.english == 'Battuta') then
-		equip({hands="Turms mittens +1", feet="Turms leggings +1", left_ear="Cryptic earring"})
-  end
-  --Just running a lil somethin-somethin to track Shadows
-  if string.find(spell.name,'Utsusemi') and not spell.interrupted then
-    if spell.name == 'Utsusemi: Ichi' then
-      ShadowType = 'Ichi'
-    elseif spell.name == 'Utsusemi: Ni' then
-      ShadowType = 'Ni'
-    end
-  end
 end
 
 --Created this to get rid of an if clutter bomb
@@ -481,9 +418,9 @@ end
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
-	if (buffactive['Battuta']) then
-		equip({hands="Turms mittens +1", feet="Turms leggings +1", left_ear="Cryptic earring"})
-	end
+	--if (buffactive['Battuta']) then
+	--	equip({hands="Turms mittens +1", feet="Turms leggings +1", left_ear="Cryptic earring"})
+	--end
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket

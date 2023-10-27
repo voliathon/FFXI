@@ -211,7 +211,21 @@ function get_sets()
 		back="Moonbeam Cape"
 	}
 	-- If you're not first, you're last
-    sets.engaged.Movement = {legs="Carmine Cuisses +1"}
+    sets.engaged.Movement = {
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Shamash Robe",
+		hands="Malignance Gloves",
+		legs="Carmine Cuisses +1",
+		feet="Malignance Boots",
+		neck="Loricate Torque +1",
+		waist="Flume Belt",
+		left_ear="Genmei Earring",
+		right_ear="Odnowa Earring +1",
+		left_ring="Patricius Ring",
+		right_ring="Defending Ring",
+		back="Moonbeam Cape"	
+	}
 	
 	-- Darkness is spreading...
 	-- Tenebral Crush

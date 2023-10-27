@@ -42,7 +42,7 @@ function get_sets()
 		neck="Moonlight Nodowa",
 		waist="Moonbow Belt +1",
 		left_ear="Brutal Earring",
-		right_ear={ name="Bhikku Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','"Store TP"+3'}},
+		right_ear="Bhikku Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}

@@ -42,7 +42,7 @@ function get_sets()
 		ammo="Yetshila +1",
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
 		body="Volte Jupon",
-		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
+		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect',}},
 		legs="Malignance tights",
 		feet="Skulk. Poulaines +2",
 		neck="Anu Torque",
@@ -134,7 +134,7 @@ function get_sets()
 	
 	
     sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], {  -- Add TH gears --
-	    hands="Plun. Armlets +1",
+	    hands="Plun. Armlets +3",
 	    feet="Skulker's Poulaines +2"})
 		
 		
@@ -164,7 +164,7 @@ function get_sets()
 	--sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
 	sets.JA['Flee'] = {feet="Pill. Poulaines"}
 	sets.JA['Hide'] = {body="Pillager's Vest"}
-	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +1"}
+	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	
 	
 ---- .:: Weapon Skill Sets ::. ---->
@@ -189,7 +189,7 @@ function get_sets()
 	sets.Rudra = {
 		ammo="Yetshila +1",
 		head="Nyame Helm",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
+		body="Skulker's Vest +2",
 		hands="Meg. Gloves +2",
 		legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
 		feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
@@ -205,7 +205,7 @@ function get_sets()
     sets.WS = {	
 		ammo="Yetshila +1",
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
+		body="Skulker's Vest +2",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
 		legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
 		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},

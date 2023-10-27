@@ -33,7 +33,7 @@
 
 function get_sets()
 -- Set macro book/set --
-	send_command('input /macro book 12;wait .1;input /macro set 1')
+	send_command('input /macro book 12;wait .1;input /macro set 2')
 
 	-- Binds for modes
 	--Swapping Swords
@@ -86,14 +86,14 @@ function get_sets()
     head="Flam. Zucchetto +2",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
+    legs="Ignominy flanchard +3",
     feet="Flam. Gambieras +2",
-    neck="Sanctity Necklace",
+    neck="Abyssal Bead Necklace +2",
     waist="Ioskeha Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Heathen's Earring",
+    left_ear="Cessance Earring",
+    right_ear="Brutal Earring",
     left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1"
+    right_ring="Flamma ring"
   }
 
   --New Tank Gear
@@ -121,7 +121,7 @@ function get_sets()
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Flume Belt +1",
     left_ear="Tuisto Earring",
     right_ear="Cryptic earring",
@@ -135,12 +135,12 @@ function get_sets()
     head="Nyame Helm",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
+    legs="Ignominy flanchard +3",
     feet="Nyame Sollerets",
-    neck="Subtlety Spec.",
+    neck="Abyssal Bead Necklace +2",
     waist="Ioskeha Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Heathen's Earring",
+    left_ear="Cessance Earring",
+    right_ear="Brutal Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1"
   }
@@ -157,92 +157,86 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Flume Belt +1",
     left_ear="Hearty Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
     back="Moonlight Cape"  
   }
 
-  --Weaponskill Sets--
-  sets.WS = {}
-
-  --Atonement, Enmity is the modifier
-  sets.Atonement = {
-    ammo="Amar Cluster",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Warder's Charm +1",
-    waist="Grunfeld Rope",
-    left_ear="Cryptic Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    left_ring="Moonlight Ring",
-    right_ring="Epaminondas's Ring",
+  --Catastrophe
+  sets.Catastrophe = {
+    ammo="Knobkierrie",
+    head="Ratri Sallet +1",
+    body="Ignominy cuirass +3",
+    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
+    legs="Sakpata's Cuisses",
+    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
+    neck="Abyssal Bead Necklace +2",
+    waist="Sailfi Belt +1",
+    left_ear="Thrud Earring",
+    right_ear="Ishvara Earring",
+    left_ring="Epaminondas's Ring",
+    right_ring="Sroda ring",
     back="Vespid Mantle"
   }
 
   --STR and WSD gears
   sets.STRWSD = {
     ammo="Amar Cluster",
-    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-    body="Sakpata's Plate",
-    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+    head="Ratri Sallet +1",
+    body="Ignominy cuirass +3",
+    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
     legs="Sakpata's Cuisses",
-    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
-    neck="Fotia Gorget",
+    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
+    neck="Abyssal Bead Necklace +2",
     waist="Fotia Belt",
     left_ear="Ishvara Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    left_ring="Moonlight Ring",
-    right_ring="Epaminondas's Ring",
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+    left_ring="Epaminondas's Ring",
+    right_ring="Sroda ring",
     back="Vespid Mantle"
   }
 
 
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Yorium Cuirass", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Regal Gauntlets",
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
+    head="Befouled Crown",
+    body={ name="Yorium Cuirass", augments={'Spell interruption rate down -10%','Phalanx +3'}},
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20'}},
     neck="Voltsurge Torque",
-    waist="Siegel Sash",
+    waist="Austerity Belt +1",
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
-    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-    back="Moonlight Cape"
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back="Solemnity Cape"
   }
 
   --FastCast set
   sets.FastCast = {
-    ammo="Staunch Tathlum +1",
-    hands="Regal Gauntlets",
+    head="Sakpata's Helm",
+    hands={ name="Odyssean Gauntlets", augments={'"Fast Cast"+1','CHR+1','"Refresh"+1','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
     feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-    neck="Loricate Torque +1",
-    waist="Siegel Sash",
-    left_ear="Mimir Earring",
-    right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring"
+    neck="Voltsurge Torque",
+    waist="Ninurta's Sash",
+    left_ear="Loquac. Earring",
+    right_ear="Malignance Earring"
   }
 
   --Phalanx--
   sets.Phalanx = {
     main="Sakpata's Sword",
-    sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%',}},
+    sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%'}},
     ammo="Staunch Tathlum +1",
     head="Yorium Barbuta",
     body="Yorium Cuirass",
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
     legs="Sakpata's Cuisses",
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
     neck="Voltsurge Torque",
     waist="Audumbla Sash",
     left_ear="Mimir Earring",
@@ -255,10 +249,10 @@ function get_sets()
  --88 SIR
  sets.SIR = {
     ammo="Staunch Tathlum +1", --11
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
+    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3'}}, --10
     hands="Regal Gauntlets", --10
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}}, --20
+    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3'}}, --9
     neck={ name="Loricate Torque +1", augments={'Path: A',}}, --5
     waist="Audumbla sash", --10
     left_ear="Halasz Earring", --5
@@ -268,11 +262,11 @@ function get_sets()
   --Enmity set for high hate generating spells and JAs
   sets.Enmity = {
     ammo="Amar Cluster",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
+    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
+    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
+    legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
+    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
     neck="Warder's Charm +1",
     waist="Grunfeld Rope",
     left_ear="Cryptic Earring",
@@ -312,13 +306,13 @@ function precast(spell,abil)
   
   --equips favorite weapon if disarmed
   if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip({main="Crepuscular scythe",sub="Utu grip"})
-    add_to_chat(158,'Crepuscular scythe: [ON]')
+    equip({main="Apocalypse",sub="Utu grip"})
+    add_to_chat(158,'Apocalypse: [ON]')
 	Naegling = 'OFF'
   end
   
-  if spell.name == 'Atonement' then
-    equip(sets.Atonement)
+  if spell.name == 'Catastrophe' then
+    equip(sets.Catastrophe)
   end
   if spell.name == 'Savage Blade' then
     equip(sets.STRWSD)
@@ -404,16 +398,16 @@ function self_command(command)
 	if command == 'C8' then -- Naegling to Crepuscular scythe --	
       if Naegling == 'ON' then
 		Naegling = 'OFF'
-		equip({main="Crepuscular scythe"})
+		equip({main="Apocalypse"})
 		equip({sub="Utu grip"})
-		add_to_chat(158,'Crepuscular scythe: [ON]')
+		add_to_chat(158,'Apocalypse: [ON]')
 		add_to_chat(123,'Naegling Weapon: [OFF]')
 	  else
 		Naegling = 'ON'
 		equip({main="Naegling"})
 		equip({sub="Blurred shield +1"})
 		add_to_chat(158,'Naegling Weapon: [ON]')
-		add_to_chat(123,'Crepuscular scythe: [OFF]')				
+		add_to_chat(123,'Apocalypse: [OFF]')				
 	  end
        -- status_change(player.status)
 	elseif command == 'toggle TP set' then
@@ -435,7 +429,7 @@ function weaponSelector()
 	equip({main="Naegling"})
 	equip({sub="Blurred shield +1"})
   else
-	equip({main="Crepuscular scythe"})
+	equip({main="Apocalypse"})
 	equip({sub="Utu grip"})
   end
   
