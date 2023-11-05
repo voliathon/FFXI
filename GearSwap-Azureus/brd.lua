@@ -18,7 +18,7 @@ function get_sets()
 	sets.JA = {}
 	
 	sets.JA.Nightingale = {feet="Bihu Slippers +1"}
-    sets.JA.Troubadour = {body="Bihu Justaucorps +1"}
+    sets.JA.Troubadour = {body="Bihu Justaucorps +3"}
     sets.JA.SoulVoice = {legs="Bihu Cannions +1"}
 	
 	-- Dancer's Abilities --
