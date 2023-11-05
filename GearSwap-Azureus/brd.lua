@@ -1,11 +1,8 @@
 function get_sets()
--- Set macro book/set --
+	-- Setting to the BRD Macro Book #5 and Set #1 --
     send_command('input /macro book 5;wait .1;input /macro set 1')
 	
 	-- Binds for modes
-	-- Toggle Mecistopins mantle
-	send_command('bind ^f7 gs c C7')
-	
 	-- Toggle Weapon F8 Key
 	send_command('bind !f8 gs c C8') 
 	send_command('bind ^f8 gs c Reverse Toggle Weapon')
@@ -15,7 +12,6 @@ function get_sets()
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
 	-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F7 if you want to be in Capacity mode  --	
 	Marsyas = 'OFF' -- Toogle on/off the Marsyas and Gjallarhorn via ctrl + F8
 	
 	--Job Ability Sets--
@@ -159,18 +155,19 @@ function get_sets()
   
   --TP Set--
   sets.engaged.TP = {
-    head="Bunzi's hat",
+    head="Ayanmo zucchetto +2",
     body="Ashera harness",
     hands="Bunzi's gloves",
 	legs="Nyame flanchard",
 	feet="Nyame sollerets",
     neck="Bard's charm +2",
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Telos Earring",
+    left_ear="Telos Earring",
+    right_ear="Cessance Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}} 
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}},
+	range="Linos"	
   }
   
   --Accuracy Set--
@@ -182,11 +179,12 @@ function get_sets()
     feet="Fili Cothurnes +2",
     neck="Bard's charm +2",
     waist="Eschan Stone",
-    left_ear="Dignitary's Earring",
-    right_ear="Telos Earring",
+    left_ear="Telos Earring",
+    right_ear="Dignitary's Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}  
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}},
+	range="Linos"
   }
   
   sets.engaged.TakingLessPhysicalDamage = {
@@ -196,27 +194,29 @@ function get_sets()
     legs="Fili Rhingrave +2",
     feet="Nyame Sollerets",
     neck="Loricate Torque +1",
-    waist="Flume Belt",
-    left_ear="Genmei Earring",
-    right_ear="Odnowa Earring +1",
+    waist="Kasiri belt",
+    left_ear="Infused Earring",
+    right_ear="Eabani Earring",
     left_ring="Defending Ring",
     right_ring="Patricius Ring",
-    back="Moonbeam Cape"  
+    back="Kumbira Cape",
+	ammo="Staunch Tathlum"
   }
   
   sets.engaged.TakingLessMagicDamage = {
-    head="Fili Calot +2",
+    head="Nyame Helm",
     body="Nyame Mail",
-    hands="Fili Manchettes +2",
-    legs="Fili Rhingrave +2",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Loricate Torque +1",
     waist="Flume Belt",
-    left_ear="Genmei Earring",
-    right_ear="Odnowa Earring +1",
+    left_ear="Infused Earring",
+    right_ear="Eabani Earring",
     left_ring="Defending Ring",
     right_ring="Fortified ring",
-    back="Moonbeam Cape"
+    back="Kumbira Cape",
+	ammo="Staunch Tathlum"
   }
   
   sets.engaged.Refresh = {
@@ -231,7 +231,8 @@ function get_sets()
     right_ear="Fili Earring",
     left_ring="Woltaris Ring",
     right_ring="Stikini Ring +1",
-    back="Kumbira Cape"  
+    back="Kumbira Cape",
+	ammo="Staunch Tathlum"
   }
   
   sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
@@ -239,39 +240,54 @@ function get_sets()
   })
   
   --Weaponskill Sets--
-  sets.WS = {}
-
-  --I got lazy about the WeaponSkill for now. Any WS will come to this set for the time being.  It's not ideal by any means.
-  --It will do us justice on Savage Blade as an example
-  -- 81 WSD 5/29/2021
-  sets.WSD = {
-    ammo="Ginsen",
+  --Savage Blade
+  sets.SavageBlade = {
+    range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
     head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
-    body="Bihu Justaucorps +3",
+    body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
     hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7',}},
     legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
     feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
-    neck="Fotia Gorget",
-    waist="Fotia Belt",
+    neck={ name="Bard's Charm +2", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Ishvara Earring",
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
     left_ring="Hetairoi Ring",
     right_ring="Epaminondas's Ring",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
   }
   
+  --All in One who gives a fuck Weapon Skill set of Doom
+  sets.WSD = {
+    range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
+    head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+    body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+    hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7',}},
+    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+    neck={ name="Bard's Charm +2", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Hetairoi Ring",
+    right_ring="Epaminondas's Ring",
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+  }
 
- --TODO - Get 1000TP Bonus offhand Weapon
   -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'CarnwenhanShield', 'CarnwenhanCrep', 'TwashtarShield','TwashtarCrep','NaeglingShield','NaeglingCrep','TauretShield','TauretCrep'}
+  sets.weapon.index = {'CarnwenhanShield', 'CarnwenhanCentovente', 'CarnwenhanCrepuscularKnife', 'TwashtarShield', 'TwashtarCentovente', 'TwashtarCrepuscularKnife','NaeglingShield', 'NaeglingCentovente', 'NaeglingCrepuscularKnife','TauretShield', 'TauretCentovente', 'TauretCrepuscularKnife'}
   weapon_ind = 1     
   
  sets.weapon.CarnwenhanShield = {
 	main="Carnwenhan",
 	sub="Genmei shield"
  } 
- sets.weapon.CarnwenhanCrep = {
+ sets.weapon.CarnwenhanCentovente = {
+	main="Carnwenhan",
+	sub="Centovente"
+ }
+ sets.weapon.CarnwenhanCrepuscularKnife = {
 	main="Carnwenhan",
 	sub="Crepuscular Knife"
  }
@@ -279,15 +295,23 @@ function get_sets()
 	main="Twashtar",
 	sub="Genmei shield"
  } 
- sets.weapon.TwashtarCrep = {
+  sets.weapon.TwashtarCentovente = {
+	main="Twashtar",
+	sub="Centovente"
+ }  
+ sets.weapon.TwashtarCrepuscularKnife = {
 	main="Twashtar",
 	sub="Crepuscular Knife"
  }  
  sets.weapon.NaeglingShield = {
 	main="Naegling",
 	sub="Genmei shield"
- } 
- sets.weapon.NaeglingCrep = {
+ }
+ sets.weapon.NaeglingCentovente = {
+	main="Naegling",
+	sub="Centovente"
+ }  
+ sets.weapon.NaeglingCrepuscularKnife = {
 	main="Naegling",
 	sub="Crepuscular Knife"
  } 
@@ -295,7 +319,11 @@ function get_sets()
 	main="Tauret",
 	sub="Genmei shield"
  } 
- sets.weapon.TauretCrep = {
+  sets.weapon.TauretCentovente = {
+	main="Tauret",
+	sub="Centovente"
+ } 
+ sets.weapon.TauretCrepuscularKnife = {
 	main="Tauret",
 	sub="Crepuscular Knife"
  } 
@@ -308,12 +336,12 @@ function precast(spell,abil)
 		if spell.name == 'Honor March' then
 			equip(sets.FastCast,{range="Marsyas",ammo="empty"})
 			add_to_chat(158,'Marsyas Weapon: [ON]')
-			Gjallarhorn = 'OFF'
+			Daurdabla = 'OFF'
 			Marsyas = 'ON'
 		else
-			equip(sets.FastCast,{range="Gjallarhorn",ammo="empty"})
-			add_to_chat(158,'Gjallarhorn Weapon: [ON]')
-			Gjallarhorn = 'ON'
+			equip(sets.FastCast,{range="Daurdabla",ammo="empty"})
+			add_to_chat(158,'Daurdabla Weapon: [ON]')
+			Daurdabla = 'ON'
 			Marsyas = 'OFF'
 		end
 		
@@ -321,7 +349,9 @@ function precast(spell,abil)
 	if spell.type == 'BardSong' then
 		if spell.name == 'Honor March' then
 			equip(sets.FastCast,{main="Carnwenhan",range="Marsyas",ammo="empty"})
-		end
+		elseif  player.equipment.range == "Linos" then
+			equip(sets.FastCast,{range="Daurdabla",ammo="empty"})
+		end		
 	end
 	if spell.name == 'Nightingale' then
 		equip(sets.JA.Nightingale)
@@ -335,6 +365,9 @@ function precast(spell,abil)
 
 	
 	--WS Lookups
+	if spell.name == "Savage Blade" then
+		equip(sets.SavageBlade)
+	end
 	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" or spell.name == "Savage Blade" then
 		equip(sets.WSD)
 	end
@@ -405,17 +438,7 @@ end
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C7' then -- Mecistopins Mantle toggle 
-		if Capacity == 'OFF' then
-			Capacity = 'ON'
-			equip({back="Mecistopins mantle"})
-            add_to_chat(158,'Capacity mantle: [ON]')
-		else
-			Capacity = 'OFF'
-			equip_current()
-   		    add_to_chat(123,'Capacity mantle: [OFF]')
-		end
-	elseif command == 'C8' then -- Toggling Weapons--	
+	if command == 'C8' then -- Toggling Weapons--	
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
