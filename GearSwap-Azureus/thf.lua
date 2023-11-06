@@ -1,23 +1,15 @@
---https://www.bg-wiki.com/bg/Community_Thief_Guide#TP_Sets
+-- https://www.bg-wiki.com/bg/Community_Thief_Guide#TP_Sets
 -- Will eventually get more and more gear that is mentioned from the community Thief Site...
-function user_unload()
-    send_command('unbind ^f9')
-    send_command('unbind ^f10')
-end
 
 function get_sets()
 -- Set macro book/set --
-    send_command('input /macro book 1;wait .1;input /macro set 1') -- set macro book/set here --	
+    send_command('input /macro book 1;wait .1;input /macro set 1') -- set macro book/set here	
 	
 -- Binds for modes
-    send_command('bind ^f8 gs c C8')
+	-- Toggle Weapon F8 Key
+	send_command('bind !f8 gs c C8') 
+	send_command('bind ^f8 gs c Reverse Toggle Weapon')
 	send_command('bind ^f9 gs c C9') 
-
-	-- Modes --
-    EngagedIndex = 1
-    EngagedArray = {"TH","TP","Accuracy", "Tank", "Evasion"}	-- Press ctrl + F10 for Engaged Array --
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --		
-
 
 	-- Utilities --	
     SA = false
@@ -26,10 +18,12 @@ function get_sets()
 	-- Ability Mapping --
 	THStep = S{"Quickstep","Box Step","Stutter Step","Animated Flourish"}
 
-	---- .:: TP Sets ::. ----->
+	-- Engaged Sets Toggle--
     sets.engaged = {}
-	
-	sets.engaged.TH = {
+    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Evasion"}
+	engaged_ind = 1
+
+    sets.engaged.TreasureHunter = {
 		ammo="Ginsen",
 		head="Mummu Bonnet +2",
 		body="Volte Jupon",
@@ -42,7 +36,7 @@ function get_sets()
 		right_ear="Odr Earring",
 		left_ring="Epona's Ring",
 		right_ring="Hetairoi Ring",
-		back="Relucent cape"
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%'}}
 	}
 	
 	sets.engaged.TP = {
@@ -58,7 +52,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Hetairoi Ring",
-		back="Relucent cape"
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%'}}
 	}
 	
 	sets.engaged.Accuracy =  {
@@ -110,51 +104,52 @@ function get_sets()
 	}	
 	
 
----- .:: Job Abilities Sets ::. ---->
+	-- Job Abilities Sets --
     sets.JA = {}
-	
-    -- Dancer's Abilities --
     sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
 	sets.JA.Step = 	{}
     sets.JA.Stun = {}
 	
-	
-	-- Thief's Abilities --
     sets.JA['Sneak Attack'] = {}
     sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], { hands="Plun. Armlets +3", feet="Skulker's Poulaines +2"})
 
-    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
-    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
+    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +2"})
+    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +2"})
+	sets.JA.TATH = set_combine(sets.JA['Trick Attack'], { 
+		hands="Pillager's Armlets +2", 
+		feet="Skulker's Poulaines +2"
+	})
 	
-	
-    sets.JA.TATH = set_combine(sets.JA['Trick Attack'], { hands="Pillager's Armlets +1", feet="Skulker's Poulaines +2"})
-	
-	
-    sets.JA.SATA = set_combine(sets.JA['Sneak Attack'], {})
-	--sets.JA["Assassin's Charge"] = {feet="Plun. Poulaines +1"}
-	sets.JA['Feint'] = {legs="Plun. Culottes +1"}
-	--sets.JA['Conspirator'] = {body="Raider's Vest +2"}
-	sets.JA['Steal'] = { hands="Pill. Armlets +1", legs="Pill. Culottes", feet="Pill. Poulaines", neck="Pentalagus charm"}
-	--sets.JA['Mug'] = {head="Plun. Bonnet +1"}
+	sets.JA.SATA = set_combine(sets.JA['Sneak Attack'], {})
+	sets.JA["Assassin's Charge"] = {feet="Plun. Poulaines +1"}
+	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
+	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
+	sets.JA['Steal'] = { 
+		hands="Pillager's Armlets +2", 
+		legs="Pillager's Culottes +2", 
+		feet="Pillager's Poulaines +2", 
+		neck="Pentalagus charm"
+	}
+	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
 	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
-	--sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
-	sets.JA['Flee'] = {feet="Pill. Poulaines"}
-	sets.JA['Hide'] = {body="Pillager's Vest"}
+	sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
+	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
+	sets.JA['Hide'] = {body="Pillager's Vest +2"}
 	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	
 	
----- .:: Weapon Skill Sets ::. ---->
-    -- .::Generic Sets::. --
+ -- Weapon Skill Sets
+ -- Generic Sets
     sets.WSD = {	
 		ammo="Yetshila +1",
 		head="Pillager's bonnet +3",
 		body="Skulker's Vest +2",
 		hands="Meg. Gloves +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
+		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9'}},
 		neck="Fotia Gorget",
 		waist="Grunfeld Rope",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
 		right_ear="Odr Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
@@ -197,7 +192,7 @@ function get_sets()
 	sets.preshot = {}
 	sets.preshot.RA = {}	
 	
----- .:: Precast Sets ::. ---->
+ -- Precast Sets  --
 	sets.precast = {}
 	sets.precast.Fastcast = {}
 	sets.precast['Utsusemi'] = {	
@@ -216,18 +211,43 @@ function get_sets()
 		back="Repulse Mantle"
 	}
 		
----- .:: Midshot Sets ::. ---->	
-	sets.midshot = {}
-	sets.midshot.RA = {}	
 	
----- .:: Midcast Sets ::. ---->	
+ -- Midcast Sets --	
 	sets.midcast = {}
-	sets.midcast.RA = {}
-	sets.midcast.Ninjutsu = {}
 	sets.midcast['Utsusemi'] = set_combine(sets.precast['Utsusemi'], {})
 	
-end
-
+	
+ -- Weapon Toggle--
+  sets.weapon = {}
+  sets.weapon.index = {'CarnwenhanCentovente', 'CarnwenhanCrepuscularKnife', 'TwashtarCentovente', 'TwashtarCrepuscularKnife','NaeglingCentovente', 'NaeglingCrepuscularKnife', 'TauretCentovente', 'TauretCrepuscularKnife'}
+  weapon_ind = 1     
+  
+  sets.weapon.TwashtarCentovente = {
+	main="Twashtar",
+	sub="Centovente"
+ }  
+ sets.weapon.TwashtarCrepuscularKnife = {
+	main="Twashtar",
+	sub="Crepuscular Knife"
+ }  
+ sets.weapon.NaeglingCentovente = {
+	main="Naegling",
+	sub="Centovente"
+ }  
+ sets.weapon.NaeglingCrepuscularKnife = {
+	main="Naegling",
+	sub="Crepuscular Knife"
+ } 
+  sets.weapon.TauretCentovente = {
+	main="Tauret",
+	sub="Centovente"
+ } 
+ sets.weapon.TauretCrepuscularKnife = {
+	main="Tauret",
+	sub="Crepuscular Knife"
+ } 
+end	
+	
 
 -- Precast Function --
 function precast(spell,action)
@@ -295,62 +315,55 @@ function midcast(spell,action)
 end	
 
 
--- Aftercast Functions --
-function aftercast(spell,action)
-    status_change(player.status)    	
-end	
-
-
--- Status Changes --	
-function status_change(new,tab,old)
-	if Capacity == 'ON' then
-		equip{back="Mecisto. Mantle"}
-		disable('back')
+--We need to do some thinking and testing for this set...
+function aftercast(spell)
+	if string.find(spell.english,'Warp') then
+		--do fuck all nothing
 	else
-		enable('back')
-	end	
-	if EngagedArray[EngagedIndex] == 'TH' then
-		equip(sets.engaged.TH)	
-	elseif EngagedArray[EngagedIndex] == 'TP' then
-		equip(sets.engaged.TP)	
-	elseif EngagedArray[EngagedIndex] == 'Accuracy' then
-		equip(sets.engaged.Accuracy)
-	elseif EngagedArray[EngagedIndex] == 'Tank' then
-		equip(sets.engaged.Tank)
-	elseif EngagedArray[EngagedIndex] == 'Evasion' then
-		equip(sets.engaged.Evasion)		
-	elseif SA then
-		if EngagedArray[EngagedIndex] == 'TH' then
-			equip(sets.JA.SATH)
-		else
-			equip(sets.JA['Sneak Attack'])
-		end		
-	elseif TA then
-		if EngagedArray[EngagedIndex] == 'TH' then
-			equip(sets.JA.TATH)
-		else
-			equip(sets.JA['Trick Attack'])
-		end	
-	elseif buffactive == 'Feint' then
-		equip(sets.JA[spell.name])
-	end			
-end	
-
-
--- Modes functions --
-function self_command(command)	
-	if command == 'C9' then -- Offense Cycle --
-        EngagedIndex = (EngagedIndex % #EngagedArray) + 1
-        status_change(player.status)
-        add_to_chat(158,'TP Set: ' .. EngagedArray[EngagedIndex])			
-    elseif command == 'C8' then -- Capacity toggle --
-        if Capacity == 'ON' then
-            Capacity = 'OFF'
-            add_to_chat(123,'Capacity Set: [OFF]')
-        else
-            Capacity = 'ON'
-            add_to_chat(158,'Capacity Set: [ON]')
-        end
-        status_change(player.status)
+		equip_current()
 	end
-end	
+end
+
+
+--This function should only get kicked off when you're engaging.  
+--If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--But I don't want to fuck myself by ignoring the engaged check.
+--I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+function equip_current()
+	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip_weapon()
+end
+
+
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
+
+
+--Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
+function self_command(command)
+	if command == 'C8' then -- Toggling Weapons--	
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	end	 
+end
