@@ -266,25 +266,25 @@ function get_sets()
 	}
 	
 	sets.weapon.FomalhautRostamShield = {
-		main={name="Rostam",bag="Wardrobe 3"},
+		main="Rostam",
 		sub="Nusku Shield",
 		range="Fomalhaut"
 	}
 	
 	sets.weapon.DeathPenaltyRostamShield = {
-		main={name="Rostam",bag="Wardrobe 3"},
+		main="Rostam",
 		sub="Nusku Shield",
 		range="Death Penalty"
 	}
 	
 	sets.weapon.FomalhautDivergence = {
-		main={name="Rostam",bag="Wardrobe 3"},
+		main="Rostam",
 		sub="Crepuscular Knife",
 		range="Fomalhaut"
 	}
 
 	sets.weapon.DeathPenaltyDivergence = {
-		main={name="Rostam",bag="Wardrobe 3"},
+		main="Rostam",
 		sub="Crepuscular Knife",
 		range="Death Penalty"
 	}	
