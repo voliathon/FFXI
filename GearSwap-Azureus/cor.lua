@@ -98,7 +98,7 @@ function get_sets()
 		legs="Chasseur's Culottes +2",
 		feet="Chasseur's Bottes +2",
 		neck="Sanctity Necklace",
-		waist="Eschan Stone",
+		waist="Orpheus's Sash",
 		left_ear="Friomisi Earring",
 		right_ear="Hecate's Earring",
 		left_ring="Dingir Ring",
@@ -149,22 +149,22 @@ function get_sets()
 	}
 
 	--Savage Blade  50% STR / 50% MND
-	--3/14/2023
+	--11/03/2023
 	--STR: 102 +183
 	--WSD: 66%
     sets.SavageBlade = {
-		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
+		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}},
 		body="Laksamana's frac +3",
 		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
 		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9'}},
 		neck="Fotia Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Sroda Ring",
-		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 
 
@@ -219,10 +219,10 @@ function get_sets()
 	
 		-- This needs to be the best TP set imaginable. TA, DW, Quadruple shit, Double attack. Really push this shit!
     sets.engaged.TP = set_combine(sets.DamageTaken, {
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
-		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
+		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6'}},
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
+		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
 		feet="Malignance Boots",
 		neck="Clotharius Torque",
 		waist="Windbuffet Belt +1",
@@ -250,19 +250,19 @@ function get_sets()
 	sets.weapon.DWSavageCOR = {
 		main="Naegling",
 		sub="Crepuscular Knife",
-		range="Fomalhaut"
+		range="Ataktos"
 	}
 
 	sets.weapon.SavageCORShield = {
 		main="Naegling",
 		sub="Nusku Shield",
-		range="Fomalhaut"
+		range="Ataktos"
 	}
 	
 	sets.weapon.Tauret = {
 		main="Tauret",
 		sub="Crepuscular Knife",
-		range="Fomalhaut"
+		range="Ataktos"
 	}
 	
 	sets.weapon.FomalhautRostamShield = {
@@ -310,12 +310,14 @@ function precast(spell,abil)
 		equip(sets.Wildfire)
 	end
 	
-
 	--Weapon skill lookups
 	if spell.name == "Savage Blade" then
 		equip(sets.SavageBlade)
 	end
 	
+	if spell.type == 'WeaponSkill' then
+		equip(sets.LastStand)
+	end
 
 	--Corsair Rolls	
 	if string.find(spell.english,'Blitzer') then
@@ -357,7 +359,7 @@ end
 --Midcast Function
 function midcast(spell,abil)
 	--TODO - Pop into Midcast.RA logic
-	if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' then
+	if spell.action_type == 'Ranged Attack' then
 		if (buffactive['Triple Shot']) then
 			equip(sets.midcast.RA.TripleShot)
 		else
