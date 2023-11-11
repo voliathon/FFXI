@@ -76,8 +76,7 @@ function get_sets()
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back="Moonlight Cape"
-
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
   }
   
   --offensive melee set
@@ -93,7 +92,8 @@ function get_sets()
     left_ear="Cessance Earring",
     right_ear="Brutal Earring",
     left_ring="Chirich Ring +1",
-    right_ring="Flamma ring"
+    right_ring="Flamma ring",
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
   }
 
   --New Tank Gear
@@ -142,7 +142,8 @@ function get_sets()
     left_ear="Cessance Earring",
     right_ear="Brutal Earring",
     left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1"
+    right_ring="Chirich Ring +1",
+	back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
   }
   
   sets.TP.TreasureHunter = {
@@ -180,7 +181,7 @@ function get_sets()
     right_ear="Ishvara Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Sroda ring",
-    back="Vespid Mantle"
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
   }
 
   --STR and WSD gears
@@ -197,7 +198,7 @@ function get_sets()
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
     left_ring="Epaminondas's Ring",
     right_ring="Sroda ring",
-    back="Vespid Mantle"
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
   }
 
 
