@@ -167,7 +167,7 @@ function get_sets()
     right_ear="Cessance Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}},
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}},
 	range="Linos"	
   }
   
@@ -184,7 +184,7 @@ function get_sets()
     right_ear="Dignitary's Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}},
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}},
 	range="Linos"
   }
   
@@ -255,7 +255,7 @@ function get_sets()
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
     left_ring="Hetairoi Ring",
     right_ring="Epaminondas's Ring",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+    back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
   }
   
   --All in One who gives a fuck Weapon Skill set of Doom
@@ -369,7 +369,7 @@ function precast(spell,abil)
 	if spell.name == "Savage Blade" then
 		equip(sets.SavageBlade)
 	end
-	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" or spell.name == "Savage Blade" then
+	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
 		equip(sets.WSD)
 	end
 	-- Add logic for Waltz

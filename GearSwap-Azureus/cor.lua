@@ -8,7 +8,7 @@ function CamulusCapes()
     CamulusCape.ranged_ws={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'} }	
     CamulusCape.matk={ name="Camulus's Mantle", augments={'Weapon skill damage +10%'} }
     CamulusCape.str_ws={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'} }
-    CamulusCape.melee_double_attack={ name="Camulus's Mantle", augments={'"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
+    CamulusCape.melee_double_attack={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
 	CamulusCape.snapshot={ name="Camulus's Mantle", augments={'"Snapshot"+10'}}
 	-- DEX 20 DEX 10 ACC/ATT+20 STP+10 DT-5
 end
