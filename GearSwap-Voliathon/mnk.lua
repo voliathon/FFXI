@@ -39,7 +39,7 @@ function get_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
 		legs="Bhikku Hose +2",
 		feet="Bhikku Gaiters +2",
-		neck="Moonlight Nodowa",
+		neck="Monk's nodowa +2",
 		waist="Moonbow Belt +1",
 		left_ear="Brutal Earring",
 		right_ear="Bhikku Earring +1",
@@ -82,7 +82,7 @@ function get_sets()
 		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
 		legs="Kendatsuba hakama +1",
 		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
-		neck="Moonlight Nodowa",
+		neck="Monk's nodowa +2",
 		waist="Chaac Belt",
 		left_ear="Cessance Earring",
 		right_ear="Brutal Earring",
@@ -134,7 +134,7 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Rajas Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Segomo's Mantle", augments={'VIT+10','Accuracy+10 Attack+10','Weapon skill damage +10%'}}
+		back={ name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
     
     

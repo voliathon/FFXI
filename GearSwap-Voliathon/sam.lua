@@ -34,7 +34,7 @@ function get_sets()
 	right_ear="Brutal Earring",
 	left_ring="Chirich Ring +1",
 	right_ring="Flamma ring",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
 
   --Tank Gear
@@ -104,7 +104,7 @@ function get_sets()
 	right_ear="Brutal Earring",
 	left_ring="Chirich Ring +1",
 	right_ring="Chirich Ring +1",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10'}}
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
   
   sets.TP.SubtleBlow = {
@@ -120,25 +120,23 @@ function get_sets()
     right_ear="Digni. Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }  
 
   --Weaponskill Sets--
-  sets.WS = {}
-
   --multi, Shoha, Fudo, Kasha need STR for the modifier
   sets.Single = {
     sub="Utu Grip",
     ammo="Knobkierrie",
     head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-    body={ name="Valorous Mail", augments={'Accuracy+18','Weapon skill damage +4%','Attack+5',}},
+    body={ name="Valorous Mail", augments={'Accuracy+23 Attack+23','Weapon skill damage +4%','MND+5','Accuracy+13','Attack+14'}},
     hands="Kasuga kote +2",
     legs="Wakido Haidate +3",
     feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear="Thrud Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
     left_ring="Epaminondas's Ring",
     right_ring="Chirich Ring +1",
     back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
