@@ -1,550 +1,470 @@
------ Credit: Krystela of Asura | Last Update: 27 november 2016 ---->
----- .:: This was entirely created by me, it's not based off anyone's file ::. ---->
----- Always visit http://pastebin.com/u/KrystelaRose to look for possible updates ---->
----- .:: Please leave credit where it's due ::. ---->
----- .:: If you have any problem contact me via ffxiah: http://www.ffxiah.com/player/Asura/Krystela ::. ---->
-
-function user_unload()
-    send_command('unbind ^f1')
-    send_command('unbind ^f9')	
-    send_command('unbind ^f10')
-    send_command('unbind ^f11')		
-end	
+--Gettnir done by Voliathon
+--RDM powah for BabyBear's Red Mage
 function get_sets()
--- Binds for modes --
-    send_command('bind ^f1 gs c C1')
-	send_command('bind ^f9 gs c C9')	
-	send_command('bind ^f10 gs c C10')
-	send_command('bind ^f11 gs c C11')	
--- Auto Functions --
-    AutoSaboteur = 'ON' -- Set to ON if you want Saboteur to be automatically used for Paralyze/Slow/Distract/Frazzle --
-	AutoRemedy = 'ON' -- Set to ON if you want to auto use remedies if silenced or Paralyzed, otherwise set to OFF --
--- Modes --	
-	MagicBurst = 'OFF' -- Press Ctrl + F1 for MB mode on --
-	Defense = 'OFF' -- Press CTRL + F9 for Idle being set as Defense full time instead of refresh --
-	WeaponLock = 'OFF' -- Press ctrl + F10 for Weapon Lock--
-	Capacity = 'OFF' -- Press Ctrl +F11 to have Capacity cape locked on while Idle, Change the cape at line 26 --
--- Gears --
-    gear = {} -- Fill these --
-	gear.Capacity_Cape = {name="Mecisto. Mantle"} -- The cape you use for capacity --
-    gear.Saboteur_Hands = {} -- Add Empy hands if you want to use it, it not leave {} empty --
-	gear.Refresh_Head = {name="Amalric Hood"} -- Add refresh effect + head if you want to use it, it not leave {} empty --
-	gear.Refresh_Legs = {} -- Add refresh effect + pants if you want to use it, it not leave {} empty --
--- Set macro book/set --
-    send_command('input /macro book 7;wait .1;input /macro set 1') -- set macro book/set here --	
--- Area mapping --	
-    Town = S{"Ru'Lude Gardens","Upper Jeuno","Lower Jeuno","Port Jeuno","Port Windurst","Windurst Waters","Windurst Woods","Windurst Walls","Heavens Tower",
-	         "Port San d'Oria","Northern San d'Oria","Southern San d'Oria","Port Bastok","Bastok Markets","Bastok Mines","Metalworks","Aht Urhgan Whitegate",
-	         "Tavnazian Safehold","Nashmau","Selbina","Mhaura","Norg","Eastern Adoulin","Western Adoulin","Kazham","Heavens Tower"}
----- Precast ----
-    sets.precast = {}
-	-- Base Set --
-    sets.precast.FC = { -- Rdm have 30% FC naturally, so keep that in mind --
-        ammo="Impatiens",
-        head="Amalric Coif",
-        body={ name="Merlinic Jubbah", augments={'"Fast Cast"+6',}},
-        hands={ name="Merlinic Dastanas", augments={'"Fast Cast"+6','DEX+10','Accuracy+19 Attack+19','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
-        ring1="Prolix Ring",
-		ring2="Lebeche Ring",
-        back="Perimede Cape",
-        waist="Witful Belt",
-		legs="Psycloth Lappas",
-        feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+5','INT+1','"Mag.Atk.Bns."+7',}}}
-	-- Healing Magic --	
-	sets.precast.Cure = set_combine(sets.precast.FC, {})
-	-- Enhancing Magic --
-    sets.precast.Enhancing = set_combine(sets.precast.FC, {})		
-    sets.precast['Stoneskin'] = set_combine(sets.precast.FC, {})
-	-- Elemental Magic --
-	sets.precast.Elemental = set_combine(sets.precast.FC, {})	
-	sets.precast['Impact'] = set_combine(sets.precast.FC, { -- Make sure to leave the head empty --
-        head=empty,
-        body="Twilight Cloak"})	
-    -- Job Abilities --
-	sets.JA = {}
-	sets.JA['Chainspell'] = {}	
-	-- WS sets --
-	sets.WS = {  -- Your base WS set --
-	    ammo="Ginsen",
-		head="Jhakri Coronal +1",
-		neck="Caro Necklace",
-		ear1="Ishvara Earring",
-		ear2="Telos Earring",
-		body="Jhakri Robe +1",
-		hands="Jhakri Cuffs +1",
-		ring1="Hetairoi Ring",
-		ring2="Rajas Ring",
-		waist="Sarissaphoroi Belt",
-		legs="Carmine Cuisses +1",
-		feet="Jhakri Pigaches +1"}
-	sets.WS['Chant Du Cygne'] = set_combine(sets.WS, {
-	    ear2="Mache Earring",
-		waist="Artful Belt +1"})	
-	sets.WS['Requiescat'] = set_combine(sets.WS, {
-	    neck="Nuna Gorget +1",
-		ring2="Stiniki Ring",
-		waist="Luminary Sash"})	
-	sets.WS['Salvage Blade'] = set_combine(sets.WS, {waist="Luminary Sash"})
----- Midcast ----	
-    sets.midcast = {}	
-    -- Base Set --
-    sets.midcast.Recast = {
-	    main="Sequence",
-		sub="Thuellaic Ecu +1",
-        head="Amalric Coif",
-        body={ name="Merlinic Jubbah", augments={'"Fast Cast"+6',}},
-        hands={ name="Merlinic Dastanas", augments={'"Fast Cast"+6','DEX+10','Accuracy+19 Attack+19','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
-        ring1="Prolix Ring",
-        waist="Witful Belt",
-		legs="Psycloth Lappas",
-        feet={ name="Merlinic Crackows", augments={'Mag. Acc.+10','"Fast Cast"+5','INT+1','"Mag.Atk.Bns."+7',}}}	
-    -- Healing Magic --
-    sets.midcast.Cure = {
-	    main="Serenity",
-		sub="Achaq Grip",	
-		ammo="Pemphredro Tathlum",
-		head="Kaykaus Mitra +1",
-        neck="Incanter's Torque",
-		ear1="Healing Earring",
-        ear2="Beatific Earring",		
-        body="Kaykaus Bliaut +1",
-        hands="Kaykaus Cuffs +1",
-        ring1="Haoma's Ring",
-        ring2="Janniston Ring",
-        back="Tempered Cape +1",
-        waist="Luminary Sash",
-        legs="Vanya Slops",
-        feet="Kaykaus Boots +1"}
-	sets.midcast.Cure.Weather = set_combine(sets.midcast.Cure, {
-	    main="Chatoyant Staff",
-        back="Twilight Cape",
-        waist="Hachirin-no-Obi",
-        legs="Chironic Hose"})
-	sets.midcast.Cure.WeaponLock = set_combine(sets.midcast.Cure, { -- For when weapon is locked --
-        ring1="Lebeche Ring",
-        legs="Chironic Hose"})	
-    sets.midcast['Cursna'] = set_combine(sets.midcast.Recast, {  -- for doom removal gears --	
-	    main={ name="Grioavolr", augments={'"Fast Cast"+5','MND+14','"Mag.Atk.Bns."+2','Magic Damage +7',}},
-		sub="Clerisy Strap +1",
-		ammo="Sapience Orb",
-		neck="Debilis Medallion",
-		ear1="Loquac. Earring",
-		ear2="Enchntr. Earring +1",
-		ring1="Haoma's Ring",
-		ring2="Haoma's Ring",
-		back="Sucellos's Cape",
-		feet="Gende. Galosh. +1"})
-    -- Enhancing Magic --		
-    sets.midcast.Enhancing = { -- Gain spells/Barspells who caps at 500 skills --
-	    main="Oranyan",	
-		sub="Clerisy Strap +1",
-		ammo="Sapience Orb",
-	    head="Befouled Crown",
-		neck="Incanter's Torque",
-		ear1="Loquac. Earring",
-		ear2="Enchntr. Earring +1",
-		body="Telchine Chasuble",
-		hands="Atrophy Gloves +1",
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
-        back="Sucellos's Cape",		
-		legs="Telchine Braconi",
-		feet="Telchine Pigaches"}	
-	sets.midcast.Enhancing.DurationPlayer = set_combine(sets.midcast.Recast, { -- For haste/Regen/Refresh/Flurry on others --
-	    main="Oranyan",	
-		sub="Clerisy Strap +1",
-		ammo="Sapience Orb",
-	    head="Telchine Cap",
-		neck="Voltsurge Torque",
-		ear1="Loquac. Earring",
-		ear2="Enchntr. Earring +1",		
-		body="Telchine Chasuble",
-		hands="Atrophy Gloves +1",
-        back="Sucellos's Cape",		
-		legs="Telchine Braconi",
-		feet="Telchine Pigaches"})
-	sets.midcast.Enhancing.DurationSelf = set_combine(sets.midcast.Enhancing.DurationPlayer, {}) -- For Haste/Regen/Refresh/Flurry/Storms/Reraise on yourself --
-    sets.midcast['Phalanx'] = set_combine(sets.midcast.Enhancing, {}) -- For Phalanx Specific gears and 500 skill --
-    sets.midcast.Temper = set_combine(sets.midcast.Enhancing, { -- Stack as much enhancing as you can, cap for temper is unknown but it is not 500 skill --
-	    main="Serenity",
-		ear1="Andoaa Earring",
-		ear2="Augmenting Earring",
-		hands="Chironic Gloves",
-		back="Perimede Cape",
-		legs="Carmine Cuisses +1",
-		feet="Kaykaus Boots +1"})
-    sets.midcast['Stoneskin'] = set_combine(sets.midcast.Enhancing.DurationSelf, {}) -- For Stoneskin specific gears, doesnt need skill at all --
-    sets.midcast['Aquaveil'] = set_combine(sets.midcast.Enhancing.DurationSelf, {head="Amalric Coif"}) -- For Aquaveil specific gears, need at least 355 skills --	
-    -- Enfeebling Magic --	
-    sets.midcast.Enfeebling = { -- Full 610 skill set for frazzle/distract/Poison --
-	    main={ name="Grioavolr", augments={'"Conserve MP"+1','INT+2','Mag. Acc.+30',}}	,
-        sub="Clerisy Strap +1",
-        ammo="Pemphredo Tathlum",
-	    head="Befouled Crown",		
-        neck="Incanter's Torque",			
-	    ear1="Dignitary's Earring",
-	    ear2="Gwati Earring",
-        body="Vanya Robe",
-        hands="Kaykaus Cuffs +1",
-	    ring1="Stikini Ring",
-	    ring2="Stikini Ring",
-        back="Sucellos's Cape",
-	    waist="Luminairy Sash",
-		legs="Psycloth Lappas",
-	    feet="Skaoi Boots"}
-	sets.midcast.Enfeebling.Macc = set_combine(sets.midcast.Enfeebling, { -- For Silence/Dispel/Inundation/Sleep/Break that arent affect by full enfeeb set or effect + gears --
-	    head="Amalric Coif",
-		body="Chironic Doublet",
-		legs="Chironic Hose"})
-	sets.midcast.Gravity = set_combine(sets.midcast.Enfeebling, { -- For Gravity who gains alot from effect + gears --
-	    head="Amalric Coif",
-		body="Chironic Doublet",
-		legs="Chironic Hose"})
-	sets.midcast.Enfeebling.MND = set_combine(sets.midcast.Enfeebling, { -- For Paralyze/Slow/Addle who's potency/macc is enhanced by MND --
-	    head="Chironic Hat",
-		body="Chironic Doublet",
-		legs="Chironic Hose"})	
-	sets.midcast.Enfeebling.INT = set_combine(sets.midcast.Enfeebling, { -- For Blind/Bind who's Macc is enhanced by INT --
-	    head="Amalric Coif",
-		body={ name="Merlinic Jubbah", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Mag. Acc.+15',}},
-        waist="Porous Rope",
-        legs="Chironic Hose"})		
-    -- Dark Magic --
-    sets.midcast.Bio = set_combine(sets.midcast.Recast, { -- For Bio, you want a full Dark magic skill set for potency --
-	    neck="Incanter's Torque",
-		body="Vanya Robe",
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
-		back="Perimede Cape"})
-    sets.midcast.Dark = set_combine(sets.midcast.Recast, { -- For Aspir/Drain --
-	    neck="Incanter's Torque",
-		body="Vanya Robe",
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
-		back="Perimede Cape",
-		legs="Merlinic Shalwar",
-		feet="Merlinic Crackows"})
-    sets.midcast['Stun'] = set_combine(sets.midcast.Recast, {
-	    main={ name="Grioavolr", augments={'"Conserve MP"+1','INT+2','Mag. Acc.+30',}},
-        sub="Clerisy Strap +1",
-        ammo="Sapience Orb",
-		neck="Voltsurge Torque",
-		ear1="Dignitary's Earring",
-		ear2="Enchntr. Earring +1",
-		body={ name="Merlinic Jubbah", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Mag. Acc.+15',}},
-		hands="Kaykaus Cuffs +1",
-	    ring2="Stikini Ring",
-		back="Sucellos's Cape",
-		feet="Skaoi Boots"})
-    -- Elemental Magic --
-    sets.midcast.Elemental = { -- Normal Nukes --
-        main={ name="Grioavolr", augments={'"Conserve MP"+3','MP+96','Mag. Acc.+19','"Mag.Atk.Bns."+30',}},
-	    sub="Niobid Strap",
-        ammo="Pemphredo Tathlum",		
-	    head="Merlinic Head",	
-	    neck="Mizukage-no-Kubikazari",
-	    ear1="Barkarole Earring",
-	    ear2="Friomisi Earring",
-	    body={ name="Merlinic Jubbah", augments={'"Mag.Atk.Bns."+29','Magic burst mdg.+11%','INT+7',}},		
-	    hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
-	    back="Sucellos's Cape",
-	    waist="Refoccilation Stone",
-	    legs="Merlinic Shalwar",
-	    feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+27','Magic burst mdg.+9%',}}}	
-    sets.midcast.Elemental.MB = set_combine(sets.midcast.Elemental, { -- For when MB mode is turned on --
-	    ear2="Static Earring",
-		ring1="Locus Ring",
-		ring2="Mujin Band"})		
-    sets.midcast.Elemental.Weather = set_combine(sets.midcast.Elemental, { -- For normal nukes with weather on/appropriate day --
-		back="Twilight Cape",
-		waist="Hachirin-no-Obi"})	
-    sets.midcast.Elemental.MB.Weather = set_combine(sets.midcast.Elemental.MB, { -- For MB nukes with weather on/appropriate day --
-		back="Twilight Cape",
-		waist="Hachirin-no-Obi"})			
-	sets.midcast['Impact'] = set_combine(sets.midcast.Elemental, {  -- Make sure to leave the head empty --
-	    head=empty,
-	    body="Twilight Cloak"})	
----- Aftercast ----
-    sets.aftercast = {}
-    sets.aftercast.Idle = { -- Your movement speed goes here, mix of PDT/Refresh --
-	    main="Terra's Staff",
-	    sub="Oneiros Grip",
+	-- Set macro book/set --
+    send_command('input /macro book 11;wait .1;input /macro set 1')
+	
+	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+    send_command('bind !f9 gs c toggle Engaged set')
+	send_command('bind ^f9 gs c reverse Engaged set')
+	
+    -- Job Abilities for Red Mage --
+    sets.Chainspell = {body="Vitiation tabard +1"}
+    sets.Stymie = {}
+    sets.Spontaneity = {}
+    sets.Composure = {
+		head="Lethargy chappel +1",
+		body="Lethargy sayon +1",
+		hands="Lethargy gantherots +1",
+		legs="Lethargy fuseau +1",
+		feet="Lethargy Houseaux +1"
+	}
+	sets.Saboteur = {hands="Lethargy gantherots +1"}
+	sets.Dispel = {}
+
+
+    -- Fast Cast for Red Mage --
+    sets.FastCast = {
 		ammo="Staunch Tathlum",
-	    head="Befouled Crown",			
-        neck="Loricate Torque +1",
-	    ear1="Etiolation Earring",
-        ear2="Genmei Earring",
-        body="Kaykaus Bliaut +1",
-        hands="Chironic Gloves",
-        ring1="Defending Ring",
-        ring2="Patricius Ring",		
-	    back="Umbra Cape",
-	    waist="Slipor Sash",
-	    legs="Carmine Cuisses +1",
-		feet="Gende. Galosh. +1"}
-    sets.aftercast.Refresh = set_combine(sets.aftercast.Idle, { -- Refresh gears goes here --	
-		ammo="Homiliary",
-	    ear1="Moonshade Earring",
-	    legs="Lengo Pants",
-	    feet="Serpentes Sabots"})	
-    sets.aftercast.Defense = set_combine(sets.aftercast.Refresh, { -- For when you want you idle as full time PDT --
-	    ammo="Staunch Tathlum",	
-	    ear1="Etiolation Earring",
-		feet="Gende. Galosh. +1"})			
-    sets.aftercast.Town = set_combine(sets.aftercast.Idle, { -- For town --
-	    main="Sequence",
-		sub="Genmei Shield",
-	    ammo="Staunch Tathlum",		
-	    head="Kaykaus Mitra +1",
-		body="kaykaus Bliaut +1",
-        hands="Kaykaus Cuffs +1",		
-	    feet="kaykaus Boots +1"})
-	sets.Resting = set_combine(sets.aftercast.Refresh, {})
----- Melee ----
-    sets.engaged = { 
-	    ammo="Ginsen",
-		head="Jhakri Coronal +1",
-		neck="Lissome Necklace",
-		ear1="Cessance Earring",
-		ear2="Telos Earring",
-		body="Jhakri Robe +1",
-		hands="Jhakri Cuffs +1",
-		ring1="Rajas Ring",
-		ring2="Hetairoi Ring",
-		waist="Sarissapho. Belt",
-		legs="Carmine Cuisses +1",
-		feet="Jhakri Pigaches +1"}
-    sets.engaged.DualWield = {	-- for dnc/nin sub --	
-	    ammo="Ginsen",
-		head="Jhakri Coronal +1",
-		neck="Lissome Necklace",
-		ear1="Cessance Earring",
-		ear2="Telos Earring",
-		body="Jhakri Robe +1",
-		hands="Jhakri Cuffs +1",
-		ring1="Rajas Ring",
-		ring2="Hetairoi Ring",
-		waist="Reiki Yotai",
-		legs="Carmine Cuisses +1",
-		feet="Jhakri Pigaches +1"}	
-end	
----- .::Pretarget Functions::. ---->
-function pretarget(spell,action)
-    -- Auto Saboteur if was set to ON --		
-    if AutoSaboteur == 'ON' then	
-	    if string.find(spell.english, 'Paralyze') or string.find(spell.english, 'Slow') or string.find(spell.english, 'Distract') or string.find(spell.english, 'Frazzle') then
-            if windower.ffxi.get_ability_recasts()[36] < 1 and not buffactive[16] then 	
-		        cancel_spell()
-			    send_command('input /ja "Saboteur" <me>;wait 1.7;input /ma "'..spell.english..'" '..spell.target.name)
-			end	
-		end	
-	end	
-    -- Auto Remedy --
-	if AutoRemedy == 'ON' then
-        if buffactive['Silence'] or buffactive['Paralysis'] then
-            if spell.action_type == 'Magic' or spell.type == 'JobAbility' then 	
-                cancel_spell()
-                send_command('input /item "Remedy" <me>')
-            end				
-		end	
+		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
+		body="Zendik Robe",
+		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%',}},
+		legs="Aya. Cosciales +2",
+		feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
+		neck="Voltsurge Torque",
+		waist="Embla Sash",
+		left_ear="Malignance Earring",
+		right_ear="Lethargy Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Lebeche Ring",
+		back="Perimede Cape"
+	}
+
+
+	-- Enhancing Spells \\Generalized//
+    sets.SelfEnhancing = {
+		main="Bunzi's rod",
+		sub="Ammurapi shield",
+		ammo="Pemphredo Tathlum",
+		head={ name="Telchine Cap", augments={'"Fast Cast"+3','Enh. Mag. eff. dur. +9',}},
+		body={ name="Telchine Chas.", augments={'"Cure" potency +5%','Enh. Mag. eff. dur. +9',}},
+		hands={ name="Telchine Gloves", augments={'Accuracy+15','Song spellcasting time -5%','Enh. Mag. eff. dur. +10',}},
+		legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Fast Cast"+4','Enh. Mag. eff. dur. +10',}},
+		feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','Song spellcasting time -7%','Enh. Mag. eff. dur. +10',}},
+		neck="Incanter's Torque",
+		waist="Embla Sash",
+		left_ear="Magnetic Earring",
+		right_ear="Lethargy Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10',}}
+	}
+	
+	sets.Enhancing = {
+		main="Bunzi's rod",
+		sub="Ammurapi shield",
+		ammo="Pemphredo Tathlum",
+		head={ name="Telchine Cap", augments={'"Fast Cast"+3','Enh. Mag. eff. dur. +9',}},
+		body={ name="Telchine Chas.", augments={'"Cure" potency +5%','Enh. Mag. eff. dur. +9',}},
+		hands={ name="Telchine Gloves", augments={'Accuracy+15','Song spellcasting time -5%','Enh. Mag. eff. dur. +10',}},
+		legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Fast Cast"+4','Enh. Mag. eff. dur. +10',}},
+		feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','Song spellcasting time -7%','Enh. Mag. eff. dur. +10',}},
+		neck="Incanter's Torque",
+		waist="Embla Sash",
+		left_ear="Magnetic Earring",
+		right_ear="Lethargy Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10',}}
+	}
+
+	-- Stoneskin
+	sets.Stoneskin = set_combine(sets.FastCast,  {
+		head="Umuthi Hat",
+		hands="Carapacho Cuffs",
+		right_ear="Earthcry Earring",
+		left_ring="Stikini ring +1",
+		right_ring="Stikini ring +1",
+		waist="Siegel Sash"	
+	})
+	
+    sets.Cure = {
+		head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}},
+		body={ name="Vanya Robe", augments={'MP+50','"Cure" potency +7%','Enmity-6',}},
+		hands={ name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}},
+		legs="Atrophy Tights +3",
+		feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6'}},
+		neck="Phalaina locket",
+		waist="Embla Sash",
+		left_ear="Meili Earring",
+		right_ear="Mendi. Earring",
+		left_ring="Kishar Ring",
+		right_ring="Lebeche Ring",
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+	}
+
+
+	-- Protecting the party
+    sets.Protect = set_combine(sets.FastCast,  {
+		ring1="Sheltered Ring"
+	})
+
+	-- MDF the party
+    sets.Shell = set_combine(sets.FastCast,  {
+		ring1="Sheltered Ring"
+	})
+
+  	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
+	sets.ElementalMagic = {
+		ammo="Dosis Tathlum",
+		head="Lethargy chappel +1",
+		body="Lethargy sayon +1",
+		hands="Lethargy gantherots +1",
+		legs="Lethargy fuseau +1",
+		feet="Lethargy Houseaux +1",
+		neck="Saevus pendant +1",
+		waist="Refoccilation stone",
+		left_ear="Barkaro. Earring",
+		right_ear="Halasz Earring",
+		left_ring="Stikini ring +1",
+		right_ring="Stikini ring +1",
+		back="Seshaw cape"
+	}
+	
+    sets.DarkMagic = {
+
+	}
+
+    sets.Enfeebling = set_combine(sets.FastCast,  {
+		ammo="Pemphredo tathlum",
+		head="Vitiation chapeau +1",
+		body="Lethargy sayon +1",
+		hands="Lethargy gantherots +1",
+		legs="Chironic Hose",
+		feet="Vitiation Boots +1",
+		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+		neck="Sanctity Necklace",
+		waist="Luminary Sash",
+		left_ear="Digni. Earring",
+		right_ear="Malignance Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+		
+	})
+
+
+	-- Impact whenever the fuck I get the damn cloak
+    sets.Impact = {    
+      body="Twilight Cloak"
+	}
+
+
+    -- /heal the damn MP/HP up.
+    sets.heal = {
+
+	}
+
+	sets.TP = {
+		ammo="Ginsen",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Bunzi's Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Anu Torque",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Sherida Earring",
+		right_ear="Telos Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Hetairoi Ring",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+	}
+	
+    sets.Refresh = set_combine(sets.PDT,  {
+		head="Volte Beret",
+		body="Jhakri robe +2",
+		hands={ name="Chironic Gloves", augments={'Crit.hit rate+4','Weapon Skill Acc.+4','"Refresh"+1','Accuracy+2 Attack+2','Mag. Acc.+17 "Mag.Atk.Bns."+17',}},
+		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		waist="Fucho-no-Obi",
+		right_ring="Stikini ring +1",
+		left_ring="Stikini ring +1"
+	})
+		
+	sets.Accuracy = {
+		ammo="Ginsen",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Crep. Earring",
+		right_ear="Telos Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+	}
+
+	-- PDT Set
+    sets.PDT = {
+		ammo="Staunch Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		waist="Flume Belt",
+		left_ear="Infused Earring",
+		right_ear="Hearty Earring",
+		left_ring="Fortified Ring",
+		right_ring="Defending Ring",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+	}
+
+	-- Magic Defense and Magic Defense Set
+    sets.MDT = {
+		ammo="Staunch Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		waist="Flume Belt",
+		left_ear="Infused Earring",
+		right_ear="Hearty Earring",
+		left_ring="Fortified Ring",
+		right_ring="Defending Ring",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+	}
+
+		
+	-- When I gotta kite shite, I put on my Sandals and shit...
+    sets.Kiting = {
+		legs="Carmine cuisses +1"
+	}
+
+	
+  ------------------------------------------------------------------------------------------------------------------
+  -- Weaponskill sets
+  ------------------------------------------------------------------------------------------------------------------
+
+  --Savage Blade
+  sets.SavageBlade = {
+    ammo="Yetshila +1",
+    head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+    body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9',}},
+    hands="Jhakri cuffs +2",
+    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+    neck="Fotia Gorget",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Chirich Ring +1",
+    right_ring="Epaminondas's Ring",
+    back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+  }
+  
+  --All in One who gives a fuck Weapon Skill set of Doom
+  sets.WSD = {
+    ammo="Yetshila +1",
+    head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+    body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9',}},
+    hands="Jhakri cuffs +2",
+    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+    neck="Fotia Gorget",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Ishvara Earring",
+    right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    left_ring="Chirich Ring +1",
+    right_ring="Epaminondas's Ring",
+    back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+  }
+	 
+	  -- Engaged Sets Toggle--
+	sets.engaged = {}
+	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	engaged_ind = 1  	 
+	 
+	sets.engaged.TP = set_combine(sets.TP, {}) 
+	sets.engaged.Refresh = set_combine(sets.Refresh, {})
+	sets.engaged.Accuracy = set_combine(sets.Accuracy, {})
+	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
+	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
+	sets.engaged.Movement = set_combine(sets.Kiting, {})	 
+
+
+
+  -- Weapon Toggle--
+  sets.weapon = {}
+  sets.weapon.index = {'SequenceShield', 'SequenceThibron', 'SequenceCrepuscularKnife', 'BunziShield', 'DaybreakShield',  'MaxentiusBunzi', 'NaeglingShield', 'NaeglingThibron', 'NaeglingCrepuscularKnife','TauretShield', 'TauretThibron', 'TauretCrepuscularKnife'}
+  weapon_ind = 1     
+  
+ sets.weapon.SequenceShield = {
+	main="Sequence",
+	sub="Genmei shield"
+ } 
+ sets.weapon.SequenceThibron = {
+	main="Sequence",
+	sub="Thibron"
+ }
+ sets.weapon.SequenceCrepuscularKnife = {
+	main="Sequence",
+	sub="Crepuscular Knife"
+ }
+  sets.weapon.BunziShield = {
+	main="Bunzi's Rod",
+	sub="Ammurapi shield"
+ }  
+ sets.weapon.DaybreakShield = {
+	main="Daybreak",
+	sub="Ammurapi shield"
+ }
+ sets.weapon.MaxentiusBunzi = {
+	main="Maxentius",
+	sub="Bunzi's Rod"
+ }  
+ sets.weapon.NaeglingShield = {
+	main="Naegling",
+	sub="Genmei shield"
+ }
+ sets.weapon.NaeglingThibron = {
+	main="Naegling",
+	sub="Thibron"
+ }  
+ sets.weapon.NaeglingCrepuscularKnife = {
+	main="Naegling",
+	sub="Crepuscular Knife"
+ } 
+ sets.weapon.TauretShield = {
+	main="Tauret",
+	sub="Genmei shield"
+ } 
+  sets.weapon.TauretThibron = {
+	main="Tauret",
+	sub="Thibron"
+ } 
+ sets.weapon.TauretCrepuscularKnife = {
+	main="Tauret",
+	sub="Crepuscular Knife"
+ } 
+end
+
+
+function precast(spell,abil)
+--TODO DISPEL
+--EN Spells
+--Boost Spells
+--Phalanx
+
+	--Composure Lookups
+	if spell.name == "Composure" then
+		equip(sets.Composure)
+	--Enhancing Magic Check
+	elseif spell.skill == 'Enhancing Magic' then
+		equip(sets.Enhancing)
+	elseif spell.skill == 'Enfeebling Magic' then
+		equip(sets.Enfeebling)
+	elseif spell.action_type == 'Magic' then
+		equip(sets.FastCast)
 	end
-end	
----- .::Precast Functions::. ---->
-function precast(spell)	
-    if spell.action_type == 'Magic' then
-		-- Healing Magic --
-	    if string.find(spell.english, 'Cure') or string.find(spell.english, 'Cura') then
-		    equip(sets.precast.Cure)
-		-- Enhancing Magic --	
-		elseif spell.skill == 'Enhancing Magic' then
-         	equip(sets.precast.Enhancing)
-		-- Elemental Magic --	
-		elseif spell.skill == 'Elemental Magic' then
-		    if spell.english == 'Impact' then
-			    equip(sets.midcast[spell.english])
-			else			
-         	    equip(sets.precast.Elemental)	
-			end	
-        -- Everything that have a specific name set --	
-		elseif sets.precast[spell.english] then	
-	        equip(sets.precast[spell.english])			
-        -- Everything else that doesn't have a specific set for it --			
-        else
-            equip(sets.precast.FC)
-		end	
-	-- Job Abilities --	
-    elseif spell.type == 'JobAbility' then
-        equip(sets.JA[spell.english])	
-    -- Weaponskills --
-    elseif spell.type == 'WeaponSkill' then
-        if sets.WS[spell.english] then	
-            equip(sets.WS[spell.english])
-	    else
-		    equip(sets.WS)
-		end	
-    end		
-end	
----- .::Midcast Functions::. ---->
+		--Can add stuff here for other magic. Doesn't have to go to idle at all
+	
+	--WS Lookups
+	if spell.name == "Savage Blade" then
+		equip(sets.SavageBlade)
+	end
+	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
+		equip(sets.WSD)
+	end
+	-- Add logic for Waltz
+	-- Add logic for Utsusemi
+  
+  
+end
+
 function midcast(spell)
-    if spell.action_type == 'Magic' then
-		-- Healing Magic --
-	    if string.find(spell.english, 'Cure') or string.find(spell.english, 'Cura') then
-		    if WeaponLock == 'ON' then
-			    equip(sets.midcast.Cure.WeaponLock)
-	        elseif spell.element == world.weather_element or spell.element == world.day_element then
-                equip(sets.midcast.Cure.Weather)	
-			else
-                equip(sets.midcast.Cure)
-			end
-		-- Enhancing Magic --	
-	    elseif string.find(spell.english, 'Bar') or string.find(spell.english, 'Gain') then	
-            equip(sets.midcast.Enhancing)
-	    elseif string.find(spell.english, 'Haste') or string.find(spell.english, 'storm') or string.find(spell.english, 'Reraise') or string.find(spell.english, 'Flurry') or string.find(spell.english, 'Regen') then
-            if spell.target.type == 'PLAYER' then		
-                equip(sets.midcast.Enhancing.DurationPlayer)
-            else
-                equip(sets.midcast.Enhancing.DurationSelf)
-			end
-        elseif string.find(spell.english, 'Refresh') then
-             if spell.target.type == 'PLAYER' then		
-                equip(sets.midcast.Enhancing.DurationPlayer, {head=gear.Refresh_Head})
-            else
-                equip(sets.midcast.Enhancing.DurationSelf, {head=gear.Refresh_Head, legs=gear.Refresh_Legs})
-			end          		
-		elseif string.find(spell.english, 'Temper') then
-            equip(sets.midcast.Temper)	
-        -- Enfeebling Magic --			
-	    elseif string.find(spell.english, 'Frazzle') or string.find(spell.english, 'Distract') or string.find(spell.english, 'Poison') then
-		    if buffactive[454] then
-                equip(sets.midcast.Enfeebling, {hands=gear.Saboteur_Hands})	
-            else				
-                equip(sets.midcast.Enfeebling)
-            end				
-	    elseif string.find(spell.english, 'Dispel') or string.find(spell.english, 'Silence') or string.find(spell.english, 'Inundation') or string.find(spell.english, 'Sleep') or string.find(spell.english, 'Break') then
-            equip(sets.midcast.Enfeebling.Macc)	
-	    elseif string.find(spell.english, 'Paralyze') or string.find(spell.english, 'Slow') or string.find(spell.english, 'Addle') then
-		    if buffactive[454] then		
-                equip(sets.midcast.Enfeebling.MND, {hands=gear.Saboteur_Hands})
-			else
-                equip(sets.midcast.Enfeebling.MND)
-            end				
-		elseif string.find(spell.english, 'Gravity') then
-            equip(sets.midcast.Gravity)
-		elseif string.find(spell.english, 'Blind') or spell.english == 'Bind' then
-            equip(sets.midcast.Enfeebling.INT)
-		-- Dark Magic --	
-		elseif string.find(spell.english, 'Bio') then
-            equip(sets.midcast.Bio)				
-	    elseif string.find(spell.english, 'Aspir') or string.find(spell.english, 'Drain') then
-            equip(sets.midcast.Dark)
-        -- Elemental Magic --			
-        elseif spell.skill == 'Elemental Magic' then
-		    if spell.english == 'Impact' then
-			    equip(sets.midcast[spell.english])
-            elseif MagicBurst == 'ON' then
-	            if spell.element == world.weather_element or spell.element == world.day_element then  			
-                    equip(sets.midcast.Elemental.MB.Weather)
-                else
-                    equip(sets.midcast.Elemental.MB)
-                end
-	        elseif spell.element == world.weather_element or spell.element == world.day_element then  
-                equip(sets.midcast.Elemental.Weather)
-            else
-                equip(sets.midcast.Elemental)
-			end
-        -- Everything that have a specific name set --	
-		elseif sets.midcast[spell.english] then
-	        equip(sets.midcast[spell.english])				
-		-- Everything else that doesn't have a specific set for it --
-        else
-            equip(sets.midcast.Recast)		
-		end
+	if string.find(spell.english,'Cur') then 
+		equip(sets.Cure)
+	end
+	if spell.name == 'Stoneskin' then
+		equip(sets.Stoneskin)
+	end
+	if spell.name == 'Cursna' then
+		equip(sets.Cursna)
+	end
+	if spell.skill == 'Elemental Magic' then
+		equip(sets.ElementalMagic)
+	end
+	if spell.skill == 'Enfeebling Magic' then
+		equip(sets.Enfeebling)
 	end	
-end	
----- .::Aftercast Functions::. ---->
-function aftercast(spell,action)
-	status_change(player.status)	
-end	
----- .::Status Changes Functions::. ---->
-function status_change(new,tab,old)
-    -- Idle --
-    if new == 'Idle' then
-        if Defense == 'ON' then
-            equip(sets.aftercast.Defense)
-        elseif Town:contains(world.zone) then	
-            equip(sets.aftercast.Town)
-        elseif player.mpp <70 then
-            equip(sets.aftercast.Refresh)
-        else
-            equip(sets.aftercast.Idle)
-        end
-	-- Resting --	
-	elseif new == 'Resting' then
-        equip(sets.Resting)	
-    -- Engaged --		
-    elseif new == 'Engaged' then
-	    if player.sub_job == 'DNC' or player.sub_job == 'NIN' then
-            equip(sets.engaged.DualWield)	
-		else	
-            equip(sets.engaged)	
-		end	
-    end		
-end  
---- ..::Self Commands functions::.. --->
+	if spell.name == "Dispel" then
+		equip(sets.Dispel)
+	end
+end
+
+--We need to do some thinking and testing for this set...
+function aftercast(spell)
+	if string.find(spell.english,'Warp') then
+		--do fuck all nothing
+	else
+		equip_current()
+	end
+end
+
+
+--This function should only get kicked off when you're engaging.  
+--If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--But I don't want to fuck myself by ignoring the engaged check.
+--I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+function equip_current()
+	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip_weapon()
+end
+
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
+
+--Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
 function self_command(command)
-    status_change(player.status)	
-	-- Magic burst --
-    if command == 'C1' then
-        if MagicBurst == 'ON' then
-            MagicBurst = 'OFF'			
-            add_to_chat(123,'Magic Burst Set: [OFF]')
-        else
-            MagicBurst = 'ON'		
-            add_to_chat(158,'Magic Burst Set: [ON]')
-        end
-	-- Defense --	
-    elseif command == 'C9' then
-        if Defense == 'ON' then
-            Defense = 'OFF'				
-            add_to_chat(123,'Defense Idle Set: [OFF]')
-        else
-            Defense = 'ON'	
-            equip(sets.aftercast.Defense)			
-            add_to_chat(158,'Defense Idle Set: [ON]')
-        end	
-    -- Weapon Lock --		
-    elseif command == 'C10' then
-        if WeaponLock == 'ON' then
-            WeaponLock = 'OFF'
-            enable('main', 'sub' ,'range')				
-            add_to_chat(123,'Weapon Lock Set: [OFF]')
-        else
-            WeaponLock = 'ON'
-            disable('main', 'sub' ,'range')			
-            add_to_chat(158,'Weapon Lock Set: [ON]')
-        end	
-    -- Capacity --		
-    elseif command == 'C11' then
-        if Capacity == 'ON' then
-            Capacity = 'OFF'
-            enable('back')				
-            add_to_chat(123,'Capacity Cape Set: [OFF]')
-        else
-            Capacity = 'ON'
-			equip({back=gear.Capacity_Cape})
-			disable('back')
-            add_to_chat(158,'Capacity Cape Set: [ON]')
-        end
-	end	
-end	 
--- Automatically changes Idle gears if you zone in or out of town --
-windower.register_event('zone change', function()
-	status_change(player.status)
-	if Town:contains(world.zone) then	
-        equip(sets.aftercast.Town)
-    else
-        equip(sets.aftercast.Idle)		
-    end	
+	if command == 'C8' then -- Toggling Weapons--	
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	end	 
+end
+
+
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+		send_command('@input /tell <me> Wakies Wakies Voreus We hit 0 HP on accident. We shall live forever!!!')
+	end
 end)
+
