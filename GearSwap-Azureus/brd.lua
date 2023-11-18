@@ -470,14 +470,3 @@ windower.register_event('status change', function()
 	end
 end)
 
-
-function equip_song_gear(spell)
-    if spell.target.type == 'MONSTER' then
-	 --Need to add another if statement for lullaby here and any other logic that we can think of for debuffing on Bard
-		equip(sets.MagicAccuracy,{range="Daurdabla",ammo="empty"})
-		Marsyas = 'ON'
-		Gjallarhorn = 'OFF'
-	else
-		equip(sets.Songs)
-	end
-end
