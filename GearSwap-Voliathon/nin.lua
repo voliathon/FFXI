@@ -31,14 +31,14 @@ function get_sets()
     
 	--TP Sets--
 	sets.TP = {}
-	--					  1		      2         3 		   4 		        5		     6   
-	sets.TP.index = {'Movement', 'BadAss', 'Hybrid', 'Accuracy', 'TreasureHunter', 'EvasionTank'}
+	--					  1		      2         3 		   4 		        5		     6   		     7		  8
+	sets.TP.index = {'Movement', 'TP', 'Hybrid', 'Accuracy', 'TreasureHunter', 'EvasionTank', 'BuckWildMode','DualWield'}
 	TP_ind = 1
 
 	sets.TP.Movement = {
 		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
-		body="Ashera Harness",
+		head="Hattori zukin +2",
+		body="Hattori ningi +2",
 		hands="Erilaz Gauntlets +2",
 		legs="Carmine Cuisses +1",
 		feet="Erilaz Greaves +2",
@@ -52,7 +52,7 @@ function get_sets()
 	}
 
 	--offensive melee set
-	sets.TP.BadAss = {
+	sets.TP.TP = {
 		ammo="Ginsen",
 		head="Hattori Zukin +2",
 		body="Hachiya chainmail +3",
@@ -72,9 +72,9 @@ function get_sets()
 	sets.TP.Hybrid = {
 		ammo="Ginsen",
 		head="Hattori Zukin +2",
-		body="Ashera Harness",
+		body="Hattori ningi +2",
 		hands="Malignance Gloves",
-		legs="Malignance Tights",
+		legs="Hattori hakama +2",
 		feet="Malignance Boots",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
@@ -97,7 +97,7 @@ function get_sets()
 	sets.TP.TreasureHunter = {
 		ammo="Staunch Tathlum +1",
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
-		body="Nyame Mail",
+		body="Hattori ningi +2",
 		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
 		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
 		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
@@ -113,7 +113,7 @@ function get_sets()
 	sets.TP.EvasionTank = {
 		ammo="Amar Cluster",
 		head="Hattori Zukin +2",
-		body="Ashera Harness",
+		body="Hattori ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
@@ -124,6 +124,38 @@ function get_sets()
 		left_ring="Defending Ring",
 		right_ring="Chirich Ring +1",
 	    back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+	}
+	
+	sets.TP.BuckWildMode = {
+		ammo="Coiste Bodhar",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Ken. Sune-Ate +1",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Brutal Earring",
+		right_ear="Digni. Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}		
+	}
+	
+	sets.TP.DualWield = {
+		ammo="Coiste Bodhar",
+		head="Hattori Zukin +2",
+		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		legs="Malignance Tights",
+		feet="Hiza. Sune-Ate +2",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Suppanomimi",
+		right_ear="Brutal Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}	
 	}
 
 
@@ -281,7 +313,12 @@ function get_sets()
 	
 	sets.Utsusemi = set_combine(sets.FastCast,  {
 		feet="Hattori kyahan +2"
-	})	
+	})
+
+	sets.Migawari = set_combine(sets.FastCast,  {
+		feet="Hattori ningi +2"
+	})
+
 
 	--Phalanx--  23
 	sets.Phalanx = {
@@ -323,7 +360,7 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Nyame Helm",
 		body="Samnuha coat",
-		hands="Nyame Gauntlets",
+		hands="Hattori Tekko +2",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck="Sanctity Necklace",
@@ -351,6 +388,9 @@ function precast(spell)
         equip(sets.Utsusemi)
     end
 	
+	if string.find(spell.english,'Migawari') then
+        equip(sets.Migawari)
+    end
 
 
 	if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then

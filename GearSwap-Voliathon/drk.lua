@@ -93,7 +93,7 @@ function get_sets()
     right_ear="Brutal Earring",
     left_ring="Chirich Ring +1",
     right_ring="Flamma ring",
-    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}}
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
   }
 
   --New Tank Gear
@@ -280,22 +280,6 @@ function get_sets()
   --Magic acc for enfeebles, handy for VW
   sets.MagicAcc = {}
 
-  sets.Stoneskin = {
-    ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +2",
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
-    waist="Siegel Sash",
-    left_ear="Magnetic Earring",
-    right_ear="Earthcry Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
-  }
-  
   sets.DarkMagic = {}
 
 end
@@ -357,7 +341,7 @@ function midcast(spell,act,arg)
 		equip(sets.Phalanx)
 	end
 	if spell.name == "Blink" or spell.name == "Stoneskin" then
-      equip(sets.SIR,sets.Stoneskin)
+      equip(sets.SIR)
 	end
 	if string.find(spell.name,'Protect') then
 		equip(sets.Enhancing)
@@ -365,8 +349,8 @@ function midcast(spell,act,arg)
   
   end
   
-  if spell.name == 'Flash' or spell.name == "Stun" then
-    equip(sets.Enmity)
+  if spell.name == "Stun" then
+    equip(sets.FastCast)
   end
   if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' then
     equip(sets.MagicAcc)
