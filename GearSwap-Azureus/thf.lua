@@ -11,13 +11,6 @@ function get_sets()
 	send_command('bind ^f8 gs c Reverse Toggle Weapon')
 	send_command('bind ^f9 gs c C9') 
 
-	-- Utilities --	
-    SA = false
-    TA = false	
-
-	-- Ability Mapping --
-	THStep = S{"Quickstep","Box Step","Stutter Step","Animated Flourish"}
-
 	-- Engaged Sets Toggle--
     sets.engaged = {}
     sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Evasion"}
@@ -27,7 +20,7 @@ function get_sets()
 		ammo="Ginsen",
 		head="Mummu Bonnet +2",
 		body="Volte Jupon",
-		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect'}},
+		hands={ name="Plunderer's Armlets +3", augments={'Enhances "Perfect Dodge" effect'}},
 		legs="Volte Hose",
 		feet="Skulk. Poulaines +2",
 		neck="Anu Torque",
@@ -68,23 +61,23 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%'}}
 	}
 
 	 sets.engaged.Tank = {
-		 ammo="Staunch tathlum",
-		 head="Malignance Chapeau",
-		 body="Malignance tabard",
-		 hands="Malignance gloves",
-		 legs="Malignance tights",
-		 feet="Skulker's Poulaines +2",
-		 neck="Loricate Torque +1",
-		 waist="Flume belt",
-		 left_ear="Infused Earring",
-		 right_ear="Eabani Earring",
-		 left_ring="Fortified Ring",
-		 right_ring="Defending Ring",
-		 back="Repulse Mantle"
+		ammo="Staunch Tathlum",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Skulk. Armlets +2",
+		legs="Skulk. Culottes +2",
+		feet="Skulk. Poulaines +2",
+		neck="Warder's Charm",
+		waist="Windbuffet Belt +1",
+		left_ear="Infused Earring",
+		right_ear="Eabani Earring",
+		left_ring="Fortified Ring",
+		right_ring="Chirich Ring +1",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
 	 }	
 	
 	sets.engaged.Evasion = {
@@ -107,35 +100,19 @@ function get_sets()
 	-- Job Abilities Sets --
     sets.JA = {}
     sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
-	sets.JA.Step = 	{}
-    sets.JA.Stun = {}
 	
-    sets.JA['Sneak Attack'] = {}
-    sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], { hands="Plun. Armlets +3", feet="Skulker's Poulaines +2"})
-
-    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +2"})
-    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +2"})
-	sets.JA.TATH = set_combine(sets.JA['Trick Attack'], { 
-		hands="Pillager's Armlets +2", 
-		feet="Skulker's Poulaines +2"
-	})
-	
-	sets.JA.SATA = set_combine(sets.JA['Sneak Attack'], {})
-	sets.JA["Assassin's Charge"] = {feet="Plun. Poulaines +1"}
+    sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
+    sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
+	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
 	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
 	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
-	sets.JA['Steal'] = { 
-		hands="Pillager's Armlets +2", 
-		legs="Pillager's Culottes +2", 
-		feet="Pillager's Poulaines +2", 
-		neck="Pentalagus charm"
-	}
+	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
 	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
-	sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
+	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +2"}
-	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
+	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
 	
 	
  -- Weapon Skill Sets
@@ -189,33 +166,26 @@ function get_sets()
 	}
 	
 ---- .:: Preshot Sets ::. ---->
-	sets.preshot = {}
-	sets.preshot.RA = {}	
+	--sets.preshot = {}
+	--sets.preshot.RA = {}	
 	
  -- Precast Sets  --
 	sets.precast = {}
-	sets.precast.Fastcast = {}
-	sets.precast['Utsusemi'] = {	
-		ammo="Yetshila +1",
-		head="Adhemar Bonnet +1",
-		body="Adhemar Jacket +1",
-		hands="Mummu Wrists +2",
-		legs="Malignance tights",
-		feet="Mummu Gamash. +2",
-		neck="Sanctity Necklace",
-		waist="Ninurta's Sash",
+	sets.precast.Fastcast = {
+		ammo="Staunch Tathlum",
+		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
+		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
+		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
+		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
+		neck="Voltsurge Torque",
+		waist="Kasiri Belt",
 		left_ear="Loquac. Earring",
-		right_ear="Magnetic Earring",
-		left_ring="Veneficium Ring",
-		right_ring="Rajas Ring",
-		back="Repulse Mantle"
-	}
-		
-	
- -- Midcast Sets --	
-	sets.midcast = {}
-	sets.midcast['Utsusemi'] = set_combine(sets.precast['Utsusemi'], {})
-	
+		right_ear="Halasz Earring",
+		left_ring="Lebeche Ring",
+		right_ring="Defending Ring",
+		back="Relucent Cape"	
+	}		
 	
  -- Weapon Toggle--
   sets.weapon = {}
@@ -254,25 +224,11 @@ function precast(spell,action)
     -- Dancer Abilities --
     if string.find(spell.english, 'Waltz') then
 	    equip(sets.JA.Waltz)
-    elseif spell.english == 'Violent Flourish' then
-        equip(sets.JA.Stun)
-	elseif THStep:contains(spell.name) then
-        equip(sets.JA.Step)	
+		
 	-- Thief Abilities --
 	elseif spell.type == 'JobAbility' then
 	        equip(sets.JA[spell.english])
-        if spell.english=="Sneak Attack" then 	
-            SA = true
-		else 
-            SA = false		
-        end
-		
-        if spell.english=="Trick Attack" then 	
-			TA = true
-		else
-            TA = false		
-        end
-
+			
 	-- Weapon Skill --
 	-- 50% DEX Modifier Evisceration / Crits per hits
 	elseif spell.name =="Evisceration" then
@@ -287,31 +243,19 @@ function precast(spell,action)
 	elseif spell.name == "Aeolian Edge" then
 		equip(sets.Aeolian)
 
-	elseif spell.action_type == 'Ranged Attack' then
-	    equip(sets.preshot.RA)
+	--elseif spell.action_type == 'Ranged Attack' then
+	--    equip(sets.preshot.RA)
 
 	-- Ninja Spells --
 	elseif spell.skill == 'Ninjutsu' then
 	    equip(sets.precast.Fastcast)
-		if string.find(spell.english, 'Utsusemi') then
-		    equip(sets.precast['Utsusemi'])
-		end
 	end	
 end	
 
 
 -- Midcast Functions --
 function midcast(spell,action)
-	-- Ranged Attacks --
-    if spell.action_type == 'Ranged Attack' then
-	    equip(sets.midshot.RA)
-	-- Ninja Spells --
-    elseif spell.skill == 'Ninjutsu' then
-	    equip(sets.midcast.Ninjutsu)
-		if string.find(spell.english, 'Utsusemi') then
-		    equip(sets.midcast['Utsusemi'])
-		end
-	end		
+		
 end	
 
 
