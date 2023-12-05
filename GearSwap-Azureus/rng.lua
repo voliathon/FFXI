@@ -4,12 +4,7 @@
 --Took this idea from the previous lua script I got off the net and rolled with it.
 function BelenusCapes()
 	BelenusCape = {}
---    BelenusCape.storetp={ name="Belenus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+9','"Store TP"+10'} }
     BelenusCape.ranged_ws={ name="Belenus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'} }	
---    BelenusCape.matk={ name="Belenus's Mantle", augments={'Weapon skill damage +10%'} }
---    BelenusCape.str_ws={ name="Belenus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'} }
-    BelenusCape.melee_double_attack={ name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
-	BelenusCape.snapshot={ name="Belenus's Mantle", augments={'"Snapshot"+10'}}
 end
 
 
@@ -32,10 +27,10 @@ function get_sets()
 	-- Job Abilities
     sets.EagleEyeShot = {legs="Arcadian Braccae +1"}
 	sets.Scavenge = {feet="Orion Socks +1"}
-	sets.Shadowbind = {hands="Orion Bracers +1"}
-	sets.Camouflage = {body="Orion Jerkin +1"}
-	sets.Sharpshot = {legs="Orion Braccae +1"}
-	sets.Barrage = {hands="Orion Bracers +1"}
+	sets.Shadowbind = {hands="Orion Bracers +2"}
+	sets.Camouflage = {body="Orion Jerkin +2"}
+	sets.Sharpshot = {legs="Orion Braccae +2"}
+	sets.Barrage = {hands="Orion Bracers +2"}
 	sets.UnlimitedShot = {feet="Amini Bottillons +2"}
 	-- Important about Double Shot...
 	-- Even though Double Shot is a Job Ability, I'm covering it in the midshot for Ranged Attacks.
@@ -46,53 +41,33 @@ function get_sets()
 	sets.Overkill = {}
 	sets.HoverShot = {}
 	
-	--
-    sets.Coronach = {
-		back={ name="Belenus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
-	}
-
-	--Wildfire    AGI/MAB/WSD
-    sets.Wildfire = set_combine(sets.LeadenSalute,{
-		-- macc +25, matk +35
-	})
-
-	--Last Stand   AGI/RAtt/RAcc/WSD
-    sets.LastStand = {
-		back={ name="Belenus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}		
-	}
-
-	--Savage Blade  50% STR / 50% MND
-    sets.SavageBlade = {
-
-	}
-
 
 	-- Preshot
 	-- Snapshot caps at 70% from any combination of merits, gear, and/or Flurry/Flurry II. 
 	-- Once snapshot is capped put Rapid Shot where you can.
     -- You get 10% from merits.
+	-- When velocity shot is up, the total aiming delay reduction is 25%  Just from Velocity shot
+	-- Baby Bear already has 10% Snapshot merits
     sets.Snapshot = {
-		head="Orion Beret +3",
-		body="Amini Caban +2",
-		hands="Carmine finger gauntlets +1",
-		legs="Laksamana's Trews +3",
-		feet="Meg. Jam. +2",
-		neck="Clotharius Torque",
+		head="Orion Beret +3", --rapid shot 18
+		body="Oshosi vest +1", --snapshot 14
+		hands="Carmine finger gauntlets +1", --rapid shot 11 snapshot 8
+		legs="Adhemar kecks +1", --rapid shot 13 snapshot 10
+		feet="Meg. Jam. +2", --snapshot 10
+		neck="Scout's gorget +2", --snapshot 4
 		waist="K. Kachina Belt +1",
 		left_ear="Telos Earring",
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",
 		right_ring="Hetairoi Ring",
-		back=BelenusCape.snapshot
+		back={ name="Belenus's Cape", augments={'"Snapshot"+10'}}
     }
 	
-	--Flurry I gives 15% Snapshot
-	sets.SnapshotFlurryI = {}
+	sets.VelocityShotActive = set_combine(sets.Snapshot,{
+		body="Amini Caban +2", --Velocity Shot 9%
+
+    })
 	
-	--Flurry II gives 30% Snapshot
-	--TODO add logic in preshot to determine if Flurry II is present.
-	-- It only checks for flurry in general
-	sets.SnapshotFlurryII = {}
 
 	
 	--Engaged Sets--
@@ -114,7 +89,7 @@ function get_sets()
 		right_ear="Cessance Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Epona's Ring",
-        back=BelenusCape.melee_double_attack
+        back={name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
     })
 	
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.engaged.TakingLessPhysicalDamage, {
@@ -129,7 +104,7 @@ function get_sets()
 		right_ear="Genmei Earring",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
-		back=BelenusCape.melee_double_attack
+		back={name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
 	})
 	
 	
@@ -145,7 +120,7 @@ function get_sets()
 		right_ear="Genmei Earring",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
-		back=BelenusCape.melee_double_attack		
+		back={name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }		
 	})
 	
 	sets.engaged.Accuracy = set_combine(sets.engaged.TakingLessPhysicalDamage, {
@@ -160,7 +135,7 @@ function get_sets()
 		right_ear="Crep. Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back=BelenusCape.melee_double_attack	
+		back={name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }	
 	})
 	
 	sets.engaged.RangedAccuracy = set_combine(sets.engaged.TakingLessPhysicalDamage, {
@@ -205,6 +180,101 @@ function get_sets()
 	})	
 	
 	
+	
+	--WeaponSkills
+	sets.HotShot = {
+		head="Orion Beret +3",
+		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Fotia Gorget",
+		waist="Orpheus's Sash",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+		right_ear="Friomisi Earring",
+		left_ring="Sroda Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}	
+	}
+	
+	sets.Coronach = {
+		head="Orion Beret +3",
+		body="Amini Caban +2",
+		hands="Meg. Gloves +2",
+		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		feet="Amini Bottillons +2",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+		right_ear="Ishvara Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}
+	}
+
+	--Wildfire    AGI/MAB/WSD
+    sets.Wildfire = {
+		head="Nyame Helm",
+		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Scout's Gorget +2",
+		waist="Orpheus's Sash",
+		left_ear="Crep. Earring",
+		right_ear="Friomisi Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}	
+	}
+
+	--Last Stand   AGI/RAtt/RAcc/WSD
+    sets.LastStand = {
+		head="Orion Beret +3",
+		body="Amini Caban +2",
+		hands="Meg. Gloves +2",
+		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		feet="Amini Bottillons +2",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+		right_ear="Ishvara Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}
+	}
+
+	--Savage Blade  50% STR / 50% MND
+    sets.SavageBlade = {
+		head="Orion Beret +3",
+		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
+		hands="Meg. Gloves +2",
+		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		feet="Amini Bottillons +2",
+		neck="Fotia Gorget",
+		waist="Sailfi Belt +1",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+		right_ear="Ishvara Earring",
+		left_ring="Sroda Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}
+	}
+	
+	sets.Jishnu = {
+		head="Orion Beret +3",
+		body="Nisroch Jerkin",
+		hands="Amini Glove. +2",
+		legs="Amini Bragues +2",
+		feet="Amini Bottillons +2",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+		right_ear="Odr Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}	
+	}
+	
 	--Weapon Sets--
 	sets.weapon = {}
 	sets.weapon.index = {'DWSavageRNG','SavageRNGShield','TauretCrep','FomalhautPerunShield','AnnihilatorPerunShield','FomalhautDivergence','AnnihilatorDivergence'}
@@ -213,19 +283,22 @@ function get_sets()
 	sets.weapon.DWSavageRNG = {
 		main="Naegling",
 		sub="Crepuscular Knife",
-		range="Ataktos"
+		range="Accipiter",
+		ammo="Hauksbok arrow"
 	}
 
 	sets.weapon.SavageRNGShield = {
 		main="Naegling",
 		sub="Nusku Shield",
-		range="Ataktos"
+		range="Accipiter",
+		ammo="Hauksbok arrow"
 	}
 	
 	sets.weapon.TauretCrep = {
 		main="Tauret",
 		sub="Crepuscular Knife",
-		range="Ataktos"
+		range="Accipiter",
+		ammo="Hauksbok arrow"
 	}
 	
 	sets.weapon.FomalhautPerunShield = {
@@ -262,31 +335,33 @@ function precast(spell,abil)
 	--If pew pew we want to do range stuffs here
 	if spell.action_type == 'Ranged Attack' then
 		--Regular Pew Pew Action outside of WS - Snapshot Glory
-		if buffactive['Flurry'] then
-			equip(sets.SnapshotFlurryI)
+		if buffactive['Velocity Shot'] then
+			equip(sets.VelocityShotActive)
 		else
 			equip(sets.Snapshot)
 		end
 	end
-	
-	if spell.name == "Coronach" then
+
+	--Weapon skill lookups	
+	if spell.name == "Hot Shot" then
+		equip(sets.HotShot)
+	end
+	if spell.name == "Coronach" or spell.name == "Empyreal Arrow" then
 		equip(sets.Coronach)
+	end
+	if spell.name == "Wildfire" or spell.name == "Flaming Arrow" then
+		equip(sets.Wildfire)
 	end
 	if spell.name == "Last Stand" then
 		equip(sets.LastStand)
 	end
-	if spell.name == "Wildfire" then
-		equip(sets.Wildfire)
-	end
-	
-	--Weapon skill lookups
+	if spell.name == "Jishnu's Radiance" then
+		equip(sets.Jishnu)
+	end	
 	if spell.name == "Savage Blade" then
 		equip(sets.SavageBlade)
 	end
 	
-	if spell.type == 'WeaponSkill' then
-		equip(sets.LastStand)
-	end
 
 	--Ranger Job Abilities
 	if spell.name == "Eagle Eye Shot" then
