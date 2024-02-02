@@ -134,7 +134,7 @@ function get_sets()
 	--RACC: 1114  RATT: 1179   WSD: 76%
 	--AGI 113 +221
     sets.LastStand = {
-		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
+		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
 		body="Laksamana's frac +3",
 		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
@@ -153,7 +153,7 @@ function get_sets()
 	--STR: 102 +183
 	--WSD: 66%
     sets.SavageBlade = {
-		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}},
+		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
 		body="Laksamana's frac +3",
 		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
