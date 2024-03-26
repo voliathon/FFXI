@@ -2,8 +2,13 @@ function get_sets()
 	-- Set macro book/set --
     send_command('input /macro book 1;wait .1;input /macro set 1')
 	
+	-- Binds for modes
+	-- Toggle Weapon F8 Key
+	send_command('bind !f8 gs c C8') 
+	send_command('bind ^f8 gs c Reverse Toggle Weapon')
+	
 	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c toggle Engaged set')
+    send_command('bind !f9 gs c C9')
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
     -- Job Abilities for Red Mage --
@@ -116,19 +121,21 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		ammo="Dosis Tathlum",
-		head="Lethargy chappel +2",
-		body="Lethargy sayon +3",
-		hands="Lethargy gantherots +2",
-		legs="Lethargy fuseau +2",
-		feet="Lethargy Houseaux +2",
-		neck="Saevus pendant +1",
-		waist="Refoccilation stone",
-		left_ear="Barkaro. Earring",
-		right_ear="Halasz Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
-		back="Seshaw cape"
+		main={ name="Grioavolr", augments={'Magic burst dmg.+9%','INT+2','Mag. Acc.+25','"Mag.Atk.Bns."+22'}},
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head="Leth. Chappel +2",
+		body="Lethargy Sayon +3",
+		hands="Leth. Ganth. +2",
+		legs="Leth. Fuseau +2",
+		feet="Leth. Houseaux +2",
+		neck={ name="Dls. Torque +2", augments={'Path: A'}},
+		waist="Eschan Stone",
+		left_ear="Friomisi Earring",
+		right_ear="Malignance Earring",
+		left_ring="Stikini Ring",
+		right_ring="Freke Ring",
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
 	}
 	
     sets.DarkMagic = {
@@ -204,18 +211,18 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		body="Lethargy sayon +3"
+		body="Lethargy sayon +3",
+		waist="Fucho-no-obi"
 	})
 	
 	
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
-
 	-- All Weaponskills for Red Mage unless explicitly defined below sets.precast.WS 
-     sets.WS = {
+     sets.WSD = {
 		range="Ullr",
-		head="Aya. Zucchetto +2",
+		head="Nyame helm",
 		body="Ayanmo Corazza +2",
 		hands="Atrophy Gloves +3",
 		legs="Jhakri slops +2",
@@ -231,7 +238,7 @@ function get_sets()
 	 
 	 
 
-	  -- Engaged Sets Toggle--
+	-- Engaged Sets Toggle--
 	sets.engaged = {}
 	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
 	engaged_ind = 1  	 
@@ -245,17 +252,49 @@ function get_sets()
 	 
 end
 
+ -- Weapon Toggle--
+ sets.weapon = {}
+ sets.weapon.index = {'Nuke', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingColada'}
+ weapon_ind = 1     
+  
+ sets.weapon.Nuke = {
+	main={ name="Grioavolr", augments={'Magic burst dmg.+9%','INT+2','Mag. Acc.+25','"Mag.Atk.Bns."+22'}},
+	sub="Enki Strap"
+ } 
+ sets.weapon.HiEnspell = {
+	main="Crocea Mors",
+	sub="Ammurapi Shield"
+ }  
+ sets.weapon.LowEnspell = {
+	main="Infiltrator",
+	sub="Forfend"
+ }  
+ sets.weapon.Refresh = {
+	main="Bolelabunga",
+	sub="Forfend"
+ }  
+ sets.weapon.NaeglingShield = {
+	main="Naegling",
+	sub="Forfend"
+ }
+ sets.weapon.NaeglingColada = {
+	main="Naegling",
+	sub="Colada"
+ }
+ 
+
 function precast(spell,abil)
---TODO DISPEL
 --EN Spells
 --Boost Spells
 --Phalanx
 
-	--Composure Lookups
-	if spell.name == "Composure" then
+	if spell.name == "Dispel" then
+		equip(sets.Dispel)
+	elseif spell.name == "Composure" then
+		--Composure Lookups
 		equip(sets.Composure)
-	--Enhancing Magic Check
 	elseif spell.skill == 'Enhancing Magic' then
+		--Enhancing Magic Check	
 		equip(sets.Enhancing)
 	elseif spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
@@ -277,7 +316,11 @@ end
 
 --We need to do some thinking and testing for this set...
 function aftercast(spell)
-	equip_current()
+	if string.find(spell.english,'Warp') then
+		--do fuck all nothing
+	else
+		equip_current()
+	end
 end
 
 
@@ -310,24 +353,28 @@ end
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip_weapon()
 end
 
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
 
 --Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C7' then -- Mecistopins Mantle toggle 
-		if Capacity == 'OFF' then
-			Capacity = 'ON'
-			equip({back="Mecistopins mantle"})
-            add_to_chat(158,'Capacity mantle: [ON]')
-		else
-			Capacity = 'OFF'
-			equip_current()
-   		    add_to_chat(123,'Capacity mantle: [OFF]')
-		end
-	elseif command == 'toggle Engaged set' then
+	if command == 'C8' then -- Toggling Weapons--	
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
