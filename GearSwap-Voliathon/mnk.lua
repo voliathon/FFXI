@@ -18,7 +18,7 @@ function get_sets()
     sets.precast.Chakra = {body="Anchorite's Cyclas +2",hands="Hes. Gloves +1"}
     sets.precast.Counterstance = {feet="Hesychast's Gaiters +1"}
     sets.precast.Focus = {head="Anchorite's Crown +2"}
-    sets.precast.Dodge = {feet="Anchorite's Gaiters +2"}
+    sets.precast.Dodge = {feet="Anchorite's Gaiters +3"}
     sets.precast.Mantra = {feet="Hes. Gaiters +1"}
     sets.precast.Footwork = {feet="Bhikku gaiters +1"}
 	sets.precast.Impetus={body="Bhikku Cyclas +2"}
@@ -182,6 +182,9 @@ function equip_current()
 	if (buffactive['Impetus']) then
 		equip({body="Bhikku Cyclas +2"})
 	end
+	if (buffactive['Footwork']) then
+		equip({body="Anchorite's Gaiters +3"})
+	end	
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket

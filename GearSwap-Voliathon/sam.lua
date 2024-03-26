@@ -129,7 +129,7 @@ function get_sets()
     sub="Utu Grip",
     ammo="Knobkierrie",
     head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-    body={ name="Valorous Mail", augments={'Weapon skill damage +4%','STR+8','Accuracy+6','Attack+12',}},
+	body={ name="Valorous Mail", augments={'Pet: "Regen"+2','Crit. hit damage +1%','Weapon skill damage +5%','Accuracy+4 Attack+4','Mag. Acc.+13 "Mag.Atk.Bns."+13'}},
     hands="Kasuga kote +2",
     legs="Wakido Haidate +3",
     feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
