@@ -48,8 +48,8 @@ function get_sets()
     sets.Rapture = {head="Arbatel Bonnet +2"}
     sets.Perpetuance = {hands="Arbatel Bracers +2"}
     sets.Immanence = {hands="Arbatel Bracers +2"}
-    sets.Penury = {legs="Arbatel Pants +1"}
-    sets.Parsimony = {legs="Arbatel Pants +1"}
+    sets.Penury = {legs="Arbatel Pants +2"}
+    sets.Parsimony = {legs="Arbatel Pants +2"}
     sets.Celerity = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
     sets.Alacrity = {head="Nahtirah Hat",feet="Pedagogy Loafers +1"}
     sets.Stormsurge = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
