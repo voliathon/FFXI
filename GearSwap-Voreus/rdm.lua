@@ -56,8 +56,10 @@ function get_sets()
 	}
 	
 	sets.Enhancing = {
+		main="Crocea Mors",
 		ammo="Pemphredo Tathlum",
 		head="Lethargy chappel +2",
+		sub="Ammurapi Shield",
 		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +2",
 		legs="Lethargy fuseau +2",
@@ -219,8 +221,8 @@ function get_sets()
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
-	-- All Weaponskills for Red Mage unless explicitly defined below sets.precast.WS 
-     sets.WSD = {
+	 
+	 sets.SavageBlade = {
 		range="Ullr",
 		head="Nyame helm",
 		body="Ayanmo Corazza +2",
@@ -233,9 +235,39 @@ function get_sets()
 		right_ear="Sherida Earring",
 		left_ring="Ilabrat Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}	 
 	 }
 	 
+	 sets.SeraphBlade = {
+		head="Leth. Chappel +2",
+		body="Lethargy Sayon +3",
+		hands="Jhakri Cuffs +2",
+		legs="Leth. Fuseau +2",
+		feet="Leth. Houseaux +2",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Regal Earring",
+		right_ear="Malignance Earring",
+		left_ring="Freke Ring",
+		right_ring="Stikini Ring",
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}	 
+	 }
+	 
+	 sets.SanguineBlade = {
+		range="Ullr",
+		head="Leth. Chappel +2",
+		body="Lethargy Sayon +3",
+		hands="Jhakri Cuffs +2",
+		legs="Leth. Fuseau +2",
+		feet="Leth. Houseaux +2",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Regal Earring",
+		right_ear="Malignance Earring",
+		left_ring="Archon Ring",
+		right_ring="Stikini Ring",
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}	 
+	 }
 	 
 
 	-- Engaged Sets Toggle--
@@ -263,19 +295,19 @@ end
  } 
  sets.weapon.HiEnspell = {
 	main="Crocea Mors",
-	sub="Ammurapi Shield"
+	sub="Daybreak"
  }  
  sets.weapon.LowEnspell = {
 	main="Infiltrator",
-	sub="Forfend"
+	sub="Sacro Bulwark"
  }  
  sets.weapon.Refresh = {
 	main="Bolelabunga",
-	sub="Forfend"
+	sub="Sacro Bulwark"
  }  
  sets.weapon.NaeglingShield = {
 	main="Naegling",
-	sub="Forfend"
+	sub="Sacro Bulwark"
  }
  sets.weapon.NaeglingColada = {
 	main="Naegling",
@@ -301,13 +333,19 @@ function precast(spell,abil)
 	elseif spell.action_type == 'Magic' then
 		equip(sets.FastCast)
 	end
-		--Can add stuff here for other magic. Doesn't have to go to idle at all
+	--Can add stuff here for other magic. Doesn't have to go to idle at all
 	
 
 	--WS Lookups
-	if spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
-		equip(sets.WSD)
+	if spell.name == "Savage Blade" then
+		equip(sets.SavageBlade)
+	elseif spell.name == "Sanguine Blade" then
+		equip(sets.SanguineBlade)
+	elseif spell.name == "Seraph Blade" or spell.name == "Shining Blade" then
+		equip(sets.SeraphBlade)
 	end
+
+
 	-- Add logic for Waltz
 	-- Add logic for Utsusemi
   
