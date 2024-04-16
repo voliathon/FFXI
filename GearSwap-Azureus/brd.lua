@@ -156,7 +156,7 @@ function get_sets()
   
   --TP Set--
   sets.engaged.TP = {
-    head="Ayanmo zucchetto +2",
+    head="Blistering Sallet +1",
     body="Ashera harness",
     hands="Bunzi's gloves",
 	legs="Volte tights",

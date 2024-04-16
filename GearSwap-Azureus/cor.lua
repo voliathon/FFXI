@@ -33,7 +33,7 @@ function get_sets()
 	-- Job Abilities
     sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +2", hands="Lanun Gants +2", back=CamulusCape.melee_double_attack })
     sets.RandomDeal = set_combine(sets.DamageTaken, { body="Lanun Frac +2" })
-    sets.WildCard = set_combine(sets.DamageTaken, { feet="Lanun Bottes +2" })
+    sets.WildCard = set_combine(sets.DamageTaken, { feet="Lanun Bottes +3" })
     sets.SnakeEye = set_combine(sets.DamageTaken, { legs="Lanun Trews +2" })
     sets.Fold = set_combine(sets.DamageTaken, { hands="Lanun Gants +2" })
 	
@@ -111,8 +111,8 @@ function get_sets()
 		head="Pixie Hairpin +1",
 		body="Lanun Frac +2",
 		hands="Chasseur's Gants +2",
-		legs="Osh. Trousers +1",
-		feet={ name="Lanun Bottes +2", augments={'Enhances "Wild Card" effect',}},
+		legs="Chasseur's culottes +2",
+		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -138,7 +138,7 @@ function get_sets()
 		body="Laksamana's frac +3",
 		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
+		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -157,7 +157,7 @@ function get_sets()
 		body="Laksamana's frac +3",
 		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9'}},
+		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},

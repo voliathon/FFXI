@@ -189,10 +189,18 @@ function get_sets()
 	
  -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'CarnwenhanCentovente', 'CarnwenhanCrepuscularKnife', 'TwashtarCentovente', 'TwashtarCrepuscularKnife','NaeglingCentovente', 'NaeglingCrepuscularKnife', 'TauretCentovente', 'TauretCrepuscularKnife'}
+  sets.weapon.index = {'GandringCentovente', 'GandringCrepuscularKnife', 'TwashtarCentovente', 'TwashtarCrepuscularKnife','NaeglingCentovente', 'NaeglingCrepuscularKnife', 'TauretCentovente', 'TauretCrepuscularKnife'}
   weapon_ind = 1     
   
-  sets.weapon.TwashtarCentovente = {
+ sets.weapon.GandringCentovente = {
+	main="Gandring",
+	sub="Centovente"
+ }
+ sets.weapon.GandringCrepuscularKnife = {
+	main="Gandring",
+	sub="Crepuscular Knife"
+ }  
+ sets.weapon.TwashtarCentovente = {
 	main="Twashtar",
 	sub="Centovente"
  }  

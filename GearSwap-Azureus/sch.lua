@@ -53,7 +53,9 @@ function get_sets()
     sets.Celerity = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
     sets.Alacrity = {head="Nahtirah Hat",feet="Pedagogy Loafers +1"}
     sets.Stormsurge = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
-    sets.Klimaform = {feet="Arbatel Loafers +1"}
+    sets.Klimaform = {feet="Arbatel Loafers +2"}
+
+	sets.Aspir = {feet="Agwu's Pigaches"}
 
 
 	sets.Duration = {
@@ -155,7 +157,7 @@ function get_sets()
 		body="Agwu's Robe",
 		hands="Arbatel Bracers +2",
 		legs="Agwu's Slops",
-		feet="Agwu's Pigaches",
+		feet="Arbatel Loafers +2",
 		neck="Argute stole +2",
 		waist="Tengu-no-Obi",
 		left_ear="Malignance Earring",
