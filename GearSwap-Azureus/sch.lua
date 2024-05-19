@@ -215,7 +215,7 @@ function get_sets()
 		head="Arbatel Bonnet +2",
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +2",
-		legs="Agwu's Slops",
+		legs="Arbatel Pants +2",
 		feet="Agwu's Pigaches",
 		neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Luminary Sash",
