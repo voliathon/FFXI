@@ -28,8 +28,8 @@ function get_sets()
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
 		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs="Samnuha tights",
-		feet="Maculele toe shoes +2",
+		legs="Maculele tights +2",
+		feet="Macu. Toe Sh. +2",
 		neck="Clotharius Torque",
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
@@ -57,9 +57,9 @@ function get_sets()
 		ammo="Staunch Tathlum",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
-		hands="Maculele bangles +2",
+		hands="Macu. Bangles +2",
 		legs="Malignance tights",
-		feet="Maculele toe shoes +2",
+		feet="Macu. Toe Sh. +2",
 		neck="Warder's Charm",
 		waist="Windbuffet Belt +1",
 		left_ear="Infused Earring",
@@ -91,12 +91,22 @@ function get_sets()
 		head="Mummu Bonnet +2", 
 		legs="Dashing subligar",
 		right_ear="Roundel earring",
-		ammo="Yamarang"}
+		ammo="Yamarang"
+	}
+	
+	sets.JA.Samba = {
+		head="Maculele Tiara +2",
+		body="Maculele Casaque +2",
+		hands="Macu. Bangles +2",
+		legs="Maculele Tights +2",
+		feet="Macu. Toe Sh. +2"		
+
+	}
 	
 	--The amount of TP restored is calculated using this formula
 	--This effect depends on the # of Finishing Moves available when using it.  The Max # is 3 <(^.^<))
 	--TODO - Obtain Toetapper Mantle Augments: Reverse Flourish Bonus +1~30 
-    sets.JA['Reverse Flourish'] = {hands="Maculele Bangles +2"}
+    sets.JA['Reverse Flourish'] = {hands="Macu. Bangles +2"}
 	sets.JA['Climactic Flourish'] = {head="Maculele Tiara +2"}
 	sets.JA['Striking Flourish'] = {body="Maculele Casaque +2"}
 	sets.JA['Trance'] = {head="Horos Tiara +1"}
@@ -121,7 +131,7 @@ function get_sets()
 	
 	sets.Evisceration = {
 		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		head="Blistering Sallet +1",
 		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Meg. Chausses +2",
@@ -208,8 +218,10 @@ function precast(spell,action)
     -- Dancer Abilities --
     if string.find(spell.english, 'Waltz') then
 	    equip(sets.JA.Waltz)
-		
-	-- Thief Abilities --
+	elseif string.find(spell.english, 'Samba') then
+	    equip(sets.JA.Samba)	
+	
+	-- Dancer Abilities --
 	elseif spell.type == 'JobAbility' then
 	        equip(sets.JA[spell.english])
 			
