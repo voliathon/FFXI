@@ -45,18 +45,26 @@ function get_sets()
 	-- Modes --
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang via ctrl + F8
-	ShadowType = 'None'
 	
   --Job Ability Sets--
   sets.JA = {}
-  
+  sets.JA.BloodWeapon = { body="Fallen's Cuirass" }
+  sets.JA.Souleater = { head="Ignominy Burgeonet +3"}
+  sets.JA.ArcaneCircle = { feet="Ignominy Sollerets +2"}
+  sets.JA.LastResort = { feet="Fallen's Sollerets +1", back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}} }
+  sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
+  sets.JA.DarkSeal = { head="Fallen's Burgeonet +1"}
+  sets.JA.NetherVoid = { legs="Heathen's Flanchard +2"}
+  sets.JA.ArcaneCrest = {}
+  sets.JA.ScarletDelirium = {}
+  sets.JA.SoulEnslavement = {}
+  sets.JA.ConsumeMana = {}
+
   -- Dancer's Abilities --
   sets.JA.Waltz = {legs="Dashing subligar"}
   sets.JA.Step = 	{}
-  sets.JA.Stun = {}
-	
-	
-
+  
+  
   --TP Sets--
   sets.TP = {}
 --					  1		   2              3 		   4		  5 		  6		           7
@@ -174,7 +182,7 @@ function get_sets()
     body="Ignominy cuirass +3",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
     legs="Fallen's flanchard +3",
-    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
+    feet="Heathen's sollerets +2",
     neck="Abyssal Bead Necklace +2",
     waist="Sailfi Belt +1",
     left_ear="Thrud Earring",
@@ -191,7 +199,7 @@ function get_sets()
     body="Ignominy cuirass +3",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
     legs="Fallen's flanchard +3",
-    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
+    feet="Heathen's sollerets +2",
     neck="Abyssal Bead Necklace +2",
     waist="Fotia Belt",
     left_ear="Ishvara Earring",
@@ -280,7 +288,9 @@ function get_sets()
   --Magic acc for enfeebles, handy for VW
   sets.MagicAcc = {}
 
-  sets.DarkMagic = {}
+  sets.DarkMagic = {
+	legs="Heathen's flanchard +2"
+  }
 
 end
 
@@ -298,16 +308,47 @@ function precast(spell,abil)
 	Naegling = 'OFF'
   end
   
+  if spell.name == 'Blood Weapon' then
+    equip(sets.JA.BloodWeapon)
+  end  
+  if spell.name == 'Souleater' then
+    equip(sets.JA.Souleater)
+  end  
+  if spell.name == 'Arcane Circle' then
+    equip(sets.JA.ArcaneCircle)
+  end  
+  if spell.name == 'Last Resort' then
+    equip(sets.JA.LastResort)
+  end  
+  if spell.name == 'Weapon Bash' then
+    equip(sets.JA.WeaponBash)
+  end  
+  if spell.name == 'Dark Seal' then
+    equip(sets.JA.DarkSeal)
+  end  
+  if spell.name == 'Nether Void' then
+    equip(sets.JA.NetherVoid)
+  end  
+  if spell.name == 'Arcane Crest' then
+    equip(sets.JA.ArcaneCrest)
+  end  
+  if spell.name == 'Scarlet Delirium' then
+    equip(sets.JA.ScarletDelirium)
+  end  
+  if spell.name == 'Soul Enslavement' then
+    equip(sets.JA.SoulEnslavement)
+  end  
+  if spell.name == 'Consume Mana' then
+    equip(sets.JA.ConsumeMana)
+  end
+  
   if spell.name == 'Catastrophe' then
     equip(sets.Catastrophe)
   end
   if spell.name == 'Savage Blade' then
     equip(sets.STRWSD)
   end
-  --prevents casting Utsusemi if you already have 3 or more shadows
-  if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
-    cancel_spell()
-  end
+
     --Utsusemi Check
   if string.find(spell.name,'Utsusemi') then
     equip({neck="Magoraga Beads"})
@@ -332,9 +373,17 @@ end
 
 -- Midcast
 function midcast(spell,act,arg)
+  if spell.name == "Dread Spikes" then
+	equip({body="Heathen's Cuirass +2"})
+  end
+
   if spell.skill == 'Dark Magic' then
 	equip(sets.DarkMagic)
   end
+
+  if string.find(spell.name,'Absorb-TP') then
+		equip({hands="Heathen's gauntlets +2"})
+	end
 
   if spell.skill == 'Enhancing Magic' then
 	if spell.name == 'Phalanx' then
@@ -361,14 +410,7 @@ end
 
 function aftercast(spell)
   equip_current()
-  --Just running a lil somethin-somethin to track Shadows
-  if string.find(spell.name,'Utsusemi') and not spell.interrupted then
-    if spell.name == 'Utsusemi: Ichi' then
-      ShadowType = 'Ichi'
-    elseif spell.name == 'Utsusemi: Ni' then
-      ShadowType = 'Ni'
-    end
-  end
+
 end
 
 
