@@ -15,7 +15,7 @@ function get_sets()
     sets.Chainspell = {body="Vitiation tabard +1"}
     sets.Stymie = {}
     sets.Spontaneity = {}
-    sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +3",hands="Lethargy gantherots +2",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +2"}
+    sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +3",hands="Lethargy gantherots +2",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +3"}
 	sets.Saboteur = {hands="Lethargy gantherots +2"}
 	sets.Dispel = {neck="Duelist's torque +2"}
 
@@ -31,7 +31,7 @@ function get_sets()
 		neck="Incanter's Torque",
 		waist="Embla Sash",
 		left_ear="Snotra Earring",
-		right_ear="Lethargy Earring",
+		right_ear="Lethargy Earring +1",
 		left_ring="Kishar Ring",
 		right_ring="Freke Ring",
 		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
@@ -45,11 +45,11 @@ function get_sets()
 		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10'}},
 		hands="Atrophy Gloves +3",
 		legs="Atrophy Tights +3",
-		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10'}},
+		feet="Lethargy Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
-		right_ear="Lethargy Earring",
+		right_ear="Lethargy Earring +1",
 		left_ring="Stikini Ring",
 		right_ring="Stikini Ring",
 		back="Fi follet cape +1"
@@ -63,11 +63,11 @@ function get_sets()
 		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +2",
 		legs="Lethargy fuseau +2",
-		feet="Lethargy Houseaux +2",
+		feet="Lethargy Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
-		right_ear="Lethargy Earring",
+		right_ear="Lethargy Earring +1",
 		left_ring="Stikini Ring",
 		right_ring="Stikini Ring",
 		back="Fi follet cape +1"
@@ -80,18 +80,18 @@ function get_sets()
 	
 	sets.TP = {
 		range="Ullr",
-		head="Lethargy chappel +2",
-		body="Lethargy sayon +3",
-		hands="Lethargy gantherots +2",
-		legs="Lethargy fuseau +2",
-		feet="Malignance boots",
+		head="Malignance Chapeau",
+		body="Lethargy Sayon +3",
+		hands="Aya. Manopolas +2",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 		neck="Anu Torque",
-		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
+		waist="Orpheus's Sash",
 		left_ear="Sherida Earring",
-		right_ear="Telos Earring",
+		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5'}},
 		left_ring="Ilabrat Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10'}}	
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10'}}
 	}
 	
 
@@ -126,11 +126,11 @@ function get_sets()
 		main={ name="Grioavolr", augments={'Magic burst dmg.+9%','INT+2','Mag. Acc.+25','"Mag.Atk.Bns."+22'}},
 		sub="Enki Strap",
 		ammo="Pemphredo Tathlum",
-		head="Leth. Chappel +2",
+		head="Lethargy Chappel +2",
 		body="Lethargy Sayon +3",
-		hands="Leth. Ganth. +2",
-		legs="Leth. Fuseau +2",
-		feet="Leth. Houseaux +2",
+		hands="Lethargy Ganth. +2",
+		legs="Lethargy Fuseau +2",
+		feet="Lethargy Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
@@ -228,7 +228,7 @@ function get_sets()
 		body="Ayanmo Corazza +2",
 		hands="Atrophy Gloves +3",
 		legs="Jhakri slops +2",
-		feet="Lethargy Houseaux +2",
+		feet="Lethargy Houseaux +3",
 		neck="Combatant's Torque",
 		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
 		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250'}},
@@ -239,13 +239,13 @@ function get_sets()
 	 }
 	 
 	 sets.SeraphBlade = {
-		head="Leth. Chappel +2",
+		head="Lethargy Chappel +2",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
-		legs="Leth. Fuseau +2",
-		feet="Leth. Houseaux +2",
+		legs="Lethargy Fuseau +2",
+		feet="Lethargy Houseaux +3",
 		neck="Sanctity Necklace",
-		waist="Eschan Stone",
+		waist="Orpheus's Sash",
 		left_ear="Regal Earring",
 		right_ear="Malignance Earring",
 		left_ring="Freke Ring",
@@ -255,13 +255,13 @@ function get_sets()
 	 
 	 sets.SanguineBlade = {
 		range="Ullr",
-		head="Leth. Chappel +2",
+		head="Lethargy Chappel +2",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
-		legs="Leth. Fuseau +2",
-		feet="Leth. Houseaux +2",
+		legs="Lethargy Fuseau +2",
+		feet="Lethargy Houseaux +3",
 		neck="Sanctity Necklace",
-		waist="Eschan Stone",
+		waist="Orpheus's Sash",
 		left_ear="Regal Earring",
 		right_ear="Malignance Earring",
 		left_ring="Archon Ring",
@@ -311,7 +311,7 @@ end
  }
  sets.weapon.NaeglingColada = {
 	main="Naegling",
-	sub="Colada"
+	sub="Tauret"
  }
  
 
