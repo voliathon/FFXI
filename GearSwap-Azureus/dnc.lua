@@ -26,7 +26,7 @@ function get_sets()
 	sets.engaged.TP = {
 		ammo="Ginsen",
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
-		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
+		body="Adhemar jacket +1",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Maculele tights +2",
 		feet="Macu. Toe Sh. +2",
@@ -35,7 +35,8 @@ function get_sets()
 		left_ear="Sherida Earring",
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
-		right_ring="Hetairoi Ring"
+		right_ring="Hetairoi Ring",
+		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
 	}
 	
 	sets.engaged.Accuracy =  {
@@ -50,7 +51,8 @@ function get_sets()
 		left_ear="Odr Earring",
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1"
+		right_ring="Chirich Ring +1",
+	    back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
 	}
 
 	 sets.engaged.Tank = {
@@ -65,7 +67,8 @@ function get_sets()
 		left_ear="Infused Earring",
 		right_ear="Eabani Earring",
 		left_ring="Defending Ring",
-		right_ring="Fortified Ring"
+		right_ring="Fortified Ring",
+		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
 	 }	
 	
 	sets.engaged.Evasion = {
@@ -91,7 +94,8 @@ function get_sets()
 		head="Mummu Bonnet +2", 
 		legs="Dashing subligar",
 		right_ear="Roundel earring",
-		ammo="Yamarang"
+		ammo="Yamarang",
+	    back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
 	}
 	
 	sets.JA.Samba = {
@@ -106,7 +110,10 @@ function get_sets()
 	--The amount of TP restored is calculated using this formula
 	--This effect depends on the # of Finishing Moves available when using it.  The Max # is 3 <(^.^<))
 	--TODO - Obtain Toetapper Mantle Augments: Reverse Flourish Bonus +1~30 
-    sets.JA['Reverse Flourish'] = {hands="Macu. Bangles +2"}
+    sets.JA['Reverse Flourish'] = {
+		hands="Macu. Bangles +2",
+		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
+	}
 	sets.JA['Climactic Flourish'] = {head="Maculele Tiara +2"}
 	sets.JA['Striking Flourish'] = {body="Maculele Casaque +2"}
 	sets.JA['Trance'] = {head="Horos Tiara +1"}
@@ -126,7 +133,8 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Odr Earring",
 		left_ring="Epaminondas's Ring",
-		right_ring="Hetairoi Ring"
+		right_ring="Hetairoi Ring",
+		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}	
 	}
 	
 	sets.Evisceration = {
@@ -141,7 +149,8 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Odr Earring",
 		left_ring="Epaminondas's Ring",
-		right_ring="Hetairoi Ring"	
+		right_ring="Hetairoi Ring",
+		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
 	}
 	
     sets.Aeolian = {	
@@ -156,7 +165,8 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"	
+		right_ring="Stikini Ring +1",
+		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
 	}
 	
 ---- .:: Preshot Sets ::. ---->
