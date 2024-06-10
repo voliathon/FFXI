@@ -106,6 +106,22 @@ function get_sets()
 --		back=CamulusCape.storetp
     }
 	
+    sets.QuickDrawDark = {
+		ammo="Living Bullet",
+		head="Pixie Hairpin +1",
+		body="Chasseur's frac +2",
+		hands="Chasseur's gants +2",
+		legs="Chasseur's Culottes +2",
+		feet="Chasseur's Bottes +2",
+		neck="Sanctity Necklace",
+		waist="Orpheus's Sash",
+		left_ear="Friomisi Earring",
+		right_ear="Hecate's Earring",
+		left_ring="Dingir Ring",
+		right_ring="Kishar ring"
+--		back=CamulusCape.storetp
+    }	
+	
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
@@ -295,6 +311,14 @@ end
 --Precast Function
 function precast(spell,abil)
 	--If pew pew we want to do range stuffs here
+	if spell.name == "Light Shot" or "Fire Shot" or "Water Shot" or "Thunder Shot" or "Earth Shot" or "Wind Shot" or "Ice Shot" then 
+		equip(sets.QuickDraw)
+	end
+	
+	if spell.name == "Dark shot" then
+		equip(sets.QuickDrawDark)
+	end
+	
 	if spell.action_type == 'Ranged Attack' then
 		--Regular Pew Pew Action outside of WS - Snapshot Glory
 		equip(sets.Snapshot)

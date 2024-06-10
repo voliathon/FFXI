@@ -25,7 +25,7 @@ function get_sets()
 	
 	sets.engaged.TP = {
 		ammo="Ginsen",
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		head="Blistering sallet +1",
 		body="Adhemar jacket +1",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Maculele tights +2",
@@ -36,7 +36,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Hetairoi Ring",
-		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
+		back="Toetapper Mantle"
 	}
 	
 	sets.engaged.Accuracy =  {
@@ -52,7 +52,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-	    back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
+		back="Toetapper Mantle"
 	}
 
 	 sets.engaged.Tank = {
@@ -68,7 +68,7 @@ function get_sets()
 		right_ear="Eabani Earring",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
-		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
+		back="Toetapper Mantle"
 	 }	
 	
 	sets.engaged.Evasion = {
@@ -91,32 +91,58 @@ function get_sets()
 	-- Job Abilities Sets --
     sets.JA = {}
     sets.JA.Waltz = {
-		head="Mummu Bonnet +2", 
-		legs="Dashing subligar",
-		right_ear="Roundel earring",
-		ammo="Yamarang",
-	    back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
+		body="Maxixi Casaque +3", --Waltz Potency +19%, Waltz Received Potency +8%, Waltz Recast -2 
+		head="Horos Tiara +1", --Waltz Potency +11%  
+		legs="Dashing subligar", --Waltz Potency +10% 
+		feet="Maxixi Toe Shoes +2", --Waltz Potency +12% 
+		right_ear="Roundel earring", --Waltz Potency +5%
+		ammo="Yamarang", --Waltz Potency +5% 
+		back="Toetapper Mantle" --Waltz Potency +5%
 	}
 	
 	sets.JA.Samba = {
-		head="Maculele Tiara +2",
+		head="Maxixi Tiara +3", -- +45 second duration 
 		body="Maculele Casaque +2",
 		hands="Macu. Bangles +2",
 		legs="Maculele Tights +2",
 		feet="Macu. Toe Sh. +2"		
-
+	}
+	
+	sets.JA.StepAccuracy = {
+		head="Maxixi Tiara +3",
+		hands="Maxixi Bangles +3",
+		feet="Horos Shoes +1"
+	}
+	
+	sets.JA.Jig = {
+		legs="Horos Tights +1", --45%
+		feet="Maxixi Toe Shoes +2" --45%
+	}
+	
+	sets.JA.FeatherStep  = {
+		head="Maxixi Tiara +3",
+		hands="Maxixi Bangles +3",
+		feet="Maculele Toe Shoes +2"
 	}
 	
 	--The amount of TP restored is calculated using this formula
 	--This effect depends on the # of Finishing Moves available when using it.  The Max # is 3 <(^.^<))
-	--TODO - Obtain Toetapper Mantle Augments: Reverse Flourish Bonus +1~30 
-    sets.JA['Reverse Flourish'] = {
-		hands="Macu. Bangles +2",
-		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
+    sets.JA.ReverseFlourish = {
+		hands="Macu. Bangles +2", --SquareMod +13 whatever that means.
+		back="Toetapper Mantle"
 	}
-	sets.JA['Climactic Flourish'] = {head="Maculele Tiara +2"}
-	sets.JA['Striking Flourish'] = {body="Maculele Casaque +2"}
-	sets.JA['Trance'] = {head="Horos Tiara +1"}
+	sets.JA.ClimacticFlourish = {head="Maculele Tiara +2"}
+	sets.JA.StrikingFlourish = {body="Maculele Casaque +2"}
+	sets.JA.ViolentFlourish = {body="Horos Casaque +1"}
+	
+	sets.JA.Trance = {head="Horos Tiara +1"}
+	sets.JA.FanDance = {hands="Horos Bangles +1"}
+	sets.JA.NoFootRise = {body="Horos Casaque +1"}
+	sets.JA.SaberDance = {legs="Horos Tights +1"}
+	sets.JA.ClosedPosition = {feet="Horos Shoes +1"}
+	
+	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
+	
 	
 	
  -- Weapon Skill Sets
@@ -125,7 +151,7 @@ function get_sets()
 		ammo="Yetshila +1",
 		head="Maculele Tiara +2",
 		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
-		hands="Meg. Gloves +2",
+		hands="Maxixi Bangles +3",
 		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11',}},
 		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
 		neck="Fotia Gorget",
@@ -134,14 +160,14 @@ function get_sets()
 		right_ear="Odr Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}	
+		back="Toetapper Mantle"
 	}
 	
 	sets.Evisceration = {
 		ammo="Yetshila +1",
 		head="Blistering Sallet +1",
 		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		hands="Maxixi Bangles +3",
 		legs="Meg. Chausses +2",
 		feet="Malignance Boots",
 		neck="Fotia Gorget",
@@ -150,7 +176,7 @@ function get_sets()
 		right_ear="Odr Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
+		back="Toetapper Mantle"
 	}
 	
     sets.Aeolian = {	
@@ -166,8 +192,10 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Toetapper Mantle", augments={'"Store TP"+2','"Dual Wield"+1','"Rev. Flourish"+23','Weapon skill damage +2%',}}
+		back="Toetapper Mantle"
 	}
+	
+	sets.PyrrhicKleos = {}
 	
 ---- .:: Preshot Sets ::. ---->
 	--sets.preshot = {}
@@ -231,13 +259,45 @@ function precast(spell,action)
 	elseif string.find(spell.english, 'Samba') then
 	    equip(sets.JA.Samba)	
 	
-	-- Dancer Abilities --
-	elseif spell.type == 'JobAbility' then
-	        equip(sets.JA[spell.english])
-			
+	elseif spell.name == "Quickstep" or spell.name == "Box Step" or spell.name == "Stutter Step" then
+		equip(sets.StepAccuracy)
+	
+	elseif spell.name == "Feather Step" then
+		equip(sets.FeatherStep) --This set also has StepAccuracy associated
+	
+	elseif spell.name == "Spectral Jig" or spell.name == "Chocobo Jig" or spell.name == "Chocobo Jig II" then
+		equip(sets.Jig)
+	
+	elseif spell.name == "Violent Flourish" then
+		equip(sets.ViolentFlourish)
+		
+	elseif spell.name == "Reverse Flourish" then
+		equip(sets.ReverseFlourish)
+		
+	elseif spell.name == "Climactic Flourish" then -- Climactic Flourish forces one more critical hit Forced hits receive damage +28%. 
+		equip(sets.ClimacticFlourish)
+	
+	elseif spell.name == "Striking Flourish" then -- +65% Critical Hit Rate for the main hit and Double Attack of the stacked attack round or Weapon Skill
+		equip(sets.StrikingFlourish)
+	
+	elseif spell.name == "Trance" then
+		equip(sets.Trance)
+		
+	elseif spell.name == "Fan Dance" then
+		equip(sets.FanDance)
+		
+	elseif spell.name == "No Foot Rise" then
+		equip(sets.NoFootRise)
+		
+	elseif spell.name == "Saber Dance" then
+		equip(sets.SaberDance)
+		
+	elseif spell.name == "Closed Position" then
+		equip(sets.ClosedPosition)
+		
 	-- Weapon Skill --
 	-- 50% DEX Modifier Evisceration / Crits per hits
-	elseif spell.name =="Evisceration" then
+	elseif spell.name == "Evisceration" then
 		equip(sets.Evisceration)
 	
 	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
@@ -248,6 +308,10 @@ function precast(spell,action)
 	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
 	elseif spell.name == "Aeolian Edge" then
 		equip(sets.Aeolian)
+
+	-- STR 40% DEX 40%
+	elseif spell.name == "Pyrrhic Kleos" then
+		equip(sets.Evisceration)
 
 	--elseif spell.action_type == 'Ranged Attack' then
 	--    equip(sets.preshot.RA)
