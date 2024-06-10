@@ -12,7 +12,7 @@ function get_sets()
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
     -- Job Abilities for Red Mage --
-    sets.Chainspell = {body="Vitiation tabard +1"}
+    sets.Chainspell = {body="Vitiation tabard +3"}
     sets.Stymie = {}
     sets.Spontaneity = {}
     sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +3",hands="Lethargy gantherots +2",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +3"}
@@ -22,15 +22,15 @@ function get_sets()
 
     -- Fast Cast for Red Mage --
     sets.FastCast = {
-		ammo="Regal Gem",
+		ammo="Impatiens",
 		head="Atrophy Chapeau +3",
-		body="Vitiation tabard +1",
+		body="Vitiation tabard +3",
 		hands="Leyline Gloves",
 		legs="Aya. Cosciales +2",
-		feet="Malignance Boots",
+		feet="Nyame sollerets",
 		neck="Incanter's Torque",
 		waist="Embla Sash",
-		left_ear="Snotra Earring",
+		left_ear="Loquacious Earring",
 		right_ear="Lethargy Earring +1",
 		left_ring="Kishar Ring",
 		right_ring="Freke Ring",
@@ -39,11 +39,13 @@ function get_sets()
 
 
 	-- Enhancing Spells \\Generalized//
-    sets.SelfEnhancing = {
+    sets.Enhancing = {
+		main="Crocea Mors",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9'}},
-		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10'}},
-		hands="Atrophy Gloves +3",
+		body="Vitiation tabard +3",
+		hands="Vitiation Gloves +3",
 		legs="Atrophy Tights +3",
 		feet="Lethargy Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
@@ -55,24 +57,6 @@ function get_sets()
 		back="Fi follet cape +1"
 	}
 	
-	sets.Enhancing = {
-		main="Crocea Mors",
-		ammo="Pemphredo Tathlum",
-		head="Lethargy chappel +2",
-		sub="Ammurapi Shield",
-		body="Lethargy sayon +3",
-		hands="Lethargy gantherots +2",
-		legs="Lethargy fuseau +2",
-		feet="Lethargy Houseaux +3",
-		neck={ name="Dls. Torque +2", augments={'Path: A'}},
-		waist="Embla Sash",
-		left_ear="Mimir Earring",
-		right_ear="Lethargy Earring +1",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring",
-		back="Fi follet cape +1"
-	}
-
 	-- Stoneskin
 	sets.Stoneskin = set_combine(sets.FastCast,  {
 
@@ -146,11 +130,11 @@ function get_sets()
 
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Regal Gem",
-		head="Vitiation chapeau +1",
+		head="Vitiation chapeau +3",
 		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +2",
 		legs={ name="Chironic Hose", augments={'Attack+14','Mag. Acc.+13','"Treasure Hunter"+1','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
-		feet="Vitiation Boots +1",
+		feet="Vitiation Boots +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Eschan Stone",
 		left_ear="Snotra Earring",
@@ -164,12 +148,6 @@ function get_sets()
 	-- Impact whenever the fuck I get the damn cloak
     sets.Impact = {    
       body="Twilight Cloak"
-	}
-
-
-    -- /heal the damn MP/HP up.
-    sets.heal = {
-
 	}
 
 
@@ -212,11 +190,14 @@ function get_sets()
 	}
 
     
-	sets.Refresh = set_combine(sets.PDT,  {
-		body="Lethargy sayon +3",
-		waist="Fucho-no-obi"
+	sets.Refresh = set_combine(sets.Enhancing,  {
+		body="Atrophy Tabard +3",
+		legs="Lethargy Fuseau +2"
 	})
-	
+
+	sets.Enspell = set_combine(sets.Enhancing,  {
+		legs="Vitiation Tights +3"
+	})	
 	
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
@@ -224,7 +205,7 @@ function get_sets()
 	 
 	 sets.SavageBlade = {
 		range="Ullr",
-		head="Nyame helm",
+		head="Vitiation chapeau +3",
 		body="Ayanmo Corazza +2",
 		hands="Atrophy Gloves +3",
 		legs="Jhakri slops +2",
@@ -250,7 +231,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Freke Ring",
 		right_ring="Stikini Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}	 
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	 }
 	 
 	 sets.SanguineBlade = {
@@ -316,25 +297,16 @@ end
  
 
 function precast(spell,abil)
---EN Spells
---Boost Spells
---Phalanx
-
-	if spell.name == "Dispel" then
-		equip(sets.Dispel)
-	elseif spell.name == "Composure" then
-		--Composure Lookups
+	--Should probably Fast Cast everything here for Red Mage but holy smokes FastCast is already...Fast for RDM.
+	if spell.name == "Composure" then
 		equip(sets.Composure)
-	elseif spell.skill == 'Enhancing Magic' then
-		--Enhancing Magic Check	
-		equip(sets.Enhancing)
-	elseif spell.skill == 'Enfeebling Magic' then
-		equip(sets.Enfeebling)
-	elseif spell.action_type == 'Magic' then
+	end
+	if spell.name == 'Refresh' or spell.name == 'Refresh II' or spell.name == 'Refresh III' then
+		equip(sets.Refresh)
+	end
+	if spell.action_type == 'Enhancing Magic' then
 		equip(sets.FastCast)
 	end
-	--Can add stuff here for other magic. Doesn't have to go to idle at all
-	
 
 	--WS Lookups
 	if spell.name == "Savage Blade" then
@@ -345,30 +317,31 @@ function precast(spell,abil)
 		equip(sets.SeraphBlade)
 	end
 
-
 	-- Add logic for Waltz
 	-- Add logic for Utsusemi
-  
-  
+    
 end
-
---We need to do some thinking and testing for this set...
-function aftercast(spell)
-	if string.find(spell.english,'Warp') then
-		--do fuck all nothing
-	else
-		equip_current()
-	end
-end
-
 
 function midcast(spell)
-	if string.find(spell.english,'Cur') then 
+
+	if spell.skill == 'Enhancing Magic' then
+		if spell.name == 'Refresh' or spell.name == 'Refresh II' or spell.name == 'Refresh III' then
+			equip(sets.Refresh)
+		elseif spell.name == 'Stoneskin' then
+			equip(sets.Stoneskin)
+		elseif spell.name == 'Enfire' or spell.name == 'Enfire II' or spell.name == 'Enstone' or spell.name == 'Enstone II' or spell.name == 'Enblizzard' or spell.name == 'Enblizzard II' or spell.name == 'Enaero' or spell.name == 'Enaero II' or spell.name == 'Enthunder' or spell.name == 'Enthunder II' or spell.name == 'Enwater' or spell.name == 'Enwater II' then
+			equip(sets.Enspell)
+		else
+			equip(sets.Enhancing)
+		end
+	end
+	
+	if spell.name == 'Cure' or spell.name == 'Cure II' or spell.name == 'Cure III' or 
+	spell.name == 'Cure IV' or spell.name == 'Curaga' or spell.name == 'Curaga II' then 
 		equip(sets.Cure)
 	end
-	if spell.name == 'Stoneskin' then
-		equip(sets.Stoneskin)
-	end
+
+
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
 	end
@@ -381,8 +354,23 @@ function midcast(spell)
 	if spell.name == "Dispel" then
 		equip(sets.Dispel)
 	end
+	-- if spell.name == 'Gain-STR' or spell.name == 'Gain-DEX' or spell.name == 'Gain-VIT' or 
+	-- spell.name == 'Gain-AGI' or spell.name == 'Gain-INT' or spell.name == 'Gain-MND' or spell.name == 'Gain-CHR' then
+		-- equip(sets.Enhancing)
+	-- end
+	-- if spell.name == 'Temper' or spell.name == 'Temper II' then
+		-- equip(sets.Enhancing)
+	-- end
 end
 
+--We need to do some thinking and testing for this set...
+function aftercast(spell)
+	if string.find(spell.english,'Warp') then
+		--do fuck all nothing
+	else
+		equip_current()
+	end
+end
 
 --This function should only get kicked off when you're engaging.  
 --If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
