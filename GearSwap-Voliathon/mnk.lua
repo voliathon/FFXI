@@ -10,26 +10,26 @@ function get_sets()
 	send_command('bind ^f9 gs c reverse TP set')
 	
 		-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Godhands = 'OFF' -- Toogle on/off the Godhands and Spharai via ctrl + F8
 		
-    sets.precast = {}
-    sets.precast.Boost = {hands="Anchorite's Gloves +3"}
-    sets.precast.Chakra = {body="Anchorite's Cyclas +2",hands="Hes. Gloves +1"}
-    sets.precast.Counterstance = {feet="Hesychast's Gaiters +1"}
-    sets.precast.Focus = {head="Anchorite's Crown +2"}
-    sets.precast.Dodge = {feet="Anchorite's Gaiters +3"}
-    sets.precast.Mantra = {feet="Hes. Gaiters +1"}
-    sets.precast.Footwork = {feet="Bhikku gaiters +1"}
-	sets.precast.Impetus={body="Bhikku Cyclas +2"}
-	sets.precast.PerfectCounter={head="Bhikku Crown +2"}
-    sets.precast['Hundred Fists'] = {legs="Hes. Hose +1"}
+    sets.JA = {}
+    sets.JA.Boost = {hands="Anchorite's Gloves +3"}
+    sets.JA.Chakra = {body="Anchorite's Cyclas +2", hands="Hes. Gloves +1"}
+    sets.JA.Counterstance = {feet="Hesychast's Gaiters +1"}
+    sets.JA.Focus = {head="Anchorite's Crown +2"}
+    sets.JA.Dodge = {feet="Anchorite's Gaiters +3"}
+    sets.JA.Mantra = {feet="Hes. Gaiters +1"}
+    sets.JA.Footwork = {feet="Bhikku gaiters +2"}
+	sets.JA.Impetus={body="Bhikku Cyclas +2"}
+	sets.JA.PerfectCounter={head="Bhikku Crown +2"}
+    sets.JA['Hundred Fists'] = {legs="Hes. Hose +1"}
+	sets.JA.Waltz = {legs="Dashing subligar"}
 
 	
 	  --TP Sets--
 	sets.TP = {}
 --					  1		      2        3 		4		  5
-  sets.TP.index = {'BadAss', 'Movement', 'Tank', 'Accuracy', 'TH'}
+  sets.TP.index = {'BadAss', 'Tank', 'Movement', 'Accuracy', 'TH'}
   TP_ind = 1
 	
     sets.TP.BadAss = {
@@ -38,11 +38,11 @@ function get_sets()
 		body="Bhikku Cyclas +2",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
 		legs="Bhikku Hose +2",
-		feet="Bhikku Gaiters +2",
+		feet="Anch. Gaiters +3",
 		neck="Monk's nodowa +2",
 		waist="Moonbow Belt +1",
 		left_ear="Brutal Earring",
-		right_ear="Bhikku Earring +1",
+		right_ear="Schere Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
@@ -58,38 +58,30 @@ function get_sets()
 	}
 	
 	sets.TP.Tank = {
-		ammo="Staunch Tathlum +1",
+		ammo="Coiste Bodhar",
 		head="Bhikku Crown +2",
-		body="Bhikku Cyclas +2",
-		hands="Bhikku Gloves +2",
+		body="Mpaca's Doublet",
+		hands="Mpaca's Gloves",
 		legs="Bhikku Hose +2",
-		feet="Bhikku Gaiters +2",
-		neck={ name="Loricate Torque +1", augments={'Path: A'}},
+		feet="Mpaca's Boots",
+		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
-		left_ear="Brutal Earring",
-		right_ear={ name="Bhikku Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','"Store TP"+3'}},
-		left_ring="Defending Ring",
-		right_ring="Fortified Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
-	}
-    
-	sets.TP.Accuracy = set_combine(sets.TP.BadAss, {})
-	
-	sets.TP.TH = {
-		ammo="Ginsen",
-		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
-		body="Volte jupon",
-		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
-		legs="Kendatsuba hakama +1",
-		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
-		neck="Monk's nodowa +2",
-		waist="Chaac Belt",
 		left_ear="Cessance Earring",
-		right_ear="Brutal Earring",
+		right_ear="Schere Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
 	}
+    
+	sets.TP.Accuracy = set_combine(sets.TP.Tank, {})
+	
+	sets.TP.TH = set_combine(sets.TP.Tank, {
+		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
+		body="Volte jupon",
+		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
+		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
+		waist="Chaac Belt"
+	})
 
 	--Victory Smite --- STR 80%
 	--Ascetic's Fury/Dragon Kick --- STR 50% VIT 50%
@@ -100,25 +92,24 @@ function get_sets()
 	--Dragon Kick/Backhand Blow --- STR 50% DEX 50%
 	--Shijin Spiral --- DEX 73% if maxed
 	--Asuran Fists --- STR 15% VIT 15%
-	--Stringing Pummel --- STR 32% VIT 32%
 	--Final Heaven --- VIT 80%
 	--Shoulder Tackle/One Inch Punch --- VIT 100%
     sets.WS = {}
 	
 	sets.WS.VictorySmite = {
-		ammo="Amar Cluster",
-		head="Hes. Crown +2",
+		ammo="Coiste Bodhar",
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
 		body="Bhikku Cyclas +2",
 		hands="Ken. Tekko +1",
-		legs="Kendatsuba hakama +1",
+		legs="Ken. Hakama +1",
 		feet="Ken. Sune-Ate +1",
 		neck="Fotia Gorget",
-		waist="Moonbow belt +1",
-		right_ear="Brutal Earring",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		waist="Moonbow Belt +1",
+		left_ear="Brutal Earring",
+		right_ear="Schere Earring",
 		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
+		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}		
 	}
 	
 	sets.WS.FinalHeaven = {
@@ -136,41 +127,126 @@ function get_sets()
 		right_ring="Epaminondas's Ring",
 		back={ name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
+	
+	sets.WS.RagingFists = {
+		ammo="Knobkierrie",
+		head="Ken. Jinpachi +1",
+		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		legs="Mpaca's Hose",
+		feet={ name="Herculean Boots", augments={'Accuracy+15 Attack+15','"Triple Atk."+3','Accuracy+5',}},
+		neck="Fotia Gorget",
+		waist="Moonbow Belt +1",
+		left_ear="Brutal Earring",
+		right_ear="Schere Earring",
+		left_ring="Sroda Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}	
+	}
+	
+	sets.WS.ShijinSpiral = {
+		ammo="Knobkierrie",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Malignance Gloves",
+		legs="Ken. Hakama +1",
+		feet={ name="Herculean Boots", augments={'Accuracy+15 Attack+15','"Triple Atk."+3','Accuracy+5',}},
+		neck="Fotia Gorget",
+		waist="Moonbow Belt +1",
+		left_ear="Cessance Earring",
+		right_ear="Schere Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Mummu Ring",
+		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}	
+	}
     
+	sets.WS.HowlingFist = {
+		ammo="Knobkierrie",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Malignance Gloves",
+		legs="Ken. Hakama +1",
+		feet={ name="Herculean Boots", augments={'Accuracy+15 Attack+15','"Triple Atk."+3','Accuracy+5',}},
+		neck="Fotia Gorget",
+		waist="Moonbow Belt +1",
+		left_ear="Moonshade Earring",
+		right_ear="Schere Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Mummu Ring",
+		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}	
+	}
+	
+	sets.WS.TornadoKick = {
+		ammo="Knobkierrie",
+		head="Mpaca's Cap",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Anch. Gaiters +3",
+		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
+		waist="Moonbow Belt +1",
+		left_ear="Cessance Earring",
+		right_ear="Schere Earring",
+		left_ring="Mummu Ring",
+		right_ring="Rajas Ring",
+		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}	
+	}
+	
+	sets.WS.Cataclysm = {
+		ammo="Pemphredo Tathlum",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Sanctity Necklace",
+		waist="Yamabuki-no-Obi",
+		left_ear="Friomisi Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}	
+	}
     
     sets.status = {}
     sets.status.Engaged = sets.TP
-    
     sets.status.Idle = set_combine(sets.TP.Tank, {})
 	
-	  --Job Ability Sets--
-  sets.JA = {}
-  -- Dancer's Abilities --
-  sets.JA.Waltz = {legs="Dashing subligar"}
 
 end
 
 function precast(spell)
-	-- Dancer Abilities --
-  if string.find(spell.english, 'Waltz') then
-	equip(sets.JA.Waltz)
-  end	
-    if spell.english == 'Tornado Kick' and buffactive.Footwork then
-        equip(sets.WS.FinalHeaven)
-		equip({legs="Bhikku hose +2",feet="Bhikku gaiters +2"})
-	elseif spell.english == 'Victory Smite' or spell.english == 'Raging Fists' then
+	if string.find(spell.name, 'Waltz') then
+		equip(sets.JA.Waltz)
+	end
+  
+    if spell.name == 'Tornado Kick' or spell.name == 'Dragon Kick' or spell.name == "Ascetic's Fury" then
+        equip(sets.WS.TornadoKick)
+	elseif spell.name == 'Victory Smite' then
 		equip(sets.WS.VictorySmite)
-    elseif spell.type=="WeaponSkill" then
+	elseif spell.name == 'Raging Fists' or spell.name == 'Combo' then
+		equip(sets.WS.RagingFists)
+    elseif spell.name == 'Final Heaven' then
         equip(sets.WS.FinalHeaven)
-    elseif sets.precast[spell.english] then
-        equip(sets.precast[spell.english])
-
+	elseif spell.name == 'Shijin Spiral' then
+		equip(sets.WS.ShijinSpiral)
+	elseif spell.name == 'Howling Fist' then
+		equip(sets.WS.HowlingFist)
+	elseif spell.name == 'Cataclysm' then
+		equip(sets.WS.Cataclysm)
     end
+	
+	if sets.JA[spell.name] then
+        equip(sets.JA[spell.name])
+    end
+	
 end
 
 function aftercast(spell)
-	if (spell.english == 'Impetus') then
+	if (spell.name == 'Impetus') then
 		equip({body="Bhikku Cyclas +2"})
+	elseif (spell.name == 'Footwork') then
+		equip({feet="Anch. Gaiters +3"})
 	else
 		equip_current()	
 	end
@@ -183,7 +259,7 @@ function equip_current()
 		equip({body="Bhikku Cyclas +2"})
 	end
 	if (buffactive['Footwork']) then
-		equip({body="Anchorite's Gaiters +3"})
+		equip({feet="Anchorite's Gaiters +3"})
 	end	
 end
 

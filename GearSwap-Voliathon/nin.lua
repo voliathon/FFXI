@@ -9,20 +9,15 @@ function get_sets()
 -- Set macro book/set --
     send_command('input /macro book 6;wait .1;input /macro set 1')
 	
-	-- Binds for modes
-	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-	send_command('bind ^f8 gs c C8') 
+	-- Binds for switching weapon modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	-- Binds for switching TP modes
 	send_command('bind !f9 gs c toggle TP set')
 	send_command('bind ^f9 gs c reverse TP set')
 
-	-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
-	Naegling = 'OFF' -- Toogle on/off the Naegling and Heishi Shorinken via ctrl + F8
-		
 	--Job Ability Sets--
 	sets.JA = {}
-
-	-- Dancer's Abilities --
 	sets.JA.Waltz = {legs="Dashing subligar"}
 	sets.JA.Step = 	{}
 	sets.JA.Stun = {}
@@ -62,7 +57,7 @@ function get_sets()
 		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
 		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
+		right_ear="Hattori Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 	    back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
@@ -78,7 +73,7 @@ function get_sets()
 		feet="Malignance Boots",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
-		left_ear="Suppanomimi",
+		left_ear="Hattori Earring +1",
 		right_ear="Cessance Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
@@ -91,6 +86,7 @@ function get_sets()
 		neck="Subtlety Spec.",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
+		left_ear="Hattori Earring +1",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}
 
@@ -228,7 +224,7 @@ function get_sets()
 	--Blade: Hi
 	sets.Hi = {
 		ammo="Yetshila +1",
-		head="Ken. Jinpachi +1",
+		head="Hachiya hatsuburi +3",
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
@@ -237,9 +233,9 @@ function get_sets()
 		waist="Grunfeld Rope",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		right_ear="Brutal Earring",
-		left_ring="Rajas Ring",
-		right_ring="Mummu Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
+		left_ring="Sroda Ring",
+		right_ring="Epaminondas Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
 	}	
 
 	--Take/To/Chi/Yu
@@ -253,7 +249,7 @@ function get_sets()
 		neck="Sanctity Necklace",
 		waist="Grunfeld Rope",
 		left_ear="Hecate's Earring",
-		right_ear={ name="Hattori Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+9','Mag. Acc.+9',}},
+		right_ear="Hattori Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
 		back="Toro Cape"
@@ -262,16 +258,16 @@ function get_sets()
 	--Blade: Ku
 	sets.Ku = {
 		ammo="Yetshila +1",
-		head="Ken. Jinpachi +1",
+		head="Mpaca's Cap",
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
-		legs="Ken. Hakama +1",
+		legs="Mpaca's Hose",
 		feet="Hattori kyahan +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Grunfeld Rope",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		left_ear="Hattori Earring +1",
 		right_ear="Brutal Earring",
-		left_ring="Rajas Ring",
+		left_ring="Sroda Ring",
 		right_ring="Mummu Ring",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
 	}
@@ -279,18 +275,18 @@ function get_sets()
 	--Blade: Kamu
 	sets.Kamu = {
 		ammo="Pemphredo Tathlum",
-		head="Nyame Helm",
+		head="Mpaca's Cap",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
+		legs="Mpaca's Hose",
 		feet="Nyame Sollerets",
 		neck="Sanctity Necklace",
 		waist="Grunfeld Rope",
 		left_ear="Hecate's Earring",
-		right_ear={ name="Hattori Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+9','Mag. Acc.+9',}},
-		left_ring="Stikini Ring +1",
+		right_ear="Hattori Earring +1",
+		left_ring="Sroda Ring",
 		right_ring="Stikini Ring +1",
-		back="Toro Cape"
+		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
 	}	
 
 
@@ -362,7 +358,7 @@ function get_sets()
 		body="Samnuha coat",
 		hands="Hattori Tekko +2",
 		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
+		feet="Mochi. Kyahan +3",
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
 		left_ear="Hecate's Earring",
@@ -372,16 +368,48 @@ function get_sets()
 		back="Toro cape"
 	}
 
+	
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'HeishiKuni','HeishiCrep','NagKuni','NagCrep','TauretMal','TauretCrep'}
+	weapon_ind = 1
 
+	sets.weapon.HeishiKuni = {
+		main="Heishi Shorinken",
+		sub="Kunimitsu"
+	}
+	
+	sets.weapon.HeishiCrep = {
+		main="Heishi Shorinken",
+		sub="Crepuscular Knife"
+	}
+	
+	sets.weapon.NagKuni = {
+		main="Naegling",
+		sub="Kunimitsu"
+	}
+	
+	sets.weapon.NagCrep = {
+		main="Naegling",
+		sub="Crepuscular Knife"
+	}
 
+	sets.weapon.TauretMal = {
+		main="Tauret",
+		sub="Malevolence"
+	}
+	
+	sets.weapon.TauretCrep = {
+		main="Tauret",
+		sub="Crepuscular Knife"
+	}
 end
+
 
 function precast(spell) 
 	--equips favorite weapon if disarmed
 	if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-		equip({main="Heishi Shorinken",sub="Crepuscular Knife"})
-		add_to_chat(158,'Heishi Shorinken Weapon: [ON]')
-		Naegling = 'OFF'
+		equip_current()
 	end
 	
 	if string.find(spell.english,'Utsusemi') then
@@ -457,29 +485,24 @@ end
 --I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
-	--if (buffactive['Battuta']) then
-	--	equip({hands="Turms mittens +1", feet="Turms leggings +1", left_ear="Cryptic earring"})
-	--end
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C8' then -- Naegling to Heishi Shorinken --	
-        if Naegling == 'ON' then
-            Naegling = 'OFF'
-			equip({main="Heishi Shorinken", sub="Crepuscular Knife"})
-            add_to_chat(158,'Heishi Shorinken Weapon: [ON]')
-			add_to_chat(123,'Naegling Weapon: [OFF]')
-		else
-            Naegling = 'ON'
-			equip({main="Naegling", sub="Crepuscular Knife"})
-            add_to_chat(158,'Naegling Weapon: [ON]')
-            add_to_chat(123,'Heishi Shorinken Weapon: [OFF]')				
-        end
-       -- status_change(player.status)
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
 	elseif command == 'toggle TP set' then
 		TP_ind = TP_ind -1
 		if TP_ind == 0 then TP_ind = #sets.TP.index end

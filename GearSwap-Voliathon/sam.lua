@@ -3,8 +3,9 @@ function get_sets()
     send_command('input /macro book 7;wait .1;input /macro set 1')
 	
 	-- Binds for modes
-	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-  	send_command('bind ^f8 gs c C8') 
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	-- Binds for switching TP modes	
     send_command('bind !f9 gs c toggle TP set')
 	send_command('bind ^f9 gs c reverse TP set')
 
@@ -13,11 +14,11 @@ function get_sets()
 	ShiningOne = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F9
 	ShadowType = 'None'
 	
-  --TP Sets--
-  sets.TP = {}
---					  1		   2              3 				   4 		  5			   6
-  sets.TP.index = {'BadAss', 'Tank', 'TakingLessMagicDamage', 'Accuracy', 'Reraise', 'SubtleBlow'}
-  TP_ind = 1
+	--TP Sets--
+	sets.TP = {}
+	--					  1		   2              3 				   4 		  5			   6
+	sets.TP.index = {'BadAss', 'Tank', 'TakingLessMagicDamage', 'Accuracy', 'Reraise', 'SubtleBlow'}
+	TP_ind = 1
 
   --offensive melee set
   sets.TP.BadAss = {
@@ -115,7 +116,7 @@ function get_sets()
     legs="Ken. Hakama +1",
     feet="Ken. Sune-Ate +1",
     neck="Sam. Nodowa +2",
-    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    waist={ name="Sailfi Belt +1", augments={'Path: A'}},
     left_ear="Cessance Earring",
     right_ear="Digni. Earring",
     left_ring="Chirich Ring +1",
@@ -124,56 +125,132 @@ function get_sets()
   }  
 
   --Weaponskill Sets--
-  --multi, Shoha, Fudo, Kasha need STR for the modifier
-  sets.Single = {
-    sub="Utu Grip",
-    ammo="Knobkierrie",
-    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-	body={ name="Valorous Mail", augments={'Pet: "Regen"+2','Crit. hit damage +1%','Weapon skill damage +5%','Accuracy+4 Attack+4','Mag. Acc.+13 "Mag.Atk.Bns."+13'}},
-    hands="Kasuga kote +2",
-    legs="Wakido Haidate +3",
-    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
-    neck="Fotia Gorget",
-    waist="Fotia Belt",
-    left_ear="Thrud Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-    left_ring="Epaminondas's Ring",
-    right_ring="Chirich Ring +1",
-    back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
-  }
+  --Mumei, Fudo, Kasha, Gekko, Yuk 
+	sets.Fudo = {
+		ammo="Knobkierrie",
+		head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%'}},
+		body={ name="Valorous Mail", augments={'Pet: "Regen"+2','Crit. hit damage +1%','Weapon skill damage +5%','Accuracy+4 Attack+4','Mag. Acc.+13 "Mag.Atk.Bns."+13'}},
+		hands="Kasuga kote +2",
+		legs="Wakido Haidate +3",
+		feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Thrud Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		left_ring="Epaminondas's Ring",
+		right_ring="Chirich Ring +1",
+		back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	}
   
-  sets.Shoha = {}
-
-  --Job Ability Sets--
-  sets.JA = {}
-  
-  -- Dancer's Abilities --
-  sets.JA.Waltz = {legs="Dashing subligar"}
-  sets.JA.Step = 	{}
-  sets.JA.Stun = {}
+	sets.Shoha = {
+		ammo="Knobkierrie",
+		head="Mpaca's Cap",
+		body={ name="Valorous Mail", augments={'Pet: "Regen"+2','Crit. hit damage +1%','Weapon skill damage +5%','Accuracy+4 Attack+4','Mag. Acc.+13 "Mag.Atk.Bns."+13'}},
+		hands="Kasuga kote +2",
+		legs="Wakido Haidate +3",
+		feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
+		neck="Fotia Gorget",
+		waist="Sailfi Belt +1",
+		left_ear="Thrud Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		left_ring="Epaminondas's Ring",
+		right_ring="Chirich Ring +1",
+		back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	}
 	
-  sets.JA.Sengikori = {feet="Kasuga sune-ate +2"}	
-  sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
-  sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +2", feet="Wakido sune-ate +2"}
-  sets.JA.WardingCircle = {head="Wakido kabuto +2"}
-  sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
-  sets.JA.Sekkanoki = {hands="Kasuga kote +2"}
+	sets.Jinpu = {
+		ammo="Knobkierrie",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck={ name="Sam. Nodowa +2", augments={'Path: A'}},
+		waist="Fotia Belt",
+		left_ear="Friomisi Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		left_ring="Fenrir Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}	
+	}
+	
+	sets.Ageha = {
+		ammo="Pemphredo Tathlum",
+		head="Kasuga Kabuto +2",
+		body="Kasuga Domaru +2",
+		hands="Kasuga Kote +2",
+		legs="Kasuga Haidate +2",
+		feet="Kas. Sune-Ate +2",
+		neck="Sanctity Necklace",
+		waist="Fotia Belt",
+		left_ear="Digni. Earring",
+		right_ear={ name="Kasuga Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+6','Mag. Acc.+6'}},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}	
+	}
+	
+	
+	sets.Stardiver = {
+		ammo="Coiste Bodhar",
+		head="Mpaca's Cap",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Kas. Sune-Ate +2",
+		neck={ name="Sam. Nodowa +2", augments={'Path: A'}},
+		waist="Fotia Belt",
+		left_ear="Schere Earring",
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		left_ring="Sroda Ring",
+		right_ring="Chirich Ring +1",
+		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}		
+	}
+
+	--Job Ability Sets--
+	sets.JA = {}
+	sets.JA.Waltz = {legs="Dashing subligar"}
+	sets.JA.Step = 	{}
+	sets.JA.Stun = {}
+	sets.JA.Sengikori = {feet="Kasuga sune-ate +2"}	
+	sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
+	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +2", feet="Wakido sune-ate +2"}
+	sets.JA.WardingCircle = {head="Wakido kabuto +2"}
+	sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
+	sets.JA.Sekkanoki = {hands="Kasuga kote +2"}
+ 
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'Dojikiri','Masamune','ShiningOne'}
+	weapon_ind = 1 
+	
+	sets.weapon.Dojikiri = {
+		main="Dojikiri Yasutsuna",
+		sub="Utu Grip"
+	}
+	
+	sets.weapon.Masamune = {
+		main="Masamune",
+		sub="Utu Grip"
+	}
+	
+	
+	sets.weapon.ShiningOne = {
+		main="Shining One",
+		sub="Utu Grip"
+	}
  
 end
 
 
 function precast(spell,abil)
-
-	-- Dancer Abilities --
   if string.find(spell.english, 'Waltz') then
 	equip(sets.JA.Waltz)
   end	
   
   --equips favorite weapon if disarmed
   if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip({main="Dojikiri Yasutsuna",sub="Utu Grip"})
-    add_to_chat(158,'Dojikiri Yasutsuna Weapon: [ON]')
-	ShiningOne = 'OFF'
+    equip_current()
   end
   
   if spell.name == 'Hasso' then
@@ -194,10 +271,22 @@ function precast(spell,abil)
   if spell.name == 'Sekkanoki' then
 	equip(sets.JA.Sekkanoki)
   end
-  --WS Lookups
-  if spell.name == 'Tachi: Shoha' or spell.name == 'Tachi: Fudo' or spell.name == 'Tachi: Kasha' then
-    equip(sets.Single)
+  
+  --Weaponskill Lookups
+  if spell.name == 'Tachi: Fudo' or spell.name == 'Tachi: Kasha' or spell.name == 'Tachi:Mumei' or spell.name == 'Tachi:Gekko' or spell.name == 'Tachi:Yukikaze' then
+    equip(sets.Fudo)
+  elseif spell.name == 'Tachi: Shoha' then
+	equip(sets.Shoha)
+  elseif spell.name == 'Tachi: Jinpu' then
+    equip(sets.Jinpu)
+  elseif spell.name == 'Tachi: Ageha' then
+    equip(sets.Ageha)
+  elseif spell.name == 'Impulse Drive' or spell.name == 'Sonic Thrust' then 
+	equip(sets.Fudo)
+  elseif spell.name == 'Stardiver' then
+    equip(sets.Stardiver)
   end
+  
   --prevents casting Utsusemi if you already have 3 or more shadows
   if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
     cancel_spell()
@@ -229,6 +318,7 @@ end
 --I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
 end
 
@@ -236,19 +326,16 @@ end
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C8' then -- Shining One to Dojikiri Yasutsuna --	
-        if ShiningOne == 'ON' then
-            ShiningOne = 'OFF'
-			equip({main="Dojikiri Yasutsuna", sub="Utu Grip"})
-            add_to_chat(158,'Dojikiri Yasutsuna Weapon: [ON]')
-			add_to_chat(123,'Shining One Weapon: [OFF]')
-		else
-            ShiningOne = 'ON'
-			equip({main="Shining One", sub="Utu Grip"})
-            add_to_chat(158,'Shining One Weapon: [ON]')
-            add_to_chat(123,'Dojikiri Yasutsuna Weapon: [OFF]')				
-        end
-       -- status_change(player.status)
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
 	elseif command == 'toggle TP set' then
 		TP_ind = TP_ind +1
 		if TP_ind > #sets.TP.index then TP_ind = 1 end
