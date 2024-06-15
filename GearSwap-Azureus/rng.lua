@@ -4,7 +4,9 @@
 --Took this idea from the previous lua script I got off the net and rolled with it.
 function BelenusCapes()
 	BelenusCape = {}
-    BelenusCape.ranged_ws={ name="Belenus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'} }	
+    BelenusCape.ranged_ws={ name="Belenus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'} }
+	BelenusCape.snapshot = {}
+	BelenusCape.double_atk={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
 end
 
 
@@ -89,7 +91,7 @@ function get_sets()
 		right_ear="Cessance Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Epona's Ring",
-        back={name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
+        back=BelenusCape.double_atk
     })
 	
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.engaged.TakingLessPhysicalDamage, {
@@ -249,7 +251,7 @@ function get_sets()
 		head="Orion Beret +3",
 		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
 		hands="Meg. Gloves +2",
-		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11'}},
 		feet="Amini Bottillons +2",
 		neck="Fotia Gorget",
 		waist="Sailfi Belt +1",
