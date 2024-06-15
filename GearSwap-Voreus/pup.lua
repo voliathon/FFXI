@@ -13,14 +13,12 @@ function get_sets()
 	
     sets.precast = {}
     sets.precast.Maneuver = {
-		main="Midnights",
-		range="Animator P +1", 
 		body="Kara. Farsetto +2", 
 		hands="Foire Dastanas +2", 
 		back="Visucius's Mantle",
 		neck="Buffoon's collar"
 	}
-    sets.precast['Overdrive'] = {legs="Pitre tobe +1"}
+    sets.precast.Overdrive = {main="Pitre tobe +2"}
 	sets.precast.Repair = {range="Animator P +1", ammo="Automat. Oil +3", feet="Foire Babouches +2"}
 	sets.precast.Waltz = {legs="Dashing subligar"}
 	sets.precast.Activate = {main="Ohtas", right_ear="Karagoz Earring"}
@@ -34,7 +32,7 @@ function get_sets()
 	
   --Engaged Sets--
   sets.engaged = {}
-  sets.engaged.index = {'BadAss', 'Movement', 'Regen', 'DT', 'Accuracy', 'TH', 'STPAutomaton', 'DblAttkAutomaton', 'MagicAutomaton', 'TankAutomaton', 'BothTP'}
+  sets.engaged.index = {'BadAss', 'Movement', 'Regen', 'DT', 'Accuracy', 'TH', 'STPAutomaton', 'DblAttkAutomaton', 'MagicAutomaton', 'TankAutomaton', 'BothTP', 'RangeAutomaton'}
   engaged_ind = 1
 	
   sets.engaged.BadAss = {
@@ -99,6 +97,21 @@ function get_sets()
   sets.engaged.TankAutomaton = {}
   
   sets.engaged.BothTP = {}
+  
+  sets.engaged.RangeAutomaton = {
+    head="Kara. Cappello +2",
+    body={ name="Pitre Tobe +2", augments={'Enhances "Overdrive" effect'}},
+    hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%'}},
+    legs={ name="Taeon Tights", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%'}},
+    feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%'}},
+    neck="Empath Necklace",
+    waist="Klouskap Sash",
+    left_ear="Enmerkar Earring",
+    right_ear="Handler's Earring +1",
+    left_ring="Varar Ring +1",
+    right_ring="Varar Ring +1",
+    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%'}}  
+  }
 
 --Weapon Skill Sets
     sets.WS = {}
@@ -271,3 +284,11 @@ windower.register_event('status change', function()
 	send_command('@input /tell <me> Wakies Wakies Voreus!!! For some Weird Ass Reason my you dead')
 	end
 end)
+
+function job_customize_idle_set(equip_current)
+    if pet.isvalid and pet.status == 'Engaged' and pet.tp > 999 then
+		equip(sets.rangedWSD)
+    end
+    return equip_current
+end
+    
