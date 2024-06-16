@@ -95,9 +95,9 @@ function get_sets()
 		head="Horos Tiara +1", --Waltz Potency +11%  
 		legs="Dashing subligar", --Waltz Potency +10% 
 		feet="Maxixi Toe Shoes +2", --Waltz Potency +12% 
-		right_ear="Roundel earring", --Waltz Potency +5%
 		ammo="Yamarang", --Waltz Potency +5% 
 		back="Toetapper Mantle" --Waltz Potency +5%
+		--right_ear="Roundel earring", --Waltz Potency +5%
 	}
 	
 	sets.JA.Samba = {
@@ -115,7 +115,7 @@ function get_sets()
 	}
 	
 	sets.JA.Jig = {
-		legs="Horos Tights +1", --45%
+		legs="Horos Tights +3", --50%
 		feet="Maxixi Toe Shoes +2" --45%
 	}
 	
@@ -138,7 +138,7 @@ function get_sets()
 	sets.JA.Trance = {head="Horos Tiara +1"}
 	sets.JA.FanDance = {hands="Horos Bangles +1"}
 	sets.JA.NoFootRise = {body="Horos Casaque +1"}
-	sets.JA.SaberDance = {legs="Horos Tights +1"}
+	sets.JA.SaberDance = {legs="Horos Tights +3"}
 	sets.JA.ClosedPosition = {feet="Horos Shoes +1"}
 	
 	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
@@ -152,7 +152,7 @@ function get_sets()
 		head="Maculele Tiara +2",
 		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
 		hands="Maxixi Bangles +3",
-		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11',}},
+		legs="Horos Tights +3",
 		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
 		neck="Fotia Gorget",
 		waist="Grunfeld Rope",
@@ -221,7 +221,7 @@ function get_sets()
 	
  -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TauretCentovente', 'TauretCrepuscularKnife'}
+  sets.weapon.index = {'AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TwashtarGleti', 'TauretCentovente', 'TauretCrepuscularKnife'}
   weapon_ind = 1     
   
  sets.weapon.AeneasCentovente = {
@@ -239,6 +239,10 @@ function get_sets()
  sets.weapon.TwashtarCrepuscularKnife = {
 	main="Twashtar",
 	sub="Crepuscular Knife"
+ }  
+ sets.weapon.TwashtarGleti = {
+	main="Twashtar",
+	sub="Gleti's knife"
  }  
   sets.weapon.TauretCentovente = {
 	main="Tauret",
@@ -339,11 +343,6 @@ function aftercast(spell)
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
