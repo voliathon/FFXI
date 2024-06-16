@@ -15,7 +15,7 @@ function get_sets()
     sets.JA = {}
     sets.JA.Boost = {hands="Anchorite's Gloves +3"}
     sets.JA.Chakra = {body="Anchorite's Cyclas +2", hands="Hes. Gloves +1"}
-    sets.JA.Counterstance = {feet="Hesychast's Gaiters +1"}
+    sets.JA.Counterstance = {feet="Hesychast's Gaiters +2"}
     sets.JA.Focus = {head="Anchorite's Crown +2"}
     sets.JA.Dodge = {feet="Anchorite's Gaiters +3"}
     sets.JA.Mantra = {feet="Hes. Gaiters +1"}
@@ -119,11 +119,11 @@ function get_sets()
 		hands="Anchorite's gloves +3",
 		legs="Hiza. Hizayoroi +2",
 		feet="Ken. Sune-Ate +1",
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		right_ear="Ishvara Earring",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-		left_ring="Rajas Ring",
+		neck="Monk's nodowa +2",
+		waist="Moonbow Belt +1",
+		right_ear="Schere Earring",
+		left_ear="Bhikku Earring +1",
+		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
 		back={ name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
@@ -145,13 +145,13 @@ function get_sets()
 	}
 	
 	sets.WS.ShijinSpiral = {
-		ammo="Knobkierrie",
+		ammo="Coiste Bodhar",
 		head="Ken. Jinpachi +1",
 		body="Ken. Samue +1",
 		hands="Malignance Gloves",
 		legs="Ken. Hakama +1",
 		feet={ name="Herculean Boots", augments={'Accuracy+15 Attack+15','"Triple Atk."+3','Accuracy+5',}},
-		neck="Fotia Gorget",
+		neck="Monk's Nodowa +2",
 		waist="Moonbow Belt +1",
 		left_ear="Cessance Earring",
 		right_ear="Schere Earring",

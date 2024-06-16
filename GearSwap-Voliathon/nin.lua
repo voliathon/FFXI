@@ -189,8 +189,8 @@ function get_sets()
 
 
 	sets.Ten = {
-		ammo="Yetshila +1",
-		head="Hachiya hatsuburi +3",
+		ammo="Coiste Bodhar",
+		head="Mpaca's cap",
 		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Hiza. Hizayoroi +2",
@@ -209,13 +209,13 @@ function get_sets()
 		ammo="Yetshila +1",
 		head="Ken. Jinpachi +1",
 		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
-		legs="Ken. Hakama +1",
+		hands="Malignance gloves",
+		legs="Mpaca's Hose",
 		feet="Hattori kyahan +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Grunfeld Rope",
+		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		right_ear="Brutal Earring",
+		right_ear="Hattori Earring +1",
 		left_ring="Rajas Ring",
 		right_ring="Mummu Ring",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
@@ -232,7 +232,7 @@ function get_sets()
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Grunfeld Rope",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		right_ear="Brutal Earring",
+		right_ear="Hattori Earring +1",
 		left_ring="Sroda Ring",
 		right_ring="Epaminondas Ring",
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
@@ -260,7 +260,7 @@ function get_sets()
 		ammo="Yetshila +1",
 		head="Mpaca's Cap",
 		body="Ken. Samue +1",
-		hands="Ken. Tekko +1",
+		hands="Malignance Gloves",
 		legs="Mpaca's Hose",
 		feet="Hattori kyahan +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
@@ -371,9 +371,10 @@ function get_sets()
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'HeishiKuni','HeishiCrep','NagKuni','NagCrep','TauretMal','TauretCrep'}
+	sets.weapon.index = {'HeishiKuni','HeishiCrep','HeishiGleti','NagKuni','NagCrep','TauretMal','TauretCrep'}
 	weapon_ind = 1
 
+	--Blade:Ten*/Chi*/Teki*/To*
 	sets.weapon.HeishiKuni = {
 		main="Heishi Shorinken",
 		sub="Kunimitsu"
@@ -382,6 +383,11 @@ function get_sets()
 	sets.weapon.HeishiCrep = {
 		main="Heishi Shorinken",
 		sub="Crepuscular Knife"
+	}
+	
+	sets.weapon.HeishiGleti = {
+		main="Heishi Shorinken",
+		sub="Gleti's Knife"
 	}
 	
 	sets.weapon.NagKuni = {
