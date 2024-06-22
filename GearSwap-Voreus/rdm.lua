@@ -15,8 +15,8 @@ function get_sets()
     sets.Chainspell = {body="Vitiation tabard +3"}
     sets.Stymie = {}
     sets.Spontaneity = {}
-    sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +3",hands="Lethargy gantherots +2",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +3"}
-	sets.Saboteur = {hands="Lethargy gantherots +2"}
+    sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +3"}
+	sets.Saboteur = {hands="Lethargy gantherots +3"}
 	sets.Dispel = {neck="Duelist's torque +2"}
 
 
@@ -63,19 +63,18 @@ function get_sets()
 	})
 	
 	sets.TP = {
-		range="Ullr",
 		head="Malignance Chapeau",
 		body="Lethargy Sayon +3",
-		hands="Aya. Manopolas +2",
+		hands="Lethargy gantherots +3",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Anu Torque",
-		waist="Orpheus's Sash",
+		waist="Sailfi belt +1",
 		left_ear="Sherida Earring",
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5'}},
 		left_ring="Ilabrat Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10'}}
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
 	}
 	
 
@@ -107,12 +106,10 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main={ name="Grioavolr", augments={'Magic burst dmg.+9%','INT+2','Mag. Acc.+25','"Mag.Atk.Bns."+22'}},
-		sub="Enki Strap",
 		ammo="Pemphredo Tathlum",
 		head="Lethargy Chappel +2",
 		body="Lethargy Sayon +3",
-		hands="Lethargy Ganth. +2",
+		hands="Lethargy gantherots +3",
 		legs="Lethargy Fuseau +2",
 		feet="Lethargy Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
@@ -132,7 +129,7 @@ function get_sets()
 		ammo="Regal Gem",
 		head="Vitiation chapeau +3",
 		body="Lethargy sayon +3",
-		hands="Lethargy gantherots +2",
+		hands="Lethargy gantherots +3",
 		legs={ name="Chironic Hose", augments={'Attack+14','Mag. Acc.+13','"Treasure Hunter"+1','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		feet="Vitiation Boots +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
@@ -150,13 +147,26 @@ function get_sets()
       body="Twilight Cloak"
 	}
 
+	sets.Accuracy = {
+		head="Leth. Chappel +2",
+		body="Lethargy Sayon +3",
+		hands="Leth. Ganth. +3",
+		legs="Leth. Fuseau +2",
+		feet="Leth. Houseaux +3",
+		neck="Sanctity Necklace",
+		waist="Kentarch Belt +1",
+		left_ear="Sherida Earring",
+		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
+		left_ring="Ilabrat Ring",
+		right_ring="Rajas Ring",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+	}
 
 	-- PDT Set
     sets.PDT = {
-		ammo="Homiliary",
 		head="Lethargy chappel +2",
 		body="Lethargy sayon +3",
-		hands="Lethargy gantherots +2",
+		hands="Lethargy gantherots +3",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
 		neck="Loricate Torque +1",
@@ -164,12 +174,12 @@ function get_sets()
 		left_ear="Genmei Earring",
 		right_ear="Ethereal Earring",
 		left_ring="Gelatinous Ring +1",
-		right_ring="Defending Ring"
+		right_ring="Defending Ring",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
 	}
 
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
-		ammo="Homiliary",
 		head="Nyame Helm",
 		body="Nyame mail",
 		hands="Nyame gauntlets",
@@ -180,13 +190,23 @@ function get_sets()
 		left_ear="Genmei Earring",
 		right_ear="Ethereal Earring",
 		left_ring="Gelatinous Ring +1",
-		right_ring="Defending Ring"
+		right_ring="Defending Ring",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
 	}
-
-		
-	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {
-		legs="Carmine cuisses +1"
+	
+    sets.Movement = {		
+		head="Lethargy chappel +2",
+		body="Lethargy sayon +3",
+		hands="Lethargy gantherots +3",
+		legs="Carmine cuisses +1",
+		feet="Nyame sollerets",
+		neck="Loricate Torque +1",
+		waist="Slipor Sash",
+		left_ear="Genmei Earring",
+		right_ear="Ethereal Earring",
+		left_ring="Gelatinous Ring +1",
+		right_ring="Defending Ring",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
 	}
 
     
@@ -204,19 +224,18 @@ function get_sets()
     ------------------------------------------------------------------------------------------------------------------
 	 
 	 sets.SavageBlade = {
-		range="Ullr",
-		head="Vitiation chapeau +3",
+		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
 		body="Ayanmo Corazza +2",
 		hands="Atrophy Gloves +3",
-		legs="Jhakri slops +2",
-		feet="Lethargy Houseaux +3",
-		neck="Combatant's Torque",
-		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
-		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250'}},
+		legs="Jhakri Slops +2",
+		feet="Leth. Houseaux +3",
+		neck="Rep. Plat. Medal",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
 		right_ear="Sherida Earring",
 		left_ring="Ilabrat Ring",
-		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}	 
+		right_ring="Petrov Ring",
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	 }
 	 
 	 sets.SeraphBlade = {
@@ -231,11 +250,10 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Freke Ring",
 		right_ring="Stikini Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	 }
 	 
 	 sets.SanguineBlade = {
-		range="Ullr",
 		head="Lethargy Chappel +2",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
@@ -247,7 +265,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Archon Ring",
 		right_ring="Stikini Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}	 
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}	 
 	 }
 	 
 
@@ -257,17 +275,17 @@ function get_sets()
 	engaged_ind = 1  	 
 	 
 	sets.engaged.TP = set_combine(sets.TP, {}) 
-	sets.engaged.Movement = set_combine(sets.Kiting, {})
+	sets.engaged.Movement = set_combine(sets.Movement, {})
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
-	sets.engaged.Accuracy = {}
+	sets.engaged.Accuracy = set_combine(sets.Accuracy, {})
 	sets.engaged.Refresh = set_combine(sets.Refresh, {})
 	 
 end
 
  -- Weapon Toggle--
  sets.weapon = {}
- sets.weapon.index = {'Nuke', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingColada'}
+ sets.weapon.index = {'Nuke', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingTauret'}
  weapon_ind = 1     
   
  sets.weapon.Nuke = {
@@ -290,7 +308,7 @@ end
 	main="Naegling",
 	sub="Sacro Bulwark"
  }
- sets.weapon.NaeglingColada = {
+ sets.weapon.NaeglingTauret = {
 	main="Naegling",
 	sub="Tauret"
  }
@@ -323,6 +341,9 @@ function precast(spell,abil)
 end
 
 function midcast(spell)
+	if spell.name == "Dispel" then
+		equip(sets.Dispel)
+	end
 
 	if spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Refresh' or spell.name == 'Refresh II' or spell.name == 'Refresh III' then
@@ -332,18 +353,16 @@ function midcast(spell)
 		elseif spell.name == 'Enfire' or spell.name == 'Enfire II' or spell.name == 'Enstone' or spell.name == 'Enstone II' or spell.name == 'Enblizzard' or spell.name == 'Enblizzard II' or spell.name == 'Enaero' or spell.name == 'Enaero II' or spell.name == 'Enthunder' or spell.name == 'Enthunder II' or spell.name == 'Enwater' or spell.name == 'Enwater II' then
 			equip(sets.Enspell)
 		else
+			--gain and temper hits here
 			equip(sets.Enhancing)
 		end
 	end
-	
-	if spell.name == 'Cure' or spell.name == 'Cure II' or spell.name == 'Cure III' or 
-	spell.name == 'Cure IV' or spell.name == 'Curaga' or spell.name == 'Curaga II' then 
-		equip(sets.Cure)
-	end
-
 
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
+	end
+	if string.find(spell.english,'Cur') then 
+		equip(sets.Cure)
 	end
 	if spell.skill == 'Elemental Magic' then
 		equip(sets.ElementalMagic)
@@ -351,16 +370,7 @@ function midcast(spell)
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
 	end	
-	if spell.name == "Dispel" then
-		equip(sets.Dispel)
-	end
-	-- if spell.name == 'Gain-STR' or spell.name == 'Gain-DEX' or spell.name == 'Gain-VIT' or 
-	-- spell.name == 'Gain-AGI' or spell.name == 'Gain-INT' or spell.name == 'Gain-MND' or spell.name == 'Gain-CHR' then
-		-- equip(sets.Enhancing)
-	-- end
-	-- if spell.name == 'Temper' or spell.name == 'Temper II' then
-		-- equip(sets.Enhancing)
-	-- end
+
 end
 
 --We need to do some thinking and testing for this set...
@@ -420,4 +430,3 @@ windower.register_event('status change', function()
 		send_command('@input /tell <me> Wakies Wakies Voreus We hit 0 HP on accident. We shall live forever!!!')
 	end
 end)
-
