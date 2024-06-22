@@ -36,7 +36,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Hetairoi Ring",
-		back="Toetapper Mantle"
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}
 	
 	sets.engaged.Accuracy =  {
@@ -52,7 +52,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back="Toetapper Mantle"
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}
 
 	 sets.engaged.Tank = {
@@ -68,7 +68,7 @@ function get_sets()
 		right_ear="Eabani Earring",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
-		back="Toetapper Mantle"
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	 }	
 	
 	sets.engaged.Evasion = {
@@ -160,7 +160,7 @@ function get_sets()
 		right_ear="Odr Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back="Toetapper Mantle"
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 	
 	sets.Evisceration = {
@@ -176,7 +176,7 @@ function get_sets()
 		right_ear="Odr Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back="Toetapper Mantle"
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 	
     sets.Aeolian = {	
@@ -192,7 +192,7 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Toetapper Mantle"
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 	
 	sets.PyrrhicKleos = {}
@@ -301,7 +301,8 @@ function precast(spell,action)
 		
 	-- Weapon Skill --
 	-- 50% DEX Modifier Evisceration / Crits per hits
-	elseif spell.name == "Evisceration" then
+	-- STR 40% DEX 40% Pyrrhic Kleos
+	elseif spell.name == "Evisceration" or spell.name == "Pyrrhic Kleos" then
 		equip(sets.Evisceration)
 	
 	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
@@ -312,13 +313,6 @@ function precast(spell,action)
 	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
 	elseif spell.name == "Aeolian Edge" then
 		equip(sets.Aeolian)
-
-	-- STR 40% DEX 40%
-	elseif spell.name == "Pyrrhic Kleos" then
-		equip(sets.Evisceration)
-
-	--elseif spell.action_type == 'Ranged Attack' then
-	--    equip(sets.preshot.RA)
 
 	-- Ninja Spells --
 	elseif spell.skill == 'Ninjutsu' then
@@ -354,11 +348,11 @@ function equip_weapon()
 end
 
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C8' then -- Toggling Weapons--	
+	if command == 'C8' then 
+		--Ctrl+F8 is Engaged Set
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
@@ -369,6 +363,7 @@ function self_command(command)
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
 	elseif command == 'C9' then
+	--Ctrl+F9 is Engaged Set
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')

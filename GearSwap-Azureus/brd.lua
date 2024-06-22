@@ -62,8 +62,8 @@ function get_sets()
   --Magic Accuracy for those pesky songs that don't want to stick--
   sets.MagicAccuracy = {
     head="Fili calot +2",
-    body="Brioso Justaucorps +3",
-    hands="Brioso Cuffs +3",
+    body="Fili Hongreline +3",
+    hands="Fili Manchettes +3",
     legs="Brioso Cannions +3",
     feet="Brioso Slippers +3",
     neck="Mnbw. Whistle +1",
@@ -80,7 +80,7 @@ function get_sets()
 	main="Carnwenhan",
     head="Fili calot +2",
     body="Fili Hongreline +3",
-    hands="Fili Manchettes +2",
+    hands="Fili Manchettes +3",
     legs="Inyanga Shalwar +2",
     feet="Brioso Slippers +3",
     neck="Mnbw. Whistle +1",
@@ -137,17 +137,14 @@ function get_sets()
   
   })
   
-  
   -- TODO
-  -- Lullaby <--Atm it's hitting MagicAccuracy as of 4/26/2020
   -- Waltz
-  -- Enhancing <-- I don't think we really need to do this or focus on this for BRD.  
+  
   -- Mordant Rime  70%CHR / 30% DEX
   -- Evisceration   50% DEX  Critical Hits
   -- Rudra's Storm  80% DEX  Dmg varies with TP
   -- Exenterator  85% AGI w/ capped merits.  Duration of accuracy down varies with TP
   -- Aeolian Edge  40% DEX / 40% INT  Dmg varies with TP
-  -- 
 
   -- Engaged Sets Toggle--
   sets.engaged = {}
@@ -175,7 +172,7 @@ function get_sets()
   sets.engaged.Accuracy = {
     head="Fili Calot +2",
     body="Ashera harness",
-    hands="Fili Manchettes +2",
+    hands="Fili Manchettes +3",
     legs="Fili Rhingrave +2",
     feet="Fili Cothurnes +2",
     neck="Bard's charm +2",
@@ -191,7 +188,7 @@ function get_sets()
   sets.engaged.TakingLessPhysicalDamage = {
     head="Fili Calot +2",
     body="Ashera harness",
-    hands="Nyame Gauntlets",
+    hands="Fili Manchettes +3",
     legs="Fili Rhingrave +2",
     feet="Nyame Sollerets",
     neck="Loricate Torque +1",
@@ -207,7 +204,7 @@ function get_sets()
   sets.engaged.TakingLessMagicDamage = {
     head="Nyame Helm",
     body="Nyame Mail",
-    hands="Nyame Gauntlets",
+    hands="Fili Manchettes +3",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Loricate Torque +1",
