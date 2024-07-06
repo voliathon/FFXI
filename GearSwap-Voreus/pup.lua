@@ -94,7 +94,20 @@ function get_sets()
   
   sets.engaged.MagicAutomaton = {}
   
-  sets.engaged.TankAutomaton = {}
+  sets.engaged.TankAutomaton = {
+		head={ name="Taeon Chapeau", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+		body={ name="Taeon Tabard", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+		hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+		legs="Kara. Pantaloni +2",
+		feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+		neck="Empath Necklace",
+		waist="Klouskap Sash",
+		left_ear="Enmerkar Earring",
+		right_ear="Hypaspist Earring",
+		left_ring="Varar Ring +1",
+		right_ring="Varar Ring +1",
+		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}  
+  }
   
   sets.engaged.BothTP = {}
   

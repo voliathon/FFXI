@@ -74,7 +74,8 @@ function get_sets()
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5'}},
 		left_ring="Ilabrat Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}},
+		ammo="Ginsen"
 	}
 	
 
@@ -211,8 +212,11 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.Enhancing,  {
-		body="Atrophy Tabard +3",
-		legs="Lethargy Fuseau +2"
+		body="Lethargy sayon +3",
+		legs="Lethargy Fuseau +2",
+		ammo="Homiliary",
+		head="Vitiation Chapeau +3",
+		waist="Fucho-no-obi"
 	})
 
 	sets.Enspell = set_combine(sets.Enhancing,  {
@@ -233,9 +237,10 @@ function get_sets()
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
 		right_ear="Sherida Earring",
-		left_ring="Ilabrat Ring",
+		left_ring="Cornelia's Ring",
 		right_ring="Petrov Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+		ammo="Oshasha's treatise"
 	 }
 	 
 	 sets.SeraphBlade = {
@@ -249,7 +254,7 @@ function get_sets()
 		left_ear="Regal Earring",
 		right_ear="Malignance Earring",
 		left_ring="Freke Ring",
-		right_ring="Stikini Ring",
+		right_ring="Cornelia's Ring",
 		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	 }
 	 
@@ -264,7 +269,7 @@ function get_sets()
 		left_ear="Regal Earring",
 		right_ear="Malignance Earring",
 		left_ring="Archon Ring",
-		right_ring="Stikini Ring",
+		right_ring="Cornelia's Ring",
 		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}	 
 	 }
 	 
@@ -390,6 +395,7 @@ end
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
+	enspellCheck()
 end
 
 function equip_weapon()
@@ -424,9 +430,17 @@ function self_command(command)
 end
 
 
+
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
 		send_command('@input /tell <me> Wakies Wakies Voreus We hit 0 HP on accident. We shall live forever!!!')
 	end
 end)
+
+function enspellCheck()
+	if buffactive['Enthunder'] or buffactive['Enstone'] or buffactive['Enaero'] or buffactive['Enblizzard'] or buffactive['Enfire'] or buffactive['Enwater'] or buffactive['Enthunder II'] or buffactive['Enstone II'] or buffactive['Enaero II'] or buffactive['Enblizzard II'] or buffactive['Enfire II'] or buffactive['Enwater II'] then 
+		equip({waist="Orpheus's sash"})
+		--send_command('@input /echo O-Sash equipped')
+	end
+end
