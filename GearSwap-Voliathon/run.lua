@@ -44,7 +44,7 @@ function get_sets()
     body="Ashera Harness",
     hands="Erilaz Gauntlets +2",
     legs="Carmine Cuisses +1",
-    feet="Erilaz Greaves +2",
+    feet="Erilaz Greaves +3",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
     left_ear="Tuisto Earring",
@@ -78,7 +78,7 @@ function get_sets()
     body="Runeist coat +3",
     hands="Erilaz Gauntlets +2",
     legs="Erilaz leg guards +3",
-    feet="Erilaz greaves +2",
+    feet="Erilaz Greaves +3",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
     left_ear="Tuisto Earring",
@@ -94,7 +94,7 @@ function get_sets()
     body="Runeist Coat +3",
     hands="Erilaz Gauntlets +2",
     legs="Erilaz leg guards +3",
-    feet="Erilaz Greaves +2",
+    feet="Erilaz Greaves +3",
     neck="Subtlety Spec.",
     waist="Ioskeha Belt +1",
     left_ear="Heartseeker Earring",
@@ -181,7 +181,7 @@ function get_sets()
     body="Herculean vest",
     hands="Erilaz Gauntlets +2",
     legs="Erilaz leg guards +3",
-    feet="Erilaz greaves +2",
+    feet="Erilaz Greaves +3",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
     left_ear="Crematio Earring",
@@ -198,7 +198,7 @@ function get_sets()
 	body="Nyame mail",
     hands="Erilaz Gauntlets +2",
     legs="Erilaz leg guards +3",
-    feet="Erilaz greaves +2",
+    feet="Erilaz Greaves +3",
     neck="Fotia Gorget",
     waist="Orpheus's sash",
     left_ear="Crematio Earring",
@@ -295,7 +295,7 @@ function get_sets()
 	legs="Erilaz leg guards +3", 
 	neck="Moonbeam necklace", 
 	body="Emet Harness +1",     
-	feet="Erilaz greaves +2"
+	feet="Erilaz Greaves +3"
   }
 
   --Magic acc for enfeebles, handy for VW
