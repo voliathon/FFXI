@@ -54,7 +54,7 @@ function get_sets()
 	--Job Ability Sets--
 	sets.JA = {}
     sets.JA.BurstAffinity = {legs="Assimilator's shalwar +2",feet="Hashishin basmak +2"} 
-    sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2", head="Hashishin kavuk +2"}
+    sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2", head="Hashishin kavuk +3"}
     sets.JA.Diffusion = {}
     sets.JA.Enchainment = {body="Luhlaza Jubbah +1"}
     sets.JA.Efflux = {back=Rosmerta.WSD, legs="Hashishin Tayt +2"}
@@ -93,7 +93,7 @@ function get_sets()
 	-- Magic Accuracy
     sets.MagicAccuracy = {
 		ammo="Pemphredo Tathlum",
-		head="Hashishin Kavuk +2",
+		head="Hashishin kavuk +3",
 		body="Hashishin mintan +2",
 		hands="Hashishin Bazubands +2",
 		legs="Hashishin Tayt +2",
@@ -101,8 +101,8 @@ function get_sets()
 		neck="Incanter's Torque",
 		waist="Luminary Sash",
 		left_ear="Digni. Earring",
-		right_ear="Gwati Earring",
-		left_ring="Rahab Ring",
+		right_ear="Hashishin Earring +1",
+		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
 		back="Kumbira Cape"
     }	
@@ -123,7 +123,7 @@ function get_sets()
 		neck="Clotharius Torque",
 		waist="Windbuffet Belt +1",
 		left_ear="Suppanomimi",
-		right_ear="Telos Earring",
+		right_ear="Hashishin Earring +1",
 		left_ring="Epona's Ring",
 		right_ring="Hetairoi Ring",
 		back=Rosmerta.TP
@@ -223,12 +223,13 @@ function get_sets()
         body="Assimilator's Jubbah +3",
 		hands="Hashishin Bazubands +2",
 		legs="Hashishin Tayt +2",
-        back="Cornflower Cape"
+        back="Cornflower Cape",
+		right_ear="Hashishin Earring +1"
     }
 	
 	sets.CruelJoke = {
 		ammo="Pemphredo Tathlum",
-		head="Hashishin kavuk +2",
+		head="Hashishin kavuk +3",
 		body="Hashishin mintan +2",
 		hands="Hashishin Bazubands +2",
 		legs="Hashishin Tayt +2",
@@ -236,10 +237,9 @@ function get_sets()
 		neck="Incanter's Torque",
 		waist="Luminary Sash",
 		left_ear="Digni. Earring",
-		right_ear="Enchntr. Earring +1",
+		right_ear="Hashishin Earring +1",
 		left_ring="Stikini Ring +1",
-		right_ring="Rahab Ring",
-		-- Get Aurist's Cape +1 9/1/2022
+		right_ring="Stikini Ring +1",
 		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}}	
 	}
 
@@ -292,7 +292,7 @@ function get_sets()
     -- Magical Spells --
     sets.BlueMagicMagical = {
 		ammo="Pemphredo Tathlum",
-		head="Hashishin kavuk +2",
+		head="Hashishin kavuk +3",
 		body="Hashishin mintan +2",
 		hands="Hashishin Bazubands +2",
 		legs="Hashishin Tayt +2",
@@ -349,7 +349,7 @@ function get_sets()
 	-- WSD covers Savage Blade and Expiacion
     sets.WSD = {
 		ammo="Ginsen",
-		head="Hashishin kavuk +2",
+		head="Hashishin kavuk +3",
 		body="Assim. Jubbah +3",
 		hands="Jhakri Cuffs +2",
 		legs="Luhlaza Shalwar +3",
@@ -365,7 +365,7 @@ function get_sets()
 
     sets.ChantduCygne = {
 		ammo="Ginsen",
-		head="Hashishin kavuk +2",
+		head="Hashishin kavuk +3",
 		body="Abnoba Kaftan",
 		hands="Adhemar Wrist. +1",
 		legs=HercLegs.TP,
