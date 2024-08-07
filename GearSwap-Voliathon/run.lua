@@ -28,7 +28,7 @@ function get_sets()
   sets.JA.Rayke = {feet="Futhark boots +1"}
   sets.JA.Battuta = {head="Futhark bandeau +3"}
   sets.JA.Pflug = {feet="Runeist bottes +2"}
-  sets.JA.Pulse = {head="Erilaz galea +2",legs="Runeist Trousers +2"}
+  sets.JA.Pulse = {head="Erilaz galea +3",legs="Runeist Trousers +2"}
   sets.JA.Swordplay = {hands="Futhark mitons +1"}	
 	
 	
@@ -42,11 +42,11 @@ function get_sets()
     ammo="Staunch Tathlum +1",
     head="Nyame Helm",
     body="Ashera Harness",
-    hands="Erilaz Gauntlets +2",
+    hands="Erilaz Gauntlets +3",
     legs="Carmine Cuisses +1",
     feet="Erilaz Greaves +3",
     neck="Loricate torque +1",
-    waist="Flume Belt +1",
+    waist="Engraved belt",
     left_ear="Tuisto Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
@@ -76,23 +76,23 @@ function get_sets()
     ammo="Staunch Tathlum +1",
 	head="Nyame Helm",
     body="Runeist coat +3",
-    hands="Erilaz Gauntlets +2",
+    hands="Erilaz Gauntlets +3",
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",
     neck="Loricate torque +1",
-    waist="Flume Belt +1",
+    waist="Engraved belt",
     left_ear="Tuisto Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
+    right_ring="Fortified Ring",
     back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
   }
 
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    head="Erilaz Galea +2",
+    head="Erilaz galea +3",
     body="Runeist Coat +3",
-    hands="Erilaz Gauntlets +2",
+    hands="Erilaz Gauntlets +3",
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",
     neck="Subtlety Spec.",
@@ -128,11 +128,11 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
+    waist="Engraved belt",
     left_ear="Infused Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
+    right_ring="Fortified Ring",
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}	
   }
 
@@ -179,7 +179,7 @@ function get_sets()
     ammo="Knobkierrie",
     head="Adhemar Bonnet +1",
     body="Herculean vest",
-    hands="Erilaz Gauntlets +2",
+    hands="Erilaz Gauntlets +3",
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",
     neck="Fotia Gorget",
@@ -196,7 +196,7 @@ function get_sets()
     ammo="Knobkierrie",
 	head="Adhemar Bonnet +1",
 	body="Nyame mail",
-    hands="Erilaz Gauntlets +2",
+    hands="Erilaz Gauntlets +3",
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",
     neck="Fotia Gorget",
@@ -210,7 +210,7 @@ function get_sets()
   
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
-    head="Erilaz galea +2",
+    head="Erilaz galea +3",
     body="Erilaz surcoat +2",
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
@@ -277,7 +277,7 @@ function get_sets()
  --108 SIR-
  sets.SIR = {
     ammo="Staunch Tathlum +1", --11
-	head="Erilaz galea +2", --15
+	head="Erilaz galea +3", --15
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
