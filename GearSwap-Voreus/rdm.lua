@@ -15,7 +15,7 @@ function get_sets()
     sets.Chainspell = {body="Vitiation tabard +3"}
     sets.Stymie = {}
     sets.Spontaneity = {}
-    sets.Composure = {head="Lethargy chappel +2",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +3"}
+    sets.Composure = {head="Lethargy Chappel +3",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +3"}
 	sets.Saboteur = {hands="Lethargy gantherots +3"}
 	sets.Dispel = {neck="Duelist's torque +2"}
 
@@ -108,7 +108,7 @@ function get_sets()
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		ammo="Pemphredo Tathlum",
-		head="Lethargy Chappel +2",
+		head="Lethargy Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Lethargy gantherots +3",
 		legs="Lethargy Fuseau +2",
@@ -149,7 +149,7 @@ function get_sets()
 	}
 
 	sets.Accuracy = {
-		head="Leth. Chappel +2",
+		head="Leth. Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Leth. Ganth. +3",
 		legs="Leth. Fuseau +2",
@@ -165,7 +165,7 @@ function get_sets()
 
 	-- PDT Set
     sets.PDT = {
-		head="Lethargy chappel +2",
+		head="Lethargy Chappel +3",
 		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +3",
 		legs="Nyame flanchard",
@@ -196,7 +196,7 @@ function get_sets()
 	}
 	
     sets.Movement = {		
-		head="Lethargy chappel +2",
+		head="Lethargy Chappel +3",
 		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +3",
 		legs="Carmine cuisses +1",
@@ -244,7 +244,7 @@ function get_sets()
 	 }
 	 
 	 sets.SeraphBlade = {
-		head="Lethargy Chappel +2",
+		head="Lethargy Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
 		legs="Lethargy Fuseau +2",
@@ -259,7 +259,7 @@ function get_sets()
 	 }
 	 
 	 sets.SanguineBlade = {
-		head="Lethargy Chappel +2",
+		head="Lethargy Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
 		legs="Lethargy Fuseau +2",
