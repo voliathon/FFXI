@@ -49,7 +49,7 @@ function get_sets()
     feet="Erilaz Greaves +2",
     neck="Loricate torque +1",
     waist="Flume Belt +1",
-    left_ear="Odnowa Earring",
+    left_ear="Erilaz Earring +1",
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
@@ -120,7 +120,7 @@ function get_sets()
     feet="Nyame Sollerets",
     neck={ name="Loricate Torque +1", augments={'Path: A',}},
     waist="Flume Belt",
-    left_ear="Infused Earring",
+    left_ear="Erilaz Earring +1",
     right_ear="Eabani Earring",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
@@ -208,7 +208,7 @@ function get_sets()
     neck="Sanctity Necklace",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
-    right_ear="Halasz Earring",
+    right_ear="Erilaz Earring +1",
     left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
     right_ring={name="Stikini Ring +1",bag="Wardrobe 5"}
   }

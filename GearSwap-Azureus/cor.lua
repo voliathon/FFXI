@@ -51,7 +51,7 @@ function get_sets()
         -- duration +55
         hands="Chasseur's Gants +2",
         -- duration +30
---        back=CamulusCape.matk,
+        back=CamulusCape.melee_double_attack,
 		-- duration +20
 		range='Compensator'
     }

@@ -57,16 +57,9 @@ function get_sets()
     sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2", head="Hashishin kavuk +3"}
     sets.JA.Diffusion = {}
     sets.JA.Enchainment = {body="Luhlaza Jubbah +1"}
-    sets.JA.Efflux = {back=Rosmerta.WSD, legs="Hashishin Tayt +2"}
+    sets.JA.Efflux = {back=Rosmerta.WSD, legs="Hashishin Tayt +3"}
 	sets.JA.AzureLore = {}
 	sets.JA.Assimilation = {}
-	
-    sets.TreasureHunter = {head="White rarab cap +1", waist="Chaac Belt"}	
-	
-    sets.CuringWaltz = {body="Passion Jacket"}
-    sets.Utsusemi = {body="Passion Jacket"}
-    sets.Aquaveil = {}
-    sets.Regen = {}
 	
 	--Fast Cast
 	sets.FastCast = {
@@ -94,9 +87,9 @@ function get_sets()
     sets.MagicAccuracy = {
 		ammo="Pemphredo Tathlum",
 		head="Hashishin kavuk +3",
-		body="Hashishin mintan +2",
+		body="Hashishin mintan +3",
 		hands="Hashishin Bazubands +2",
-		legs="Hashishin Tayt +2",
+		legs="Hashishin Tayt +3",
 		feet="Hashishin basmak +2",
 		neck="Incanter's Torque",
 		waist="Luminary Sash",
@@ -133,9 +126,9 @@ function get_sets()
     sets.engaged.TakingLessPhysicalDamage = {
 		ammo="Staunch Tathlum",
 		head="Nyame Helm",
-		body="Hashishin mintan +2",
+		body="Hashishin mintan +3",
 		hands="Hashishin Bazubands +2",
-		legs="Hashishin Tayt +2",
+		legs="Hashishin Tayt +3",
 		feet="Nyame Sollerets",
 		neck={ name="Loricate Torque +1", augments={'Path: A',}},
 		waist="Flume Belt",
@@ -150,9 +143,9 @@ function get_sets()
 	sets.engaged.TakingLessMagicDamage = {
 		ammo="Staunch Tathlum",
 		head="Nyame Helm",
-		body="Nyame Mail",
+		body="Hashishin mintan +3",
 		hands="Nyame Gauntlets",
-		legs="Hashishin Tayt +2",
+		legs="Hashishin Tayt +3",
 		feet="Nyame Sollerets",
 		neck="Loricate Torque +1",
 		waist="Flume Belt",
@@ -165,10 +158,10 @@ function get_sets()
 	
 	sets.engaged.Accuracy = {
 		ammo="Falcon Eye",
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		head="Hashishin kavuk +3",
+		body="Hashishin mintan +3",
 		hands="Malignance Gloves",
-		legs="Hashishin Tayt +2",
+		legs="Hashishin Tayt +3",
 		feet="Malignance Boots",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
@@ -181,7 +174,7 @@ function get_sets()
 	
 	sets.engaged.Refresh = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
 		head="Rawhide mask",
-		body="Hashishin mintan +2",
+		body="Hashishin mintan +3",
 		neck="Sanctity Necklace",
 		legs="Rawhide trousers",
 		waist="Fucho-no-Obi",
@@ -222,7 +215,7 @@ function get_sets()
         neck="Incanter's Torque",
         body="Assimilator's Jubbah +3",
 		hands="Hashishin Bazubands +2",
-		legs="Hashishin Tayt +2",
+		legs="Hashishin Tayt +3",
         back="Cornflower Cape",
 		right_ear="Hashishin Earring +1"
     }
@@ -230,9 +223,9 @@ function get_sets()
 	sets.CruelJoke = {
 		ammo="Pemphredo Tathlum",
 		head="Hashishin kavuk +3",
-		body="Hashishin mintan +2",
+		body="Hashishin mintan +3",
 		hands="Hashishin Bazubands +2",
-		legs="Hashishin Tayt +2",
+		legs="Hashishin Tayt +3",
 		feet="Hashishin basmak +2",
 		neck="Incanter's Torque",
 		waist="Luminary Sash",
@@ -250,7 +243,7 @@ function get_sets()
 		head="Malignance Chapeau",
 		body="Assim. Jubbah +3",
 		hands="Hashishin Bazubands +2",
-		legs="Hashishin Tayt +2",
+		legs="Hashishin Tayt +3",
 		feet="Malignance Boots",
 		neck="Incanter's Torque",
 		waist="Grunfeld Rope",
@@ -293,9 +286,9 @@ function get_sets()
     sets.BlueMagicMagical = {
 		ammo="Pemphredo Tathlum",
 		head="Hashishin kavuk +3",
-		body="Hashishin mintan +2",
+		body="Hashishin mintan +3",
 		hands="Hashishin Bazubands +2",
-		legs="Hashishin Tayt +2",
+		legs="Hashishin Tayt +3",
 		feet="Hashishin basmak +2",
 		neck="Sanctity Necklace",
 		waist="Orpheus's sash",
@@ -351,7 +344,7 @@ function get_sets()
 		ammo="Ginsen",
 		head="Hashishin kavuk +3",
 		body="Assim. Jubbah +3",
-		hands="Jhakri Cuffs +2",
+		hands={ name="Herculean Gloves", augments={'AGI+8','Accuracy+19','Weapon skill damage +8%','Accuracy+8 Attack+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},
 		legs="Luhlaza Shalwar +3",
 		feet=HercFeet.WSD,
 		neck="Fotia Gorget",
