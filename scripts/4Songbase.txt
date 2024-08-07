@@ -1,4 +1,3 @@
-input /ja "Marcato" <me>; wait 2;
 input /equip Range "Marsyas"; wait 2; 
 input /ma "Honor March" <me>; wait 8; 
 input /equip Range "Gjallarhorn"; wait 2;

@@ -1,7 +1,8 @@
-input /ma "Slow II" <bt>; wait 4;
-input /ma "Paralyze II" <bt>; wait 4;
-input /ma "Frazzle III" <bt>; wait 4;
-input /ma "Addle II" <bt>; wait 4;
-input /ma "Distract III" <bt>; wait 4; 
-input /ma "Inundation" <bt>; wait 4;
-input /ma "Blind II" <bt>; 
+input /ma "Frazzle III" <t>; wait 4;
+input /ma "Distract III" <t>; wait 4;
+input /ma "Slow II" <t>; wait 4;
+input /ma "Paralyze II" <t>; wait 4;
+input /ma "Addle II" <t>; wait 4;
+input /ma "Inundation" <t>; wait 4;
+input /ma "Blind II" <t>; 
+input /ma "Silence" <t>

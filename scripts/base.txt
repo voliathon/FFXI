@@ -17,7 +17,8 @@ send azureus exec 4SongNitroAtt;
 //send azureus exec 4Songbase;
 //send azureus exec OdysseySongs;
 //send azureus exec 4SongNitroVagary;
+//send azureus exec CORbase;
 //wait .1;
-//send voreus exec RDMbase;
+send voreus exec RDMbase;
 
 //console send @others //exec stopFollow
