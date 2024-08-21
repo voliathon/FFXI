@@ -42,7 +42,7 @@ function get_sets()
 		left_ear="Malignance Earring",
 		right_ear="Gifted Earring",
 		left_ring="Stikini ring +1",
-		right_ring="Stikini ring",
+		right_ring="Stikini ring +1",
         body="Bagua Tunic +1",
 		hands="Geo. Mitaines +3",
         back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}},
@@ -64,7 +64,7 @@ function get_sets()
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Loquacious Earring",
-		left_ring="Veneficium Ring",
+		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
 		back="Perimede Cape"
 	}
@@ -82,7 +82,7 @@ function get_sets()
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Earthcry Earring",
-		left_ring="Veneficium Ring",
+		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
 		back="Perimede Cape"	
 	}
@@ -155,7 +155,7 @@ function get_sets()
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Jhakri Ring",
+		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
 		back="Seshaw cape"
 	}
@@ -173,7 +173,7 @@ function get_sets()
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Jhakri ring",
+		left_ring="Stikini ring +1",
 		right_ring="Stikini Ring +1",
 		back="Seshaw cape"
 	}
@@ -197,8 +197,8 @@ function get_sets()
 		waist="Austerity Belt +1",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring="Sheltered Ring",
-		right_ring="Paguroidea Ring",
+		left_ring="Stikini ring +1",
+		right_ring="Stikini ring +1",
 		back="Felicitas cape +1"
 	}
 
@@ -271,7 +271,8 @@ function get_sets()
 		head="Befouled crown",
 		body="Jhakri robe +2",
 		hands="Bagua mitaines +1",
-		right_ring="Stikini ring +1"
+		right_ring="Stikini ring +1",
+		left_ring="Stikini ring +1"
 	})
 	
 	

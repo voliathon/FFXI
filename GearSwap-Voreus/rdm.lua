@@ -15,7 +15,7 @@ function get_sets()
     sets.Chainspell = {body="Vitiation tabard +3"}
     sets.Stymie = {}
     sets.Spontaneity = {}
-    sets.Composure = {head="Lethargy Chappel +3",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Lethargy fuseau +2",feet="Lethargy Houseaux +3"}
+    sets.Composure = {head="Lethargy Chappel +3",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Lethargy Fuseau +3",feet="Lethargy Houseaux +3"}
 	sets.Saboteur = {hands="Lethargy gantherots +3"}
 	sets.Dispel = {neck="Duelist's torque +2"}
 
@@ -52,8 +52,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
 		right_ear="Lethargy Earring +1",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back="Fi follet cape +1"
 	}
 	
@@ -111,13 +111,13 @@ function get_sets()
 		head="Lethargy Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Lethargy gantherots +3",
-		legs="Lethargy Fuseau +2",
+		legs="Lethargy Fuseau +3",
 		feet="Lethargy Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
 		right_ear="Malignance Earring",
-		left_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
 		right_ring="Freke Ring",
 		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
 	}
@@ -138,7 +138,7 @@ function get_sets()
 		left_ear="Snotra Earring",
 		right_ear="Vor Earring",
 		left_ring="Kishar Ring",
-		right_ring="Stikini Ring",
+		right_ring="Stikini Ring +1",
 		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
 	})
 
@@ -205,18 +205,29 @@ function get_sets()
 		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Ethereal Earring",
-		left_ring="Gelatinous Ring +1",
+		left_ring="Stikini Ring +1",
 		right_ring="Defending Ring",
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
 	}
 
+	sets.RefreshSelf = set_combine(sets.PDT,  {
+		body="Lethargy sayon +3",
+		ammo="Homiliary",
+		head="Vitiation Chapeau +3",
+		waist="Fucho-no-obi",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1"
+	})
+
     
 	sets.Refresh = set_combine(sets.Enhancing,  {
 		body="Lethargy sayon +3",
-		legs="Lethargy Fuseau +2",
+		legs="Lethargy Fuseau +3",
 		ammo="Homiliary",
 		head="Vitiation Chapeau +3",
-		waist="Fucho-no-obi"
+		waist="Fucho-no-obi",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1"
 	})
 
 	sets.Enspell = set_combine(sets.Enhancing,  {
@@ -229,7 +240,7 @@ function get_sets()
 	 
 	 sets.SavageBlade = {
 		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-		body="Ayanmo Corazza +2",
+		body="Nyame mail",
 		hands="Atrophy Gloves +3",
 		legs="Jhakri Slops +2",
 		feet="Leth. Houseaux +3",
@@ -247,7 +258,7 @@ function get_sets()
 		head="Lethargy Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
-		legs="Lethargy Fuseau +2",
+		legs="Lethargy Fuseau +3",
 		feet="Lethargy Houseaux +3",
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
@@ -262,7 +273,7 @@ function get_sets()
 		head="Lethargy Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
-		legs="Lethargy Fuseau +2",
+		legs="Lethargy Fuseau +3",
 		feet="Lethargy Houseaux +3",
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
@@ -276,7 +287,7 @@ function get_sets()
 
 	-- Engaged Sets Toggle--
 	sets.engaged = {}
-	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'RefreshSelf'}
 	engaged_ind = 1  	 
 	 
 	sets.engaged.TP = set_combine(sets.TP, {}) 
@@ -284,7 +295,7 @@ function get_sets()
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
 	sets.engaged.Accuracy = set_combine(sets.Accuracy, {})
-	sets.engaged.Refresh = set_combine(sets.Refresh, {})
+	sets.engaged.RefreshSelf = set_combine(sets.RefreshSelf, {})
 	 
 end
 

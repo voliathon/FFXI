@@ -70,8 +70,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
 		right_ear="Malignance Earring",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back="Perimede Cape"
 	}
 	
@@ -124,8 +124,8 @@ function get_sets()
 		waist="Witful Belt",
 		left_ear="Meili Earring",
 		right_ear="Mendi. Earring",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back="Fi Follet Cape +1"
 	})
 
