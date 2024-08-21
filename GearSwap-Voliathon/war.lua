@@ -142,7 +142,7 @@ function get_sets()
   sets.Single = {
     ammo="Knobkierrie",
     head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-    body="Hjarrandi Breast.",
+    body="Nyame Mail",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
     legs="Nyame Flanchard",
     feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
@@ -159,7 +159,7 @@ function get_sets()
   sets.Shockwave = {
     ammo="Pemphredo Tathlum",
     head="Sakpata's Helm",
-    body="Crepuscular Mail",
+    body="Nyame Mail",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",

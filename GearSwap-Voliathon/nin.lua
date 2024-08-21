@@ -174,7 +174,7 @@ function get_sets()
 	sets.SavageBlade = {
 		ammo="Yetshila +1",
 		head="Hachiya hatsuburi +3",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11',}},
+		body="Nyame mail",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Hiza. Hizayoroi +2",
 		feet="Hattori kyahan +2",
@@ -191,7 +191,7 @@ function get_sets()
 	sets.Ten = {
 		ammo="Coiste Bodhar",
 		head="Mpaca's cap",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11',}},
+		body="Nyame mail",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Hiza. Hizayoroi +2",
 		feet="Hattori kyahan +2",
@@ -238,8 +238,8 @@ function get_sets()
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
 	}	
 
-	--Take/To/Chi/Yu
-	sets.TakiToChiYu = {
+	--Teki/To/Chi/Yu
+	sets.TekiToChiYu = {
 		ammo="Pemphredo Tathlum",
 		head="Nyame Helm",
 		body="Nyame Mail",
@@ -259,7 +259,7 @@ function get_sets()
 	sets.Ku = {
 		ammo="Yetshila +1",
 		head="Mpaca's Cap",
-		body="Ken. Samue +1",
+		body="Nyame Mail",
 		hands="Malignance Gloves",
 		legs="Mpaca's Hose",
 		feet="Hattori kyahan +2",

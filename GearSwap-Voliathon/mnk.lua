@@ -115,7 +115,7 @@ function get_sets()
 	sets.WS.FinalHeaven = {
 		ammo="Knobkierrie",
 		head="Hesychast's crown +2",
-		body="Bhikku Cyclas +2",
+		body="Nyame mail",
 		hands="Anchorite's gloves +3",
 		legs="Hiza. Hizayoroi +2",
 		feet="Ken. Sune-Ate +1",
@@ -179,7 +179,7 @@ function get_sets()
 	sets.WS.TornadoKick = {
 		ammo="Knobkierrie",
 		head="Mpaca's Cap",
-		body="Ken. Samue +1",
+		body="Nyame mail",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
 		feet="Anch. Gaiters +3",

@@ -179,7 +179,7 @@ function get_sets()
   sets.Catastrophe = {
     ammo="Knobkierrie",
     head="Ratri Sallet +1",
-    body="Ignominy cuirass +3",
+    body="Nyame Mail",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
     legs="Fallen's flanchard +3",
     feet="Heathen's sollerets +3",
@@ -196,7 +196,7 @@ function get_sets()
   sets.STRWSD = {
     ammo="Amar Cluster",
     head="Ratri Sallet +1",
-    body="Ignominy cuirass +3",
+    body="Nyame Mail",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
     legs="Fallen's flanchard +3",
     feet="Heathen's sollerets +3",
@@ -345,7 +345,7 @@ function precast(spell,abil)
   if spell.name == 'Catastrophe' then
     equip(sets.Catastrophe)
   end
-  if spell.name == 'Savage Blade' then
+  if spell.name == 'Savage Blade' or spell.name == 'Cross Reaper' then
     equip(sets.STRWSD)
   end
 

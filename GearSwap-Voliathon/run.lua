@@ -41,7 +41,7 @@ function get_sets()
   sets.TP.Movement = {
     ammo="Staunch Tathlum +1",
     head="Nyame Helm",
-    body="Ashera Harness",
+    body="Erilaz surcoat +3",
     hands="Erilaz Gauntlets +3",
     legs="Carmine Cuisses +1",
     feet="Erilaz Greaves +3",
@@ -51,7 +51,7 @@ function get_sets()
     right_ear="Odnowa Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
   
   --offensive melee set
@@ -117,13 +117,13 @@ function get_sets()
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}} 
+	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
   
   sets.TP.EvasionTank = {
     ammo="Amar Cluster",
     head="Nyame Helm",
-    body="Nyame Mail",
+    body="Erilaz surcoat +3",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
@@ -133,7 +133,7 @@ function get_sets()
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}	
+	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
 
 
@@ -144,7 +144,7 @@ function get_sets()
   sets.Resolution = {
     ammo="Yetshila +1",
     head={ name="Herculean Helm", augments={'Attack+20','Weapon skill damage +4%','STR+10'}},
-    body="Lustratio Harness +1",
+    body="Nyame mail",
     hands="Adhemar wristbands +1",
     legs="Erilaz leg guards +3",
     feet="Carmine greaves +1",
@@ -161,7 +161,7 @@ function get_sets()
   sets.Single = {
     ammo="Knobkierrie",
     head={ name="Herculean Helm", augments={'Weapon skill damage +5%','DEX+10','Attack+5'}},
-    body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20'}},
+    body="Nyame mail",
     hands="Meg. Gloves +2",
     legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
     feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
@@ -178,7 +178,7 @@ function get_sets()
   sets.Shockwave = {
     ammo="Knobkierrie",
     head="Adhemar Bonnet +1",
-    body="Herculean vest",
+    body="Nyame mail",
     hands="Erilaz Gauntlets +3",
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",
@@ -211,7 +211,7 @@ function get_sets()
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
     head="Erilaz galea +3",
-    body="Erilaz surcoat +2",
+    body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
     feet="Carmine greaves +1",
@@ -226,8 +226,8 @@ function get_sets()
 
   sets.Regen = {
     ammo="Staunch Tathlum +1",
-    head="Runeist bandeau +2",
-    body="Erilaz surcoat +2",
+    head="Rune. Bandeau +3",
+    body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
     feet="Carmine greaves +1",
@@ -244,8 +244,8 @@ function get_sets()
   --Fast Cast set
   sets.FastCast = {
     ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +2",
-    body="Erilaz surcoat +2",
+    head="Rune. Bandeau +3",
+    body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
     feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
@@ -277,7 +277,7 @@ function get_sets()
  --108 SIR-
  sets.SIR = {
     ammo="Staunch Tathlum +1", --11
-	head="Erilaz galea +3", --15
+	head="Erilaz galea +3", --20
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
@@ -290,12 +290,13 @@ function get_sets()
  
   --Enmity set for high hate generating spells and JAs
   sets.Enmity = {
-	back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%'}}, 
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}, 
 	waist="Sinew Belt", 
 	legs="Erilaz leg guards +3", 
 	neck="Moonbeam necklace", 
 	body="Emet Harness +1",     
-	feet="Erilaz Greaves +3"
+	feet="Erilaz Greaves +3",
+	right_ear="Cryptic earring"
   }
 
   --Magic acc for enfeebles, handy for VW
@@ -303,7 +304,7 @@ function get_sets()
 
   sets.Stoneskin = {
     ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +2",
+    head="Rune. Bandeau +3",
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
     hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
