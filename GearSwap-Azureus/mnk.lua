@@ -137,7 +137,7 @@ function get_sets()
 		ammo="Knobkierrie",
 		head="Hesychast's crown +2",
 		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
-		hands="Anchorite's gloves +3",
+		hands="Nyame Gauntlets",
 		legs="Hiza. Hizayoroi +2",
 		feet="Ken. Sune-Ate +1",
 		neck="Fotia Gorget",

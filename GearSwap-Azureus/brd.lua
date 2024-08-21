@@ -61,7 +61,7 @@ function get_sets()
  
   --Magic Accuracy for those pesky songs that don't want to stick--
   sets.MagicAccuracy = {
-    head="Fili calot +2",
+    head="Fili calot +3",
     body="Fili Hongreline +3",
     hands="Fili Manchettes +3",
     legs="Brioso Cannions +3",
@@ -78,7 +78,7 @@ function get_sets()
   --Maximizing Song Potency first then duration-- 
   sets.Songs = {
 	main="Carnwenhan",
-    head="Fili calot +2",
+    head="Fili calot +3",
     body="Fili Hongreline +3",
     hands="Fili Manchettes +3",
     legs="Inyanga Shalwar +2",
@@ -127,7 +127,7 @@ function get_sets()
   }
 
   sets.Sleep = set_combine(sets.MagicAccuracy, { 
-    head="Fili calot +2",
+    head="Fili calot +3",
 	hands="Brioso Cuffs +3",
 	body="Brioso Justaucorps +3",
 	feet="Brioso Slippers +3",
@@ -170,7 +170,7 @@ function get_sets()
   
   --Accuracy Set--
   sets.engaged.Accuracy = {
-    head="Fili Calot +2",
+    head="Fili calot +3",
     body="Ashera harness",
     hands="Fili Manchettes +3",
     legs="Fili Rhingrave +2",
@@ -186,7 +186,7 @@ function get_sets()
   }
   
   sets.engaged.TakingLessPhysicalDamage = {
-    head="Fili Calot +2",
+    head="Fili calot +3",
     body="Ashera harness",
     hands="Fili Manchettes +3",
     legs="Fili Rhingrave +2",
@@ -243,7 +243,7 @@ function get_sets()
     range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
     head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
     body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
-    hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7',}},
+    hands="Nyame Gauntlets",
     legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
     feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
     neck={ name="Bard's Charm +2", augments={'Path: A',}},
@@ -260,7 +260,7 @@ function get_sets()
     range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
     head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
     body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
-    hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7',}},
+    hands="Nyame Gauntlets",
     legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
     feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
     neck={ name="Bard's Charm +2", augments={'Path: A',}},

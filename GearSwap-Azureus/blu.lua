@@ -184,9 +184,21 @@ function get_sets()
 	})
 	
 	-- If you're not first, you're last
-    sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
-		legs="Carmine Cuisses +1"
-	})
+    sets.engaged.Movement = {
+		ammo="Staunch Tathlum",
+		head="Nyame Helm",
+		body="Hashishin mintan +3",
+		hands="Hashishin Bazubands +2",
+		legs="Carmine Cuisses +1",
+		feet="Nyame Sollerets",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		waist="Flume Belt",
+		left_ear="Genmei Earring",
+		right_ear="Infused Earring",
+		left_ring="Defending Ring",
+		right_ring="Patricius Ring",
+		back="Relucent cape"	
+	}
 	
 	sets.engaged.Evasion = {
 		ammo="Staunch Tathlum",
@@ -344,7 +356,7 @@ function get_sets()
 		ammo="Ginsen",
 		head="Hashishin kavuk +3",
 		body="Assim. Jubbah +3",
-		hands={ name="Herculean Gloves", augments={'AGI+8','Accuracy+19','Weapon skill damage +8%','Accuracy+8 Attack+8','Mag. Acc.+6 "Mag.Atk.Bns."+6',}},
+		hands="Nyame Gauntlets",
 		legs="Luhlaza Shalwar +3",
 		feet=HercFeet.WSD,
 		neck="Fotia Gorget",
@@ -360,7 +372,7 @@ function get_sets()
 		ammo="Ginsen",
 		head="Hashishin kavuk +3",
 		body="Abnoba Kaftan",
-		hands="Adhemar Wrist. +1",
+		hands="Nyame Gauntlets",
 		legs=HercLegs.TP,
 		feet=HercFeet.TP,
 		neck="Mirage Stole +2",
@@ -380,7 +392,7 @@ function get_sets()
 	-- 1000 TP 50% Drained
 	-- 2000 TP 100% Drained
     sets.SanguineBlade = set_combine(sets.BlueMagicMagical,{
-		head="Pixie Hairpin +1", lring="Archon ring", waist="Orpheus's sash"
+		head="Pixie Hairpin +1", lring="Archon ring", waist="Orpheus's sash", hands="Nyame Gauntlets"
 	})
 
 	--Weapon Sets--

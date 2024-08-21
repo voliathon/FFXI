@@ -126,7 +126,7 @@ function get_sets()
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
 		body="Lanun Frac +2",
-		hands="Chasseur's Gants +2",
+		hands="Nyame Gauntlets",
 		legs="Chasseur's culottes +2",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Sanctity Necklace",
@@ -146,9 +146,6 @@ function get_sets()
 	})
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
-	--3/14/2023
-	--RACC: 1114  RATT: 1179   WSD: 76%
-	--AGI 113 +221
     sets.LastStand = {
 		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
 		body="Laksamana's frac +3",
@@ -165,13 +162,10 @@ function get_sets()
 	}
 
 	--Savage Blade  50% STR / 50% MND
-	--11/03/2023
-	--STR: 102 +183
-	--WSD: 66%
     sets.SavageBlade = {
 		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
 		body="Laksamana's frac +3",
-		hands="Chasseur's Gants +2",
+		hands="Nyame Gauntlets",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
@@ -183,6 +177,21 @@ function get_sets()
 		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 
+	--Aeolian Edge 40% DEX / 40% INT
+	sets.AeolianEdge = {
+		head="Nyame Helm",
+		body="Lanun Frac +2",
+		hands="Nyame Gauntlets",
+		legs="Chasseur's culottes +2",
+		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		neck="Sanctity Necklace",
+		waist="Orpheus's Sash",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Friomisi Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}		
+	}
 
 	--Snapshot Magic goes here - Precast Magic
     sets.Snapshot = {

@@ -143,7 +143,7 @@ function get_sets()
     ammo="Yetshila +1",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
+    hands="Nyame Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Fotia Gorget",

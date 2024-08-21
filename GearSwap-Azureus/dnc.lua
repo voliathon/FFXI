@@ -94,7 +94,7 @@ function get_sets()
 		body="Maxixi Casaque +3", --Waltz Potency +19%, Waltz Received Potency +8%, Waltz Recast -2 
 		head="Horos Tiara +1", --Waltz Potency +11%  
 		legs="Dashing subligar", --Waltz Potency +10% 
-		feet="Maxixi Toe Shoes +2", --Waltz Potency +12% 
+		feet="Maxixi Toe Shoes +3", --Waltz Potency +14% 
 		ammo="Yamarang", --Waltz Potency +5% 
 		back="Toetapper Mantle" --Waltz Potency +5%
 		--right_ear="Roundel earring", --Waltz Potency +5%
@@ -111,12 +111,12 @@ function get_sets()
 	sets.JA.StepAccuracy = {
 		head="Maxixi Tiara +3",
 		hands="Maxixi Bangles +3",
-		feet="Horos Shoes +1"
+		feet="Horos Shoes +3"
 	}
 	
 	sets.JA.Jig = {
 		legs="Horos Tights +3", --50%
-		feet="Maxixi Toe Shoes +2" --45%
+		feet="Maxixi Toe Shoes +3" --50%
 	}
 	
 	sets.JA.FeatherStep  = {
@@ -139,7 +139,7 @@ function get_sets()
 	sets.JA.FanDance = {hands="Horos Bangles +1"}
 	sets.JA.NoFootRise = {body="Horos Casaque +1"}
 	sets.JA.SaberDance = {legs="Horos Tights +3"}
-	sets.JA.ClosedPosition = {feet="Horos Shoes +1"}
+	sets.JA.ClosedPosition = {feet="Horos Shoes +3"}
 	
 	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
 	

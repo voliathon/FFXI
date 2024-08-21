@@ -202,7 +202,7 @@ function get_sets()
 	sets.Coronach = {
 		head="Orion Beret +3",
 		body="Amini Caban +2",
-		hands="Meg. Gloves +2",
+		hands="Nyame Gauntlets",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
 		feet="Amini Bottillons +2",
 		neck="Fotia Gorget",
@@ -218,7 +218,7 @@ function get_sets()
     sets.Wildfire = {
 		head="Nyame Helm",
 		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
-		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck="Scout's Gorget +2",
@@ -234,7 +234,7 @@ function get_sets()
     sets.LastStand = {
 		head="Orion Beret +3",
 		body="Amini Caban +2",
-		hands="Meg. Gloves +2",
+		hands="Nyame Gauntlets",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
 		feet="Amini Bottillons +2",
 		neck="Fotia Gorget",
@@ -250,7 +250,7 @@ function get_sets()
     sets.SavageBlade = {
 		head="Orion Beret +3",
 		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
-		hands="Meg. Gloves +2",
+		hands="Nyame Gauntlets",
 		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11'}},
 		feet="Amini Bottillons +2",
 		neck="Fotia Gorget",
