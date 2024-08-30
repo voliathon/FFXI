@@ -1,6 +1,11 @@
 -- Oh land of the PuppetM
 -- D.A.D. Technique
 -- Another important technique to be aware of is amicably known as D.A.D. (or performing Deactivate, Activate, Deploy, in that order). Because using Activate summons your Automaton with 100% HP & more importantly… 100% MP, this means you can exploit Deactivates short cooldown timer, to essentially give your Automaton an unlimited MP pool. Whenever your mage frame Automaton is running low on MP, (and as long as they aren't damaged) simply D.A.D. to fill their MP pool right back up to full! 
+
+-- Import the necessary libraries
+require('tables')
+require('strings')
+
 function get_sets()
 
 -- Set macro book/set --
@@ -36,7 +41,7 @@ function get_sets()
   engaged_ind = 1
 	
   sets.engaged.BadAss = {
-    head="Karagoz cappello +2",
+    head="Karagoz cappello +3",
     body="Tali'ah Manteel +2",
     hands={ name="Herculean Gloves", augments={'"Triple Atk."+3','DEX+9','Accuracy+15',}},
     legs="Kara. Pantaloni +2",
@@ -112,7 +117,7 @@ function get_sets()
   sets.engaged.BothTP = {}
   
   sets.engaged.RangeAutomaton = {
-    head="Kara. Cappello +2",
+    head="Karagoz cappello +3",
     body={ name="Pitre Tobe +2", augments={'Enhances "Overdrive" effect'}},
     hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%'}},
     legs={ name="Taeon Tights", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%'}},
@@ -304,4 +309,69 @@ function job_customize_idle_set(equip_current)
     end
     return equip_current
 end
+
+
+-- Define your weaponskill sets
+local ws_sets = {
+    ["Harlequin Frame"] = {main="Weapon1", sub="Shield1"},
+    ["Valoredge Frame"] = {main="Weapon2", sub="Shield2"},
+    ["Sharpshot Frame"] = {main="Weapon3", sub="Shield3"},
+    ["Stormwaker Frame"] = {main="Weapon4", sub="Shield4"},
+    ["Soulsoother Frame"] = {main="Weapon5", sub="Shield5"},
+    ["Spiritreaver Frame"] = {main="Weapon6", sub="Shield6"}
+}
+
+-- Define your TP set
+local tp_set = {main="TPWeapon", sub="TPShield"}
+
+-- Function to determine the automaton's frame type
+function get_automaton_frame()
+    local frame = windower.ffxi.get_mob_by_target('pet')
+	windower.add_to_chat(207, frame.name)
+    -- if frame:find("Harlequin") then
+        -- return "Harlequin Frame"
+    -- elseif frame:find("Valoredge") then
+        -- return "Valoredge Frame"
+    -- elseif frame:find("Sharpshot") then
+        -- return "Sharpshot Frame"
+    -- elseif frame:find("Stormwaker") then
+        -- return "Stormwaker Frame"
+    -- elseif frame:find("Soulsoother") then
+        -- return "Soulsoother Frame"
+    -- elseif frame:find("Spiritreaver") then
+        -- return "Spiritreaver Frame"
+    -- else
+        -- return nil
+    -- end
+end
+
+-- Function to get the automaton's TP
+function get_automaton_tp()
+    local pet = windower.ffxi.get_mob_by_target('pet')
+    if pet then
+        return pet.tp
+    else
+        return 0
+    end
+end
+
+-- Event to check the automaton's frame type and set the appropriate set based on TP
+windower.register_event('prerender', function()
+    local frame_type = get_automaton_frame()
+    local automaton_tp = get_automaton_tp()
     
+    if frame_type and ws_sets[frame_type] then
+        if automaton_tp >= 1000 then
+            windower.add_to_chat(207, "Setting weaponskill set for " .. frame_type)
+            equip(ws_sets[frame_type])
+        else
+            windower.add_to_chat(207, "Setting TP set")
+            equip(tp_set)
+        end
+    else
+        windower.add_to_chat(207, "Unknown frame type or no set defined for this frame.")
+    end
+end)
+
+
+
