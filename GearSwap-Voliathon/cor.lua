@@ -16,7 +16,7 @@ end
 
 function get_sets()
 	-- Set macro book/set --
-    send_command('input /macro book 17;wait .1;input /macro set 2')
+    send_command('input /macro book 19;wait .1;input /macro set 1')
 	
 	-- Binds for switching weapon modes
     send_command('bind !f8 gs c toggle weapon set')
@@ -47,11 +47,11 @@ function get_sets()
         -- increased area of effect
         left_ring="Luzaf's Ring",
 		--phantom roll +5
-		right_ring="Barataria Ring",
+		--right_ring="Barataria Ring",
         -- duration +55
         hands="Chasseur's Gants +2",
         -- duration +30
---        back=CamulusCape.matk,
+        back=CamulusCape.melee_double_attack,
 		-- duration +20
 		range='Compensator'
     }
@@ -126,7 +126,7 @@ function get_sets()
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
 		body="Lanun Frac +2",
-		hands="Chasseur's Gants +2",
+		hands="Nyame Gauntlets",
 		legs="Chasseur's culottes +2",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Sanctity Necklace",
@@ -146,9 +146,6 @@ function get_sets()
 	})
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
-	--3/14/2023
-	--RACC: 1114  RATT: 1179   WSD: 76%
-	--AGI 113 +221
     sets.LastStand = {
 		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
 		body="Laksamana's frac +3",
@@ -166,21 +163,35 @@ function get_sets()
 
 	--Savage Blade  50% STR / 50% MND
     sets.SavageBlade = {
-		ammo="Coiste Bodhar",
-		head={ name="Herculean Helm", augments={'Attack+20','Weapon skill damage +4%','STR+10',}},
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11',}},
-		hands="Meg. Gloves +2",
-		legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
-		feet={ name="Herculean Boots", augments={'Attack+7','Weapon skill damage +5%','STR+8',}},
+		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Sroda Ring",
-		back="Vespid Mantle"
+		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 
+	--Aeolian Edge 40% DEX / 40% INT
+	sets.AeolianEdge = {
+		head="Nyame Helm",
+		body="Lanun Frac +2",
+		hands="Nyame Gauntlets",
+		legs="Chasseur's culottes +2",
+		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		neck="Sanctity Necklace",
+		waist="Orpheus's Sash",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Friomisi Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}		
+	}
 
 	--Snapshot Magic goes here - Precast Magic
     sets.Snapshot = {
@@ -233,19 +244,18 @@ function get_sets()
 	
 		-- This needs to be the best TP set imaginable. TA, DW, Quadruple shit, Double attack. Really push this shit!
     sets.engaged.TP = set_combine(sets.DamageTaken, {
-		ammo="Coiste Bodhar",
-		head="Malignance Chapeau",
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
+		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
+		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6'}},
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
+		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
 		feet="Malignance Boots",
 		neck="Clotharius Torque",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		waist="Windbuffet Belt +1",
 		left_ear="Brutal Earring",
 		right_ear="Cessance Earring",
 		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
-		back="Vespid Mantle"
+		right_ring="Epona's Ring",
+        back=CamulusCape.melee_double_attack
     })
 	
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.DamageTaken, {})

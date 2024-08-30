@@ -147,8 +147,8 @@ function get_sets()
     feet="Nyame Sollerets",
     neck="Abyssal Bead Necklace +2",
     waist="Ioskeha Belt +1",
-    left_ear="Cessance Earring",
-    right_ear="Brutal Earring",
+    left_ear="Brutal Earring",
+    right_ear={ name="Heath. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Weapon skill damage +2%',}},
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
 	back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
@@ -185,8 +185,8 @@ function get_sets()
     feet="Heathen's sollerets +3",
     neck="Abyssal Bead Necklace +2",
     waist="Sailfi Belt +1",
-    left_ear="Thrud Earring",
-    right_ear="Ishvara Earring",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+    right_ear="Thrud Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Sroda ring",
     back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
@@ -202,8 +202,6 @@ function get_sets()
     feet="Heathen's sollerets +3",
     neck="Abyssal Bead Necklace +2",
     waist="Fotia Belt",
-    left_ear="Ishvara Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
     left_ring="Epaminondas's Ring",
     right_ring="Sroda ring",
     back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
