@@ -216,12 +216,6 @@ function get_sets()
 		back="Kumbira Cape"	
 	}
 	
-	-- Darkness is spreading...
-	-- Tenebral Crush
-    sets.DarkMagic = {
-		head="Pixie Hairpin +1",
-    }
-	
 	-- Blue Mage Skill
     sets.BlueMagicSkill = {
         neck="Incanter's Torque",

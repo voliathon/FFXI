@@ -243,7 +243,7 @@ function get_sets()
     left_ear="Magnetic Earring",
     right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
-    right_ring="Evanescence Ring",
+    right_ring="Stikini Ring +1",
     back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
  }
 

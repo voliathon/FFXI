@@ -91,13 +91,13 @@ function get_sets()
 	-- Job Abilities Sets --
     sets.JA = {}
     sets.JA.Waltz = {
+		head="Mummu Bonnet +2", --Waltz Received +9%
 		body="Maxixi Casaque +3", --Waltz Potency +19%, Waltz Received Potency +8%, Waltz Recast -2 
-		head="Horos Tiara +1", --Waltz Potency +11%  
 		legs="Dashing subligar", --Waltz Potency +10% 
 		feet="Maxixi Toe Shoes +3", --Waltz Potency +14% 
 		ammo="Yamarang", --Waltz Potency +5% 
 		back="Toetapper Mantle" --Waltz Potency +5%
-		--right_ear="Roundel earring", --Waltz Potency +5%
+
 	}
 	
 	sets.JA.Samba = {

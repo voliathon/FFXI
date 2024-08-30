@@ -93,7 +93,7 @@ function get_sets()
   }
   
   sets.Ballad = set_combine(sets.Songs, { 
-	legs="Fili Rhingrave +2"
+	legs="Fili Rhingrave +3"
   })
   
   sets.Cure = {
@@ -171,9 +171,9 @@ function get_sets()
   --Accuracy Set--
   sets.engaged.Accuracy = {
     head="Fili calot +3",
-    body="Ashera harness",
+    body="Fili Hongreline +3",
     hands="Fili Manchettes +3",
-    legs="Fili Rhingrave +2",
+    legs="Fili Rhingrave +3",
     feet="Fili Cothurnes +2",
     neck="Bard's charm +2",
     waist="Eschan Stone",
@@ -186,19 +186,18 @@ function get_sets()
   }
   
   sets.engaged.TakingLessPhysicalDamage = {
-    head="Fili calot +3",
-    body="Ashera harness",
+    ammo="Staunch Tathlum",
+    head="Fili Calot +3",
+    body="Fili Hongreline +3",
     hands="Fili Manchettes +3",
-    legs="Fili Rhingrave +2",
-    feet="Nyame Sollerets",
-    neck="Loricate Torque +1",
-    waist="Kasiri belt",
+    legs="Fili Rhingrave +3",
+    neck={ name="Bard's Charm +2", augments={'Path: A',}},
+    waist="Sailfi belt +1",
     left_ear="Infused Earring",
     right_ear="Eabani Earring",
     left_ring="Defending Ring",
-    right_ring="Patricius Ring",
-    back="Kumbira Cape",
-	ammo="Staunch Tathlum"
+    right_ring="Fortified Ring",
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}
   }
   
   sets.engaged.TakingLessMagicDamage = {
