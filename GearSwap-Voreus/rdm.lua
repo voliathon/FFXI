@@ -196,18 +196,19 @@ function get_sets()
 	}
 	
     sets.Movement = {		
-		head="Lethargy Chappel +3",
-		body="Lethargy sayon +3",
-		hands="Lethargy gantherots +3",
-		legs="Carmine cuisses +1",
-		feet="Nyame sollerets",
-		neck="Loricate Torque +1",
-		waist="Slipor Sash",
-		left_ear="Genmei Earring",
-		right_ear="Ethereal Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Defending Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
+		ammo="Homiliary",
+		head="Leth. Chappel +3",
+		body="Lethargy Sayon +3",
+		hands="Leth. Ganth. +3",
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Sanctity Necklace",
+		waist="Sailfi belt +1",
+		left_ear="Sherida Earring",
+		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
+		left_ring="Shneddick Ring",
+		right_ring="Stikini Ring +1",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}		
 	}
 
 	sets.RefreshSelf = set_combine(sets.PDT,  {
@@ -234,6 +235,21 @@ function get_sets()
 		legs="Vitiation Tights +3"
 	})	
 	
+	sets.EnspellActive = set_combine(sets.TP, {
+		range="Ullr",
+		head="Malignance Chapeau",
+		body="Ayanmo Corazza +2",
+		hands="Aya. Manopolas +2",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck={ name="Dls. Torque +2", augments={'Path: A',}},
+		waist="Orpheus's Sash",
+		left_ear="Sherida Earring",
+		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
+		left_ring="Ilabrat Ring",
+		right_ring="Hetairoi Ring",
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10',}}	
+	})
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
@@ -287,7 +303,7 @@ function get_sets()
 
 	-- Engaged Sets Toggle--
 	sets.engaged = {}
-	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'RefreshSelf'}
+	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'RefreshSelf','EnspellActive'}
 	engaged_ind = 1  	 
 	 
 	sets.engaged.TP = set_combine(sets.TP, {}) 
@@ -296,6 +312,7 @@ function get_sets()
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
 	sets.engaged.Accuracy = set_combine(sets.Accuracy, {})
 	sets.engaged.RefreshSelf = set_combine(sets.RefreshSelf, {})
+	sets.engaged.EnspellActive = set_combine(sets.EnspellActive, {})
 	 
 end
 
