@@ -34,25 +34,10 @@ function get_sets()
 	
   --TP Sets--
   sets.TP = {}
---					  1		      2         3 		   4 		        5		     6   
-  sets.TP.index = {'Movement', 'BadAss', 'Hybrid', 'Accuracy', 'TreasureHunter', 'EvasionTank'}
+--					  1		      2         3 		   4 		        5   
+  sets.TP.index = {'BadAss', 'Hybrid', 'Accuracy', 'TreasureHunter', 'MovementEvasionTank'}
   TP_ind = 1
 
-  sets.TP.Movement = {
-    ammo="Staunch Tathlum +1",
-    head="Nyame Helm",
-    body="Erilaz surcoat +3",
-    hands="Erilaz Gauntlets +3",
-    legs="Carmine Cuisses +1",
-    feet="Erilaz Greaves +3",
-    neck="Loricate torque +1",
-    waist="Engraved belt",
-    left_ear="Tuisto Earring",
-    right_ear="Odnowa Earring +1",
-    left_ring="Moonlight Ring",
-    right_ring="Defending Ring",
-	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
-  }
   
   --offensive melee set
   sets.TP.BadAss = {
@@ -120,20 +105,20 @@ function get_sets()
 	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
   
-  sets.TP.EvasionTank = {
-    ammo="Amar Cluster",
-    head="Nyame Helm",
-    body="Erilaz surcoat +3",
-    hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
-    feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Engraved belt",
+  sets.TP.MovementEvasionTank = {
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body="Erilaz Surcoat +3",
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Flume Belt +1",
     left_ear="Infused Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
-    left_ring="Moonlight Ring",
-    right_ring="Fortified Ring",
-	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Shneddick Ring",
+    right_ring="Defending Ring",
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
 
 

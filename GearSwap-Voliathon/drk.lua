@@ -72,19 +72,19 @@ function get_sets()
   TP_ind = 1
 
   sets.TP.Movement = {
-    ammo="Staunch Tathlum +1",
+    ammo="Coiste Bodhar",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+    legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
-    left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
-    left_ring="Moonlight Ring",
-    right_ring="Fortified Ring",
-    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+    neck={ name="Abyssal Beads +2", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear={ name="Heath. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Weapon skill damage +2%',}},
+    left_ring="Shneddick Ring",
+	right_ring="Moonlight Ring",    
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
   
   --offensive melee set
@@ -106,19 +106,19 @@ function get_sets()
 
   --New Tank Gear
   sets.TP.NewTurtle = {
-    ammo="Staunch Tathlum +1",
+    ammo="Coiste Bodhar",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
-    left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
+    neck={ name="Abyssal Beads +2", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear={ name="Heath. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Weapon skill damage +2%',}},
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back="Moonlight Cape"
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }  
 
   --Evasion
