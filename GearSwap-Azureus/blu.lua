@@ -102,8 +102,8 @@ function get_sets()
 	
 	--Engaged Sets--
 	sets.engaged = {}
---				    	    1		     2             					 3 		   		4 			5 			6			7
-	sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'Movement', 'Evasion'}
+--				    	    1		     2             					 3 		   		4 			5 			     6			
+	sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'MovementEvasion'}
 	engaged_ind = 1 	
 	
     sets.engaged.TP = {
@@ -124,36 +124,36 @@ function get_sets()
 	
 	-- Let's Turtle Yo!
     sets.engaged.TakingLessPhysicalDamage = {
-		ammo="Staunch Tathlum",
-		head="Nyame Helm",
-		body="Hashishin mintan +3",
-		hands="Hashishin Bazubands +2",
+		ammo="Crepuscular Pebble",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body="Hashishin Mintan +3",
+		hands="Hashi. Bazu. +2",
 		legs="Hashishin Tayt +3",
-		feet="Nyame Sollerets",
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Flume Belt",
-		left_ear="Genmei Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Patricius Ring",
-		back="Moonbeam Cape"
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Brutal Earring",
+		right_ear={ name="Hashi. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','"Dbl.Atk."+4',}},
+		left_ring="Chirich Ring +1",
+		right_ring="Hetairoi Ring",
+		back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
     }
 
 	-- Fuck taking Magic Damage
 	sets.engaged.TakingLessMagicDamage = {
 		ammo="Staunch Tathlum",
-		head="Nyame Helm",
-		body="Hashishin mintan +3",
-		hands="Nyame Gauntlets",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body="Hashishin Mintan +3",
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Hashishin Tayt +3",
-		feet="Nyame Sollerets",
-		neck="Loricate Torque +1",
-		waist="Flume Belt",
-		left_ear="Genmei Earring",
-		right_ear="Etiolation Earring",
-		left_ring="Defending Ring",
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Sanctity Necklace",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Hearty Earring",
+		right_ear="Sanare Earring",
+		left_ring="Chirich Ring +1",
 		right_ring="Fortified Ring",
-		back="Moonbeam Cape"	
+		back="Relucent Cape"	
 	}
 	
 	sets.engaged.Accuracy = {
@@ -180,40 +180,24 @@ function get_sets()
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Woltaris Ring"
+		right_ring="Stikini Ring +1"
 	})
 	
 	-- If you're not first, you're last
-    sets.engaged.Movement = {
+    sets.engaged.MovementEvasion = {
 		ammo="Staunch Tathlum",
-		head="Nyame Helm",
-		body="Hashishin mintan +3",
-		hands="Hashishin Bazubands +2",
-		legs="Carmine Cuisses +1",
-		feet="Nyame Sollerets",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Flume Belt",
-		left_ear="Genmei Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Patricius Ring",
-		back="Relucent cape"	
-	}
-	
-	sets.engaged.Evasion = {
-		ammo="Staunch Tathlum",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body="Hashishin Mintan +3",
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Bathy Choker +1",
-		waist="Flume Belt",
+		waist="Kasiri Belt",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Chirich Ring +1",
-		back="Kumbira Cape"	
+		left_ring="Shneddick Ring",
+		right_ring="Defending Ring",
+		back="Relucent Cape"	
 	}
 	
 	-- Blue Mage Skill

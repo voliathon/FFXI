@@ -131,6 +131,22 @@ function get_sets()
 		back="Seshaw cape"
 	}
 	
+	sets.MagicBurst = {
+		ammo="Pemphredo Tathlum",
+		head="Ea Hat",
+		body="Ea Houppelande",
+		hands="Leth. Ganth. +3",
+		legs="Leth. Fuseau +3",
+		feet="Leth. Houseaux +3",
+		neck="Mizu. Kubikazari",
+		waist="Eschan Stone",
+		left_ear="Regal Earring",
+		right_ear="Malignance Earring",
+		left_ring="Freke Ring",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}	
+	}
+	
     sets.DarkMagic = {
 
 	}
@@ -397,6 +413,9 @@ function midcast(spell)
 	end
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
+	end
+	if string.find(spell.english,'helix') then
+		equip(sets.MagicBurst)
 	end
 	if spell.skill == 'Elemental Magic' then
 		equip(sets.ElementalMagic)

@@ -53,20 +53,36 @@ function get_sets()
     sets.Celerity = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
     sets.Alacrity = {head="Nahtirah Hat",feet="Pedagogy Loafers +1"}
     sets.Stormsurge = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
-    sets.Klimaform = {feet="Arbatel Loafers +2"}
+
 
 	sets.Aspir = {feet="Agwu's Pigaches"}
 
+    -- Fast Cast for Scholar --
+    sets.FastCast = {
+		ammo="Pemphredo Tathlum",
+		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6'}},
+		body="Zendik Robe",
+		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
+		legs="Pinga Pants",
+		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
+		neck="Baetyl pendant",
+		waist="Embla Sash",
+		left_ear="Malignance Earring",
+		right_ear="Loquac. Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back="Perimede Cape"
+	}
 
 	sets.Duration = {
 		main="Musa",
-		sub="Clerisy strap",
+		sub="Eletta grip",
 		ammo="Pemphredo Tathlum",
-	    head={ name="Telchine Cap", augments={'"Fast Cast"+3','Enh. Mag. eff. dur. +9',}},
-		body={ name="Telchine Chas.", augments={'"Cure" potency +5%','Enh. Mag. eff. dur. +9',}},
-		hands={ name="Telchine Gloves", augments={'Accuracy+15','Song spellcasting time -5%','Enh. Mag. eff. dur. +10',}},
-		legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Fast Cast"+4','Enh. Mag. eff. dur. +10',}},
-		feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','Song spellcasting time -7%','Enh. Mag. eff. dur. +10',}},
+		head={ name="Telchine Cap", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
+		body={ name="Telchine Chas.", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
+		hands={ name="Telchine Gloves", augments={'Accuracy+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
+		legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
+		feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
 		neck="Incanter's Torque",
 		waist="Embla Sash",
 		left_ear="Mendi. Earring",
@@ -75,29 +91,16 @@ function get_sets()
 		right_ring="Stikini Ring +1",
 	}
 	
-    -- Fast Cast for Scholar --
-    sets.FastCast = {
-		ammo="Pemphredo Tathlum",
-		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
-		body="Zendik Robe",
-		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%',}},
-		legs="Pinga Pants",
-		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
-		neck="Argute stole +2",
-		waist="Embla Sash",
-		left_ear="Malignance Earring",
-		right_ear="Loquac. Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Locus Ring",
-		back="Perimede Cape"
-	}
+    sets.Klimaform = set_combine(sets.Duration,  {
+		feet="Arbatel Loafers +2"
+	})
 	
 	sets.Sublimation = {
 		head="Academic's Mortarboard +3"
 	}
 
 	-- Stoneskin
-	sets.Stoneskin = set_combine(sets.FastCast,  {
+	sets.Stoneskin = set_combine(sets.Duration,  {
 		hands="Carapacho Cuffs",
 		legs="Doyen Pants",
 		neck="Nodens Gorget",
@@ -106,7 +109,7 @@ function get_sets()
 	
 	-- Hitting the Duration set due to longer enhancing duration gear
 	sets.Aquaveil = set_combine(sets.Duration,  {
-		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
+		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6'}},
 		hands="Regal Cuffs",
 		waist="Emphatikos Rope",
 	})
@@ -115,11 +118,11 @@ function get_sets()
 	    main="Daybreak",
 		sub="Culminus",
 		ammo="Pemphredo Tathlum",
-		head={ name="Kaykaus Mitra", augments={'MP+60','MND+10','Mag. Acc.+15',}},
-		body="Arbatel Gown +2",
-		hands="Nyame Gauntlets",
+		head={ name="Kaykaus Mitra", augments={'MP+60','MND+10','Mag. Acc.+15'}},
+		body="Vanya robe",
+		hands="Arbatel bracers +2",
 		legs="Pinga Pants",
-		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
 		neck="Incanter's Torque",
 		waist="Luminary Sash",
 		left_ear="Mendi. Earring",
@@ -130,7 +133,7 @@ function get_sets()
 	})
 
 	-- Protecting the party
-    sets.Protect = set_combine(sets.FastCast,  {
+    sets.Protect = set_combine(sets.Duration,  {
 		ring1="Sheltered Ring"
 	})
 	
@@ -144,7 +147,7 @@ function get_sets()
 
 	
 	-- MDF the party
-    sets.Shell = set_combine(sets.FastCast,  {
+    sets.Shell = set_combine(sets.Duration,  {
 		ring1="Sheltered Ring"
 	})
 
