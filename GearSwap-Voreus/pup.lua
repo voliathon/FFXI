@@ -23,7 +23,7 @@ function get_sets()
 		back="Visucius's Mantle",
 		neck="Buffoon's collar"
 	}
-    sets.precast.Overdrive = {main="Pitre tobe +2"}
+    sets.precast.Overdrive = {main="Pitre Tobe +3"}
 	sets.precast.Repair = {range="Animator P +1", ammo="Automat. Oil +3", feet="Foire Babouches +2"}
 	sets.precast.Waltz = {legs="Dashing subligar"}
 	sets.precast.Activate = {main="Ohtas", right_ear="Karagoz Earring"}
@@ -44,7 +44,7 @@ function get_sets()
     head="Karagoz cappello +3",
     body="Tali'ah Manteel +2",
     hands={ name="Herculean Gloves", augments={'"Triple Atk."+3','DEX+9','Accuracy+15',}},
-    legs="Kara. Pantaloni +2",
+    legs="Kara. Pantaloni +3",
     feet={ name="Herculean Boots", augments={'Accuracy+23 Attack+23','"Triple Atk."+3','DEX+9','Attack+3',}},
     neck="Sanctity Necklace",
     waist="Cetl Belt",
@@ -103,7 +103,7 @@ function get_sets()
 		head={ name="Taeon Chapeau", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
 		body={ name="Taeon Tabard", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
 		hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-		legs="Kara. Pantaloni +2",
+		legs="Kara. Pantaloni +3",
 		feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
 		neck="Empath Necklace",
 		waist="Klouskap Sash",
@@ -118,7 +118,7 @@ function get_sets()
   
   sets.engaged.RangeAutomaton = {
     head="Karagoz cappello +3",
-    body={ name="Pitre Tobe +2", augments={'Enhances "Overdrive" effect'}},
+    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect'}},
     hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%'}},
     legs={ name="Taeon Tights", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%'}},
     feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%'}},

@@ -54,7 +54,7 @@ function get_sets()
 		right_ear="Lethargy Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Fi follet cape +1"
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
 	}
 	
 	-- Stoneskin
