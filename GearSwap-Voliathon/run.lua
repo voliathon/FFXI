@@ -23,7 +23,7 @@ function get_sets()
 	
 	
   sets.JA.Lunge = {}
-  sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +1"}
+  sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +3"}
   sets.JA.Gambit = {hands="Runeist mitons +2"}
   sets.JA.Rayke = {feet="Futhark boots +1"}
   sets.JA.Battuta = {head="Futhark bandeau +3"}
@@ -198,7 +198,7 @@ function get_sets()
     head="Erilaz galea +3",
     body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
-    legs="Futhark Trousers +1",
+    legs="Futhark Trousers +3",
     feet="Carmine greaves +1",
     neck="Voltsurge Torque",
     waist="Siegel Sash",
@@ -214,7 +214,7 @@ function get_sets()
     head="Rune. Bandeau +3",
     body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
-    legs="Futhark Trousers +1",
+    legs="Futhark Trousers +3",
     feet="Carmine greaves +1",
     neck="Voltsurge Torque",
     waist="Sroda Belt",
@@ -232,7 +232,7 @@ function get_sets()
     head="Rune. Bandeau +3",
     body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
+    legs="Futhark Trousers +3",
     feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
     neck="Loricate Torque +1",
     waist="Siegel Sash",
@@ -292,7 +292,7 @@ function get_sets()
     head="Rune. Bandeau +3",
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
     hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
+    legs={ name="Futhark Trousers +3", augments={'Enhances "Inspire" effect',}},
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
     neck={ name="Loricate Torque +1", augments={'Path: A',}},
     waist="Siegel Sash",

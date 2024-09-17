@@ -25,10 +25,10 @@ function get_sets()
   	sub="Utu grip",
 	ammo="Ginsen",
 	head="Flamma zucchetto +2",
-	body="Kasuga domaru +2",
+	body="Kasuga domaru +3",
 	hands="Wakido kote +3",
 	legs="Kasuga haidate +2",
-	feet="Flamma Gambieras +2",
+	feet="Tatenashi sune-ate +1",
 	neck="Samurai's nodowa +2",
 	waist="Ioskeha Belt +1",
 	left_ear="Cessance earring",
@@ -43,7 +43,7 @@ function get_sets()
 	sub="Utu grip",
     ammo="Staunch Tathlum +1",
     head="Nyame Helm",
-	body="Kasuga domaru +2",
+	body="Kasuga domaru +3",
     hands="Nyame Gauntlets",
 	legs="Kasuga haidate +2",
     feet="Nyame Sollerets",
@@ -95,8 +95,8 @@ function get_sets()
   sets.TP.Accuracy = {
 	ammo="Amar cluster",
 	head="Kendatsuba jinpachi +1",
-	body="Kasuga domaru +2",
-	hands="Kasuga kote +2",
+	body="Kasuga domaru +3",
+	hands="Kasuga kote +3",
 	legs="Kasuga haidate +2",
 	feet="Kasuga sune-ate +2",
 	neck="Samurai's nodowa +2",
@@ -130,7 +130,7 @@ function get_sets()
 		ammo="Knobkierrie",
 		head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%'}},
 		body="Nyame mail",
-		hands="Kasuga kote +2",
+		hands="Kasuga kote +3",
 		legs="Wakido Haidate +3",
 		feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
 		neck="Fotia Gorget",
@@ -146,7 +146,7 @@ function get_sets()
 		ammo="Knobkierrie",
 		head="Mpaca's Cap",
 		body="Nyame mail",
-		hands="Kasuga kote +2",
+		hands="Kasuga kote +3",
 		legs="Wakido Haidate +3",
 		feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
 		neck="Fotia Gorget",
@@ -177,8 +177,8 @@ function get_sets()
 	sets.Ageha = {
 		ammo="Pemphredo Tathlum",
 		head="Kasuga Kabuto +2",
-		body="Kasuga Domaru +2",
-		hands="Kasuga Kote +2",
+		body="Kasuga domaru +3",
+		hands="Kasuga kote +3",
 		legs="Kasuga Haidate +2",
 		feet="Kas. Sune-Ate +2",
 		neck="Sanctity Necklace",
@@ -217,7 +217,7 @@ function get_sets()
 	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +2", feet="Wakido sune-ate +2"}
 	sets.JA.WardingCircle = {head="Wakido kabuto +2"}
 	sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
-	sets.JA.Sekkanoki = {hands="Kasuga kote +2"}
+	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
  
 	--Weapon Sets--
 	sets.weapon = {}
