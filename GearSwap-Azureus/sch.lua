@@ -572,3 +572,11 @@ windower.register_event('status change', function()
 		send_command('@input /tell <me> We shall live forever!!!  It is time to get back up and try again')
 	end
 end)
+
+
+-- 10% bonus for magic of the day
+-- 10% bonus for magic matching single weather
+-- 20% bonus for magic matching single weather and day
+-- 25% bonus for magic matching double weather
+-- 35% bonus for magic matching double weather and day
+-- Will also gain an equivalent negative bonuses during opposing day/weather 
