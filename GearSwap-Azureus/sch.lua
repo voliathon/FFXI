@@ -641,9 +641,9 @@ function use_hachirin_no_obi(spell)
 	}
 
 	-- Debug: Spell Element Check
-	send_command('@input /echo Spell Element: ' .. spell.element)
+	--send_command('@input /echo Spell Element: ' .. spell.element)
 	-- Debug: Day Element Check
-	send_command('@input /echo Day Element: ' .. world.day_element)
+	--send_command('@input /echo Day Element: ' .. world.day_element)
     
 	-- Check if the spell element matches the current day
     if spell.element == world.day_element then
@@ -653,10 +653,10 @@ function use_hachirin_no_obi(spell)
     end
 
 	-- Debug: This returns the weather name found in weather_to_intensity example: Rain
-	send_command('@input /echo Self Weather Type: ' .. world.weather) 
+	--send_command('@input /echo Self Weather Type: ' .. world.weather) 
 	-- Debug: This returns back the weather of the zone or the storm.  
 	--        Storm weather will come back first. Zone weather returns if there is no storm.
-	send_command('@input /echo Weather Type: ' .. world.weather_element)
+	--send_command('@input /echo Weather Type: ' .. world.weather_element)
 	
     -- Check if a storm spell is up.
 	if has_storm_effect() then
@@ -676,7 +676,7 @@ function use_hachirin_no_obi(spell)
 	end
 	
 	--Debug
-	send_command('@input /echo Bonus Amount: ' .. bonus.. '%')       
+	--send_command('@input /echo Bonus Amount: ' .. bonus.. '%')       
 	-- Determine if the Hachirin-no-Obi should be used
     if bonus > 0 then
         return true
@@ -689,11 +689,11 @@ end
 function get_obi(spell)
     if use_hachirin_no_obi(spell) then
 		--Debug
-		send_command('@input /echo Waist: Hachirin-no-Obi')
+		--send_command('@input /echo Waist: Hachirin-no-Obi')
         return { equip({waist = "Hachirin-no-obi"}) }
     else
 		--Debug
-		send_command('@input /echo Waist: Tengu-no-Obi')	
+		--send_command('@input /echo Waist: Tengu-no-Obi')	
         return { equip({waist = "Tengu-no-obi"}) }
     end
 end
