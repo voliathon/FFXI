@@ -26,8 +26,14 @@ function get_sets()
     sets.precast.Overdrive = {main="Pitre Tobe +3"}
 	sets.precast.Repair = {range="Animator P +1", ammo="Automat. Oil +3", feet="Foire Babouches +2"}
 	sets.precast.Waltz = {legs="Dashing subligar"}
-	sets.precast.Activate = {main="Ohtas", right_ear="Karagoz Earring"}
+	sets.precast.Activate = {main="Ohtas", right_ear="Karagoz Earring", feet="Mpaca's boots"}
+	sets.precast.Ventriloquy = {feet="Karagoz scarpe +2"}
+	sets.precast.RoleReversal = {legs="Pitre Churidars +3"}
+	sets.precast.TacticalSwitch = {feet="Pitre Babouches +3"}
 
+	sets.ValorEdgeOverdrive = {}
+	sets.SharpshotOverdrive = {}
+	
 	
 --	Pseudocode Outloud
 	--	Determine if Master Only, Automaton Only, or both
@@ -37,7 +43,7 @@ function get_sets()
 	
   --Engaged Sets--
   sets.engaged = {}
-  sets.engaged.index = {'BadAss', 'Movement', 'Regen', 'DT', 'Accuracy', 'TH', 'STPAutomaton', 'DblAttkAutomaton', 'MagicAutomaton', 'TankAutomaton', 'BothTP', 'RangeAutomaton'}
+  sets.engaged.index = {'BadAss', 'Movement', 'Regen', 'DT', 'Accuracy', 'TH', 'RangerTP', 'MeleeTP', 'MagicAutomaton', 'TankAutomaton'}
   engaged_ind = 1
 	
   sets.engaged.BadAss = {
@@ -55,81 +61,117 @@ function get_sets()
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
   }	
 	
-  sets.engaged.Movement = {
-	feet="Hermes' Sandals"
-  }
-	
   sets.engaged.DT = {
-	ammo="Staunch Tathlum +1",
-	head="Bhikku Crown +2",
-	body="Malignance Chapeau",
-	hands="Bhikku Gloves +2",
-	legs="Bhikku Hose +2",
-	feet="Bhikku Gaiters +2",
-	neck={ name="Loricate Torque +1", augments={'Path: A'}},
-	waist="Moonbow Belt +1",
-	left_ear="Brutal Earring",
-	right_ear={ name="Bhikku Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','"Store TP"+3'}},
-	left_ring="Defending Ring",
-	right_ring="Fortified Ring",
-	back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
-  }
-    
-  sets.engaged.Accuracy = set_combine(sets.engaged.BadAss, {})
-	
-  sets.engaged.TH = {
-	ammo="Ginsen",
-	head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
-	body="Volte jupon",
-	hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
-	legs="Kendatsuba hakama +1",
-	feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
-	neck="Monk's nodowa +2",
-	waist="Chaac Belt",
-	left_ear="Cessance Earring",
-	right_ear="Brutal Earring",
-	left_ring="Chirich Ring +1",
-	right_ring="Chirich Ring +1",
-	back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
-  }
-  
-  sets.engaged.STPAutomaton = {}
-
-  sets.engaged.DblAttkAutomaton = {}
-  
-  sets.engaged.MagicAutomaton = {}
-  
-  sets.engaged.TankAutomaton = {
-		head={ name="Taeon Chapeau", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-		body={ name="Taeon Tabard", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-		hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-		legs="Kara. Pantaloni +3",
-		feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-		neck="Empath Necklace",
-		waist="Klouskap Sash",
-		left_ear="Enmerkar Earring",
-		right_ear="Hypaspist Earring",
-		left_ring="Varar Ring +1",
-		right_ring="Varar Ring +1",
-		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}  
-  }
-  
-  sets.engaged.BothTP = {}
-  
-  sets.engaged.RangeAutomaton = {
-    head="Karagoz cappello +3",
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect'}},
-    hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%'}},
-    legs={ name="Taeon Tights", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%'}},
-    feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%'}},
-    neck="Empath Necklace",
-    waist="Klouskap Sash",
+    head="Malignance Chapeau",
+    body="Kara. Farsetto +2",
+    hands="Karagoz Guanti +3",
+    legs="Kara. Pantaloni +3",
+    feet="Malignance Boots",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Plat. Mog. Belt",
     left_ear="Enmerkar Earring",
     right_ear="Handler's Earring +1",
-    left_ring="Varar Ring +1",
+    left_ring="Shneddick Ring",
+    right_ring="Varar Ring +1",
+    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
+  }
+  
+  sets.engaged.Movement = set_combine(sets.engaged.DT, {
+	left_ring="Shneddick ring"
+  })
+  
+  sets.engaged.Regen = {
+    head={ name="Pitre Taj +3", augments={'Enhances "Optimization" effect'}},
+    body="Hiza. Haramaki +2",
+    hands="Karagoz Guanti +3",
+    legs="Kara. Pantaloni +3",
+    feet="Malignance Boots",
+    neck="Empath Necklace",
+    waist="Isa Belt",
+    left_ear="Enmerkar Earring",
+    right_ear="Hypaspist Earring",
+    left_ring="Shneddick Ring",
     right_ring="Varar Ring +1",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%'}}  
   }
+  
+  sets.engaged.Accuracy = set_combine(sets.engaged.BadAss, {
+    head="Kara. Cappello +3",
+    body="Tali'ah Manteel +2",
+    hands="Karagoz Guanti +3",
+    legs="Kara. Pantaloni +3",
+    feet="Karagoz Scarpe +2",
+    neck="Sanctity Necklace",
+    waist="Eschan Stone",
+    left_ear="Telos Earring",
+    right_ear={ name="Karagoz Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+    left_ring="Hetairoi Ring",
+    right_ring="Regal Ring",
+    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}  
+  })
+	
+  sets.engaged.TH = set_combine(sets.engaged.DT, {
+	waist="Chaac belt"
+  })
+  
+  -- Xiucoatl is needed for Store TP Ranger Automaton
+  sets.engaged.RangerTP = {
+    head={ name="Herculean Helm", augments={'Pet: Accuracy+16 Pet: Rng. Acc.+16','Pet: "Store TP"+11',}},
+    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    hands={ name="Herculean Gloves", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Store TP"+11','Pet: "Mag.Atk.Bns."+11',}},
+    legs={ name="Herculean Trousers", augments={'Pet: "Store TP"+11','Pet: AGI+2','Pet: Attack+11 Pet: Rng.Atk.+11',}},
+    feet={ name="Herculean Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Store TP"+10','Pet: AGI+4',}},
+    neck="Empath Necklace",
+    waist="Klouskap Sash",
+    left_ear="Enmerkar Earring",
+    right_ear="Kyrene's Earring",
+    left_ring="Varar Ring +1",
+    right_ring="Varar Ring +1",
+    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
+  }
+
+  -- Ohtas is needed for Double Attack Melee
+  sets.engaged.MeleeTP = {
+	head={ name="Taeon Chapeau", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+	hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+	legs="Kara. Pantaloni +3",
+	feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+	neck="Empath Necklace",
+	waist="Incarnation Sash",
+	left_ear="Enmerkar Earring",
+	right_ear="Rimeice Earring",
+	left_ring="Varar Ring +1",
+	right_ring="Varar Ring +1",
+	back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}    
+  }
+  
+  sets.engaged.MagicAutomaton = {
+	head="Karagoz Cappello +3",
+	body="Karagoz Farsetto +2",
+	hands="Karagoz Guanti +3",
+	legs="Pitre Churidars +3",
+	feet="Pitre Babouches +3",
+	waist="Incarnation sash",
+	neck="Adad Amulet"
+  }
+  
+  --Midnights needed for the -3DT and 25ACC
+  sets.engaged.TankAutomaton = {
+    head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Attack+3','Pet: "Regen"+1',}},
+    body={ name="Taeon Tabard", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+    hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+    legs={ name="Taeon Tights", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+    feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+    neck="Empath Necklace",
+    waist="Isa belt",
+    left_ear="Enmerkar Earring",
+    right_ear="Rimeice Earring",
+    left_ring="Shneddick Ring",
+    right_ring="Overbearing Ring",
+    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
+  }
+  
 
 --Weapon Skill Sets
     sets.WS = {}
@@ -145,7 +187,20 @@ function get_sets()
 	--Stringing Pummel --- STR 32% VIT 32%
 	--Shoulder Tackle/One Inch Punch --- VIT 100%
 
-	
+	sets.WS.AsuranFists = {
+		head={ name="Pitre Taj +3", augments={'Enhances "Optimization" effect',}},
+		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+		hands={ name="Pitre Dastanas +3", augments={'Enhances "Fine-Tuning" effect',}},
+		legs={ name="Pitre Churidars +3", augments={'Enhances "Ventriloquy" effect',}},
+		feet={ name="Pitre Babouches +3", augments={'Enhances "Role Reversal" effect',}},
+		neck="Rep. Plat. Medal",
+		waist="Cetl Belt",
+		left_ear="Telos Earring",
+		right_ear="Digni. Earring",
+		left_ring="Petrov Ring",
+		right_ring="Regal Ring",
+		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}		
+	}
 	sets.WS.VictorySmite = {
 		head={ name="Herculean Helm", augments={'Accuracy+17','"Triple Atk."+4','DEX+4',}},
 		body="Tali'ah Manteel +2",
@@ -191,6 +246,12 @@ function get_sets()
 		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
 	}
     
+	sets.PetWS = {}
+	sets.PetWS.Arcuballista = {}
+	sets.PetWS.BoneCrusher = {}
+	sets.PetWS.MagicMortar = {}
+	sets.PetWS.Nuke = {}
+	
 
  -- Weapon Toggle--
   sets.weapon = {}
@@ -218,9 +279,18 @@ function precast(spell)
   if string.find(spell.name, 'Repair') then
 	equip(sets.precast.Repair)
   end  
+  if spell.name == 'Tactical Switch' then
+	equip(sets.precast.TacticalSwitch)
+  end
+  if spell.name == 'Ventriloquy' then
+	equip(sets.precast.Ventriloquy)
+  end
+  if spell.name == 'Role Reversal' then
+	equip(sets.precast.RoleReversal)
+  end
   if spell.name == 'Overdrive' then
 	equip(sets.precast.Overdrive)
-  end
+  end  
 
   -- Dancer Abilities --
   if string.find(spell.name, 'Waltz') then
@@ -250,6 +320,49 @@ end
 
 function aftercast(spell)
 	equip_current()	
+end
+
+
+-- Function called during the automaton's action
+function job_pet_midcast(spell, action, spellMap, eventArgs)
+  local automaton_type = get_automaton_type()
+    -- Check if the automaton's TP is above 1000
+    if pet.tp > 1000 then
+		if automaton_type == 'Ranger' then
+			-- Equip ranger-specific gear
+			equip(sets.PetWS.Arcuballista)
+		elseif automaton_type == 'Magic' then
+			-- Equip magic-specific gear
+			equip(sets.PetWS.MagicMortar)
+		elseif automaton_type == 'Melee' then
+			-- Equip melee-specific gear
+			equip(sets.PetWS.BoneCrusher)
+		else
+			-- Default to idle gear
+			equip(sets.idle)
+		end
+    end
+end
+
+-- Function called after the automaton's action is completed
+function job_pet_aftercast(spell, action, spellMap, eventArgs)
+  local automaton_type = get_automaton_type()
+    -- Check if the automaton's TP is less than 1000
+    if pet.tp < 1000 then
+		if automaton_type == 'Ranger' then
+			-- Equip ranger-specific gear
+			equip(sets.engaged.RangerTP)
+		elseif automaton_type == 'Magic' then
+			-- Equip magic-specific gear
+			equip(sets.engaged.MagicAutomaton)
+		elseif automaton_type == 'Melee' then
+			-- Equip melee-specific gear
+			equip(sets.engaged.MeleeTP)
+		else
+			-- Default to idle gear
+			equip(sets.idle)
+		end
+	end
 end
 
 
@@ -310,6 +423,20 @@ function job_customize_idle_set(equip_current)
     return equip_current
 end
 
+-- Function to determine the automaton type
+function get_automaton_type()
+    local head = pet.head
+    local frame = pet.frame
 
+    if head == 'Sharpshot Head' or frame == 'Sharpshot Frame' then
+        return 'Ranger'
+    elseif head == 'Stormwaker Head' or frame == 'Stormwaker Frame' then
+        return 'Magic'
+    elseif head == 'Valoredge Head' or frame == 'Valoredge Frame' then
+        return 'Melee'
+    else
+        return 'Unknown'
+    end
+end
 
 

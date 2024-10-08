@@ -59,7 +59,7 @@ function get_sets()
 	
 	-- Stoneskin
 	sets.Stoneskin = set_combine(sets.FastCast,  {
-
+		legs="Querkening Brais"
 	})
 	
 	sets.TP = {
@@ -257,8 +257,8 @@ function get_sets()
 	 sets.SavageBlade = {
 		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
 		body="Nyame mail",
-		hands="Atrophy Gloves +3",
-		legs="Jhakri Slops +2",
+		hands="Nyame gauntlets",
+		legs="Nyame flanchard",
 		feet="Leth. Houseaux +3",
 		neck="Rep. Plat. Medal",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
