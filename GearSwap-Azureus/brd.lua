@@ -240,11 +240,11 @@ function get_sets()
   --Savage Blade
   sets.SavageBlade = {
     range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
-    head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+    head="Nyame Helm",
     body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
     hands="Nyame Gauntlets",
     legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
-    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+	feet="Nyame sollerets",
     neck={ name="Bard's Charm +2", augments={'Path: A',}},
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Ishvara Earring",
@@ -257,11 +257,11 @@ function get_sets()
   --All in One who gives a fuck Weapon Skill set of Doom
   sets.WSD = {
     range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
-    head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+    head="Nyame Helm",
     body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
     hands="Nyame Gauntlets",
-    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
-    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},		
+	feet="Nyame sollerets",
     neck={ name="Bard's Charm +2", augments={'Path: A',}},
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Ishvara Earring",

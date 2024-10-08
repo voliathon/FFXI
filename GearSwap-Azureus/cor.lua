@@ -147,7 +147,7 @@ function get_sets()
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
     sets.LastStand = {
-		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		head="Nyame Helm",
 		body="Laksamana's frac +3",
 		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
@@ -163,7 +163,7 @@ function get_sets()
 
 	--Savage Blade  50% STR / 50% MND
     sets.SavageBlade = {
-		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		head="Nyame Helm",
 		body="Laksamana's frac +3",
 		hands="Nyame Gauntlets",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},

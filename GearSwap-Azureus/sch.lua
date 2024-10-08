@@ -77,7 +77,7 @@ function get_sets()
 
 	sets.Duration = {
 		main="Musa",
-		sub="Eletta grip",
+		sub="Khonsu",
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
 		body={ name="Telchine Chas.", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
@@ -141,7 +141,7 @@ function get_sets()
 	--Regen Max Duration
 	sets.Regen = set_combine(sets.Duration,  {
 		main="Musa",
-		sub="Clerisy strap",
+		sub="Khonsu",
 		head="Arbatel Bonnet +2",
 		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
 	})
@@ -154,8 +154,8 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Bunzi's Rod",
-		sub="Ammurapi Shield",
+		main="Marin staff +1",
+		sub="Khonsu",
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap",
 		body="Agwu's Robe",
@@ -168,7 +168,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+8','Mag. Acc+7 /Mag. Dmg.+7','Mag. Acc.+8',}}
+		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}
 	}
 	
 	-- sets.Burst = {
@@ -186,7 +186,7 @@ function get_sets()
 		-- right_ear="Halasz Earring",
 		-- left_ring="Mujin band",
 		-- right_ring="Locus Ring",
-		-- back={ name="Lugh's Cape", augments={'INT+8','Mag. Acc+7 /Mag. Dmg.+7','Mag. Acc.+8',}}	
+		--     back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
 	
 	-- }
 	
@@ -194,23 +194,42 @@ function get_sets()
 		main="Bunzi's Rod",
 		sub="Ammurapi Shield",
 		ammo="Sroda Tathlum",
-		head="Pixie Hairpin +1",
-		body="Agwu's Robe",
-		hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		feet="Agwu's Pigaches",
-		neck="Argute stole +2",
+	    head="Pixie Hairpin +1", -- Dark magic damage
+		body="Agwu's Robe", -- Magic accuracy and damage
+		hands="Agwu's Gages", -- Magic accuracy and damage
+		legs="Agwu's Slops", -- Magic accuracy and damage
+		feet="Agwu's Pigaches", -- Magic accuracy and damage
+		neck="Argute Stole +2", -- Magic skill and damage
 		waist="Tengu-no-Obi",
 		left_ear="Malignance Earring",
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring",
-		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10',}}	
+		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
 	}
 	
     sets.DarkMagic = {
 
 	}
+	
+	sets.Helix = {
+		main="Bunzi's Rod", -- High magic damage and skill
+		sub="Ammurapi Shield", -- Magic accuracy and skill
+		ammo="Sroda Tathlum",
+		head="Agwu's Cap", -- Magic accuracy and damage
+		body="Agwu's Robe", -- Magic accuracy and damage
+		hands="Agwu's Gages", -- Magic accuracy and damage
+		legs="Agwu's Slops", -- Magic accuracy and damage
+		feet="Agwu's Pigaches", -- Magic accuracy and damage
+		neck="Argute Stole +2", -- Magic skill and damage
+		waist="Tengu-no-Obi",
+		left_ear="Malignance Earring", -- Magic accuracy and damage
+		right_ear="Halasz Earring",
+		left_ring="Mujin Band",
+		right_ring="Locus Ring",
+		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+}
+
 
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		main="Bunzi's Rod",
@@ -227,7 +246,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+8','Mag. Acc+7 /Mag. Dmg.+7','Mag. Acc.+8',}}
+		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}
 	})
 
 
@@ -244,7 +263,7 @@ function get_sets()
 
 	sets.TP = set_combine(sets.PDT,  {
 		main="Malignance Pole",
-		sub="Mensch Strap +1",
+		sub="Khonsu",
 		ammo="Crepuscular Pebble",
 		head="Arbatel Bonnet +2",
 		body="Nyame Mail",
@@ -257,7 +276,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back="Moonbeam Cape"	
+		back="Relucent Cape"	
 	})
 
 	-- PDT Set
@@ -329,7 +348,7 @@ function get_sets()
 	sets.WSD = {
 		ammo="Crepuscular Pebble",
 		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
-		body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9',}},
+		body="Nyame Mail",
 		hands="Jhakri Cuffs +2",
 		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
 		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
@@ -338,14 +357,13 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
-		right_ring="Chirich Ring +1",
-		back="Moonbeam Cape"
+		right_ring="Chirich Ring +1"
 	}
 	
 	sets.Cataclysm = {
 		ammo="Pemphredo Tathlum",
 		head="Pixie Hairpin +1",
-		body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9',}},
+		body="Nyame Mail",
 		hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7',}},
 		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
 		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
@@ -355,7 +373,7 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Lugh's Cape", augments={'INT+8','Mag. Acc+7 /Mag. Dmg.+7','Mag. Acc.+8',}}	
+	    back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
 	}
 	 
 	sets.Myrkr = {
@@ -370,7 +388,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Sangoma Ring",
 		right_ring="Mephitas's Ring +1",
-		back="Pahtli Cape"	
+		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
 	} 
 
 	  -- Engaged Sets Toggle--
@@ -506,11 +524,17 @@ function midcast(spell)
 		equip(sets.Enfeebling)
 	end
 	if string.find(spell.english,'Kaustra') then 
-		equip(sets.ElementalMagic)
+		equip(sets.Kaustra)
 		if bonus > 0 then
 			equip({waist = "Hachirin-no-obi"})
 		end
 	end
+	if string.find(spell.english,'helix') then 
+		equip(sets.Helix)
+		if bonus > 0 then
+			equip({waist = "Hachirin-no-obi"})
+		end
+	end	
 	if spell.skill == 'Elemental Magic' then
 		send_command('@input /echo Bonus in midcast is: '..bonus..'%')	
 		equip(sets.ElementalMagic)

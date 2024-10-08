@@ -133,11 +133,11 @@ function get_sets()
   --multi, carries FTP -- Need STR for the modifier
   sets.Resolution = {
     ammo="Yetshila +1",
-    head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+    head="Nyame Helm",
     body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     legs="Meg. Chausses +2",
-    feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
+	feet="Nyame sollerets",
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear="Sherida Earring",
@@ -150,11 +150,11 @@ function get_sets()
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
   sets.Single = {
     ammo="Yetshila +1",
-    head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+    head="Nyame Helm",
     body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
-    feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
+	feet="Nyame sollerets",
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -167,11 +167,11 @@ function get_sets()
   --added effect
   sets.Shockwave = {
     ammo="Knobkierrie",
-    head="Adhemar Bonnet +1",
+    head="Nyame Helm",
     body="Herculean vest",
     hands="Nyame Gauntlets",
     legs="Erilaz leg guards +2",
-    feet="Erilaz greaves +2",
+	feet="Nyame sollerets",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
     left_ear="Crematio Earring",
@@ -184,7 +184,7 @@ function get_sets()
   --magic WS
   sets.HercSlash = {
     ammo="Knobkierrie",
-	head="Adhemar Bonnet +1",
+    head="Nyame Helm",
 	body="Nyame mail",
     hands="Erilaz Gauntlets +2",
     legs="Erilaz leg guards +2",
@@ -233,12 +233,12 @@ function get_sets()
   --Phalanx--
   sets.Phalanx = {
     ammo="Staunch Tathlum",
-    head={ name="Taeon Chapeau", augments={'Evasion+20','Spell interruption rate down -10%','Phalanx +3'}},
-    body={ name="Herculean Vest", augments={'Pet: STR+9','Accuracy+9','Phalanx +5','Accuracy+5 Attack+5'}},
-    hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3'}},
-    legs={ name="Herculean Trousers", augments={'VIT+10','DEX+10','Phalanx +5','Mag. Acc.+12 "Mag.Atk.Bns."+12'}},
-    feet={ name="Herculean Boots", augments={'Spell interruption rate down -4%','"Mag.Atk.Bns."+30','Phalanx +5','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    head={ name="Taeon Chapeau", augments={'Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
+    body={ name="Herculean Vest", augments={'Pet: STR+9','Accuracy+9','Phalanx +5','Accuracy+5 Attack+5',}},
+    hands={ name="Herculean Gloves", augments={'CHR+9','DEX+7','Phalanx +5',}},
+    legs={ name="Herculean Trousers", augments={'VIT+10','DEX+10','Phalanx +5','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+    feet={ name="Herculean Boots", augments={'Spell interruption rate down -4%','"Mag.Atk.Bns."+30','Phalanx +5','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
+    neck="Incanter's Torque",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Loquac. Earring",

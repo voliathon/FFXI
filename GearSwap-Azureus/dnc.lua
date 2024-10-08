@@ -153,7 +153,7 @@ function get_sets()
 		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
 		hands="Maxixi Bangles +3",
 		legs="Horos Tights +3",
-		feet={ name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9',}},
+		feet="Nyame sollerets",
 		neck="Fotia Gorget",
 		waist="Grunfeld Rope",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -169,7 +169,7 @@ function get_sets()
 		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
 		hands="Maxixi Bangles +3",
 		legs="Meg. Chausses +2",
-		feet="Malignance Boots",
+		feet="Nyame sollerets",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -195,7 +195,9 @@ function get_sets()
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 	
-	sets.PyrrhicKleos = {}
+	sets.PyrrhicKleos = set_combine(sets.Evisceration,  {
+	
+	})
 	
 ---- .:: Preshot Sets ::. ---->
 	--sets.preshot = {}
@@ -205,7 +207,7 @@ function get_sets()
 	sets.precast = {}
 	sets.precast.Fastcast = {
 		ammo="Staunch Tathlum",
-		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
+		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
 		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
 		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
 		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
