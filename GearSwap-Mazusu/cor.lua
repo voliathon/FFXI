@@ -155,19 +155,21 @@ function get_sets()
 		back=CamulusCape.storetp
     })
 	
-	
-    sets.QuickDrawAcc = set_combine(sets.QuickDraw, {
-        head="Laksa. Tricorne +2",
-        neck="Commodore Charm +2",
-        --hands="Laksa. Gants +2",
-        legs="Malignance Tights",
-        feet="Laksa. Boots +3",
-        left_ear="Digni. Earring",
-        left_ring="Regal Ring",
-        right_ring="Etana Ring",
+    sets.QuickDrawDark = set_combine(sets.DamageTaken,{
+		ammo="Living Bullet",
+		head="Pixie Hairpin +1",
+		body="Lanun Frac +3",
+		hands="Carmine Fin. Ga. +1",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Friomisi Earring",
+		right_ear="Hecate's Earring",
+		left_ring="Dingir Ring",
+		right_ring="Kishar ring",
+		back=CamulusCape.storetp
     })	
 	
-
+	
 	-- PRECAST LOGIC
 	sets.precast = {}
     sets.precast.RA = set_combine(sets.DamageTaken,{
@@ -441,6 +443,13 @@ end
 
 --Precast Function
 function precast(spell,abil)
+	if spell.name == "Light Shot" or "Fire Shot" or "Water Shot" or "Thunder Shot" or "Earth Shot" or "Wind Shot" or "Ice Shot" then 
+		equip(sets.QuickDraw)
+	end
+	
+	if spell.name == "Dark shot" then
+		equip(sets.QuickDrawDark)
+	end
 
 	--Weapon skill lookups
 	if spell.name == "Savage Blade" then
