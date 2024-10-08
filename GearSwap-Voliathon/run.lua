@@ -64,7 +64,7 @@ function get_sets()
     hands="Erilaz Gauntlets +3",
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",
-    neck="Loricate torque +1",
+    neck="Warder's charm +1",
     waist="Engraved belt",
     left_ear="Tuisto Earring",
     right_ear="Odnowa Earring +1",
@@ -128,10 +128,10 @@ function get_sets()
   --multi, carries FTP -- Need STR for the modifier
   sets.Resolution = {
     ammo="Yetshila +1",
-    head={ name="Herculean Helm", augments={'Attack+20','Weapon skill damage +4%','STR+10'}},
-    body="Nyame mail",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
     hands="Adhemar wristbands +1",
-    legs="Erilaz leg guards +3",
+    legs="Nyame flanchard",
     feet="Carmine greaves +1",
     neck="Fotia Gorget",
 	waist="Fotia Belt",
@@ -145,10 +145,10 @@ function get_sets()
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
   sets.Single = {
     ammo="Knobkierrie",
-    head={ name="Herculean Helm", augments={'Weapon skill damage +5%','DEX+10','Attack+5'}},
-    body="Nyame mail",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
     hands="Meg. Gloves +2",
-    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
+    legs="Nyame flanchard",
     feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
@@ -162,10 +162,10 @@ function get_sets()
   --added effect
   sets.Shockwave = {
     ammo="Knobkierrie",
-    head="Adhemar Bonnet +1",
-    body="Nyame mail",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
     hands="Erilaz Gauntlets +3",
-    legs="Erilaz leg guards +3",
+    legs="Nyame flanchard",
     feet="Erilaz Greaves +3",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
@@ -179,10 +179,10 @@ function get_sets()
   --magic WS
   sets.HercSlash = {
     ammo="Knobkierrie",
-	head="Adhemar Bonnet +1",
-	body="Nyame mail",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
     hands="Erilaz Gauntlets +3",
-    legs="Erilaz leg guards +3",
+    legs="Nyame flanchard",
     feet="Erilaz Greaves +3",
     neck="Fotia Gorget",
     waist="Orpheus's sash",
