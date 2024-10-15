@@ -1,3 +1,13 @@
 # GearSwap-Voluzera
-Focus has been on Geomancer.
-Then Bard, Paladin, Rune Fencer, and Thief
+- **[Geomancer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voluzera/geo.lua) lua script**
+  - Alternate weapons using Ctrl + F8
+  - Alternate gear using Ctrl + F9
+  - Idris Build
+- **[Paladin](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voluzera/pld.lua) lua script**
+  - Alternate weapons using Ctrl + F8
+  - Alternate gear using Ctrl + F9
+  - Excalibur, Naegling, Priwen, and Aegis Build
+- **[Bard](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voluzera/brd.lua) lua script**
+  - Alternate weapons using Ctrl + F8
+  - Alternate gear using Ctrl + F9
+  - Gjallorhorn and Marsyas Build
