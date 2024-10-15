@@ -31,5 +31,9 @@
 - **Ranger lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
+- **Thief lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+   - Gandring and Twashtar Build  
  
   
