@@ -4,21 +4,8 @@
 
 -- Herculean Gear Function for tracking what I could use on Blue Mage
 function HerculeanGear()
-    HercHead = {}
-	HercBody = {}
-    HercHands = {}
     HercLegs = {}
-    HercFeet = {}
-	
-	HercHead.WSD={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%'}}
-
-    HercHands.TP={ name="Herculean Gloves", augments={'Rng.Atk.+24','"Triple Atk."+3','DEX+2','Accuracy+11','Attack+9'}}
-
-    HercLegs.TP={ name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9'}}
-
-    HercFeet.TP={ name="Herculean Boots", augments={'Weapon Skill Acc.+9','MND+4','Quadruple Attack +2','Accuracy+9 Attack+9'}}
-	HercFeet.WSD={name="Herculean Boots", augments={'Enmity-4','"Blood Pact" ability delay -3','Weapon skill damage +8%','Accuracy+20 Attack+20','Mag. Acc.+9 "Mag.Atk.Bns."+9'}}
-	
+	HercLegs.TP={ name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9'}}
 end
 
 
@@ -53,7 +40,7 @@ function get_sets()
 
 	--Job Ability Sets--
 	sets.JA = {}
-    sets.JA.BurstAffinity = {legs="Assimilator's shalwar +2",feet="Hashishin basmak +2"} 
+    sets.JA.BurstAffinity = {legs="Assimilator's shalwar +2",feet="Hashishin basmak +3"} 
     sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2", head="Hashishin kavuk +3"}
     sets.JA.Diffusion = {}
     sets.JA.Enchainment = {body="Luhlaza Jubbah +1"}
@@ -90,8 +77,8 @@ function get_sets()
 		body="Hashishin mintan +3",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
-		feet="Hashishin basmak +2",
-		neck="Incanter's Torque",
+		feet="Hashishin basmak +3",
+		neck="Mirage Stole +2",
 		waist="Luminary Sash",
 		left_ear="Digni. Earring",
 		right_ear="Hashishin Earring +1",
@@ -113,7 +100,7 @@ function get_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs={ name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9',}},
 		feet={ name="Herculean Boots", augments={'Rng.Atk.+24','Attack+30','"Store TP"+10','Accuracy+20 Attack+20',}},
-		neck="Clotharius Torque",
+		neck="Mirage Stole +2",
 		waist="Windbuffet Belt +1",
 		left_ear="Suppanomimi",
 		right_ear="Hashishin Earring +1",
@@ -163,7 +150,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Hashishin Tayt +3",
 		feet="Malignance Boots",
-		neck="Sanctity Necklace",
+		neck="Mirage Stole +2",
 		waist="Eschan Stone",
 		left_ear="Digni. Earring",
 		right_ear="Telos Earring",
@@ -202,7 +189,7 @@ function get_sets()
 	
 	-- Blue Mage Skill
     sets.BlueMagicSkill = {
-        neck="Incanter's Torque",
+        neck="Mirage Stole +2",
         body="Assimilator's Jubbah +3",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
@@ -216,8 +203,8 @@ function get_sets()
 		body="Hashishin mintan +3",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
-		feet="Hashishin basmak +2",
-		neck="Incanter's Torque",
+		feet="Hashishin basmak +3",
+		neck="Mirage Stole +2",
 		waist="Luminary Sash",
 		left_ear="Digni. Earring",
 		right_ear="Hashishin Earring +1",
@@ -235,7 +222,7 @@ function get_sets()
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
 		feet="Malignance Boots",
-		neck="Incanter's Torque",
+		neck="Mirage Stole +2",
 		waist="Grunfeld Rope",
 		left_ear="Digni. Earring",
 		right_ear="Telos Earring",
@@ -279,8 +266,8 @@ function get_sets()
 		body="Hashishin mintan +3",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
-		feet="Hashishin basmak +2",
-		neck="Sanctity Necklace",
+		feet="Hashishin basmak +3",
+		neck="Mirage Stole +2",
 		waist="Orpheus's sash",
 		left_ear="Choleric Earring",
 		right_ear="Friomisi Earring",
@@ -337,7 +324,7 @@ function get_sets()
 		hands="Nyame Gauntlets",
 		legs="Luhlaza Shalwar +3",
 		feet="Nyame sollerets",
-		neck="Fotia Gorget",
+		neck="Mirage Stole +2",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
 		right_ear="Ishvara Earring",
@@ -351,7 +338,7 @@ function get_sets()
 		head="Hashishin kavuk +3",
 		body="Abnoba Kaftan",
 		hands="Nyame Gauntlets",
-		legs=HercLegs.TP,
+		legs={name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9'}},
 		feet="Nyame sollerets",
 		neck="Mirage Stole +2",
 		waist="Fotia Belt",
