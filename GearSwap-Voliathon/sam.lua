@@ -27,7 +27,7 @@ function get_sets()
 	head="Flamma zucchetto +2",
 	body="Kasuga domaru +3",
 	hands="Wakido kote +3",
-	legs="Kasuga haidate +2",
+	legs="Kasuga haidate +3",
 	feet="Tatenashi sune-ate +1",
 	neck="Samurai's nodowa +2",
 	waist="Ioskeha Belt +1",
@@ -45,7 +45,7 @@ function get_sets()
     head="Nyame Helm",
 	body="Kasuga domaru +3",
     hands="Nyame Gauntlets",
-	legs="Kasuga haidate +2",
+	legs="Kasuga haidate +3",
     feet="Nyame Sollerets",
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Ioskeha Belt +1",
@@ -63,7 +63,7 @@ function get_sets()
     head="Crepuscular Helm",
 	body="Crepuscular mail",
     hands="Nyame Gauntlets",
-	legs="Kasuga haidate +2",
+	legs="Kasuga haidate +3",
     feet="Nyame Sollerets",
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Ioskeha Belt +1",
@@ -97,7 +97,7 @@ function get_sets()
 	head="Kendatsuba jinpachi +1",
 	body="Kasuga domaru +3",
 	hands="Kasuga kote +3",
-	legs="Kasuga haidate +2",
+	legs="Kasuga haidate +3",
 	feet="Kasuga sune-ate +2",
 	neck="Samurai's nodowa +2",
 	waist="Ioskeha Belt +1",
@@ -179,7 +179,7 @@ function get_sets()
 		head="Kasuga Kabuto +2",
 		body="Kasuga domaru +3",
 		hands="Kasuga kote +3",
-		legs="Kasuga Haidate +2",
+		legs="Kasuga haidate +3",
 		feet="Kas. Sune-Ate +2",
 		neck="Sanctity Necklace",
 		waist="Fotia Belt",
@@ -214,7 +214,7 @@ function get_sets()
 	sets.JA.Stun = {}
 	sets.JA.Sengikori = {feet="Kasuga sune-ate +2"}	
 	sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
-	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +2", feet="Wakido sune-ate +2"}
+	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +3", feet="Wakido sune-ate +2"}
 	sets.JA.WardingCircle = {head="Wakido kabuto +2"}
 	sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
 	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
