@@ -1,5 +1,5 @@
 # GearSwap-Azureus
-- **Blue Mage lua script**
+- **[Blue Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/blu.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Tizona Build
@@ -7,33 +7,34 @@
    - Orpheus's sash priority
   > TODO: Distance Logic needs to be added when past 15 yalms. 
   > Also incoorporate Hachirin-no-obi logic from Scholar lua
-- **Corsair lua script**
+- **[Corsair](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/cor.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Rostam and Death Penalty Build
    - Function to handle Orpheus's sash logic
-- **Scholar lua script**
+- **[Scholar](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/sch.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Musa Build
    - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi
-- **Rune Fencer lua script**
+- **[Rune Fencer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/run.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Epeolatry Build
-- **Bard lua script**
+- **[Bard](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/brd.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Full REMA and Battle Bard
-- **Dancer lua script**
+- **[Dancer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/dnc.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
-- **Ranger lua script**
+- **[Ranger](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/rng.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
-- **Thief lua script**
+- **[Thief](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/thf.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Gandring and Twashtar Build  
  
   
+
