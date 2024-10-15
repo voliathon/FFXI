@@ -16,7 +16,7 @@
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Musa Build
-   - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi
+   - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi. There is an echo for weather intensity and what bonus is obtained when casting elemental magic
 - **[Rune Fencer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/run.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
