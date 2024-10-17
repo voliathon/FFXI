@@ -114,15 +114,15 @@ function get_sets()
 	
 	sets.WS.FinalHeaven = {
 		ammo="Knobkierrie",
-		head="Hesychast's crown +2",
+		head="Nyame Helm",
 		body="Nyame mail",
 		hands="Anchorite's gloves +3",
 		legs="Hiza. Hizayoroi +2",
 		feet="Ken. Sune-Ate +1",
 		neck="Monk's nodowa +2",
 		waist="Moonbow Belt +1",
-		right_ear="Schere Earring",
-		left_ear="Bhikku Earring +1",
+		left_ear="Schere Earring",
+		right_ear="Bhikku Earring +1",
 		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
 		back={ name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}

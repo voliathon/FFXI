@@ -5,23 +5,23 @@ function get_sets()
 	-- Binds for modes
     send_command('bind !f8 gs c toggle weapon set')
 	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching TP modes	
-    send_command('bind !f9 gs c toggle TP set')
-	send_command('bind ^f9 gs c reverse TP set')
+	-- Binds for switching GEAR modes	
+    send_command('bind !f9 gs c toggle GEAR set')
+	send_command('bind ^f9 gs c reverse GEAR set')
 
 	-- Modes --
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	ShiningOne = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F9
 	ShadowType = 'None'
 	
-	--TP Sets--
-	sets.TP = {}
+	--GEAR Sets--
+	sets.GEAR = {}
 	--					  1		   2              3 				   4 		  5			   6
-	sets.TP.index = {'BadAss', 'Tank', 'TakingLessMagicDamage', 'Accuracy', 'Reraise', 'SubtleBlow'}
-	TP_ind = 1
+	sets.GEAR.index = {'BadAss', 'Tank', 'TakingLessMagicDamage', 'Accuracy', 'Reraise', 'SubtleBlow'}
+	GEAR_ind = 1
 
   --offensive melee set
-  sets.TP.BadAss = {
+  sets.GEAR.BadAss = {
   	sub="Utu grip",
 	ammo="Ginsen",
 	head="Flamma zucchetto +2",
@@ -39,7 +39,7 @@ function get_sets()
   }
 
   --Tank Gear
-  sets.TP.Tank = {
+  sets.GEAR.Tank = {
 	sub="Utu grip",
     ammo="Staunch Tathlum +1",
     head="Nyame Helm",
@@ -53,11 +53,11 @@ function get_sets()
     right_ear="Genmei Earring",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
-    back="Moonlight cape"
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
   
   --Tank Gear
-  sets.TP.Reraise = {
+  sets.GEAR.Reraise = {
 	sub="Utu grip",
     ammo="Staunch Tathlum +1",
     head="Crepuscular Helm",
@@ -75,24 +75,24 @@ function get_sets()
   }  
 
   --MDT melee set
-  sets.TP.TakingLessMagicDamage = {
+  sets.GEAR.TakingLessMagicDamage = {
 	sub="Utu grip",
-	ammo="Staunch tathlum +1",
-    head="Nyame Helm",
-    body="Nyame Mail",
-    hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
-    feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body="Kasuga Domaru +3",
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Sam. Nodowa +2", augments={'Path: A',}},
     waist="Ioskeha Belt +1",
     left_ear="Infused Earring",
     right_ear="Genmei Earring",
     left_ring="Fortified Ring",
-    right_ring="Defending Ring",
-    back="Moonlight cape"
+    right_ring="Chirich Ring +1",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}
   }
   
-  sets.TP.Accuracy = {
+  sets.GEAR.Accuracy = {
 	ammo="Amar cluster",
 	head="Kendatsuba jinpachi +1",
 	body="Kasuga domaru +3",
@@ -108,7 +108,7 @@ function get_sets()
     back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
   
-  sets.TP.SubtleBlow = {
+  sets.GEAR.SubtleBlow = {
     ammo="Ginsen",
     head="Ken. Jinpachi +1",
     body="Ken. Samue +1",
@@ -319,7 +319,7 @@ end
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
-	equip(sets.TP[sets.TP.index[TP_ind]]) 
+	equip(sets.GEAR[sets.GEAR.index[GEAR_ind]]) 
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
@@ -336,15 +336,15 @@ function self_command(command)
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()
-	elseif command == 'toggle TP set' then
-		TP_ind = TP_ind +1
-		if TP_ind > #sets.TP.index then TP_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+	elseif command == 'toggle GEAR set' then
+		GEAR_ind = GEAR_ind +1
+		if GEAR_ind > #sets.GEAR.index then GEAR_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.GEAR.index[GEAR_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse TP set' then
-		TP_ind = TP_ind -1
-		if TP_ind == 0 then TP_ind = #sets.TP.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+	elseif command == 'reverse GEAR set' then
+		GEAR_ind = GEAR_ind -1
+		if GEAR_ind == 0 then GEAR_ind = #sets.GEAR.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.GEAR.index[GEAR_ind]..' ----->')
 		equip_current()
 	end
 end
