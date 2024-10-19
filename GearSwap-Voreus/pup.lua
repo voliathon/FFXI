@@ -247,7 +247,20 @@ function get_sets()
 	}
     
 	sets.PetWS = {}
-	sets.PetWS.Arcuballista = {}
+	sets.PetWS.Arcuballista = {
+		head="Kara. Cappello +3",
+		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+		hands={ name="Herculean Gloves", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Store TP"+11','Pet: "Mag.Atk.Bns."+11',}},
+		legs={ name="Herculean Trousers", augments={'Pet: "Store TP"+11','Pet: AGI+2','Pet: Attack+11 Pet: Rng.Atk.+11',}},
+		feet={ name="Herculean Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Store TP"+10','Pet: AGI+4',}},
+		neck="Empath Necklace",
+		waist="Klouskap Sash",
+		left_ear="Enmerkar Earring",
+		right_ear="Kyrene's Earring",
+		left_ring="Varar Ring +1",
+		right_ring="Varar Ring +1",
+		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}	
+	}
 	sets.PetWS.BoneCrusher = {
 		head="Kara. Cappello +3",
 		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
@@ -257,7 +270,7 @@ function get_sets()
 		neck="Empath Necklace",
 		waist="Incarnation Sash",
 		left_ear="Enmerkar Earring",
-		right_ear="Rimeice Earring",
+		right_ear="Kyrene's Earring",
 		left_ring="Varar Ring +1",
 		right_ring="Varar Ring +1",
 		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}	
