@@ -350,22 +350,26 @@ end
 
 -- Function called during the automaton's action
 function pet_midcast(spell)
-	send_command('@input /echo inside job_pet_midcast')
+	--debug
+	--send_command('@input /echo inside job_pet_midcast')
     local automaton_type = get_automaton_type()
 
     -- Check if the automaton's TP is above 1000
     if pet.tp > 1000 then
 		if automaton_type == 'Ranger' then
 			-- Equip ranger-specific gear
-			send_command('@input /echo Ranger Automation : WS Set Equipped')
+			--debug
+			--send_command('@input /echo Ranger Automation : WS Set Equipped')
 			equip(sets.PetWS.Arcuballista)
 		elseif automaton_type == 'Magic' then
 			-- Equip magic-specific gear
-			send_command('@input /echo Magic Automation : WS Set Equipped')
+			--debug
+			--send_command('@input /echo Magic Automation : WS Set Equipped')
 			equip(sets.PetWS.MagicMortar)
 		elseif automaton_type == 'Melee' then
 			-- Equip melee-specific gear
-			send_command('@input /echo Melee Automation : WS Set Equipped')
+			--debug
+			--send_command('@input /echo Melee Automation : WS Set Equipped')
 			equip(sets.PetWS.BoneCrusher)
 		else
 			-- Default to idle gear
@@ -376,12 +380,10 @@ end
 
 -- Function called after the automaton's action is completed
 function pet_aftercast(spell)
-send_command('@input /echo inside job_pet_aftercast')
+--debug
+--send_command('@input /echo inside job_pet_aftercast')
   local automaton_type = get_automaton_type()
-    -- Check if the automaton's TP is less than 1000
-    if pet.tp < 1000 then
-		equip_current()
-	end
+	equip_current()
 end
 
 
