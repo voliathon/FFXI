@@ -267,7 +267,7 @@ function get_sets()
 		left_ring="Cornelia's Ring",
 		right_ring="Petrov Ring",
 		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
-		ammo="Oshasha's treatise"
+		ammo="Oshasha's Treatise"
 	 }
 	 
 	 sets.SeraphBlade = {
@@ -282,7 +282,8 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Freke Ring",
 		right_ring="Cornelia's Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+		ammo="Oshasha's Treatise"
 	 }
 	 
 	 sets.SanguineBlade = {
@@ -297,7 +298,8 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Archon Ring",
 		right_ring="Cornelia's Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}	 
+		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},		
+		ammo="Oshasha's Treatise"	 
 	 }
 	 
 
@@ -322,7 +324,7 @@ end
  weapon_ind = 1     
   
  sets.weapon.Nuke = {
-	main={ name="Grioavolr", augments={'Magic burst dmg.+9%','INT+2','Mag. Acc.+25','"Mag.Atk.Bns."+22'}},
+	main="Marin staff +1",
 	sub="Enki Strap"
  } 
  sets.weapon.HiEnspell = {

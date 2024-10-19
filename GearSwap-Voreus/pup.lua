@@ -27,7 +27,7 @@ function get_sets()
 	sets.precast.Repair = {range="Animator P +1", ammo="Automat. Oil +3", feet="Foire Babouches +2"}
 	sets.precast.Waltz = {legs="Dashing subligar"}
 	sets.precast.Activate = {main="Ohtas", right_ear="Karagoz Earring", feet="Mpaca's boots"}
-	sets.precast.Ventriloquy = {feet="Karagoz scarpe +2"}
+	sets.precast.Ventriloquy = {feet="Karagoz scarpe +3"}
 	sets.precast.RoleReversal = {legs="Pitre Churidars +3"}
 	sets.precast.TacticalSwitch = {feet="Pitre Babouches +3"}
 
@@ -100,7 +100,7 @@ function get_sets()
     body="Tali'ah Manteel +2",
     hands="Karagoz Guanti +3",
     legs="Kara. Pantaloni +3",
-    feet="Karagoz Scarpe +2",
+    feet="Karagoz scarpe +3",
     neck="Sanctity Necklace",
     waist="Eschan Stone",
     left_ear="Telos Earring",
@@ -248,7 +248,20 @@ function get_sets()
     
 	sets.PetWS = {}
 	sets.PetWS.Arcuballista = {}
-	sets.PetWS.BoneCrusher = {}
+	sets.PetWS.BoneCrusher = {
+		head="Kara. Cappello +3",
+		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+		hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+		legs={ name="Taeon Tights", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+		feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+		neck="Empath Necklace",
+		waist="Incarnation Sash",
+		left_ear="Enmerkar Earring",
+		right_ear="Rimeice Earring",
+		left_ring="Varar Ring +1",
+		right_ring="Varar Ring +1",
+		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}	
+	}
 	sets.PetWS.MagicMortar = {}
 	sets.PetWS.Nuke = {}
 	
@@ -322,20 +335,24 @@ function aftercast(spell)
 	equip_current()	
 end
 
-
 -- Function called during the automaton's action
-function job_pet_midcast(spell, action, spellMap, eventArgs)
-  local automaton_type = get_automaton_type()
+function pet_midcast(spell)
+	send_command('@input /echo inside job_pet_midcast')
+    local automaton_type = get_automaton_type()
+
     -- Check if the automaton's TP is above 1000
     if pet.tp > 1000 then
 		if automaton_type == 'Ranger' then
 			-- Equip ranger-specific gear
+			send_command('@input /echo Ranger Automation : WS Set Equipped')
 			equip(sets.PetWS.Arcuballista)
 		elseif automaton_type == 'Magic' then
 			-- Equip magic-specific gear
+			send_command('@input /echo Magic Automation : WS Set Equipped')
 			equip(sets.PetWS.MagicMortar)
 		elseif automaton_type == 'Melee' then
 			-- Equip melee-specific gear
+			send_command('@input /echo Melee Automation : WS Set Equipped')
 			equip(sets.PetWS.BoneCrusher)
 		else
 			-- Default to idle gear
@@ -345,23 +362,12 @@ function job_pet_midcast(spell, action, spellMap, eventArgs)
 end
 
 -- Function called after the automaton's action is completed
-function job_pet_aftercast(spell, action, spellMap, eventArgs)
+function pet_aftercast(spell)
+send_command('@input /echo inside job_pet_aftercast')
   local automaton_type = get_automaton_type()
     -- Check if the automaton's TP is less than 1000
     if pet.tp < 1000 then
-		if automaton_type == 'Ranger' then
-			-- Equip ranger-specific gear
-			equip(sets.engaged.RangerTP)
-		elseif automaton_type == 'Magic' then
-			-- Equip magic-specific gear
-			equip(sets.engaged.MagicAutomaton)
-		elseif automaton_type == 'Melee' then
-			-- Equip melee-specific gear
-			equip(sets.engaged.MeleeTP)
-		else
-			-- Default to idle gear
-			equip(sets.idle)
-		end
+		equip_current()
 	end
 end
 
@@ -416,12 +422,7 @@ windower.register_event('status change', function()
 	end
 end)
 
-function job_customize_idle_set(equip_current)
-    if pet.isvalid and pet.status == 'Engaged' and pet.tp > 999 then
-		equip(sets.rangedWSD)
-    end
-    return equip_current
-end
+
 
 -- Function to determine the automaton type
 function get_automaton_type()
