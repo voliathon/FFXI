@@ -33,7 +33,7 @@ function get_sets()
     body="Zendik Robe",
     hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
     legs="Aya. Cosciales +2",
-    feet="Fili cothurnes +2",
+    feet="Fili cothurnes +3",
     neck="Voltsurge Torque",
     waist="Embla Sash",
     left_ear="Mendi. Earring",
@@ -174,7 +174,7 @@ function get_sets()
     body="Fili Hongreline +3",
     hands="Fili Manchettes +3",
     legs="Fili Rhingrave +3",
-    feet="Fili Cothurnes +2",
+    feet="Fili cothurnes +3",
     neck="Bard's charm +2",
     waist="Eschan Stone",
     left_ear="Telos Earring",
@@ -233,7 +233,7 @@ function get_sets()
   }
   
   sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
-	feet="Fili cothurnes +2"
+	feet="Fili cothurnes +3"
   })
   
   --Weaponskill Sets--

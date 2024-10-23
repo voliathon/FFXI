@@ -48,7 +48,7 @@ function get_sets()
 		feet="Malignance Boots",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
-		left_ear="Odr Earring",
+		left_ear="Maculele Earring +1",
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
