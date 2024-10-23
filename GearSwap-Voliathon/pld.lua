@@ -217,6 +217,22 @@ function get_sets()
     right_ring="Epaminondas's Ring",
     back="Vespid Mantle"
   }
+  
+  sets.AeolianEdge = {
+    ammo="Pemphredo Tathlum",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear="Friomisi Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Epaminondas's Ring",
+    back="Toro Cape"  
+  }
 
 
   sets.Enhancing = {
@@ -337,6 +353,9 @@ function precast(spell,abil)
   end
   if spell.name == 'Savage Blade' then
     equip(sets.STRWSD)
+  end
+  if spell.name == 'Aeolian Edge' then
+	equip(sets.AeolianEdge)
   end
   --prevents casting Utsusemi if you already have 3 or more shadows
   if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
