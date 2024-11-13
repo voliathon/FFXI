@@ -28,7 +28,7 @@ function get_sets()
 
     -- Fast Cast for Black Mage --
     sets.FastCast = {
-		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+28','"Fast Cast"+3','INT+2','Mag. Acc.+10',}},
+		head={ name="Merlinic Hood", augments={'Mag. Acc.+7','Magic burst dmg.+10%','MND+9','"Mag.Atk.Bns."+9',}},
 		body="Shango Robe",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Artsieq Hose", augments={'"Mag.Atk.Bns."+25','Mag. Evasion+10','Phys. dmg. taken -5',}},
@@ -118,18 +118,18 @@ function get_sets()
 		main="Marin staff +1", 
 		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
-		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+28','"Fast Cast"+3','INT+2','Mag. Acc.+10',}},
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
-		legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+10','Magic burst dmg.+8%','MND+2','Mag. Acc.+10',}},
-		feet="Jhakri Pigaches +2",
+		head="Wicce Petasos +2",
+		body="Wicce Coat +2",
+		hands="Wicce Gloves +2",
+		legs="Wicce Chausses +2",
+		feet="Wicce Sabots +2",
 		neck="Mizu. Kubikazari",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Wicce Earring +1",
+		right_ear={ name="Wicce Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Enmity-5',}},
 		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		right_ring="Locus Ring",
-		back="Aurist's Cape +1"
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 	
 	-- sets.Burst = {

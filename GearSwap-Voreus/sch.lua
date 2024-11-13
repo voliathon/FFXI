@@ -60,36 +60,36 @@ function get_sets()
 
     -- Fast Cast for Scholar --
     sets.FastCast = {
-		ammo="Pemphredo Tathlum",
-		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6'}},
-		body="Zendik Robe",
-		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
-		legs="Pinga Pants",
-		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
-		neck="Baetyl pendant",
-		waist="Embla Sash",
+	    ammo="Impatiens",
+		head={ name="Merlinic Hood", augments={'Mag. Acc.+7','Magic burst dmg.+10%','MND+9','"Mag.Atk.Bns."+9',}},
+		body="Shango Robe",
+		hands={ name="Chironic Gloves", augments={'Weapon skill damage +3%','Pet: Mag. Acc.+21','"Treasure Hunter"+2','Accuracy+12 Attack+12',}},
+		legs={ name="Artsieq Hose", augments={'"Mag.Atk.Bns."+25','Mag. Evasion+10','Phys. dmg. taken -5',}},
+		neck="Incanter's Torque",
+		waist="Witful Belt",
 		left_ear="Malignance Earring",
 		right_ear="Loquac. Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back="Perimede Cape"
+		left_ring="Kishar Ring",
+		right_ring="Lebeche Ring",
+		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 
 	sets.Duration = {
-		main="Musa",
-		sub="Khonsu",
+		main="Gada",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head={ name="Telchine Cap", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
-		body={ name="Telchine Chas.", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
-		hands={ name="Telchine Gloves", augments={'Accuracy+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
-		legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
-		feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
+		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
+		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
+		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
+		legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
+		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
 		neck="Incanter's Torque",
 		waist="Embla Sash",
-		left_ear="Mendi. Earring",
-		right_ear="Magnetic Earring",
+		left_ear="Andoaa Earring",
+		right_ear="Mimir Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		right_ring="Lebeche Ring",
+		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 	
     sets.Klimaform = set_combine(sets.Duration,  {
@@ -102,10 +102,8 @@ function get_sets()
 
 	-- Stoneskin
 	sets.Stoneskin = set_combine(sets.Duration,  {
-		hands="Carapacho Cuffs",
-		legs="Doyen Pants",
-		neck="Nodens Gorget",
-		waist="Siegel Sash",
+		legs="Querkening brais",
+		neck="Nodens Gorget"
 	})
 	
 	-- Hitting the Duration set due to longer enhancing duration gear
@@ -116,21 +114,21 @@ function get_sets()
 	})
 	
     sets.Cure = set_combine(sets.FastCast,  {
-	    main="Daybreak",
-		sub="Culminus",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head={ name="Kaykaus Mitra", augments={'MP+60','MND+10','Mag. Acc.+15'}},
-		body="Vanya robe",
-		hands="Arbatel bracers +2",
-		legs="Pinga Pants",
-		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
+		head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
+		body={ name="Vanya Robe", augments={'MP+50','"Cure" potency +7%','Enmity-6',}},
+		hands={ name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
+		feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
 		neck="Incanter's Torque",
-		waist="Luminary Sash",
+		waist="Rumination Sash",
 		left_ear="Mendi. Earring",
-		right_ear="Magnetic Earring",
+		right_ear="Malignance Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back="Pahtli Cape"
+		right_ring="Lebeche Ring",
+		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	})
 
 	-- Protecting the party
@@ -140,10 +138,7 @@ function get_sets()
 	
 	--Regen Max Duration
 	sets.Regen = set_combine(sets.Duration,  {
-		main="Musa",
-		sub="Khonsu",
-		head="Arbatel Bonnet +2",
-		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
+
 	})
 
 	
@@ -154,21 +149,21 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Marin staff +1",
-		sub="Khonsu",
-		ammo="Sroda Tathlum",
-		head="Agwu's Cap",
-		body="Agwu's Robe",
-		hands="Arbatel Bracers +2",
-		legs="Agwu's Slops",
-		feet="Arbatel Loafers +2",
-		neck="Argute stole +2",
-		waist="Tengu-no-Obi",
-		left_ear="Malignance Earring",
-		right_ear="Halasz Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}
+		main={ name="Marin Staff +1", augments={'Path: A',}},
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head={ name="Merlinic Hood", augments={'Mag. Acc.+7','Magic burst dmg.+10%','MND+9','"Mag.Atk.Bns."+9',}},
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+10','Magic burst dmg.+8%','MND+2','Mag. Acc.+10',}},
+		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+29','Magic burst dmg.+9%','INT+6','"Mag.Atk.Bns."+11',}},
+		neck="Mizu. Kubikazari",
+		waist="Eschan Stone",
+		left_ear="Regal Earring",
+		right_ear="Barkaro. Earring",
+		left_ring="Freke Ring",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 	
 	-- sets.Burst = {
@@ -186,26 +181,26 @@ function get_sets()
 		-- right_ear="Halasz Earring",
 		-- left_ring="Mujin band",
 		-- right_ring="Locus Ring",
-		--     back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		--     back="Aurist's Cape +1"	
 	
 	-- }
 	
 	sets.Kaustra = {
-		main="Bunzi's Rod",
-		sub="Ammurapi Shield",
-		ammo="Sroda Tathlum",
-	    head="Pixie Hairpin +1", -- Dark magic damage
-		body="Agwu's Robe", -- Magic accuracy and damage
-		hands="Agwu's Gages", -- Magic accuracy and damage
-		legs="Agwu's Slops", -- Magic accuracy and damage
-		feet="Agwu's Pigaches", -- Magic accuracy and damage
-		neck="Argute Stole +2", -- Magic skill and damage
-		waist="Tengu-no-Obi",
-		left_ear="Malignance Earring",
-		right_ear="Halasz Earring",
-		left_ring="Mujin Band",
-		right_ring="Locus Ring",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		main={ name="Marin Staff +1", augments={'Path: A',}},
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+28','"Fast Cast"+3','INT+2','Mag. Acc.+10',}},
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+10','Magic burst dmg.+8%','MND+2','Mag. Acc.+10',}},
+		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Fast Cast"+3','VIT+3','"Mag.Atk.Bns."+15',}},
+		neck="Mizu. Kubikazari",
+		waist="Eschan Stone",
+		left_ear="Regal Earring",
+		right_ear="Barkaro. Earring",
+		left_ring="Freke Ring",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 	
     sets.DarkMagic = {
@@ -213,21 +208,21 @@ function get_sets()
 	}
 	
 	sets.Helix = {
-		main="Bunzi's Rod", -- High magic damage and skill
-		sub="Ammurapi Shield", -- Magic accuracy and skill
-		ammo="Sroda Tathlum",
-		head="Agwu's Cap", -- Magic accuracy and damage
-		body="Agwu's Robe", -- Magic accuracy and damage
-		hands="Agwu's Gages", -- Magic accuracy and damage
-		legs="Agwu's Slops", -- Magic accuracy and damage
-		feet="Agwu's Pigaches", -- Magic accuracy and damage
-		neck="Argute Stole +2", -- Magic skill and damage
-		waist="Tengu-no-Obi",
-		left_ear="Malignance Earring", -- Magic accuracy and damage
-		right_ear="Halasz Earring",
-		left_ring="Mujin Band",
-		right_ring="Locus Ring",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		main={ name="Marin Staff +1", augments={'Path: A',}},
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+28','"Fast Cast"+3','INT+2','Mag. Acc.+10',}},
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+10','Magic burst dmg.+8%','MND+2','Mag. Acc.+10',}},
+		feet={ name="Merlinic Crackows", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','"Fast Cast"+3','VIT+3','"Mag.Atk.Bns."+15',}},
+		neck="Mizu. Kubikazari",
+		waist="Eschan Stone",
+		left_ear="Regal Earring",
+		right_ear="Barkaro. Earring",
+		left_ring="Freke Ring",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 }
 
 
@@ -246,7 +241,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}
+		back="Aurist's Cape +1"
 	})
 
 
@@ -263,9 +258,9 @@ function get_sets()
 
 	sets.TP = set_combine(sets.PDT,  {
 		main="Malignance Pole",
-		sub="Khonsu",
+		sub="Ajja Grip",
 		ammo="Crepuscular Pebble",
-		head="Arbatel Bonnet +2",
+		head="Blistering sallet +1",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
@@ -279,64 +274,41 @@ function get_sets()
 		back="Relucent Cape"	
 	})
 
-	-- PDT Set
-    sets.PDT = {
+	-- MovementEvasionTank Set
+    sets.MovementEvasionTank = {
 		main="Bolelabunga",
-		sub="Genmei Shield",
-		ammo="Staunch Tathlum",
-		head="Arbatel Bonnet +2",
-		body="Arbatel Gown +2",
+		sub="Ammurapi Shield",
+		ammo="Homiliary",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body="Jhakri Robe +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs="Arbatel Pants +2",
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Sanctity Necklace",
-		waist="Emphatikos Rope",
+		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Shneddick Ring",
 		right_ring="Stikini Ring +1",
-		back="Relucent Cape"
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
-
-	-- Magic Defense and Magic Defense Set
-    sets.MDT = {
-		main="Bolelabunga",
-		sub="Genmei Shield",
-		ammo="Staunch Tathlum",
-		head="Arbatel Bonnet +2",
-		body="Arbatel Gown +2",
-		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs="Arbatel Pants +2",
-		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
-		waist="Emphatikos Rope",
-		left_ear="Infused Earring",
-		right_ear="Hearty Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back="Relucent Cape"
-	}
-
-		
-	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = set_combine(sets.PDT,  {
-		left_ring="Shneddick ring"
-	})
-
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		head="Volte Beret",
+		main="Bolelabunga",
+		sub="Ammurapi Shield",
+		ammo="Homiliary",
+		head="Befouled Crown",
 		body="Jhakri Robe +2",
-		hands="Volte Gloves",
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Assid. Pants +1",
-		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Sanctity Necklace",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Kumbira Cape"
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	})
 	
 	
@@ -373,7 +345,7 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-	    back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+	    back="Aurist's Cape +1"	
 	}
 	 
 	sets.Myrkr = {
@@ -388,17 +360,16 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Sangoma Ring",
 		right_ring="Mephitas's Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		back="Aurist's Cape +1"	
 	} 
 
 	  -- Engaged Sets Toggle--
 	sets.engaged = {}
-	sets.engaged.index = {'TP', 'Movement', 'Tank', 'Refresh'}
+	sets.engaged.index = {'TP', 'Tank', 'Refresh'}
 	engaged_ind = 1  	 
 	 
 	sets.engaged.TP = set_combine(sets.TP, {}) 
-	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.Tank = set_combine(sets.PDT, {})
+	sets.engaged.Tank = set_combine(sets.MovementEvasionTank, {})
 	sets.engaged.Refresh = set_combine(sets.Refresh, {})
 	 
 end

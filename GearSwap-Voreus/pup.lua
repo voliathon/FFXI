@@ -5,6 +5,8 @@
 -- Import the necessary libraries
 require('tables')
 require('strings')
+packets = require('packets')
+
 
 function get_sets()
 
@@ -18,7 +20,7 @@ function get_sets()
 	
     sets.precast = {}
     sets.precast.Maneuver = {
-		body="Kara. Farsetto +2", 
+		body="Kara. Farsetto +3", 
 		hands="Foire Dastanas +2", 
 		back="Visucius's Mantle",
 		neck="Buffoon's collar"
@@ -33,6 +35,8 @@ function get_sets()
 
 	sets.ValorEdgeOverdrive = {}
 	sets.SharpshotOverdrive = {}
+	
+   --local automaton_type = get_automaton_type()
 	
 	
 --	Pseudocode Outloud
@@ -63,7 +67,7 @@ function get_sets()
 	
   sets.engaged.DT = {
     head="Malignance Chapeau",
-    body="Kara. Farsetto +2",
+    body="Kara. Farsetto +3",
     hands="Karagoz Guanti +3",
     legs="Kara. Pantaloni +3",
     feet="Malignance Boots",
@@ -148,7 +152,7 @@ function get_sets()
   
   sets.engaged.MagicAutomaton = {
 	head="Karagoz Cappello +3",
-	body="Karagoz Farsetto +2",
+	body="Karagoz Farsetto +3",
 	hands="Karagoz Guanti +3",
 	legs="Pitre Churidars +3",
 	feet="Pitre Babouches +3",
@@ -348,41 +352,12 @@ function aftercast(spell)
 	equip_current()	
 end
 
--- Function called during the automaton's action
 function pet_midcast(spell)
-	--debug
-	--send_command('@input /echo inside job_pet_midcast')
-    local automaton_type = get_automaton_type()
-
-    -- Check if the automaton's TP is above 1000
-    if pet.tp > 1000 then
-		if automaton_type == 'Ranger' then
-			-- Equip ranger-specific gear
-			--debug
-			--send_command('@input /echo Ranger Automation : WS Set Equipped')
-			equip(sets.PetWS.Arcuballista)
-		elseif automaton_type == 'Magic' then
-			-- Equip magic-specific gear
-			--debug
-			--send_command('@input /echo Magic Automation : WS Set Equipped')
-			equip(sets.PetWS.MagicMortar)
-		elseif automaton_type == 'Melee' then
-			-- Equip melee-specific gear
-			--debug
-			--send_command('@input /echo Melee Automation : WS Set Equipped')
-			equip(sets.PetWS.BoneCrusher)
-		else
-			-- Default to idle gear
-			equip(sets.idle)
-		end
-    end
 end
+
 
 -- Function called after the automaton's action is completed
 function pet_aftercast(spell)
---debug
---send_command('@input /echo inside job_pet_aftercast')
-  local automaton_type = get_automaton_type()
 	equip_current()
 end
 
@@ -440,19 +415,63 @@ end)
 
 
 -- Function to determine the automaton type
-function get_automaton_type()
-    local head = pet.head
-    local frame = pet.frame
+-- function get_automaton_type()
+    -- local head = pet.head
+    -- local frame = pet.frame
 
-    if head == 'Sharpshot Head' or frame == 'Sharpshot Frame' then
-        return 'Ranger'
-    elseif head == 'Stormwaker Head' or frame == 'Stormwaker Frame' then
-        return 'Magic'
-    elseif head == 'Valoredge Head' or frame == 'Valoredge Frame' then
-        return 'Melee'
+    -- if head == 'Sharpshot Head' or frame == 'Sharpshot Frame' then
+        -- return 'Ranger'
+    -- elseif head == 'Stormwaker Head' or frame == 'Stormwaker Frame' then
+        -- return 'Magic'
+    -- elseif head == 'Valoredge Head' or frame == 'Valoredge Frame' then
+        -- return 'Melee'
+    -- else
+        -- return 'Unknown'
+    -- end
+-- end
+
+-- Function to equip gear based on automaton weapon skill
+function equip_ws_gear(ws)
+    if ws == 'Knockout'  or ws == 'Magic Mortar' or ws == 'Slapstick' then
+        equip(sets.PetWS.MagicMortar)
+        add_to_chat(123, 'Equipping Magic Weaponskill Automaton Gear')
+    elseif ws == 'Arcuballista' or ws == 'Armor Piercer' or ws == 'Armor Shatterer' then
+        equip(sets.PetWS.Arcuballista)
+        add_to_chat(123, 'Equipping Ranger Weaponskill Automaton Gear')
     else
-        return 'Unknown'
+        equip(sets.PetWS.BoneCrusher)
+        add_to_chat(123, 'Equipping Melee Weaponskill Automaton Gear')
     end
 end
 
+-- Function to equip gear based on automaton magic casting
+function equip_magic_gear(spell)
+    equip(sets.PetWS.Nuke)
+    add_to_chat(123, 'Equipping Magic Gear for '..spell)
+end
 
+
+-- windower.register_event('incoming chunk', function(id, data)
+	-- if id == 0x028 then
+-- --	if id == 0x068 then
+        -- local parsed = packets.parse('incoming', data)
+		
+		-- -- Check for TP and action updates
+		-- if parsed['Pet TP'] and parsed['Pet TP'] >= 1000 then
+		-- add_to_chat(123, 'Hit Pet TP Code...')
+        -- -- Check for common action fields
+        -- local possible_keys = {'Weapon Skill Start'}
+        -- for _, key in pairs(possible_keys) do
+            -- if parsed[key] then
+                -- add_to_chat(123, key .. ': ' .. tostring(parsed[key]))
+            -- end
+        -- end
+
+		-- end
+
+		-- if parsed['Pet Action'] and parsed['Pet Action Type'] == 'Magic' then
+			-- local spell = parsed['Pet Action']
+			-- equip_magic_gear(spell)
+		-- end
+    -- end
+-- end)
