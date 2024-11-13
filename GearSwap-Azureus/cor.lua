@@ -49,7 +49,7 @@ function get_sets()
 		--phantom roll +5
 		--right_ring="Barataria Ring",
         -- duration +55
-        hands="Chasseur's Gants +2",
+        hands="Chasseur's Gants +3",
         -- duration +30
         back=CamulusCape.melee_double_attack,
 		-- duration +20
@@ -58,13 +58,13 @@ function get_sets()
 	
 	-- Specific Rolls
 	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +2" })
-    sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +2" })
+    sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +3" })
     sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +2"})
     sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
     sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet="Chass. Bottes +2" })
 
 	
-	-- Damage Taken
+	-- Damage Taken with Movement
     sets.DamageTaken = {
 		head="Chass. Tricorne +2",
 		body="Chasseur's Frac +2",
@@ -75,14 +75,10 @@ function get_sets()
 		waist="Sailfi Belt +1",
 		left_ear="Hearty Earring",
 		right_ear="Sanare Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Fortified Ring"
+		left_ring="Shneddick Ring",
+		right_ring="Chirich Ring +1"
     }
 	
-   -- +18% runspeed
-    sets.idle = set_combine(sets.DamageTaken, { legs="Carmine Cuisses +1" });
-
-
 	--Quick Draw damage is calculated similar to magic damage by multiplying the following factors in order and flooring after each step.
 	--    Base Damage = [(Gun DMG + Bullet DMG) * 2] (Multiple gear listed below add 10 DMG to Base Damage.)
 	--    resist
@@ -91,46 +87,44 @@ function get_sets()
 	--    Player MAB / Target MDB
 	--    Affinity
     sets.QuickDraw = {
-		ammo="Living Bullet",
-		head="Laksamana's tricorne +3",
-		body="Chasseur's frac +2",
-		hands="Chasseur's gants +2",
-		legs="Chasseur's Culottes +2",
-		feet="Chasseur's Bottes +2",
+		head="Laksa. Tricorne +3",
+		body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet="Chass. Bottes +2",
 		neck="Sanctity Necklace",
-		waist="Orpheus's Sash",
+		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
-		right_ear="Hecate's Earring",
+		right_ear="Choleric Earring",
 		left_ring="Dingir Ring",
-		right_ring="Kishar ring"
---		back=CamulusCape.storetp
+		right_ring="Stikini Ring +1",
+		back={ name="Gunslinger's Cape", augments={'Enmity-3','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -5',}}
     }
 	
     sets.QuickDrawDark = {
-		ammo="Living Bullet",
+		head="Laksa. Tricorne +3",
 		head="Pixie Hairpin +1",
-		body="Chasseur's frac +2",
-		hands="Chasseur's gants +2",
-		legs="Chasseur's Culottes +2",
-		feet="Chasseur's Bottes +2",
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet="Chass. Bottes +2",
 		neck="Sanctity Necklace",
-		waist="Orpheus's Sash",
+		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
-		right_ear="Hecate's Earring",
+		right_ear="Choleric Earring",
 		left_ring="Dingir Ring",
-		right_ring="Kishar ring"
---		back=CamulusCape.storetp
+		right_ring="Stikini Ring +1",
+		back={ name="Gunslinger's Cape", augments={'Enmity-3','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -5',}}
     }	
 	
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
-		body="Lanun Frac +2",
-		hands="Nyame Gauntlets",
-		legs="Chasseur's culottes +2",
+		body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
+		hands="Chasseur's Gants +3",
+		legs="Chas. Culottes +2",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Sanctity Necklace",
-		waist="Orpheus's Sash",
+		waist="Eschan Stone",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
 		left_ring="Dingir Ring",
@@ -147,10 +141,10 @@ function get_sets()
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
     sets.LastStand = {
-		head="Nyame Helm",
-		body="Laksamana's frac +3",
-		hands="Chasseur's Gants +2",
-		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body="Laksa. Frac +3",
+		hands="Chasseur's Gants +3",
+		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11',}},
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -158,15 +152,15 @@ function get_sets()
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Dingir Ring",
-		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}		
+		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
 	}
 
 	--Savage Blade  50% STR / 50% MND
     sets.SavageBlade = {
 		head="Nyame Helm",
 		body="Laksamana's frac +3",
-		hands="Nyame Gauntlets",
-		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+		hands="Chasseur's Gants +3",
+		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11',}},
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -197,7 +191,7 @@ function get_sets()
     sets.Snapshot = {
 		head="Chasseur's tricorne +2",
 		body="Oshosi Vest +1",
-		hands="Lanun Gants +2",
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs="Laksamana's Trews +3",
 		feet="Meg. Jam. +2",
 		neck="Clotharius Torque",
@@ -208,24 +202,23 @@ function get_sets()
 		right_ring="Hetairoi Ring",
 		back=CamulusCape.snapshot
     }
-
-	
 	
 	--MIDCAST LOGIC OF DOOM
 	sets.midcast = {}
-    sets.midcast.RA = set_combine(sets.DamageTaken,{
+    sets.midcast.RA = {
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Clotharius Torque",
+		neck="Combatant's Torque",
 		waist="K. Kachina Belt +1",
 		left_ear="Telos Earring",
-		right_ear="Enervating Earring",
-		left_ring="Dingir Ring",
-		right_ring="Hetairoi Ring"
-	})
+		right_ear="Crep. Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Dingir Ring",
+		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+	}
 
     sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA,{
 		head="Oshosi Mask +1",
@@ -238,12 +231,12 @@ function get_sets()
 	
 	--Engaged Sets--
 	sets.engaged = {}
---				    	    1		     2           3 		   	   		 			4 				   5			6
-	sets.engaged.index = {'Movement', 'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'RangedAccuracy'}
+--				    	    1		 2             3 
+	sets.engaged.index = {'TP', 'DTMovement', 'Accuracy'}
 	engaged_ind = 1 
 	
 		-- This needs to be the best TP set imaginable. TA, DW, Quadruple shit, Double attack. Really push this shit!
-    sets.engaged.TP = set_combine(sets.DamageTaken, {
+    sets.engaged.TP = {
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
 		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6'}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
@@ -253,19 +246,40 @@ function get_sets()
 		waist="Windbuffet Belt +1",
 		left_ear="Brutal Earring",
 		right_ear="Cessance Earring",
-		left_ring="Chirich Ring +1",
+	    left_ring={name="Chirich Ring +1",bag="Wardrobe 3"},
 		right_ring="Epona's Ring",
         back=CamulusCape.melee_double_attack
-    })
+    }
 	
-	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.DamageTaken, {})
-	sets.engaged.TakingLessMagicDamage = set_combine(sets.DamageTaken, {})
+	sets.engaged.DTMovement = {
+		head="Chass. Tricorne +2",
+		body="Chasseur's Frac +2",
+		hands="Nyame Gauntlets",
+		legs="Malignance Tights",
+		feet="Nyame Sollerets",
+		neck="Loricate Torque +1",
+		waist="Sailfi Belt +1",
+		left_ear="Hearty Earring",
+		right_ear="Sanare Earring",
+		left_ring="Shneddick Ring",
+		right_ring="Chirich Ring +1"	
+	}
 	
-	sets.engaged.Accuracy = set_combine(sets.DamageTaken, {hands="Chasseur's Gants +2"})
-	sets.engaged.RangedAccuracy = set_combine(sets.DamageTaken, {})
-	sets.engaged.Movement = set_combine(sets.idle, {})
+	sets.engaged.Accuracy = {
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Chasseur's Gants +3",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Crep. Earring",
+		right_ear="Odr Earring",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}	
 	
-	
+	}
 	
 	--Weapon Sets--
 	sets.weapon = {}
@@ -274,7 +288,7 @@ function get_sets()
 	
 	sets.weapon.DWSavageCOR = {
 		main="Naegling",
-		sub="Crepuscular Knife",
+		sub="Gleti's Knife",
 		range="Ataktos"
 	}
 
@@ -286,7 +300,7 @@ function get_sets()
 	
 	sets.weapon.Tauret = {
 		main="Tauret",
-		sub="Crepuscular Knife",
+		sub="Gleti's Knife",
 		range="Ataktos"
 	}
 	
@@ -304,13 +318,13 @@ function get_sets()
 	
 	sets.weapon.FomalhautDivergence = {
 		main="Rostam",
-		sub="Crepuscular Knife",
+		sub="Gleti's Knife",
 		range="Fomalhaut"
 	}
 
 	sets.weapon.DeathPenaltyDivergence = {
 		main="Rostam",
-		sub="Crepuscular Knife",
+		sub="Gleti's Knife",
 		range="Death Penalty"
 	}	
 	
