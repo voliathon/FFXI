@@ -149,7 +149,7 @@ function get_sets()
     body={ name="Nyame Mail", augments={'Path: B',}},
     hands="Meg. Gloves +2",
     legs="Nyame flanchard",
-    feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
+    feet={ name="Nyame sollerets", augments={'Path: B',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},

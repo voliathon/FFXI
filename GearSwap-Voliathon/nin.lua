@@ -34,14 +34,14 @@ function get_sets()
 		ammo="Staunch Tathlum +1",
 		head="Hattori zukin +2",
 		body="Hattori ningi +2",
-		hands="Erilaz Gauntlets +2",
-		legs="Carmine Cuisses +1",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
 		feet="Erilaz Greaves +2",
 		neck="Loricate torque +1",
 		waist="Flume Belt +1",
 		left_ear="Tuisto Earring",
 		right_ear="Odnowa Earring +1",
-		left_ring="Moonlight Ring",
+		left_ring="Schneddick Ring",
 		right_ring="Defending Ring",
 		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}

@@ -5,23 +5,23 @@ function get_sets()
 	-- Binds for modes
     send_command('bind !f8 gs c toggle weapon set')
 	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching GEAR modes	
-    send_command('bind !f9 gs c toggle GEAR set')
-	send_command('bind ^f9 gs c reverse GEAR set')
+	-- Binds for switching equip modes	
+    send_command('bind !f9 gs c toggle equip set')
+	send_command('bind ^f9 gs c reverse equip set')
 
 	-- Modes --
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	ShiningOne = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F9
 	ShadowType = 'None'
 	
-	--GEAR Sets--
-	sets.GEAR = {}
-	--					  1		   2              3 				   4 		  5			   6
-	sets.GEAR.index = {'BadAss', 'Tank', 'TakingLessMagicDamage', 'Accuracy', 'Reraise', 'SubtleBlow'}
-	GEAR_ind = 1
+	--equip Sets--
+	sets.equip = {}
+	--					  1		          2                  3 			4 		     5
+	sets.equip.index = {'BadAss', 'MovementEvasionTank', 'Accuracy', 'Reraise', 'SubtleBlow'}
+	equip_ind = 1
 
   --offensive melee set
-  sets.GEAR.BadAss = {
+  sets.equip.BadAss = {
   	sub="Utu grip",
 	ammo="Ginsen",
 	head="Flamma zucchetto +2",
@@ -31,33 +31,33 @@ function get_sets()
 	feet="Tatenashi sune-ate +1",
 	neck="Samurai's nodowa +2",
 	waist="Ioskeha Belt +1",
-	left_ear="Cessance earring",
+	left_ear="Schere earring",
 	right_ear="Brutal Earring",
 	left_ring="Chirich Ring +1",
 	right_ring="Flamma ring",
     back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
 
-  --Tank Gear
-  sets.GEAR.Tank = {
+  --Tank equip
+  sets.equip.MovementEvasionTank = {
 	sub="Utu grip",
     ammo="Staunch Tathlum +1",
-    head="Nyame Helm",
+    head="Kasuga Kabuto +3",
 	body="Kasuga domaru +3",
     hands="Nyame Gauntlets",
 	legs="Kasuga haidate +3",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
+	neck="Samurai's nodowa +2",
     waist="Ioskeha Belt +1",
     left_ear="Infused Earring",
-    right_ear="Genmei Earring",
-    left_ring="Fortified Ring",
-    right_ring="Defending Ring",
+    right_ear="Hearty Earring",
+    left_ring="Shneddick Ring",
+    right_ring="Chirich Ring +1",
     back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
   
-  --Tank Gear
-  sets.GEAR.Reraise = {
+  --Reraise equip
+  sets.equip.Reraise = {
 	sub="Utu grip",
     ammo="Staunch Tathlum +1",
     head="Crepuscular Helm",
@@ -71,34 +71,16 @@ function get_sets()
     right_ear="Genmei Earring",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
-    back="Moonlight cape"
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }  
 
-  --MDT melee set
-  sets.GEAR.TakingLessMagicDamage = {
-	sub="Utu grip",
-    ammo="Staunch Tathlum +1",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body="Kasuga Domaru +3",
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet={ name="Nyame Sollerets", augments={'Path: B',}},
-    neck={ name="Sam. Nodowa +2", augments={'Path: A',}},
-    waist="Ioskeha Belt +1",
-    left_ear="Infused Earring",
-    right_ear="Genmei Earring",
-    left_ring="Fortified Ring",
-    right_ring="Chirich Ring +1",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}
-  }
-  
-  sets.GEAR.Accuracy = {
+  sets.equip.Accuracy = {
 	ammo="Amar cluster",
-	head="Kendatsuba jinpachi +1",
+	head="Kasuga Kabuto +3",
 	body="Kasuga domaru +3",
 	hands="Kasuga kote +3",
 	legs="Kasuga haidate +3",
-	feet="Kasuga sune-ate +2",
+	feet="Kasuga sune-ate +3",
 	neck="Samurai's nodowa +2",
 	waist="Ioskeha Belt +1",
 	left_ear="Cessance earring",
@@ -108,7 +90,7 @@ function get_sets()
     back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
   
-  sets.GEAR.SubtleBlow = {
+  sets.equip.SubtleBlow = {
     ammo="Ginsen",
     head="Ken. Jinpachi +1",
     body="Ken. Samue +1",
@@ -128,7 +110,7 @@ function get_sets()
   --Mumei, Fudo, Kasha, Gekko, Yuk 
 	sets.Fudo = {
 		ammo="Knobkierrie",
-		head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%'}},
+		head="Nyame Helm",
 		body="Nyame mail",
 		hands="Kasuga kote +3",
 		legs="Wakido Haidate +3",
@@ -176,7 +158,7 @@ function get_sets()
 	
 	sets.Ageha = {
 		ammo="Pemphredo Tathlum",
-		head="Kasuga Kabuto +2",
+		head="Kasuga Kabuto +3",
 		body="Kasuga domaru +3",
 		hands="Kasuga kote +3",
 		legs="Kasuga haidate +3",
@@ -212,7 +194,7 @@ function get_sets()
 	sets.JA.Waltz = {legs="Dashing subligar"}
 	sets.JA.Step = 	{}
 	sets.JA.Stun = {}
-	sets.JA.Sengikori = {feet="Kasuga sune-ate +2"}	
+	sets.JA.Sengikori = {feet="Kasuga sune-ate +3"}	
 	sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
 	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +3", feet="Wakido sune-ate +2"}
 	sets.JA.WardingCircle = {head="Wakido kabuto +2"}
@@ -319,7 +301,7 @@ end
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
-	equip(sets.GEAR[sets.GEAR.index[GEAR_ind]]) 
+	equip(sets.equip[sets.equip.index[equip_ind]]) 
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
@@ -336,15 +318,15 @@ function self_command(command)
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()
-	elseif command == 'toggle GEAR set' then
-		GEAR_ind = GEAR_ind +1
-		if GEAR_ind > #sets.GEAR.index then GEAR_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.GEAR.index[GEAR_ind]..' ----->')
+	elseif command == 'toggle equip set' then
+		equip_ind = equip_ind +1
+		if equip_ind > #sets.equip.index then equip_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse GEAR set' then
-		GEAR_ind = GEAR_ind -1
-		if GEAR_ind == 0 then GEAR_ind = #sets.GEAR.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.GEAR.index[GEAR_ind]..' ----->')
+	elseif command == 'reverse equip set' then
+		equip_ind = equip_ind -1
+		if equip_ind == 0 then equip_ind = #sets.equip.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
 		equip_current()
 	end
 end

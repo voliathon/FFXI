@@ -15,14 +15,14 @@ function get_sets()
     sets.JA = {}
     sets.JA.Boost = {hands="Anchorite's Gloves +3"}
     sets.JA.Chakra = {body="Anchorite's Cyclas +2", hands="Hes. Gloves +1"}
-    sets.JA.Counterstance = {feet="Hesychast's Gaiters +2"}
+    sets.JA.Counterstance = {feet="Hesychast's Gaiters +3"}
     sets.JA.Focus = {head="Anchorite's Crown +2"}
     sets.JA.Dodge = {feet="Anchorite's Gaiters +3"}
     sets.JA.Mantra = {feet="Hes. Gaiters +1"}
     sets.JA.Footwork = {feet="Bhikku gaiters +2"}
 	sets.JA.Impetus={body="Bhikku Cyclas +2"}
 	sets.JA.PerfectCounter={head="Bhikku Crown +2"}
-    sets.JA['Hundred Fists'] = {legs="Hes. Hose +1"}
+    sets.JA.HundredFists = {legs="Hes. Hose +1"}
 	sets.JA.Waltz = {legs="Dashing subligar"}
 
 	
@@ -216,10 +216,7 @@ function get_sets()
 end
 
 function precast(spell)
-	if string.find(spell.name, 'Waltz') then
-		equip(sets.JA.Waltz)
-	end
-  
+	--Mon Weapon Skills
     if spell.name == 'Tornado Kick' or spell.name == 'Dragon Kick' or spell.name == "Ascetic's Fury" then
         equip(sets.WS.TornadoKick)
 	elseif spell.name == 'Victory Smite' then
@@ -235,9 +232,40 @@ function precast(spell)
 	elseif spell.name == 'Cataclysm' then
 		equip(sets.WS.Cataclysm)
     end
-	
-	if sets.JA[spell.name] then
-        equip(sets.JA[spell.name])
+	--Waltz
+	if string.find(spell.name, 'Waltz') then
+		equip(sets.JA.Waltz)
+	end
+	--Monk Job Abilities
+	if spell.name == 'Boost' then
+        equip(sets.JA.Boost)
+    end
+	if spell.name == 'Chakra' then
+        equip(sets.JA.Chakra)
+    end
+	if spell.name == 'Counterstance' then
+        equip(sets.JA.Counterstance)
+    end
+	if spell.name == 'Focus' then
+        equip(sets.JA.Focus)
+    end
+	if spell.name == 'Dodge' then
+        equip(sets.JA.Dodge)
+    end
+	if spell.name == 'Mantra' then
+        equip(sets.JA.Mantra)
+    end
+	if spell.name == 'Footwork' then
+        equip(sets.JA.Footwork)
+    end
+	if spell.name == 'Impetus' then
+        equip(sets.JA.Impetus)
+    end
+	if spell.name == 'Perfect Counter' then
+        equip(sets.JA.PerfectCounter)
+    end
+	if spell.name == 'Hundred Fists' then
+        equip(sets.JA.HundredFists)
     end
 	
 end
