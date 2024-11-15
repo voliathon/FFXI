@@ -31,7 +31,7 @@ function get_sets()
 	CamulusCapes()
 
 	-- Job Abilities
-    sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +2", hands="Lanun Gants +2", back=CamulusCape.melee_double_attack })
+    sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +3", hands="Lanun Gants +2", back=CamulusCape.melee_double_attack })
     sets.RandomDeal = set_combine(sets.DamageTaken, { body="Lanun Frac +2" })
     sets.WildCard = set_combine(sets.DamageTaken, { feet="Lanun Bottes +3" })
     sets.SnakeEye = set_combine(sets.DamageTaken, { legs="Lanun Trews +2" })
@@ -59,7 +59,7 @@ function get_sets()
 	-- Specific Rolls
 	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +2" })
     sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +3" })
-    sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +2"})
+    sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +3"})
     sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
     sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet="Chass. Bottes +2" })
 
@@ -67,7 +67,7 @@ function get_sets()
 	-- Damage Taken with Movement
     sets.DamageTaken = {
 		head="Chass. Tricorne +2",
-		body="Chasseur's Frac +2",
+		body="Chasseur's Frac +3",
 		hands="Nyame Gauntlets",
 		legs="Malignance Tights",
 		feet="Nyame Sollerets",
@@ -253,7 +253,7 @@ function get_sets()
 	
 	sets.engaged.DTMovement = {
 		head="Chass. Tricorne +2",
-		body="Chasseur's Frac +2",
+		body="Chasseur's Frac +3",
 		hands="Nyame Gauntlets",
 		legs="Malignance Tights",
 		feet="Nyame Sollerets",
@@ -425,7 +425,7 @@ function aftercast(spell)
   --This could be an issue if you need DT while Triple Shot is up. Frac+2 is fine. 
   --I'm taking the stance I'd rather see this gear when Triple Shot is up as compared to not seeing it
   if (buffactive['Triple Shot']) then
-	equip({body="Chasseur's Frac +2", hands="Lanun Gants +2"})
+	equip({body="Chasseur's Frac +3", hands="Lanun Gants +2"})
   end
 end
 
