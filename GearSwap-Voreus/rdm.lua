@@ -64,7 +64,7 @@ function get_sets()
 	
 	sets.TP = {
 		head="Malignance Chapeau",
-		body="Lethargy Sayon +3",
+		body="Malignance tabard",
 		hands="Lethargy gantherots +3",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
