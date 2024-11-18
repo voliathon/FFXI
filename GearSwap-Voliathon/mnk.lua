@@ -37,7 +37,7 @@ function get_sets()
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
 		body="Bhikku Cyclas +2",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
-		legs="Bhikku Hose +2",
+		legs="Bhikku Hose +3",
 		feet="Anch. Gaiters +3",
 		neck="Monk's nodowa +2",
 		waist="Moonbow Belt +1",
@@ -54,7 +54,7 @@ function get_sets()
 	}
 	
 	sets.TP.Movement = {
-		feet="Hermes' Sandals"
+		left_ring="Shneddick Ring",
 	}
 	
 	sets.TP.Tank = {
@@ -62,7 +62,7 @@ function get_sets()
 		head="Bhikku Crown +2",
 		body="Mpaca's Doublet",
 		hands="Mpaca's Gloves",
-		legs="Bhikku Hose +2",
+		legs="Bhikku Hose +3",
 		feet="Mpaca's Boots",
 		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",

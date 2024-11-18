@@ -148,7 +148,7 @@ function get_sets()
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck={ name="Sam. Nodowa +2", augments={'Path: A'}},
-		waist="Fotia Belt",
+		waist="Orpheus's Sash",
 		left_ear="Friomisi Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Fenrir Ring +1",
