@@ -352,7 +352,12 @@ function aftercast(spell)
 	equip_current()	
 end
 
-function pet_midcast(spell)
+function job_midcast(spell, action, spellMap, eventArgs)
+    if pet.tp > 1000 then
+        send_command('@input /echo <----- 1000 TP Bonus +++')
+    else
+        equip_current()
+    end
 end
 
 
@@ -412,66 +417,61 @@ windower.register_event('status change', function()
 	end
 end)
 
+-- Variable to track if message has been sent
+tp_threshold_reached = false
 
-
--- Function to determine the automaton type
--- function get_automaton_type()
-    -- local head = pet.head
-    -- local frame = pet.frame
-
-    -- if head == 'Sharpshot Head' or frame == 'Sharpshot Frame' then
-        -- return 'Ranger'
-    -- elseif head == 'Stormwaker Head' or frame == 'Stormwaker Frame' then
-        -- return 'Magic'
-    -- elseif head == 'Valoredge Head' or frame == 'Valoredge Frame' then
-        -- return 'Melee'
-    -- else
-        -- return 'Unknown'
-    -- end
--- end
-
--- Function to equip gear based on automaton weapon skill
-function equip_ws_gear(ws)
-    if ws == 'Knockout'  or ws == 'Magic Mortar' or ws == 'Slapstick' then
-        equip(sets.PetWS.MagicMortar)
-        add_to_chat(123, 'Equipping Magic Weaponskill Automaton Gear')
-    elseif ws == 'Arcuballista' or ws == 'Armor Piercer' or ws == 'Armor Shatterer' then
-        equip(sets.PetWS.Arcuballista)
-        add_to_chat(123, 'Equipping Ranger Weaponskill Automaton Gear')
-    else
-        equip(sets.PetWS.BoneCrusher)
-        add_to_chat(123, 'Equipping Melee Weaponskill Automaton Gear')
+-- Function to check Automaton's TP with state tracking and auto change into the Automaton Weaponskill set based on the automaton type
+-- There is a condition where upon getting 1000TP the automaton can WS instantly. If that occurs none of this even gets called.
+-- I'm not really sure how to handle that scenario. However, this code works. 
+function check_pet_tp()
+    local automatonType = get_automaton_type()
+    if pet and pet.tp then
+        if pet.tp > 1000 and not tp_threshold_reached then
+            tp_threshold_reached = true
+            if automatonType == 'Ranger' then
+                windower.add_to_chat(207, 'Automaton Ranger WSD Gear Equipped ')
+                equip(sets.PetWS.Arcuballista)
+            elseif automatonType == 'Melee' then
+                windower.add_to_chat(207, 'Automaton Melee WSD Gear Equipped ')
+                equip(sets.PetWS.BoneCrusher)
+            elseif automatonType == 'Magic' then
+                windower.add_to_chat(207, 'Automaton Magic WSD Gear Equipped ')
+                equip(sets.PetWS.MagicMortar)
+            else
+                equip_current()
+            end
+        elseif pet.tp <= 1000 then
+            tp_threshold_reached = false
+        end
     end
 end
 
--- Function to equip gear based on automaton magic casting
+-- Register the event to check pet TP
+windower.register_event('prerender', check_pet_tp)
+
+
+
+-- Function to determine the automaton type
+function get_automaton_type()
+    local head = pet.head
+    local frame = pet.frame
+
+    if head == 'Sharpshot Head' or frame == 'Sharpshot Frame' then
+        return 'Ranger'
+    elseif head == 'Stormwaker Head' or frame == 'Stormwaker Frame' then
+        return 'Magic'
+    elseif head == 'Valoredge Head' or frame == 'Valoredge Frame' then
+        return 'Melee'
+    else
+        return 'Unknown'
+    end
+end
+
+
+
+-- TODO - WIP - Function to equip gear based on automaton magic casting
 function equip_magic_gear(spell)
     equip(sets.PetWS.Nuke)
     add_to_chat(123, 'Equipping Magic Gear for '..spell)
 end
 
-
--- windower.register_event('incoming chunk', function(id, data)
-	-- if id == 0x028 then
--- --	if id == 0x068 then
-        -- local parsed = packets.parse('incoming', data)
-		
-		-- -- Check for TP and action updates
-		-- if parsed['Pet TP'] and parsed['Pet TP'] >= 1000 then
-		-- add_to_chat(123, 'Hit Pet TP Code...')
-        -- -- Check for common action fields
-        -- local possible_keys = {'Weapon Skill Start'}
-        -- for _, key in pairs(possible_keys) do
-            -- if parsed[key] then
-                -- add_to_chat(123, key .. ': ' .. tostring(parsed[key]))
-            -- end
-        -- end
-
-		-- end
-
-		-- if parsed['Pet Action'] and parsed['Pet Action Type'] == 'Magic' then
-			-- local spell = parsed['Pet Action']
-			-- equip_magic_gear(spell)
-		-- end
-    -- end
--- end)
