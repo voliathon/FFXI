@@ -1,5 +1,5 @@
--- Oh land of the PuppetM
--- D.A.D. Technique
+-- Oh land of the PUP
+-- D.A.D. Technique <--Concept taken from bg-wiki
 -- Another important technique to be aware of is amicably known as D.A.D. (or performing Deactivate, Activate, Deploy, in that order). Because using Activate summons your Automaton with 100% HP & more importantly… 100% MP, this means you can exploit Deactivates short cooldown timer, to essentially give your Automaton an unlimited MP pool. Whenever your mage frame Automaton is running low on MP, (and as long as they aren't damaged) simply D.A.D. to fill their MP pool right back up to full! 
 
 -- Import the necessary libraries
@@ -254,8 +254,8 @@ function get_sets()
 	sets.PetWS.Arcuballista = {
 		head="Kara. Cappello +3",
 		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
-		hands={ name="Herculean Gloves", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Store TP"+11','Pet: "Mag.Atk.Bns."+11',}},
-		legs={ name="Herculean Trousers", augments={'Pet: "Store TP"+11','Pet: AGI+2','Pet: Attack+11 Pet: Rng.Atk.+11',}},
+		hands="Mpaca's gloves",
+		legs="Kara. Pantaloni +3",
 		feet={ name="Herculean Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Store TP"+10','Pet: AGI+4',}},
 		neck="Empath Necklace",
 		waist="Klouskap Sash",
@@ -268,8 +268,8 @@ function get_sets()
 	sets.PetWS.BoneCrusher = {
 		head="Kara. Cappello +3",
 		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
-		hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-		legs={ name="Taeon Tights", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
+		hands="Mpaca's gloves",
+		legs="Kara. Pantaloni +3",
 		feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
 		neck="Empath Necklace",
 		waist="Incarnation Sash",
@@ -351,21 +351,6 @@ end
 function aftercast(spell)
 	equip_current()	
 end
-
-function job_midcast(spell, action, spellMap, eventArgs)
-    if pet.tp > 1000 then
-        send_command('@input /echo <----- 1000 TP Bonus +++')
-    else
-        equip_current()
-    end
-end
-
-
--- Function called after the automaton's action is completed
-function pet_aftercast(spell)
-	equip_current()
-end
-
 
 --This function should only get kicked off when you're engaging.  
 --If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
