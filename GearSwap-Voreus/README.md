@@ -7,7 +7,7 @@
   - Alternate weapons using Ctrl + F8
   - Alternate gear using Ctrl + F9
   - Ohtas, Midnights, Xiucoatl, Godhands Build
-  > TODO: Look further into  job_pet_aftercast and job_pet_midcast functions. I'm wanting to maximize dmg when an Automaton performs a Weaponskill. Make this seamless!
+  - Logic added to switch Master WSD Automaton Gear when Automaton's TP is greater than 1000. Switches back automatically to equip_current() after TP spent.
 - **[Geomancer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voreus/geo.lua) lua script**
   - Alternate weapons using Ctrl + F8
   - Alternate gear using Ctrl + F9
