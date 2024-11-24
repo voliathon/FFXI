@@ -1,11 +1,10 @@
-input /ja "light arts" <me>; wait 1.5; 
-input /ja "composure" <me>; wait 1.5; 
+input /ja "light arts" Voreus; wait 3; 
+input /ja "composure" Voreus; wait 3; 
  
-input /ma "gain-mnd" <me>; wait 5;
-input /ma "haste II" <me>; wait 5;
+input /ma "haste II" Voreus; wait 5;
  
-input /ma "temper II" <me>; wait 5; 
-input /ma "refresh III" <me>; wait 5;
+input /ma "temper II" Voreus; wait 5; 
+input /ma "refresh III" Voreus; wait 5;
 
 input /ma "phalanx II" voliathon; wait 5; 
 input /ma "haste II" voliathon; wait 5; 
@@ -21,6 +20,5 @@ input /ma "haste II" azureus; wait 5;
 //input /ma "haste II" voluzera; wait 5; 
 //input /ma "refresh III" voluzera; wait 5; 
 
-input /ma "Enfire II" <me> wait 6;
+input /ma "Enstone II" <me>;
  
-input /ma "gain-str" <me>;

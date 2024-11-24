@@ -1,0 +1,16 @@
+input /equip head 
+input /equip body 
+input /equip hands 
+input /equip legs 
+input /equip feet 
+input /equip main 
+input /equip sub 
+input /equip ranged 
+input /equip ammo 
+input /equip neck 
+input /equip waist 
+input /equip ear1
+input /equip ear2 
+input /equip ring1 
+input /equip ring2 
+input /equip back 

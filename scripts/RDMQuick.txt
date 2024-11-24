@@ -1,0 +1,17 @@
+input /ja "light arts" Voreus; wait 3;
+input /ja "composure" Voreus; wait 3; 
+input /ma "haste II" Voreus; wait 5;
+input /ma "refresh III" Voreus; wait 5;
+
+input /ma "haste II" voliathon; wait 6; 
+input /ma "refresh III" voliathon; wait 5; 
+
+input /ma "phalanx II" azureus; wait 5; 
+input /ma "haste II" azureus; wait 5; 
+input /ma "refresh III" azureus; wait 5; 
+
+input /ma "Enfire II" <me>; wait 5;
+input /ma "phalanx" <me>; wait 5;
+input /ma "temper II" <me>; wait 5;
+input /ma "gain-str" <me>;
+
