@@ -5,14 +5,15 @@ function get_sets()
     send_command('input /macro book 1;wait .1;input /macro set 1')
 	
 	bonus = 0
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c toggle Engaged set')
-	send_command('bind ^f9 gs c reverse Engaged set')
+
+	-- Binds for switching weapon modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
 	
-	-- We gotta have a Burst Mode
-    -- This is used when I want force burst gear sets on nukes	
-	send_command('bind !f9 gs c toggle Engaged set')
-	send_command('bind ^f9 gs c reverse Engaged set')
+	-- Binds for switching gear sets
+    send_command('bind !f9 gs c toggle engage set')
+	send_command('bind ^f9 gs c reverse engage set')
+	
 	
     -- Job Abilities for Black Mage --
     sets.Manafont = {}
@@ -28,17 +29,18 @@ function get_sets()
 
     -- Fast Cast for Black Mage --
     sets.FastCast = {
+		ammo="Impatiens",
 		head={ name="Merlinic Hood", augments={'Mag. Acc.+7','Magic burst dmg.+10%','MND+9','"Mag.Atk.Bns."+9',}},
 		body="Shango Robe",
-		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		hands="Jhakri Cuffs +2",
 		legs={ name="Artsieq Hose", augments={'"Mag.Atk.Bns."+25','Mag. Evasion+10','Phys. dmg. taken -5',}},
-		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Incanter's Torque",
+		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
 		waist="Eschan Stone",
-		left_ear="Loquacious Earring",
-		right_ear="Barkaro. Earring",
+		left_ear="Malignance Earring",
+		right_ear="Loquac. Earring",
 		left_ring="Kishar Ring",
-		right_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
+		right_ring="Lebeche Ring",
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 
@@ -118,55 +120,36 @@ function get_sets()
 		main="Marin staff +1", 
 		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
-		head="Wicce Petasos +2",
+		head="Wicce petasos +2",
 		body="Wicce Coat +2",
 		hands="Wicce Gloves +2",
-		legs="Wicce Chausses +2",
+		legs="Wicce Chausses +3",
 		feet="Wicce Sabots +2",
 		neck="Mizu. Kubikazari",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear={ name="Wicce Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Enmity-5',}},
-		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		right_ring="Locus Ring",
-		back={ name="Aurist's Cape +1", augments={'Path: A',}}
+		right_ear="Regal Earring",
+		left_ring="Freke Ring",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
-	
-	-- sets.Burst = {
-		-- main="Bunzi's Rod",
-		-- sub="Ammurapi Shield",
-		-- ammo="Sroda Tathlum",
-		-- head="Agwu's Cap",
-		-- body="Agwu's Robe",
-		-- hands="Arbatel Bracers +2",
-		-- legs="Agwu's Slops",
-		-- feet="Agwu's Pigaches",
-		-- neck="Argute stole +2",
-		-- waist="Tengu-no-Obi",
-		-- left_ear="Malignance Earring",
-		-- right_ear="Halasz Earring",
-		-- left_ring="Mujin band",
-		-- right_ring="Locus Ring",
-		--     back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
-	
-	-- }
 	
 	sets.Kaustra = {
 		main="Marin staff +1", 
 		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
-		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+28','"Fast Cast"+3','INT+2','Mag. Acc.+10',}},
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
-		legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+10','Magic burst dmg.+8%','MND+2','Mag. Acc.+10',}},
-		feet="Jhakri Pigaches +2",
+		head="Wicce petasos +2",
+		body="Wicce Coat +2",
+		hands="Wicce Gloves +2",
+		legs="Wicce Chausses +3",
+		feet="Wicce Sabots +2",
 		neck="Mizu. Kubikazari",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Wicce Earring +1",
-		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		right_ring="Locus Ring",
-		back="Aurist's Cape +1"
+		right_ear="Regal Earring",
+		left_ring="Freke Ring",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
     sets.DarkMagic = {
@@ -177,23 +160,35 @@ function get_sets()
 		main="Marin staff +1", 
 		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
-		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+28','"Fast Cast"+3','INT+2','Mag. Acc.+10',}},
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
-		legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+10','Magic burst dmg.+8%','MND+2','Mag. Acc.+10',}},
-		feet="Jhakri Pigaches +2",
+		head="Wicce petasos +2",
+		body="Wicce Coat +2",
+		hands="Wicce Gloves +2",
+		legs="Wicce Chausses +3",
+		feet="Wicce Sabots +2",
 		neck="Mizu. Kubikazari",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Wicce Earring +1",
-		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		right_ring="Locus Ring",
-		back="Aurist's Cape +1"
+		right_ear="Regal Earring",
+		left_ring="Freke Ring",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 }
 
 
     sets.Enfeebling = set_combine(sets.FastCast,  {
-
+		ammo="Pemphredo Tathlum",
+		head="Wicce Petasos +2",
+		body="Wicce Coat +2",
+		hands="Regal Cuffs",
+		legs="Wicce Chausses +3",
+		feet="Wicce Sabots +2",
+		neck="Sanctity Necklace",
+		waist="Eschan Stone",
+		left_ear="Malignance Earring",
+		right_ear={ name="Wicce Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Enmity-5',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Kishar Ring",
+		back="Aurist's Cape +1"
 	})
 
 
@@ -209,8 +204,6 @@ function get_sets()
 	}
 
 	sets.TP = set_combine(sets.PDT,  {
-		main="Malignance Pole",
-		sub="Ajja grip",
 		ammo="Oshasha's Treatise",
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body={ name="Nyame Mail", augments={'Path: B',}},
@@ -223,26 +216,24 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Hetairoi Ring",
 		right_ring="Petrov Ring",
-		back="Aurist's Cape +1"	
+		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	})
 
 	-- PDT Set
     sets.PDT = {
-		main="Malignance Pole",
-		sub="Ajja grip",
 		ammo="Impatiens",
-		head={ name="Nyame Helm", augments={'Path: B',}},
+		head="Wicce petasos +2",
 		body={ name="Nyame Mail", augments={'Path: B',}},
-		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		hands="Wicce Gloves +2",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		feet="Wicce Sabots +2",
 		neck={ name="Loricate Torque +1", augments={'Path: A',}},
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Aurist's Cape +1"
+		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 
 	-- When I gotta kite shite, I put on my Sandals and shit...
@@ -255,6 +246,7 @@ function get_sets()
 		head="Befouled Crown",
 		body="Jhakri Robe +2",
 		legs="Assid. Pants +1",
+	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
 		neck="Sanctity Necklace",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
@@ -310,10 +302,10 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Sangoma Ring",
 		right_ring="Mephitas's Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	} 
 
-	  -- Engaged Sets Toggle--
+	-- Engaged Sets Toggle--
 	sets.engaged = {}
 	sets.engaged.index = {'TP', 'Movement', 'Tank', 'Refresh'}
 	engaged_ind = 1  	 
@@ -322,7 +314,24 @@ function get_sets()
 	sets.engaged.Movement = set_combine(sets.Kiting, {})
 	sets.engaged.Tank = set_combine(sets.PDT, {})
 	sets.engaged.Refresh = set_combine(sets.Refresh, {})
-	 
+	
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'MalignancePole','DaybreakShield','MarinStaff'}
+	weapon_ind = 1
+	
+	sets.weapon.MalignancePole = {
+		main="Malignance Pole",
+		sub="Ajja grip"
+	}
+	sets.weapon.DaybreakShield = {
+		main="Daybreak",
+		sub="Ammurapi Shield"
+	}
+	sets.weapon.MarinStaff = {
+		main="Marin staff +1",
+		sub="Enki strap"
+	}	
 end
 
 function precast(spell,abil)
@@ -451,35 +460,40 @@ end
 --I'm also deciding not to use a Binding Key to put my in a  Tank, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 end
 
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--Function use for Changing the Weapon Set.  Ctrl+F8 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
+--Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
+
 function self_command(command)
-	if command == 'C7' then -- Mecistopins Mantle toggle 
-		if Capacity == 'OFF' then
-			Capacity = 'ON'
-			equip({back="Mecistopins mantle"})
-            add_to_chat(158,'Capacity mantle: [ON]')
-		else
-			Capacity = 'OFF'
-			equip_current()
-   		    add_to_chat(123,'Capacity mantle: [OFF]')
-		end
-	elseif command == 'toggle Engaged set' then
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
+	elseif command == 'toggle engage set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse engage set' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse Engaged set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
-		equip_current()
-	end	 
+	end
 end
 
 

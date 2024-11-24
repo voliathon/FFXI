@@ -1,4 +1,15 @@
+function RedMageCapes()
+	RedMageCapes = {}
+	RedMageCapes.TP = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+	RedMageCapes.FastCast = {name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+	RedMageCapes.DualWield = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10'}}
+	RedMageCapes.STRWS = {name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+end
+
 function get_sets()
+	--Instantiate RedMageCapes
+	RedMageCapes()
+
 	-- Set macro book/set --
     send_command('input /macro book 1;wait .1;input /macro set 1')
 	
@@ -34,7 +45,7 @@ function get_sets()
 		right_ear="Lethargy Earring +1",
 		left_ring="Kishar Ring",
 		right_ring="Freke Ring",
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+		back=RedMageCapes.FastCast
 	}
 
 
@@ -54,7 +65,7 @@ function get_sets()
 		right_ear="Lethargy Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+		back=RedMageCapes.FastCast
 	}
 	
 	-- Stoneskin
@@ -74,7 +85,7 @@ function get_sets()
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5'}},
 		left_ring="Ilabrat Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}},
+		back=RedMageCapes.TP,
 		ammo="Ginsen"
 	}
 	
@@ -91,7 +102,7 @@ function get_sets()
 		right_ear="Mendi. Earring",
 		left_ring="Kishar Ring",
 		right_ring="Lebeche Ring",
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+		back="Fi follet cape +1"
 	})
 
 
@@ -107,19 +118,18 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		ammo="Pemphredo Tathlum",
-		head="Lethargy Chappel +3",
-		body="Lethargy Sayon +3",
-		hands="Lethargy gantherots +3",
-		legs="Lethargy Fuseau +3",
-		feet="Lethargy Houseaux +3",
-		neck={ name="Dls. Torque +2", augments={'Path: A'}},
+		head="Ea Hat +1",
+		body="Ea Houppelande",
+		hands="Leth. Ganth. +3",
+		legs="Leth. Fuseau +3",
+		feet="Leth. Houseaux +3",
+		neck="Mizu. Kubikazari",
 		waist="Eschan Stone",
-		left_ear="Friomisi Earring",
-		right_ear="Malignance Earring",
-		left_ring="Stikini Ring +1",
+		left_ear="Malignance Earring",
+		right_ear="Regal Earring",
+		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		right_ring="Freke Ring",
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+		back=RedMageCapes.FastCast
 	}
 	
     sets.DarkMagic = {
@@ -139,7 +149,7 @@ function get_sets()
 		right_ear="Vor Earring",
 		left_ring="Kishar Ring",
 		right_ring="Stikini Ring +1",
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+		back=RedMageCapes.FastCast
 	})
 
 
@@ -160,7 +170,7 @@ function get_sets()
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
 		left_ring="Ilabrat Ring",
 		right_ring="Rajas Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+		back=RedMageCapes.TP
 	}
 
 	-- PDT Set
@@ -176,7 +186,7 @@ function get_sets()
 		right_ear="Ethereal Earring",
 		left_ring="Gelatinous Ring +1",
 		right_ring="Defending Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
+		back=RedMageCapes.TP		
 	}
 
 	-- Magic Defense and Magic Defense Set
@@ -192,7 +202,7 @@ function get_sets()
 		right_ear="Ethereal Earring",
 		left_ring="Gelatinous Ring +1",
 		right_ring="Defending Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
+		back=RedMageCapes.TP		
 	}
 	
     sets.Movement = {		
@@ -208,13 +218,14 @@ function get_sets()
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
 		left_ring="Shneddick Ring",
 		right_ring="Stikini Ring +1",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}		
+		back=RedMageCapes.TP		
 	}
 
 	sets.RefreshSelf = set_combine(sets.PDT,  {
 		body="Lethargy sayon +3",
 		ammo="Homiliary",
 		head="Vitiation Chapeau +3",
+	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
 		waist="Fucho-no-obi",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1"
@@ -248,14 +259,14 @@ function get_sets()
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
 		left_ring="Ilabrat Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10',}}	
+		back=RedMageCapes.DualWield	
 	})
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
 	 
 	 sets.SavageBlade = {
-		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+		head="Nyame Helm",
 		body="Nyame mail",
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
@@ -266,7 +277,7 @@ function get_sets()
 		right_ear="Sherida Earring",
 		left_ring="Cornelia's Ring",
 		right_ring="Petrov Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+		back=RedMageCapes.STRWS,
 		ammo="Oshasha's Treatise"
 	 }
 	 
@@ -282,7 +293,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Freke Ring",
 		right_ring="Cornelia's Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
+		back=RedMageCapes.STRWS,
 		ammo="Oshasha's Treatise"
 	 }
 	 
@@ -298,7 +309,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Archon Ring",
 		right_ring="Cornelia's Ring",
-		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},		
+		back=RedMageCapes.STRWS,		
 		ammo="Oshasha's Treatise"	 
 	 }
 	 
