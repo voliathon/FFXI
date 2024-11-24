@@ -166,9 +166,9 @@ function get_sets()
 		waist="Tengu-no-Obi",
 		left_ear="Malignance Earring",
 		right_ear="Halasz Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}
+		left_ring="Mujin Band",
+		right_ring="Locus Ring",
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
 	-- sets.Burst = {
@@ -205,7 +205,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
     sets.DarkMagic = {
@@ -227,7 +227,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 }
 
 
@@ -246,7 +246,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	})
 
 
@@ -276,7 +276,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back="Relucent Cape"	
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}	
 	})
 
 	-- PDT Set
@@ -295,7 +295,7 @@ function get_sets()
 		right_ear="Hearty Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Relucent Cape"
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 
 	-- Magic Defense and Magic Defense Set
@@ -314,7 +314,7 @@ function get_sets()
 		right_ear="Hearty Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Relucent Cape"
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 
 		
@@ -373,7 +373,7 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-	    back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}	
 	}
 	 
 	sets.Myrkr = {
@@ -388,7 +388,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Sangoma Ring",
 		right_ring="Mephitas's Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	} 
 
 	  -- Engaged Sets Toggle--

@@ -12,8 +12,9 @@ end
 -- Rosmerta Cape function for tracking what I've got on Mazusu for Blue Mage
 function RosmertaCapes()
     Rosmerta = {}
-    Rosmerta.TP = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
-    Rosmerta.WSD = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+    Rosmerta.TP = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+    Rosmerta.WSD = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+	Rosmerta.MagicDMG = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 end
 
 
@@ -21,6 +22,7 @@ end
 
 --User Event Function called once on load.  It's used to define variables, and specifically "sets"
 function get_sets()
+
 	-- Set macro book/set --
     send_command('input /macro book 13;wait .1;input /macro set 1')
 	
@@ -84,7 +86,7 @@ function get_sets()
 		right_ear="Hashishin Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Kumbira Cape"
+		back=Rosmerta.MagicDMG
     }	
 	
 	--Engaged Sets--
@@ -122,8 +124,8 @@ function get_sets()
 		left_ear="Brutal Earring",
 		right_ear={ name="Hashi. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','"Dbl.Atk."+4',}},
 		left_ring="Chirich Ring +1",
-		right_ring="Hetairoi Ring",
-		back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+		right_ring="Chirich Ring +1",
+		back=Rosmerta.TP
     }
 
 	-- Fuck taking Magic Damage
@@ -140,7 +142,7 @@ function get_sets()
 		right_ear="Sanare Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Fortified Ring",
-		back="Relucent Cape"	
+		back=Rosmerta.TP	
 	}
 	
 	sets.engaged.Accuracy = {
@@ -183,8 +185,8 @@ function get_sets()
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
-		right_ring="Defending Ring",
-		back="Relucent Cape"	
+		right_ring="Chirich Ring +1",
+		back=Rosmerta.TP	
 	}
 	
 	-- Blue Mage Skill
@@ -210,7 +212,7 @@ function get_sets()
 		right_ear="Hashishin Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}}	
+		back=Rosmerta.MagicDMG
 	}
 
     -- Custom Physical Magic --
@@ -228,7 +230,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+		back=Rosmerta.TP
     }
 
 	-- Only Heavy Strike will hit this set
@@ -272,8 +274,8 @@ function get_sets()
 		left_ear="Choleric Earring",
 		right_ear="Friomisi Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Locus Ring",
-		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}}
+		right_ring="Stikini Ring +1",
+		back=Rosmerta.MagicDMG
     }
 	
     sets.BlueMagicMagicalResistant = set_combine(sets.BlueMagicMagical,{})
@@ -357,7 +359,7 @@ function get_sets()
 	-- 1000 TP 50% Drained
 	-- 2000 TP 100% Drained
     sets.SanguineBlade = set_combine(sets.BlueMagicMagical,{
-		head="Pixie Hairpin +1", lring="Archon ring", waist="Orpheus's sash", hands="Nyame Gauntlets"
+		head="Pixie Hairpin +1", lring="Archon ring", waist="Orpheus's sash"
 	})
 
 	--Weapon Sets--
@@ -460,7 +462,7 @@ function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 end
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--Function use for Changing the Weapon Set.  Ctrl+F8 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
