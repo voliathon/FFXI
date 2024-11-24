@@ -1,6 +1,17 @@
-function get_sets()
+-- Monk LUA Script made by Voliathon
 
--- Set macro book/set --
+-- Capes making it easier to call in the lua script
+function MonkCapes()
+	MonkCapes = {}
+	MonkCapes.TP = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+	MonkCapes.VITWS = { name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%'}}
+end	
+
+function get_sets()
+	--Settings MonkCapes fn()
+	MonkCapes()
+	
+	-- Set macro book/set --
     send_command('input /macro book 15;wait .1;input /macro set 1')
 	
 		-- Binds for modes
@@ -26,9 +37,9 @@ function get_sets()
 	sets.JA.Waltz = {legs="Dashing subligar"}
 
 	
-	  --TP Sets--
+	--TP Sets--
 	sets.TP = {}
---					  1		      2        3 		4		  5
+-- 					  1		      2        3 		4		  5
   sets.TP.index = {'BadAss', 'Tank', 'Movement', 'Accuracy', 'TH'}
   TP_ind = 1
 	
@@ -45,7 +56,7 @@ function get_sets()
 		right_ear="Schere Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+		back=MonkCapes.TP
     }	
 
     sets.TP.Impetus = {
@@ -70,7 +81,7 @@ function get_sets()
 		right_ear="Schere Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+		back=MonkCapes.TP
 	}
     
 	sets.TP.Accuracy = set_combine(sets.TP.Tank, {})
@@ -109,7 +120,7 @@ function get_sets()
 		right_ear="Schere Earring",
 		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}		
+		back=MonkCapes.TP		
 	}
 	
 	sets.WS.FinalHeaven = {
@@ -117,15 +128,15 @@ function get_sets()
 		head="Nyame Helm",
 		body="Nyame mail",
 		hands="Anchorite's gloves +3",
-		legs="Hiza. Hizayoroi +2",
-		feet="Ken. Sune-Ate +1",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 		neck="Monk's nodowa +2",
 		waist="Moonbow Belt +1",
-		left_ear="Schere Earring",
-		right_ear="Bhikku Earring +1",
+		left_ear="Moonshade Earring",
+		right_ear="Ishvara Earring",
 		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+		back=MonkCapes.VITWS
 	}
 	
 	sets.WS.RagingFists = {
@@ -141,7 +152,7 @@ function get_sets()
 		right_ear="Schere Earring",
 		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}	
+		back=MonkCapes.TP	
 	}
 	
 	sets.WS.ShijinSpiral = {
@@ -157,7 +168,7 @@ function get_sets()
 		right_ear="Schere Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Mummu Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}	
+		back=MonkCapes.TP	
 	}
     
 	sets.WS.HowlingFist = {
@@ -173,7 +184,7 @@ function get_sets()
 		right_ear="Schere Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Mummu Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}	
+		back=MonkCapes.TP	
 	}
 	
 	sets.WS.TornadoKick = {
@@ -189,7 +200,7 @@ function get_sets()
 		right_ear="Schere Earring",
 		left_ring="Mummu Ring",
 		right_ring="Rajas Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}	
+		back=MonkCapes.TP	
 	}
 	
 	sets.WS.Cataclysm = {
@@ -205,7 +216,7 @@ function get_sets()
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}	
+		back=MonkCapes.VITWS
 	}
     
     sets.status = {}

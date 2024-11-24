@@ -4,9 +4,17 @@
 -- Expansion Pack 	Rise of the Zilart
 -- Quest 	Ayame and Kaede
 
+function NinjaCapes()
+	NinjaCapes = {}
+	NinjaCapes.TP = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+	NinjaCapes.STRWS = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
+end
 
 function get_sets()
--- Set macro book/set --
+	--instantiate NinjaCapes fn()
+	NinjaCapes()
+	
+	-- Set macro book/set --
     send_command('input /macro book 6;wait .1;input /macro set 1')
 	
 	-- Binds for switching weapon modes
@@ -43,7 +51,7 @@ function get_sets()
 		right_ear="Odnowa Earring +1",
 		left_ring="Schneddick Ring",
 		right_ring="Defending Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+		back=NinjaCapes.TP
 	}
 
 	--offensive melee set
@@ -60,7 +68,7 @@ function get_sets()
 		right_ear="Hattori Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-	    back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+		back=NinjaCapes.TP
 	}
 
 	--Hybrid Gear
@@ -77,7 +85,7 @@ function get_sets()
 		right_ear="Cessance Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+		back=NinjaCapes.TP
 	}
 
 	sets.TP.Accuracy = {
@@ -87,7 +95,7 @@ function get_sets()
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		left_ear="Hattori Earring +1",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+		back=NinjaCapes.TP
 	}
 
 	sets.TP.TreasureHunter = {
@@ -103,7 +111,7 @@ function get_sets()
 		right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
 		left_ring="Moonlight Ring",
 		right_ring="Defending Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+		back=NinjaCapes.TP
 	}
 
 	sets.TP.EvasionTank = {
@@ -119,7 +127,7 @@ function get_sets()
 		right_ear="Cryptic Earring",
 		left_ring="Defending Ring",
 		right_ring="Chirich Ring +1",
-	    back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+		back=NinjaCapes.TP
 	}
 	
 	sets.TP.BuckWildMode = {
@@ -135,7 +143,7 @@ function get_sets()
 		right_ear="Digni. Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}		
+		back=NinjaCapes.TP		
 	}
 	
 	sets.TP.DualWield = {
@@ -151,7 +159,7 @@ function get_sets()
 		right_ear="Brutal Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}	
+		back=NinjaCapes.TP
 	}
 
 
@@ -184,7 +192,7 @@ function get_sets()
 		right_ear="Ishvara Earring",
 		left_ring="Rajas Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
+		back=NinjaCapes.STRWS
 	}
 
 
@@ -201,7 +209,7 @@ function get_sets()
 		right_ear="Ishvara Earring",
 		left_ring="Rajas Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
+		back=NinjaCapes.STRWS
 	}
 
 	--Blade: Shun
@@ -218,7 +226,7 @@ function get_sets()
 		right_ear="Hattori Earring +1",
 		left_ring="Rajas Ring",
 		right_ring="Mummu Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
+		back=NinjaCapes.TP
 	}
 	
 	--Blade: Hi
@@ -235,7 +243,7 @@ function get_sets()
 		right_ear="Hattori Earring +1",
 		left_ring="Sroda Ring",
 		right_ring="Epaminondas Ring",
-		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
+		back=NinjaCapes.STRWS
 	}	
 
 	--Teki/To/Chi/Yu
@@ -269,7 +277,7 @@ function get_sets()
 		right_ear="Brutal Earring",
 		left_ring="Sroda Ring",
 		right_ring="Mummu Ring",
-		back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
+		back=NinjaCapes.TP
 	}
 
 	--Blade: Kamu
@@ -286,7 +294,7 @@ function get_sets()
 		right_ear="Hattori Earring +1",
 		left_ring="Sroda Ring",
 		right_ring="Stikini Ring +1",
-		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
+		back=NinjaCapes.STRWS
 	}	
 
 
@@ -330,7 +338,7 @@ function get_sets()
 		right_ear="Mimir Earring",
 		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
 		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+		back=NinjaCapes.TP
 	}
 
 	--108 SIR-
