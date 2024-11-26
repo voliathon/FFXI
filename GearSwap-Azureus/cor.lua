@@ -57,7 +57,7 @@ function get_sets()
     }
 	
 	-- Specific Rolls
-	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +2" })
+	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +3" })
     sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +3" })
     sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +3"})
     sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
@@ -66,7 +66,7 @@ function get_sets()
 	
 	-- Damage Taken with Movement
     sets.DamageTaken = {
-		head="Chass. Tricorne +2",
+		head="Chass. Tricorne +3",
 		body="Chasseur's Frac +3",
 		hands="Nyame Gauntlets",
 		legs="Malignance Tights",
@@ -189,7 +189,7 @@ function get_sets()
 
 	--Snapshot Magic goes here - Precast Magic
     sets.Snapshot = {
-		head="Chasseur's tricorne +2",
+		head="Chasseur's tricorne +3",
 		body="Oshosi Vest +1",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs="Laksamana's Trews +3",
@@ -252,7 +252,7 @@ function get_sets()
     }
 	
 	sets.engaged.DTMovement = {
-		head="Chass. Tricorne +2",
+		head="Chass. Tricorne +3",
 		body="Chasseur's Frac +3",
 		hands="Nyame Gauntlets",
 		legs="Malignance Tights",
