@@ -1,367 +1,295 @@
-function user_unload()
-    send_command('unbind ^f9')
-    send_command('unbind ^f10')
-	send_command('unbind ^f11')
+-- https://www.bg-wiki.com/bg/Community_Thief_Guide#TP_Sets
+-- Will eventually get more and more gear that is mentioned from the community Thief Site...
+
+function ThiefCapes()
+	ThiefCapes = {}
+	ThiefCapes.TP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Damage taken-5%'}}
+	ThiefCapes.DEXWS = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%'}}
 end
 
+
 function get_sets()
--- Set macro book/set --
-    send_command('input /macro book 14;wait .1;input /macro set 1') -- set macro book/set here --	
+	--Instantiate ThiefCapes fn()
+	ThiefCapes()
+
+	-- Set macro book/set --
+    send_command('input /macro book 14;wait .1;input /macro set 1') -- set macro book/set here	
 	
--- Binds for modes
-    send_command('bind ^f9 gs c C9')
-	send_command('bind ^f10 gs c C10') 
-	send_command('bind ^f11 gs c C11')
+	-- Binds for switching weapon modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	-- Binds for switching engaged modes
+	send_command('bind !f9 gs c toggle engaged set')
+	send_command('bind ^f9 gs c reverse engaged set')
 
-	-- Modes --
-    EngagedIndex = 1
-    EngagedArray = {"TH","TP","Accuracy", "Tank", "Evasion"}	-- Press ctrl + F10 for Engaged Array --
-
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --		
-
-	-- Gears --
-    gear = {}
-    gear.DW_Cape = { 
-		back="Canny Cape"
-	}	
-    gear.TA_Cape = { 
-		back="Canny Cape"
-	}	
-
-	-- Utilities --	
-    SA = false
-    TA = false	
-
-	-- Ability Mapping --
-	THStep = S{"Quickstep","Box Step","Stutter Step","Animated Flourish"}
-
-
-	---- .:: TP Sets ::. ----->
+	-- Engaged Sets Toggle--
     sets.engaged = {}
-	sets.engaged.TH = {
+    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank"}
+	engaged_ind = 1
+
+    sets.engaged.TreasureHunter = {
 		ammo="Yetshila +1",
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
 		body="Volte Jupon",
 		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect',}},
-		legs="Malignance tights",
+		legs="Malignance Tights",
 		feet="Skulk. Poulaines +2",
 		neck="Anu Torque",
 		waist="Chaac Belt",
 		left_ear="Suppanomimi",
-		right_ear="Cessance Earring",
+		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
 		left_ring="Chirich Ring +1",
-		right_ring="Defending Ring",
-		back={ name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3','Crit. hit damage +2%',}}
+		right_ring="Chirich Ring +1",
+		back=ThiefCapes.TP
 	}
 	
 	sets.engaged.TP = {
-		ammo="Ginsen",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		ammo="Coiste Bodhar",
+		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs="Meg. Chausses +2",
-		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2',}},
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 		neck="Clotharius Torque",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Suppanomimi",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
-		back={ name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3','Crit. hit damage +2%',}}
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 5"},
+		back=ThiefCapes.TP
 	}
 	
 	sets.engaged.Accuracy =  {
-		ammo="Amar cluster",
-		head="Mummu Bonnet +2",
-		body="Adhemar Jacket +1",
-		hands="Malignance Gloves",
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Malignance Tights",
-		feet="Malignance boots",
-		neck="Subtlety Spec.",
-		waist="Grunfeld Rope",
-		left_ear="Dudgeon Earring",
-		right_ear="Heartseeker Earring",
-		left_ring="Mummu Ring",
-		right_ring="Beeline Ring",
-		back="Canny Cape"
-	}	
-	
-	sets.engaged.Tank = {
-		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Skulk. Poulaines +2",
-		neck="Loricate torque +1",
-		waist="Flume Belt +1",
-		left_ear="Suppanomimi",
-		right_ear="Cessance Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
-		back="Engulfer Cape +1"
-	}
-	
-	sets.engaged.Evasion = {
-		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Skulk. Poulaines +2",
-		neck="Loricate torque +1",
-		waist="Flume Belt +1",
-		left_ear="Suppanomimi",
-		right_ear="Cessance Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
-		back="Engulfer Cape +1"
-	}
-
-	
-	
----- .:: Job Abilities Sets ::. ---->
-    sets.JA = {}
-	
-    -- Dancer's Abilities --
-    sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
-	sets.JA.Step = 	{}
-    sets.JA.Stun = {}
-	
-	
-	-- Thief's Abilities --
-    sets.JA['Sneak Attack'] = {}
-	
-	
-    sets.JA.SATH = set_combine(sets.JA['Sneak Attack'], {  -- Add TH gears --
-	    hands="Plun. Armlets +3",
-	    feet="Skulker's Poulaines +2"})
-		
-		
-    sets.JA['Trick Attack'] = set_combine(sets.JA['Sneak Attack'], {hands="Pillager's Armlets +1"})
-	
-	
-    sets.JA.TATH = set_combine(sets.JA['Trick Attack'], {  -- Add TH gears --
-	    hands="Pillager's Armlets +1",
-		feet="Skulker's Poulaines +2"
-	})
-	
-	
-    sets.JA.SATA = set_combine(sets.JA['Sneak Attack'], {})
-
-		
-	--sets.JA["Assassin's Charge"] = {feet="Plun. Poulaines +1"}
-	sets.JA['Feint'] = {legs="Plun. Culottes +1"}
-	
-	--sets.JA['Conspirator'] = {body="Raider's Vest +2"}
-	sets.JA['Steal'] = {
-	    hands="Pill. Armlets +1", legs="Pill. Culottes", feet="Pill. Poulaines", neck="Pentalagus charm"
-	}
-	
-	--sets.JA['Mug'] = {head="Plun. Bonnet +1"}
-	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
-	
-	--sets.JA['Accomplice'] = {head="Skulker's Bonnet +1",}
-	sets.JA['Flee'] = {feet="Pill. Poulaines"}
-	sets.JA['Hide'] = {body="Pillager's Vest"}
-	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
-	
-	
----- .:: Weapon Skill Sets ::. ---->
-    -- .::Generic Sets::. --
-	
-	sets.Evisceration  = {
-		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
-		legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-		right_ear="Ishvara Earring",
-		left_ring="Mummu Ring",
-		right_ring="Epaminondas's Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}	
-	}
-	
-	sets.Rudra = {
-		ammo="Yetshila +1",
-		head="Nyame Helm",
-		body="Skulker's Vest +2",
-		hands="Meg. Gloves +2",
-		legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
-		feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%'}},
+		feet="Malignance Boots",
 		neck="Sanctity Necklace",
 		waist="Grunfeld Rope",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-		right_ear="Ishvara Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Epaminondas's Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}	
-	}
-	
-    sets.WS = {	
-		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
-		body="Skulker's Vest +2",
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
-		legs={ name="Herculean Trousers", augments={'Pet: STR+5','"Dual Wield"+3','Weapon skill damage +6%','Accuracy+3 Attack+3','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-		feet={ name="Herculean Boots", augments={'Accuracy+28','"Triple Atk."+3','DEX+3','Attack+2'}},
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-		right_ear="Ishvara Earring",
-		left_ring="Mummu Ring",
-		right_ring="Epaminondas's Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}
+		left_ear="Digni. Earring",
+		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 5"},
+		back=ThiefCapes.TP
 	}
 
+	 sets.engaged.Tank = {
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Digni. Earring",
+		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		right_ring="Defending Ring",
+		back=ThiefCapes.TP
+	 }	
+	
+	-- Job Abilities Sets --
+    sets.JA = {}
+    sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
+	
+    sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
+    sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
+	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
+	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
+	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
+	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
+	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
+	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
+	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
+	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
+	sets.JA['Hide'] = {body="Pillager's Vest +2"}
+	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
+	
+	
+ -- Weapon Skill Sets
+ -- Generic Sets
+    sets.WSD = {	
+		ammo="Yetshila +1",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands="Meg. Gloves +2",
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear="Ishvara Earring",
+		left_ring="Epaminondas's Ring",
+		right_ring="Mummu Ring",
+		back=ThiefCapes.DEXWS
+	}
+	
+	-- Stat Modifier: 	50% DEX  CritHit Modifier
+	sets.Evisceration = {
+		ammo="Yetshila +1",
+		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		legs="Meg. Chausses +2",
+		feet={ name="Herculean Boots", augments={'Accuracy+15 Attack+15','"Triple Atk."+3','Accuracy+5',}},
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear="Brutal Earring",
+		left_ring="Epaminondas's Ring",
+		right_ring="Mummu Ring",
+		back=ThiefCapes.DEXWS
+	}
+	
     sets.Aeolian = {	
 		ammo="Pemphredo Tathlum",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Sanctity Necklace",
-		waist="Orpheus's Sash",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Epaminondas's Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}
+		left_ring="Epaminondas's Ring",
+		right_ring="Fenrir Ring +1",
+		back=ThiefCapes.DEXWS
 	}
 	
+---- .:: Preshot Sets ::. ---->
+	--sets.preshot = {}
+	--sets.preshot.RA = {}	
 	
----- .:: Precast Sets ::. ---->
+ -- Precast Sets  --
 	sets.precast = {}
-	sets.precast.Fastcast = {}
-	sets.precast['Utsusemi'] = {	
-		ammo="Yetshila +1",
-		head="Adhemar Bonnet +1",
-		body="Adhemar Jacket +1",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance boots",
-		neck="Sanctity Necklace",
-		waist="Ninurta's Sash",
+	sets.precast.Fastcast = {
+		ammo="Staunch Tathlum",
+		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
+		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
+		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
+		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
+		neck="Voltsurge Torque",
+		waist="Kasiri Belt",
 		left_ear="Loquac. Earring",
-		right_ear="Magnetic Earring",
-		left_ring="Veneficium Ring",
-		right_ring="Rajas Ring",
-		back="Repulse Mantle"
-	}
-		
----- .:: Midshot Sets ::. ---->	
-	sets.midshot = {}
-	sets.midshot.RA = {}	
+		right_ear="Halasz Earring",
+		left_ring="Lebeche Ring",
+		right_ring="Defending Ring",
+		back="Relucent Cape"	
+	}		
 	
----- .:: Midcast Sets ::. ---->	
-	sets.midcast = {}
-	sets.midcast.RA = {}
-	sets.midcast.Ninjutsu = {}
-	sets.midcast['Utsusemi'] = set_combine(sets.precast['Utsusemi'], {})
+ -- Weapon Toggle--
+  sets.weapon = {}
+  sets.weapon.index = {'NaeglingCrepuscularKnife', 'TauretSandung', 'TauretCrepuscularKnife'}
+  weapon_ind = 1     
+  
+ sets.weapon.NaeglingCrepuscularKnife = {
+	main="Naegling",
+	sub="Crepuscular Knife"
+ } 
+  sets.weapon.TauretSandung = {
+	main="Tauret",
+	sub="Sandung"
+ } 
+ sets.weapon.TauretCrepuscularKnife = {
+	main="Tauret",
+	sub="Crepuscular Knife"
+ } 
+end	
 	
-end
 
-
--- Precast Functions --
+-- Precast Function --
 function precast(spell,action)
     -- Dancer Abilities --
-    if string.find(spell.name, 'Waltz') then
+    if string.find(spell.english, 'Waltz') then
 	    equip(sets.JA.Waltz)
-    elseif spell.name == 'Violent Flourish' then
-        equip(sets.JA.Stun)
+		
 	-- Thief Abilities --
 	elseif spell.type == 'JobAbility' then
-	        equip(sets.JA[spell.name])
-    -- Weapon Skill --
-    elseif spell.type == 'WeaponSkill' then
-			if spell.name == "Evisceration" then
-				equip(sets.Evisceration)
-			elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
-				equip(sets.Rudra)
-			elseif spell.name == 'Aeolian Edge' then
-				equip(sets.Aeolian)
-			else
-				equip(sets.WS)
-			end
+	        equip(sets.JA[spell.english])
+			
+	-- Weapon Skill --
+	-- 50% DEX Modifier Evisceration / Crits per hits
+	elseif spell.name =="Evisceration" then
+		equip(sets.Evisceration)
+	
+	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
+	-- 60% DEX Modifier Mandalic Stab
+    elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
+		equip(sets.WSD)
+
+	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
+	elseif spell.name == "Aeolian Edge" then
+		equip(sets.Aeolian)
+
+	--elseif spell.action_type == 'Ranged Attack' then
+	--    equip(sets.preshot.RA)
+
 	-- Ninja Spells --
 	elseif spell.skill == 'Ninjutsu' then
 	    equip(sets.precast.Fastcast)
-		if string.find(spell.name, 'Utsusemi') then
-		    equip(sets.precast['Utsusemi'])
-		end
 	end	
 end	
 
 
 -- Midcast Functions --
 function midcast(spell,action)
-
+		
 end	
 
 
--- Aftercast Functions --
-function aftercast(spell,action)
-    status_change(player.status)    	
-end	
-
-
--- Status Changes --	
-function status_change(new,tab,old)
-	if Capacity == 'ON' then
-		equip{back="Mecisto. Mantle"}
-		disable('back')
+--We need to do some thinking and testing for this set...
+function aftercast(spell)
+	if string.find(spell.english,'Warp') then
+		--do fuck all nothing
 	else
-		enable('back')
-	end	
-	if EngagedArray[EngagedIndex] == 'TH' then
-		equip(sets.engaged.TH)	
-	elseif EngagedArray[EngagedIndex] == 'TP' then
-		equip(sets.engaged.TP)	
-	elseif EngagedArray[EngagedIndex] == 'Accuracy' then
-		equip(sets.engaged.Accuracy)
-	elseif EngagedArray[EngagedIndex] == 'Tank' then
-		equip(sets.engaged.Tank)
-	elseif EngagedArray[EngagedIndex] == 'Evasion' then
-		equip(sets.engaged.Evasion)		
-	elseif SA then
-		if EngagedArray[EngagedIndex] == 'TH' then
-			equip(sets.JA.SATH)
-		else
-			equip(sets.JA['Sneak Attack'])
-		end		
-	elseif TA then
-		if EngagedArray[EngagedIndex] == 'TH' then
-			equip(sets.JA.TATH)
-		else
-			equip(sets.JA['Trick Attack'])
-		end	
-	elseif buffactive == 'Feint' then
-		equip(sets.JA[spell.name])
-	end			
-end	
-
-
--- Modes functions --
-function self_command(command)	
-	if command == 'C9' then -- Offense Cycle --
-        EngagedIndex = (EngagedIndex % #EngagedArray) + 1
-        status_change(player.status)
-        add_to_chat(158,'TP Set: ' .. EngagedArray[EngagedIndex])			
-    elseif command == 'C8' then -- Capacity toggle --
-        if Capacity == 'ON' then
-            Capacity = 'OFF'
-            add_to_chat(123,'Capacity Set: [OFF]')
-        else
-            Capacity = 'ON'
-            add_to_chat(158,'Capacity Set: [ON]')
-        end
-        status_change(player.status)
+		equip_current()
 	end
-end	
+end
 
 
+--This function should only get kicked off when you're engaging.  
+--If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--But I don't want to fuck myself by ignoring the engaged check.
+--I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+function equip_current()
+	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip_weapon()
+end
+
+
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
+
+--Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
+function self_command(command)
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
+	elseif command == 'toggle engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse engaged set' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	end
+end
