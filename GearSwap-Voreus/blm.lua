@@ -14,6 +14,10 @@ function get_sets()
     send_command('bind !f9 gs c toggle engage set')
 	send_command('bind ^f9 gs c reverse engage set')
 	
+	-- Toggle Burst Mode
+	send_command('bind ^f10 gs c C10')
+	-- Default Disabled Burst unless set with F10
+	Burst = 'Disabled'	
 	
     -- Job Abilities for Black Mage --
     sets.Manafont = {}
@@ -121,7 +125,7 @@ function get_sets()
 		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
 		head="Wicce petasos +2",
-		body="Wicce Coat +2",
+		body="Wicce Coat +3",
 		hands="Wicce Gloves +2",
 		legs="Wicce Chausses +3",
 		feet="Wicce Sabots +2",
@@ -134,12 +138,16 @@ function get_sets()
 		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
+	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
+		right_ring="Locus ring"
+	})	
+	
 	sets.Kaustra = {
 		main="Marin staff +1", 
 		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
 		head="Wicce petasos +2",
-		body="Wicce Coat +2",
+		body="Wicce Coat +3",
 		hands="Wicce Gloves +2",
 		legs="Wicce Chausses +3",
 		feet="Wicce Sabots +2",
@@ -161,7 +169,7 @@ function get_sets()
 		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
 		head="Wicce petasos +2",
-		body="Wicce Coat +2",
+		body="Wicce Coat +3",
 		hands="Wicce Gloves +2",
 		legs="Wicce Chausses +3",
 		feet="Wicce Sabots +2",
@@ -178,7 +186,7 @@ function get_sets()
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Pemphredo Tathlum",
 		head="Wicce Petasos +2",
-		body="Wicce Coat +2",
+		body="Wicce Coat +3",
 		hands="Regal Cuffs",
 		legs="Wicce Chausses +3",
 		feet="Wicce Sabots +2",
@@ -244,12 +252,13 @@ function get_sets()
     
 	sets.Refresh = set_combine(sets.PDT,  {
 		head="Befouled Crown",
-		body="Jhakri Robe +2",
+		body="Wicce Coat +3",
 		legs="Assid. Pants +1",
 	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
 		neck="Sanctity Necklace",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
+		right_ear="Wicce Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1"
 	})
@@ -262,7 +271,7 @@ function get_sets()
 	-- All Weaponskills for Red Mage unless explicitly defined below sets.precast.WS 
 	sets.WSD = {
 		head={ name="Nyame Helm", augments={'Path: B',}},
-		body="Jhakri Robe +2",
+		body="Nyame Mail",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Assid. Pants +1",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
@@ -277,7 +286,7 @@ function get_sets()
 	
 	sets.Cataclysm = {
 		head={ name="Nyame Helm", augments={'Path: B',}},
-		body="Jhakri Robe +2",
+		body="Wicce Coat +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Assid. Pants +1",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
@@ -292,7 +301,7 @@ function get_sets()
 	 
 	sets.Myrkr = {
 		head="Pixie Hairpin +1",
-		body="Arbatel Gown +2",
+		body="Wicce Coat +3",
 		hands="Regal Cuffs",
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
 		feet="Skaoi Boots",
@@ -307,12 +316,11 @@ function get_sets()
 
 	-- Engaged Sets Toggle--
 	sets.engaged = {}
-	sets.engaged.index = {'TP', 'Movement', 'Tank', 'Refresh'}
+	sets.engaged.index = {'TP', 'MovementTank', 'Refresh'}
 	engaged_ind = 1  	 
 	 
 	sets.engaged.TP = set_combine(sets.TP, {}) 
-	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.Tank = set_combine(sets.PDT, {})
+	sets.engaged.MovementTank = set_combine(sets.Kiting, {})
 	sets.engaged.Refresh = set_combine(sets.Refresh, {})
 	
 	--Weapon Sets--
@@ -322,7 +330,7 @@ function get_sets()
 	
 	sets.weapon.MalignancePole = {
 		main="Malignance Pole",
-		sub="Ajja grip"
+		sub="Khonsu"
 	}
 	sets.weapon.DaybreakShield = {
 		main="Daybreak",
@@ -437,8 +445,12 @@ function midcast(spell)
 		end
 	end	
 	if spell.skill == 'Elemental Magic' then
-		send_command('@input /echo Bonus in midcast is: '..bonus..'%')	
-		equip(sets.ElementalMagic)
+		send_command('@input /echo Bonus in midcast is: '..bonus..'%')
+		if Burst == 'Disabled' then 
+			equip(sets.ElementalMagic)
+		else
+			equip(sets.BurstMagic)
+		end
 		if bonus > 0 then
 			equip({waist = "Hachirin-no-obi"})
 		end
@@ -493,7 +505,14 @@ function self_command(command)
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	end
+	elseif command == 'C10' then
+		if Burst == 'Disabled' then 
+			Burst = 'Enabled'
+		else
+			Burst = 'Disabled'
+		end
+		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
+	end	 
 end
 
 

@@ -7,7 +7,7 @@ function RedMageCapes()
 end
 
 function get_sets()
-	--Instantiate RedMageCapes
+	-- Instantiate RedMageCapes
 	RedMageCapes()
 
 	-- Set macro book/set --
@@ -20,7 +20,12 @@ function get_sets()
 	
 	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
     send_command('bind !f9 gs c C9')
-	send_command('bind ^f9 gs c reverse Engaged set')
+	send_command('bind ^f9 gs c Reverse Engaged Set')
+	
+	-- Toggle Burst Mode
+	send_command('bind ^f10 gs c C10')
+	-- Default Disabled Burst unless set with F10
+	Burst = 'Disabled'
 	
     -- Job Abilities for Red Mage --
     sets.Chainspell = {body="Vitiation tabard +3"}
@@ -119,7 +124,7 @@ function get_sets()
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		head="Ea Hat +1",
-		body="Ea Houppelande",
+		body="Ea Houppelande +1",
 		hands="Leth. Ganth. +3",
 		legs="Leth. Fuseau +3",
 		feet="Leth. Houseaux +3",
@@ -128,6 +133,23 @@ function get_sets()
 		left_ear="Malignance Earring",
 		right_ear="Regal Earring",
 		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		right_ring="Freke Ring",
+		back=RedMageCapes.FastCast,
+		ammo="Pemphredo Tathlum"
+	}
+	
+	sets.BurstMagic = {
+		ammo="Pemphredo Tathlum",
+		head="Ea Hat +1",
+		body="Ea Houppe. +1",
+		hands="Ea Cuffs",
+		legs="Leth. Fuseau +3",
+		feet="Ea Pigaches",
+		neck="Mizu. Kubikazari",
+		waist="Eschan Stone",
+		left_ear="Malignance Earring",
+		right_ear="Regal Earring",
+		left_ring="Locus Ring",
 		right_ring="Freke Ring",
 		back=RedMageCapes.FastCast
 	}
@@ -411,7 +433,11 @@ function midcast(spell)
 		equip(sets.Cure)
 	end
 	if spell.skill == 'Elemental Magic' then
-		equip(sets.ElementalMagic)
+		if Burst == 'Disabled' then 
+			equip(sets.ElementalMagic)
+		else
+			equip(sets.BurstMagic)
+		end
 	end
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
@@ -462,11 +488,18 @@ function self_command(command)
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse Engaged set' then
+	elseif command == 'Reverse Engaged Set' then
 		engaged_ind = engaged_ind -1
 		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
+	elseif command == 'C10' then
+		if Burst == 'Disabled' then 
+			Burst = 'Enabled'
+		else
+			Burst = 'Disabled'
+		end
+		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
 	end	 
 end
 
