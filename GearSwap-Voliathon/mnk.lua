@@ -31,7 +31,7 @@ function get_sets()
     sets.JA.Dodge = {feet="Anchorite's Gaiters +3"}
     sets.JA.Mantra = {feet="Hes. Gaiters +1"}
     sets.JA.Footwork = {feet="Bhikku gaiters +2"}
-	sets.JA.Impetus={body="Bhikku Cyclas +2"}
+	sets.JA.Impetus={body="Bhikku Cyclas +3"}
 	sets.JA.PerfectCounter={head="Bhikku Crown +2"}
     sets.JA.HundredFists = {legs="Hes. Hose +1"}
 	sets.JA.Waltz = {legs="Dashing subligar"}
@@ -44,9 +44,9 @@ function get_sets()
   TP_ind = 1
 	
     sets.TP.BadAss = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
-		body="Bhikku Cyclas +2",
+		body="Bhikku Cyclas +3",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
 		legs="Bhikku Hose +3",
 		feet="Anch. Gaiters +3",
@@ -60,7 +60,7 @@ function get_sets()
     }	
 
     sets.TP.Impetus = {
-		body="Bhikku Cyclas +2",
+		body="Bhikku Cyclas +3",
 		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
 	}
 	
@@ -110,7 +110,7 @@ function get_sets()
 	sets.WS.VictorySmite = {
 		ammo="Coiste Bodhar",
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body="Bhikku Cyclas +2",
+		body="Bhikku Cyclas +3",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
 		feet="Ken. Sune-Ate +1",
@@ -126,7 +126,7 @@ function get_sets()
 	sets.WS.FinalHeaven = {
 		ammo="Knobkierrie",
 		head="Nyame Helm",
-		body="Nyame mail",
+		body="Bhikku Cyclas +3",
 		hands="Anchorite's gloves +3",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
@@ -174,7 +174,7 @@ function get_sets()
 	sets.WS.HowlingFist = {
 		ammo="Knobkierrie",
 		head="Ken. Jinpachi +1",
-		body="Ken. Samue +1",
+		body="Bhikku Cyclas +3",
 		hands="Malignance Gloves",
 		legs="Ken. Hakama +1",
 		feet={ name="Herculean Boots", augments={'Accuracy+15 Attack+15','"Triple Atk."+3','Accuracy+5',}},
@@ -190,7 +190,7 @@ function get_sets()
 	sets.WS.TornadoKick = {
 		ammo="Knobkierrie",
 		head="Mpaca's Cap",
-		body="Nyame mail",
+		body="Bhikku Cyclas +3",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
 		feet="Anch. Gaiters +3",
@@ -283,7 +283,7 @@ end
 
 function aftercast(spell)
 	if (spell.name == 'Impetus') then
-		equip({body="Bhikku Cyclas +2"})
+		equip({body="Bhikku Cyclas +3"})
 	elseif (spell.name == 'Footwork') then
 		equip({feet="Anch. Gaiters +3"})
 	else
@@ -295,7 +295,7 @@ end
 function equip_current()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
 	if (buffactive['Impetus']) then
-		equip({body="Bhikku Cyclas +2"})
+		equip({body="Bhikku Cyclas +3"})
 	end
 	if (buffactive['Footwork']) then
 		equip({feet="Anchorite's Gaiters +3"})
