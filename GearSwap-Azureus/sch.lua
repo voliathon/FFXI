@@ -39,10 +39,10 @@ function get_sets()
     send_command('bind !f9 gs c toggle Engaged set')
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
-	-- We gotta have a Burst Mode
-    -- This is used when I want force burst gear sets on nukes	
-	send_command('bind !f9 gs c toggle Engaged set')
-	send_command('bind ^f9 gs c reverse Engaged set')
+	-- Toggle Burst Mode
+	send_command('bind ^f10 gs c C10')
+	-- Default Disabled Burst unless set with F10
+	Burst = 'Disabled'	
 	
     -- Job Abilities for Scholar --
     sets.Ebullience = {head="Arbatel Bonnet +2"}
@@ -163,32 +163,18 @@ function get_sets()
 		legs="Agwu's Slops",
 		feet="Arbatel Loafers +2",
 		neck="Argute stole +2",
-		waist="Tengu-no-Obi",
+		waist="Eschan stone",
 		left_ear="Malignance Earring",
-		right_ear="Halasz Earring",
-		left_ring="Mujin Band",
-		right_ring="Locus Ring",
+		right_ear="Arbatel Earring +1",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
-	-- sets.Burst = {
-		-- main="Bunzi's Rod",
-		-- sub="Ammurapi Shield",
-		-- ammo="Sroda Tathlum",
-		-- head="Agwu's Cap",
-		-- body="Agwu's Robe",
-		-- hands="Arbatel Bracers +2",
-		-- legs="Agwu's Slops",
-		-- feet="Agwu's Pigaches",
-		-- neck="Argute stole +2",
-		-- waist="Tengu-no-Obi",
-		-- left_ear="Malignance Earring",
-		-- right_ear="Halasz Earring",
-		-- left_ring="Mujin band",
-		-- right_ring="Locus Ring",
-		--     back={ name="Lugh's Cape", augments={'INT+10','Mag. Acc+17 /Mag. Dmg.+17','Mag. Acc.+8','"Mag.Atk.Bns."+3',}}	
-	
-	-- }
+	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
+		left_ring="Mujin Band",
+		right_ring="Locus Ring"
+	})
 	
 	sets.Kaustra = {
 		main="Bunzi's Rod",
@@ -200,7 +186,7 @@ function get_sets()
 		legs="Agwu's Slops", -- Magic accuracy and damage
 		feet="Agwu's Pigaches", -- Magic accuracy and damage
 		neck="Argute Stole +2", -- Magic skill and damage
-		waist="Tengu-no-Obi",
+		waist="Eschan stone",
 		left_ear="Malignance Earring",
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
@@ -222,7 +208,7 @@ function get_sets()
 		legs="Agwu's Slops", -- Magic accuracy and damage
 		feet="Agwu's Pigaches", -- Magic accuracy and damage
 		neck="Argute Stole +2", -- Magic skill and damage
-		waist="Tengu-no-Obi",
+		waist="Eschan stone",
 		left_ear="Malignance Earring", -- Magic accuracy and damage
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
@@ -537,7 +523,11 @@ function midcast(spell)
 	end	
 	if spell.skill == 'Elemental Magic' then
 		send_command('@input /echo Bonus in midcast is: '..bonus..'%')	
-		equip(sets.ElementalMagic)
+		if Burst == 'Disabled' then 
+			equip(sets.ElementalMagic)
+		else
+			equip(sets.BurstMagic)
+		end
 		if bonus > 0 then
 			equip({waist = "Hachirin-no-obi"})
 		end
@@ -567,17 +557,7 @@ end
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C7' then -- Mecistopins Mantle toggle 
-		if Capacity == 'OFF' then
-			Capacity = 'ON'
-			equip({back="Mecistopins mantle"})
-            add_to_chat(158,'Capacity mantle: [ON]')
-		else
-			Capacity = 'OFF'
-			equip_current()
-   		    add_to_chat(123,'Capacity mantle: [OFF]')
-		end
-	elseif command == 'toggle Engaged set' then
+	if command == 'toggle Engaged set' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
@@ -587,7 +567,14 @@ function self_command(command)
 		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	end	 
+	elseif command == 'C10' then
+		if Burst == 'Disabled' then 
+			Burst = 'Enabled'
+		else
+			Burst = 'Disabled'
+		end
+		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
+	end	  
 end
 
 
@@ -717,8 +704,8 @@ function get_obi(spell)
         return { equip({waist = "Hachirin-no-obi"}) }
     else
 		--Debug
-		--send_command('@input /echo Waist: Tengu-no-Obi')	
-        return { equip({waist = "Tengu-no-obi"}) }
+		--send_command('@input /echo Waist: Eschan stone')	
+        return { equip({waist = "Eschan stone"}) }
     end
 end
 

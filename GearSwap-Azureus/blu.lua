@@ -195,7 +195,7 @@ function get_sets()
         body="Assimilator's Jubbah +3",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
-        back="Cornflower Cape",
+		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}},
 		right_ear="Hashishin Earring +1"
     }
 	
@@ -212,7 +212,7 @@ function get_sets()
 		right_ear="Hashishin Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back=Rosmerta.MagicDMG
+		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}}
 	}
 
     -- Custom Physical Magic --
