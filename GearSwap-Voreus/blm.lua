@@ -253,7 +253,7 @@ function get_sets()
 	sets.Refresh = set_combine(sets.PDT,  {
 		head="Befouled Crown",
 		body="Wicce Coat +3",
-		legs="Assid. Pants +1",
+		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
 	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
 		neck="Sanctity Necklace",
 		waist="Fucho-no-Obi",

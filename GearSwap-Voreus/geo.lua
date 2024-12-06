@@ -122,21 +122,21 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Daybreak",
-		sub="Genmei Shield",	
-		ammo="Dosis Tathlum",
-		head="Merlinic Hood",
-		body="Azimuth coat +2",
-		hands="Azimuth gloves +2",
-		legs="Azimuth tights +2=-",
-		feet="Merlinic Crackows",
-		neck="Saevus pendant +1",
-		waist="Refoccilation stone",
+		main={ name="Marin Staff +1", augments={'Path: A',}},
+		sub="Enki Strap",
+		ammo="Pemphredo Tathlum",
+		head="Ea Hat +1",
+		body="Ea Houppe. +1",
+		hands="Azimuth Gloves +2",
+		legs="Azimuth Tights +2",
+		feet="Azimuth Gaiters +2",
+		neck="Mizu. Kubikazari",
+		waist="Eschan Stone",
 		left_ear="Barkaro. Earring",
-		right_ear="Halasz Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
-		back="Seshaw cape"
+		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Damage taken-4%'}},
+		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		right_ring="Freke Ring",
+		back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
 	}
 	
 	sets.MagicAccuracy = {}
@@ -157,12 +157,12 @@ function get_sets()
 		right_ear="Gwati Earring",
 		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
-		back="Seshaw cape"
+		back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
 	}
 
     sets.Enfeebling = {
 		main="Daybreak",
-		sub="Genmei Shield",	
+		sub="Ammurapi shield",	
 		range="Dunna",
 		head="Azimuth hood +2",
 		body="Azimuth coat +2",
@@ -175,7 +175,7 @@ function get_sets()
 		right_ear="Gwati Earring",
 		left_ring="Stikini ring +1",
 		right_ring="Stikini Ring +1",
-		back="Seshaw cape"
+		back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
 	}
 
 
@@ -268,11 +268,12 @@ function get_sets()
 	sets.Refresh = set_combine(sets.PDT,  {
 		main="Daybreak",
 		sub="Genmei shield",
-		head="Befouled crown",
-		body="Jhakri robe +2",
-		hands="Bagua mitaines +1",
-		right_ring="Stikini ring +1",
-		left_ring="Stikini ring +1"
+		head="Befouled Crown",
+		body="Jhakri Robe +2",
+		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
+	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1"
 	})
 	
 	
@@ -297,6 +298,9 @@ function get_sets()
 		left_ring="K'ayres Ring",
 		right_ring="Karieyh Ring"
 	 }
+	 
+2659
+2771
 	 
 	 
 	 sets.Idris = {
