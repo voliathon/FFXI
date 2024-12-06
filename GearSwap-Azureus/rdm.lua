@@ -205,7 +205,7 @@ function get_sets()
     sets.Refresh = set_combine(sets.PDT,  {
 		head="Volte Beret",
 		body="Jhakri robe +2",
-		hands={ name="Chironic Gloves", augments={'Crit.hit rate+4','Weapon Skill Acc.+4','"Refresh"+1','Accuracy+2 Attack+2','Mag. Acc.+17 "Mag.Atk.Bns."+17',}},
+		hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12'}},
 		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
 		waist="Fucho-no-Obi",
 		legs="Volte brais",

@@ -219,7 +219,7 @@ function get_sets()
   sets.engaged.Refresh = {
     head="Volte beret",
     body="Annoint. Kalasiris",
-    hands="Volte gloves",
+    hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12'}},
     legs="Assid. Pants +1",
     feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
     neck="Bathy Choker +1",

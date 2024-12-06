@@ -61,7 +61,7 @@ function get_sets()
     sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +3" })
     sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +3"})
     sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
-    sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet="Chass. Bottes +2" })
+    sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet="Chass. Bottes +3" })
 
 	
 	-- Damage Taken with Movement
@@ -74,7 +74,7 @@ function get_sets()
 		neck="Loricate Torque +1",
 		waist="Sailfi Belt +1",
 		left_ear="Hearty Earring",
-		right_ear="Sanare Earring",
+		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
 		right_ring="Chirich Ring +1"
     }
@@ -91,7 +91,7 @@ function get_sets()
 		body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Chass. Bottes +2",
+		feet="Chass. Bottes +3",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
@@ -106,7 +106,7 @@ function get_sets()
 		head="Pixie Hairpin +1",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Chass. Bottes +2",
+		feet="Chass. Bottes +3",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
@@ -260,7 +260,7 @@ function get_sets()
 		neck="Loricate Torque +1",
 		waist="Sailfi Belt +1",
 		left_ear="Hearty Earring",
-		right_ear="Sanare Earring",
+		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
 		right_ring="Chirich Ring +1"	
 	}

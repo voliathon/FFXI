@@ -45,27 +45,19 @@ function get_sets()
 	Burst = 'Disabled'	
 	
     -- Job Abilities for Scholar --
-    sets.Ebullience = {head="Arbatel Bonnet +2"}
-    sets.Rapture = {head="Arbatel Bonnet +2"}
-    sets.Perpetuance = {hands="Arbatel Bracers +2"}
     sets.Immanence = {hands="Arbatel Bracers +2"}
-    sets.Penury = {legs="Arbatel Pants +2"}
-    sets.Parsimony = {legs="Arbatel Pants +2"}
-    sets.Celerity = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
-    sets.Alacrity = {head="Nahtirah Hat",feet="Pedagogy Loafers +1"}
-    sets.Stormsurge = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
-
-
-	sets.Aspir = {feet="Agwu's Pigaches"}
+    sets.Celerity = {feet="Pedagogy Loafers +3"}
+    sets.Alacrity = {feet="Pedagogy Loafers +3"}
+    sets.Stormsurge = {feet={ name="Peda. Loafers +3", augments={'Enhances "Stormsurge" effect'}},}
 
     -- Fast Cast for Scholar --
     sets.FastCast = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6'}},
+		head="Amalric coif +1",
 		body="Zendik Robe",
 		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
 		legs="Pinga Pants",
-		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
+		feet="Pedagogy Loafers +3",
 		neck="Baetyl pendant",
 		waist="Embla Sash",
 		left_ear="Malignance Earring",
@@ -74,13 +66,18 @@ function get_sets()
 		right_ring="Stikini Ring +1",
 		back="Perimede Cape"
 	}
+	
+	sets.FastCastGrimoire = set_combine(sets.FastCast,  {
+		head="Pedagogy Mortarboard +3",
+		feet="Academic's loafer +1"
+	})
 
 	sets.Duration = {
 		main="Musa",
 		sub="Khonsu",
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
-		body={ name="Telchine Chas.", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
+		body="Pedagogy Gown +3",
 		hands={ name="Telchine Gloves", augments={'Accuracy+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
 		legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
 		feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','"Conserve MP"+5','Enh. Mag. eff. dur. +10'}},
@@ -96,10 +93,6 @@ function get_sets()
 		feet="Arbatel Loafers +2"
 	})
 	
-	sets.Sublimation = {
-		head="Academic's Mortarboard +3"
-	}
-
 	-- Stoneskin
 	sets.Stoneskin = set_combine(sets.Duration,  {
 		hands="Carapacho Cuffs",
@@ -121,9 +114,9 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head={ name="Kaykaus Mitra", augments={'MP+60','MND+10','Mag. Acc.+15'}},
 		body="Vanya robe",
-		hands="Arbatel bracers +2",
+		hands="Pedagogy Bracers +3",
 		legs="Pinga Pants",
-		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7'}},
+		feet="Pedagogy Loafers +3",
 		neck="Incanter's Torque",
 		waist="Luminary Sash",
 		left_ear="Mendi. Earring",
@@ -143,6 +136,7 @@ function get_sets()
 		main="Musa",
 		sub="Khonsu",
 		head="Arbatel Bonnet +2",
+		hands="Arbatel Bracers +2",
 		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
 	})
 
@@ -155,7 +149,7 @@ function get_sets()
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		main="Marin staff +1",
-		sub="Khonsu",
+		sub="Enki Strap",
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap",
 		body="Agwu's Robe",
@@ -194,9 +188,59 @@ function get_sets()
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
-    sets.DarkMagic = {
-
+    sets.DrainAspir = {
+		main={ name="Marin Staff +1", augments={'Path: A',}},
+		sub="Khonsu",
+		ammo="Pemphredo Tathlum",
+		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+		body="Arbatel Gown +2",
+		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
+		legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
+		feet="Agwu's Pigaches",
+		neck={ name="Argute Stole +2", augments={'Path: A',}},
+		waist="Fucho-no-Obi",
+		left_ear="Malignance Earring",
+		right_ear={ name="Arbatel Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Enmity-3',}},
+		left_ring="Excelsis Ring",
+		right_ring="Evanescence Ring",
+		back="Perimede Cape"
 	}
+	
+	sets.Cursna = {
+		main="Marin staff +1",
+		sub="Khonsu",
+		ammo="Pemphredo Tathlum",
+		head="Arbatel Bonnet +2",
+		body="Arbatel Gown +2",
+		hands="Arbatel Bracers +2",
+		legs="Arbatel Pants +2",
+		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		neck="Malison Medallion",
+		waist="Luminary Sash",
+		left_ear="Crep. Earring",
+		right_ear="Malignance Earring",
+		left_ring="Ephedra Ring",
+		right_ring="Menelaus's Ring",
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+	}	
+	
+    sets.MagicAccuracy = {
+		main="Musa",
+		sub="Khonsu",
+		ammo="Pemphredo Tathlum",
+		head="Arbatel Bonnet +2",
+		body="Arbatel Gown +2",
+		hands="Arbatel Bracers +2",
+		legs="Arbatel Pants +2",
+		feet="Arbatel Loafers +2",
+		neck={ name="Argute Stole +2", augments={'Path: A',}},
+		waist="Witful belt",
+		left_ear="Crep. Earring",
+		right_ear="Malignance Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+	}	
 	
 	sets.Helix = {
 		main="Bunzi's Rod", -- High magic damage and skill
@@ -204,7 +248,7 @@ function get_sets()
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap", -- Magic accuracy and damage
 		body="Agwu's Robe", -- Magic accuracy and damage
-		hands="Agwu's Gages", -- Magic accuracy and damage
+		hands="Arbatel bracers +2", -- Magic accuracy and damage
 		legs="Agwu's Slops", -- Magic accuracy and damage
 		feet="Agwu's Pigaches", -- Magic accuracy and damage
 		neck="Argute Stole +2", -- Magic skill and damage
@@ -311,10 +355,13 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		head="Volte Beret",
+		main="Bolelabunga",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum",
+		head={ name="Chironic Hat", augments={'AGI+9','CHR+8','"Refresh"+2','Accuracy+3 Attack+3','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
 		body="Jhakri Robe +2",
-		hands="Volte Gloves",
-		legs="Assid. Pants +1",
+		hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12',}},
+		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},
 		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
 		neck="Sanctity Necklace",
 		waist="Fucho-no-Obi",
@@ -389,92 +436,55 @@ function get_sets()
 	 
 end
 
+-- Scholar Job Abilities where equip needs to be used upon activation.
+-- Weaponskills
+-- Hitting Grimoire equipment as a clean up. Should always be in a form of Light Arts and Dark Arts on Scholar
 function precast(spell,abil)
-	--Scholar Job Abilities
 	if spell.name == 'Immanence' then
 		equip(sets.Immanence)
-	end
-	if spell.name == 'Ebullience' then
-		equip(sets.Ebullience)
-	end
-	if spell.name == 'Rapture' then
-		equip(sets.Rapture)
-	end
-	if spell.name == 'Perpetuance' then
-		equip(sets.Perpetuance)
-	end
-	if spell.name == 'Penury' then
-		equip(sets.Penury)
-	end
-	if spell.name == 'Parsimony' then
-		equip(sets.Parsimony)
-	end
-	if spell.name == 'Celerity' then
-		equip(sets.Celerity)
-	end
-	if spell.name == 'Alacrity' then
-		equip(sets.Alacrity)
-	end
-	if spell.name == 'Stormsurge' then
-		equip(sets.Stormsurge)
-	end
-	
-	if spell.skill == 'Elemental Magic' then
-		equip(sets.ElementalMagic)
-		get_obi(spell)
-	end
-	if spell.action_type == 'Magic' then
-		equip(sets.FastCast)
-	end
-		
-	--Can add stuff here for other magic. Doesn't have to go to idle at all
-	
-
-	--WS Lookups
-	if spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
+	elseif spell.name == 'Penury'  or spell.name == 'Parsimony' then
+		equip({legs="Arbatel Pants +2"})
+	elseif spell.name == 'Celerity' or spell.name == 'Alacrity' or spell.name == 'Stormsurge' then
+		equip({feet="Pedagogy loafers +3"})
+	elseif spell.name == 'Stun' then
+		equip(sets.MagicAccuracy)
+	elseif spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Rock Crusher" then
+	elseif spell.name == "Rock Crusher" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Earth Crusher" then
+	elseif spell.name == "Earth Crusher" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Starburst" then
+	elseif spell.name == "Starburst" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Sunburst" then
+	elseif spell.name == "Sunburst" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Shell Crusher" then
+	elseif spell.name == "Shell Crusher" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Full Swing" then
+	elseif spell.name == "Full Swing" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Spirit Taker" then
+	elseif spell.name == "Spirit Taker" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Retribution" then
+	elseif spell.name == "Retribution" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Omniscience" then
+	elseif spell.name == "Omniscience" then
 		equip(sets.WSD)
-	end
-	if spell.name == "Cataclysm" then
+	elseif spell.name == "Cataclysm" then
 		equip(sets.Cataclysm)
-	end
-	if spell.name == "Myrkr" then
+	elseif spell.name == "Myrkr" then
 		equip(sets.Myrkr)
-	end
-	if spell.name == "Shattersoul" then
+	elseif spell.name == "Shattersoul" then
 		equip(sets.WSD)
-	end
-	-- Add logic for Waltz
-	-- Add logic for Utsusemi
-  
+	elseif (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
+        (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
+			equip(sets.FastCastGrimoire)
+			send_command('@input /echo yeah we hit this shit in precast.')	
+	end 
 end
 
+--TODO 
+--Add logic to check for Perpetuance, Rapture, Ebullience
+--If Perpetuance then Arbatel bracers +2 is required
+--If Rapture or Ebullience is active then Arbatel Bonnet +2 is required
 
 function midcast(spell)
 
@@ -489,6 +499,9 @@ function midcast(spell)
 		equip(sets.Duration)
 	end
 
+	if string.find(spell.english,'Aspir') or string.find(spell.english,'Drain') then 
+		equip(sets.DrainAspir)
+	end
 
 	if string.find(spell.english,'Cur') then 
 		equip(sets.Cure)
@@ -503,8 +516,7 @@ function midcast(spell)
 		equip(sets.Aquaveil)
 	end
 	if spell.name == 'Cursna' then
-		--TODO - Add a Cursna set 5/26/2023
-		equip(sets.FastCast)
+		equip(sets.Cursna)
 	end
 	if spell.name == "Dispel" then
 		equip(sets.Enfeebling)
@@ -535,6 +547,16 @@ function midcast(spell)
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
 	end	
+	
+	if buffactive["Rapture"] or buffactive["Ebullience"] then
+	--send_command('@input /echo Fuck yeah Bonnet is equipped!')
+		equip({head="Arbatel Bonnet +2"})
+	end
+	if buffactive["Perpetuance"] then
+	--send_command('@input /echo Fuck yeah Bracers are equipped!')
+		equip({hands="Arbatel bracers +2"})
+	end
+	
 end
 
 --We need to do some thinking and testing for this set...
