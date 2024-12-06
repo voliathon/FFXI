@@ -47,7 +47,7 @@ function get_sets()
 		ammo="Coiste Bodhar",
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
 		body="Bhikku Cyclas +3",
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20'}},
+		hands="Bhikku gloves +3",
 		legs="Bhikku Hose +3",
 		feet="Anch. Gaiters +3",
 		neck="Monk's nodowa +2",
@@ -84,7 +84,21 @@ function get_sets()
 		back=MonkCapes.TP
 	}
     
-	sets.TP.Accuracy = set_combine(sets.TP.Tank, {})
+	sets.TP.Accuracy = {
+		ammo="Coiste Bodhar",
+		head="Bhikku Crown +2",
+		body="Mpaca's Doublet",
+		hands="Bhikku gloves +3",
+		legs="Bhikku Hose +3",
+		feet="Mpaca's Boots",
+		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
+		waist="Moonbow Belt +1",
+		left_ear="Cessance Earring",
+		right_ear="Schere Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back=MonkCapes.TP	
+	}
 	
 	sets.TP.TH = set_combine(sets.TP.Tank, {
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},

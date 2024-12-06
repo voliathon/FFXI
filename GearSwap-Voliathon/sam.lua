@@ -33,7 +33,7 @@ function get_sets()
 	waist="Ioskeha Belt +1",
 	left_ear="Schere earring",
 	right_ear="Brutal Earring",
-	left_ring="Chirich Ring +1",
+    left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
 	right_ring="Flamma ring",
     back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
@@ -52,7 +52,7 @@ function get_sets()
     left_ear="Infused Earring",
     right_ear="Hearty Earring",
     left_ring="Shneddick Ring",
-    right_ring="Chirich Ring +1",
+    right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
     back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
   
@@ -85,8 +85,8 @@ function get_sets()
 	waist="Ioskeha Belt +1",
 	left_ear="Cessance earring",
 	right_ear="Brutal Earring",
-	left_ring="Chirich Ring +1",
-	right_ring="Chirich Ring +1",
+    left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
     back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }
   
@@ -101,8 +101,8 @@ function get_sets()
     waist={ name="Sailfi Belt +1", augments={'Path: A'}},
     left_ear="Cessance Earring",
     right_ear="Digni. Earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+    left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
     back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
   }  
 
@@ -120,7 +120,7 @@ function get_sets()
 		left_ear="Thrud Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Epaminondas's Ring",
-		right_ring="Chirich Ring +1",
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	}
   
@@ -136,7 +136,7 @@ function get_sets()
 		left_ear="Thrud Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Epaminondas's Ring",
-		right_ring="Chirich Ring +1",
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back={ name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	}
 	
@@ -185,7 +185,7 @@ function get_sets()
 		left_ear="Schere Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Sroda Ring",
-		right_ring="Chirich Ring +1",
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}		
 	}
 
