@@ -81,7 +81,7 @@ function get_sets()
 	 
  	sets.engaged.Movement = set_combine(sets.Tank,{
 		left_ring="Shneddick Ring"
-	}
+	})
 	
 	sets.engaged.Evasion = {
 		ammo="Yamarang",
@@ -235,9 +235,17 @@ function get_sets()
 	
  -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TwashtarGleti', 'TauretCentovente', 'TauretCrepuscularKnife'}
+  sets.weapon.index = {'TerpsichoreTwashtar','TerpsichoreCentovente','AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TwashtarGleti', 'TauretCentovente', 'TauretCrepuscularKnife'}
   weapon_ind = 1     
   
+ sets.weapon.TerpsichoreTwashtar = {
+	main="Terpsichore",
+	sub="Twashtar"
+ }
+ sets.weapon.TerpsichoreCentovente = {
+	main="Terpsichore",
+	sub="Centovente"
+ } 
  sets.weapon.AeneasCentovente = {
 	main="Aeneas",
 	sub="Centovente"
