@@ -422,7 +422,7 @@ end
 function aftercast(spell)
   equip_current()
   --NOTE - Something to think about...
-  --This could be an issue if you need DT while Triple Shot is up. Frac+2 is fine. 
+  --This could be an issue if you need DT while Triple Shot is up. Frac+3 is fine. 
   --I'm taking the stance I'd rather see this gear when Triple Shot is up as compared to not seeing it
   if (buffactive['Triple Shot']) then
 	equip({body="Chasseur's Frac +3", hands="Lanun Gants +2"})

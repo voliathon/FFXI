@@ -1,19 +1,27 @@
 -- https://www.bg-wiki.com/ffxi/Community_Dancer_Guide
 -- Dancer Lua of Awesome
+--Notes from ffxiah
+--Outside of Escha: 
+--   Climactic > Rudra > RF > Grand pas > Rudra > RF Rudra > Trance Rudra > RF Rudra > RF Rudra > engage, make tp > Climactic > Rudra > make TP > Rudra - 8 climactic Rudras
+
+--In Escha: 
+--   Climactic > Rudra > RF > Grand pas > Rudra > RF Rudra > Trance Rudra > RF Rudra > RF Rudra > Revit > Climactic > RF Rudra > wing Rudra > wing Rudra - 9 Climactic Rudras without TPing (could go for 10 with TPing before Revit)
 
 function get_sets()
 -- Set macro book/set --
     send_command('input /macro book 2;wait .1;input /macro set 1') -- set macro book/set here	
 	
--- Binds for modes
-	-- Toggle Weapon F8 Key
-	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c Reverse Toggle Weapon')
-	send_command('bind ^f9 gs c C9') 
+	-- Binds for switching weapon modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	
+	-- Binds for switching gear sets
+    send_command('bind !f9 gs c toggle engage set')
+	send_command('bind ^f9 gs c reverse engage set')
 
 	-- Engaged Sets Toggle--
     sets.engaged = {}
-    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Evasion"}
+    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Movement","Evasion"}
 	engaged_ind = 1
 
     sets.engaged.TreasureHunter = {
@@ -70,6 +78,10 @@ function get_sets()
 		right_ring="Fortified Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	 }	
+	 
+ 	sets.engaged.Movement = set_combine(sets.Tank,{
+		left_ring="Shneddick Ring"
+	}
 	
 	sets.engaged.Evasion = {
 		ammo="Yamarang",
@@ -91,7 +103,7 @@ function get_sets()
 	-- Job Abilities Sets --
     sets.JA = {}
     sets.JA.Waltz = {
-		head="Mummu Bonnet +2", --Waltz Received +9%
+		head="Horos Tiara +3", --Waltz Potency +15%
 		body="Maxixi Casaque +3", --Waltz Potency +19%, Waltz Received Potency +8%, Waltz Recast -2 
 		legs="Dashing subligar", --Waltz Potency +10% 
 		feet="Maxixi Toe Shoes +3", --Waltz Potency +14% 
@@ -266,40 +278,40 @@ function precast(spell,action)
 	    equip(sets.JA.Samba)	
 	
 	elseif spell.name == "Quickstep" or spell.name == "Box Step" or spell.name == "Stutter Step" then
-		equip(sets.StepAccuracy)
+		equip(sets.JA.StepAccuracy)
 	
 	elseif spell.name == "Feather Step" then
-		equip(sets.FeatherStep) --This set also has StepAccuracy associated
+		equip(sets.JA.FeatherStep) --This set also has StepAccuracy associated
 	
 	elseif spell.name == "Spectral Jig" or spell.name == "Chocobo Jig" or spell.name == "Chocobo Jig II" then
-		equip(sets.Jig)
+		equip(sets.JA.Jig)
 	
 	elseif spell.name == "Violent Flourish" then
-		equip(sets.ViolentFlourish)
+		equip(sets.JA.ViolentFlourish)
 		
 	elseif spell.name == "Reverse Flourish" then
-		equip(sets.ReverseFlourish)
+		equip(sets.JA.ReverseFlourish)
 		
 	elseif spell.name == "Climactic Flourish" then -- Climactic Flourish forces one more critical hit Forced hits receive damage +28%. 
-		equip(sets.ClimacticFlourish)
+		equip(sets.JA.ClimacticFlourish)
 	
 	elseif spell.name == "Striking Flourish" then -- +65% Critical Hit Rate for the main hit and Double Attack of the stacked attack round or Weapon Skill
-		equip(sets.StrikingFlourish)
+		equip(sets.JA.StrikingFlourish)
 	
 	elseif spell.name == "Trance" then
-		equip(sets.Trance)
+		equip(sets.JA.Trance)
 		
 	elseif spell.name == "Fan Dance" then
-		equip(sets.FanDance)
+		equip(sets.JA.FanDance)
 		
 	elseif spell.name == "No Foot Rise" then
-		equip(sets.NoFootRise)
+		equip(sets.JA.NoFootRise)
 		
 	elseif spell.name == "Saber Dance" then
-		equip(sets.SaberDance)
+		equip(sets.JA.SaberDance)
 		
 	elseif spell.name == "Closed Position" then
-		equip(sets.ClosedPosition)
+		equip(sets.JA.ClosedPosition)
 		
 	-- Weapon Skill --
 	-- 50% DEX Modifier Evisceration / Crits per hits
@@ -339,41 +351,48 @@ function aftercast(spell)
 end
 
 
+--This function should only get kicked off when you're engaging.  
+--If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--But I don't want to fuck myself by ignoring the engaged check.
+--I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
-	equip_weapon()
+
 end
 
-
-function equip_weapon()
-	equip(sets.weapon[sets.weapon.index[weapon_ind]])
-end
-
-
+--Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C8' then 
-		--Ctrl+F8 is Engaged Set
-		weapon_ind = weapon_ind +1
-		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_weapon()
-	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+	if command =='toggle weapon set' then
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_weapon()
-	elseif command == 'C9' then
-	--Ctrl+F9 is Engaged Set
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
+	elseif command == 'toggle engage set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse engage set' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
 		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse Engaged set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
-		equip_current()
-	end	 
+	end
 end
+
+
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+	send_command('@input /tell <me> Wakies Wakies Baby Girl.  Daddy will not let this stand!')
+	end
+end)

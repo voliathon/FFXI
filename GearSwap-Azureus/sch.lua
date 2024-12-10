@@ -477,14 +477,9 @@ function precast(spell,abil)
 	elseif (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
         (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
 			equip(sets.FastCastGrimoire)
-			send_command('@input /echo yeah we hit this shit in precast.')	
+			--send_command('@input /echo yeah we hit this shit in precast.')	
 	end 
 end
-
---TODO 
---Add logic to check for Perpetuance, Rapture, Ebullience
---If Perpetuance then Arbatel bracers +2 is required
---If Rapture or Ebullience is active then Arbatel Bonnet +2 is required
 
 function midcast(spell)
 
