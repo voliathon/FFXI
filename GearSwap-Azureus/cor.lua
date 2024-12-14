@@ -28,11 +28,23 @@ function get_sets()
 	CamulusCapes()
 
 	-- Job Abilities
-    sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +3", hands="Lanun Gants +2", back=CamulusCape.melee_double_attack })
-    sets.RandomDeal = set_combine(sets.DamageTaken, { body="Lanun Frac +2" })
-    sets.WildCard = set_combine(sets.DamageTaken, { feet="Lanun Bottes +3" })
-    sets.SnakeEye = set_combine(sets.DamageTaken, { legs="Lanun Trews +2" })
-    sets.Fold = set_combine(sets.DamageTaken, { hands="Lanun Gants +2" })
+    sets.TripleShot = { 
+		body="Chasseur's Frac +3", 
+		hands="Lanun Gants +2", 
+		back=CamulusCape.melee_double_attack 
+	}
+    sets.RandomDeal = { 
+		body="Lanun Frac +2" 
+	}
+    sets.WildCard = { 
+		feet="Lanun Bottes +3" 
+	}
+    sets.SnakeEye = { 
+		legs="Lanun Trews +2" 
+	}
+    sets.Fold = { 
+		hands="Lanun Gants +2" 
+	}
 	
 	-- Maximizing Corsair Rolls
 	sets.CorsairRoll = {
@@ -253,7 +265,7 @@ function get_sets()
 		body="Chasseur's Frac +3",
 		hands="Nyame Gauntlets",
 		legs="Malignance Tights",
-		feet="Nyame Sollerets",
+		feet="Chasseur's Culottes +3",
 		neck="Sanctity Necklace",
 		waist="Sailfi Belt +1",
 		left_ear="Hearty Earring",
