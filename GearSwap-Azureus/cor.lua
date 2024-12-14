@@ -263,9 +263,9 @@ function get_sets()
 	sets.engaged.DTMovement = {
 		head="Chass. Tricorne +3",
 		body="Chasseur's Frac +3",
-		hands="Nyame Gauntlets",
-		legs="Malignance Tights",
-		feet="Chasseur's Culottes +3",
+		hands="Malignance Gloves",
+		legs="Chasseur's Culottes +3",
+		feet="Malignance Boots",
 		neck="Sanctity Necklace",
 		waist="Sailfi Belt +1",
 		left_ear="Hearty Earring",
