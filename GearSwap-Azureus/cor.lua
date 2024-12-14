@@ -4,15 +4,12 @@
 --Took this idea from the previous lua script I got off the net and rolled with it. Mazusu has 7 unique Corsair Camulus's Capes >.<
 function CamulusCapes()
 	CamulusCape = {}
---    CamulusCape.storetp={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+9','"Store TP"+10'} }
     CamulusCape.ranged_ws={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'} }	
     CamulusCape.matk={ name="Camulus's Mantle", augments={'Weapon skill damage +10%'} }
     CamulusCape.str_ws={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'} }
     CamulusCape.melee_double_attack={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
 	CamulusCape.snapshot={ name="Camulus's Mantle", augments={'"Snapshot"+10'}}
-	-- DEX 20 DEX 10 ACC/ATT+20 STP+10 DT-5
 end
-
 
 function get_sets()
 	-- Set macro book/set --
@@ -60,7 +57,7 @@ function get_sets()
 	sets.BlitzersRoll = set_combine(sets.CorsairRoll, { head="Chass. Tricorne +3" })
     sets.AlliesRoll = set_combine(sets.CorsairRoll, { hands="Chasseur's Gants +3" })
     sets.TacticiansRoll = set_combine(sets.CorsairRoll, {body="Chasseur's Frac +3"})
-    sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +2" })
+    sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +3" })
     sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet="Chass. Bottes +3" })
 
 	
@@ -69,9 +66,9 @@ function get_sets()
 		head="Chass. Tricorne +3",
 		body="Chasseur's Frac +3",
 		hands="Nyame Gauntlets",
-		legs="Malignance Tights",
+		legs="Chasseur's Culottes +3",
 		feet="Nyame Sollerets",
-		neck="Loricate Torque +1",
+		neck="Sanctity Necklace",
 		waist="Sailfi Belt +1",
 		left_ear="Hearty Earring",
 		right_ear="Infused Earring",
@@ -128,7 +125,7 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
 		left_ring="Dingir Ring",
-		right_ring="Stikini Ring +1",
+		right_ring="Epaminondas's Ring",
 		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
 		--Archon Ring
 	}
@@ -144,7 +141,7 @@ function get_sets()
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body="Laksa. Frac +3",
 		hands="Chasseur's Gants +3",
-		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11',}},
+		legs="Nyame Flanchard",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -176,7 +173,7 @@ function get_sets()
 		head="Nyame Helm",
 		body="Lanun Frac +2",
 		hands="Nyame Gauntlets",
-		legs="Chasseur's culottes +2",
+		legs="Chasseur's Culottes +3",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
@@ -240,7 +237,7 @@ function get_sets()
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
 		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6'}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+		legs="Malignance tights",
 		feet="Malignance Boots",
 		neck="Clotharius Torque",
 		waist="Windbuffet Belt +1",
@@ -257,7 +254,7 @@ function get_sets()
 		hands="Nyame Gauntlets",
 		legs="Malignance Tights",
 		feet="Nyame Sollerets",
-		neck="Loricate Torque +1",
+		neck="Sanctity Necklace",
 		waist="Sailfi Belt +1",
 		left_ear="Hearty Earring",
 		right_ear="Infused Earring",
@@ -269,26 +266,26 @@ function get_sets()
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Chasseur's Gants +3",
-		legs="Malignance Tights",
+		legs="Chasseur's Culottes +3",
 		feet="Malignance Boots",
 		neck="Sanctity Necklace",
 		waist="Eschan Stone",
 		left_ear="Crep. Earring",
 		right_ear="Odr Earring",
-		left_ring={name="Chirich Ring +1",bag="Wardrobe 3"},
-		right_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}	
 	
 	}
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'DWSavageCOR','SavageCORShield','Tauret','FomalhautRostamShield','DeathPenaltyRostamShield','FomalhautDivergence','DeathPenaltyDivergence'}
+	sets.weapon.index = {'DWSavageCOR','SavageCORShield','Tauret','FomalhautRostamShield','DeathPenaltyRostamShield','FomalhautCrep','DeathPenaltyTauret'}
 	weapon_ind = 1
 	
 	sets.weapon.DWSavageCOR = {
 		main="Naegling",
-		sub="Gleti's Knife",
+		sub="Crepuscular Knife",
 		range="Ataktos"
 	}
 
@@ -316,15 +313,15 @@ function get_sets()
 		range="Death Penalty"
 	}
 	
-	sets.weapon.FomalhautDivergence = {
+	sets.weapon.FomalhautCrep = {
 		main="Rostam",
-		sub="Gleti's Knife",
+		sub="Crepuscular Knife",
 		range="Fomalhaut"
 	}
 
-	sets.weapon.DeathPenaltyDivergence = {
+	sets.weapon.DeathPenaltyTauret = {
 		main="Rostam",
-		sub="Gleti's Knife",
+		sub="Tauret",
 		range="Death Penalty"
 	}	
 	
