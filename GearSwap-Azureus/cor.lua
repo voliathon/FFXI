@@ -1,7 +1,6 @@
 -- The super duper awesome corsair script
 -- by Voliathon
 
---Took this idea from the previous lua script I got off the net and rolled with it. Mazusu has 7 unique Corsair Camulus's Capes >.<
 function CamulusCapes()
 	CamulusCape = {}
     CamulusCape.ranged_ws={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'} }	
@@ -28,11 +27,6 @@ function get_sets()
 	CamulusCapes()
 
 	-- Job Abilities
-    sets.TripleShot = { 
-		body="Chasseur's Frac +3", 
-		hands="Lanun Gants +2", 
-		back=CamulusCape.melee_double_attack 
-	}
     sets.RandomDeal = { 
 		body="Lanun Frac +2" 
 	}
@@ -43,7 +37,7 @@ function get_sets()
 		legs="Lanun Trews +2" 
 	}
     sets.Fold = { 
-		hands="Lanun Gants +2" 
+		hands="Lanun Gants +3" 
 	}
 	
 	-- Maximizing Corsair Rolls
@@ -231,8 +225,8 @@ function get_sets()
 
     sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA,{
 		head="Oshosi Mask +1",
-		body="Oshosi Vest +1",
-		hands="Oshosi Gloves +1",
+		body="Chasseur's frac +3",
+		hands="Lanun Gants +3",
 		legs="Osh. Trousers +1",
 		feet="Osh. Leggings +1"
 	})
@@ -434,7 +428,7 @@ function aftercast(spell)
   --This could be an issue if you need DT while Triple Shot is up. Frac+3 is fine. 
   --I'm taking the stance I'd rather see this gear when Triple Shot is up as compared to not seeing it
   if (buffactive['Triple Shot']) then
-	equip({body="Chasseur's Frac +3", hands="Lanun Gants +2"})
+	equip({body="Chasseur's Frac +3", hands="Lanun Gants +3"})
   end
 end
 
