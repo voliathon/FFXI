@@ -132,13 +132,15 @@ function get_sets()
 		neck="Mizu. Kubikazari",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Regal Earring",
+		right_ear="Barkarole Earring",
 		left_ring="Freke Ring",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
+		head="Ea Hat +1",
+		body="Ea Houppelande +1",
 		right_ring="Locus ring"
 	})	
 	
@@ -154,7 +156,7 @@ function get_sets()
 		neck="Mizu. Kubikazari",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Regal Earring",
+		right_ear="Barkarole Earring",
 		left_ring="Freke Ring",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
@@ -176,7 +178,7 @@ function get_sets()
 		neck="Mizu. Kubikazari",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Regal Earring",
+		right_ear="Barkarole Earring",
 		left_ring="Freke Ring",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
