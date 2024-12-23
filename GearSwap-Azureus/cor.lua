@@ -28,13 +28,13 @@ function get_sets()
 
 	-- Job Abilities
     sets.RandomDeal = { 
-		body="Lanun Frac +2" 
+		body="Lanun Frac +3" 
 	}
     sets.WildCard = { 
 		feet="Lanun Bottes +3" 
 	}
     sets.SnakeEye = { 
-		legs="Lanun Trews +2" 
+		legs="Lanun Trews +3" 
 	}
     sets.Fold = { 
 		hands="Lanun Gants +3" 
@@ -42,9 +42,9 @@ function get_sets()
 	
 	-- Maximizing Corsair Rolls
 	sets.CorsairRoll = {
-		main="Rostam",
+		main={name="Rostam",bag="Wardrobe 6"},
         -- phantom roll effects +50 (chance to proc job-present-boost)
-        head = "Lanun Tricorne +2",
+        head = "Lanun Tricorne +3",
         -- phantom roll +7
         --neck="Regal Necklace",
         -- increased area of effect
@@ -91,7 +91,7 @@ function get_sets()
 	--    Affinity
     sets.QuickDraw = {
 		head="Laksa. Tricorne +3",
-		body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
+		body="Lanun Frac +3",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Chass. Bottes +3",
@@ -105,8 +105,8 @@ function get_sets()
     }
 	
     sets.QuickDrawDark = {
-		head="Laksa. Tricorne +3",
 		head="Pixie Hairpin +1",
+		body="Lanun Frac +3",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Chass. Bottes +3",
@@ -122,7 +122,7 @@ function get_sets()
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
-		body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
+		body="Lanun Frac +3",
 		hands="Chasseur's Gants +3",
 		legs="Nyame Flanchard",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
@@ -177,7 +177,7 @@ function get_sets()
 	--Aeolian Edge 40% DEX / 40% INT
 	sets.AeolianEdge = {
 		head="Nyame Helm",
-		body="Lanun Frac +2",
+		body="Lanun Frac +3",
 		hands="Nyame Gauntlets",
 		legs="Chasseur's Culottes +3",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
@@ -308,25 +308,25 @@ function get_sets()
 	}
 	
 	sets.weapon.FomalhautRostamShield = {
-		main="Rostam",
+		main={name="Rostam",bag="Wardrobe 3"},
 		sub="Nusku Shield",
 		range="Fomalhaut"
 	}
 	
 	sets.weapon.DeathPenaltyRostamShield = {
-		main="Rostam",
+		main={name="Rostam",bag="Wardrobe 3"},
 		sub="Nusku Shield",
 		range="Death Penalty"
 	}
 	
 	sets.weapon.FomalhautCrep = {
-		main="Rostam",
+		main={name="Rostam",bag="Wardrobe 3"},
 		sub="Crepuscular Knife",
 		range="Fomalhaut"
 	}
-
+	
 	sets.weapon.DeathPenaltyTauret = {
-		main="Rostam",
+		main={name="Rostam",bag="Wardrobe 3"},
 		sub="Tauret",
 		range="Death Penalty"
 	}	

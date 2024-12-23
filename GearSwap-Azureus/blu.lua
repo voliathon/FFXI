@@ -17,6 +17,32 @@ function RosmertaCapes()
 	Rosmerta.MagicDMG = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 end
 
+function BlueMageMappers()
+	CruelJoke = S{'Cruel Joke'}
+	BlueMagicPhysical = S{'Bilgestorm'}
+	BlueMagicPhysicalAcc = S{'Heavy Strike'}
+	BlueMagicPhysicalStr = S{'Battle Dance','Bloodrake','Death Scissors','Dimensional Death','Empty Thrash','Quadrastrike','Sinker Drill','Spinal Cleave','Uppercut','Vertical Cleave','Quadratic Continuum'}
+	BlueMagicPhysicalDex = S{'Amorphic Spikes','Asuran Claws','Barbed Crescent','Claw Cyclone','Disseverment','Foot Kick','Frenetic Rip','Goblin Rush','Hysteric Barrage','Paralyzing Triad','Seedspray','Sickle Slash','Smite of Rage','Terror Touch','Thrashing Assault','Vanity Dive'}
+	BlueMagicPhysicalVit = S{'Body Slam','Cannonball','Delta Thrust','Glutinous Dart','Grand Slam','Power Attack','Quad. Continuum','Sprout Smack','Sub-zero Smash','Sweeping Gouge'}
+	BlueMagicPhysicalAgi = S{'Benthic Typhoon','Feather Storm','Helldive','Hydro Shot','Jet Stream','Pinecone Bomb','Spiral Spin','Wild Oats'}
+	BlueMagicPhysicalInt = S{'Mandibular Bite','Queasyshroom'}
+	BlueMagicPhysicalMnd = S{'Ram Charge','Screwdriver','Tourbillion'}
+	BlueMagicPhysicalChr = S{'Bludgeon'}
+	BlueMagicPhysicalHP = S{'Final String'}
+	BlueMagicMagical = S{'','','','','','','','','','','','','','','','','','','','','','','',''}
+	TenebralCrush = S{'Tenebral Crush'}
+	BlueMagicMagicalLight = S{'Blind Fulgor'}
+	BlueMagicMagicalMnd = S{'Acrid Stream','Evryone. Grudge','Magic Hammer','Mind Blade','Scouring Spate'}
+	BlueMagicMagicalChr = S{'Eyes On Me','Mysterious Light'}
+	BlueMagicMagicalVit = S{'Thermal Pulse','Entomb'}
+	BlueMagicMagicalAgi = S{'Silent Storm'}
+	BlueMagicMagicalDex = S{'Charged Whisker','Gates of Hades','Anvil Lightning'}
+	MagicAccuracy = S{'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''}
+	BreathSpells = S{'','','','','','','','','','','',''}
+	Stun = S{'','','','','','','',''}
+	BlueMageCures = S{'','','','','',''}
+	BlueMagicSkill = S{'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''}
+end
 
 
 
@@ -39,6 +65,8 @@ function get_sets()
 	HerculeanGear()
 	-- Let's also initialize any Rosmerta Capes that we need to use 
 	RosmertaCapes()
+	-- Initialize the BlueMageMappers so that we can reference this in our BlueMageLocic function
+	--BlueMageMappers()
 
 	--Job Ability Sets--
 	sets.JA = {}
@@ -500,9 +528,9 @@ windower.register_event('status change', function()
 	end
 end)
 
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
--- Could've created a mapper and done it faster most likely but meh.  This is easier for people to understand with less coding experience
+
 function BlueMageSpellLogic(spell)
+
 	if spell.name == 'Cruel Joke' then
 		equip(sets.CruelJoke)
 	end
