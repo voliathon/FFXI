@@ -25,16 +25,17 @@ function get_sets()
 		
     sets.JA = {}
     sets.JA.Boost = {hands="Anchorite's Gloves +3"}
-    sets.JA.Chakra = {body="Anchorite's Cyclas +2", hands="Hes. Gloves +1"}
+    sets.JA.Chakra = {body="Anchorite's Cyclas +2", hands="Hes. Gloves +3"}
     sets.JA.Counterstance = {feet="Hesychast's Gaiters +3"}
     sets.JA.Focus = {head="Anchorite's Crown +2"}
     sets.JA.Dodge = {feet="Anchorite's Gaiters +3"}
-    sets.JA.Mantra = {feet="Hes. Gaiters +1"}
-    sets.JA.Footwork = {feet="Bhikku gaiters +2"}
+    sets.JA.Mantra = {feet="Hes. Gaiters +3"}
+    sets.JA.Footwork = {feet="Bhikku gaiters +3"}
 	sets.JA.Impetus={body="Bhikku Cyclas +3"}
 	sets.JA.PerfectCounter={head="Bhikku Crown +2"}
-    sets.JA.HundredFists = {legs="Hes. Hose +1"}
+    sets.JA.HundredFists = {legs="Hes. Hose +3"}
 	sets.JA.Waltz = {legs="Dashing subligar"}
+	sets.JA.FormlessStrikes = {body="Hesychast's Cyclas +3"}
 
 	
 	--TP Sets--
@@ -49,7 +50,7 @@ function get_sets()
 		body="Bhikku Cyclas +3",
 		hands="Bhikku gloves +3",
 		legs="Bhikku Hose +3",
-		feet="Anch. Gaiters +3",
+		feet="Anchorite's Gaiters +3",
 		neck="Monk's nodowa +2",
 		waist="Moonbow Belt +1",
 		left_ear="Brutal Earring",
@@ -139,7 +140,7 @@ function get_sets()
 	
 	sets.WS.FinalHeaven = {
 		ammo="Knobkierrie",
-		head="Nyame Helm",
+		head="Hesychast's crown +3",
 		body="Bhikku Cyclas +3",
 		hands="Anchorite's gloves +3",
 		legs="Nyame Flanchard",
@@ -207,7 +208,7 @@ function get_sets()
 		body="Bhikku Cyclas +3",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
-		feet="Anch. Gaiters +3",
+		feet="Anchorite's Gaiters +3",
 		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
 		left_ear="Cessance Earring",
@@ -292,6 +293,9 @@ function precast(spell)
 	if spell.name == 'Hundred Fists' then
         equip(sets.JA.HundredFists)
     end
+	if spell.name == 'Formless Strikes' then
+		equip(sets.JA.FormlessStrikes)
+	end
 	
 end
 
@@ -299,7 +303,7 @@ function aftercast(spell)
 	if (spell.name == 'Impetus') then
 		equip({body="Bhikku Cyclas +3"})
 	elseif (spell.name == 'Footwork') then
-		equip({feet="Anch. Gaiters +3"})
+		equip({feet="Anchorite's Gaiters +3"})
 	else
 		equip_current()	
 	end
