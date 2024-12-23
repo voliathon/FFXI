@@ -394,7 +394,10 @@ function precast(spell,abil)
 	if spell.action_type == 'Enhancing Magic' then
 		equip(sets.FastCast)
 	end
-
+	if spell.skill == 'Elemental Magic' then
+		equip(sets.ElementalMagic)
+		get_obi(spell)
+	end
 	--WS Lookups
 	if spell.name == "Savage Blade" then
 		equip(sets.SavageBlade)
@@ -439,6 +442,9 @@ function midcast(spell)
 		else
 			equip(sets.BurstMagic)
 		end
+		if bonus > 0 then
+			equip({waist = "Hachirin-no-obi"})
+		end		
 	end
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
@@ -519,3 +525,128 @@ function enspellCheck()
 		--send_command('@input /echo O-Sash equipped')
 	end
 end
+
+-- 10% bonus for magic of the day
+-- 10% bonus for magic matching single weather
+-- 20% bonus for magic matching single weather and day
+-- 25% bonus for magic matching double weather
+-- 35% bonus for magic matching double weather and day
+-- Will also gain an equivalent negative bonuses during opposing day/weather 
+
+-- Call this function in precast to see if you have any storm effects.
+-- Function to check if the user has a storm effect
+function has_storm_effect()
+    local storm_effects = {
+        "Firestorm", "Hailstorm", "Windstorm", "Sandstorm",
+        "Thunderstorm", "Rainstorm", "Aurorastorm", "Voidstorm"
+    }
+
+    for _, effect in ipairs(storm_effects) do
+        if buffactive[effect] then
+            return true
+        end
+    end
+
+    return false
+end
+
+-- Function to check if the Hachirin-no-Obi should be used
+-- This returns a true or false
+function use_hachirin_no_obi(spell)
+    bonus = 0
+	-- Define the opposing elements
+	local opposing_elements = {
+		Fire = "Ice",
+		Ice = "Fire",
+		Wind = "Earth",
+		Earth = "Wind",
+		Lightning = "Water",
+		Water = "Lightning",
+		Light = "Dark",
+		Dark = "Light"
+	}
+	
+	-- Define the weather intensity values
+	local weather_to_intensity = {
+		["Clear"] = 0,
+		["Sunshine"] = 0,
+		["Cloudy"] = 0,
+		["Fog"] = 0,
+		["Fine patches"] = 0,
+		["Hot spells"] = 10,
+		["Heat waves"] = 25,
+		["Snow"] = 10,
+		["Blizzards"] = 25,
+		["Winds"] = 10,
+		["Gales"] = 25,
+		["Dust storms"] = 10,
+		["Sand storms"] = 25,
+		["Thunderstorm"] = 10,
+		["Thunderstorms"] = 25,
+		["Rain"] = 10,
+		["Squalls"] = 25,
+		["Auroras"] = 10,
+		["Stellar glare"] = 25,
+		["Gloom"] = 10,
+		["Darkness"] = 25
+	}
+
+	-- Debug: Spell Element Check
+	--send_command('@input /echo Spell Element: ' .. spell.element)
+	-- Debug: Day Element Check
+	--send_command('@input /echo Day Element: ' .. world.day_element)
+    
+	-- Check if the spell element matches the current day
+    if spell.element == world.day_element then
+        bonus = bonus + 10
+    elseif spell.element == opposing_elements[world.day_element] then
+        bonus = bonus - 10
+    end
+
+	-- Debug: This returns the weather name found in weather_to_intensity example: Rain
+	--send_command('@input /echo Self Weather Type: ' .. world.weather) 
+	-- Debug: This returns back the weather of the zone or the storm.  
+	--        Storm weather will come back first. Zone weather returns if there is no storm.
+	--send_command('@input /echo Weather Type: ' .. world.weather_element)
+	
+    -- Check if a storm spell is up.
+	if has_storm_effect() then
+	    -- check if the spell and storm weather is the same.
+		if spell.element == world.weather_element then
+			bonus = bonus + weather_to_intensity[world.weather]
+		-- check if the spell and storm weather are NOT the same.
+		elseif spell.element == opposing_elements[world.weather_element] then
+			bonus = bonus - weather_to_intensity[world.weather]
+		end
+	-- check if the spell and zone weather is the same.
+	elseif spell.element == world.weather_element then
+		bonus = bonus + weather_to_intensity[world.weather]
+	-- check if the spell and zone weather are NOT the same.
+	elseif spell.element == opposing_elements[world.weather_element] then
+		bonus = bonus - weather_to_intensity[world.weather]
+	end
+	
+	--Debug
+	--send_command('@input /echo Bonus Amount: ' .. bonus.. '%')       
+	-- Determine if the Hachirin-no-Obi should be used
+    if bonus > 0 then
+        return true
+    else
+        return false
+    end
+end
+
+-- Function to get the appropriate obi
+function get_obi(spell)
+    if use_hachirin_no_obi(spell) then
+		--Debug
+		--send_command('@input /echo Waist: Hachirin-no-Obi')
+        return { equip({waist = "Hachirin-no-obi"}) }
+    else
+		--Debug
+		--send_command('@input /echo Waist: Tengu-no-Obi')	
+        return { equip({waist = "Eschan Stone"}) }
+    end
+end
+
+
