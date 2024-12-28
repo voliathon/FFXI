@@ -32,7 +32,7 @@ function get_sets()
     sets.JA.Mantra = {feet="Hes. Gaiters +3"}
     sets.JA.Footwork = {feet="Bhikku gaiters +3"}
 	sets.JA.Impetus={body="Bhikku Cyclas +3"}
-	sets.JA.PerfectCounter={head="Bhikku Crown +2"}
+	sets.JA.PerfectCounter={head="Bhikku Crown +3"}
     sets.JA.HundredFists = {legs="Hes. Hose +3"}
 	sets.JA.Waltz = {legs="Dashing subligar"}
 	sets.JA.FormlessStrikes = {body="Hesychast's Cyclas +3"}
@@ -71,7 +71,7 @@ function get_sets()
 	
 	sets.TP.Tank = {
 		ammo="Coiste Bodhar",
-		head="Bhikku Crown +2",
+		head="Bhikku Crown +3",
 		body="Mpaca's Doublet",
 		hands="Mpaca's Gloves",
 		legs="Bhikku Hose +3",
@@ -87,7 +87,7 @@ function get_sets()
     
 	sets.TP.Accuracy = {
 		ammo="Coiste Bodhar",
-		head="Bhikku Crown +2",
+		head="Bhikku Crown +3",
 		body="Mpaca's Doublet",
 		hands="Bhikku gloves +3",
 		legs="Bhikku Hose +3",
