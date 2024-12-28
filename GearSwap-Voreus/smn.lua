@@ -5,6 +5,11 @@ function SummonerCapes()
 
 end
 
+function SummonerMappers()
+	local SMNPhysical = S{'Flaming Crush','Mountain Buster','Spinning Dive','Predator Claws','Rush','Chaotic Strike','Volt Strike','Hysteric Assault','Crag Throw','Blindside','Regal Gash','Nether Blast','Punch','Rock Throw','Barracuda Dive','Claw','Welt','Axe Kick','Shock Strike','Camisado','Regal Scratch','Poison Nails','Moonlit Charge','Crescent Fang','Rock Buster','Burning Strike','Roundhouse','Tail Whip','Double Punch','Megalith Throw','Double Slap'}
+	local SMNMagic = S{'Meteor Strike','Geocrush','Grand Fall','Wind Blade','Heavenly Strike','Thunderstorm','Tornado II','Level ? Holy','Lunar Bay','Night Terror','Conflag Strike','Impact','Inferno','Earthern Fury','Tidal Wave','Aerial Blast','Clarsach Call','Diamond Dust','Judgment Bolt','Searing Light','Howling Moon','Ruinous Omen','Zantetsuken','Fire II','Stone II','Water II','Aero II','Blizzard II','Thunder II','Thunderspark','Meteorite','Fire IV','Stone IV','Water IV','Aero IV','Blizzard IV','Thunder IV','Sonic Buffet'}
+end
+
 function get_sets()
 	-- Instantiate SummonerCapes
 	SummonerCapes()
@@ -16,23 +21,20 @@ function get_sets()
 	-- Toggle Weapon F8 Key
 	send_command('bind !f8 gs c C8') 
 	send_command('bind ^f8 gs c Reverse Toggle Weapon')
-	
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+	-- Toggle Engaged F9 Key
     send_command('bind !f9 gs c C9')
 	send_command('bind ^f9 gs c Reverse Engaged Set')
 	
-	-- Toggle Burst Mode
-	send_command('bind ^f10 gs c C10')
-	-- Default Disabled Burst unless set with F10
-	Burst = 'Disabled'
-	
+
     -- Job Abilities for Summoner --
     sets.AstralFlow = {}
-    sets.ElementalSiphon = {}
-    sets.Apogee = {}
-    sets.ManaCede = {}
-	sets.AstralConduit = {}
-	
+    sets.ManaCede = { hands="Beckoner's Bracers +2"}
+    sets.ElementalSiphon = {
+		feet="Beckoner's Pigaches +2".
+		back=SummonerCapes.BloodPact,
+		waist="Ligeia Sash"
+	}
+
 	-- Blood Pact Sets
 	-- BP Damage, Accuracy, Attack, and Pet: Double Attack. 
 	sets.BloodPactPhysical = {
@@ -90,19 +92,20 @@ function get_sets()
 	}
 
 	-- Need loads of Summon Magic to make this meatier
-	sets.AvatarFavor = {}
+	sets.AvatarFavor = {head="Beckoner's Horn +2"}
 
 	sets.BPDelay = {
 		ammo="Sancus Sachet +1",
 		head="Beckoner's Horn +2",
-		body="Con. Doublet +3"
+		body="Con. Doublet +3",
+		left_ear="Evans Earring"
 	}
 
 	sets.Ward = {
 		main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
 		sub="Vox Grip",
 		ammo="Sancus Sachet +1",
-		head="Evoker's Horn",
+		head="Beckoner's Horn +2",
 		body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
 		hands="Lamassu Mitts +1",
 		legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
@@ -196,7 +199,7 @@ function get_sets()
 
 	sets.Refresh = set_combine(sets.PDT,  {
 		ammo="Sancus Sachet +1",
-		head="Befouled Crown",
+		head="Beckoner's Horn +2",
 		body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
 		hands="Asteria Mitts +1",
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
@@ -216,7 +219,9 @@ function get_sets()
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
-	 sets.SavageBlade = {}
+	 sets.GarlandofBliss = {
+		
+	 }
 	 
 	-- Engaged Sets Toggle--
 	sets.engaged = {}
@@ -252,12 +257,7 @@ end
  
 
 function precast(spell,abil)
-	if spell.name == "Composure" then
-		equip(sets.Composure)
-	end
-	if spell.name == 'Refresh' or spell.name == 'Refresh II' or spell.name == 'Refresh III' then
-		equip(sets.Refresh)
-	end
+
 	if spell.action_type == 'Enhancing Magic' then
 		equip(sets.FastCast)
 	end
@@ -266,8 +266,8 @@ function precast(spell,abil)
 		get_obi(spell)
 	end
 	--WS Lookups
-	if spell.name == "Savage Blade" then
-		equip(sets.SavageBlade)
+	if spell.name == "Garland of Bliss" then
+		equip(sets.GarlandofBliss)
 	end
 
 	-- Add logic for Waltz

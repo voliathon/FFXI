@@ -66,11 +66,6 @@ function get_sets()
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 	
-    sets.Klimaform = set_combine(sets.Duration,  {
-		feet="Arbatel Loafers +2"
-	})
-
-
 	-- Stoneskin
 	sets.Stoneskin = set_combine(sets.Duration,  {
 		hands="Carapacho Cuffs",
@@ -123,25 +118,28 @@ function get_sets()
 	sets.ElementalMagic = {
 		main="Marin staff +1", 
 		sub="Enki strap", 
-		ammo="Pemphredo Tathlum",
-		head="Wicce petasos +2",
+		ammo="Sroda Tathlum",
+		head="Wicce Petasos +2",
 		body="Wicce Coat +3",
 		hands="Wicce Gloves +3",
 		legs="Wicce Chausses +3",
 		feet="Wicce Sabots +3",
-		neck="Sorcerer's stole + 2",
+		neck={ name="Src. Stole +2", augments={'Path: A'}},
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Barkarole Earring",
+		right_ear="Regal Earring",
 		left_ring="Freke Ring",
-		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A'}},
+		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%'}}
 	}
 	
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
+		ammo={ name="Ghastly Tathlum +1", augments={'Path: A'}},
 		head="Ea Hat +1",
 		body="Ea Houppelande +1",
-		right_ring="Locus ring"
+		right_ear="Regal Earring",
+		left_ring="Freke Ring",
+		right_ring="Locus Ring"
 	})	
 	
 	sets.Kaustra = {
@@ -166,25 +164,6 @@ function get_sets()
 
 	}
 	
-	sets.Helix = {
-		main="Marin staff +1", 
-		sub="Enki strap", 
-		ammo="Pemphredo Tathlum",
-		head="Wicce petasos +2",
-		body="Wicce Coat +3",
-		hands="Wicce Gloves +3",
-		legs="Wicce Chausses +3",
-		feet="Wicce Sabots +3",
-		neck="Mizu. Kubikazari",
-		waist="Eschan Stone",
-		left_ear="Malignance Earring",
-		right_ear="Barkarole Earring",
-		left_ring="Freke Ring",
-		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
-}
-
-
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Pemphredo Tathlum",
 		head="Wicce Petasos +2",
@@ -264,6 +243,22 @@ function get_sets()
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1"
 	})
+	
+	sets.ElementalDebuff = {
+		ammo="Pemphredo Tathlum",
+		head="Wicce Petasos +2",
+		body="Wicce Coat +3",
+		hands="Wicce Gloves +3",
+		legs="Wicce Chausses +3",
+		feet="Wicce Sabots +3",
+		neck={ name="Src. Stole +2", augments={'Path: A',}},
+		waist="Eschan Stone",
+		left_ear="Malignance Earring",
+		right_ear="Regal Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}	
+	}
 	
 	
     ------------------------------------------------------------------------------------------------------------------
@@ -440,12 +435,6 @@ function midcast(spell)
 			equip({waist = "Hachirin-no-obi"})
 		end
 	end
-	if string.find(spell.english,'helix') then 
-		equip(sets.Helix)
-		if bonus > 0 then
-			equip({waist = "Hachirin-no-obi"})
-		end
-	end	
 	if spell.skill == 'Elemental Magic' then
 		send_command('@input /echo Bonus in midcast is: '..bonus..'%')
 		if Burst == 'Disabled' then 
