@@ -135,7 +135,7 @@ function get_sets()
 	sets.Regen = set_combine(sets.Duration,  {
 		main="Musa",
 		sub="Khonsu",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		hands="Arbatel Bracers +2",
 		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
 	})
@@ -210,7 +210,7 @@ function get_sets()
 		main="Marin staff +1",
 		sub="Khonsu",
 		ammo="Pemphredo Tathlum",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +2",
 		legs="Arbatel Pants +2",
@@ -228,7 +228,7 @@ function get_sets()
 		main="Musa",
 		sub="Khonsu",
 		ammo="Pemphredo Tathlum",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +2",
 		legs="Arbatel Pants +2",
@@ -265,7 +265,7 @@ function get_sets()
 		main="Bunzi's Rod",
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +2",
 		legs="Arbatel Pants +2",
@@ -295,7 +295,7 @@ function get_sets()
 		main="Malignance Pole",
 		sub="Khonsu",
 		ammo="Crepuscular Pebble",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
@@ -314,7 +314,7 @@ function get_sets()
 		main="Bolelabunga",
 		sub="Genmei Shield",
 		ammo="Staunch Tathlum",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Arbatel Pants +2",
@@ -333,7 +333,7 @@ function get_sets()
 		main="Bolelabunga",
 		sub="Genmei Shield",
 		ammo="Staunch Tathlum",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Arbatel Pants +2",
@@ -545,7 +545,7 @@ function midcast(spell)
 	
 	if buffactive["Rapture"] or buffactive["Ebullience"] then
 	--send_command('@input /echo Fuck yeah Bonnet is equipped!')
-		equip({head="Arbatel Bonnet +2"})
+		equip({head="Arbatel Bonnet +3"})
 	end
 	if buffactive["Perpetuance"] then
 	--send_command('@input /echo Fuck yeah Bracers are equipped!')

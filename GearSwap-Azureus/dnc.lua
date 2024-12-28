@@ -32,9 +32,9 @@ function get_sets()
 	}
 	
 	sets.engaged.TP = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Blistering sallet +1",
-		body="Adhemar jacket +1",
+		body="Horos Casaque +3",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Maculele tights +2",
 		feet="Macu. Toe Sh. +2",
@@ -50,7 +50,7 @@ function get_sets()
 	sets.engaged.Accuracy =  {
 		ammo="Yamarang",
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		body="Horos Casaque +3",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Malignance Tights",
 		feet="Malignance Boots",
@@ -145,11 +145,11 @@ function get_sets()
 	}
 	sets.JA.ClimacticFlourish = {head="Maculele Tiara +2"}
 	sets.JA.StrikingFlourish = {body="Maculele Casaque +2"}
-	sets.JA.ViolentFlourish = {body="Horos Casaque +1"}
+	sets.JA.ViolentFlourish = {body="Horos Casaque +3"}
 	
 	sets.JA.Trance = {head="Horos Tiara +1"}
 	sets.JA.FanDance = {hands="Horos Bangles +1"}
-	sets.JA.NoFootRise = {body="Horos Casaque +1"}
+	sets.JA.NoFootRise = {body="Horos Casaque +3"}
 	sets.JA.SaberDance = {legs="Horos Tights +3"}
 	sets.JA.ClosedPosition = {feet="Horos Shoes +3"}
 	
@@ -160,35 +160,35 @@ function get_sets()
  -- Weapon Skill Sets
  -- Generic Sets
     sets.WSD = {	
-		ammo="Yetshila +1",
+		ammo="Crepuscular Pebble",
 		head="Maculele Tiara +2",
-		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands="Maxixi Bangles +3",
-		legs="Horos Tights +3",
-		feet="Nyame sollerets",
-		neck="Fotia Gorget",
-		waist="Grunfeld Rope",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		right_ear="Odr Earring",
-		left_ring="Epaminondas's Ring",
-		right_ring="Hetairoi Ring",
-		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
-	}
-	
-	sets.Evisceration = {
-		ammo="Yetshila +1",
-		head="Blistering Sallet +1",
-		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
-		hands="Maxixi Bangles +3",
-		legs="Meg. Chausses +2",
-		feet="Nyame sollerets",
+		legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		right_ear="Odr Earring",
+		right_ear="Sherida Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	}
+	
+	sets.Evisceration = {
+		ammo="Crepuscular Pebble",
+		head={ name="Blistering Sallet +1", augments={'Path: A',}},
+		body="Gleti's Cuirass",
+		hands="Gleti's Gauntlets",
+		legs="Gleti's Breeches",
+		feet="Gleti's Boots",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Odr Earring",
+		right_ear={ name="Macu. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+15','Mag. Acc.+15','"Store TP"+5',}},
+		left_ring="Epaminondas's Ring",
+		right_ring="Hetairoi Ring",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	}
 	
     sets.Aeolian = {	
@@ -208,7 +208,19 @@ function get_sets()
 	}
 	
 	sets.PyrrhicKleos = set_combine(sets.Evisceration,  {
-	
+		ammo="Coiste Bodhar",
+		head="Maculele Tiara +2",
+		body="Horos Casaque +3",
+		hands="Gleti's Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Fotia Gorget",
+		waist="Fotia Belt",
+		left_ear="Sherida Earring",
+		right_ear={ name="Macu. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+15','Mag. Acc.+15','"Store TP"+5',}},
+		left_ring="Epaminondas's Ring",
+		right_ring="Hetairoi Ring",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}	
 	})
 	
 ---- .:: Preshot Sets ::. ---->

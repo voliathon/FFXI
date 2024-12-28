@@ -17,35 +17,6 @@ function RosmertaCapes()
 	Rosmerta.MagicDMG = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 end
 
-function BlueMageMappers()
-	CruelJoke = S{'Cruel Joke'}
-	BlueMagicPhysical = S{'Bilgestorm'}
-	BlueMagicPhysicalAcc = S{'Heavy Strike'}
-	BlueMagicPhysicalStr = S{'Battle Dance','Bloodrake','Death Scissors','Dimensional Death','Empty Thrash','Quadrastrike','Sinker Drill','Spinal Cleave','Uppercut','Vertical Cleave','Quadratic Continuum'}
-	BlueMagicPhysicalDex = S{'Amorphic Spikes','Asuran Claws','Barbed Crescent','Claw Cyclone','Disseverment','Foot Kick','Frenetic Rip','Goblin Rush','Hysteric Barrage','Paralyzing Triad','Seedspray','Sickle Slash','Smite of Rage','Terror Touch','Thrashing Assault','Vanity Dive'}
-	BlueMagicPhysicalVit = S{'Body Slam','Cannonball','Delta Thrust','Glutinous Dart','Grand Slam','Power Attack','Quad. Continuum','Sprout Smack','Sub-zero Smash','Sweeping Gouge'}
-	BlueMagicPhysicalAgi = S{'Benthic Typhoon','Feather Storm','Helldive','Hydro Shot','Jet Stream','Pinecone Bomb','Spiral Spin','Wild Oats'}
-	BlueMagicPhysicalInt = S{'Mandibular Bite','Queasyshroom'}
-	BlueMagicPhysicalMnd = S{'Ram Charge','Screwdriver','Tourbillion'}
-	BlueMagicPhysicalChr = S{'Bludgeon'}
-	BlueMagicPhysicalHP = S{'Final String'}
-	BlueMagicMagical = S{'','','','','','','','','','','','','','','','','','','','','','','',''}
-	TenebralCrush = S{'Tenebral Crush'}
-	BlueMagicMagicalLight = S{'Blind Fulgor'}
-	BlueMagicMagicalMnd = S{'Acrid Stream','Evryone. Grudge','Magic Hammer','Mind Blade','Scouring Spate'}
-	BlueMagicMagicalChr = S{'Eyes On Me','Mysterious Light'}
-	BlueMagicMagicalVit = S{'Thermal Pulse','Entomb'}
-	BlueMagicMagicalAgi = S{'Silent Storm'}
-	BlueMagicMagicalDex = S{'Charged Whisker','Gates of Hades','Anvil Lightning'}
-	MagicAccuracy = S{'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''}
-	BreathSpells = S{'','','','','','','','','','','',''}
-	Stun = S{'','','','','','','',''}
-	BlueMageCures = S{'','','','','',''}
-	BlueMagicSkill = S{'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''}
-end
-
-
-
 --User Event Function called once on load.  It's used to define variables, and specifically "sets"
 function get_sets()
 
