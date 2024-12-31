@@ -1,0 +1,15 @@
+input /ja "nightingale" <me>; wait 2; 
+input /ja "troubadour" <me>; wait 2; 
+input /ja "Marcato" <me>; wait 2;
+input /equip Range "Marsyas"; wait 2; 
+input /ma "Honor March" <me>; wait 4; 
+input /equip Range "Gjallarhorn"; wait 2;
+input /ma "Light Carol II" <me>; wait 4; 
+input /equip Range "Daurdabla"; wait 2;
+input /ma "Light Carol" <me>; wait 4;
+input /equip Range "Daurdabla"; wait 2;
+input /ma "Sentinel's Scherzo" <me>; wait 4;
+input /equip Range "Gjallarhorn"; wait 2;
+input /ma "Light Carol" <me>; wait 4;
+input /equip Range "Gjallarhorn"; wait 3;
+input /ma "Sentinel's Scherzo" <me>; wait 4;
