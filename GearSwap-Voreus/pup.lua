@@ -146,7 +146,7 @@ function get_sets()
 	left_ear="Enmerkar Earring",
 	right_ear="Rimeice Earring",
 	left_ring="Varar Ring +1",
-	right_ring="Varar Ring +1",
+	right_ring="Cath Palug ring",
 	back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}    
   }
   
@@ -171,7 +171,7 @@ function get_sets()
     waist="Isa belt",
     left_ear="Enmerkar Earring",
     right_ear="Rimeice Earring",
-    left_ring="Shneddick Ring",
+    left_ring="Cath Palug ring",
     right_ring="Overbearing Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
   }
@@ -275,7 +275,7 @@ function get_sets()
 		waist="Incarnation Sash",
 		left_ear="Enmerkar Earring",
 		right_ear="Kyrene's Earring",
-		left_ring="Varar Ring +1",
+		left_ring="Cath Palug ring",
 		right_ring="Varar Ring +1",
 		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}	
 	}

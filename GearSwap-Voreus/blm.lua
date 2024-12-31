@@ -216,7 +216,7 @@ function get_sets()
 		hands="Wicce Gloves +3",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Wicce Sabots +3",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Sanctity Necklace",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
