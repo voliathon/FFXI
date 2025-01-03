@@ -119,7 +119,7 @@ function get_sets()
 		main="Marin staff +1", 
 		sub="Enki strap", 
 		ammo="Sroda Tathlum",
-		head="Wicce Petasos +2",
+		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
 		hands="Wicce Gloves +3",
 		legs="Wicce Chausses +3",
@@ -146,7 +146,7 @@ function get_sets()
 		main="Marin staff +1", 
 		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
-		head="Wicce petasos +2",
+		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
 		hands="Wicce Gloves +3",
 		legs="Wicce Chausses +3",
@@ -166,7 +166,7 @@ function get_sets()
 	
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Pemphredo Tathlum",
-		head="Wicce Petasos +2",
+		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
 		hands="Regal Cuffs",
 		legs="Wicce Chausses +3",
@@ -211,7 +211,7 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		ammo="Impatiens",
-		head="Wicce petasos +2",
+		head="Wicce Petasos +3",
 		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands="Wicce Gloves +3",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -246,7 +246,7 @@ function get_sets()
 	
 	sets.ElementalDebuff = {
 		ammo="Pemphredo Tathlum",
-		head="Wicce Petasos +2",
+		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
 		hands="Wicce Gloves +3",
 		legs="Wicce Chausses +3",
