@@ -45,7 +45,7 @@ function get_sets()
 	Burst = 'Disabled'	
 	
     -- Job Abilities for Scholar --
-    sets.Immanence = {hands="Arbatel Bracers +2"}
+    sets.Immanence = {hands="Arbatel Bracers +3"}
     sets.Celerity = {feet="Pedagogy Loafers +3"}
     sets.Alacrity = {feet="Pedagogy Loafers +3"}
     sets.Stormsurge = {feet={ name="Peda. Loafers +3", augments={'Enhances "Stormsurge" effect'}},}
@@ -136,7 +136,7 @@ function get_sets()
 		main="Musa",
 		sub="Khonsu",
 		head="Arbatel Bonnet +3",
-		hands="Arbatel Bracers +2",
+		hands="Arbatel Bracers +3",
 		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
 	})
 
@@ -148,12 +148,12 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Marin staff +1",
-		sub="Enki Strap",
+		main="Bunzi's Rod",
+		sub="Ammurapi shield",
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap",
 		body="Agwu's Robe",
-		hands="Arbatel Bracers +2",
+		hands="Arbatel Bracers +3",
 		legs="Agwu's Slops",
 		feet="Arbatel Loafers +2",
 		neck="Argute stole +2",
@@ -212,7 +212,7 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
-		hands="Arbatel Bracers +2",
+		hands="Arbatel Bracers +3",
 		legs="Arbatel Pants +2",
 		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
 		neck="Malison Medallion",
@@ -230,7 +230,7 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
-		hands="Arbatel Bracers +2",
+		hands="Arbatel Bracers +3",
 		legs="Arbatel Pants +2",
 		feet="Arbatel Loafers +2",
 		neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -248,7 +248,7 @@ function get_sets()
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap", -- Magic accuracy and damage
 		body="Agwu's Robe", -- Magic accuracy and damage
-		hands="Arbatel bracers +2", -- Magic accuracy and damage
+		hands="Arbatel Bracers +3", -- Magic accuracy and damage
 		legs="Agwu's Slops", -- Magic accuracy and damage
 		feet="Agwu's Pigaches", -- Magic accuracy and damage
 		neck="Argute Stole +2", -- Magic skill and damage
@@ -267,7 +267,7 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
-		hands="Arbatel Bracers +2",
+		hands="Arbatel Bracers +3",
 		legs="Arbatel Pants +2",
 		feet="Agwu's Pigaches",
 		neck={ name="Argute Stole +2", augments={'Path: A',}},
@@ -549,7 +549,7 @@ function midcast(spell)
 	end
 	if buffactive["Perpetuance"] then
 	--send_command('@input /echo Fuck yeah Bracers are equipped!')
-		equip({hands="Arbatel bracers +2"})
+		equip({hands="Arbatel Bracers +3"})
 	end
 	
 end

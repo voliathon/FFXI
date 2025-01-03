@@ -27,7 +27,7 @@ function get_sets()
 	BelenusCapes()
 
 	-- Job Abilities
-    sets.EagleEyeShot = {legs="Arcadian Braccae +1"}
+    sets.EagleEyeShot = {legs="Arcadian Braccae +3"}
 	sets.Scavenge = {feet="Orion Socks +1"}
 	sets.Shadowbind = {hands="Orion Bracers +2"}
 	sets.Camouflage = {body="Orion Jerkin +2"}
@@ -203,7 +203,7 @@ function get_sets()
 		head="Orion Beret +3",
 		body="Amini Caban +2",
 		hands="Nyame Gauntlets",
-		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		legs="Arcadian Braccae +3",
 		feet="Amini Bottillons +2",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -235,7 +235,7 @@ function get_sets()
 		head="Orion Beret +3",
 		body="Amini Caban +2",
 		hands="Nyame Gauntlets",
-		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
+		legs="Arcadian Braccae +3",
 		feet="Amini Bottillons +2",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -251,7 +251,7 @@ function get_sets()
 		head="Orion Beret +3",
 		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
 		hands="Nyame Gauntlets",
-		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11'}},
+		legs="Arcadian Braccae +3",
 		feet="Amini Bottillons +2",
 		neck="Fotia Gorget",
 		waist="Sailfi Belt +1",
