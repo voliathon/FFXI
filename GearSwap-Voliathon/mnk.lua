@@ -91,7 +91,7 @@ function get_sets()
 		body="Mpaca's Doublet",
 		hands="Bhikku gloves +3",
 		legs="Bhikku Hose +3",
-		feet="Mpaca's Boots",
+		feet="Bhikku gaiters +3",
 		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
 		left_ear="Cessance Earring",

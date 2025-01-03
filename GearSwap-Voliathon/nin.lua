@@ -7,7 +7,8 @@
 function NinjaCapes()
 	NinjaCapes = {}
 	NinjaCapes.TP = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
-	NinjaCapes.STRWS = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%',}}
+	NinjaCapes.STRWS = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%'}}
+	NinjaCapes.NUKE = { name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 end
 
 function get_sets()
@@ -40,23 +41,23 @@ function get_sets()
 
 	sets.TP.Movement = {
 		ammo="Staunch Tathlum +1",
-		head="Hattori zukin +2",
-		body="Hattori ningi +2",
+		head="Hattori Zukin +2",
+		body="Hattori Ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
-		feet="Erilaz Greaves +2",
-		neck="Loricate torque +1",
-		waist="Flume Belt +1",
-		left_ear="Tuisto Earring",
-		right_ear="Odnowa Earring +1",
-		left_ring="Schneddick Ring",
-		right_ring="Defending Ring",
+		feet="Hattori Kyahan +2",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear="Brutal Earring",
+		right_ear="Cryptic Earring",
+		left_ring="Shneddick Ring",
+		right_ring="Chirich Ring +1",
 		back=NinjaCapes.TP
 	}
 
 	--offensive melee set
 	sets.TP.TP = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Hattori Zukin +2",
 		body="Hachiya chainmail +3",
 		hands="Malignance Gloves",
@@ -73,7 +74,7 @@ function get_sets()
 
 	--Hybrid Gear
 	sets.TP.Hybrid = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Hattori Zukin +2",
 		body="Hattori ningi +2",
 		hands="Malignance Gloves",
@@ -151,7 +152,7 @@ function get_sets()
 		head="Hattori Zukin +2",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs="Malignance Tights",
+		legs="Mochizuki hakama +3",
 		feet="Hiza. Sune-Ate +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -184,7 +185,7 @@ function get_sets()
 		head="Hachiya hatsuburi +3",
 		body="Nyame mail",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs="Hiza. Hizayoroi +2",
+		legs="Mochizuki hakama +3",
 		feet="Hattori kyahan +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -201,7 +202,7 @@ function get_sets()
 		head="Mpaca's cap",
 		body="Nyame mail",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs="Hiza. Hizayoroi +2",
+		legs="Mochizuki hakama +3",
 		feet="Hattori kyahan +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -235,7 +236,7 @@ function get_sets()
 		head="Hachiya hatsuburi +3",
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
-		legs="Ken. Hakama +1",
+		legs="Mochizuki hakama +3",
 		feet="Hattori kyahan +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Grunfeld Rope",
@@ -260,7 +261,7 @@ function get_sets()
 		right_ear="Hattori Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Toro Cape"
+		back=NinjaCapes.NUKE
 	}
 
 	--Blade: Ku
@@ -373,7 +374,7 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Fenrir Ring +1",
 		right_ring="Locus Ring",
-		back="Toro cape"
+		back=NinjaCapes.NUKE
 	}
 
 	
