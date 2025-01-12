@@ -110,7 +110,7 @@ function get_sets()
     head={ name="Nyame Helm", augments={'Path: B',}},
     body="Erilaz Surcoat +3",
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    legs="Erilaz leg guards +3",
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
     neck={ name="Loricate Torque +1", augments={'Path: A',}},
     waist="Flume Belt +1",

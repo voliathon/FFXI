@@ -300,18 +300,22 @@ function precast(spell)
 end
 
 function aftercast(spell)
-	if (spell.name == 'Impetus') then
+	equip_current()
+	if (buffactive['Counterstance']) then
+		equip({body="Hesychast's cyclas +3"})
+	elseif (spell.name == 'Impetus') then
 		equip({body="Bhikku Cyclas +3"})
 	elseif (spell.name == 'Footwork') then
 		equip({feet="Anchorite's Gaiters +3"})
-	else
-		equip_current()	
 	end
 end
 
 
 function equip_current()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
+	if (buffactive['Counterstance']) then
+		equip({body="Hesychast's cyclas +3"})
+	end
 	if (buffactive['Impetus']) then
 		equip({body="Bhikku Cyclas +3"})
 	end

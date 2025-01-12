@@ -30,6 +30,7 @@ function get_sets()
 	sets.JA.Waltz = {legs="Dashing subligar"}
 	sets.JA.Step = 	{}
 	sets.JA.Stun = {}
+	sets.JA.Yonin = {legs="Hattori Hakama +3"}
 	
     sets.JA.Waltz = {head="Mummu bonnet+1", legs="Dashing subligar"}
     
@@ -45,7 +46,7 @@ function get_sets()
 		body="Hattori Ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
-		feet="Hattori Kyahan +2",
+		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Brutal Earring",
@@ -92,7 +93,8 @@ function get_sets()
 	sets.TP.Accuracy = {
 		ammo="Amar Cluster",
 		head="Hattori Zukin +2",
-		neck="Subtlety Spec.",
+		feet="Hattori Kyahan +3",		
+		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		left_ear="Hattori Earring +1",
@@ -121,7 +123,7 @@ function get_sets()
 		body="Hattori ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Flume Belt +1",
 		left_ear="Infused Earring",
@@ -186,7 +188,7 @@ function get_sets()
 		body="Nyame mail",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Mochizuki hakama +3",
-		feet="Hattori kyahan +2",
+		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -203,7 +205,7 @@ function get_sets()
 		body="Nyame mail",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Mochizuki hakama +3",
-		feet="Hattori kyahan +2",
+		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -220,7 +222,7 @@ function get_sets()
 		body="Ken. Samue +1",
 		hands="Malignance gloves",
 		legs="Mpaca's Hose",
-		feet="Hattori kyahan +2",
+		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -237,7 +239,7 @@ function get_sets()
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
 		legs="Mochizuki hakama +3",
-		feet="Hattori kyahan +2",
+		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Grunfeld Rope",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -271,7 +273,7 @@ function get_sets()
 		body="Nyame Mail",
 		hands="Malignance Gloves",
 		legs="Mpaca's Hose",
-		feet="Hattori kyahan +2",
+		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Grunfeld Rope",
 		left_ear="Hattori Earring +1",
@@ -317,7 +319,7 @@ function get_sets()
 	}
 	
 	sets.Utsusemi = set_combine(sets.FastCast,  {
-		feet="Hattori kyahan +2"
+		feet="Hattori Kyahan +3"
 	})
 
 	sets.Migawari = set_combine(sets.FastCast,  {
@@ -501,7 +503,10 @@ end
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
-	equip(sets.TP[sets.TP.index[TP_ind]]) 
+	equip(sets.TP[sets.TP.index[TP_ind]])
+	if (buffactive['Yonin']) then
+		equip({legs="Hattori hakama +3"})
+	end
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
