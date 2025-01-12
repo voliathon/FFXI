@@ -150,7 +150,7 @@ function get_sets()
 	sets.ElementalMagic = {
 		main="Bunzi's Rod",
 		sub="Ammurapi shield",
-		ammo="Sroda Tathlum",
+		ammo="Ghastly Tathlum +1",
 		head="Agwu's Cap",
 		body="Agwu's Robe",
 		hands="Arbatel Bracers +3",
@@ -173,7 +173,7 @@ function get_sets()
 	sets.Kaustra = {
 		main="Bunzi's Rod",
 		sub="Ammurapi Shield",
-		ammo="Sroda Tathlum",
+		ammo="Ghastly Tathlum +1",
 	    head="Pixie Hairpin +1", -- Dark magic damage
 		body="Agwu's Robe", -- Magic accuracy and damage
 		hands="Agwu's Gages", -- Magic accuracy and damage
