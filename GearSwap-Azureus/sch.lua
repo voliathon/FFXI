@@ -90,7 +90,7 @@ function get_sets()
 	}
 	
     sets.Klimaform = set_combine(sets.Duration,  {
-		feet="Arbatel Loafers +2"
+		feet="Arbatel Loafers +3"
 	})
 	
 	-- Stoneskin
@@ -155,7 +155,7 @@ function get_sets()
 		body="Agwu's Robe",
 		hands="Arbatel Bracers +3",
 		legs="Agwu's Slops",
-		feet="Arbatel Loafers +2",
+		feet="Arbatel Loafers +3",
 		neck="Argute stole +2",
 		waist="Eschan stone",
 		left_ear="Malignance Earring",
@@ -232,7 +232,7 @@ function get_sets()
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +3",
 		legs="Arbatel Pants +2",
-		feet="Arbatel Loafers +2",
+		feet="Arbatel Loafers +3",
 		neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Witful belt",
 		left_ear="Crep. Earring",
