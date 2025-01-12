@@ -197,7 +197,7 @@ function get_sets()
 
 	sets.Refresh = set_combine(sets.PDT,  {
 		ammo="Sancus Sachet +1",
-		head="Beckoner's Horn +2",
+		head="Beckoner's Horn +3",
 		body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
 		hands="Asteria Mitts +1",
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
@@ -215,7 +215,7 @@ function get_sets()
 		main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
 		sub="Vox Grip",
 		ammo="Sancus Sachet +1",
-		head="Beckoner's Horn +2",
+		head="Beckoner's Horn +3",
 		body="Beck. Doublet +2",
 		hands="Lamassu Mitts +1",
 		legs="Beck. Spats +2",
@@ -231,7 +231,7 @@ function get_sets()
 
 	-- Need loads of Summon Magic to make this meatier
 	sets.AvatarFavor = set_combine(sets.SummoningMagicSkill,  {
-		head="Beckoner's Horn +2"
+		head="Beckoner's Horn +3"
 	})
 
 	sets.SummonSet = set_combine(sets.SummoningMagicSkill, {
