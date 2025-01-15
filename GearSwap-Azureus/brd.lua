@@ -181,7 +181,7 @@ function get_sets()
     right_ear="Fili Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Null shawl"
+    back="Null shawl",
 	range="Linos"
   }
   
