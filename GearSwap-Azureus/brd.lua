@@ -72,7 +72,7 @@ function get_sets()
     right_ear="Digni. Earring",
     left_ring="Sangoma Ring",
     right_ring="Stikini Ring +1",
-    back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}
+    back="Null shawl"
   }
   
   --Maximizing Song Potency first then duration-- 
@@ -181,7 +181,7 @@ function get_sets()
     right_ear="Fili Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}},
+    back="Null shawl"
 	range="Linos"
   }
   

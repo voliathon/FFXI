@@ -91,7 +91,7 @@ function get_sets()
 		right_ear="Cessance Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Epona's Ring",
-        back=BelenusCape.double_atk
+        back="Null shawl"
     })
 	
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.engaged.TakingLessPhysicalDamage, {
@@ -137,7 +137,7 @@ function get_sets()
 		right_ear="Crep. Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }	
+		back="Null shawl"	
 	})
 	
 	sets.engaged.RangedAccuracy = set_combine(sets.engaged.TakingLessPhysicalDamage, {
@@ -152,7 +152,7 @@ function get_sets()
 		right_ear="Crep. Earring",
 		left_ring="Dingir Ring",
 		right_ring="Chirich Ring +1",
-		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}
+		back="Null shawl"
 	})
 	
 	sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage, {legs="Carmine Cuisses +1"})

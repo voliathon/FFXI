@@ -185,7 +185,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring",
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+		back="Null shawl"
 	}
 	
     sets.DrainAspir = {
@@ -203,7 +203,7 @@ function get_sets()
 		right_ear={ name="Arbatel Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Enmity-3',}},
 		left_ring="Excelsis Ring",
 		right_ring="Evanescence Ring",
-		back="Perimede Cape"
+		back="Null shawl"
 	}
 	
 	sets.Cursna = {
@@ -239,7 +239,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+		back="Null shawl"
 	}	
 	
 	sets.Helix = {
@@ -306,7 +306,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}	
+		back="Null shawl"	
 	})
 
 	-- PDT Set
@@ -344,7 +344,7 @@ function get_sets()
 		right_ear="Hearty Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+		back="Null shawl"
 	}
 
 		
@@ -390,7 +390,8 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
-		right_ring="Chirich Ring +1"
+		right_ring="Chirich Ring +1",
+		back="Null shawl"
 	}
 	
 	sets.Cataclysm = {

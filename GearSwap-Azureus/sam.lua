@@ -29,7 +29,7 @@ function get_sets()
     right_ear="Genmei Earring",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
-    back="Moonlight cape"
+	back="Null shawl"
   }
 
   --TP Sets--
@@ -53,7 +53,7 @@ function get_sets()
 	right_ear="Brutal Earring",
 	left_ring="Chirich Ring +1",
 	right_ring="Flamma ring",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
+	back="Null shawl"
   }
 
   --Tank Gear
@@ -72,7 +72,7 @@ function get_sets()
     right_ear="Genmei Earring",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
-    back="Moonlight cape"
+	back="Null shawl"
   }
 
   --MDT melee set
@@ -91,7 +91,7 @@ function get_sets()
     right_ear="Genmei Earring",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
-    back="Moonlight cape"
+	back="Null shawl"
   }
   
   sets.TP.Accuracy = {
@@ -108,7 +108,7 @@ function get_sets()
 	right_ear="Brutal Earring",
 	left_ring="Chirich Ring +1",
 	right_ring="Chirich Ring +1",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
+	back="Null shawl"
   }
 
   --Weaponskill Sets--
@@ -130,7 +130,7 @@ function get_sets()
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     left_ring="Epaminondas's Ring",
     right_ring="Chirich Ring +1",
-    back="Moonbeam cape"
+	back="Null shawl"
   }
 
   --Job Ability Sets--

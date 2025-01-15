@@ -70,7 +70,7 @@ function get_sets()
     right_ear="Telos Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+    back="Null shawl"
  }
   
 
@@ -104,7 +104,7 @@ function get_sets()
     right_ear="Odr Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+    back="Null shawl"
   }
   
   sets.TP.TreasureHunter = {
@@ -124,7 +124,7 @@ function get_sets()
     right_ear="Eabani Earring",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+    back="Null shawl"
   }
 
   --Weaponskill Sets--
@@ -151,7 +151,7 @@ function get_sets()
   sets.Single = {
     ammo="Yetshila +1",
     head="Nyame Helm",
-    body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+    body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
 	feet="Nyame sollerets",
@@ -168,7 +168,7 @@ function get_sets()
   sets.Shockwave = {
     ammo="Knobkierrie",
     head="Nyame Helm",
-    body="Herculean vest",
+    body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Erilaz leg guards +2",
 	feet="Nyame sollerets",

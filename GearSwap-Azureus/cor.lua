@@ -280,7 +280,7 @@ function get_sets()
 		right_ear="Odr Earring",
 		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
 		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-		back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}	
+		back="Null shawl"
 	
 	}
 	

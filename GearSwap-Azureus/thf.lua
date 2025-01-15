@@ -61,7 +61,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%'}}
+		back="Null shawl"
 	}
 
 	 sets.engaged.Tank = {
@@ -93,7 +93,7 @@ function get_sets()
 		right_ear="Infused Earring",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
-		back="Relucent cape"
+		back="Null shawl"
 	}	
 	
 
@@ -184,7 +184,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Lebeche Ring",
 		right_ring="Defending Ring",
-		back="Relucent Cape"	
+		back="Null shawl"	
 	}		
 	
  -- Weapon Toggle--

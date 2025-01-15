@@ -170,7 +170,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
+		back="Null shawl"
 		
 	})
 
@@ -199,7 +199,7 @@ function get_sets()
 		right_ear="Lethargy Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+		back="Null shawl"
 	}
 	
     sets.Refresh = set_combine(sets.PDT,  {
@@ -226,7 +226,7 @@ function get_sets()
 		right_ear="Lethargy Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+		back="Null shawl"
 	}
 
 	-- PDT Set

@@ -46,7 +46,7 @@ function get_sets()
 		right_ear="Brutal Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
+		back="Null shawl"	
     }	
 
     sets.TP.Impetus = {
@@ -62,7 +62,7 @@ function get_sets()
 		right_ear="Brutal Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
+		back="Null shawl"		
 	}
 	
 	sets.TP.Movement = {
@@ -82,7 +82,7 @@ function get_sets()
 		right_ear="Genmei Earring",
 		left_ring="Fortified Ring",
 		right_ring="Defending Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+		back="Null shawl"	
 	}
     
 	sets.TP.Accuracy = set_combine(sets.TP.BadAss, {})
@@ -100,7 +100,7 @@ function get_sets()
 		right_ear="Brutal Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
+		back="Null shawl"	
 	}
 
 	--Victory Smite --- STR 80%
@@ -130,26 +130,9 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
 		left_ring="Chirich Ring +1",
 		right_ring="Epaminondas's Ring",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
+		back="Null shawl"			
 	}
 	
-	sets.WS.FinalHeaven = {
-		ammo="Knobkierrie",
-		head="Hesychast's crown +2",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
-		hands="Nyame Gauntlets",
-		legs="Hiza. Hizayoroi +2",
-		feet="Ken. Sune-Ate +1",
-		neck="Fotia Gorget",
-		waist="Fotia Belt",
-		right_ear="Ishvara Earring",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-		left_ring="Rajas Ring",
-		right_ring="Epaminondas's Ring",
-		back={ name="Segomo's Mantle", augments={'VIT+10','Accuracy+10 Attack+10','Weapon skill damage +10%'}}
-	}
-    
-    
     sets.status = {}
     sets.status.Engaged = sets.TP
     
@@ -173,7 +156,7 @@ function precast(spell)
 	elseif spell.english == 'Victory Smite' or spell.english == 'Raging Fists' then
 		equip(sets.WS.VictorySmite)
     elseif spell.type=="WeaponSkill" then
-        equip(sets.WS.FinalHeaven)
+        equip(sets.WS.VictorySmite)
     elseif string.find(spell.english,'Waltz') then
         equip(sets.Waltz)		
     elseif sets.precast[spell.english] then

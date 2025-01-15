@@ -159,7 +159,7 @@ function get_sets()
 		right_ear="Gwati Earring",
 		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
 		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back="Seshaw cape"
+		back="Null shawl"
 	}
 
 
@@ -262,7 +262,7 @@ function get_sets()
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		left_ring="Chirich Ring +1",
 		right_ring="Epaminondas's Ring",
-		back="Relucent Cape"
+		back="Null shawl"
 	 }
 	 
 	 
@@ -292,7 +292,7 @@ function get_sets()
 		right_ear="Crep. Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back="Relucent Cape"	
+		back="Null shawl"	
 	}
 	sets.engaged.Refresh = set_combine(sets.Refresh, {})
 	 

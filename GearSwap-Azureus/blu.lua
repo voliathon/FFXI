@@ -85,7 +85,7 @@ function get_sets()
 		right_ear="Hashishin Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back=Rosmerta.MagicDMG
+		back="Null shawl"
     }	
 	
 	--Engaged Sets--
@@ -157,7 +157,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
-		back=Rosmerta.TP	
+		back="Null shawl"	
 	}
 	
 	sets.engaged.Refresh = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
@@ -185,7 +185,7 @@ function get_sets()
 		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
 		right_ring="Chirich Ring +1",
-		back=Rosmerta.TP	
+		back="Null shawl"	
 	}
 	
 	-- Blue Mage Skill
@@ -211,7 +211,7 @@ function get_sets()
 		right_ear="Hashishin Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}}
+		back="Null shawl"
 	}
 
     -- Custom Physical Magic --
