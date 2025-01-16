@@ -118,7 +118,7 @@ function get_sets()
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Null loop",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Brutal Earring",
 		right_ear={ name="Hashi. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','"Dbl.Atk."+4',}},
@@ -129,13 +129,13 @@ function get_sets()
 
 	-- Fuck taking Magic Damage
 	sets.engaged.TakingLessMagicDamage = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body="Hashishin Mintan +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Hashishin Tayt +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Hearty Earring",
 		right_ear="Sanare Earring",
@@ -163,7 +163,7 @@ function get_sets()
 	sets.engaged.Refresh = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
 		head="Rawhide mask",
 		body="Hashishin mintan +3",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		legs="Rawhide trousers",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
@@ -173,7 +173,7 @@ function get_sets()
 	
 	-- If you're not first, you're last
     sets.engaged.MovementEvasion = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body="Hashishin Mintan +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},

@@ -29,7 +29,7 @@
             -- Purchased from the Auction House, crafted only.
 
 -- Created by Voliathon
--- Modified 9/13/2022
+-- Modified 1/15/2025
 
 function get_sets()
 -- Set macro book/set --
@@ -67,96 +67,102 @@ function get_sets()
   TP_ind = 1
 
   sets.TP.Movement = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Flume Belt",
     left_ear="Infused Earring",
-    right_ear="Genmei Earring",
-    left_ring="Defending Ring",
-    right_ring="Fortified Ring",
-    back="Rudianos's mantle"
+    right_ear="Chevalier's Earring +1",
+    left_ring="Shneddick Ring",
+    right_ring="Defending Ring",
+    back="Null shawl"
 
   }
   
   --offensive melee set
   sets.TP.BadAss = {
-    ammo="Staunch Tathlum",
+    ammo="Coiste Bodhar",
     head="Flam. Zucchetto +2",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Flam. Gambieras +2",
-    neck="Loricate Torque +1",
+    neck="Null loop",
     waist="Sailfi Belt",
     left_ear="Brutal Earring",
     right_ear="Cessance earring",
     left_ring="Chirich Ring +1",
-    right_ring="Rajas Ring",
-    back="Rudianos's mantle"
+    right_ring="Chirich Ring +1",
+    back="Null shawl"
   }
 
   --Old Tank Gear
   sets.TP.OldTurtle = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     body="Souv. Cuirass +1",
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Flume Belt",
     left_ear="Hearty Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear="Chevalier's Earring +1",
     left_ring="Defending Ring",
     right_ring="Fortified Ring",
-    back="Rudianos's mantle"
+    back="Null shawl"
   }
   
   --New Tank Gear
   sets.TP.NewTurtle = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Flume Belt",
     left_ear="Tuisto Earring",
-    right_ear="Cryptic Earring",
+    right_ear="Chevalier's Earring +1",
     left_ring="Defending Ring",
     right_ring="Fortified Ring",
-    back="Rudianos's mantle"
+    back="Null shawl"
   }  
 
   --Evasion
   sets.TP.Evasion = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Nyame Helm",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Flume Belt",
     left_ear="Tuisto Earring",
     right_ear="Cryptic earring",
     left_ring="Defending Ring",
     right_ring="Fortified Ring",
-    back="Rudianos's mantle"
+    back="Null shawl"
   }
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    neck="Subtlety Spec.",
-    left_ear="Heartseeker Earring",
-    right_ear="Cessance Earring",
-    left_ring="Chirich Ring +1"
+    head="Sakpata's Helm",
+    body="Sakpata's Plate",
+    hands="Sakpata's Gauntlets",
+    legs="Sakpata's Cuisses",
+    feet="Sakpata's Leggings",	
+    neck="Null loop",
+    left_ear="Telos Earring",
+    right_ear="Chevalier's Earring +1",
+    left_ring="Chirich Ring +1",
+	right_ring="Chirich Ring +1"
   }
   
   sets.TP.TreasureHunter = {
@@ -180,60 +186,61 @@ function get_sets()
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     left_ring="Defending Ring",
     right_ring="Epaminondas's Ring",
-    back="Vespid Mantle"
+    back="Null shawl"
   }
 
   --STR and WSD gears
   sets.STRWSD = {
-    ammo="Amar Cluster",
-    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-    body={ name="Lustr. Harness +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}},
-    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
-    legs={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
-    feet={ name="Lustra. Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}},
+    ammo="Crepuscular pebble",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear="Ishvara Earring",
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    left_ring="Defending Ring",
+    left_ring="Sroda Ring",
     right_ring="Epaminondas's Ring",
-    back="Vespid Mantle"
+    back="Null shawl"
   }
 
 
   sets.Enhancing = {
-    ammo="Staunch Tathlum",
-    head="Erilaz Galea +1",
-    body="Dread Jupon",
+    ammo="Staunch Tathlum +1",
+    head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
+    body="Sakpata's Plate",
     hands="Regal Gauntlets",
-    legs="Futhark Trousers +1",
-    feet="Carmine greaves +1",
-    neck="Sanctity Necklace",
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
+    neck="Incanter's Torque",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
-    left_ring="Defending Ring",
-    right_ring="Stikini Ring"
+    left_ring="Lebeche Ring",
+    right_ring="Stikini Ring +1",
+    back="Null Shawl"
   }
 
   --FastCast set
   sets.FastCast = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     hands="Regal Gauntlets",
     feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-    neck="Loricate Torque +1",
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Mimir Earring",
     right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring"
+    right_ring="Stikini Ring +1"
   }
 
   --Phalanx--
   sets.Phalanx = {
     main="Sakpata's Sword",
     sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%',}},
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Yorium Barbuta",
     body="Yorium Cuirass",
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
@@ -244,18 +251,18 @@ function get_sets()
     left_ear="Mimir Earring",
     right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
+    right_ring="Stikini Ring +1",
     back="Weard Mantle"
  }
 
  --88 SIR
  sets.SIR = {
-    ammo="Staunch Tathlum", --11
+    ammo="Staunch Tathlum +1", --11
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck={ name="Loricate Torque +1", augments={'Path: A',}}, --5
+    neck="Null loop", --5
     waist="Audumbla sash", --10
     left_ear="Knightly Earring", --9
     right_ear="Magnetic Earring",	--8
@@ -275,25 +282,25 @@ function get_sets()
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     left_ring="Defending Ring",
     right_ring="Epaminondas's Ring",
-    back="Vespid Mantle"  
+    back="Null shawl"  
   }
 
   --Magic acc for enfeebles, handy for VW
   sets.MagicAcc = {}
 
   sets.Stoneskin = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Rune. Bandeau +2",
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
     hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Earthcry Earring",
     left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
+    right_ring="Stikini Ring +1",
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
   }
 

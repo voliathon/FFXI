@@ -30,7 +30,7 @@ function get_sets()
 
     -- Fast Cast for Red Mage --
     sets.FastCast = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
 		body="Zendik Robe",
 		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%',}},
@@ -149,7 +149,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring="Freke Ring",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}	
+		back="Null Shawl"	
 	}
 	
     sets.DarkMagic = {
@@ -161,10 +161,9 @@ function get_sets()
 		head="Vitiation chapeau +1",
 		body="Lethargy sayon +1",
 		hands="Lethargy gantherots +1",
-		legs="Chironic Hose",
 		feet="Vitiation Boots +1",
 		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Luminary Sash",
 		left_ear="Digni. Earring",
 		right_ear="Malignance Earring",
@@ -202,17 +201,6 @@ function get_sets()
 		back="Null shawl"
 	}
 	
-    sets.Refresh = set_combine(sets.PDT,  {
-		head="Volte Beret",
-		body="Jhakri robe +2",
-		hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12'}},
-		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
-		waist="Fucho-no-Obi",
-		legs="Volte brais",
-		right_ring="Stikini ring +1",
-		left_ring="Stikini ring +1"
-	})
-		
 	sets.Accuracy = {
 		ammo="Ginsen",
 		head="Malignance Chapeau",
@@ -220,7 +208,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Eschan Stone",
 		left_ear="Crep. Earring",
 		right_ear="Lethargy Earring +1",
@@ -231,36 +219,36 @@ function get_sets()
 
 	-- PDT Set
     sets.PDT = {
-		ammo="Staunch Tathlum",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Flume Belt",
+		ammo="Staunch Tathlum +1",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Null Loop",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Fortified Ring",
-		right_ring="Defending Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+		left_ring="Shneddick Ring",
+		right_ring="Chirich Ring +1",
+		back="Null Shawl"
 	}
 
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
-		ammo="Staunch Tathlum",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Flume Belt",
+		ammo="Staunch Tathlum +1",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Null Loop",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Fortified Ring",
-		right_ring="Defending Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
+		left_ring="Shneddick Ring",
+		right_ring="Chirich Ring +1",
+		back="Null Shawl"
 	}
 
 		
@@ -270,12 +258,19 @@ function get_sets()
 	})
 
 	sets.RefreshSelf = set_combine(sets.PDT,  {
-		body="Lethargy sayon +3",
-		ammo="Homiliary",
-		head="Vitiation Chapeau +3",
-		waist="Fucho-no-obi",
+		ammo="Staunch Tathlum +1",
+		head={ name="Chironic Hat", augments={'AGI+9','CHR+8','"Refresh"+2','Accuracy+3 Attack+3','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
+		body="Shamash Robe",
+		hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12',}},
+		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},
+		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		neck="Null Loop",
+		waist="Fucho-no-Obi",
+		left_ear="Infused Earring",
+		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','"Dbl.Atk."+3',}},
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
+		right_ring="Stikini Ring +1",
+		back="Null Shawl"
 	})
 
     
@@ -306,7 +301,7 @@ function get_sets()
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
 		left_ring="Ilabrat Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10',}}	
+		back="Null Shawl"	
 	})	
   ------------------------------------------------------------------------------------------------------------------
   -- Weaponskill sets
@@ -316,7 +311,7 @@ function get_sets()
   sets.SavageBlade = {
     ammo="Yetshila +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9',}},
+    body="Nyame mail",
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
     legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
 	feet="Nyame sollerets",
@@ -333,7 +328,7 @@ function get_sets()
   sets.WSD = {
     ammo="Yetshila +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Chironic Doublet", augments={'Enmity+4','"Mag.Atk.Bns."+14','Weapon skill damage +9%','Accuracy+9 Attack+9',}},
+    body="Nyame mail",
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
     legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
 	feet="Nyame sollerets",
@@ -352,7 +347,7 @@ function get_sets()
 	engaged_ind = 1  	 
 	 
 	sets.engaged.TP = set_combine(sets.TP, {}) 
-	sets.engaged.Refresh = set_combine(sets.Refresh, {})
+	sets.engaged.Refresh = set_combine(sets.RefreshSelf, {})
 	sets.engaged.Accuracy = set_combine(sets.Accuracy, {})
 	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})

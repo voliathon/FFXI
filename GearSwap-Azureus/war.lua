@@ -20,70 +20,70 @@ function get_sets()
   TP_ind = 1
 
   sets.TP.Movement = {
-    ammo="Ginsen",
-    head="Sakpata's helm",
-    body="Sakpata's breastplate",
-    hands="Sakpata's gauntlets",
-    legs="Sakpata's cuisses",
-    feet="Hermes' sandals",
-    neck="Clotharius Torque",
-    waist="Ioskeha Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Boii Earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
-    back="Moonbeam cape"
-  }
-  
-  --offensive melee set
-  sets.TP.BadAss = {
-    ammo="Ginsen",
+    ammo="Coiste Bodhar",
     head="Sakpata's helm",
     body="Sakpata's breastplate",
     hands="Sakpata's gauntlets",
     legs="Sakpata's cuisses",
     feet="Sakpata's leggings",
-    neck="Clotharius Torque",
+    neck="Null loop",
     waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
-    right_ear="Boii Earring",
+    right_ear="Boii Earring +1",
+    left_ring="Shneddick Ring",
+    right_ring="Chirich Ring +1",
+    back="Null shawl"
+  }
+  
+  --offensive melee set
+  sets.TP.BadAss = {
+    ammo="Coiste Bodhar",
+    head="Sakpata's helm",
+    body="Sakpata's breastplate",
+    hands="Sakpata's gauntlets",
+    legs="Sakpata's cuisses",
+    feet="Sakpata's leggings",
+    neck="Null loop",
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Boii Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Moonbeam cape"
+    back="Null shawl"
   }
 
   --Tank Gear
   sets.TP.Tank = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Flume Belt",
     left_ear="Eabani Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring="Moonlight Ring",
+    left_ring="Defending Ring",
     right_ring="Fortified Ring",
-    back="Engulfer Cape +1"
+    back="Null shawl"
   }
 
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Flume Belt",
     left_ear="Eabani Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring="Moonlight Ring",
+    left_ring="Defending Ring",
     right_ring="Fortified Ring",
-    back="Engulfer Cape +1"
+    back="Null shawl"
   }
   
   sets.TP.Accuracy = {
@@ -93,29 +93,29 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's leggings",
-    neck="Sanctity Necklace",
+    neck="Null loop",
     waist="Ioskeha Belt +1",
     left_ear="Telos Earring",
-    right_ear="Dignitary's Earring",
+    right_ear="Boii Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Moonbeam Cape"
+    back="Null shawl"
   }
   
   sets.TP.TreasureHunter = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Volte Jupon",
     hands="Sakpata's Gauntlets",
     legs="Volte Hose",
     feet="Volte Boots",
-    neck="Sanctity Necklace",
+    neck="Null loop",
     waist="Chaac Belt",
     left_ear="Telos Earring",
     right_ear="Odnowa Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Fortified Ring",
-    back="Moonbeam Cape"
+    back="Null shawl"
   }
 
   --Weaponskill Sets--
@@ -135,24 +135,24 @@ function get_sets()
     right_ear="Ishvara Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Hetairoi Ring",
-    back="Moonbeam Cape"
+    back="Null shawl"
   }
 
   --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
   sets.Single = {
     ammo="Yetshila +1",
-    head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    head="Nyame Helm",
+    body="Nyame Mail",
     hands="Nyame Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+    legs="Nyame Flanchard",
+	feet="Nyame sollerets",
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
     right_ear="Ishvara Earring",
-    left_ring="Epaminondas's Ring",
-    right_ring="Hetairoi Ring",
-    back="Moonbeam Cape"
+    left_ring="Hetairoi Ring",
+    right_ring="Epaminondas's Ring",
+    back="Null shawl"
   }
 
   --Stat Modifier: 	30% STR / 30% MND   Sleep Weaponskill
@@ -169,7 +169,7 @@ function get_sets()
     right_ear="Gwati Earring",
     left_ring="Stikini Ring +1",
     right_ring="Stikini Ring +1",
-    back="Engulfer Cape +1"
+    back="Null shawl"
   }
 
   --magic WS
@@ -186,21 +186,21 @@ function get_sets()
     right_ear="Gwati Earring",
     left_ring="Stikini Ring +1",
     right_ring="Stikini Ring +1",
-    back="Engulfer Cape +1"
+    back="Null shawl"
   }
 
   sets.Enhancing = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Erilaz Galea +1",
     body="Dread Jupon",
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
     feet="Carmine greaves +1",
-    neck="Sanctity Necklace",
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
-    left_ring="Moonlight Ring",
+    left_ring="Defending Ring",
     right_ring="Stikini Ring"
   }
 
@@ -225,7 +225,7 @@ function get_sets()
   --Precast Sets--
   --Fast Cast set
   sets.precast = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Rune. Bandeau +2",
     body="Dread Jupon",
     hands="Regal Gauntlets",
@@ -241,7 +241,7 @@ function get_sets()
 
   --Phalanx--
   sets.Phalanx = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head={ name="Fu. Bandeau +1", augments={'Enhances "Battuta" effect'}},
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3'}},
     hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
@@ -258,12 +258,12 @@ function get_sets()
 
  --88 SIR
  sets.SIR = {
-    ammo="Staunch Tathlum", --11
+    ammo="Staunch Tathlum +1", --11
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck={ name="Loricate Torque +1", augments={'Path: A',}}, --5
+    neck="Null loop", --5
     waist="Audumbla sash", --10
     left_ear="Halasz Earring", --5
     right_ear="Magnetic Earring" --8
@@ -276,13 +276,13 @@ function get_sets()
   sets.MagicAcc = {}
 
   sets.Stoneskin = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Rune. Bandeau +2",
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
     hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Earthcry Earring",

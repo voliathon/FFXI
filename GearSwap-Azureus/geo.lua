@@ -179,13 +179,13 @@ function get_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Azimuth Gaiters +2",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Null loop",
 		waist="Isa Belt",
 		left_ear="Eabani Earring",
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+12','Damage taken-4%',}},
 		left_ring="Shneddick Ring",
 		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back={ name="Lifestream Cape", augments={'Geomancy Skill +6','Indi. eff. dur. +14','Pet: Damage taken -3%','Damage taken-1%',}}
+		back="Null shawl"
 	}
 
     -- .Pet sets are for when Luopan is present.
@@ -198,7 +198,7 @@ function get_sets()
 		hands={ name="Telchine Gloves", augments={'Pet: Mag. Evasion+18','Pet: "Regen"+3','Pet: Damage taken -4%',}},
 		legs={ name="Telchine Braconi", augments={'Pet: DEF+15','Pet: "Regen"+3','Pet: Damage taken -4%',}},
 		feet={ name="Telchine Pigaches", augments={'Pet: Mag. Evasion+19','Pet: "Regen"+3','Pet: Damage taken -4%',}},
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Null loop",
 		waist="Isa Belt",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
@@ -217,13 +217,13 @@ function get_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Azimuth Gaiters +2",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Null loop",
 		waist="Isa Belt",
 		left_ear="Eabani Earring",
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+12','Damage taken-4%',}},
 		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
 		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back={ name="Lifestream Cape", augments={'Geomancy Skill +6','Indi. eff. dur. +14','Pet: Damage taken -3%','Damage taken-1%',}}
+		back="Null shawl"
 	}
 
 		
@@ -234,13 +234,18 @@ function get_sets()
 	sets.Refresh = set_combine(sets.PDT,  {
 		main="Daybreak",
 		sub="Genmei shield",
-		head="Volte beret",
-		body="Jhakri robe +2",
-		hands="Volte gloves",
-		legs="Volte brais",
-		feet="Volte gaiters",
+		head="Volte Beret",
+		body="Jhakri Robe +2",
+		hands="Volte Gloves",
+		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},
+		feet="Volte Gaiters",
+		neck="Null loop",
+		waist="Isa Belt",
+		left_ear="Etiolation Earring",
+		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+12','Damage taken-4%',}},
 		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
 		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		back="Null Shawl"
 	})
 	
 	
@@ -285,8 +290,8 @@ function get_sets()
 		body="Jhakri Robe +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Azimuth Gaiters +2",
-		neck="Sanctity Necklace",
+		feet="Nyame Sollerets",
+		neck="Null loop",
 		waist="Isa Belt",
 		left_ear="Digni. Earring",
 		right_ear="Crep. Earring",

@@ -233,7 +233,7 @@ function get_sets()
 		hands="Arbatel Bracers +3",
 		legs="Arbatel Pants +2",
 		feet="Arbatel Loafers +3",
-		neck={ name="Argute Stole +2", augments={'Path: A',}},
+		neck="Null loop",
 		waist="Witful belt",
 		left_ear="Crep. Earring",
 		right_ear="Malignance Earring",
@@ -300,7 +300,7 @@ function get_sets()
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
-		neck="Clotharius Torque",
+		neck="Null loop",
 		waist="Windbuffet Belt +1",
 		left_ear="Crep. Earring",
 		right_ear="Telos Earring",
@@ -313,13 +313,13 @@ function get_sets()
     sets.PDT = {
 		main="Bolelabunga",
 		sub="Genmei Shield",
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Arbatel Pants +2",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Emphatikos Rope",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
@@ -332,13 +332,13 @@ function get_sets()
     sets.MDT = {
 		main="Bolelabunga",
 		sub="Genmei Shield",
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Arbatel Pants +2",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Emphatikos Rope",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
@@ -357,13 +357,13 @@ function get_sets()
 	sets.Refresh = set_combine(sets.PDT,  {
 		main="Bolelabunga",
 		sub="Genmei Shield",
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head={ name="Chironic Hat", augments={'AGI+9','CHR+8','"Refresh"+2','Accuracy+3 Attack+3','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
 		body="Jhakri Robe +2",
 		hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12',}},
 		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},
 		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
@@ -377,13 +377,13 @@ function get_sets()
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
 
-	-- All Weaponskills for Red Mage unless explicitly defined below sets.precast.WS 
+	-- All Weaponskills for Scholar unless explicitly defined below sets.precast.WS 
 	sets.WSD = {
 		ammo="Crepuscular Pebble",
-		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+		head="Nyame helm",
 		body="Nyame Mail",
-		hands="Jhakri Cuffs +2",
-		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+		hands="Nyame gauntlets",
+		legs="Nyame flanchard",
 		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -398,8 +398,8 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Pixie Hairpin +1",
 		body="Nyame Mail",
-		hands={ name="Chironic Gloves", augments={'Pet: "Dbl. Atk."+2','INT+8','Weapon skill damage +7%','Accuracy+7 Attack+7',}},
-		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+		hands="Nyame gauntlets",
+		legs="Nyame flanchard",
 		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
 		neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Orpheus's Sash",
@@ -416,13 +416,13 @@ function get_sets()
 		hands="Regal Cuffs",
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
 		feet="Skaoi Boots",
-		neck="Sanctity Necklace",
+		neck="Sanctity necklace",
 		waist="Mujin Obi",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Halasz Earring",
 		left_ring="Sangoma Ring",
 		right_ring="Mephitas's Ring +1",
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+		back="Pahtli cape"
 	} 
 
 	  -- Engaged Sets Toggle--

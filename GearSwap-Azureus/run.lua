@@ -41,19 +41,19 @@ function get_sets()
   TP_ind = 1
 
   sets.TP.Movement = {
-    ammo="Staunch Tathlum",
-    head="Nyame Helm",
-    body="Nyame Mail",
-    hands="Erilaz Gauntlets +2",
-    legs="Carmine Cuisses +1",
-    feet="Erilaz Greaves +2",
-    neck="Loricate torque +1",
-    waist="Flume Belt +1",
-    left_ear="Erilaz Earring +1",
-    right_ear="Odnowa Earring +1",
-    left_ring="Moonlight Ring",
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands="Turms Mittens +1",
+    legs="Meg. Chausses +2",
+    feet={ name="Herculean Boots", augments={'Rng.Atk.+24','Attack+30','"Store TP"+10','Accuracy+20 Attack+20',}},
+    neck="Null Loop",
+    waist="Ioskeha Belt +1",
+    left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear={ name="Erilaz Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+    left_ring="Shneddick Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+    back="Null Shawl"
   }
   
   --offensive melee set
@@ -76,7 +76,7 @@ function get_sets()
 
   --Hybrid Gear
   -- sets.TP.Hybrid = {
-    -- ammo="Staunch Tathlum",
+    -- ammo="Staunch Tathlum +1",
 	-- head="Nyame Helm",
     -- body="Nyame Mail",
     -- hands="Erilaz Gauntlets +2",
@@ -98,7 +98,7 @@ function get_sets()
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     legs="Meg. Chausses +2",
     feet="Nyame Sollerets",
-    neck="Sanctity Necklace",
+    neck="Null loop",
     waist="Ioskeha Belt +1",
     left_ear="Telos Earring",
     right_ear="Odr Earring",
@@ -108,7 +108,18 @@ function get_sets()
   }
   
   sets.TP.TreasureHunter = {
+    head={ name="Herculean Helm", augments={'AGI+1','Rng.Atk.+19','"Treasure Hunter"+1','Accuracy+10 Attack+10','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
+    body="Volte Jupon",
+    hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+    legs="Volte Hose",
+    feet="Volte Boots",
+    neck="Null Loop",
     waist="Chaac Belt",
+    left_ear="Sherida Earring",
+    right_ear="Odr Earring",
+    left_ring="Chirich Ring +1",
+    right_ring="Chirich Ring +1",
+    back="Null Shawl"
   }
   
   sets.TP.EvasionTank = {
@@ -118,10 +129,10 @@ function get_sets()
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Flume Belt",
-    left_ear="Erilaz Earring +1",
-    right_ear="Eabani Earring",
+    left_ear="Eabani Earring",
+    right_ear="Erilaz Earring +1",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
     back="Null shawl"
@@ -138,7 +149,7 @@ function get_sets()
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     legs="Meg. Chausses +2",
 	feet="Nyame sollerets",
-    neck="Fotia Gorget",
+    neck="Null loop",
     waist="Fotia Belt",
     left_ear="Sherida Earring",
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -170,7 +181,7 @@ function get_sets()
     head="Nyame Helm",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
-    legs="Erilaz leg guards +2",
+    legs="Nyame Flanchard",
 	feet="Nyame sollerets",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
@@ -178,34 +189,34 @@ function get_sets()
     right_ear="Friomisi Earring",
     left_ring="Moonlight Ring",
     right_ring="Fenrir Ring +1",
-    back="Toro Cape"
+    back="Null loop"
   }
 
   --magic WS
   sets.HercSlash = {
     ammo="Knobkierrie",
     head="Nyame Helm",
-	body="Nyame mail",
-    hands="Erilaz Gauntlets +2",
-    legs="Erilaz leg guards +2",
-    feet="Erilaz greaves +2",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+	feet="Nyame sollerets",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
     left_ear="Crematio Earring",
     right_ear="Friomisi Earring",
     left_ring="Moonlight Ring",
     right_ring="Fenrir Ring +1",
-    back="Toro Cape"
+    back="Null loop"
   }
   
   sets.Enhancing = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Erilaz galea +1",
     body="Dread Jupon",
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
     feet="Carmine greaves +1",
-    neck="Sanctity Necklace",
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Erilaz Earring +1",
@@ -216,7 +227,7 @@ function get_sets()
 
   --Fast Cast set
   sets.FastCast = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Rune. Bandeau +2",
     body="Erilaz surcoat +2",
     hands="Regal Gauntlets",
@@ -232,7 +243,7 @@ function get_sets()
 
   --Phalanx--
   sets.Phalanx = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head={ name="Taeon Chapeau", augments={'Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
     body={ name="Herculean Vest", augments={'Pet: STR+9','Accuracy+9','Phalanx +5','Accuracy+5 Attack+5',}},
     hands={ name="Herculean Gloves", augments={'CHR+9','DEX+7','Phalanx +5',}},
@@ -249,13 +260,13 @@ function get_sets()
 
  --103 SIR
  sets.SIR = {
-    ammo="Staunch Tathlum", --11
+    ammo="Staunch Tathlum +1", --11
 	head="Erilaz galea +1", --15
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck={ name="Loricate Torque +1", augments={'Path: A',}}, --5
+    neck="Null loop", --5
     waist="Audumbla sash", --10
     left_ear="Halasz Earring", --5
     right_ear="Magnetic Earring" --8
@@ -263,31 +274,29 @@ function get_sets()
  
   --Enmity set for high hate generating spells and JAs
   sets.Enmity = {
-	back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%'}}, 
-	waist="Sinew Belt", 
-	legs="Erilaz Leg Guards +2", 
-	neck="Warder's Charm", 
-	body="Emet Harness +1",     
-	feet="Erilaz greaves +2"
+	waist="Kasiri Belt", 
+	neck="Warder's Charm"
   }
 
   --Magic acc for enfeebles, handy for VW
-  sets.MagicAcc = {}
+  sets.MagicAcc = {
+	neck="Null loop"
+  }
 
   sets.Stoneskin = {
-    ammo="Staunch Tathlum",
-    head="Rune. Bandeau +2",
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
+    ammo="Pemphredo Tathlum",
+    head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
+    body="Agwu's Robe",
     hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    legs="Doyen Pants",
+    feet="Agwu's Pigaches",
+    neck="Incanter's Torque",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Earthcry Earring",
-    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
 
 end

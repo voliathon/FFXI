@@ -38,10 +38,10 @@ function get_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Maculele tights +2",
 		feet="Macu. Toe Sh. +2",
-		neck="Clotharius Torque",
+		neck="Null loop",
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
-		right_ear="Telos Earring",
+		right_ear="Maculele Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Hetairoi Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
@@ -54,23 +54,23 @@ function get_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Eschan Stone",
-		left_ear="Maculele Earring +1",
-		right_ear="Telos Earring",
+		left_ear="Telos Earring",
+		right_ear="Maculele Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back="Null shawl"
 	}
 
 	 sets.engaged.Tank = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Macu. Bangles +2",
 		legs="Malignance tights",
 		feet="Macu. Toe Sh. +2",
-		neck="Warder's Charm",
+		neck="Null loop",
 		waist="Windbuffet Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Eabani Earring",
@@ -90,7 +90,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Warder's Charm",
+		neck="Null loop",
 		waist="Kasiri Belt",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
@@ -230,7 +230,7 @@ function get_sets()
  -- Precast Sets  --
 	sets.precast = {}
 	sets.precast.Fastcast = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
 		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
 		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},

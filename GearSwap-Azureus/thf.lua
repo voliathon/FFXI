@@ -55,7 +55,7 @@ function get_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Eschan Stone",
 		left_ear="Odr Earring",
 		right_ear="Telos Earring",
@@ -65,13 +65,13 @@ function get_sets()
 	}
 
 	 sets.engaged.Tank = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Skulk. Armlets +2",
 		legs="Skulk. Culottes +2",
 		feet="Skulk. Poulaines +2",
-		neck="Warder's Charm",
+		neck="Null loop",
 		waist="Windbuffet Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Eabani Earring",
@@ -87,7 +87,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Warder's Charm",
+		neck="Null loop",
 		waist="Kasiri Belt",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
@@ -172,7 +172,7 @@ function get_sets()
  -- Precast Sets  --
 	sets.precast = {}
 	sets.precast.Fastcast = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
 		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
 		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},

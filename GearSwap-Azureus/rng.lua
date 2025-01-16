@@ -83,15 +83,15 @@ function get_sets()
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
 		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6'}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Clotharius Torque",
+		neck="Null loop",
 		waist="Windbuffet Belt +1",
 		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
+		right_ear="Amini Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Epona's Ring",
-        back="Null shawl"
+        back=BelenusCape.double_atk
     })
 	
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.engaged.TakingLessPhysicalDamage, {
@@ -100,13 +100,13 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Null loop",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Hearty Earring",
-		right_ear="Genmei Earring",
+		right_ear="Amini Earring +1",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
-		back={name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
+		back=BelenusCape.double_atk
 	})
 	
 	
@@ -116,13 +116,13 @@ function get_sets()
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Malignance Boots",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Null loop",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Hearty Earring",
-		right_ear="Genmei Earring",
+		right_ear="Amini Earring +1",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
-		back={name="Belenus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }		
+		back="Null shawl"		
 	})
 	
 	sets.engaged.Accuracy = set_combine(sets.engaged.TakingLessPhysicalDamage, {
@@ -131,10 +131,10 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Grunfeld Rope",
 		left_ear="Telos Earring",
-		right_ear="Crep. Earring",
+		right_ear="Amini Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back="Null shawl"	
@@ -155,7 +155,9 @@ function get_sets()
 		back="Null shawl"
 	})
 	
-	sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage, {legs="Carmine Cuisses +1"})
+	sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage, {
+		left_ring="Shneddick Ring"
+	})
 	
 	--MIDSHOT LOGIC OF DOOM
 	sets.midshot = {}
@@ -165,7 +167,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Clotharius Torque",
+		neck="Null loop",
 		waist="K. Kachina Belt +1",
 		left_ear="Telos Earring",
 		right_ear="Enervating Earring",
@@ -181,12 +183,10 @@ function get_sets()
 		feet="Osh. Leggings +1"
 	})	
 	
-	
-	
 	--WeaponSkills
 	sets.HotShot = {
 		head="Orion Beret +3",
-		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
+		body="Nyame mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
@@ -249,7 +249,7 @@ function get_sets()
 	--Savage Blade  50% STR / 50% MND
     sets.SavageBlade = {
 		head="Orion Beret +3",
-		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
+		body="Nyame mail",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
 		feet="Amini Bottillons +2",

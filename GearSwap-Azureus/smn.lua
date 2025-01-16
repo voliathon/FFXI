@@ -250,7 +250,7 @@ function get_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Orpheus's Sash",
 		left_ear="Malignance Earring",
 		right_ear="Friomisi Earring",

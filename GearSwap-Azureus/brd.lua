@@ -186,7 +186,7 @@ function get_sets()
   }
   
   sets.engaged.TakingLessPhysicalDamage = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     head="Fili Calot +3",
     body="Fili Hongreline +3",
     hands="Fili Manchettes +3",
@@ -206,14 +206,14 @@ function get_sets()
     hands="Fili Manchettes +3",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck="Loricate Torque +1",
+    neck="Null loop",
     waist="Flume Belt",
     left_ear="Infused Earring",
     right_ear="Eabani Earring",
     left_ring="Defending Ring",
     right_ring="Fortified ring",
     back="Kumbira Cape",
-	ammo="Staunch Tathlum"
+	ammo="Staunch Tathlum +1"
   }
   
   sets.engaged.Refresh = {
@@ -229,7 +229,7 @@ function get_sets()
     left_ring="Woltaris Ring",
     right_ring="Stikini Ring +1",
     back="Kumbira Cape",
-	ammo="Staunch Tathlum"
+	ammo="Staunch Tathlum +1"
   }
   
   sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
