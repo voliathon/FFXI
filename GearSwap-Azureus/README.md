@@ -1,4 +1,5 @@
 # GearSwap-Azureus
+  ***Null Gear Added***
 - **[Blue Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/blu.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
