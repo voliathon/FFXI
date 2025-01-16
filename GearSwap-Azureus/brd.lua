@@ -67,11 +67,11 @@ function get_sets()
     legs="Brioso Cannions +3",
     feet="Brioso Slippers +3",
     neck="Mnbw. Whistle +1",
-    waist="Luminary Sash",
+    waist="Null belt",
     left_ear="Musical Earring",
     right_ear="Digni. Earring",
-    left_ring="Sangoma Ring",
-    right_ring="Stikini Ring +1",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
     back="Null shawl"
   }
   
@@ -162,8 +162,8 @@ function get_sets()
     waist="Sailfi Belt +1",
     left_ear="Telos Earring",
     right_ear="Cessance Earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}},
 	range="Linos"	
   }
@@ -176,11 +176,11 @@ function get_sets()
     legs="Fili Rhingrave +3",
     feet="Fili cothurnes +3",
     neck="Bard's charm +2",
-    waist="Eschan Stone",
+    waist="Null belt",
     left_ear="Telos Earring",
     right_ear="Fili Earring +1",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back="Null shawl",
 	range="Linos"
   }
@@ -192,7 +192,7 @@ function get_sets()
     hands="Fili Manchettes +3",
     legs="Fili Rhingrave +3",
     neck={ name="Bard's Charm +2", augments={'Path: A',}},
-    waist="Sailfi belt +1",
+    waist="Null belt",
     left_ear="Infused Earring",
     right_ear="Eabani Earring",
     left_ring="Defending Ring",
@@ -207,12 +207,12 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Null loop",
-    waist="Flume Belt",
+    waist="Null belt",
     left_ear="Infused Earring",
     right_ear="Eabani Earring",
     left_ring="Defending Ring",
     right_ring="Fortified ring",
-    back="Kumbira Cape",
+    back="Null shawl",
 	ammo="Staunch Tathlum +1"
   }
   
@@ -226,9 +226,9 @@ function get_sets()
     waist="Fucho-no-Obi",
     left_ear="Infused Earring",
     right_ear="Fili Earring +1",
-    left_ring="Woltaris Ring",
-    right_ring="Stikini Ring +1",
-    back="Kumbira Cape",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
+    back="Null shawl",
 	ammo="Staunch Tathlum +1"
   }
   

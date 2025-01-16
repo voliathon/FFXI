@@ -80,11 +80,11 @@ function get_sets()
 		legs="Hashishin Tayt +3",
 		feet="Hashishin basmak +3",
 		neck="Mirage Stole +2",
-		waist="Luminary Sash",
+		waist="Null belt",
 		left_ear="Digni. Earring",
 		right_ear="Hashishin Earring +1",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Null shawl"
     }	
 	
@@ -95,7 +95,7 @@ function get_sets()
 	engaged_ind = 1 	
 	
     sets.engaged.TP = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
@@ -119,11 +119,11 @@ function get_sets()
 		legs="Hashishin Tayt +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null loop",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		waist="Null belt",
 		left_ear="Brutal Earring",
 		right_ear={ name="Hashi. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','"Dbl.Atk."+4',}},
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back=Rosmerta.TP
     }
 
@@ -136,7 +136,7 @@ function get_sets()
 		legs="Hashishin Tayt +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null loop",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		waist="Null belt",
 		left_ear="Hearty Earring",
 		right_ear="Sanare Earring",
 		left_ring="Chirich Ring +1",
@@ -152,11 +152,11 @@ function get_sets()
 		legs="Hashishin Tayt +3",
 		feet="Malignance Boots",
 		neck="Mirage Stole +2",
-		waist="Eschan Stone",
+		waist="Null belt",
 		left_ear="Digni. Earring",
-		right_ear="Telos Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		right_ear="Hashishin Earring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"	
 	}
 	
@@ -167,8 +167,8 @@ function get_sets()
 		legs="Rawhide trousers",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 	})
 	
 	-- If you're not first, you're last
@@ -180,7 +180,7 @@ function get_sets()
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Bathy Choker +1",
-		waist="Kasiri Belt",
+		waist="Null belt",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
@@ -206,11 +206,11 @@ function get_sets()
 		legs="Hashishin Tayt +3",
 		feet="Hashishin basmak +3",
 		neck="Mirage Stole +2",
-		waist="Luminary Sash",
+		waist="Null belt",
 		left_ear="Digni. Earring",
 		right_ear="Hashishin Earring +1",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Null shawl"
 	}
 
@@ -227,8 +227,8 @@ function get_sets()
 		waist="Grunfeld Rope",
 		left_ear="Digni. Earring",
 		right_ear="Telos Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back=Rosmerta.TP
     }
 
@@ -272,8 +272,8 @@ function get_sets()
 		waist="Orpheus's sash",
 		left_ear="Choleric Earring",
 		right_ear="Friomisi Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},		
 		back=Rosmerta.MagicDMG
     }
 	
@@ -319,7 +319,7 @@ function get_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 	-- WSD covers Savage Blade and Expiacion
     sets.WSD = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Hashishin kavuk +3",
 		body="Assim. Jubbah +3",
 		hands="Nyame Gauntlets",
@@ -335,7 +335,7 @@ function get_sets()
     }
 
     sets.ChantduCygne = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Hashishin kavuk +3",
 		body="Abnoba Kaftan",
 		hands="Nyame Gauntlets",

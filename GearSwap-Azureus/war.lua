@@ -27,7 +27,7 @@ function get_sets()
     legs="Sakpata's cuisses",
     feet="Sakpata's leggings",
     neck="Null loop",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Brutal Earring",
     right_ear="Boii Earring +1",
     left_ring="Shneddick Ring",
@@ -47,8 +47,8 @@ function get_sets()
     waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
     right_ear="Boii Earring +1",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back="Null shawl"
   }
 
@@ -61,7 +61,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Null loop",
-    waist="Flume Belt",
+    waist="Null belt",
     left_ear="Eabani Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Defending Ring",
@@ -78,7 +78,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Null loop",
-    waist="Flume Belt",
+    waist="Null belt",
     left_ear="Eabani Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Defending Ring",
@@ -94,11 +94,11 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's leggings",
     neck="Null loop",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Telos Earring",
     right_ear="Boii Earring +1",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back="Null shawl"
   }
   
@@ -163,12 +163,12 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck="Fotia Gorget",
+    neck="Null loop",
     waist="Orpheus's sash",
     left_ear="Digni. Earring",
     right_ear="Gwati Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},		
     back="Null shawl"
   }
 
@@ -222,9 +222,8 @@ function get_sets()
   sets.JA.Pulse = {head="Erilaz Galea +1",legs="Runeist Trousers +2"}
   sets.JA.Swordplay = {hands="Futhark mitons +1"}
 
-  --Precast Sets--
   --Fast Cast set
-  sets.precast = {
+  sets.FastCast = {
     ammo="Staunch Tathlum +1",
     head="Rune. Bandeau +2",
     body="Dread Jupon",
@@ -309,10 +308,10 @@ function precast(spell,abil)
   end
   
   if spell.skill == 'Enhancing Magic' then
-	equip(sets.precast)
+	equip(sets.FastCast)
   end
   if spell.action_type == 'Magic' then
-    equip(sets.precast)
+    equip(sets.FastCast)
   end
   
   

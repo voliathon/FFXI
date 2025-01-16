@@ -48,7 +48,7 @@ function get_sets()
     legs="Meg. Chausses +2",
     feet={ name="Herculean Boots", augments={'Rng.Atk.+24','Attack+30','"Store TP"+10','Accuracy+20 Attack+20',}},
     neck="Null Loop",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     right_ear={ name="Erilaz Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
     left_ring="Shneddick Ring",
@@ -68,8 +68,8 @@ function get_sets()
     waist="Ioskeha Belt +1",
     left_ear="Sherida Earring",
     right_ear="Telos Earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back="Null shawl"
  }
   
@@ -99,11 +99,11 @@ function get_sets()
     legs="Meg. Chausses +2",
     feet="Nyame Sollerets",
     neck="Null loop",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Telos Earring",
     right_ear="Odr Earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back="Null shawl"
   }
   
@@ -117,8 +117,8 @@ function get_sets()
     waist="Chaac Belt",
     left_ear="Sherida Earring",
     right_ear="Odr Earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back="Null Shawl"
   }
   
@@ -130,7 +130,7 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Null loop",
-    waist="Flume Belt",
+    waist="Null belt",
     left_ear="Eabani Earring",
     right_ear="Erilaz Earring +1",
     left_ring="Fortified Ring",
@@ -184,7 +184,7 @@ function get_sets()
     legs="Nyame Flanchard",
 	feet="Nyame sollerets",
     neck="Fotia Gorget",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Crematio Earring",
     right_ear="Friomisi Earring",
     left_ring="Moonlight Ring",
@@ -201,7 +201,7 @@ function get_sets()
     legs="Nyame Flanchard",
 	feet="Nyame sollerets",
     neck="Fotia Gorget",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Crematio Earring",
     right_ear="Friomisi Earring",
     left_ring="Moonlight Ring",

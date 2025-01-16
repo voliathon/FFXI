@@ -13,25 +13,6 @@ function get_sets()
 	ShiningOne = 'OFF' -- Toogle on/off the Doji and Lionheart via ctrl + F9
 	ShadowType = 'None'
 	
-  --Idle Sets--
-  sets.Idle = {
-	main="Shining One",
-	sub="Mensch Strap +1",
-    ammo="Staunch Tathlum +1",
-    head="Nyame Helm",
-    body="Nyame Mail",
-    hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
-    feet="Nyame Sollerets",
-    neck="Null loop",
-    waist="Ioskeha Belt +1",
-    left_ear="Infused Earring",
-    right_ear="Genmei Earring",
-    left_ring="Fortified Ring",
-    right_ring="Defending Ring",
-	back="Null shawl"
-  }
-
   --TP Sets--
   sets.TP = {}
 --					  1		   2              3 				   4 
@@ -51,8 +32,8 @@ function get_sets()
 	waist="Ioskeha Belt +1",
 	left_ear="Cessance earring",
 	right_ear="Brutal Earring",
-	left_ring="Chirich Ring +1",
-	right_ring="Flamma ring",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 	back="Null shawl"
   }
 
@@ -67,7 +48,7 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Null loop",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Infused Earring",
     right_ear="Genmei Earring",
     left_ring="Fortified Ring",
@@ -86,7 +67,7 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Null loop",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Infused Earring",
     right_ear="Genmei Earring",
     left_ring="Fortified Ring",
@@ -103,11 +84,11 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
 	neck="Null loop",
-	waist="Ioskeha Belt +1",
+	waist="Null belt",
 	left_ear="Cessance earring",
 	right_ear="Brutal Earring",
-	left_ring="Chirich Ring +1",
-	right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 	back="Null shawl"
   }
 

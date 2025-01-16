@@ -1,6 +1,4 @@
 function get_sets()
-
-	
 	
 -- Set macro book/set --
     send_command('input /macro book 15;wait .1;input /macro set 1')
@@ -41,11 +39,11 @@ function get_sets()
 		legs="Kendatsuba hakama +1",
 		feet="Kendatsuba sune-ate +1",
 		neck="Null loop",
-		waist="Moonbow Belt +1",
+		waist="Null belt",
 		left_ear="Cessance earring",
 		right_ear="Brutal Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"	
     }	
 
@@ -57,11 +55,11 @@ function get_sets()
 		legs="Kendatsuba hakama +1",
 		feet="Kendatsuba sune-ate +1",
 		neck="Null loop",
-		waist="Moonbow Belt +1",
+		waist="Null belt",
 		left_ear="Cessance earring",
 		right_ear="Brutal Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"		
 	}
 	
@@ -77,7 +75,7 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Moonbow Belt +1",
+		waist="Null belt",
 		left_ear="Cryptic Earring",
 		right_ear="Genmei Earring",
 		left_ring="Fortified Ring",
@@ -98,8 +96,8 @@ function get_sets()
 		waist="Chaac Belt",
 		left_ear="Cessance Earring",
 		right_ear="Brutal Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"	
 	}
 

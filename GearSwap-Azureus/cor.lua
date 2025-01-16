@@ -66,22 +66,6 @@ function get_sets()
     sets.CastersRoll = set_combine(sets.CorsairRoll, { legs="Chasseur's Culottes +3" })
     sets.CoursersRoll = set_combine(sets.CorsairRoll, { feet="Chass. Bottes +3" })
 
-	
-	-- Damage Taken with Movement
-    sets.DamageTaken = {
-		head="Chass. Tricorne +3",
-		body="Chasseur's Frac +3",
-		hands="Nyame Gauntlets",
-		legs="Chasseur's Culottes +3",
-		feet="Nyame Sollerets",
-		neck="Null loop",
-		waist="Sailfi Belt +1",
-		left_ear="Hearty Earring",
-		right_ear="Infused Earring",
-		left_ring="Shneddick Ring",
-		right_ring="Chirich Ring +1"
-    }
-	
 	--Quick Draw damage is calculated similar to magic damage by multiplying the following factors in order and flooring after each step.
 	--    Base Damage = [(Gun DMG + Bullet DMG) * 2] (Multiple gear listed below add 10 DMG to Base Damage.)
 	--    resist
@@ -261,7 +245,7 @@ function get_sets()
 		legs="Chasseur's Culottes +3",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Sailfi Belt +1",
+		waist="Null belt",
 		left_ear="Hearty Earring",
 		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
@@ -275,7 +259,7 @@ function get_sets()
 		legs="Chasseur's Culottes +3",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Eschan Stone",
+		waist="Null belt",
 		left_ear="Crep. Earring",
 		right_ear="Odr Earring",
 		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},

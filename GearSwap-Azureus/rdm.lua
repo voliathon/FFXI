@@ -60,8 +60,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Magnetic Earring",
 		right_ear="Leth. Earring +1",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
 	}
 	
@@ -78,8 +78,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Magnetic Earring",
 		right_ear="Lethargy Earring +1",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10',}}
 	}
 
@@ -88,8 +88,8 @@ function get_sets()
 		head="Umuthi Hat",
 		hands="Carapacho Cuffs",
 		right_ear="Earthcry Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		waist="Siegel Sash"	
 	})
 	
@@ -121,7 +121,7 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		ammo="Dosis Tathlum",
+		ammo="Ghastly Tathlum +1",
 		head="Lethargy chappel +1",
 		body="Lethargy sayon +1",
 		hands="Lethargy gantherots +1",
@@ -131,13 +131,13 @@ function get_sets()
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Halasz Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Seshaw cape"
 	}
 	
 	sets.MagicBurst = {
-		ammo="Pemphredo Tathlum",
+		ammo="Ghastly Tathlum +1",
 		head="Ea Hat",
 		body="Ea Houppelande",
 		hands="Leth. Ganth. +3",
@@ -164,11 +164,11 @@ function get_sets()
 		feet="Vitiation Boots +1",
 		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
 		neck="Null loop",
-		waist="Luminary Sash",
+		waist="Null belt",
 		left_ear="Digni. Earring",
 		right_ear="Malignance Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Null shawl"
 		
 	})
@@ -186,7 +186,7 @@ function get_sets()
 	}
 
 	sets.TP = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Bunzi's Gloves",
@@ -202,18 +202,18 @@ function get_sets()
 	}
 	
 	sets.Accuracy = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Eschan Stone",
+		waist="Null belt",
 		left_ear="Crep. Earring",
 		right_ear="Lethargy Earring +1",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"
 	}
 
@@ -226,7 +226,7 @@ function get_sets()
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null Loop",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
 		left_ring="Shneddick Ring",
@@ -243,7 +243,7 @@ function get_sets()
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null Loop",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
 		left_ring="Shneddick Ring",
@@ -268,20 +268,20 @@ function get_sets()
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','"Dbl.Atk."+3',}},
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Null Shawl"
 	})
 
-    
+    -- Refresh spell set
 	sets.Refresh = set_combine(sets.Enhancing,  {
 		body="Lethargy sayon +3",
 		legs="Lethargy Fuseau +3",
 		ammo="Homiliary",
 		head="Vitiation Chapeau +3",
 		waist="Fucho-no-obi",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 	})
 
 	sets.Enspell = set_combine(sets.Enhancing,  {

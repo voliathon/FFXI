@@ -17,10 +17,10 @@ function get_sets()
 	engaged_ind = 1
 
     sets.engaged.TreasureHunter = {
-		ammo="Ginsen",
-		head="Mummu Bonnet +2",
+		ammo="Yetshila +1",
+		head={ name="Herculean Helm", augments={'AGI+1','Rng.Atk.+19','"Treasure Hunter"+1','Accuracy+10 Attack+10','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
 		body="Volte Jupon",
-		hands={ name="Plunderer's Armlets +3", augments={'Enhances "Perfect Dodge" effect'}},
+		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect',}},
 		legs="Volte Hose",
 		feet="Skulk. Poulaines +2",
 		neck="Anu Torque",
@@ -29,7 +29,7 @@ function get_sets()
 		right_ear="Odr Earring",
 		left_ring="Epona's Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%'}}
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
 	}
 	
 	sets.engaged.TP = {
@@ -56,11 +56,11 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Eschan Stone",
+		waist="Null belt",
 		left_ear="Odr Earring",
 		right_ear="Telos Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"
 	}
 
@@ -72,7 +72,7 @@ function get_sets()
 		legs="Skulk. Culottes +2",
 		feet="Skulk. Poulaines +2",
 		neck="Null loop",
-		waist="Windbuffet Belt +1",
+		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Eabani Earring",
 		left_ring="Fortified Ring",
@@ -88,7 +88,7 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Kasiri Belt",
+		waist="Null belt",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
 		left_ring="Defending Ring",

@@ -55,11 +55,11 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Eschan Stone",
+		waist="Null belt",
 		left_ear="Telos Earring",
 		right_ear="Maculele Earring +1",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"
 	}
 
@@ -71,7 +71,7 @@ function get_sets()
 		legs="Malignance tights",
 		feet="Macu. Toe Sh. +2",
 		neck="Null loop",
-		waist="Windbuffet Belt +1",
+		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Eabani Earring",
 		left_ring="Defending Ring",
@@ -91,7 +91,7 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Kasiri Belt",
+		waist="Null belt",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
 		left_ring="Defending Ring",
@@ -202,8 +202,8 @@ function get_sets()
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 	

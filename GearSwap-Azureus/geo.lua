@@ -48,8 +48,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Magnetic Earring",
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+12','Damage taken-4%',}},
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Lifestream Cape", augments={'Geomancy Skill +6','Indi. eff. dur. +14','Pet: Damage taken -3%','Damage taken-1%',}}
 	}
 
@@ -66,8 +66,8 @@ function get_sets()
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Loquacious Earring",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Perimede Cape"
 	}
 
@@ -84,8 +84,8 @@ function get_sets()
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Earthcry Earring",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Perimede Cape"	
 	}
 
@@ -154,11 +154,11 @@ function get_sets()
 		legs="Merlinic Shalwar",
 		feet="Bagua Sandals +1",
 		neck="Sanctity Necklace",
-		waist="Refoccilation stone",
+		waist="Null belt",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Null shawl"
 	}
 
@@ -180,7 +180,7 @@ function get_sets()
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Azimuth Gaiters +2",
 		neck="Null loop",
-		waist="Isa Belt",
+		waist="Null belt",
 		left_ear="Eabani Earring",
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+12','Damage taken-4%',}},
 		left_ring="Shneddick Ring",
@@ -218,7 +218,7 @@ function get_sets()
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Azimuth Gaiters +2",
 		neck="Null loop",
-		waist="Isa Belt",
+		waist="Null Belt",
 		left_ear="Eabani Earring",
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+12','Damage taken-4%',}},
 		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
@@ -240,7 +240,7 @@ function get_sets()
 		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},
 		feet="Volte Gaiters",
 		neck="Null loop",
-		waist="Isa Belt",
+		waist="Null Belt",
 		left_ear="Etiolation Earring",
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+12','Damage taken-4%',}},
 		left_ring={name="Stikini Ring +1",bag="Wardrobe 3"},
@@ -292,11 +292,11 @@ function get_sets()
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Nyame Sollerets",
 		neck="Null loop",
-		waist="Isa Belt",
+		waist="Null Belt",
 		left_ear="Digni. Earring",
 		right_ear="Crep. Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"	
 	}
 	sets.engaged.Refresh = set_combine(sets.Refresh, {})

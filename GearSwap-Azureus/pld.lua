@@ -74,7 +74,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Null loop",
-    waist="Flume Belt",
+    waist="Null belt",
     left_ear="Infused Earring",
     right_ear="Chevalier's Earring +1",
     left_ring="Shneddick Ring",
@@ -95,8 +95,8 @@ function get_sets()
     waist="Sailfi Belt",
     left_ear="Brutal Earring",
     right_ear="Cessance earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back="Null shawl"
   }
 
@@ -109,7 +109,7 @@ function get_sets()
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     neck="Null loop",
-    waist="Flume Belt",
+    waist="Null belt",
     left_ear="Hearty Earring",
     right_ear="Chevalier's Earring +1",
     left_ring="Defending Ring",
@@ -126,7 +126,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Null loop",
-    waist="Flume Belt",
+    waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear="Chevalier's Earring +1",
     left_ring="Defending Ring",
@@ -143,7 +143,7 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Null loop",
-    waist="Flume Belt",
+    waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear="Cryptic earring",
     left_ring="Defending Ring",
@@ -159,10 +159,11 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",	
     neck="Null loop",
+	wait="Null belt",
     left_ear="Telos Earring",
     right_ear="Chevalier's Earring +1",
-    left_ring="Chirich Ring +1",
-	right_ring="Chirich Ring +1"
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"}
   }
   
   sets.TP.TreasureHunter = {
@@ -232,8 +233,8 @@ function get_sets()
     waist="Siegel Sash",
     left_ear="Mimir Earring",
     right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1"
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"}
   }
 
   --Phalanx--
@@ -250,8 +251,8 @@ function get_sets()
     waist="Audumbla Sash",
     left_ear="Mimir Earring",
     right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
     back="Weard Mantle"
  }
 
@@ -299,8 +300,8 @@ function get_sets()
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Earthcry Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
   }
 

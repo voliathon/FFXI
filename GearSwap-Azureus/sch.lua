@@ -62,8 +62,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Malignance Earring",
 		right_ear="Loquac. Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back="Perimede Cape"
 	}
 	
@@ -85,8 +85,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Mendi. Earring",
 		right_ear="Magnetic Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"}
 	}
 	
     sets.Klimaform = set_combine(sets.Duration,  {
@@ -118,11 +118,11 @@ function get_sets()
 		legs="Pinga Pants",
 		feet="Pedagogy Loafers +3",
 		neck="Incanter's Torque",
-		waist="Luminary Sash",
+		waist="Null belt",
 		left_ear="Mendi. Earring",
 		right_ear="Magnetic Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back="Pahtli Cape"
 	})
 
@@ -160,8 +160,8 @@ function get_sets()
 		waist="Eschan stone",
 		left_ear="Malignance Earring",
 		right_ear="Arbatel Earring +1",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
@@ -180,7 +180,7 @@ function get_sets()
 		legs="Agwu's Slops", -- Magic accuracy and damage
 		feet="Agwu's Pigaches", -- Magic accuracy and damage
 		neck="Argute Stole +2", -- Magic skill and damage
-		waist="Eschan stone",
+		waist="Null belt",
 		left_ear="Malignance Earring",
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
@@ -216,7 +216,7 @@ function get_sets()
 		legs="Arbatel Pants +2",
 		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
 		neck="Malison Medallion",
-		waist="Luminary Sash",
+		waist="Null belt",
 		left_ear="Crep. Earring",
 		right_ear="Malignance Earring",
 		left_ring="Ephedra Ring",
@@ -234,11 +234,11 @@ function get_sets()
 		legs="Arbatel Pants +2",
 		feet="Arbatel Loafers +3",
 		neck="Null loop",
-		waist="Witful belt",
+		waist="Null belt",
 		left_ear="Crep. Earring",
 		right_ear="Malignance Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back="Null shawl"
 	}	
 	
@@ -271,11 +271,11 @@ function get_sets()
 		legs="Arbatel Pants +2",
 		feet="Agwu's Pigaches",
 		neck={ name="Argute Stole +2", augments={'Path: A',}},
-		waist="Luminary Sash",
+		waist="Null belt",
 		left_ear="Crep. Earring",
 		right_ear="Malignance Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	})
 
@@ -304,8 +304,8 @@ function get_sets()
 		waist="Windbuffet Belt +1",
 		left_ear="Crep. Earring",
 		right_ear="Telos Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"	
 	})
 
@@ -320,11 +320,11 @@ function get_sets()
 		legs="Arbatel Pants +2",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null loop",
-		waist="Emphatikos Rope",
+		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 
@@ -339,11 +339,11 @@ function get_sets()
 		legs="Arbatel Pants +2",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null loop",
-		waist="Emphatikos Rope",
+		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back="Null shawl"
 	}
 
@@ -367,9 +367,9 @@ function get_sets()
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back="Kumbira Cape"
+		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
+		back="Null shawl"
 	})
 	
 	
@@ -409,7 +409,8 @@ function get_sets()
 		right_ring="Hetairoi Ring",
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}	
 	}
-	 
+	
+	 --Max MP WS.. equip mp gear noob
 	sets.Myrkr = {
 		head="Pixie Hairpin +1",
 		body="Arbatel Gown +2",

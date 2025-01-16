@@ -101,7 +101,7 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		waist="Null belt",
 		left_ear="Hearty Earring",
 		right_ear="Amini Earring +1",
 		left_ring="Defending Ring",
@@ -117,7 +117,7 @@ function get_sets()
 		legs="Nyame Flanchard",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		waist="Null belt",
 		left_ear="Hearty Earring",
 		right_ear="Amini Earring +1",
 		left_ring="Defending Ring",
@@ -132,11 +132,11 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="Grunfeld Rope",
+		waist="Null belt",
 		left_ear="Telos Earring",
 		right_ear="Amini Earring +1",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back="Null shawl"	
 	})
 	
