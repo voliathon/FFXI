@@ -243,7 +243,7 @@ function get_sets()
     head="Nyame Helm",
     body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
     hands="Nyame Gauntlets",
-    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+    legs="Nyame Flanchard",
 	feet="Nyame sollerets",
     neck={ name="Bard's Charm +2", augments={'Path: A',}},
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -255,12 +255,13 @@ function get_sets()
   }
   
   --All in One who gives a fuck Weapon Skill set of Doom
+  --Rudra Evisceration Mordant go here
   sets.WSD = {
     range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
     head="Nyame Helm",
     body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
     hands="Nyame Gauntlets",
-    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},		
+    legs="Nyame Flanchard",		
 	feet="Nyame sollerets",
     neck={ name="Bard's Charm +2", augments={'Path: A',}},
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},

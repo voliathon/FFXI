@@ -107,7 +107,7 @@ function get_sets()
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
 		body="Lanun Frac +3",
-		hands="Chasseur's Gants +3",
+		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Commodore charm +2",
@@ -128,7 +128,7 @@ function get_sets()
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
     sets.LastStand = {
-		head={ name="Nyame Helm", augments={'Path: B',}},
+		head="Lanun tricorne +3",
 		body="Laksa. Frac +3",
 		hands="Chasseur's Gants +3",
 		legs="Nyame Flanchard",
@@ -147,7 +147,7 @@ function get_sets()
 		head="Nyame Helm",
 		body="Laksamana's frac +3",
 		hands="Chasseur's Gants +3",
-		legs={ name="Herculean Trousers", augments={'AGI+10','DEX+4','Weapon skill damage +6%','Accuracy+11 Attack+11',}},
+		legs="Nyame flanchard",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -163,7 +163,7 @@ function get_sets()
 		head="Nyame Helm",
 		body="Lanun Frac +3",
 		hands="Nyame Gauntlets",
-		legs="Chasseur's Culottes +3",
+		legs="Nyame flanchard",
 		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
 		neck="Commodore charm +2",
 		waist="Orpheus's Sash",
@@ -182,7 +182,7 @@ function get_sets()
 		legs="Laksamana's Trews +3",
 		feet="Meg. Jam. +2",
 		neck="Commodore charm +2",
-		waist="K. Kachina Belt +1",
+		waist="Yemaya Belt",
 		left_ear="Telos Earring",
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",
@@ -333,10 +333,16 @@ function precast(spell,abil)
 		--Regular Pew Pew Action outside of WS - Snapshot Glory
 		equip(sets.Snapshot)
 	end
-	
-	if spell.name == "Leaden Salute" then
+
+	if spell.english == "Leaden Salute" and (world.weather_element == "Dark" or world.day_element == "Dark") then 
+		add_to_chat(125, "Hachirin-no-Obi has been equipped for this WS")
+		set_combine(sets.LeadenSalute,{ waist = "Hachirin-no-Obi"})
+	elseif spell.english == "Leaden Salute" and spell.target.distance < 15 then 
 		equip(sets.LeadenSalute)
+	elseif spell.english == "Leaden Salute"
+		set_combine(sets.LeadenSalute,{ waist = "Eschan stone"})
 	end
+
 	if spell.name == "Last Stand" then
 		equip(sets.LastStand)
 	end

@@ -154,7 +154,7 @@ function get_sets()
 		head="Agwu's Cap",
 		body="Agwu's Robe",
 		hands="Arbatel Bracers +3",
-		legs="Agwu's Slops",
+		legs="Arbatel pants +3",
 		feet="Arbatel Loafers +3",
 		neck="Argute stole +2",
 		waist="Eschan stone",
@@ -177,8 +177,8 @@ function get_sets()
 	    head="Pixie Hairpin +1", -- Dark magic damage
 		body="Agwu's Robe", -- Magic accuracy and damage
 		hands="Agwu's Gages", -- Magic accuracy and damage
-		legs="Agwu's Slops", -- Magic accuracy and damage
-		feet="Agwu's Pigaches", -- Magic accuracy and damage
+		legs="Arbatel pants +3", -- Magic accuracy and damage
+		feet="Arbatel Loafers +3", -- Magic accuracy and damage
 		neck="Argute Stole +2", -- Magic skill and damage
 		waist="Null belt",
 		left_ear="Malignance Earring",
@@ -213,7 +213,7 @@ function get_sets()
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +3",
-		legs="Arbatel Pants +2",
+		legs="Arbatel pants +3",
 		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
 		neck="Malison Medallion",
 		waist="Null belt",
@@ -231,7 +231,7 @@ function get_sets()
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +3",
-		legs="Arbatel Pants +2",
+		legs="Arbatel pants +3",
 		feet="Arbatel Loafers +3",
 		neck="Null loop",
 		waist="Null belt",
@@ -268,7 +268,7 @@ function get_sets()
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +3",
-		legs="Arbatel Pants +2",
+		legs="Arbatel pants +3",
 		feet="Agwu's Pigaches",
 		neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Null belt",
@@ -317,37 +317,17 @@ function get_sets()
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs="Arbatel Pants +2",
+		legs="Arbatel pants +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
-	}
-
-	-- Magic Defense and Magic Defense Set
-    sets.MDT = {
-		main="Bolelabunga",
-		sub="Genmei Shield",
-		ammo="Staunch Tathlum +1",
-		head="Arbatel Bonnet +3",
-		body="Arbatel Gown +2",
-		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs="Arbatel Pants +2",
-		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Null loop",
-		waist="Null belt",
-		left_ear="Infused Earring",
-		right_ear="Hearty Earring",
-		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
+		right_ring="Fortified Ring",	
 		back="Null shawl"
 	}
 
-		
 	-- When I gotta kite shite, I put on my Sandals and shit...
     sets.Kiting = set_combine(sets.PDT,  {
 		left_ring="Shneddick ring"
@@ -445,7 +425,7 @@ function precast(spell,abil)
 	if spell.name == 'Immanence' then
 		equip(sets.Immanence)
 	elseif spell.name == 'Penury'  or spell.name == 'Parsimony' then
-		equip({legs="Arbatel Pants +2"})
+		equip({legs="Arbatel pants +3"})
 	elseif spell.name == 'Celerity' or spell.name == 'Alacrity' or spell.name == 'Stormsurge' then
 		equip({feet="Pedagogy loafers +3"})
 	elseif spell.name == 'Stun' then
@@ -563,9 +543,9 @@ end
 
 
 --This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--If I want a manual 'Refresh' set or 'PDT' set I can do that in game with equipsets.  
 --But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I'm also deciding not to use a Binding Key to put my in a PDT,Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 

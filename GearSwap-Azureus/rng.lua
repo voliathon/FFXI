@@ -57,7 +57,7 @@ function get_sets()
 		legs="Adhemar kecks +1", --rapid shot 13 snapshot 10
 		feet="Meg. Jam. +2", --snapshot 10
 		neck="Scout's gorget +2", --snapshot 4
-		waist="K. Kachina Belt +1",
+		waist="Yemaya Belt",
 		left_ear="Telos Earring",
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",
@@ -168,7 +168,7 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
-		waist="K. Kachina Belt +1",
+		waist="Yemaya Belt",
 		left_ear="Telos Earring",
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",

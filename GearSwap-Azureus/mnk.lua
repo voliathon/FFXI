@@ -32,7 +32,7 @@ function get_sets()
   TP_ind = 1
 	
     sets.TP.BadAss = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Kendatsuba jinpachi +1",
 		body="Kendatsuba samue +1",
 		hands="Kendatsuba tekko +1",
@@ -48,7 +48,7 @@ function get_sets()
     }	
 
     sets.TP.Impetus = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Kendatsuba jinpachi +1",
 		body="Bhikku Cyclas +1",
 		hands="Kendatsuba tekko +1",
@@ -86,7 +86,7 @@ function get_sets()
 	sets.TP.Accuracy = set_combine(sets.TP.BadAss, {})
 	
 	sets.TP.TH = {
-		ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
 		body="Ken. Samue +1",
 		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},

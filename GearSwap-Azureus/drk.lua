@@ -29,7 +29,7 @@
             -- Purchased from the Auction House, crafted only.
 
 -- Created by Voliathon
--- Modified 11/29/2022
+-- Modified 1/23/2025
 
 function get_sets()
 -- Set macro book/set --
@@ -45,18 +45,26 @@ function get_sets()
 	-- Modes --
 	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang via ctrl + F8
-	ShadowType = 'None'
 	
   --Job Ability Sets--
   sets.JA = {}
-  
+  sets.JA.BloodWeapon = { body="Fallen's Cuirass +1" }
+  sets.JA.Souleater = { head="Ignominy Burgeonet +3"}
+  sets.JA.ArcaneCircle = { feet="Ignominy Sollerets +2"}
+  sets.JA.LastResort = { feet="Fallen's Sollerets +1", back="Null shawl" }
+  sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
+  sets.JA.DarkSeal = { head="Fallen's Burgeonet +1"}
+  sets.JA.NetherVoid = { legs="Heathen's Flanchard +3"}
+  sets.JA.ArcaneCrest = {}
+  sets.JA.ScarletDelirium = {}
+  sets.JA.SoulEnslavement = {}
+  sets.JA.ConsumeMana = {}
+
   -- Dancer's Abilities --
   sets.JA.Waltz = {legs="Dashing subligar"}
   sets.JA.Step = 	{}
-  sets.JA.Stun = {}
-	
-	
-
+  
+  
   --TP Sets--
   sets.TP = {}
 --					  1		   2              3 		   4		  5 		  6		           7
@@ -64,20 +72,19 @@ function get_sets()
   TP_ind = 1
 
   sets.TP.Movement = {
-    ammo="Staunch Tathlum +1",
+    ammo="Coiste Bodhar",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+    legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
-    left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
-    left_ring="Moonlight Ring",
-    right_ring="Fortified Ring",
-    back="Moonlight Cape"
-
+    neck="Null loop",
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Heath. Earring +1",
+    left_ring="Shneddick Ring",
+	right_ring="Moonlight Ring",    
+    back="Null shawl"
   }
   
   --offensive melee set
@@ -88,29 +95,30 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Ignominy flanchard +3",
     feet="Flam. Gambieras +2",
-    neck="Abyssal Bead Necklace +2",
+    neck="Null loop",
     waist="Ioskeha Belt +1",
     left_ear="Cessance Earring",
     right_ear="Brutal Earring",
     left_ring="Chirich Ring +1",
-    right_ring="Flamma ring"
+    right_ring="Flamma ring",
+    back="Null shawl"
   }
 
   --New Tank Gear
   sets.TP.NewTurtle = {
-    ammo="Staunch Tathlum +1",
+    ammo="Coiste Bodhar",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
-    left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
+    neck="Null loop",
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Heath. Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back="Moonlight Cape"
+    back="Null shawl"
   }  
 
   --Evasion
@@ -121,8 +129,8 @@ function get_sets()
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
+    neck="Null loop",
+    waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear="Cryptic earring",
     left_ring="Moonlight Ring",
@@ -137,12 +145,13 @@ function get_sets()
     hands="Nyame Gauntlets",
     legs="Ignominy flanchard +3",
     feet="Nyame Sollerets",
-    neck="Abyssal Bead Necklace +2",
-    waist="Ioskeha Belt +1",
-    left_ear="Cessance Earring",
-    right_ear="Brutal Earring",
+    neck="Null loop",
+    waist="Null belt",
+    left_ear="Brutal Earring",
+    right_ear="Heath. Earring +1",
     left_ring="Chirich Ring +1",
-    right_ring="Chirich Ring +1"
+    right_ring="Chirich Ring +1",
+	back="Null shawl"
   }
   
   sets.TP.TreasureHunter = {
@@ -157,8 +166,8 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
+    neck="Null loop",
+    waist="Null belt",
     left_ear="Hearty Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
@@ -170,34 +179,32 @@ function get_sets()
   sets.Catastrophe = {
     ammo="Knobkierrie",
     head="Ratri Sallet +1",
-    body="Ignominy cuirass +3",
+    body="Nyame Mail",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
-    legs="Sakpata's Cuisses",
-    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
-    neck="Abyssal Bead Necklace +2",
+    legs="Fallen's flanchard +3",
+    feet="Heathen's sollerets +3",
+    neck="Null loop",
     waist="Sailfi Belt +1",
-    left_ear="Thrud Earring",
-    right_ear="Ishvara Earring",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+    right_ear="Thrud Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Sroda ring",
-    back="Vespid Mantle"
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
   }
 
   --STR and WSD gears
   sets.STRWSD = {
     ammo="Amar Cluster",
     head="Ratri Sallet +1",
-    body="Ignominy cuirass +3",
+    body="Nyame Mail",
     hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
-    legs="Sakpata's Cuisses",
-    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
-    neck="Abyssal Bead Necklace +2",
+    legs="Fallen's flanchard +3",
+    feet="Heathen's sollerets +3",
+    neck="Null loop",
     waist="Fotia Belt",
-    left_ear="Ishvara Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
     left_ring="Epaminondas's Ring",
     right_ring="Sroda ring",
-    back="Vespid Mantle"
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
   }
 
 
@@ -279,23 +286,9 @@ function get_sets()
   --Magic acc for enfeebles, handy for VW
   sets.MagicAcc = {}
 
-  sets.Stoneskin = {
-    ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +2",
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
-    waist="Siegel Sash",
-    left_ear="Magnetic Earring",
-    right_ear="Earthcry Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
+  sets.DarkMagic = {
+	legs="Heathen's flanchard +2"
   }
-  
-  sets.DarkMagic = {}
 
 end
 
@@ -313,16 +306,47 @@ function precast(spell,abil)
 	Naegling = 'OFF'
   end
   
+  if spell.name == 'Blood Weapon' then
+    equip(sets.JA.BloodWeapon)
+  end  
+  if spell.name == 'Souleater' then
+    equip(sets.JA.Souleater)
+  end  
+  if spell.name == 'Arcane Circle' then
+    equip(sets.JA.ArcaneCircle)
+  end  
+  if spell.name == 'Last Resort' then
+    equip(sets.JA.LastResort)
+  end  
+  if spell.name == 'Weapon Bash' then
+    equip(sets.JA.WeaponBash)
+  end  
+  if spell.name == 'Dark Seal' then
+    equip(sets.JA.DarkSeal)
+  end  
+  if spell.name == 'Nether Void' then
+    equip(sets.JA.NetherVoid)
+  end  
+  if spell.name == 'Arcane Crest' then
+    equip(sets.JA.ArcaneCrest)
+  end  
+  if spell.name == 'Scarlet Delirium' then
+    equip(sets.JA.ScarletDelirium)
+  end  
+  if spell.name == 'Soul Enslavement' then
+    equip(sets.JA.SoulEnslavement)
+  end  
+  if spell.name == 'Consume Mana' then
+    equip(sets.JA.ConsumeMana)
+  end
+  
   if spell.name == 'Catastrophe' then
     equip(sets.Catastrophe)
   end
-  if spell.name == 'Savage Blade' then
+  if spell.name == 'Savage Blade' or spell.name == 'Cross Reaper' then
     equip(sets.STRWSD)
   end
-  --prevents casting Utsusemi if you already have 3 or more shadows
-  if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
-    cancel_spell()
-  end
+
     --Utsusemi Check
   if string.find(spell.name,'Utsusemi') then
     equip({neck="Magoraga Beads"})
@@ -347,16 +371,24 @@ end
 
 -- Midcast
 function midcast(spell,act,arg)
+  if spell.name == "Dread Spikes" then
+	equip({body="Heathen's Cuirass +2"})
+  end
+
   if spell.skill == 'Dark Magic' then
 	equip(sets.DarkMagic)
   end
+
+  if string.find(spell.name,'Absorb-TP') then
+		equip({hands="Heathen's gauntlets +2"})
+	end
 
   if spell.skill == 'Enhancing Magic' then
 	if spell.name == 'Phalanx' then
 		equip(sets.Phalanx)
 	end
 	if spell.name == "Blink" or spell.name == "Stoneskin" then
-      equip(sets.SIR,sets.Stoneskin)
+      equip(sets.SIR)
 	end
 	if string.find(spell.name,'Protect') then
 		equip(sets.Enhancing)
@@ -364,8 +396,8 @@ function midcast(spell,act,arg)
   
   end
   
-  if spell.name == 'Flash' or spell.name == "Stun" then
-    equip(sets.Enmity)
+  if spell.name == "Stun" then
+    equip(sets.FastCast)
   end
   if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' then
     equip(sets.MagicAcc)
@@ -376,14 +408,7 @@ end
 
 function aftercast(spell)
   equip_current()
-  --Just running a lil somethin-somethin to track Shadows
-  if string.find(spell.name,'Utsusemi') and not spell.interrupted then
-    if spell.name == 'Utsusemi: Ichi' then
-      ShadowType = 'Ichi'
-    elseif spell.name == 'Utsusemi: Ni' then
-      ShadowType = 'Ni'
-    end
-  end
+
 end
 
 
