@@ -65,9 +65,9 @@ function get_sets()
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",
     neck="Warder's charm +1",
-    waist="Engraved belt",
+    waist="Null belt",
     left_ear="Tuisto Earring",
-    right_ear="Odnowa Earring +1",
+    right_ear="Erilaz Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
     back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
@@ -81,9 +81,9 @@ function get_sets()
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",
     neck="Subtlety Spec.",
-    waist="Ioskeha Belt +1",
-    left_ear="Heartseeker Earring",
-    right_ear="Cessance Earring",
+    waist="Null belt",
+    left_ear="Cessance Earring",
+    right_ear="Erilaz Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
     back={ name="Ogma's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
@@ -99,7 +99,7 @@ function get_sets()
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
     waist="Chaac Belt",
     left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
+    right_ear="Erilaz Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
 	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
@@ -113,9 +113,9 @@ function get_sets()
     legs="Erilaz leg guards +3",
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
     neck={ name="Loricate Torque +1", augments={'Path: A',}},
-    waist="Flume Belt +1",
-    left_ear="Infused Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    waist="Null belt",
+    left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear="Erilaz Earring +1",
     left_ring="Shneddick Ring",
     right_ring="Defending Ring",
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
@@ -168,7 +168,7 @@ function get_sets()
     legs="Nyame flanchard",
     feet="Erilaz Greaves +3",
     neck="Fotia Gorget",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Crematio Earring",
     right_ear="Friomisi Earring",
     left_ring="Moonlight Ring",
@@ -219,7 +219,7 @@ function get_sets()
     neck="Voltsurge Torque",
     waist="Sroda Belt",
     left_ear="Magnetic Earring",
-    right_ear="Erilaz Earring",
+    right_ear="Erilaz Earring +1",
     left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
     right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
 	back="Solemnity cape"
@@ -242,7 +242,7 @@ function get_sets()
     right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
   }
 
-  --Phalanx--  23
+  --Phalanx--  24
   sets.Phalanx = {
     ammo="Staunch Tathlum +1",
     head="Futhark Bandeau +3",

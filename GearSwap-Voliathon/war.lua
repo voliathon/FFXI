@@ -61,7 +61,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck={ name="Loricate Torque +1", augments={'Path: A',}},
-    waist="Flume Belt +1",
+    waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Moonlight Ring",
@@ -78,7 +78,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck={ name="Loricate Torque +1", augments={'Path: A',}},
-    waist="Flume Belt +1",
+    waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Moonlight Ring",
@@ -94,7 +94,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Flam. Gambieras +2",
     neck="Sanctity Necklace",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Chirich Ring +1",
@@ -164,7 +164,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck="Fotia Gorget",
-    waist="Orpheus's sash",
+    waist="Null belt",
     left_ear="Digni. Earring",
     right_ear="Gwati Earring",
     left_ring="Stikini Ring +1",
@@ -213,15 +213,6 @@ function get_sets()
   sets.JA.Stun = {}
 	
 	
-  sets.JA.Lunge = {}
-  sets.JA.Vallation = {body="Runeist Coat +2",legs="Futhark Trousers +1"}
-  sets.JA.Gambit = {hands="Runeist's mitons +2"}
-  sets.JA.Rayke = {feet="Futhark boots +1"}
-  sets.JA.Battuta = {head="Futhark bandeau +1"}
-  sets.JA.Pflug = {feet="Runeist bottes +2"}
-  sets.JA.Pulse = {head="Erilaz Galea +1",legs="Runeist Trousers +2"}
-  sets.JA.Swordplay = {hands="Futhark mitons +1"}
-
   --Precast Sets--
   --Fast Cast set
   sets.precast = {

@@ -1,25 +1,19 @@
--- White Mage GearSwap by Voliathon
--- Abbreviation 	WHM
--- Japanese 	白魔道士 (白)
--- Japanese Romaji 	Shiromadoushi (Shiro)
+-- White Mage GearSwap
+-- Abbreviation WHM
 
 function get_sets()
 	-- Set macro book/set --
-    send_command('input /macro book 1;wait .1;input /macro set 2')
+    send_command('input /macro book 1;wait .1;input /macro set 1')
 	
 	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
     send_command('bind !f9 gs c toggle Engaged set')
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
-	
-	
-    -- Job Abilities for Geomancer --
-    sets.Bolster = {body="Bagua Tunic +1"}
-    sets.LifeCycle = {body="Geomancy Tunic +3", back="Nantosuelta's Cape"}
-    sets.FullCircle = {head="Azimuth Hood +1"}
-    sets.CurativeRecantation = {hands="Bagua Mitaines +1"}
-    sets.MendingHalation = {legs="Bagua Pants"}
-    sets.RadialArcana = {feet="Bagua Sandals +1"}
+    -- Job Abilities for White Mage --
+    sets.Benediction = {body="Piety Bliaut +1"}
+    sets.AfflatusSolace = {body="Ebers Bliaut +2", back="Alaunus's Cape"}
+    sets.DivineCaress = {hands="Ebers Mitts +2", back="Mending cape"}
+	sets.Devotion = {heads="Piety Cap +1"}
 	
 	-- Cursna
 	-- Regen
@@ -30,23 +24,26 @@ function get_sets()
 	-- Enhancing
 	-- Enfeebling
 
-    -- Fast Cast for Geomancer --
+    -- Fast Cast for White Mage --
     sets.FastCast = {
 		ammo="Pemphredo Tathlum",
-		head={ name="Piety Cap +1", augments={'Enhances "Devotion" effect',}},
-		body="Shango Robe",
+		head="Eber's cap +2",
+		body="Inyanga Jubbah +2",
 		hands="Gende. Gages +1",
-		legs="Sifahir Slacks",
-		feet="Hygieia Clogs +1",
+		legs="Ayanmo cosciales +2",
+		feet="Regal pumps +1",
 		neck="Voltsurge Torque",
 		waist="Witful Belt",
 		left_ear="Loquac. Earring",
 		right_ear="Malignance Earring",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back="Pahtli Cape"
+		back="Perimede Cape"
 	}
-
+	
+	sets.Cursna = {
+	
+	}
 
 	-- Enhancing Spells \\Generalized//
     sets.EnhancingMagic = {
@@ -54,14 +51,14 @@ function get_sets()
 		sub="Genmei Shield",
 		ammo="Clarus stone",
 		head="Befouled Crown",
-		body="Shango Robe",
-		hands="Bagua Mitaines +1",
-		legs="Geomancy Pants +2",
-		feet="Regal pumps +1",
+		body="Telchine chasuble ",
+		hands="Dynasty Mitts",
+		legs="Piety Pantaloons +1",
+		feet="Eber's duckbills +2",
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Loquacious Earring",
-		left_ring="Veneficium Ring",
+		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
 		back="Perimede Cape"
 	}
@@ -86,11 +83,6 @@ function get_sets()
 
 	sets.Enhancing = {}
 
-
-	-- Entrust 
-	sets.Entrust = {
-		main="Solstice"
-	}
 
     sets.Cure = {
 		main="Daybreak",
@@ -128,7 +120,7 @@ function get_sets()
 		legs="Ea slops +1",
 		feet="Merlinic Crackows",
 		neck="Saevus pendant +1",
-		waist="Refoccilation stone",
+		waist="Null belt",
 		left_ear="Barkaro. Earring",
 		right_ear="Halasz Earring",
 		left_ring="Stikini ring +1",
@@ -149,7 +141,7 @@ function get_sets()
 		legs="Merlinic Shalwar",
 		feet="Merlinic Crackows",
 		neck="Saevus Pendant +1",
-		waist="Refoccilation stone",
+		waist="Null belt",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
 		left_ring="Jhakri Ring",
@@ -167,7 +159,7 @@ function get_sets()
 		legs="Merlinic Shalwar",
 		feet="Bagua Sandals +1",
 		neck="Sanctity Necklace",
-		waist="Refoccilation stone",
+		waist="Null belt",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
 		left_ring="Jhakri ring",
@@ -209,7 +201,7 @@ function get_sets()
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
 		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Slipor Sash",
+		waist="Null belt",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
 		left_ring="Fortified Ring",
@@ -226,7 +218,7 @@ function get_sets()
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
 		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Slipor Sash",
+		waist="Null belt",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
 		left_ring="Fortified Ring",
@@ -288,7 +280,9 @@ function get_sets()
 	 
 	 sets.Yagrush = set_combine(sets.FastCast,  {
 		main="Yagrush",
-		sub="Genmei Shield"
+		hands="Eber Mitts +2",
+		legs="Ebers pantaloons +2",
+		back="Mending cape"
 	 })
 
 	  -- Engaged Sets Toggle--

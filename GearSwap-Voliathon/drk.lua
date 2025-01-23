@@ -48,13 +48,13 @@ function get_sets()
 	
   --Job Ability Sets--
   sets.JA = {}
-  sets.JA.BloodWeapon = { body="Fallen's Cuirass" }
+  sets.JA.BloodWeapon = { body="Fallen's Cuirass +1" }
   sets.JA.Souleater = { head="Ignominy Burgeonet +3"}
   sets.JA.ArcaneCircle = { feet="Ignominy Sollerets +2"}
   sets.JA.LastResort = { feet="Fallen's Sollerets +1", back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}} }
   sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
   sets.JA.DarkSeal = { head="Fallen's Burgeonet +1"}
-  sets.JA.NetherVoid = { legs="Heathen's Flanchard +2"}
+  sets.JA.NetherVoid = { legs="Heathen's Flanchard +3"}
   sets.JA.ArcaneCrest = {}
   sets.JA.ScarletDelirium = {}
   sets.JA.SoulEnslavement = {}
@@ -130,7 +130,7 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
+    waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear="Cryptic earring",
     left_ring="Moonlight Ring",
@@ -146,7 +146,7 @@ function get_sets()
     legs="Ignominy flanchard +3",
     feet="Nyame Sollerets",
     neck="Abyssal Bead Necklace +2",
-    waist="Ioskeha Belt +1",
+    waist="Null belt",
     left_ear="Brutal Earring",
     right_ear={ name="Heath. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Weapon skill damage +2%',}},
     left_ring="Chirich Ring +1",
@@ -167,7 +167,7 @@ function get_sets()
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
     neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Flume Belt +1",
+    waist="Null belt",
     left_ear="Hearty Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",

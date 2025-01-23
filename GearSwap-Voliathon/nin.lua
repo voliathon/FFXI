@@ -48,7 +48,7 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		waist="Null belt",
 		left_ear="Brutal Earring",
 		right_ear="Cryptic Earring",
 		left_ring="Shneddick Ring",
@@ -95,6 +95,7 @@ function get_sets()
 		head="Hattori Zukin +2",
 		feet="Hattori Kyahan +3",		
 		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
+		waist="Null belt",
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		left_ear="Hattori Earring +1",
@@ -125,7 +126,7 @@ function get_sets()
 		legs="Malignance Tights",
 		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Flume Belt +1",
+		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Cryptic Earring",
 		left_ring="Defending Ring",
@@ -504,9 +505,6 @@ end
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 	equip(sets.TP[sets.TP.index[TP_ind]])
-	if (buffactive['Yonin']) then
-		equip({legs="Hattori hakama +3"})
-	end
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
