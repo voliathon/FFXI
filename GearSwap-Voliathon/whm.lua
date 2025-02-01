@@ -31,7 +31,7 @@ function get_sets()
 		body="Inyanga Jubbah +2",
 		hands="Gende. Gages +1",
 		legs="Ayanmo cosciales +2",
-		feet="Regal pumps +1",
+		feet="Theophany duckbills +3",
 		neck="Voltsurge Torque",
 		waist="Witful Belt",
 		left_ear="Loquac. Earring",
@@ -42,7 +42,12 @@ function get_sets()
 	}
 	
 	sets.Cursna = {
+		legs="Theophany pantaloons +1",
+		left_ring="Ephedra ring"
+	}
 	
+	sets.BarSpells = {
+		legs="Piety pantaloons +3"
 	}
 
 	-- Enhancing Spells \\Generalized//
@@ -53,8 +58,8 @@ function get_sets()
 		head="Befouled Crown",
 		body="Telchine chasuble ",
 		hands="Dynasty Mitts",
-		legs="Piety Pantaloons +1",
-		feet="Eber's duckbills +2",
+		legs="Piety Pantaloons +3",
+		feet="Theophany duckbills +3",
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Loquacious Earring",
@@ -83,19 +88,31 @@ function get_sets()
 
 	sets.Enhancing = {}
 
-
+	--Regen Max Duration
+	sets.Regen = set_combine(sets.Duration,  {
+		main="Musa",
+		sub="Khonsu",
+		head="Arbatel Bonnet +3",
+		hands="Ebers mitts +2",
+		body="Piety Bliaut +1",
+		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
+	})
+	
     sets.Cure = {
 		main="Daybreak",
 		sub="Genmei Shield",
+		neck="Nodens gorget",
         head="Vanya Hood",
-		body="Chironic doublet",
+		body="Annointed kalasiris",
 		hands="Telchine gloves",
 		right_ring="Stikini ring +1",
 		left_ring="Veneficium Ring", 
 		waist="Austerity belt+1", 
 		back="Pahtli Cape",
-		legs="Geomancy Pants +2",
-		feet="Vanya Clogs"
+		legs="Ebers Pantaloons +2",
+		feet="Vanya Clogs",
+		left_ear="Mendi. Earring",
+		right_ear="Glorious earring"
 	}
 
 
@@ -119,7 +136,7 @@ function get_sets()
 		hands="Merlinic Dastanas",
 		legs="Ea slops +1",
 		feet="Merlinic Crackows",
-		neck="Saevus pendant +1",
+		neck="Null loop",
 		waist="Null belt",
 		left_ear="Barkaro. Earring",
 		right_ear="Halasz Earring",
@@ -128,7 +145,10 @@ function get_sets()
 		back="Seshaw cape"
 	}
 	
-	sets.MagicAccuracy = {}
+	sets.MagicAccuracy = {
+		neck="Null loop",
+		waist="Null belt"
+	}
 
 	
     sets.DarkMagic = {
@@ -140,7 +160,7 @@ function get_sets()
 		hands="Merlinic Dastanas",
 		legs="Merlinic Shalwar",
 		feet="Merlinic Crackows",
-		neck="Saevus Pendant +1",
+		neck="Null loop",
 		waist="Null belt",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
@@ -157,8 +177,8 @@ function get_sets()
 		body="Ischemia Chasu.",
 		hands="Regal cuffs",
 		legs="Merlinic Shalwar",
-		feet="Bagua Sandals +1",
-		neck="Sanctity Necklace",
+		feet="Theophany duckbills +3",
+		neck="Null loop",
 		waist="Null belt",
 		left_ear="Barkaro. Earring",
 		right_ear="Gwati Earring",
@@ -178,8 +198,8 @@ function get_sets()
     sets.heal = {
 		range="Dunna",
 		head="Befouled Crown",
-		body="Jhakri robe +2",
-		hands="Bagua Mitaines +1",
+		body="Ebers bliaut +2",
+		hands="Ebers mitts +2",
 		legs="Assid. Pants +1",
 		feet="Bagua Sandals +1",
 		neck="Sanctity Necklace",
@@ -198,9 +218,9 @@ function get_sets()
 		head="Nyame Helm",
 		body="Shamash Robe",
 		hands="Nyame gauntlets",
-		legs="Nyame flanchard",
-		feet="Nyame sollerets",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		legs="Ebers Pantaloons +2",
+		feet="Ebers duckbills +2",
+		neck="Null loop",
 		waist="Null belt",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
@@ -217,7 +237,7 @@ function get_sets()
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Null loop",
 		waist="Null belt",
 		left_ear="Genmei Earring",
 		right_ear="Infused Earring",
@@ -228,15 +248,18 @@ function get_sets()
 
 		
 	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {feet="Geomancy Sandals +3"}
+    sets.Kiting = {left_ring="Shneddick ring"}
 	
 	sets.Refresh = set_combine(sets.PDT,  {
 		main="Daybreak",
 		sub="Genmei shield",
 		head="Befouled crown",
-		body="Jhakri robe +2",
-		hands="Bagua mitaines +1",
-		right_ring="Stikini ring +1"
+		body="Shamash robe",
+		hands="Ebers mitts +2",
+		waist="Null belt",
+		right_ring="Stikini ring +1",
+		left_ring="Stikini ring +1",
+		ammo="Homiliary"
 	})
 	
 	
@@ -297,7 +320,7 @@ function get_sets()
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Aya. Gambieras +2",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Grunfeld Rope",
 		left_ear="Brutal Earring",
 		right_ear="Cessance Earring",
@@ -344,6 +367,9 @@ function midcast(spell)
 			equip(sets.Enhancing)
 		end
 	end
+	if string.find(spell.english,'Regen') then 
+		equip(sets.Regen)
+	end	
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
 	end

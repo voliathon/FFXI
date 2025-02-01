@@ -225,7 +225,7 @@ function get_sets()
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Yamabuki-no-Obi",
 		left_ear="Friomisi Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},

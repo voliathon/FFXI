@@ -7,7 +7,7 @@
 function NinjaCapes()
 	NinjaCapes = {}
 	NinjaCapes.TP = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
-	NinjaCapes.STRWS = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%'}}
+	NinjaCapes.STRWS = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	NinjaCapes.NUKE = { name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
 end
 
@@ -16,7 +16,7 @@ function get_sets()
 	NinjaCapes()
 	
 	-- Set macro book/set --
-    send_command('input /macro book 6;wait .1;input /macro set 1')
+    send_command('input /macro book 6;wait .1;input /macro set 2')
 	
 	-- Binds for switching weapon modes
     send_command('bind !f8 gs c toggle weapon set')
@@ -27,12 +27,13 @@ function get_sets()
 
 	--Job Ability Sets--
 	sets.JA = {}
-	sets.JA.Waltz = {legs="Dashing subligar"}
-	sets.JA.Step = 	{}
-	sets.JA.Stun = {}
-	sets.JA.Yonin = {legs="Hattori Hakama +3"}
+	sets.JA.Waltz = {head="Mummu bonnet+2",legs="Dashing subligar"}
+	sets.JA.Yonin = {head="Mochizuki Hatsuburi +3", legs="Hattori Hakama +2"}
+	sets.JA.Innin = {head="Hattori zukin +2"}
+	sets.JA.Futae = {hands="Hattori tekko +2"}
+	sets.JA.MijinGakure = {legs="Mochizuki Hakama +3"}
 	
-    sets.JA.Waltz = {head="Mummu bonnet+1", legs="Dashing subligar"}
+
     
 	--TP Sets--
 	sets.TP = {}
@@ -68,8 +69,8 @@ function get_sets()
 		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
 		left_ear="Brutal Earring",
 		right_ear="Hattori Earring +1",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.TP
 	}
 
@@ -83,10 +84,10 @@ function get_sets()
 		feet="Malignance Boots",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
-		left_ear="Hattori Earring +1",
-		right_ear="Cessance Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ear="Cessance Earring",
+		right_ear="Hattori Earring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.TP
 	}
 
@@ -96,9 +97,10 @@ function get_sets()
 		feet="Hattori Kyahan +3",		
 		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
 		waist="Null belt",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
-		left_ear="Hattori Earring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
+		left_ear="Dignitary's earring",
+		right_ear="Hattori Earring +1",
 		back=NinjaCapes.TP
 	}
 
@@ -109,12 +111,12 @@ function get_sets()
 		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
 		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
 		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
-		neck={ name="Loricate Torque +1", augments={'Path: A'}},
+		neck="Null loop",
 		waist="Chaac Belt",
-		left_ear="Tuisto Earring",
-		right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
-		left_ring="Moonlight Ring",
-		right_ring="Defending Ring",
+		left_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
+		right_ear="Hattori Earring +1",
+		left_ring="Defending Ring",
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.TP
 	}
 
@@ -130,7 +132,7 @@ function get_sets()
 		left_ear="Infused Earring",
 		right_ear="Cryptic Earring",
 		left_ring="Defending Ring",
-		right_ring="Chirich Ring +1",
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.TP
 	}
 	
@@ -144,62 +146,48 @@ function get_sets()
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Brutal Earring",
-		right_ear="Digni. Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		right_ear="Hattori Earring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.TP		
 	}
 	
 	sets.TP.DualWield = {
 		ammo="Coiste Bodhar",
 		head="Hattori Zukin +2",
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		body="Hachiya chainmail +3",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Mochizuki hakama +3",
 		feet="Hiza. Sune-Ate +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear="Suppanomimi",
-		right_ear="Brutal Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ear="Brutal Earring",
+		right_ear="Suppanomimi",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.TP
 	}
 
-
-	--Blade: Ten
-	--Stat Mod: STR30/DEX30 --Stick WSD on this shit
-	--Skillchain Gravitation
-	
-	--Blade: Hi
-	--Stat Mod: AGI80 --CRIT is a modifier for this guy
-	--Skillchain: Darkness / Gravitation
-	
-	--Blade: Shun
-	--Stat Mod: DEX73~85 --Attack Attack Attack on this duder
-	--Skillchain: Light / Fusion / Impaction
-	
-	
-	--Savage Blade, Blade: Ten, Blade: Shun, Blade: Hi, Blade: Taki/Blade: To,Blade: Chi, Blade:Ku, Blade: Kamu
-
 	
 	sets.SavageBlade = {
-		ammo="Yetshila +1",
+		ammo="Coiste bodhar",
 		head="Hachiya hatsuburi +3",
 		body="Nyame mail",
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+		hands="Nyame gauntlets",
 		legs="Mochizuki hakama +3",
 		feet="Hattori Kyahan +3",
-		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		neck="Fotia gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		right_ear="Ishvara Earring",
-		left_ring="Rajas Ring",
+		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
 		back=NinjaCapes.STRWS
 	}
 
-
+	--Blade: Ten
+	--Stat Mod: STR30/DEX30 --Stick WSD on this shit
+	--Skillchain Gravitation
 	sets.Ten = {
 		ammo="Coiste Bodhar",
 		head="Mpaca's cap",
@@ -217,6 +205,8 @@ function get_sets()
 	}
 
 	--Blade: Shun
+	--Stat Mod: DEX73~85 --Attack Attack Attack on this duder
+	--Skillchain: Light / Fusion / Impaction
 	sets.Shun = {
 		ammo="Yetshila +1",
 		head="Ken. Jinpachi +1",
@@ -234,6 +224,8 @@ function get_sets()
 	}
 	
 	--Blade: Hi
+	--Stat Mod: AGI80 --CRIT is a modifier for this guy
+	--Skillchain: Darkness / Gravitation
 	sets.Hi = {
 		ammo="Yetshila +1",
 		head="Hachiya hatsuburi +3",
@@ -253,17 +245,17 @@ function get_sets()
 	--Teki/To/Chi/Yu
 	sets.TekiToChiYu = {
 		ammo="Pemphredo Tathlum",
-		head="Nyame Helm",
+		head="Mochi. hatsuburi +3",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck="Sanctity Necklace",
-		waist="Grunfeld Rope",
+		waist="Orpheus's sash",
 		left_ear="Hecate's Earring",
 		right_ear="Hattori Earring +1",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.NUKE
 	}
 
@@ -307,20 +299,22 @@ function get_sets()
 		ammo="Staunch Tathlum +1",
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
 		body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Taeon Tights", augments={'Evasion+21','Spell interruption rate down -10%','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
 		neck="Voltsurge Torque",
-		waist="Ninurta's Sash",
+		waist="Audumbla Sash",
 		left_ear="Loquac. Earring",
 		right_ear="Magnetic Earring",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back="Solemnity Cape"
 	}
 	
 	sets.Utsusemi = set_combine(sets.FastCast,  {
-		feet="Hattori Kyahan +3"
+		body="Mochizuki chainmail +3",
+		feet="Hattori Kyahan +3",
+		back=NinjaCapes.TP
 	})
 
 	sets.Migawari = set_combine(sets.FastCast,  {
@@ -336,7 +330,7 @@ function get_sets()
 		hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
 		legs={ name="Herculean Trousers", augments={'Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Pet: Accuracy+16 Pet: Rng. Acc.+16','Phalanx +4','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
 		feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-		neck={ name="Loricate Torque +1", augments={'Path: A'}},
+		neck="Null loop",
 		waist="Siegel Sash",
 		left_ear="Magnetic Earring",
 		right_ear="Mimir Earring",
@@ -345,28 +339,9 @@ function get_sets()
 		back=NinjaCapes.TP
 	}
 
-	--108 SIR-
-	sets.SIR = {
-		ammo="Staunch Tathlum +1", --11
-		head="Erilaz galea +2", --15
-		body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
-		hands="Regal Gauntlets", --10
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
-		feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-		neck="Moonbeam necklace", --10
-		waist="Audumbla sash", --10
-		left_ear="Halasz Earring", --5
-		right_ear="Magnetic Earring" --8
-	}
-
-	--Magic acc for enfeebles, handy for VW
-	sets.MagicAcc = {}
-
-	sets.Cure = {}
-
 	sets.NUKE = {
 		ammo="Pemphredo Tathlum",
-		head="Nyame Helm",
+		head="Mochi. hatsuburi +3",
 		body="Samnuha coat",
 		hands="Hattori Tekko +2",
 		legs="Nyame Flanchard",
@@ -383,7 +358,7 @@ function get_sets()
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'HeishiKuni','HeishiCrep','HeishiGleti','NagKuni','NagCrep','TauretMal','TauretCrep'}
+	sets.weapon.index = {'HeishiKuni','HeishiCrep','HeishiTauret','NagKuni','NagCrep','TauretMal','TauretCrep'}
 	weapon_ind = 1
 
 	--Blade:Ten*/Chi*/Teki*/To*
@@ -397,9 +372,9 @@ function get_sets()
 		sub="Crepuscular Knife"
 	}
 	
-	sets.weapon.HeishiGleti = {
+	sets.weapon.HeishiTauret = {
 		main="Heishi Shorinken",
-		sub="Gleti's Knife"
+		sub="Tauret"
 	}
 	
 	sets.weapon.NagKuni = {
@@ -438,7 +413,18 @@ function precast(spell)
         equip(sets.Migawari)
     end
 
-
+	if spell.name == 'Yonin' then
+		equip(sets.JA.Yonin)
+	end
+	if spell.name == 'Innin' then
+		equip(sets.JA.Innin)
+	end
+	if spell.name == 'Futae' then
+		equip(sets.JA.Futae)
+	end
+	if spell.name == 'MijinGakure' then
+		equip(sets.JA.MijinGakure)
+	end	
 	if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
 		equip(sets.TP.EvasionTank) 
 	end
@@ -470,7 +456,10 @@ function precast(spell)
 end
 
 function midcast(spell)
-
+	
+	if string.find(spell.english, 'Phalanx') then
+		equips(sets.Phalanx)
+	end
 	--Utsusemi --Add the empy Feet when I get em
 	if string.find(spell.english,'Utsusemi') then
         equip(sets.Utsusemi)

@@ -73,7 +73,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
+    neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
@@ -91,7 +91,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Flam. Gambieras +2",
-    neck="Loricate Torque +1",
+    neck="Null loop",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Cessance earring",
@@ -108,10 +108,10 @@ function get_sets()
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+	right_ear="Chevalier earring +1",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
     back="Moonlight Cape"
@@ -125,7 +125,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
+    neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
@@ -142,7 +142,7 @@ function get_sets()
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear="Cryptic earring",
@@ -153,9 +153,9 @@ function get_sets()
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    neck="Subtlety Spec.",
-    left_ear="Heartseeker Earring",
-    right_ear="Cessance Earring",
+    neck="Null loop",
+    left_ear="Dignitary's Earring",
+	right_ear="Chevalier earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
 	waist="Null belt"
@@ -173,7 +173,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Null belt",
     left_ear="Hearty Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
@@ -193,7 +193,7 @@ function get_sets()
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Warder's Charm +1",
+    neck="Unmoving collar",
     waist="Null belt",
     left_ear="Cryptic Earring",
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -226,7 +226,7 @@ function get_sets()
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
-    neck="Fotia gorget",
+    neck="Null loop",
     waist="Orpheus's Sash",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     right_ear="Friomisi Earring",
@@ -291,7 +291,7 @@ function get_sets()
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck={ name="Loricate Torque +1", augments={'Path: A',}}, --5
+    neck="Loricate torque +1", --5
     waist="Audumbla sash", --10
     left_ear="Halasz Earring", --5
     right_ear="Magnetic Earring" --8
@@ -305,7 +305,7 @@ function get_sets()
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Warder's Charm +1",
+    neck="Unmoving collar",
     waist="Null belt",
     left_ear="Cryptic Earring",
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -324,7 +324,7 @@ function get_sets()
     hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Earthcry Earring",

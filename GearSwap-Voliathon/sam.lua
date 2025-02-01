@@ -14,6 +14,18 @@ function get_sets()
 	ShiningOne = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F9
 	ShadowType = 'None'
 	
+	--Job Ability Sets--
+	sets.JA = {}
+	sets.JA.Waltz = {legs="Dashing subligar"}
+	sets.JA.Step = 	{}
+	sets.JA.Stun = {}
+	sets.JA.Sengikori = {feet="Kasuga sune-ate +3"}	
+	sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
+	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +3", feet="Wakido sune-ate +2"}
+	sets.JA.WardingCircle = {head="Wakido kabuto +2"}
+	sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
+	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
+	
 	--equip Sets--
 	sets.equip = {}
 	--					  1		          2                  3 			4 		     5
@@ -23,7 +35,7 @@ function get_sets()
   --offensive melee set
   sets.equip.BadAss = {
   	sub="Utu grip",
-	ammo="Ginsen",
+	ammo="Coiste bodhar",
 	head="Flamma zucchetto +2",
 	body="Kasuga domaru +3",
 	hands="Wakido kote +3",
@@ -65,7 +77,7 @@ function get_sets()
     hands="Nyame Gauntlets",
 	legs="Kasuga haidate +3",
     feet="Nyame Sollerets",
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
+    neck="Null loop",
     waist="Ioskeha Belt +1",
     left_ear="Infused Earring",
     right_ear="Genmei Earring",
@@ -91,7 +103,7 @@ function get_sets()
   }
   
   sets.equip.SubtleBlow = {
-    ammo="Ginsen",
+    ammo="Coiste bodhar",
     head="Ken. Jinpachi +1",
     body="Ken. Samue +1",
     hands="Ken. Tekko +1",
@@ -189,18 +201,6 @@ function get_sets()
 		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}		
 	}
 
-	--Job Ability Sets--
-	sets.JA = {}
-	sets.JA.Waltz = {legs="Dashing subligar"}
-	sets.JA.Step = 	{}
-	sets.JA.Stun = {}
-	sets.JA.Sengikori = {feet="Kasuga sune-ate +3"}	
-	sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
-	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +3", feet="Wakido sune-ate +2"}
-	sets.JA.WardingCircle = {head="Wakido kabuto +2"}
-	sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
-	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
- 
 	--Weapon Sets--
 	sets.weapon = {}
 	sets.weapon.index = {'Dojikiri','Masamune','ShiningOne'}

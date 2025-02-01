@@ -45,8 +45,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
 		right_ear="Lethargy Earring",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back="Fi follet cape +1"
 	}
 	
@@ -61,8 +61,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
 		right_ear="Lethargy Earring",
-		left_ring="Stikini Ring",
-		right_ring="Stikini Ring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
 		back="Fi follet cape +1"
 	}
 
@@ -122,12 +122,12 @@ function get_sets()
 		hands="Lethargy gantherots +2",
 		legs="Lethargy fuseau +2",
 		feet="Lethargy Houseaux +2",
-		neck="Saevus pendant +1",
+		neck="Null loop",
 		waist="Refoccilation stone",
 		left_ear="Barkaro. Earring",
 		right_ear="Halasz Earring",
 		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
+		right_ring="Metamorph ring +1",
 		back="Seshaw cape"
 	}
 	
@@ -142,12 +142,12 @@ function get_sets()
 		hands="Lethargy gantherots +2",
 		legs={ name="Chironic Hose", augments={'Attack+14','Mag. Acc.+13','"Treasure Hunter"+1','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		feet="Vitiation Boots +1",
-		neck={ name="Dls. Torque +2", augments={'Path: A'}},
+		neck="Null loop",
 		waist="Eschan Stone",
 		left_ear="Snotra Earring",
 		right_ear="Vor Earring",
 		left_ring="Kishar Ring",
-		right_ring="Stikini Ring",
+		right_ring="Stikini Ring +1",
 		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10'}}
 	})
 
@@ -172,7 +172,7 @@ function get_sets()
 		hands="Lethargy gantherots +2",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
-		neck="Loricate Torque +1",
+		neck="Null loop",
 		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Ethereal Earring",
@@ -188,7 +188,7 @@ function get_sets()
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
-		neck="Loricate Torque +1",
+		neck="Null loop",
 		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Ethereal Earring",

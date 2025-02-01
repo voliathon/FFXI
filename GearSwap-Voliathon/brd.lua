@@ -38,7 +38,7 @@ function get_sets()
     hands="Fili Manchettes +2",
 	legs="Nyame flanchard",
 	feet="Nyame sollerets",
-    neck="Loricate Torque +1",
+    neck="Null loop",
     waist="Flume Belt",
     left_ear="Genmei Earring",
     right_ear="Odnowa Earring +1",

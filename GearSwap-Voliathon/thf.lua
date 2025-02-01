@@ -22,6 +22,23 @@ function get_sets()
 	send_command('bind !f9 gs c toggle engaged set')
 	send_command('bind ^f9 gs c reverse engaged set')
 
+	-- Job Abilities Sets --
+    sets.JA = {}
+    sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
+	
+    sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
+    sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
+	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
+	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
+	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
+	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
+	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
+	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
+	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
+	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
+	sets.JA['Hide'] = {body="Pillager's Vest +2"}
+	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
+
 	-- Engaged Sets Toggle--
     sets.engaged = {}
     sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank"}
@@ -66,7 +83,7 @@ function get_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Null belt",
 		left_ear="Digni. Earring",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
@@ -82,7 +99,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
+		neck="Null loop",
 		waist="Null belt",
 		left_ear="Digni. Earring",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
@@ -90,24 +107,6 @@ function get_sets()
 		right_ring="Defending Ring",
 		back=ThiefCapes.TP
 	 }	
-	
-	-- Job Abilities Sets --
-    sets.JA = {}
-    sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
-	
-    sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
-    sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
-	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
-	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
-	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
-	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
-	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
-	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
-	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
-	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
-	sets.JA['Hide'] = {body="Pillager's Vest +2"}
-	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
-	
 	
  -- Weapon Skill Sets
  -- Generic Sets
@@ -151,8 +150,8 @@ function get_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
-		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		neck="Null loop",
+		waist="Null belt",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
 		left_ring="Epaminondas's Ring",

@@ -20,7 +20,7 @@ function get_sets()
   TP_ind = 1
 
   sets.TP.Movement = {
-    ammo="Ginsen",
+    ammo="Coiste bodhar",
     head="Flam. Zucchetto +2",
     body="Sakpata's breastplate",
     hands="Sakpata's gauntlets",
@@ -29,15 +29,15 @@ function get_sets()
     neck="Clotharius Torque",
     waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
-    right_ear="Boii Earring",
-    left_ring="Chirich Ring +1",
+    right_ear="Peltast's earring +1",
+    left_ring="Shneddick Ring",
     right_ring="Chirich Ring +1",
     back="Moonlight Cape"
   }
   
   --offensive melee set
   sets.TP.BadAss = {
-    ammo="Ginsen",
+    ammo="Coiste bodhar",
     head="Flam. Zucchetto +2",
     body="Sakpata's breastplate",
     hands="Sakpata's gauntlets",
@@ -46,7 +46,7 @@ function get_sets()
     neck="Clotharius Torque",
     waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
-    right_ear="Boii Earring",
+    right_ear="Peltast's earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
     back="Moonlight Cape"
@@ -60,7 +60,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
@@ -77,7 +77,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
@@ -93,7 +93,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Flam. Gambieras +2",
-    neck="Sanctity Necklace",
+    neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
@@ -109,7 +109,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Flam. Gambieras +2",
-    neck="Sanctity Necklace",
+    neck="Null loop",
     waist="Chaac Belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
@@ -132,7 +132,7 @@ function get_sets()
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    right_ear={ name="Boii Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+    right_ear={ name="Peltast's earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
     left_ring="Epaminondas's Ring",
     right_ring="Rajas Ring",
     back="Vespid Mantle"
@@ -149,7 +149,7 @@ function get_sets()
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    right_ear={ name="Boii Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+    right_ear={ name="Peltast's earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
     left_ring="Epaminondas's Ring",
     right_ring="Rajas Ring",
     back="Vespid Mantle"
@@ -196,7 +196,7 @@ function get_sets()
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
     feet="Carmine greaves +1",
-    neck="Sanctity Necklace",
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
@@ -238,7 +238,7 @@ function get_sets()
     hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect'}},
     feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
@@ -254,7 +254,7 @@ function get_sets()
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck={ name="Loricate Torque +1", augments={'Path: A',}}, --5
+    neck="Loricate Torque +1", --5
     waist="Audumbla sash", --10
     left_ear="Halasz Earring", --5
     right_ear="Magnetic Earring" --8
@@ -273,7 +273,7 @@ function get_sets()
     hands="Regal Gauntlets",
     legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    neck="Null loop",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Earthcry Earring",
@@ -307,9 +307,8 @@ function precast(spell,abil)
   end
   
   
-  if spell.name == 'One for All' or spell.name == 'Embolden' or spell.name == 'Odyllic Subterfuge' or spell.name == 'Warcry'
-    or spell.name == 'Swordplay' or spell.name == 'Meditate' or spell.name == 'Provoke' then
-    equip(sets.Enmity, {hands="Futhark mitons +1"})
+  if spell.name == 'Warcry' or spell.name == 'Provoke' then
+    equip(sets.Enmity)
   end
   if spell.name == 'Resolution' then
     equip(sets.Resolution)
