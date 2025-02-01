@@ -161,7 +161,7 @@ function get_sets()
 		left_ear="Malignance Earring",
 		right_ear="Arbatel Earring +1",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
+		right_ring="Metamorph Ring +1",	
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
@@ -184,7 +184,7 @@ function get_sets()
 		left_ear="Malignance Earring",
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
-		right_ring="Locus Ring",
+		right_ring="Metamorph Ring +1",	
 		back="Null shawl"
 	}
 	

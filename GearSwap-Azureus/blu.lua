@@ -2,13 +2,6 @@
 -- I'm gonna call this the "Get GUD or Get REKT Script" because I'm not adding super detailed logic for every scenario.
 -- I want Blue Mage fun and straight to the point for all conditions that we use.
 
--- Herculean Gear Function for tracking what I could use on Blue Mage
-function HerculeanGear()
-    HercLegs = {}
-	HercLegs.TP={ name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9'}}
-end
-
-
 -- Rosmerta Cape function for tracking what I've got on Mazusu for Blue Mage
 function RosmertaCapes()
     Rosmerta = {}
@@ -31,9 +24,6 @@ function get_sets()
     send_command('bind !f9 gs c toggle engage set')
 	send_command('bind ^f9 gs c reverse engage set')
 	
-	
-	-- Let's initialize all of the Herculean gear we've got stored up
-	HerculeanGear()
 	-- Let's also initialize any Rosmerta Capes that we need to use 
 	RosmertaCapes()
 	-- Initialize the BlueMageMappers so that we can reference this in our BlueMageLocic function
@@ -294,7 +284,7 @@ function get_sets()
     sets.Stun = set_combine(sets.FastCast,{})
         
     sets.TenebralCrush = set_combine(sets.BlueMagicMagical,{
-        head="Pixie Hairpin +1", lring="Archon ring", waist="Orpheus's sash"
+        head="Pixie Hairpin +1", left_ring="Archon ring", right_ring="Metamorph ring +1", waist="Orpheus's sash"
      })
 
 	-- Cure spells

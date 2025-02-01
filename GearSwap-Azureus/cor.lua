@@ -339,7 +339,7 @@ function precast(spell,abil)
 		set_combine(sets.LeadenSalute,{ waist = "Hachirin-no-Obi"})
 	elseif spell.english == "Leaden Salute" and spell.target.distance < 15 then 
 		equip(sets.LeadenSalute)
-	elseif spell.english == "Leaden Salute"
+	elseif spell.english == "Leaden Salute" then
 		set_combine(sets.LeadenSalute,{ waist = "Eschan stone"})
 	end
 

@@ -39,7 +39,7 @@ function get_sets()
 		neck="Voltsurge Torque",
 		waist="Embla Sash",
 		left_ear="Malignance Earring",
-		right_ear="- +1",
+		right_ear="Lethargy earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Lebeche Ring",
 		back="Perimede Cape"
@@ -132,7 +132,7 @@ function get_sets()
 		left_ear="Barkaro. Earring",
 		right_ear="Halasz Earring",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
+		right_ring="Metamorph ring +1",
 		back="Seshaw cape"
 	}
 	
@@ -165,8 +165,8 @@ function get_sets()
 		legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
 		neck="Null loop",
 		waist="Null belt",
-		left_ear="Digni. Earring",
-		right_ear="Malignance Earring",
+		left_ear="Malignance Earring",
+		right_ear="Lethargy Earring +1",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back="Null shawl"

@@ -139,7 +139,7 @@ function get_sets()
 		waist="Tengu-no-Obi",
 		left_ear="Friomisi Earring",
 		right_ear="Malignance Earring",
-		left_ring="Locus Ring",
+		left_ring="Metamorph Ring +1",
 		right_ring="Mujin Band",
 		back="Seshaw Cape"
 	}
