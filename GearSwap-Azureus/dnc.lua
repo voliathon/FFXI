@@ -143,9 +143,17 @@ function get_sets()
 		hands="Macu. Bangles +2", --SquareMod +13 whatever that means.
 		back="Toetapper Mantle"
 	}
-	sets.JA.ClimacticFlourish = {head="Maculele Tiara +2"}
+	sets.JA.ClimacticFlourish = {head="Maculele Tiara +3"}
 	sets.JA.StrikingFlourish = {body="Maculele Casaque +2"}
-	sets.JA.ViolentFlourish = {body="Horos Casaque +3"}
+	sets.JA.ViolentFlourish = {
+		head="Mummu Bonnet +2",
+		body="Horos Casaque +3",
+		legs="Horos Tights +3",
+		feet="Mummu Gamash. +2",
+		left_ring="Stikini ring +1",
+		right_ring="Stikini ring +1",
+		ammo="Yamarang"
+	}
 	
 	sets.JA.Trance = {head="Horos Tiara +1"}
 	sets.JA.FanDance = {hands="Horos Bangles +1"}
@@ -158,13 +166,13 @@ function get_sets()
 	
 	
  -- Weapon Skill Sets
- -- Generic Sets
-    sets.WSD = {	
+	-- 	80% DEX for Rudra 60% DEX for Mandalic Stab
+    sets.Rudra = {	
 		ammo="Crepuscular Pebble",
-		head="Maculele Tiara +2",
+		head="Maculele Tiara +3",
 		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands="Maxixi Bangles +3",
-		legs={ name="Horos Tights +3", augments={'Enhances "Saber Dance" effect',}},
+		legs="Horos tights +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -175,6 +183,7 @@ function get_sets()
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	}
 	
+	-- 	50% DEX Need Critical hit gear as well
 	sets.Evisceration = {
 		ammo="Crepuscular Pebble",
 		head={ name="Blistering Sallet +1", augments={'Path: A',}},
@@ -202,14 +211,15 @@ function get_sets()
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
-		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
+		left_ring="Epaminondas's Ring",
+		right_ring="Metamorph ring +1",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 	
+	-- 	40% STR / 40% DEX
 	sets.PyrrhicKleos = set_combine(sets.Evisceration,  {
 		ammo="Coiste Bodhar",
-		head="Maculele Tiara +2",
+		head="Maculele Tiara +3",
 		body="Horos Casaque +3",
 		hands="Gleti's Gauntlets",
 		legs="Nyame Flanchard",
@@ -334,15 +344,19 @@ function precast(spell,action)
 		equip(sets.JA.ClosedPosition)
 		
 	-- Weapon Skill --
-	-- 50% DEX Modifier Evisceration / Crits per hits
+
 	-- STR 40% DEX 40% Pyrrhic Kleos
-	elseif spell.name == "Evisceration" or spell.name == "Pyrrhic Kleos" then
-		equip(sets.Evisceration)
-	
+	elseif spell.name == "Pyrrhic Kleos" then
+		equip(sets.PyrrhicKleos)
+
 	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
 	-- 60% DEX Modifier Mandalic Stab
     elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
-		equip(sets.WSD)
+		equip(sets.Rudra)
+
+		-- 50% DEX Modifier Evisceration / Crits per hits
+	elseif spell.name == "Evisceration" then
+		equip(sets.Evisceration)
 
 	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
 	elseif spell.name == "Aeolian Edge" then

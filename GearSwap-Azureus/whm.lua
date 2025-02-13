@@ -234,7 +234,7 @@ function get_sets()
 		main="Daybreak",
 		sub="Genmei shield",
 		head="Befouled crown",
-		body="Jhakri robe +2",
+		body="Shamash robe",
 		hands="Bagua mitaines +1",
 		right_ring="Stikini ring +1"
 	})

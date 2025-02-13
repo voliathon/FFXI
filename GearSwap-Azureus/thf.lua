@@ -5,18 +5,19 @@ function get_sets()
 -- Set macro book/set --
     send_command('input /macro book 1;wait .1;input /macro set 1') -- set macro book/set here	
 	
--- Binds for modes
-	-- Toggle Weapon F8 Key
-	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c Reverse Toggle Weapon')
-	send_command('bind ^f9 gs c C9') 
+	-- Binds for switching weapon modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	-- Binds for switching TP modes
+	send_command('bind !f9 gs c toggle TP set')
+	send_command('bind ^f9 gs c reverse TP set')
 
-	-- Engaged Sets Toggle--
-    sets.engaged = {}
-    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Evasion"}
-	engaged_ind = 1
+	-- TP Sets Toggle--
+    sets.TP = {}
+    sets.TP.index = {"TreasureHunter","TP","Accuracy","Tank","Evasion"}
+	TP_ind = 1
 
-    sets.engaged.TreasureHunter = {
+    sets.TP.TreasureHunter = {
 		ammo="Yetshila +1",
 		head={ name="Herculean Helm", augments={'AGI+1','Rng.Atk.+19','"Treasure Hunter"+1','Accuracy+10 Attack+10','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
 		body="Volte Jupon",
@@ -32,7 +33,7 @@ function get_sets()
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
 	}
 	
-	sets.engaged.TP = {
+	sets.TP.TP = {
 		ammo="Ginsen",
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
 		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
@@ -48,7 +49,7 @@ function get_sets()
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%'}}
 	}
 	
-	sets.engaged.Accuracy =  {
+	sets.TP.Accuracy =  {
 		ammo="Yamarang",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
@@ -64,7 +65,7 @@ function get_sets()
 		back="Null shawl"
 	}
 
-	 sets.engaged.Tank = {
+	 sets.TP.Tank = {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
@@ -75,19 +76,19 @@ function get_sets()
 		waist="Null belt",
 		left_ear="Infused Earring",
 		right_ear="Eabani Earring",
-		left_ring="Fortified Ring",
+		left_ring="Shneddick Ring",
 		right_ring="Chirich Ring +1",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
 	 }	
 	
-	sets.engaged.Evasion = {
+	sets.TP.Evasion = {
 		ammo="Yamarang",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Null loop",
+		neck="Bathy choker +1",
 		waist="Null belt",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
@@ -118,11 +119,11 @@ function get_sets()
  -- Weapon Skill Sets
  -- Generic Sets
     sets.WSD = {	
-		ammo="Yetshila +1",
+		ammo="Crepuscular pebble",
 		head="Pillager's bonnet +3",
 		body="Skulker's Vest +2",
 		hands="Nyame Gauntlets",
-		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+		legs="Nyame flanchard",
 		feet="Nyame sollerets",
 		neck="Fotia Gorget",
 		waist="Grunfeld Rope",
@@ -189,13 +190,17 @@ function get_sets()
 	
  -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'GandringCentovente', 'GandringCrepuscularKnife', 'TwashtarCentovente', 'TwashtarCrepuscularKnife','NaeglingCentovente', 'NaeglingCrepuscularKnife', 'TauretCentovente', 'TauretCrepuscularKnife'}
+  sets.weapon.index = {'GandringCentovente', 'GandringGleti', 'GandringCrepuscularKnife', 'TwashtarCentovente', 'TwashtarCrepuscularKnife','NaeglingCentovente', 'NaeglingCrepuscularKnife', 'TauretCentovente', 'TauretCrepuscularKnife'}
   weapon_ind = 1     
   
  sets.weapon.GandringCentovente = {
 	main="Gandring",
 	sub="Centovente"
  }
+ sets.weapon.GandringGleti = {
+	main="Gandring",
+	sub="Gleti's knife"
+ } 
  sets.weapon.GandringCrepuscularKnife = {
 	main="Gandring",
 	sub="Crepuscular Knife"
@@ -283,39 +288,34 @@ end
 --I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
-	equip_weapon()
-end
-
-
-function equip_weapon()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+	equip(sets.TP[sets.TP.index[TP_ind]])
 end
 
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C8' then -- Toggling Weapons--	
-		weapon_ind = weapon_ind +1
-		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_weapon()
-	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+	if command =='toggle weapon set' then
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_weapon()
-	elseif command == 'C9' then
-		engaged_ind = engaged_ind +1
-		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse Engaged set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+	elseif command == 'toggle TP set' then
+		TP_ind = TP_ind -1
+		if TP_ind == 0 then TP_ind = #sets.TP.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse TP set' then
+		TP_ind = TP_ind +1
+		if TP_ind > #sets.TP.index then TP_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
 		equip_current()
-	end	 
+	end
 end
