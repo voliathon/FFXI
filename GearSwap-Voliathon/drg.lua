@@ -16,177 +16,176 @@ function get_sets()
   --TP Sets--
   sets.TP = {}
 --					  1		   2              3 				   4 		    5		     6
-  sets.TP.index = {'Movement', 'BadAss', 'Tank', 'TakingLessMagicDamage', 'Accuracy', 'TreasureHunter'}
+  sets.TP.index = {'BadAss', 'TankMovement', 'TakingLessMagicDamage', 'Accuracy', 'TreasureHunter'}
   TP_ind = 1
 
   sets.TP.Movement = {
     ammo="Coiste bodhar",
-    head="Flam. Zucchetto +2",
-    body="Sakpata's breastplate",
-    hands="Sakpata's gauntlets",
-    legs="Sakpata's cuisses",
-    feet="Hermes' sandals",
-    neck="Clotharius Torque",
+    head={ name="Gleti's Mask", augments={'Path: A',}},
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
+    legs={ name="Gleti's Breeches", augments={'Path: A',}},
+    feet={ name="Gleti's Boots", augments={'Path: A',}},
+    neck="Null Loop",
     waist="Ioskeha Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Peltast's earring +1",
+    left_ear="Sherida Earring",
+    right_ear="Pel. Earring +1",
     left_ring="Shneddick Ring",
     right_ring="Chirich Ring +1",
-    back="Moonlight Cape"
+    back="Null shawl"
   }
   
   --offensive melee set
   sets.TP.BadAss = {
     ammo="Coiste bodhar",
     head="Flam. Zucchetto +2",
-    body="Sakpata's breastplate",
-    hands="Sakpata's gauntlets",
-    legs="Sakpata's cuisses",
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
+    legs={ name="Gleti's Breeches", augments={'Path: A',}},
     feet="Flam. Gambieras +2",
-    neck="Clotharius Torque",
+    neck="Anu Torque",
     waist="Ioskeha Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Peltast's earring +1",
+    left_ear="Sherida Earring",
+    right_ear="Pel. Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Moonlight Cape"
+    back="Null Shawl"
   }
 
   --Tank Gear
-  sets.TP.Tank = {
+  sets.TP.TankMovement = {
     ammo="Staunch Tathlum +1",
-    head="Sakpata's Helm",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
-    neck="Null loop",
+    head={ name="Gleti's Mask", augments={'Path: A',}},
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
+    legs={ name="Gleti's Breeches", augments={'Path: A',}},
+    feet={ name="Gleti's Boots", augments={'Path: A',}},
+    neck="Null Loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring="Moonlight Ring",
-    right_ring="Fortified Ring",
-    back="Engulfer Cape +1"
+    left_ring="Shneddick Ring",
+    right_ring="Defending Ring",
+    back="Null shawl"
   }
 
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
     ammo="Staunch Tathlum +1",
-    head="Sakpata's Helm",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
+    head="Nyame helm",
+	body={ name="Nyame Mail", augments={'Path: B',}},
+    hands="Nyame gauntlets",
+    legs="Nyame flanchard",
+    feet="Nyame sollerets",
     neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring="Moonlight Ring",
+    left_ring="Defending Ring",
     right_ring="Fortified Ring",
-    back="Engulfer Cape +1"
+    back="Null shawl"
   }
   
   sets.TP.Accuracy = {
-    ammo="Amar Cluster",
+    ammo="Coiste bodhar",
     head="Flam. Zucchetto +2",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
+    body="Gleti's Cuirass",
+    hands="Gleti's gauntlets",
+    legs="Gleti's breeches",
     feet="Flam. Gambieras +2",
     neck="Null loop",
     waist="Null belt",
-    left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ear="Sherida Earring",
+    right_ear="Pel. Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Vespid Mantle"
+    back="Null shawl"
   }
   
   sets.TP.TreasureHunter = {
     ammo="Amar Cluster",
     head="Flam. Zucchetto +2",
     body="Volte Jupon",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
+    hands="Gleti's gauntlets",
+    legs="Gleti's breeches",
     feet="Flam. Gambieras +2",
     neck="Null loop",
     waist="Chaac Belt",
-    left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ear="Sherida Earring",
+    right_ear="Pel. Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Vespid Mantle"
+    back="Null shawl"
   }
 
   --Weaponskill Sets--
   sets.WS = {}
 
-  --multi, carries FTP -- Need STR for the modifier
-  sets.Resolution = {
-    ammo="Knobkierrie",
-    head="Flam. Zucchetto +2",
+  -- 100% STR
+  sets.ImpulseDrive = {
+    ammo="Crepuscular Pebble",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Fotia Gorget",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    right_ear="Pel. Earring +1",
+    left_ring="Sroda Ring",
+    right_ring="Epaminondas's Ring",
+    back="Null Shawl"
+  }
+
+  -- Savage Blade
+  sets.SavageBlade = {
+    ammo="Crepuscular Pebble",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Fotia Gorget",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    right_ear="Pel. Earring +1",
+    left_ring="Sroda Ring",
+    right_ring="Epaminondas's Ring",
+    back="Null Shawl"
+  }
+
+  --  	50% STR Critical hit fourfold
+  sets.Drakesbane = {
+    ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
     body="Hjarrandi Breast.",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Flam. Gambieras +2",
+    hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
+    legs={ name="Gleti's Breeches", augments={'Path: A',}},
+    feet={ name="Gleti's Boots", augments={'Path: A',}},
     neck="Fotia Gorget",
-    waist="Ioskeha Belt +1",
-    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    right_ear={ name="Peltast's earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
-    left_ring="Epaminondas's Ring",
-    right_ring="Rajas Ring",
-    back="Vespid Mantle"
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    right_ear="Pel. Earring +1",
+    left_ring="Sroda Ring",
+    right_ring="Epaminondas's Ring",
+    back="Null Shawl" 
   }
-
-  --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
-  sets.Single = {
-    ammo="Knobkierrie",
-    head={ name="Valorous Mask", augments={'MND+10','"Resist Silence"+4','Weapon skill damage +10%',}},
-    body="Nyame Mail",
-    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
-    legs="Nyame Flanchard",
-    feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10',}},
+  
+  sets.Stardiver = {
+    ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
+    body="Nyame mail",
+    hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
     neck="Fotia Gorget",
-    waist="Fotia Belt",
-    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    right_ear={ name="Peltast's earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
-    left_ring="Epaminondas's Ring",
-    right_ring="Rajas Ring",
-    back="Vespid Mantle"
-  }
-
-  --Stat Modifier: 	30% STR / 30% MND   Sleep Weaponskill
-  sets.Shockwave = {
-    ammo="Pemphredo Tathlum",
-    head="Sakpata's Helm",
-    body="Nyame Mail",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
-    neck="Fotia Gorget",
-    waist="Null belt",
-    left_ear="Digni. Earring",
-    right_ear="Gwati Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
-    back="Engulfer Cape +1"
-  }
-
-  --magic WS
-  sets.HercSlash = {
-    ammo="Pemphredo Tathlum",
-    head="Sakpata's Helm",
-    body="Crepuscular Mail",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
-    neck="Fotia Gorget",
-    waist="Orpheus's sash",
-    left_ear="Digni. Earring",
-    right_ear="Gwati Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
-    back="Engulfer Cape +1"
+    waist="Fotia belt",
+    left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+    right_ear="Pel. Earring +1",
+    left_ring="Sroda Ring",
+    right_ring="Epaminondas's Ring",
+    back="Null Shawl"   
   }
 
   sets.Enhancing = {
@@ -200,7 +199,7 @@ function get_sets()
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Halasz Earring",
-    left_ring="Moonlight Ring",
+    left_ring="Defending Ring",
     right_ring="Stikini Ring"
   }
 
@@ -294,7 +293,7 @@ function precast(spell,abil)
   
   --equips favorite weapon if disarmed
   if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip({main="Shining One",sub="Utu Grip"})
+    equip({main="Shining One",sub="Khonsu"})
     add_to_chat(158,'Shining One Weapon: [ON]')
 	Naegling = 'OFF'
   end
@@ -307,21 +306,17 @@ function precast(spell,abil)
   end
   
   
-  if spell.name == 'Warcry' or spell.name == 'Provoke' then
-    equip(sets.Enmity)
+  if spell.name == 'Impulse Drive' then
+    equip(sets.ImpulseDrive)
   end
-  if spell.name == 'Resolution' then
-    equip(sets.Resolution)
+  if spell.name == 'Savage Blade' then
+    equip(sets.SavageBlade)
   end
-  if spell.name == 'Dimidiation' or spell.name == 'Spinning Slash' or spell.name == 'Savage Blade' then
-    equip(sets.Single)
+
+  if spell.name == 'Drakesbane' then
+    equip(sets.Drakesbane)
   end
-  if spell.name == 'Shockwave' then
-    equip(sets.Shockwave)
-  end
-  if spell.name == 'Herculean Slash' or spell.name == 'Freezebite' or spell.name == 'Frostbite' then
-    equip(sets.HercSlash)
-  end
+
 
   --prevents casting Utsusemi if you already have 3 or more shadows
   if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
@@ -384,7 +379,7 @@ function self_command(command)
 	if command == 'C8' then -- Naegling to Shining One --	
         if Naegling == 'ON' then
             Naegling = 'OFF'
-			equip({main="Shining One", sub="Utu Grip"})
+			equip({main="Shining One", sub="Khonsu"})
             add_to_chat(158,'Shining One Weapon: [ON]')
 			add_to_chat(123,'Naegling Weapon: [OFF]')
 		else

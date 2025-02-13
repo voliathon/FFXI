@@ -73,7 +73,7 @@ function get_sets()
 
   sets.TP.Movement = {
     ammo="Coiste Bodhar",
-    head="Sakpata's Helm",
+    head="Heathen's burgeonet +3",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
@@ -140,7 +140,7 @@ function get_sets()
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
-    head="Nyame Helm",
+    head="Heathen's burgeonet +3",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Ignominy flanchard +3",

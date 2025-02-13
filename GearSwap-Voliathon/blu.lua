@@ -62,9 +62,9 @@ function get_sets()
 	Naegling = 'OFF' -- Toogle on/off the Naegling and Maxentius via ctrl + F8
 	
 	-- Let's initialize all of the Herculean gear we've got stored up
-	HerculeanGear()
+	--HerculeanGear()
 	-- Let's also initialize any Rosmerta Capes that we need to use 
-	RosmertaCapes()
+	--RosmertaCapes()
 
 	--Job Ability Sets--
 	sets.JA = {}
@@ -184,7 +184,7 @@ function get_sets()
 		head="Malignance Chapeau",
 		body="Shamash Robe",
 		hands="Malignance Gloves",
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Sanctity Necklace",
 		waist="Null belt",
@@ -216,7 +216,7 @@ function get_sets()
 		head="Malignance Chapeau",
 		body="Shamash Robe",
 		hands="Malignance Gloves",
-		legs="Carmine Cuisses +1",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Null loop",
 		waist="Null belt",
@@ -346,19 +346,19 @@ function get_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
 	-- WSD covers Savage Blade and Expiacion
     sets.WSD = {
-		ammo="Amar Cluster",
-		head="Malignance Chapeau",
-		body={ name="Herculean Vest", augments={'Attack+14','Damage taken-1%','Weapon skill damage +7%','Accuracy+11 Attack+11'}},
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Ishvara Earring",
-		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		left_ring="Epaminondas's Ring",
-		right_ring="Rajas Ring",
-		back="Vespid Mantle"
+		right_ring="Sroda Ring",
+		back="Toro Cape"
     }
 
     sets.ChantduCygne = {

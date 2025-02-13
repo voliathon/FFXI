@@ -55,7 +55,7 @@ function get_sets()
 		waist="Chaac Belt",
 		left_ear="Suppanomimi",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
-		left_ring="Chirich Ring +1",
+		left_ring="Shneddick ring",
 		right_ring="Chirich Ring +1",
 		back=ThiefCapes.TP
 	}
@@ -103,7 +103,7 @@ function get_sets()
 		waist="Null belt",
 		left_ear="Digni. Earring",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
-		left_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		left_ring="Shneddick ring",
 		right_ring="Defending Ring",
 		back=ThiefCapes.TP
 	 }	
@@ -114,7 +114,7 @@ function get_sets()
 		ammo="Yetshila +1",
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body={ name="Nyame Mail", augments={'Path: B',}},
-		hands="Meg. Gloves +2",
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Fotia Gorget",
@@ -151,7 +151,7 @@ function get_sets()
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null loop",
-		waist="Null belt",
+		waist="Orpheus's sash",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
 		left_ring="Epaminondas's Ring",
@@ -183,7 +183,7 @@ function get_sets()
 	
  -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'NaeglingCrepuscularKnife', 'TauretSandung', 'TauretCrepuscularKnife'}
+  sets.weapon.index = {'NaeglingCrepuscularKnife', 'TauretSandung', 'TauretCrepuscularKnife', 'GandringSandung'}
   weapon_ind = 1     
   
  sets.weapon.NaeglingCrepuscularKnife = {
@@ -198,6 +198,11 @@ function get_sets()
 	main="Tauret",
 	sub="Crepuscular Knife"
  } 
+ 
+ sets.weapon.GandringSandung = {
+	main="Gandring",
+	sub="Sandung" 
+ }
 end	
 	
 

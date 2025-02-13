@@ -245,18 +245,18 @@ function get_sets()
 	--Teki/To/Chi/Yu
 	sets.TekiToChiYu = {
 		ammo="Pemphredo Tathlum",
-		head="Mochi. hatsuburi +3",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Sanctity Necklace",
-		waist="Orpheus's sash",
-		left_ear="Hecate's Earring",
-		right_ear="Hattori Earring +1",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back=NinjaCapes.NUKE
+		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect'}},
+		body={ name="Nyame Mail", augments={'Path: B'}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B'}},
+		legs={ name="Nyame Flanchard", augments={'Path: B'}},
+		feet={ name="Nyame Sollerets", augments={'Path: B'}},
+		neck="Fotia Gorget",
+		waist="Orpheus's Sash",
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+		right_ear={ name="Hattori Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Store TP"+5'}},
+		left_ring="Epaminondas's Ring",
+		right_ring="Sroda Ring",
+		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 	}
 
 	--Blade: Ku
