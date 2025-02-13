@@ -101,7 +101,7 @@ function get_sets()
 	sets.AvatarTP = {
 		ammo="Sancus Sachet +1",
 		head={ name="Helios Band", augments={'Pet: Attack+29 Pet: Rng.Atk.+29','Pet: "Dbl. Atk."+7','Blood Pact Dmg.+7',}},
-		body="Beck. Doublet +2",
+		body="Beck. Doublet +3",
 		hands="Beck. Bracers +2",
 		legs="Beck. Spats +3",
 		feet={ name="Helios Boots", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+5',}},
@@ -117,7 +117,7 @@ function get_sets()
 	sets.AvatarDT = {
 		ammo="Sancus Sachet +1",
 		head={ name="Helios Band", augments={'Pet: Attack+29 Pet: Rng.Atk.+29','Pet: "Dbl. Atk."+7','Blood Pact Dmg.+7',}},
-		body="Beck. Doublet +2",
+		body="Beck. Doublet +3",
 		hands="Beck. Bracers +2",
 		legs="Enticer's pants",
 		feet={ name="Helios Boots", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+5',}},
@@ -194,7 +194,7 @@ function get_sets()
 
 	sets.SelfAccuracy = {
 		head="Beckoner's Horn +3",
-		body="Beck. Doublet +2",
+		body="Beck. Doublet +3",
 		hands="Beck. Bracers +2",
 		legs="Beck. Spats +3",
 		feet="Beck. Pigaches +2",
@@ -230,7 +230,7 @@ function get_sets()
 		sub="Vox Grip",
 		ammo="Sancus Sachet +1",
 		head="Beckoner's Horn +3",
-		body="Beck. Doublet +2",
+		body="Beck. Doublet +3",
 		hands="Lamassu Mitts +1",
 		legs="Beck. Spats +3",
 		feet="Beck. Pigaches +2",

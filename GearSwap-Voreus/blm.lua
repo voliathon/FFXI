@@ -151,7 +151,7 @@ function get_sets()
 		hands="Wicce Gloves +3",
 		legs="Wicce Chausses +3",
 		feet="Wicce Sabots +3",
-		neck="Mizu. Kubikazari",
+		neck="Src. Stole +2",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
 		right_ear="Barkarole Earring",
@@ -171,10 +171,10 @@ function get_sets()
 		hands="Regal Cuffs",
 		legs="Wicce Chausses +3",
 		feet="Wicce Sabots +3",
-		neck="Sanctity Necklace",
+		neck="Src. Stole +2",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear={ name="Wicce Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Enmity-5',}},
+		right_ear="Wicce Earring +1",
 		left_ring="Stikini Ring +1",
 		right_ring="Kishar Ring",
 		back="Aurist's Cape +1"
@@ -244,23 +244,23 @@ function get_sets()
 		right_ring="Stikini Ring +1"
 	})
 	
+	
 	sets.ElementalDebuff = {
 		ammo="Pemphredo Tathlum",
 		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
 		hands="Wicce Gloves +3",
-		legs="Wicce Chausses +3",
-		feet="Wicce Sabots +3",
-		neck={ name="Src. Stole +2", augments={'Path: A',}},
+		legs="Arch. tonban +3",
+		feet="Arch. sabots +3",
+		neck="Sanctity Necklace",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Regal Earring",
+		right_ear="Wicce Earring +1",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back={ name="Aurist's Cape +1", augments={'Path: A',}}	
+		right_ring="Kishar Ring",
+		back="Aurist's Cape +1"		
 	}
-	
-	
+		
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
@@ -435,7 +435,10 @@ function midcast(spell)
 			equip({waist = "Hachirin-no-obi"})
 		end
 	end
-	if spell.skill == 'Elemental Magic' then
+	
+	if spell.name == "Shock" or spell.name == 'Rasp' or spell.name == 'Choke' or spell.name == 'Frost' or spell.name == 'Burn' or spell.name == 'Drown' then
+		equip(sets.ElementalDebuff)
+	elseif spell.skill == 'Elemental Magic' then
 		send_command('@input /echo Bonus in midcast is: '..bonus..'%')
 		if Burst == 'Disabled' then 
 			equip(sets.ElementalMagic)
@@ -446,9 +449,11 @@ function midcast(spell)
 			equip({waist = "Hachirin-no-obi"})
 		end
 	end
+	
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
 	end	
+
 end
 
 --We need to do some thinking and testing for this set...
