@@ -437,6 +437,7 @@ function midcast(spell)
 		equip(sets.Cure)
 	end
 	if spell.skill == 'Elemental Magic' then
+		send_command('@input /echo Bonus in midcast is: '..bonus..'%')	
 		if Burst == 'Disabled' then 
 			equip(sets.ElementalMagic)
 		else
@@ -581,7 +582,7 @@ function use_hachirin_no_obi(spell)
 		["Gales"] = 25,
 		["Dust storms"] = 10,
 		["Sand storms"] = 25,
-		["Thunderstorm"] = 10,
+		["Thunder"] = 10,
 		["Thunderstorms"] = 25,
 		["Rain"] = 10,
 		["Squalls"] = 25,
@@ -612,6 +613,9 @@ function use_hachirin_no_obi(spell)
     -- Check if a storm spell is up.
 	if has_storm_effect() then
 	    -- check if the spell and storm weather is the same.
+		--send_command('@input /echo spell.element: ' .. spell.element)
+		--send_command('@input /echo world.weather: ' .. world.weather)
+		--send_command('@input /echo world.weather_element: ' .. world.weather_element)
 		if spell.element == world.weather_element then
 			bonus = bonus + weather_to_intensity[world.weather]
 		-- check if the spell and storm weather are NOT the same.

@@ -29,7 +29,21 @@ function get_sets()
 	sets.Cascade = {}
 
 
-	sets.Aspir = {feet="Agwu's Pigaches"}
+	sets.Aspir = {
+		ammo="Pemphredo Tathlum",
+		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
+		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
+		legs="Agwu's Slops",
+		feet="Agwu's Pigaches",
+		neck="Null Loop",
+		waist="Fucho-no-Obi",
+		left_ear="Malignance Earring",
+		right_ear="Magnetic Earring",
+		left_ring="Evanescence Ring",
+		right_ring="Excelsis Ring",
+		back="Perimede Cape"
+	}
 
     -- Fast Cast for Black Mage --
     sets.FastCast = {
@@ -160,10 +174,6 @@ function get_sets()
 		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	}
 	
-    sets.DarkMagic = {
-
-	}
-	
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Pemphredo Tathlum",
 		head="Wicce Petasos +3",
@@ -186,11 +196,6 @@ function get_sets()
       body="Twilight Cloak"
 	})
 
-
-    -- /heal the damn MP/HP up.
-    sets.heal = {
-
-	}
 
 	sets.TP = set_combine(sets.PDT,  {
 		ammo="Oshasha's Treatise",
@@ -400,7 +405,9 @@ end
 
 
 function midcast(spell)
-
+	if string.find(spell.english, 'Aspir') or string.find(spell.english, 'Drain') then
+		equip(sets.Aspir)
+	end
 	if spell.name == 'Klimaform' then
 		equip(sets.Klimaform)
 	end
@@ -408,7 +415,6 @@ function midcast(spell)
 	if string.find(spell.english,'storm') then 
 		equip(sets.Duration)
 	end
-
 
 	if string.find(spell.english,'Cur') then 
 		equip(sets.Cure)
@@ -575,7 +581,7 @@ function use_hachirin_no_obi(spell)
 		["Gales"] = 25,
 		["Dust storms"] = 10,
 		["Sand storms"] = 25,
-		["Thunderstorm"] = 10,
+		["Thunder"] = 10,
 		["Thunderstorms"] = 25,
 		["Rain"] = 10,
 		["Squalls"] = 25,

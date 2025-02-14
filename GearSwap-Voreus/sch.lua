@@ -625,7 +625,7 @@ function use_hachirin_no_obi(spell)
 		["Gales"] = 25,
 		["Dust storms"] = 10,
 		["Sand storms"] = 25,
-		["Thunderstorm"] = 10,
+		["Thunder"] = 10,
 		["Thunderstorms"] = 25,
 		["Rain"] = 10,
 		["Squalls"] = 25,
