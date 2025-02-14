@@ -48,6 +48,7 @@
 - **[Thief](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voliathon/thf.lua) lua script**
   - Alternate weapons using Ctrl + F8 
   - Alternate gear using Ctrl + F9
+  - Gandring and Tauret Build
 - **[Monk](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voliathon/mnk.lua) lua script**
   - Alternate weapons using Ctrl + F8 
   - Alternate gear using Ctrl + F9
