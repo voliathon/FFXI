@@ -38,12 +38,12 @@
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Gandring, Twashtar, Naegling, Tauret Build  
- - **[Geomancer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/geo.lua) lua script**
+- **[Geomancer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/geo.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Idris, Maxentius, Marin Staff +1, Bunzi's Rod Build
    - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi. There is an echo for weather intensity and what bonus is obtained when casting elemental magic       
-  - **[Black Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/blm.lua) lua script**
+- **[Black Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/blm.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Marin Staff +1, Malignance Pole, Daybreak Build
