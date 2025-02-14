@@ -48,7 +48,7 @@
    - Alternate gear using Ctrl + F9
    - Marin Staff +1, Malignance Pole, Daybreak Build
    - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi. There is an echo for weather intensity and what bonus is obtained when casting elemental magic   
- > TODO: Bunzi Build logic needs to be added 
+  > TODO: Bunzi Build logic needs to be added 
 - **[Dragoon](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/drg.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
@@ -80,6 +80,7 @@
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
 
+Missing Puppetmaster and Beastmaster
 
 
 # GearSwap-Voliathon
@@ -112,7 +113,10 @@
   - Alternate weapons using Ctrl + F8 
   - Alternate gear using Ctrl + F9
   - Heishi Shorinken, Naegling, and Tauret Build
-
+- **[Geomancer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voliathon/geo.lua) lua script**
+  - Alternate weapons using Ctrl + F8
+  - Alternate gear using Ctrl + F9
+  - Idris Build
 
 
 # GearSwap-Voreus
@@ -132,5 +136,9 @@
 - **[Scholar](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voreus/sch.lua) lua script**
   - Alternate weapons using Ctrl + F8
   - Alternate gear using Ctrl + F9
-
+- **[Black Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voreus/blm.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+   - Marin Staff +1, Malignance Pole, Daybreak Build
+   - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi. There is an echo for weather intensity and what bonus is obtained when casting elemental magic  
 
