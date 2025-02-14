@@ -29,41 +29,55 @@ function get_sets()
 	sets.Cascade = {}
 
 
-	sets.Aspir = {feet="Agwu's Pigaches"}
+	sets.Aspir = {
+		ammo="Pemphredo Tathlum",
+		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
+		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
+		legs="Agwu's Slops",
+		feet="Agwu's Pigaches",
+		neck="Null Loop",
+		waist="Fucho-no-Obi",
+		left_ear="Malignance Earring",
+		right_ear="Magnetic Earring",
+		left_ring="Evanescence Ring",
+		right_ring="Excelsis Ring",
+		back="Perimede Cape"
+	}
 
     -- Fast Cast for Black Mage --
     sets.FastCast = {
-		ammo="Impatiens",
-		head={ name="Merlinic Hood", augments={'Mag. Acc.+7','Magic burst dmg.+10%','MND+9','"Mag.Atk.Bns."+9',}},
-		body="Shango Robe",
-		hands="Jhakri Cuffs +2",
-		legs={ name="Artsieq Hose", augments={'"Mag.Atk.Bns."+25','Mag. Evasion+10','Phys. dmg. taken -5',}},
-		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Eschan Stone",
+		ammo="Staunch Tathlum +1",
+		head="Vanya hood",
+		body="Zendik Robe",
+		hands="Agwu's Gages",
+		legs="Agwu's Slops",
+		feet={ name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20','"Conserve MP"+7',}},
+		neck="Voltsurge Torque",
+		waist="Embla Sash",
 		left_ear="Malignance Earring",
 		right_ear="Loquac. Earring",
-		left_ring="Kishar Ring",
+		left_ring="Stikini Ring +1",
 		right_ring="Lebeche Ring",
-		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
+		back="Perimede Cape"
 	}
 
 	sets.Duration = {
-		main="Gada",
-		sub="Ammurapi shield",
+		main={ name="Gada", augments={'Enh. Mag. eff. dur. +6','VIT+2','Mag. Acc.+9',}},
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
-		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
-		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
-		legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
-		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
+		head={ name="Telchine Cap", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		body={ name="Telchine Chas.", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		hands={ name="Telchine Gloves", augments={'Accuracy+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
 		neck="Incanter's Torque",
 		waist="Embla Sash",
-		left_ear="Loquac. Earring",
+		left_ear="Magnetic Earring",
 		right_ear="Mendi. Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
+		right_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
+		back="Seshaw cape"
 	}
 	
 	-- Stoneskin
@@ -76,27 +90,27 @@ function get_sets()
 	
 	-- Hitting the Duration set due to longer enhancing duration gear
 	sets.Aquaveil = set_combine(sets.Duration,  {
-		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6'}},
+		head="Amalric Coif +1",
 		hands="Regal Cuffs",
 		waist="Emphatikos Rope",
 	})
 	
     sets.Cure = set_combine(sets.FastCast,  {
 		main="Daybreak",
-		sub="Sors Shield",
+		sub="Culminus",
 		ammo="Pemphredo Tathlum",
-		head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
-		body={ name="Vanya Robe", augments={'MP+50','"Cure" potency +7%','Enmity-6',}},
-		hands={ name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
-		legs={ name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}},
+		head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
+		body={ name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		hands={ name="Telchine Gloves", augments={'Accuracy+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
 		feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
-		neck="Phalaina locket",
-		waist="Witful Belt",
+		neck="Incanter's Torque",
+		waist="Acerbic Sash +1",
 		left_ear="Mendi. Earring",
-		right_ear="Loquac. Earring",
+		right_ear="Magnetic Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
+		right_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
+		back="Pahtli Cape"
 	})
 
 	-- Protecting the party
@@ -119,60 +133,55 @@ function get_sets()
 		main="Marin staff +1", 
 		sub="Enki strap", 
 		ammo="Sroda Tathlum",
-		head="Wicce Petasos +3",
-		body="Wicce Coat +3",
-		hands="Wicce Gloves +3",
-		legs="Wicce Chausses +3",
-		feet="Wicce Sabots +3",
-		neck={ name="Src. Stole +2", augments={'Path: A'}},
+		head="Agwu's Cap",
+		body="Agwu's Robe",
+		hands="Agwu's Gages",
+		legs="Agwu's Slops",
+		feet="Agwu's Pigaches",
+		neck="Baetyl Pendant",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Regal Earring",
-		left_ring="Freke Ring",
-		right_ring={ name="Metamor. Ring +1", augments={'Path: A'}},
-		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%'}}
+		right_ear="Choleric Earring",
+		left_ring="Stikini Ring +1",
+		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+		back="Null Shawl"
 	}
 	
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
 		ammo={ name="Ghastly Tathlum +1", augments={'Path: A'}},
-		head="Ea Hat +1",
-		body="Ea Houppelande +1",
-		right_ear="Regal Earring",
-		left_ring="Freke Ring",
+		left_ring="Mujin band",
 		right_ring="Locus Ring"
 	})	
 	
 	sets.Kaustra = {
 		main="Marin staff +1", 
 		sub="Enki strap", 
-		ammo="Pemphredo Tathlum",
-		head="Wicce Petasos +3",
-		body="Wicce Coat +3",
-		hands="Wicce Gloves +3",
-		legs="Wicce Chausses +3",
-		feet="Wicce Sabots +3",
-		neck="Mizu. Kubikazari",
+		ammo="Sroda Tathlum",
+		head="Agwu's Cap",
+		body="Agwu's Robe",
+		hands="Agwu's Gages",
+		legs="Agwu's Slops",
+		feet="Agwu's Pigaches",
+		neck="Baetyl Pendant",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
-		right_ear="Barkarole Earring",
-		left_ring="Freke Ring",
+		right_ear="Choleric Earring",
+		left_ring="Stikini Ring +1",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+		back="Null Shawl"
 	}
 	
-    sets.DarkMagic = {
-
-	}
+	sets.Death = {}
 	
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Pemphredo Tathlum",
 		head="Wicce Petasos +3",
-		body="Wicce Coat +3",
+		body="Wicce Coat +2",
 		hands="Regal Cuffs",
-		legs="Wicce Chausses +3",
-		feet="Wicce Sabots +3",
-		neck="Sanctity Necklace",
-		waist="Eschan Stone",
+		legs="Wicce Chausses +2",
+		feet="Wicce Sabots +2",
+		neck="Null loop",
+		waist="Null belt",
 		left_ear="Malignance Earring",
 		right_ear={ name="Wicce Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Enmity-5',}},
 		left_ring="Stikini Ring +1",
@@ -180,49 +189,43 @@ function get_sets()
 		back="Null shawl"
 	})
 
-
 	-- Impact ugh mutha-fucka
     sets.Impact = set_combine(sets.Kaustra,  {  
       body="Twilight Cloak"
 	})
 
 
-    -- /heal the damn MP/HP up.
-    sets.heal = {
-
-	}
-
 	sets.TP = set_combine(sets.PDT,  {
-		ammo="Oshasha's Treatise",
-		head={ name="Nyame Helm", augments={'Path: B',}},
+		ammo="Crepuscular Pebble",
+		head={ name="Blistering Sallet +1", augments={'Path: A',}},
 		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Rep. Plat. Medal",
-		waist="Cetl Belt",
-		left_ear="Cessance Earring",
+		neck="Clotharius Torque",
+		waist="Null Belt",
+		left_ear="Brutal Earring",
 		right_ear="Telos Earring",
 		left_ring="Hetairoi Ring",
-		right_ring="Petrov Ring",
-		back="Null shawl"
+		right_ring="Chirich Ring +1",
+		back="Null Shawl"
 	})
 
 	-- PDT Set
     sets.PDT = {
-		ammo="Impatiens",
-		head="Wicce Petasos +3",
-		body={ name="Nyame Mail", augments={'Path: B',}},
-		hands="Wicce Gloves +3",
+		ammo="Staunch Tathlum +1",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body="Shamash Robe",
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Wicce Sabots +3",
-		neck="Sanctity Necklace",
-		waist="Fucho-no-Obi",
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Null Loop",
+		waist="Null Belt",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Shneddick Ring",
 		right_ring="Stikini Ring +1",
-		back="Null shawl"
+		back="Null Shawl"
 	}
 
 	-- When I gotta kite shite, I put on my Sandals and shit...
@@ -232,27 +235,30 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		head="Befouled Crown",
-		body="Wicce Coat +3",
-		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
-	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
+		ammo="Sroda Tathlum",
+		head="Volte Beret",
+		body="Jhakri robe +2",
+		hands="Volte Gloves",
+		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},
+		feet="Volte Gaiters",
 		neck="Sanctity Necklace",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
-		right_ear="Wicce Earring +1",
+		right_ear="Hearty Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
+		right_ring="Stikini Ring +1",
+		back="Null Shawl"
 	})
 	
 	sets.ElementalDebuff = {
 		ammo="Pemphredo Tathlum",
-		head="Wicce Petasos +3",
-		body="Wicce Coat +3",
-		hands="Wicce Gloves +3",
-		legs="Wicce Chausses +3",
-		feet="Wicce Sabots +3",
-		neck={ name="Src. Stole +2", augments={'Path: A',}},
-		waist="Eschan Stone",
+		head="Wicce Petasos +2",
+		body="Wicce Coat +2",
+		hands="Wicce Gloves +2",
+		legs="Wicce Chausses +2",
+		feet="Wicce Sabots +2",
+		neck="Null loop",
+		waist="Null belt",
 		left_ear="Malignance Earring",
 		right_ear="Regal Earring",
 		left_ring="Stikini Ring +1",
@@ -283,7 +289,7 @@ function get_sets()
 	
 	sets.Cataclysm = {
 		head={ name="Nyame Helm", augments={'Path: B',}},
-		body="Wicce Coat +3",
+		body="Wicce Coat +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Assid. Pants +1",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
@@ -298,7 +304,7 @@ function get_sets()
 	 
 	sets.Myrkr = {
 		head="Pixie Hairpin +1",
-		body="Wicce Coat +3",
+		body="Wicce Coat +2",
 		hands="Regal Cuffs",
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
 		feet="Skaoi Boots",
@@ -339,18 +345,17 @@ function get_sets()
 	}	
 end
 
+
 function precast(spell,abil)
-	--Scholar Job Abilities
-	
-	if spell.skill == 'Elemental Magic' then
+	if spell.name == 'Impact' then 
+		equip(sets.Impact)
+	elseif spell.skill == 'Elemental Magic' then
 		equip(sets.ElementalMagic)
 		get_obi(spell)
-	end
-	if spell.action_type == 'Magic' then
+	elseif spell.action_type == 'Magic' then
 		equip(sets.FastCast)
 	end
 		
-	--Can add stuff here for other magic. Doesn't have to go to idle at all
 	
 
 	--WS Lookups
@@ -400,15 +405,12 @@ end
 
 
 function midcast(spell)
-
-	if spell.name == 'Klimaform' then
-		equip(sets.Klimaform)
+	if string.find(spell.english, 'Aspir') or string.find(spell.english, 'Drain') then
+		equip(sets.Aspir)
 	end
-	
-	if string.find(spell.english,'storm') then 
+	if string.find(spell.english,'storm') or spell.name == 'Klimaform' then 
 		equip(sets.Duration)
 	end
-
 
 	if string.find(spell.english,'Cur') then 
 		equip(sets.Cure)
@@ -435,7 +437,12 @@ function midcast(spell)
 			equip({waist = "Hachirin-no-obi"})
 		end
 	end
-	if spell.skill == 'Elemental Magic' then
+	
+	if spell.name == "Shock" or spell.name == 'Rasp' or spell.name == 'Choke' or spell.name == 'Frost' or spell.name == 'Burn' or spell.name == 'Drown' then
+		equip(sets.ElementalDebuff)
+	elseif spell.name == 'Impact' then 
+		equip(sets.Impact) 
+	elseif spell.skill == 'Elemental Magic' then
 		send_command('@input /echo Bonus in midcast is: '..bonus..'%')
 		if Burst == 'Disabled' then 
 			equip(sets.ElementalMagic)
@@ -446,6 +453,7 @@ function midcast(spell)
 			equip({waist = "Hachirin-no-obi"})
 		end
 	end
+	
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
 	end	
@@ -570,7 +578,7 @@ function use_hachirin_no_obi(spell)
 		["Gales"] = 25,
 		["Dust storms"] = 10,
 		["Sand storms"] = 25,
-		["Thunderstorm"] = 10,
+		["Thunder"] = 10,
 		["Thunderstorms"] = 25,
 		["Rain"] = 10,
 		["Squalls"] = 25,

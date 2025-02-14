@@ -424,6 +424,15 @@ end
 -- Weaponskills
 -- Hitting Grimoire equipment as a clean up. Should always be in a form of Light Arts and Dark Arts on Scholar
 function precast(spell,abil)
+	if spell.skill == 'Elemental Magic' then
+		equip(sets.ElementalMagic)
+		get_obi(spell)
+	elseif (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
+        (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
+			equip(sets.FastCastGrimoire)
+			--send_command('@input /echo yeah we hit this shit in precast.')	
+	end 
+	
 	if spell.name == 'Immanence' then
 		equip(sets.Immanence)
 	elseif spell.name == 'Penury'  or spell.name == 'Parsimony' then
@@ -458,11 +467,8 @@ function precast(spell,abil)
 		equip(sets.Myrkr)
 	elseif spell.name == "Shattersoul" then
 		equip(sets.WSD)
-	elseif (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
-        (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
-			equip(sets.FastCastGrimoire)
-			--send_command('@input /echo yeah we hit this shit in precast.')	
-	end 
+	end
+	
 end
 
 function midcast(spell)
@@ -500,20 +506,22 @@ function midcast(spell)
 	if spell.name == "Dispel" then
 		equip(sets.Enfeebling)
 	end
-	if string.find(spell.english,'Kaustra') then 
+	
+	
+	if string.find(spell.english,'Kaustra') then
+		send_command('@input /echo Bonus in midcast is: '..bonus..'%')	
 		equip(sets.Kaustra)
 		if bonus > 0 then
 			equip({waist = "Hachirin-no-obi"})
 		end
-	end
-	if string.find(spell.english,'helix') then 
+	elseif string.find(spell.english,'helix') then 
+		send_command('@input /echo Bonus in midcast is: '..bonus..'%')
 		equip(sets.Helix)
 		if bonus > 0 then
 			equip({waist = "Hachirin-no-obi"})
 		end
-	end	
-	if spell.skill == 'Elemental Magic' then
-		send_command('@input /echo Bonus in midcast is: '..bonus..'%')	
+	elseif spell.skill == 'Elemental Magic' then
+			send_command('@input /echo Bonus in midcast is: '..bonus..'%')
 		if Burst == 'Disabled' then 
 			equip(sets.ElementalMagic)
 		else
@@ -521,8 +529,10 @@ function midcast(spell)
 		end
 		if bonus > 0 then
 			equip({waist = "Hachirin-no-obi"})
-		end
+		end		
 	end
+	
+	
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
 	end	
@@ -642,7 +652,7 @@ function use_hachirin_no_obi(spell)
 		["Gales"] = 25,
 		["Dust storms"] = 10,
 		["Sand storms"] = 25,
-		["Thunderstorm"] = 10,
+		["Thunder"] = 10,
 		["Thunderstorms"] = 25,
 		["Rain"] = 10,
 		["Squalls"] = 25,
@@ -673,6 +683,9 @@ function use_hachirin_no_obi(spell)
     -- Check if a storm spell is up.
 	if has_storm_effect() then
 	    -- check if the spell and storm weather is the same.
+		--send_command('@input /echo spell.element: ' .. spell.element)
+		--send_command('@input /echo world.weather: ' .. world.weather)
+		--send_command('@input /echo world.weather_element: ' .. world.weather_element)
 		if spell.element == world.weather_element then
 			bonus = bonus + weather_to_intensity[world.weather]
 		-- check if the spell and storm weather are NOT the same.
@@ -705,8 +718,7 @@ function get_obi(spell)
         return { equip({waist = "Hachirin-no-obi"}) }
     else
 		--Debug
-		--send_command('@input /echo Waist: Eschan stone')	
-        return { equip({waist = "Eschan stone"}) }
+		--send_command('@input /echo Waist: Tengu-no-Obi')	
+        return { equip({waist = "Eschan Stone"}) }
     end
 end
-
