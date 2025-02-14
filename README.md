@@ -29,6 +29,7 @@
 - **[Dancer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/dnc.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
+   - Terpsichore, Aeneas, Twashtar, Tauret Build
 - **[Ranger](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/rng.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
@@ -36,9 +37,50 @@
 - **[Thief](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/thf.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
-   - Gandring and Twashtar Build  
- 
-  
+   - Gandring, Twashtar, Naegling, Tauret Build  
+ - **[Geomancer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/geo.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+   - Idris, Maxentius, Marin Staff +1, Bunzi's Rod Build
+   - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi. There is an echo for weather intensity and what bonus is obtained when casting elemental magic       
+  - **[Black Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/blm.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+   - Marin Staff +1, Malignance Pole, Daybreak Build
+   - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi. There is an echo for weather intensity and what bonus is obtained when casting elemental magic   
+ > TODO: Bunzi Build logic needs to be added 
+- **[Dragoon](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/drg.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[Dark Knight](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/drk.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[Monk](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/mnk.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[Ninja](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/nin.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[Paladin](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/pld.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[Red Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/rdm.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[Samuri](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/sam.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[Summoner](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/smn.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[Warrior](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/war.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+- **[White Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/whm.lua) lua script**
+   - Alternate weapons using Ctrl + F8 
+   - Alternate gear using Ctrl + F9
+
+
 
 # GearSwap-Voliathon
 - **[Rune Fencer](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voliathon/run.lua) lua script**
