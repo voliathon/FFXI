@@ -28,12 +28,12 @@ function get_sets()
 	Burst = 'Disabled'	
 	
     -- Job Abilities for Geomancer --
-    sets.Bolster = {body="Bagua Tunic +1"}
+    sets.Bolster = {body="Bagua tunic +3"}
     sets.LifeCycle = {body="Geomancy Tunic +2", back="Nantosuelta's Cape"}
     sets.FullCircle = {head="Azimuth Hood +3"}
-    sets.CurativeRecantation = {hands="Bagua Mitaines +2"}
-    sets.MendingHalation = {legs="Bagua Pants1"}
-    sets.RadialArcana = {feet="Bagua Sandals +1"}
+    sets.CurativeRecantation = {hands="Bagua mitaines +3"}
+    sets.MendingHalation = {legs="Bagua Pants +1"}
+    sets.RadialArcana = {feet="Bagua Sandals +3"}
 
     -- Fast Cast for Geomancer --
     sets.FastCast = {
@@ -58,7 +58,7 @@ function get_sets()
 		sub="Ammurapi Shield",
 		range="Dunna",
         head="Azimuth Hood +3",
-        body="Bagua Tunic +1",
+        body="Bagua tunic +3",
 		hands="Geo. Mitaines +3",		
 		legs="Azimuth tights +2",
 		feet="Azimuth gaiters +2",
@@ -136,7 +136,7 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Ea Hat +1",
 		body="Ea Houppe. +1",
-		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		hands="Bagua mitaines +3",
 		legs="Ea Slops",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Mizu. Kubikazari",
@@ -156,7 +156,7 @@ function get_sets()
 
     sets.Aspir = {
 		range="Dunna",
-		head="Bagua Galero +1",
+		head="Bagua galero +3",
 		body="Azimuth coat +2",
 		hands="Merlinic Dastanas",
 		legs="Azimuth tights +2",
@@ -230,7 +230,7 @@ function get_sets()
 		body="Nyame mail",
 		hands="Geo. Mitaines +3",
 		legs="Nyame flanchard",
-		feet="Bagua Sandals +1",
+		feet="Bagua Sandals +3",
 		neck="Loricate torque +1",
 		waist="Isa Belt",
 		left_ear="Ammurapi Earring",
@@ -267,7 +267,7 @@ function get_sets()
 		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
 		head="Befouled Crown",
 		body="Jhakri Robe +2",
-		hands={ name="Merlinic Dastanas", augments={'Spell interruption rate down -6%','Pet: Crit.hit rate +2','"Refresh"+1',}},
+		hands="Bagua mitaines +3",
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
 		neck="Sanctity Necklace",
