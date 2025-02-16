@@ -401,7 +401,7 @@ function midcast(spell)
 	if spell.name == 'Entrust' then
 		equip(sets.Idris)
 	end
-	if spell.type == 'Geomancy' then
+	if string.find(spell.english, 'Indi-') or string.find(spell.english, 'Geo-') or spell.type == 'Geomancy' then
 	    equip(sets.Geomancy)
 	end
 	if spell.name == 'Cursna' then
