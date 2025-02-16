@@ -113,21 +113,6 @@ function get_sets()
 		back="Pahtli Cape"
 	})
 
-	-- Protecting the party
-    sets.Protect = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-	
-	--Regen Max Duration
-	sets.Regen = set_combine(sets.Duration,  {	
-	})
-
-	
-	-- MDF the party
-    sets.Shell = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		main="Marin staff +1", 
@@ -187,6 +172,22 @@ function get_sets()
 		left_ring="Stikini Ring +1",
 		right_ring="Kishar Ring",
 		back="Null shawl"
+	})
+
+	
+	sets.Cursna = set_combine(sets.FastCast,  {
+		head={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+25','Crit. hit damage +1%','Magic burst dmg.+15%','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+		body={ name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		hands="Agwu's Gages",
+		legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		neck="Malison Medallion",
+		waist="Gishdubar Sash",
+		left_ear="Loquac. Earring",
+		right_ear="Malignance Earring",
+		left_ring="Ephedra Ring",
+		right_ring="Menelaus's Ring",
+		back="Oretan. Cape +1"		
 	})
 
 	-- Impact ugh mutha-fucka
@@ -419,14 +420,13 @@ function midcast(spell)
 		equip(sets.Stoneskin)
 	end
 	if string.find(spell.english,'Regen') then 
-		equip(sets.Regen)
+		equip(sets.Duration)
 	end
 	if spell.name == 'Aquaveil' then
 		equip(sets.Aquaveil)
 	end
 	if spell.name == 'Cursna' then
-		--TODO - Add a Cursna set 5/26/2023
-		equip(sets.FastCast)
+		equip(sets.Cursna)
 	end
 	if spell.name == "Dispel" then
 		equip(sets.Enfeebling)

@@ -108,17 +108,6 @@ function get_sets()
 		back="Oretan. Cape +1"
 	})
 
-
-	-- Protecting the party
-    sets.Protect = set_combine(sets.Enhancing,  {
-		ring1="Sheltered Ring"
-	})
-
-	-- MDF the party
-    sets.Shell = set_combine(sets.Enhancing,  {
-		ring1="Sheltered Ring"
-	})
-
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		ammo="Ghastly Tathlum +1",
@@ -169,20 +158,29 @@ function get_sets()
 		right_ear="Lethargy Earring +1",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
-		back="Null shawl"
-		
+		back="Null shawl"	
+	})
+
+	
+	sets.Cursna = set_combine(sets.FastCast,  {
+		head={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+25','Crit. hit damage +1%','Magic burst dmg.+15%','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+		body={ name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		hands="Agwu's Gages",
+		legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		neck="Malison Medallion",
+		waist="Gishdubar Sash",
+		left_ear="Loquac. Earring",
+		right_ear="Malignance Earring",
+		left_ring="Ephedra Ring",
+		right_ring="Menelaus's Ring",
+		back="Oretan. Cape +1"		
 	})
 
 
 	-- Impact whenever the fuck I get the damn cloak
     sets.Impact = {    
       body="Twilight Cloak"
-	}
-
-
-    -- /heal the damn MP/HP up.
-    sets.heal = {
-
 	}
 
 	sets.TP = {

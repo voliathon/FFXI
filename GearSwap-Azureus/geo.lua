@@ -39,7 +39,7 @@ function get_sets()
     -- Fast Cast for Geomancer --
     sets.FastCast = {
 		range="Dunna",
-		head={ name="Merlinic Hood", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','"Conserve MP"+3','INT+2','"Mag.Atk.Bns."+15',}},
+		head={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+25','Crit. hit damage +1%','Magic burst dmg.+15%','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
 		body="Agwu's Robe",
 		hands="Agwu's Gages",
 		legs="Volte Brais",
@@ -98,6 +98,7 @@ function get_sets()
 		hands="Carapacho Cuffs",
 		legs="Geomancy pants +1",
 		feet="Regal pumps +1",
+		neck="Nodens gorget",
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
 		right_ear="Earthcry Earring",
@@ -111,7 +112,7 @@ function get_sets()
 		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
 		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
 		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
-		legs="Agwu's Slops",
+		legs="Amalric Slops",
 		feet="Agwu's Pigaches",
 		neck="Null Loop",
 		waist="Fucho-no-Obi",
@@ -184,6 +185,21 @@ function get_sets()
 		right_ring="Stikini Ring +1",
 		back="Null Shawl"
 	}
+	
+	sets.Cursna = set_combine(sets.FastCast,  {
+		head={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+25','Crit. hit damage +1%','Magic burst dmg.+15%','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+		body={ name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		hands="Agwu's Gages",
+		legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		neck="Malison Medallion",
+		waist="Gishdubar Sash",
+		left_ear="Loquac. Earring",
+		right_ear="Malignance Earring",
+		left_ring="Ephedra Ring",
+		right_ring="Menelaus's Ring",
+		back="Oretan. Cape +1"		
+	})
 
     sets.Impact = set_combine(sets.Enfeebling,  {    
       body="Twilight Cloak",
@@ -399,9 +415,9 @@ function midcast(spell)
 		equip(sets.Stoneskin)
 	end
 	if spell.name == 'Entrust' then
-		equip(sets.Idris)
+		equip(sets.Entrust)
 	end
-	if spell.type == 'Geomancy' then
+	if string.find(spell.english, 'Indi-') or string.find(spell.english, 'Geo-') or spell.type == 'Geomancy' then
 	    equip(sets.Geomancy)
 	end
 	if spell.name == 'Cursna' then

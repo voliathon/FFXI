@@ -41,9 +41,20 @@ function get_sets()
 		back="Perimede Cape"
 	}
 	
-	sets.Cursna = {
-	
-	}
+	sets.Cursna = set_combine(sets.FastCast,  {
+		head={ name="Merlinic Hood", augments={'Pet: "Mag.Atk.Bns."+25','Crit. hit damage +1%','Magic burst dmg.+15%','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+		body={ name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		hands="Agwu's Gages",
+		legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
+		neck="Malison Medallion",
+		waist="Gishdubar Sash",
+		left_ear="Loquac. Earring",
+		right_ear="Malignance Earring",
+		left_ring="Ephedra Ring",
+		right_ring="Menelaus's Ring",
+		back="Oretan. Cape +1"		
+	})
 
 	-- Enhancing Spells \\Generalized//
     sets.EnhancingMagic = {
@@ -127,9 +138,6 @@ function get_sets()
 		right_ring="Stikini ring +1",
 		back="Seshaw cape"
 	}
-	
-	sets.MagicAccuracy = {}
-
 	
     sets.DarkMagic = {
 		main="Daybreak",
@@ -334,15 +342,8 @@ function precast(spell,abil)
 end
 
 function midcast(spell)
-	--Enhancing Magic Check
-	if spell.skill == 'Enhancing Magic' then
-		if string.find(spell.english, 'Bar') then
-			equip(sets.BarSpells)
-		elseif string.find(spell.english, 'Boost') then
-			equip(sets.BoostSpells)
-		else
-			equip(sets.Enhancing)
-		end
+	if spell.name == 'Cursna' then
+		equip(sets.Cursna)
 	end
 	if spell.skill == 'Enfeebling Magic' then
 		equip(sets.Enfeebling)
@@ -356,8 +357,18 @@ function midcast(spell)
 	if spell.skill == 'Elemental Magic' then
 		equip(sets.ElementalMagic)
 	end
-	if string.find(spell.english, 'na') then
-		equip(sets.Yagrush)
+--	if string.find(spell.english, 'na') then
+--		equip(sets.Yagrush)
+--	end
+	--Enhancing Magic Check
+	if spell.skill == 'Enhancing Magic' then
+		if string.find(spell.english, 'Bar') then
+			equip(sets.BarSpells)
+		elseif string.find(spell.english, 'Boost') then
+			equip(sets.BoostSpells)
+		else
+			equip(sets.Enhancing)
+		end
 	end
 end
 

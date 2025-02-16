@@ -287,12 +287,6 @@ function get_sets()
       body="Twilight Cloak"
 	})
 
-
-    -- /heal the damn MP/HP up.
-    sets.heal = {
-
-	}
-
 	sets.TP = set_combine(sets.PDT,  {
 		main="Malignance Pole",
 		sub="Khonsu",
