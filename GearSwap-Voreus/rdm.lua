@@ -31,7 +31,7 @@ function get_sets()
     sets.Chainspell = {body="Vitiation tabard +3"}
     sets.Stymie = {}
     sets.Spontaneity = {}
-    sets.Composure = {head="Lethargy Chappel +3",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Lethargy Fuseau +3",feet="Lethargy Houseaux +3"}
+    sets.Composure = {head="Lethargy Chappel +3",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Leth. Fuseau +3",feet="Lethargy Houseaux +3"}
 	sets.Saboteur = {hands="Lethargy gantherots +3"}
 	sets.Dispel = {neck="Duelist's torque +2"}
 
@@ -110,17 +110,6 @@ function get_sets()
 		back="Fi follet cape +1"
 	})
 
-
-	-- Protecting the party
-    sets.Protect = set_combine(sets.FastCast,  {
-		ring1="Sheltered Ring"
-	})
-
-	-- MDF the party
-    sets.Shell = set_combine(sets.FastCast,  {
-		ring1="Sheltered Ring"
-	})
-
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		head="Ea Hat +1",
@@ -154,10 +143,6 @@ function get_sets()
 		back=RedMageCapes.FastCast
 	}
 	
-    sets.DarkMagic = {
-
-	}
-
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Regal Gem",
 		head="Vitiation chapeau +3",
@@ -174,6 +159,14 @@ function get_sets()
 		back=RedMageCapes.FastCast
 	})
 
+	sets.Cursna = set_combine(sets.FastCast,  {
+		main="Gada",
+		sub="Ammurapi shield",
+		hands="Vanya cuffs",
+		legs="Vanya slops",
+		feet="Vanya clogs",
+		right_ring="Menelaus's ring"
+	})
 
 	-- Impact whenever the fuck I get the damn cloak
     sets.Impact = {    
@@ -184,9 +177,9 @@ function get_sets()
 		head="Leth. Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Leth. Ganth. +3",
-		legs="Leth. Fuseau +2",
+		legs="Leth. Fuseau +3",
 		feet="Leth. Houseaux +3",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Kentarch Belt +1",
 		left_ear="Sherida Earring",
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
@@ -202,7 +195,7 @@ function get_sets()
 		hands="Lethargy gantherots +3",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
-		neck="Loricate Torque +1",
+		neck="Null loop",
 		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Ethereal Earring",
@@ -218,7 +211,7 @@ function get_sets()
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
-		neck="Loricate Torque +1",
+		neck="Null loop",
 		waist="Slipor Sash",
 		left_ear="Genmei Earring",
 		right_ear="Ethereal Earring",
@@ -234,7 +227,7 @@ function get_sets()
 		hands="Leth. Ganth. +3",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Sailfi belt +1",
 		left_ear="Sherida Earring",
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
@@ -257,7 +250,7 @@ function get_sets()
     
 	sets.Refresh = set_combine(sets.Enhancing,  {
 		body="Lethargy sayon +3",
-		legs="Lethargy Fuseau +3",
+		legs="Leth. Fuseau +3",
 		ammo="Homiliary",
 		head="Vitiation Chapeau +3",
 		waist="Fucho-no-obi",
@@ -308,7 +301,7 @@ function get_sets()
 		head="Lethargy Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
-		legs="Lethargy Fuseau +3",
+		legs="Leth. Fuseau +3",
 		feet="Lethargy Houseaux +3",
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
@@ -324,7 +317,7 @@ function get_sets()
 		head="Lethargy Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Jhakri Cuffs +2",
-		legs="Lethargy Fuseau +3",
+		legs="Leth. Fuseau +3",
 		feet="Lethargy Houseaux +3",
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",

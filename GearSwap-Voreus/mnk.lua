@@ -40,7 +40,7 @@ function get_sets()
 		hands={ name="Herculean Gloves", augments={'"Triple Atk."+2','STR+12','Accuracy+4','Attack+9',}},
 		legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
 		feet={ name="Herculean Boots", augments={'Attack+17','"Triple Atk."+3','STR+10','Accuracy+3',}},
-		neck="Clotharius Torque",
+		neck="Null loop",
 		waist="Moonbow Belt",
 		left_ear="Cessance Earring",
 		right_ear="Brutal Earring",
@@ -56,17 +56,13 @@ function get_sets()
 		hands={ name="Herculean Gloves", augments={'"Triple Atk."+2','STR+12','Accuracy+4','Attack+9',}},
 		legs={ name="Samnuha Tights", augments={'STR+9','DEX+8','"Dbl.Atk."+2','"Triple Atk."+2',}},
 		feet={ name="Herculean Boots", augments={'Attack+17','"Triple Atk."+3','STR+10','Accuracy+3',}},
-		neck="Clotharius Torque",
+		neck="Null loop",
 		waist="Moonbow Belt",
 		left_ear="Cessance Earring",
 		right_ear="Brutal Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Rajas Ring",
 		back="Agema Cape"	
-	}
-	
-	sets.TP.Movement = {
-		feet="Hermes' Sandals"
 	}
 	
 	sets.TP.Tank = {
@@ -84,6 +80,10 @@ function get_sets()
 		right_ring="Fortified Ring",
 		back="Moonbeam Cape"	
 	}
+
+	sets.TP.Movement = set_combine(sets.TP.BadAss, {
+		feet="Hermes' Sandals"
+	})
     
 	sets.TP.Accuracy = set_combine(sets.TP.BadAss, {})
 	

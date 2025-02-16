@@ -55,9 +55,6 @@ function get_sets()
     sets.Alacrity = {head="Nahtirah Hat",feet="Pedagogy Loafers +1"}
     sets.Stormsurge = {feet={ name="Peda. Loafers +1", augments={'Enhances "Stormsurge" effect'}},}
 
-
-	sets.Aspir = {feet="Agwu's Pigaches"}
-
     -- Fast Cast for Scholar --
     sets.FastCast = {
 	    ammo="Impatiens",
@@ -131,22 +128,6 @@ function get_sets()
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	})
 
-	-- Protecting the party
-    sets.Protect = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-	
-	--Regen Max Duration
-	sets.Regen = set_combine(sets.Duration,  {
-
-	})
-
-	
-	-- MDF the party
-    sets.Shell = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		main={ name="Marin Staff +1", augments={'Path: A',}},
@@ -203,10 +184,6 @@ function get_sets()
 		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 	
-    sets.DarkMagic = {
-
-	}
-	
 	sets.Helix = {
 		main={ name="Marin Staff +1", augments={'Path: A',}},
 		sub="Enki Strap",
@@ -244,18 +221,36 @@ function get_sets()
 		back="Aurist's Cape +1"
 	})
 
+	sets.Aspir = set_combine(sets.Enfeebling,  {
+		main={ name="Rubicundity", augments={'Mag. Acc.+10','"Mag.Atk.Bns."+10','Dark magic skill +10','"Conserve MP"+7',}},
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
+		neck="Erra Pendant",
+		waist="Fucho-no-Obi",
+		left_ear="Malignance Earring",
+		left_ring="Evanescence Ring",
+		right_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
+	})
 
+	sets.Cursna = set_combine(sets.FastCast,  {
+		main="Gada",
+		sub="Ammurapi shield",
+		hands="Vanya cuffs",
+		legs="Vanya slops",
+		feet="Vanya clogs",
+		right_ring="Menelaus's ring"
+	})
+	
+	
 	-- Impact ugh mutha-fucka
     sets.Impact = set_combine(sets.Kaustra,  {  
       body="Twilight Cloak"
 	})
 
 
-    -- /heal the damn MP/HP up.
-    sets.heal = {
-
-	}
-
+ 
 	sets.TP = set_combine(sets.PDT,  {
 		main="Malignance Pole",
 		sub="Ajja Grip",
@@ -403,7 +398,9 @@ function precast(spell,abil)
 	if spell.name == 'Stormsurge' then
 		equip(sets.Stormsurge)
 	end
-	
+	if spell.name == 'Sublimation' then
+		equip(sets.Sublimation)
+	end	
 	if spell.skill == 'Elemental Magic' then
 		equip(sets.ElementalMagic)
 		get_obi(spell)
@@ -482,14 +479,13 @@ function midcast(spell)
 		equip(sets.Stoneskin)
 	end
 	if string.find(spell.english,'Regen') then 
-		equip(sets.Regen)
+		equip(sets.Duration)
 	end
 	if spell.name == 'Aquaveil' then
 		equip(sets.Aquaveil)
 	end
 	if spell.name == 'Cursna' then
-		--TODO - Add a Cursna set 5/26/2023
-		equip(sets.FastCast)
+		equip(sets.Cursna)
 	end
 	if spell.name == "Dispel" then
 		equip(sets.Enfeebling)

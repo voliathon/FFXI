@@ -51,7 +51,6 @@ function get_sets()
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 
-
 	-- Geomancer Spells
     sets.Geomancy = {
 		main="Idris",
@@ -68,10 +67,17 @@ function get_sets()
 		right_ear="Azimuth earring +1",
 		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
-
-        back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}},
-
+        back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}}
 	}
+
+	sets.Cursna = set_combine(sets.FastCast,  {
+		main="Gada",
+		sub="Ammurapi shield",
+		hands="Vanya cuffs",
+		legs="Vanya slops",
+		feet="Vanya clogs",
+		right_ring="Menelaus's ring"
+	})
 
 	-- Enhancing Spells \\Generalized//
     sets.EnhancingMagic = {
@@ -91,26 +97,10 @@ function get_sets()
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 
-	-- Stoneskin
-	sets.Stoneskin = {
-		ammo="Clarus stone",
-		head="Umuthi Hat",
-		body="Shango Robe",
-		hands="Carapacho Cuffs",
-		legs="Geomancy Pants +2",
-		feet="Regal pumps +1",
-		waist="Austerity Belt +1",
-		left_ear="Infused Earring",
-		right_ear="Earthcry Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
-		back="Perimede Cape"	
-	}
-
-	-- Entrust 
-	sets.Entrust = {
-		main="Solstice"
-	}
+	sets.Stoneskin = set_combine(sets.EnhancingMagic,  {
+		legs="Querkening brais",
+		neck="Nodens gorget"
+	})
 
     sets.Cure = {
 		main="Daybreak",
@@ -133,14 +123,14 @@ function get_sets()
 	sets.ElementalMagic = {
 		main={ name="Marin Staff +1", augments={'Path: A',}},
 		sub="Enki Strap",
-		ammo="Pemphredo Tathlum",
+		ammo="Ghastly tathlum +1",
 		head="Ea Hat +1",
 		body="Ea Houppe. +1",
 		hands="Bagua mitaines +3",
-		legs="Ea Slops",
-		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		legs="Azimuth tights +2",
+		feet="Azimuth gaiters +2",
 		neck="Mizu. Kubikazari",
-		waist="Eschan Stone",
+		waist="Acuity belt +1",
 		left_ear="Barkaro. Earring",
 		right_ear="Regal Earring",
 		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
@@ -155,35 +145,37 @@ function get_sets()
 	})		
 
     sets.Aspir = {
-		range="Dunna",
-		head="Bagua galero +3",
-		body="Azimuth coat +2",
-		hands="Merlinic Dastanas",
-		legs="Azimuth tights +2",
-		feet="Azimuth gaiters +2",
-		neck="Saevus Pendant +1",
-		waist="Refoccilation stone",
-		left_ear="Barkaro. Earring",
-		right_ear="Gwati Earring",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
-		back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
+		main={ name="Rubicundity", augments={'Mag. Acc.+10','"Mag.Atk.Bns."+10','Dark magic skill +10','"Conserve MP"+7',}},
+		sub="Ammurapi Shield",
+		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
+		head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
+		body="Shango Robe",
+		hands="Geo. Mitaines +3",
+		legs="Azimuth Tights +2",
+		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
+		neck="Erra Pendant",
+		waist="Fucho-no-Obi",
+		left_ear="Malignance Earring",
+		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Damage taken-4%',}},
+		left_ring="Evanescence Ring",
+		right_ring="Stikini Ring +1",
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 
     sets.Enfeebling = {
-		range="Dunna",
+		ammo="Pemphredo Tathlum",
 		head="Azimuth Hood +3",
 		body="Azimuth coat +2",
-		hands="Azimuth gloves +2",
-		legs="Azimuth tights +2",
-		feet="Azimuth gaiters +2",
-		neck="Sanctity Necklace",
-		waist="Refoccilation stone",
-		left_ear="Barkaro. Earring",
-		right_ear="Gwati Earring",
-		left_ring="Stikini ring +1",
+		hands="Regal Cuffs",
+		legs="Azimuth Tights +2",
+		feet="Azimuth Gaiters +2",
+		neck="Null loop",
+		waist="Rumination Sash",
+		left_ear="Malignance Earring",
+		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Damage taken-4%',}},
+		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		right_ring="Stikini Ring +1",
-		back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 
     sets.Impact = set_combine(sets.Enfeebling,  {    
@@ -198,13 +190,13 @@ function get_sets()
 		hands="Azimuth gloves +2",
 		legs="Nyame flanchard",
 		feet="Azimuth gaiters +2",
-		neck="Loricate torque +1",
+		neck="Null loop",
 		waist="Isa Belt",
 		left_ear="Ammurapi Earring",
 		right_ear="Infused Earring",
 		left_ring="Fortified Ring",
 		right_ring="Defending Ring",
-		back="Solemnity cape"
+		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	}
 
 	sets.TP = set_combine(sets.PDT,  {
@@ -220,7 +212,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring="Hetairoi Ring",
 		right_ring="Chirich Ring +1",
-		back="Null Shawl"
+		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	})
 
     -- .Pet sets are for when Luopan is present.
@@ -231,7 +223,7 @@ function get_sets()
 		hands="Geo. Mitaines +3",
 		legs="Nyame flanchard",
 		feet="Bagua Sandals +3",
-		neck="Loricate torque +1",
+		neck="Null loop",
 		waist="Isa Belt",
 		left_ear="Ammurapi Earring",
 		right_ear="Infused Earring",
@@ -248,13 +240,13 @@ function get_sets()
 		hands="Azimuth gloves +2",
 		legs="Nyame flanchard",
 		feet="Azimuth gaiters +2",
-		neck="Loricate torque +1",
+		neck="Null loop",
 		waist="Slipor Sash",
 		left_ear="Ammurapi Earring",
 		right_ear="Infused Earring",
 		left_ring="Yacuruna Ring",
 		right_ring="Defending Ring",
-		back="Mubvumbamiri Mantle"
+		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	}
 
 		
@@ -374,8 +366,6 @@ function precast(spell,abil)
 	elseif spell.skill == 'Elemental Magic' then
 		equip(sets.ElementalMagic)
 		get_obi(spell)	
-	elseif spell.action_type == 'Magic' then
-		equip(sets.FastCast)
 	end
 
 	--WS Lookups
@@ -393,15 +383,12 @@ function midcast(spell)
 	if string.find(spell.english, 'Aspir') or string.find(spell.english, 'Drain') then
 		equip(sets.Aspir)
 	end
-	if spell.skill == 'Enhancing Magic' then
-		equip(sets.EnhancingMagic)
-	end
 	if spell.name == 'Stoneskin' then
 		equip(sets.Stoneskin)
-	end
-	if spell.name == 'Entrust' then
-		equip(sets.Idris)
-	end
+	elseif spell.skill == 'Enhancing Magic' then
+		equip(sets.EnhancingMagic)
+	end	
+
 	if spell.type == 'Geomancy' then
 	    equip(sets.Geomancy)
 	end

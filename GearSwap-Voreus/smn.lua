@@ -173,19 +173,7 @@ function get_sets()
 		back="Fi follet cape +1"
 	})
 
-
-	-- Protecting the party
-    sets.Protect = set_combine(sets.FastCast,  {
-		ring1="Sheltered Ring"
-	})
-
-	-- MDF the party
-    sets.Shell = set_combine(sets.FastCast,  {
-		ring1="Sheltered Ring"
-	})
-
-    sets.Enfeebling = set_combine(sets.FastCast,  {})
-
+    sets.Enfeebling = set_combine(sets.FastCast, {})
 
 	-- Impact whenever the fuck I get the damn cloak
     sets.Impact = {    
@@ -198,7 +186,7 @@ function get_sets()
 		hands="Beck. Bracers +2",
 		legs="Beck. Spats +3",
 		feet="Beck. Pigaches +2",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Klouskap Sash",
 		left_ear="Telos Earring",
 		right_ear="Digni. Earring",
@@ -207,9 +195,11 @@ function get_sets()
 		back={ name="Aurist's Cape +1", augments={'Path: A',}}	
 	}
 
-    sets.Movement = {left_ring="Shneddick Ring"}
+    sets.Movement = set_combine(sets.SelfAccuracy,  {
+		left_ring="Shneddick Ring"
+	})
 
-	sets.Refresh = set_combine(sets.PDT,  {
+	sets.Refresh = set_combine(sets.SelfAccuracy,  {
 		ammo="Sancus Sachet +1",
 		head="Beckoner's Horn +3",
 		body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
@@ -264,7 +254,7 @@ function get_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Orpheus's Sash",
 		left_ear="Malignance Earring",
 		right_ear="Friomisi Earring",

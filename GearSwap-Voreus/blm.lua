@@ -30,19 +30,21 @@ function get_sets()
 
 
 	sets.Aspir = {
+		main={ name="Rubicundity", augments={'Mag. Acc.+10','"Mag.Atk.Bns."+10','Dark magic skill +10','"Conserve MP"+7',}},
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head={ name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity-6',}},
-		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
-		legs="Agwu's Slops",
-		feet="Agwu's Pigaches",
-		neck="Null Loop",
+		head="Wicce Petasos +3",
+		body="Wicce Coat +3",
+		hands="Wicce Gloves +3",
+		legs="Wicce Chausses +3",
+		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
+		neck="Erra Pendant",
 		waist="Fucho-no-Obi",
 		left_ear="Malignance Earring",
-		right_ear="Magnetic Earring",
+		right_ear={ name="Wicce Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Enmity-5',}},
 		left_ring="Evanescence Ring",
-		right_ring="Excelsis Ring",
-		back="Perimede Cape"
+		right_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
+		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 
     -- Fast Cast for Black Mage --
@@ -50,7 +52,7 @@ function get_sets()
 		ammo="Impatiens",
 		head={ name="Merlinic Hood", augments={'Mag. Acc.+7','Magic burst dmg.+10%','MND+9','"Mag.Atk.Bns."+9',}},
 		body="Shango Robe",
-		hands="Jhakri Cuffs +2",
+		hands="Wicce gloves +3",
 		legs={ name="Artsieq Hose", augments={'"Mag.Atk.Bns."+25','Mag. Evasion+10','Phys. dmg. taken -5',}},
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
 		neck={ name="Loricate Torque +1", augments={'Path: A',}},
@@ -113,19 +115,8 @@ function get_sets()
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	})
 
-	-- Protecting the party
-    sets.Protect = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-	
 	--Regen Max Duration
 	sets.Regen = set_combine(sets.Duration,  {	
-	})
-
-	
-	-- MDF the party
-    sets.Shell = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
 	})
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
@@ -190,6 +181,14 @@ function get_sets()
 		back="Aurist's Cape +1"
 	})
 
+	sets.Cursna = set_combine(sets.FastCast,  {
+		main="Gada",
+		sub="Ammurapi shield",
+		hands="Vanya cuffs",
+		legs="Vanya slops",
+		feet="Vanya clogs",
+		right_ring="Menelaus's ring"
+	})
 
 	-- Impact ugh mutha-fucka
     sets.Impact = set_combine(sets.Kaustra,  {  
@@ -204,7 +203,7 @@ function get_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Rep. Plat. Medal",
+		neck="Null loop",
 		waist="Cetl Belt",
 		left_ear="Cessance Earring",
 		right_ear="Telos Earring",
@@ -221,7 +220,7 @@ function get_sets()
 		hands="Wicce Gloves +3",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Wicce Sabots +3",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
@@ -241,7 +240,7 @@ function get_sets()
 		body="Wicce Coat +3",
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
 	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Wicce Earring +1",
@@ -257,7 +256,7 @@ function get_sets()
 		hands="Wicce Gloves +3",
 		legs="Arch. tonban +3",
 		feet="Arch. sabots +3",
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
 		right_ear="Wicce Earring +1",
@@ -275,13 +274,13 @@ function get_sets()
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body="Nyame Mail",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs="Assid. Pants +1",
+		legs="Nyame flanchard",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Metamorph Ring +1",
 		right_ring="Cornelia's Ring",
 		back="Aurist's Cape +1"
 	}
@@ -290,9 +289,9 @@ function get_sets()
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body="Wicce Coat +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs="Assid. Pants +1",
+		legs="Nyame flanchard",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Sanctity Necklace",
+		neck="Null loop",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
@@ -423,14 +422,13 @@ function midcast(spell)
 		equip(sets.Stoneskin)
 	end
 	if string.find(spell.english,'Regen') then 
-		equip(sets.Regen)
+		equip(sets.Duration)
 	end
 	if spell.name == 'Aquaveil' then
 		equip(sets.Aquaveil)
 	end
 	if spell.name == 'Cursna' then
-		--TODO - Add a Cursna set 5/26/2023
-		equip(sets.FastCast)
+		equip(sets.Cursna)
 	end
 	if spell.name == "Dispel" then
 		equip(sets.Enfeebling)
