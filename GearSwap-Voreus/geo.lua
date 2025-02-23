@@ -32,7 +32,7 @@ function get_sets()
     sets.LifeCycle = {body="Geomancy Tunic +2", back="Nantosuelta's Cape"}
     sets.FullCircle = {head="Azimuth Hood +3"}
     sets.CurativeRecantation = {hands="Bagua mitaines +3"}
-    sets.MendingHalation = {legs="Bagua Pants +1"}
+    sets.MendingHalation = {legs="Bagua Pants +3"}
     sets.RadialArcana = {feet="Bagua Sandals +3"}
 
     -- Fast Cast for Geomancer --
@@ -59,15 +59,15 @@ function get_sets()
         head="Azimuth Hood +3",
         body="Bagua tunic +3",
 		hands="Geo. Mitaines +3",		
-		legs="Azimuth tights +2",
-		feet="Azimuth gaiters +2",
+		legs="Bagua pants +3",
+		feet="Azimuth gaiters +3",
 		waist="Witful belt",
 		neck="Incanter's torque",
 		left_ear="Malignance Earring",
 		right_ear="Azimuth earring +1",
 		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
-        back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}}
+        back="Lifestream cape"
 	}
 
 	sets.Cursna = set_combine(sets.FastCast,  {
@@ -128,7 +128,7 @@ function get_sets()
 		body="Ea Houppe. +1",
 		hands="Bagua mitaines +3",
 		legs="Azimuth tights +2",
-		feet="Azimuth gaiters +2",
+		feet="Azimuth gaiters +3",
 		neck="Mizu. Kubikazari",
 		waist="Acuity belt +1",
 		left_ear="Barkaro. Earring",
@@ -168,7 +168,7 @@ function get_sets()
 		body="Azimuth coat +2",
 		hands="Regal Cuffs",
 		legs="Azimuth Tights +2",
-		feet="Azimuth Gaiters +2",
+		feet="Azimuth gaiters +3",
 		neck="Null loop",
 		waist="Rumination Sash",
 		left_ear="Malignance Earring",
@@ -181,6 +181,13 @@ function get_sets()
     sets.Impact = set_combine(sets.Enfeebling,  {    
       body="Twilight Cloak",
 	})
+	
+	sets.Entrust = set_combine(sets.Geomancy, {
+		main="Solstice",
+		legs="Bagua Pants +3",
+		feet="Azimuth gaiters +3",
+		back="Lifestream cape"	
+	})
 
 	-- PDT Set
     sets.PDT = {
@@ -189,7 +196,7 @@ function get_sets()
 		body="Nyame mail",
 		hands="Azimuth gloves +2",
 		legs="Nyame flanchard",
-		feet="Azimuth gaiters +2",
+		feet="Azimuth gaiters +3",
 		neck="Null loop",
 		waist="Isa Belt",
 		left_ear="Ammurapi Earring",
@@ -239,7 +246,7 @@ function get_sets()
 		body="Nyame mail",
 		hands="Azimuth gloves +2",
 		legs="Nyame flanchard",
-		feet="Azimuth gaiters +2",
+		feet="Azimuth gaiters +3",
 		neck="Null loop",
 		waist="Slipor Sash",
 		left_ear="Ammurapi Earring",
@@ -309,11 +316,7 @@ function get_sets()
 		back="Null shawl"	 
 	 }
 	  
-	 sets.Idris = {
-		main="Idris",
-	 }
-
-	  -- Engaged Sets Toggle--
+    -- Engaged Sets Toggle--
 	sets.engaged = {}
 	sets.engaged.index = {'TP','Movement','PETDT', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
 	engaged_ind = 1  	 
@@ -390,7 +393,11 @@ function midcast(spell)
 	end	
 
 	if spell.type == 'Geomancy' then
-	    equip(sets.Geomancy)
+		if (buffactive['Entrust'] and string.find(spell.english, 'Indi-')) then
+			equip(sets.Entrust)
+		else
+			equip(sets.Geomancy)
+		end
 	end
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
