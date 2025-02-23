@@ -42,7 +42,8 @@
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
    - Idris, Maxentius, Marin Staff +1, Bunzi's Rod Build
-   - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi. There is an echo for weather intensity and what bonus is obtained when casting elemental magic       
+   - Function to properly handle all scenarios of Weather and/or Weatherstorm Magic in regards to equipping Hachirin-no-obi. There is an echo for weather intensity and what bonus is obtained when casting elemental magic
+   - Entrust Logic for Solstice       
 - **[Black Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Azureus/blm.lua) lua script**
    - Alternate weapons using Ctrl + F8 
    - Alternate gear using Ctrl + F9
@@ -117,7 +118,7 @@ Missing Puppetmaster and Beastmaster
   - Alternate weapons using Ctrl + F8
   - Alternate gear using Ctrl + F9
   - Idris Build
-
+  - Entrust Logic for Solstice
 
 # GearSwap-Voreus
 - **[Red Mage](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voreus/rdm.lua) lua script**
@@ -133,6 +134,7 @@ Missing Puppetmaster and Beastmaster
   - Alternate weapons using Ctrl + F8
   - Alternate gear using Ctrl + F9
   - Idris Build
+  - Entrust Logic for Solstice
 - **[Scholar](https://github.com/voliathon/FFXI/blob/main/GearSwap-Voreus/sch.lua) lua script**
   - Alternate weapons using Ctrl + F8
   - Alternate gear using Ctrl + F9
