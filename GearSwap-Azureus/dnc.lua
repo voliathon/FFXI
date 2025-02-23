@@ -24,13 +24,6 @@ function get_sets()
     sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Movement","Evasion"}
 	engaged_ind = 1
 
-    sets.engaged.TreasureHunter = {
-		body="Volte Jupon",
-		legs="Volte Hose",
-		feet="Volte Boots",
-		waist="Chaac Belt"
-	}
-	
 	sets.engaged.TP = {
 		ammo="Coiste Bodhar",
 		head="Blistering sallet +1",
@@ -50,7 +43,7 @@ function get_sets()
 	sets.engaged.Accuracy =  {
 		ammo="Yamarang",
 		head="Malignance Chapeau",
-		body="Horos Casaque +3",
+		body="Maculele casaque +3",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Malignance Tights",
 		feet="Malignance Boots",
@@ -66,7 +59,7 @@ function get_sets()
 	 sets.engaged.Tank = {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		body="Maculele casaque +3",
 		hands="Macu. Bangles +2",
 		legs="Malignance tights",
 		feet="Macu. Toe Sh. +2",
@@ -86,11 +79,11 @@ function get_sets()
 	sets.engaged.Evasion = {
 		ammo="Yamarang",
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		body="Maculele casaque +3",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Null loop",
+		neck="Bathy choker +1",
 		waist="Null belt",
 		left_ear="Eabani Earring",
 		right_ear="Infused Earring",
@@ -99,7 +92,13 @@ function get_sets()
 		back="Null shawl"
 	}	
 	
-
+    sets.engaged.TreasureHunter = set_combine(sets.Tank,{
+		body="Volte Jupon",
+		legs="Volte Hose",
+		feet="Volte Boots",
+		waist="Chaac Belt"
+	})
+	
 	-- Job Abilities Sets --
     sets.JA = {}
     sets.JA.Waltz = {
@@ -114,7 +113,7 @@ function get_sets()
 	
 	sets.JA.Samba = {
 		head="Maxixi Tiara +3", -- +45 second duration 
-		body="Maculele Casaque +2",
+		body="Maculele casaque +3",
 		hands="Macu. Bangles +2",
 		legs="Maculele Tights +2",
 		feet="Macu. Toe Sh. +2"		
@@ -144,7 +143,7 @@ function get_sets()
 		back="Toetapper Mantle"
 	}
 	sets.JA.ClimacticFlourish = {head="Maculele Tiara +3"}
-	sets.JA.StrikingFlourish = {body="Maculele Casaque +2"}
+	sets.JA.StrikingFlourish = {body="Maculele casaque +3"}
 	sets.JA.ViolentFlourish = {
 		head="Mummu Bonnet +2",
 		body="Horos Casaque +3",

@@ -60,9 +60,9 @@ function get_sets()
 		sub="Ammurapi shield",
 		range="Dunna",
 		head="Azimuth Hood +2",
-		body="Agwu's Robe",
-		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
-		legs="Volte Brais",
+		body="Bagua tunic +1",
+		hands="Geomancy mitaines +1",
+		legs="Bagua pants +1",
 		feet="Azimuth Gaiters +2",
 		neck="Incanter's Torque",
 		waist="Embla Sash",
@@ -70,7 +70,7 @@ function get_sets()
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+12','Damage taken-4%',}},
 		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
-		back={ name="Lifestream Cape", augments={'Geomancy Skill +6','Indi. eff. dur. +14','Pet: Damage taken -3%','Damage taken-1%',}}
+		back="Lifestream Cape"
 	}
 
 	-- Enhancing Spells \\Generalized//
@@ -123,13 +123,12 @@ function get_sets()
 		back="Perimede Cape"
 	}
 
-	-- Entrust 
-	sets.Entrust = {
-		main="Idris",
-		legs="Bagua pants +1",
+	sets.Entrust = set_combine(sets.Geomancy, {
+		main="Solstice",
+		legs="Bagua Pants +1",
 		feet="Azimuth gaiters +2",
-		back="Nantosuelta's Cape"
-	}
+		back="Lifestream cape"	
+	})
 
     sets.Cure = {
 		main="Daybreak",
@@ -241,7 +240,7 @@ function get_sets()
     -- .Pet sets are for when Luopan is present.
     sets.PetDT = {
 		range="Dunna",
-		head={ name="Telchine Cap", augments={'Pet: Mag. Evasion+16','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+		head="Azimuth hood +2",
 		body={ name="Telchine Chas.", augments={'Pet: Mag. Evasion+18','Pet: "Regen"+3','Pet: Damage taken -4%',}},
 		hands={ name="Telchine Gloves", augments={'Pet: Mag. Evasion+18','Pet: "Regen"+3','Pet: Damage taken -4%',}},
 		legs={ name="Telchine Braconi", augments={'Pet: DEF+15','Pet: "Regen"+3','Pet: Damage taken -4%',}},
@@ -329,11 +328,7 @@ function get_sets()
 		back="Null shawl"	 
 	 }
 	  
-	 sets.Idris = {
-		main="Idris",
-	 }
-
-	  -- Engaged Sets Toggle--
+	-- Engaged Sets Toggle--
 	sets.engaged = {}
 	sets.engaged.index = {'TP','Movement','PETDT', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
 	engaged_ind = 1  	 
@@ -414,11 +409,12 @@ function midcast(spell)
 	if spell.name == 'Stoneskin' then
 		equip(sets.Stoneskin)
 	end
-	if spell.name == 'Entrust' then
-		equip(sets.Entrust)
-	end
-	if string.find(spell.english, 'Indi-') or string.find(spell.english, 'Geo-') or spell.type == 'Geomancy' then
-	    equip(sets.Geomancy)
+	if spell.type == 'Geomancy' then
+		if (buffactive['Entrust'] and string.find(spell.english, 'Indi-')) then
+			equip(sets.Entrust)
+		else
+			equip(sets.Geomancy)
+		end
 	end
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
