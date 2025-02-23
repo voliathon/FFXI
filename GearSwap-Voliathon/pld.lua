@@ -71,15 +71,15 @@ function get_sets()
     head="Sakpata's Helm",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+    legs="Sakpata's cuisses",
     feet="Sakpata's Leggings",
     neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
-    left_ring="Moonlight Ring",
-    right_ring="Fortified Ring",
-    back="Moonlight Cape"
+	left_ring="Moonlight Ring",
+    right_ring="Shneddick ring",
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
 
   }
   
@@ -97,7 +97,7 @@ function get_sets()
     right_ear="Cessance earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Moonlight Cape"
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
   }
 
   --Old Tank Gear
@@ -114,7 +114,7 @@ function get_sets()
 	right_ear="Chevalier earring +1",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back="Moonlight Cape"
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
   }
   
   --New Tank Gear
@@ -131,7 +131,7 @@ function get_sets()
     right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back="Moonlight Cape"
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
   }  
 
   --Evasion
@@ -148,7 +148,7 @@ function get_sets()
     right_ear="Cryptic earring",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back="Moonlight Cape"
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
   }
   
   sets.TP.Accuracy = {
@@ -179,7 +179,7 @@ function get_sets()
     right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back="Moonlight Cape"  
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}} 
   }
 
   --Weaponskill Sets--
@@ -199,7 +199,7 @@ function get_sets()
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     left_ring="Moonlight Ring",
     right_ring="Epaminondas's Ring",
-    back="Vespid Mantle"
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
   }
 
   --STR and WSD gears
@@ -230,7 +230,7 @@ function get_sets()
     waist="Orpheus's Sash",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     right_ear="Friomisi Earring",
-    left_ring="Stikini Ring +1",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
     right_ring="Epaminondas's Ring",
     back="Toro Cape"  
   }
@@ -261,86 +261,106 @@ function get_sets()
     waist="Siegel Sash",
     left_ear="Mimir Earring",
     right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring"
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
   }
 
   --Phalanx--
   sets.Phalanx = {
     main="Sakpata's Sword",
-    sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%',}},
+    sub={ name="Priwen", augments={'HP+50','Mag. Evasion+50','Damage Taken -3%'}},
     ammo="Staunch Tathlum +1",
     head="Yorium Barbuta",
     body="Yorium Cuirass",
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
     legs="Sakpata's Cuisses",
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%'}},
     neck="Voltsurge Torque",
     waist="Audumbla Sash",
     left_ear="Mimir Earring",
     right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
-    back="Weard Mantle"
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+    back={ name="Weard Mantle", augments={'VIT+2','DEX+2','Phalanx +4'}}
  }
 
- --88 SIR
+
+--TODO - Get Knightly Earring / Moonlight Necklace
+ -- SIR
  sets.SIR = {
     ammo="Staunch Tathlum +1", --11
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
+    body="Chevalier's cuirass +2", --15
     hands="Regal Gauntlets", --10
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
+    legs="Sakpata's cuisses", 
+    feet="Odyssean greaves", --20
     neck="Loricate torque +1", --5
     waist="Audumbla sash", --10
-    left_ear="Halasz Earring", --5
-    right_ear="Magnetic Earring" --8
+    left_ear="Knightly Earring", --5
+    right_ear="Magnetic Earring", --8
+    left_ring="Moonlight ring",
+    right_ring="Defending ring",	
  }
  
   --Enmity set for high hate generating spells and JAs
   sets.Enmity = {
-    ammo="Amar Cluster",
+    ammo="Staunch tathlum +1",
     head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Unmoving collar",
-    waist="Null belt",
+    feet="Eschite greaves",
+    neck="Moonbeam necklace",
+    waist="Creed baudrier",
     left_ear="Cryptic Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    left_ring="Moonlight Ring",
-    right_ring="Epaminondas's Ring",
-    back="Vespid Mantle"  
+    right_ear="Friomisi earring",
+    left_ring="Apeile ring",
+    right_ring="Apeile ring +1",
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}} 
   }
 
   --Magic acc for enfeebles, handy for VW
-  sets.MagicAcc = {}
+  --sets.MagicAcc = {}
 
-  sets.Stoneskin = {
-    ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +2",
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck="Null loop",
-    waist="Siegel Sash",
-    left_ear="Magnetic Earring",
-    right_ear="Earthcry Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
-  }
+  -- sets.Stoneskin = {
+    -- ammo="Staunch Tathlum +1",
+    -- head="Rune. Bandeau +2",
+    -- body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
+    -- hands="Regal Gauntlets",
+    -- legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
+    -- feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
+    -- neck="Null loop",
+    -- waist="Siegel Sash",
+    -- left_ear="Magnetic Earring",
+    -- right_ear="Earthcry Earring",
+    -- left_ring="Stikini Ring +1",
+    -- right_ring="Stikini Ring",
+    -- back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}} 
+  -- }
+  
+  sets.ShieldBash = set_combine(sets.Enmity,  {
+	hands="Caballarius gauntlets +2",
+	left_ear="Knightly earring",
+	right_ear="Chevalier's earring +1"
+  })
 
 end
 
 -- Precast Logic --
 function precast(spell,abil)
+
+	-- TODO - Add Logic for 'OhShit we need SIR button'
+
 	-- Dancer Abilities --
   if string.find(spell.english, 'Waltz') then
 	equip(sets.JA.Waltz)
   end	
+  
+  if spell.name == 'Shield Bash' then
+	equip(sets.ShieldBash)
+  end
+  if spell.name == 'Provoke' or spell.name == 'Flash' or spell.name == "Stun"  then
+    equip(sets.Enmity)
+  end
   
   --equips favorite weapon if disarmed
   if player.equipment.main == "empty" or player.equipment.sub == "empty" then
@@ -374,10 +394,12 @@ function precast(spell,abil)
   end
   
   if spell.skill == 'Enhancing Magic' then
-	equip(sets.FastCast)
+	if spell.name == 'Phalanx' or spell.name == 'Reprisal' or spell.name == 'Crusade' or spell.name == 'Cocoon' then
+		equip(sets.SIR)
+	end
   end
   if spell.action_type == 'Magic' then
-    equip(sets.FastCast)
+    equip(sets.SIR)
   end
   
 end
@@ -390,9 +412,9 @@ function midcast(spell,act,arg)
 	if spell.name == 'Phalanx' then
 		equip(sets.Phalanx)
 	end
-	if spell.name == "Blink" or spell.name == "Stoneskin" then
-      equip(sets.SIR,sets.Stoneskin)
-	end
+	--if spell.name == "Blink" or spell.name == "Stoneskin" then
+    --  equip(sets.SIR,sets.Stoneskin)
+	--end
 	if string.find(spell.name,'Protect') then
 		equip(sets.Enhancing)
 	end
@@ -402,9 +424,9 @@ function midcast(spell,act,arg)
   if spell.name == 'Flash' or spell.name == "Stun" then
     equip(sets.Enmity)
   end
-  if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then
-    equip(sets.MagicAcc)
-  end
+  --if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then
+  --  equip(sets.MagicAcc)
+  --end
   
 end
 
