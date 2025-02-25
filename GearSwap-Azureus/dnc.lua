@@ -9,7 +9,6 @@
  -- | |_| | (_| | | | | (_|  __/ |         
  -- |____/ \__,_|_| |_|\___\___|_|         
                                         
--- https://www.bg-wiki.com/ffxi/Community_Dancer_Guide
 -- Dancer Lua of Awesome
 --Notes from ffxiah
 --Outside of Escha: 
@@ -30,85 +29,6 @@ function get_sets()
     send_command('bind !f9 gs c toggle engage set')
 	send_command('bind ^f9 gs c reverse engage set')
 
-	-- Engaged Sets Toggle--
-    sets.engaged = {}
-    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Movement","Evasion"}
-	engaged_ind = 1
-
-	sets.engaged.TP = {
-		ammo="Coiste Bodhar",
-		head="Blistering sallet +1",
-		body="Horos Casaque +3",
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs="Maculele tights +2",
-		feet="Macu. Toe Sh. +2",
-		neck="Null loop",
-		waist="Windbuffet Belt +1",
-		left_ear="Sherida Earring",
-		right_ear="Maculele Earring +1",
-		left_ring="Chirich Ring +1",
-		right_ring="Hetairoi Ring",
-		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
-	}
-	
-	sets.engaged.Accuracy =  {
-		ammo="Yamarang",
-		head="Malignance Chapeau",
-		body="Maculele casaque +3",
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Null loop",
-		waist="Null belt",
-		left_ear="Telos Earring",
-		right_ear="Maculele Earring +1",
-		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-		back="Null shawl"
-	}
-
-	 sets.engaged.Tank = {
-		ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",
-		body="Maculele casaque +3",
-		hands="Macu. Bangles +2",
-		legs="Malignance tights",
-		feet="Macu. Toe Sh. +2",
-		neck="Null loop",
-		waist="Null belt",
-		left_ear="Infused Earring",
-		right_ear="Eabani Earring",
-		left_ring="Defending Ring",
-		right_ring="Fortified Ring",
-		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
-	 }	
-	 
- 	sets.engaged.Movement = set_combine(sets.Tank,{
-		left_ring="Shneddick Ring"
-	})
-	
-	sets.engaged.Evasion = {
-		ammo="Yamarang",
-		head="Malignance Chapeau",
-		body="Maculele casaque +3",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Bathy choker +1",
-		waist="Null belt",
-		left_ear="Eabani Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Fortified Ring",
-		back="Null shawl"
-	}	
-	
-    sets.engaged.TreasureHunter = set_combine(sets.Tank,{
-		body="Volte Jupon",
-		legs="Volte Hose",
-		feet="Volte Boots",
-		waist="Chaac Belt"
-	})
 	
 	-- Job Abilities Sets --
     sets.JA = {}
@@ -173,7 +93,85 @@ function get_sets()
 	
 	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
 	
+	-- equipment Sets Toggle--
+    sets.equipment = {}
+    sets.equipment.index = {"TreasureHunter","TP","Accuracy","Tank","Movement","Evasion"}
+	equipment_ind = 1
+
+	sets.equipment.TP = {
+		ammo="Coiste Bodhar",
+		head="Blistering sallet +1",
+		body="Horos Casaque +3",
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs="Maculele tights +2",
+		feet="Macu. Toe Sh. +2",
+		neck="Null loop",
+		waist="Windbuffet Belt +1",
+		left_ear="Sherida Earring",
+		right_ear="Maculele Earring +1",
+		left_ring="Chirich Ring +1",
+		right_ring="Hetairoi Ring",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+	}
 	
+	sets.equipment.Accuracy =  {
+		ammo="Yamarang",
+		head="Malignance Chapeau",
+		body="Maculele casaque +3",
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Telos Earring",
+		right_ear="Maculele Earring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back="Null shawl"
+	}
+
+	 sets.equipment.Tank = {
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Maculele casaque +3",
+		hands="Macu. Bangles +2",
+		legs="Malignance tights",
+		feet="Macu. Toe Sh. +2",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Infused Earring",
+		right_ear="Eabani Earring",
+		left_ring="Defending Ring",
+		right_ring="Fortified Ring",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+	 }	
+	 
+ 	sets.equipment.Movement = set_combine(sets.Tank,{
+		left_ring="Shneddick Ring"
+	})
+	
+	sets.equipment.Evasion = {
+		ammo="Yamarang",
+		head="Malignance Chapeau",
+		body="Maculele casaque +3",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Bathy choker +1",
+		waist="Null belt",
+		left_ear="Eabani Earring",
+		right_ear="Infused Earring",
+		left_ring="Defending Ring",
+		right_ring="Fortified Ring",
+		back="Null shawl"
+	}	
+	
+    sets.equipment.TreasureHunter = set_combine(sets.Tank,{
+		body="Volte Jupon",
+		legs="Volte Hose",
+		feet="Volte Boots",
+		waist="Chaac Belt"
+	})	
 	
  -- Weapon Skill Sets
 	-- 	80% DEX for Rudra 60% DEX for Mandalic Stab
@@ -314,95 +312,83 @@ function precast(spell,action)
     -- Dancer Abilities --
     if string.find(spell.english, 'Waltz') then
 	    equip(sets.JA.Waltz)
-	elseif string.find(spell.english, 'Samba') then
+	end
+	if string.find(spell.english, 'Samba') then
 	    equip(sets.JA.Samba)	
-	
-	elseif spell.name == "Quickstep" or spell.name == "Box Step" or spell.name == "Stutter Step" then
+	end
+	if spell.name == "Quickstep" or spell.name == "Box Step" or spell.name == "Stutter Step" then
 		equip(sets.JA.StepAccuracy)
-	
-	elseif spell.name == "Feather Step" then
+	end
+	if spell.name == "Feather Step" then
 		equip(sets.JA.FeatherStep) --This set also has StepAccuracy associated
-	
-	elseif spell.name == "Spectral Jig" or spell.name == "Chocobo Jig" or spell.name == "Chocobo Jig II" then
+	end
+	if spell.name == "Spectral Jig" or spell.name == "Chocobo Jig" or spell.name == "Chocobo Jig II" then
 		equip(sets.JA.Jig)
-	
-	elseif spell.name == "Violent Flourish" then
+	end
+	if spell.name == "Violent Flourish" then
 		equip(sets.JA.ViolentFlourish)
-		
-	elseif spell.name == "Reverse Flourish" then
+	end	
+	if spell.name == "Reverse Flourish" then
 		equip(sets.JA.ReverseFlourish)
-		
-	elseif spell.name == "Climactic Flourish" then -- Climactic Flourish forces one more critical hit Forced hits receive damage +28%. 
+	end	
+	if spell.name == "Climactic Flourish" then -- Climactic Flourish forces one more critical hit Forced hits receive damage +28%. 
 		equip(sets.JA.ClimacticFlourish)
-	
-	elseif spell.name == "Striking Flourish" then -- +65% Critical Hit Rate for the main hit and Double Attack of the stacked attack round or Weapon Skill
+	end
+	if spell.name == "Striking Flourish" then -- +65% Critical Hit Rate for the main hit and Double Attack of the stacked attack round or Weapon Skill
 		equip(sets.JA.StrikingFlourish)
-	
-	elseif spell.name == "Trance" then
+	end
+	if spell.name == "Trance" then
 		equip(sets.JA.Trance)
-		
-	elseif spell.name == "Fan Dance" then
+	end	
+	if spell.name == "Fan Dance" then
 		equip(sets.JA.FanDance)
-		
-	elseif spell.name == "No Foot Rise" then
+	end	
+	if spell.name == "No Foot Rise" then
 		equip(sets.JA.NoFootRise)
-		
-	elseif spell.name == "Saber Dance" then
+	end	
+	if spell.name == "Saber Dance" then
 		equip(sets.JA.SaberDance)
-		
-	elseif spell.name == "Closed Position" then
+	end	
+	if spell.name == "Closed Position" then
 		equip(sets.JA.ClosedPosition)
-		
+	end	
 	-- Weapon Skill --
-
 	-- STR 40% DEX 40% Pyrrhic Kleos
-	elseif spell.name == "Pyrrhic Kleos" then
+	if spell.name == "Pyrrhic Kleos" then
 		equip(sets.PyrrhicKleos)
-
+	end
 	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
 	-- 60% DEX Modifier Mandalic Stab
-    elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
+    if spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
 		equip(sets.Rudra)
-
+	end
 		-- 50% DEX Modifier Evisceration / Crits per hits
-	elseif spell.name == "Evisceration" then
+	if spell.name == "Evisceration" then
 		equip(sets.Evisceration)
-
+	end
 	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
-	elseif spell.name == "Aeolian Edge" then
+	if spell.name == "Aeolian Edge" then
 		equip(sets.Aeolian)
-
+	end
 	-- Ninja Spells --
-	elseif spell.skill == 'Ninjutsu' then
+	if spell.skill == 'Ninjutsu' then
 	    equip(sets.precast.Fastcast)
 	end	
 end	
 
 
--- Midcast Functions --
-function midcast(spell,action)
-		
-end	
-
-
---We need to do some thinking and testing for this set...
 function aftercast(spell)
-	if string.find(spell.english,'Warp') then
-		--do fuck all nothing
-	else
-		equip_current()
-	end
+	equip_current()
 end
-
 
 --This function should only get kicked off when you're engaging.  
 --If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
+--But I don't want to fuck myself by ignoring the equipment check.
 --I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip(sets.equipment[sets.equipment.index[equipment_ind]]) 
 
 end
 
@@ -421,14 +407,14 @@ function self_command(command)
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()
 	elseif command == 'toggle engage set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equipment_ind = equipment_ind -1
+		if equipment_ind == 0 then equipment_ind = #sets.equipment.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.equipment.index[equipment_ind]..' ----->')
 		equip_current()	
 	elseif command == 'reverse engage set' then
-		engaged_ind = engaged_ind +1
-		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equipment_ind = equipment_ind +1
+		if equipment_ind > #sets.equipment.index then equipment_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.equipment.index[equipment_ind]..' ----->')
 		equip_current()
 	end
 end
