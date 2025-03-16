@@ -64,10 +64,7 @@ function get_sets()
  }
  
   --Enmity set for high hate generating spells and JAs
-  sets.Enmity = {back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%',}}, waist="Sinew Belt", legs="Erilaz Leg Guards +1", neck="Warder's Charm", body="Emet Harness +1"}
-
-  --Magic acc for enfeebles, handy for VW
-  sets.MagicAcc = {}
+  sets.Enmity = {back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%',}}, waist="Sinew Belt", legs="Erilaz Leg Guards +1", neck="Moonlight necklace", body="Emet Harness +1"}
 
   sets.Stoneskin = {
     ammo="Staunch Tathlum +1",

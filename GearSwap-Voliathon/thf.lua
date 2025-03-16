@@ -4,7 +4,7 @@
 function ThiefCapes()
 	ThiefCapes = {}
 	ThiefCapes.TP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Damage taken-5%'}}
-	ThiefCapes.DEXWS = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+8','Weapon skill damage +10%'}}
+	ThiefCapes.DEXWS = { name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}
 end
 
 
@@ -41,7 +41,7 @@ function get_sets()
 
 	-- Engaged Sets Toggle--
     sets.engaged = {}
-    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank"}
+    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Movement"}
 	engaged_ind = 1
 
     sets.engaged.TreasureHunter = {
@@ -93,6 +93,22 @@ function get_sets()
 	}
 
 	 sets.engaged.Tank = {
+		ammo="Amar cluster",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Infused Earring",
+		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
+		left_ring="Fortified ring",
+		right_ring="Defending Ring",
+		back=ThiefCapes.TP
+	 }	
+
+	 sets.engaged.Movement = {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
@@ -106,8 +122,7 @@ function get_sets()
 		left_ring="Shneddick ring",
 		right_ring="Defending Ring",
 		back=ThiefCapes.TP
-	 }	
-	
+	 }		
  -- Weapon Skill Sets
  -- Generic Sets
     sets.WSD = {	
@@ -183,7 +198,7 @@ function get_sets()
 	
  -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'NaeglingCrepuscularKnife', 'TauretSandung', 'TauretCrepuscularKnife', 'GandringSandung'}
+  sets.weapon.index = {'NaeglingCrepuscularKnife', 'TauretSandung', 'TauretCrepuscularKnife', 'GandringSandung', 'GandringTauret'}
   weapon_ind = 1     
   
  sets.weapon.NaeglingCrepuscularKnife = {
@@ -203,6 +218,11 @@ function get_sets()
 	main="Gandring",
 	sub="Sandung" 
  }
+ 
+ sets.weapon.GandringTauret = {
+	main="Gandring",
+	sub="Tauret" 
+ } 
 end	
 	
 

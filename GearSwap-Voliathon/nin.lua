@@ -302,7 +302,7 @@ function get_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Taeon Tights", augments={'Evasion+21','Spell interruption rate down -10%','Phalanx +3',}},
 		feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-		neck="Voltsurge Torque",
+		neck="Moonlight necklace",
 		waist="Audumbla Sash",
 		left_ear="Loquac. Earring",
 		right_ear="Magnetic Earring",

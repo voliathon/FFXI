@@ -29,7 +29,7 @@ function get_sets()
 	--equip Sets--
 	sets.equip = {}
 	--					  1		          2                  3 			4 		     5
-	sets.equip.index = {'BadAss', 'MovementEvasionTank', 'Accuracy', 'Reraise', 'SubtleBlow'}
+	sets.equip.index = {'BadAss', 'Tank','Movement', 'Accuracy', 'Reraise', 'SubtleBlow'}
 	equip_ind = 1
 
   --offensive melee set
@@ -51,7 +51,25 @@ function get_sets()
   }
 
   --Tank equip
-  sets.equip.MovementEvasionTank = {
+  sets.equip.Tank = {
+	sub="Utu grip",
+    ammo="Staunch Tathlum +1",
+    head="Kasuga Kabuto +3",
+	body="Kasuga domaru +3",
+    hands="Nyame Gauntlets",
+	legs="Kasuga haidate +3",
+    feet="Nyame Sollerets",
+	neck="Samurai's nodowa +2",
+    waist="Null belt",
+    left_ear="Infused Earring",
+    right_ear="Hearty Earring",
+    left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+  }
+
+  --Movement equip
+  sets.equip.Movement = {
 	sub="Utu grip",
     ammo="Staunch Tathlum +1",
     head="Kasuga Kabuto +3",
@@ -283,14 +301,6 @@ end
 
 function aftercast(spell)
   equip_current()
-  --Just running a lil somethin-somethin to track Shadows
-  if string.find(spell.name,'Utsusemi') and not spell.interrupted then
-    if spell.name == 'Utsusemi: Ichi' then
-      ShadowType = 'Ichi'
-    elseif spell.name == 'Utsusemi: Ni' then
-      ShadowType = 'Ni'
-    end
-  end
 end
 
 

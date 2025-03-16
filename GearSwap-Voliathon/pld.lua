@@ -29,7 +29,6 @@
             -- Purchased from the Auction House, crafted only.
 
 -- Created by Voliathon
--- Modified 9/13/2022
 
 function get_sets()
 -- Set macro book/set --
@@ -45,10 +44,8 @@ function get_sets()
 	send_command('bind ^f9 gs c reverse TP set')
 
 	-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang via ctrl + F8
 	Aegis = 'OFF'
-	ShadowType = 'None'
 	
   --Job Ability Sets--
   sets.JA = {}
@@ -62,25 +59,24 @@ function get_sets()
 
   --TP Sets--
   sets.TP = {}
---					  1		   2              3 		   4		  5 		  6		        7			    8
-  sets.TP.index = {'Movement', 'BadAss', 'OldTurtle', 'NewTurtle', 'Evasion', 'Accuracy', 'TreasureHunter', 'Reraise'}
+--					  1		      2         3 		   4		  5 		     6		        7
+  sets.TP.index = {'Movement', 'BadAss', 'Turtle', 'Evasion', 'Accuracy', 'TreasureHunter', 'Reraise'}
   TP_ind = 1
 
   sets.TP.Movement = {
     ammo="Staunch Tathlum +1",
-    head="Sakpata's Helm",
+    head="Chevalier's armet +3",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
-    legs="Sakpata's cuisses",
+    legs="Chevalier's cuisses +3",
     feet="Sakpata's Leggings",
     neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
+    right_ear="Chev. earring +1",
 	left_ring="Moonlight Ring",
     right_ring="Shneddick ring",
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
-
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5'}}
   }
   
   --offensive melee set
@@ -94,53 +90,35 @@ function get_sets()
     neck="Null loop",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
-    right_ear="Cessance earring",
+    right_ear="Chev. earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5'}}
   }
 
-  --Old Tank Gear
-  sets.TP.OldTurtle = {
+  sets.TP.Turtle = {
     ammo="Staunch Tathlum +1",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Null loop",
-    waist="Null belt",
-    left_ear="Tuisto Earring",
-	right_ear="Chevalier earring +1",
-    left_ring="Moonlight Ring",
-    right_ring="Fortified Ring",
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
-  }
-  
-  --New Tank Gear
-  sets.TP.NewTurtle = {
-    ammo="Staunch Tathlum +1",
-    head="Sakpata's Helm",
+    head="Chevalier's armet +3",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
+    legs="Chevalier's cuisses +3",
     feet="Sakpata's Leggings",
     neck="Null loop",
     waist="Null belt",
     left_ear="Tuisto Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A'}},
+    right_ear="Chev. earring +1",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5'}}
   }  
 
   --Evasion
   sets.TP.Evasion = {
     ammo="Staunch Tathlum +1",
-    head="Nyame Helm",
+    head="Chevalier's armet +3",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
+    legs="Chevalier's cuisses +3",
     feet="Nyame Sollerets",
     neck="Null loop",
     waist="Null belt",
@@ -148,14 +126,16 @@ function get_sets()
     right_ear="Cryptic earring",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}}
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5'}}
   }
   
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
+	head="Chevalier's armet +3",
+	legs="Chevalier's cuisses +3",
     neck="Null loop",
     left_ear="Dignitary's Earring",
-	right_ear="Chevalier earring +1",
+	right_ear="Chev. earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
 	waist="Null belt"
@@ -171,20 +151,18 @@ function get_sets()
     head="Crepuscular Helm",
     body="Crepuscular Mail",
     hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
+    legs="Chevalier's cuisses +3",
     feet="Sakpata's Leggings",
     neck="Null loop",
     waist="Null belt",
     left_ear="Hearty Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear="Chev. earring +1",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
     back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}} 
   }
 
-  --Weaponskill Sets--
-  sets.WS = {}
-
+  --Weaponskill sets
   --Atonement, Enmity is the modifier
   sets.Atonement = {
     ammo="Amar Cluster",
@@ -193,7 +171,7 @@ function get_sets()
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    neck="Unmoving collar",
+    neck="Moonlight necklace",
     waist="Null belt",
     left_ear="Cryptic Earring",
     right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
@@ -285,7 +263,7 @@ function get_sets()
  }
 
 
---TODO - Get Knightly Earring / Moonlight Necklace
+--TODO - Moonlight Necklace
  -- SIR
  sets.SIR = {
     ammo="Staunch Tathlum +1", --11
@@ -293,7 +271,7 @@ function get_sets()
     hands="Regal Gauntlets", --10
     legs="Sakpata's cuisses", 
     feet="Odyssean greaves", --20
-    neck="Loricate torque +1", --5
+    neck="Moonlight necklace", --15
     waist="Audumbla sash", --10
     left_ear="Knightly Earring", --5
     right_ear="Magnetic Earring", --8
@@ -309,7 +287,7 @@ function get_sets()
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet="Eschite greaves",
-    neck="Moonbeam necklace",
+    neck="Moonlight necklace",
     waist="Creed baudrier",
     left_ear="Cryptic Earring",
     right_ear="Friomisi earring",
@@ -318,27 +296,8 @@ function get_sets()
     back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}} 
   }
 
-  --Magic acc for enfeebles, handy for VW
-  --sets.MagicAcc = {}
-
-  -- sets.Stoneskin = {
-    -- ammo="Staunch Tathlum +1",
-    -- head="Rune. Bandeau +2",
-    -- body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    -- hands="Regal Gauntlets",
-    -- legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-    -- feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    -- neck="Null loop",
-    -- waist="Siegel Sash",
-    -- left_ear="Magnetic Earring",
-    -- right_ear="Earthcry Earring",
-    -- left_ring="Stikini Ring +1",
-    -- right_ring="Stikini Ring",
-    -- back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5',}} 
-  -- }
-  
-  sets.ShieldBash = set_combine(sets.Enmity,  {
-	hands="Caballarius gauntlets +2",
+  sets.ShieldBash = set_combine(sets.Enmity, {
+	hands="Caballarius gauntlets +3",
 	left_ear="Knightly earring",
 	right_ear="Chevalier's earring +1"
   })
@@ -348,9 +307,6 @@ end
 -- Precast Logic --
 function precast(spell,abil)
 
-	-- TODO - Add Logic for 'OhShit we need SIR button'
-
-	-- Dancer Abilities --
   if string.find(spell.english, 'Waltz') then
 	equip(sets.JA.Waltz)
   end	
@@ -362,13 +318,6 @@ function precast(spell,abil)
     equip(sets.Enmity)
   end
   
-  --equips favorite weapon if disarmed
-  if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip({main="Burtgang",sub="Aegis"})
-    add_to_chat(158,'Burtgang Weapon: [ON]')
-	Naegling = 'OFF'
-  end
-  
   if spell.name == 'Atonement' then
     equip(sets.Atonement)
   end
@@ -378,19 +327,10 @@ function precast(spell,abil)
   if spell.name == 'Aeolian Edge' then
 	equip(sets.AeolianEdge)
   end
-  --prevents casting Utsusemi if you already have 3 or more shadows
-  if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
-    cancel_spell()
-  end
+
     --Utsusemi Check
   if string.find(spell.name,'Utsusemi') then
     equip({neck="Magoraga Beads"})
-  end
-  
-  if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
-    if TP_ind == 4 then
-      equip(sets.Evasion)
-    end
   end
   
   if spell.skill == 'Enhancing Magic' then
@@ -412,9 +352,7 @@ function midcast(spell,act,arg)
 	if spell.name == 'Phalanx' then
 		equip(sets.Phalanx)
 	end
-	--if spell.name == "Blink" or spell.name == "Stoneskin" then
-    --  equip(sets.SIR,sets.Stoneskin)
-	--end
+
 	if string.find(spell.name,'Protect') then
 		equip(sets.Enhancing)
 	end
@@ -433,14 +371,6 @@ end
 
 function aftercast(spell)
   equip_current()
-  --Just running a lil somethin-somethin to track Shadows
-  if string.find(spell.name,'Utsusemi') and not spell.interrupted then
-    if spell.name == 'Utsusemi: Ichi' then
-      ShadowType = 'Ichi'
-    elseif spell.name == 'Utsusemi: Ni' then
-      ShadowType = 'Ni'
-    end
-  end
 end
 
 

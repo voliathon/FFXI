@@ -9,19 +9,14 @@ function get_sets()
 	send_command('bind ^f9 gs c reverse TP set')
 
 	-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Lionheart = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F8
 	ShadowType = 'None'
 	
   --Job Ability Sets--
   sets.JA = {}
-  
-  -- Dancer's Abilities --
   sets.JA.Waltz = {legs="Dashing subligar"}
   sets.JA.Step = 	{}
   sets.JA.Stun = {}
-	
-	
   sets.JA.Lunge = {}
   sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +3"}
   sets.JA.Gambit = {hands="Runeist mitons +2"}
@@ -250,7 +245,7 @@ function get_sets()
     hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
     legs={ name="Taeon Tights", augments={'Evasion+21','Spell interruption rate down -10%','Phalanx +3'}},
     feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-    neck="Moonbeam Necklace",
+    neck="Moonlight necklace",
     waist="Siegel Sash",
     left_ear="Magnetic Earring",
     right_ear="Mimir Earring",
@@ -267,7 +262,7 @@ function get_sets()
     hands="Regal Gauntlets", --10
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck="Moonbeam necklace", --10
+    neck="Moonlight necklace", --15
     waist="Audumbla sash", --10
     left_ear="Halasz Earring", --5
     right_ear="Magnetic Earring" --8
@@ -276,16 +271,13 @@ function get_sets()
   --Enmity set for high hate generating spells and JAs
   sets.Enmity = {
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}, 
-	waist="Sinew Belt", 
-	legs="Erilaz leg guards +3", 
-	neck="Moonbeam necklace", 
-	body="Emet Harness +1",     
-	feet="Erilaz Greaves +3",
-	right_ear="Cryptic earring"
+	waist="Sinew Belt", --3
+	legs="Erilaz leg guards +3", --13 
+	neck="Moonlight necklace",  --15
+	body="Emet Harness +1",  --10   
+	feet="Erilaz Greaves +3", --8
+	right_ear="Cryptic earring" --4
   }
-
-  --Magic acc for enfeebles, handy for VW
-  sets.MagicAcc = {}
 
   sets.Stoneskin = {
     ammo="Staunch Tathlum +1",
@@ -303,7 +295,7 @@ function get_sets()
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
   }
   
-  
+  -- This will eventually be Magic Fruit whenever I get that level
   sets.Cure = {
   
   }
@@ -390,10 +382,6 @@ function precast(spell,abil)
     equip(sets.HercSlash)
   end
 
-  --prevents casting Utsusemi if you already have 3 or more shadows
-  if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
-    cancel_spell()
-  end
     --Utsusemi Check
   if string.find(spell.name,'Utsusemi') then
     equip({neck="Magoraga Beads"})
@@ -461,9 +449,6 @@ function midcast(spell,act,arg)
   if spell.name == 'Flash' or spell.name == "Stun" then
     equip(sets.Enmity)
   end
-  if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then
-    equip(sets.MagicAcc)
-  end
   
   
 end
@@ -474,22 +459,9 @@ function aftercast(spell)
   if (spell.english == 'Battuta') then
 		equip({hands="Turms mittens +1", feet="Turms leggings +1", left_ear="Cryptic earring"})
   end
-  --Just running a lil somethin-somethin to track Shadows
-  if string.find(spell.name,'Utsusemi') and not spell.interrupted then
-    if spell.name == 'Utsusemi: Ichi' then
-      ShadowType = 'Ichi'
-    elseif spell.name == 'Utsusemi: Ni' then
-      ShadowType = 'Ni'
-    end
-  end
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
 	if (buffactive['Battuta']) then
@@ -497,7 +469,6 @@ function equip_current()
 	end
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)

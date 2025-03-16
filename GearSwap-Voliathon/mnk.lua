@@ -40,8 +40,8 @@ function get_sets()
 	
 	--TP Sets--
 	sets.TP = {}
--- 					  1		      2        3 		4		  5
-  sets.TP.index = {'BadAss', 'Tank', 'Movement', 'Accuracy', 'TH'}
+-- 					  1		      2           3 		4		  5         6
+  sets.TP.index = {'BadAss', 'SubtleBlow', 'Tank', 'Movement', 'Accuracy', 'TH'}
   TP_ind = 1
 	
     sets.TP.BadAss = {
@@ -70,16 +70,32 @@ function get_sets()
 	}
 	
 	sets.TP.Tank = {
-		ammo="Coiste Bodhar",
-		head="Bhikku Crown +3",
-		body="Mpaca's Doublet",
-		hands="Mpaca's Gloves",
-		legs="Bhikku Hose +3",
-		feet="Mpaca's Boots",
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
 		left_ear="Cessance Earring",
-		right_ear="Schere Earring",
+		right_ear={ name="Schere Earring", augments={'Path: A',}},
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back=MonkCapes.TP
+	}
+	
+	sets.TP.SubtleBlow = {
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+		head="Bhikku Crown +3",
+		body="Mpaca's Doublet",
+		hands={ name="Hes. Gloves +3", augments={'Enhances "Invigorate" effect',}},
+		legs="Mpaca's Hose",
+		feet="Bhikku Gaiters +3",
+		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
+		waist="Moonbow Belt +1",
+		left_ear="Cessance Earring",
+		right_ear={ name="Schere Earring", augments={'Path: A',}},
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back=MonkCapes.TP
