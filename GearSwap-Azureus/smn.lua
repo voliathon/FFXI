@@ -57,7 +57,7 @@ function get_sets()
 		right_ear="Gelos Earring",
 		left_ring="Varar Ring +1",
 		right_ring="Varar Ring +1",
-		back=SummonerCapes.BloodPact	
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Phys. dmg. taken-10%',}}
 	}
 	-- Blood Pact Sets
 	-- BP Damage, Accuracy, Attack, and Pet: Double Attack. 
@@ -76,7 +76,7 @@ function get_sets()
 		right_ear="Gelos Earring",
 		left_ring="Varar Ring +1",
 		right_ring="Varar Ring +1",
-		back=SummonerCapes.BloodPact	
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Phys. dmg. taken-10%',}}
 	}
 	-- BP Damage, Magic Attack, and perhaps Pet: TP Bonus. Avatars seem to have naturally high magic accuracy for their associated element 
 	sets.BloodPactMagical = {
@@ -94,7 +94,7 @@ function get_sets()
 		right_ear="Gelos Earring",
 		left_ring="Varar Ring +1",
 		right_ring="Varar Ring +1",
-		back=SummonerCapes.BloodPact	
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Phys. dmg. taken-10%',}}
 	}
 
 	sets.AvatarTP = {
@@ -110,7 +110,7 @@ function get_sets()
 		right_ear={ name="Beck. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: Mag. Acc.+13','Damage taken-4%',}},
 		left_ring="Varar Ring +1",
 		right_ring="C. Palug Ring",
-		back=SummonerCapes.BloodPact	
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Phys. dmg. taken-10%',}}	
 	}
 	
 	sets.AvatarDT = {
@@ -126,7 +126,7 @@ function get_sets()
 		right_ear="Handler's Earring +1",
 		left_ring="Varar Ring +1",
 		right_ring="C. Palug Ring",
-		back=SummonerCapes.BloodPact		
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Phys. dmg. taken-10%',}}		
 	}
 
     -- Fast Cast for Summoner --
@@ -193,8 +193,6 @@ function get_sets()
 
 	sets.SelfAccuracy = {}
 
-    sets.Movement = {left_ring="Shneddick Ring"}
-
 	sets.Refresh = set_combine(sets.PDT,  {
 		ammo="Sancus Sachet +1",
 		head="Beckoner's Horn +3",
@@ -208,9 +206,25 @@ function get_sets()
 		right_ear={ name="Beck. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: Mag. Acc.+13','Damage taken-4%',}},
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
-		back=SummonerCapes.BloodPact
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Phys. dmg. taken-10%',}}
 	})
     
+    sets.Movement = {
+		ammo="Sancus Sachet +1",
+		head="Beckoner's Horn +3",
+		body={ name="Apo. Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}},
+		hands="Asteria Mitts +1",
+		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
+		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
+		neck="Caller's Pendant",
+		waist="Fucho-no-Obi",
+		left_ear="Cath Palug Earring",
+		right_ear={ name="Beck. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: Mag. Acc.+13','Damage taken-4%',}},
+		left_ring="Shneddick Ring",	
+		right_ring="Stikini Ring +1",
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Phys. dmg. taken-10%',}}		
+	}	
+	
 	sets.SummoningMagicSkill = {
 		main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
 		sub="Vox Grip",
@@ -230,13 +244,27 @@ function get_sets()
 	}
 
 	-- Need loads of Summon Magic to make this meatier
-	sets.AvatarFavor = set_combine(sets.SummoningMagicSkill,  {
-		head="Beckoner's Horn +3"
-	})
+	sets.AvatarFavor = {
+		main={ name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}},
+		sub="Vox Grip",
+		ammo="Sancus Sachet +1",
+		head="Beckoner's Horn +3",
+		body="Beck. Doublet +2",
+		hands="Lamassu Mitts +1",
+		legs="Beck. Spats +2",
+		feet="Beck. Pigaches +2",
+		neck="Caller's Pendant",
+		waist="Lucidity Sash",
+		left_ear="C. Palug Earring",
+		right_ear="Andoaa Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back={ name="Conveyance Cape", augments={'Summoning magic skill +2','Pet: Enmity+8','Blood Pact Dmg.+1','Blood Pact ab. del. II -2',}}	
+	}
 
 	sets.SummonSet = set_combine(sets.SummoningMagicSkill, {
 		right_ear={ name="Beck. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Pet: Accuracy+13 Pet: Rng. Acc.+13','Pet: Mag. Acc.+13','Damage taken-4%',}},
-		back=SummonerCapes.BloodPact
+		back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Phys. dmg. taken-10%',}}
 	})
 	
     ------------------------------------------------------------------------------------------------------------------
