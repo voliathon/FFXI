@@ -3,8 +3,8 @@
 
 function CamulusCapes()
 	CamulusCape = {}
-    CamulusCape.ranged_ws={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'} }	
-    CamulusCape.matk={ name="Camulus's Mantle", augments={'Weapon skill damage +10%'} }
+    CamulusCape.agi_ws={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%'}}	
+    CamulusCape.matk={ name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10'}}
     CamulusCape.str_ws={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'} }
     CamulusCape.melee_double_attack={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
 	CamulusCape.snapshot={ name="Camulus's Mantle", augments={'"Snapshot"+10'}}
@@ -85,7 +85,7 @@ function get_sets()
 		right_ear="Choleric Earring",
 		left_ring="Dingir Ring",
 		right_ring="Stikini Ring +1",
-		back={ name="Gunslinger's Cape", augments={'Enmity-3','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -5',}}
+		back=CamulusCape.matk
     }
 	
     sets.QuickDrawDark = {
@@ -100,7 +100,7 @@ function get_sets()
 		right_ear="Choleric Earring",
 		left_ring="Dingir Ring",
 		right_ring="Stikini Ring +1",
-		back={ name="Gunslinger's Cape", augments={'Enmity-3','"Mag.Atk.Bns."+2','"Phantom Roll" ability delay -5',}}
+		back=CamulusCape.matk
     }	
 	
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
@@ -116,8 +116,23 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Dingir Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+		back=CamulusCape.agi_ws
 		--Archon Ring
+	}
+	
+	sets.LeadenSaluteHachi = {
+		head="Pixie Hairpin +1",
+		body="Lanun Frac +3",
+		hands="Nyame gauntlets",
+		legs="Nyame Flanchard",
+		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		neck="Commodore charm +2",
+		waist="Hachirin-no-Obi",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Friomisi Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back=CamulusCape.agi_ws
 	}
 
 	--Wildfire    AGI/MAB/WSD
@@ -139,7 +154,7 @@ function get_sets()
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Dingir Ring",
-		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+		back=CamulusCape.agi_ws
 	}
 
 	--Savage Blade  50% STR / 50% MND
@@ -155,7 +170,7 @@ function get_sets()
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Sroda Ring",
-		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+		back=CamulusCape.str_ws
 	}
 
 	--Aeolian Edge 40% DEX / 40% INT
@@ -171,7 +186,7 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Dingir Ring",
 		right_ring="Epaminondas's Ring",
-		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}		
+		back=CamulusCape.agi_ws		
 	}
 
 	--Snapshot Magic goes here - Precast Magic
@@ -204,7 +219,7 @@ function get_sets()
 		right_ear="Crep. Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Dingir Ring",
-		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+		back=CamulusCape.agi_ws
 	}
 
     sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA,{
@@ -239,7 +254,7 @@ function get_sets()
     }
 	
 	sets.engaged.DTMovement = {
-		head="Chass. Tricorne +3",
+		head="Null masuqe",
 		body="Chasseur's Frac +3",
 		hands="Malignance Gloves",
 		legs="Chasseur's Culottes +3",
@@ -249,7 +264,8 @@ function get_sets()
 		left_ear="Hearty Earring",
 		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
-		right_ring="Chirich Ring +1"	
+		right_ring="Chirich Ring +1",	
+        back=CamulusCape.melee_double_attack
 	}
 	
 	sets.engaged.Accuracy = {
@@ -334,9 +350,9 @@ function precast(spell,abil)
 		equip(sets.Snapshot)
 	end
 
-	if spell.english == "Leaden Salute" and (world.weather_element == "Dark" or world.day_element == "Dark") then 
+	if spell.english == "Leaden Salute" and (world.weather_element == "Dark" or world.day_element == "Dark" or world.weather_element == "Darkness") then 
 		add_to_chat(125, "Hachirin-no-Obi has been equipped for this WS")
-		set_combine(sets.LeadenSalute,{ waist = "Hachirin-no-Obi"})
+		equip(sets.LeadenSaluteHachi)
 	elseif spell.english == "Leaden Salute" and spell.target.distance < 15 then 
 		equip(sets.LeadenSalute)
 	elseif spell.english == "Leaden Salute" then
@@ -349,8 +365,6 @@ function precast(spell,abil)
 	if spell.name == "Wildfire" then
 		equip(sets.Wildfire)
 	end
-	
-	--Weapon skill lookups
 	if spell.name == "Savage Blade" then
 		equip(sets.SavageBlade)
 	end
@@ -398,7 +412,6 @@ end
 
 --Midcast Function
 function midcast(spell,abil)
-	--TODO - Pop into Midcast.RA logic
 	if spell.action_type == 'Ranged Attack' then
 		if (buffactive['Triple Shot']) then
 			equip(sets.midcast.RA.TripleShot)
@@ -423,18 +436,11 @@ function aftercast(spell)
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
-
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
@@ -468,5 +474,3 @@ windower.register_event('status change', function()
 	send_command('@input /tell <me> Wakies Wakies Baby Girl.  Daddy will not let this stand!')
 	end
 end)
-
-

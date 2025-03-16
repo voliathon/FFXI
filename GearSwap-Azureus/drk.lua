@@ -92,7 +92,7 @@ function get_sets()
 
   sets.TP.Movement = {
     ammo="Coiste Bodhar",
-    head="Sakpata's Helm",
+    head="Null masuqe",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
@@ -126,7 +126,7 @@ function get_sets()
   --New Tank Gear
   sets.TP.NewTurtle = {
     ammo="Coiste Bodhar",
-    head="Sakpata's Helm",
+    head="Null masuqe",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
@@ -143,7 +143,7 @@ function get_sets()
   --Evasion
   sets.TP.Evasion = {
     ammo="Staunch Tathlum +1",
-    head="Nyame Helm",
+    head="Null masuqe",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",

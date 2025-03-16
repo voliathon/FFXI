@@ -42,7 +42,7 @@ function get_sets()
 
 	sets.TP.Movement = {
 		ammo="Staunch Tathlum +1",
-		head="Hattori Zukin +2",
+		head="Null masuqe",
 		body="Hattori Ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -120,7 +120,7 @@ function get_sets()
 
 	sets.TP.EvasionTank = {
 		ammo="Amar Cluster",
-		head="Hattori Zukin +2",
+		head="Null masuqe",
 		body="Hattori ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",

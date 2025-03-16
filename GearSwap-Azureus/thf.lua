@@ -1,5 +1,11 @@
--- https://www.bg-wiki.com/bg/Community_Thief_Guide#TP_Sets
--- Will eventually get more and more gear that is mentioned from the community Thief Site...
+  -- .--.  .---. .-. .-..----. .----..-. .-. .----.
+ -- / {} \{_   / | { } || {}  }| {_  | { } |{ {__  
+-- /  /\  \/    }| {_} || .-. \| {__ | {_} |.-._} }
+-- `-'  `-'`---' `-----'`-' `-'`----'`-----'`----' 
+          -- .---. .-. .-..-..----..----.          
+         -- {_   _}| {_} || || {_  | {_            
+           -- | |  | { } || || {__ | |             
+           -- `-'  `-' `-'`-'`----'`-'             
 
 function get_sets()
 -- Set macro book/set --
@@ -121,7 +127,7 @@ function get_sets()
     sets.WSD = {	
 		ammo="Crepuscular pebble",
 		head="Pillager's bonnet +3",
-		body="Skulker's Vest +2",
+		body="Nyame mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
@@ -137,7 +143,7 @@ function get_sets()
 	sets.Evisceration = {
 		ammo="Yetshila +1",
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
+		body="Nyame mail",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Meg. Chausses +2",
 		feet="Malignance Boots",
@@ -153,7 +159,7 @@ function get_sets()
     sets.Aeolian = {	
 		ammo="Pemphredo Tathlum",
 		head="Nyame Helm",
-		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		body="Nyame mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame sollerets",
@@ -190,7 +196,7 @@ function get_sets()
 	
  -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'GandringCentovente', 'GandringGleti', 'GandringCrepuscularKnife', 'TwashtarCentovente', 'TwashtarCrepuscularKnife','NaeglingCentovente', 'NaeglingCrepuscularKnife', 'TauretCentovente', 'TauretCrepuscularKnife'}
+  sets.weapon.index = {'GandringCentovente', 'GandringGleti', 'GandringCrepuscularKnife', 'GandringTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife','NaeglingCentovente', 'NaeglingCrepuscularKnife', 'TauretCentovente', 'TauretCrepuscularKnife'}
   weapon_ind = 1     
   
  sets.weapon.GandringCentovente = {
@@ -204,7 +210,11 @@ function get_sets()
  sets.weapon.GandringCrepuscularKnife = {
 	main="Gandring",
 	sub="Crepuscular Knife"
- }  
+ }
+ sets.weapon.GandringTauret = {
+	main="Gandring",
+	sub="Tauret"
+ }   
  sets.weapon.TwashtarCentovente = {
 	main="Twashtar",
 	sub="Centovente"

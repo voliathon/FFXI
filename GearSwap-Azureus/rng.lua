@@ -162,17 +162,18 @@ function get_sets()
 	--MIDSHOT LOGIC OF DOOM
 	sets.midshot = {}
     sets.midshot.RA = set_combine(sets.engaged.TakingLessPhysicalDamage,{
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Null loop",
+		head="Arcadian Beret +3",
+		body="Ikenga's Vest",
+		hands="Amini Glove. +2",
+		legs="Amini Bragues +2",
+		feet="Ikenga's Clogs",
+		neck={ name="Scout's Gorget +2", augments={'Path: A',}},
 		waist="Yemaya Belt",
 		left_ear="Telos Earring",
-		right_ear="Enervating Earring",
+		right_ear="Crep. Earring",
 		left_ring="Dingir Ring",
-		right_ring="Hetairoi Ring"
+		right_ring="Hetairoi Ring",
+		back="Null Shawl"
 	})
 
     sets.midshot.RA.DoubleShot = set_combine(sets.midshot.RA,{
@@ -185,7 +186,7 @@ function get_sets()
 	
 	--WeaponSkills
 	sets.HotShot = {
-		head="Orion Beret +3",
+		head="Nyame helm",
 		body="Nyame mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
@@ -193,7 +194,7 @@ function get_sets()
 		neck="Fotia Gorget",
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
-		right_ear="Friomisi Earring",
+		right_ear="Amini Earring +1",
 		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}	
@@ -208,7 +209,7 @@ function get_sets()
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
-		right_ear="Ishvara Earring",
+		right_ear="Amini Earring +1",
 		left_ring="Dingir Ring",
 		right_ring="Epaminondas's Ring",
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}
@@ -217,12 +218,27 @@ function get_sets()
 	--Wildfire    AGI/MAB/WSD
     sets.Wildfire = {
 		head="Nyame Helm",
-		body={ name="Herculean Vest", augments={'Phys. dmg. taken -3%','"Mag.Atk.Bns."+21','Weapon skill damage +6%','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		body="Nyame mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck="Scout's Gorget +2",
 		waist="Orpheus's Sash",
+		left_ear="Crep. Earring",
+		right_ear="Friomisi Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}	
+	}
+
+    sets.WildfireHachi = {
+		head="Nyame Helm",
+		body="Nyame mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Scout's Gorget +2",
+		waist="Hachirin-no-obi",
 		left_ear="Crep. Earring",
 		right_ear="Friomisi Earring",
 		left_ring="Dingir Ring",
@@ -345,21 +361,32 @@ function precast(spell,abil)
 	end
 
 	--Weapon skill lookups	
-	if spell.name == "Hot Shot" then
+	if spell.name == "Hot Shot" then  
 		equip(sets.HotShot)
 	end
+	
+	if spell.name == "Wildfire" then  
+		equip(sets.Wildfire)
+	end
+	
+	if world.weather_element == "Light" and spell.name == "Trueflight" then 
+		equip(sets.WildfireHachi)
+	else
+		equip(sets.Wildfire)	
+	end
+
 	if spell.name == "Coronach" or spell.name == "Empyreal Arrow" then
 		equip(sets.Coronach)
 	end
-	if spell.name == "Wildfire" or spell.name == "Flaming Arrow" then
-		equip(sets.Wildfire)
-	end
+	
 	if spell.name == "Last Stand" then
 		equip(sets.LastStand)
 	end
+	
 	if spell.name == "Jishnu's Radiance" then
 		equip(sets.Jishnu)
 	end	
+	
 	if spell.name == "Savage Blade" then
 		equip(sets.SavageBlade)
 	end
@@ -475,5 +502,3 @@ windower.register_event('status change', function()
 	send_command('@input /tell <me> Wakies Wakies Baby Girl.  Daddy will not let this stand!')
 	end
 end)
-
-

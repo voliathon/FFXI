@@ -1,5 +1,18 @@
---Gettnir done by Voliathon
---RDM powah for BabyBear's Red Mage
+                                           
+     -- /\                                    
+    -- /  \    _____   _ _ __ ___ _   _ ___   
+   -- / /\ \  |_  / | | | '__/ _ \ | | / __|  
+  -- / ____ \  / /| |_| | | |  __/ |_| \__ \  
+ -- /_/    \_\/___|\__,_|_|  \___|\__,_|___/  
+  -- _____          _ __  __                  
+ -- |  __ \        | |  \/  |                 
+ -- | |__) |___  __| | \  / | __ _  __ _  ___ 
+ -- |  _  // _ \/ _` | |\/| |/ _` |/ _` |/ _ \
+ -- | | \ \  __/ (_| | |  | | (_| | (_| |  __/
+ -- |_|  \_\___|\__,_|_|  |_|\__,_|\__, |\___|
+                                 -- __/ |     
+                                -- |___/      
+
 function get_sets()
 	-- Set macro book/set --
     send_command('input /macro book 11;wait .1;input /macro set 1')
@@ -218,7 +231,7 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		ammo="Staunch Tathlum +1",
-		head={ name="Nyame Helm", augments={'Path: B',}},
+		head="Null masuqe",
 		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -235,7 +248,7 @@ function get_sets()
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
 		ammo="Staunch Tathlum +1",
-		head={ name="Nyame Helm", augments={'Path: B',}},
+		head="Null masuqe",
 		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -308,11 +321,11 @@ function get_sets()
   --Savage Blade
   sets.SavageBlade = {
     ammo="Yetshila +1",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body="Nyame mail",
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
-	feet="Nyame sollerets",
+	head="Nyame Helm",
+	body="Nyame Mail",
+	hands="Nyame Gauntlets",
+	legs="Nyame Flanchard",
+	feet="Nyame Sollerets",
     neck="Fotia Gorget",
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Ishvara Earring",
@@ -325,11 +338,11 @@ function get_sets()
   --All in One who gives a fuck Weapon Skill set of Doom
   sets.WSD = {
     ammo="Yetshila +1",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body="Nyame mail",
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    legs={ name="Chironic Hose", augments={'Accuracy+2','STR+2','Weapon skill damage +10%','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
-	feet="Nyame sollerets",
+	head="Nyame Helm",
+	body="Nyame Mail",
+	hands="Nyame Gauntlets",
+	legs="Nyame Flanchard",
+	feet="Nyame Sollerets",
     neck="Fotia Gorget",
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Ishvara Earring",

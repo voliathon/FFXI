@@ -207,7 +207,7 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		range="Dunna",
-		head="Azimuth Hood +2",
+		head="Null masuqe",
 		body="Shamash Robe",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -257,7 +257,7 @@ function get_sets()
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
 		range="Dunna",
-		head="Azimuth Hood +2",
+		head="Null masuqe",
 		body="Shamash Robe",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -277,7 +277,7 @@ function get_sets()
 	})
 
 	sets.Refresh = set_combine(sets.PDT,  {
-		head="Volte Beret",
+		head="Null masuqe",
 		body="Jhakri Robe +2",
 		hands="Volte Gloves",
 		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},

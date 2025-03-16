@@ -1,5 +1,23 @@
--- Final Fantasy XI Black Mage Lua Script
-
+ -- ▄▄▄      ▒███████▒ █    ██  ██▀███  ▓█████  █    ██   ██████                
+-- ▒████▄    ▒ ▒ ▒ ▄▀░ ██  ▓██▒▓██ ▒ ██▒▓█   ▀  ██  ▓██▒▒██    ▒                
+-- ▒██  ▀█▄  ░ ▒ ▄▀▒░ ▓██  ▒██░▓██ ░▄█ ▒▒███   ▓██  ▒██░░ ▓██▄                  
+-- ░██▄▄▄▄██   ▄▀▒   ░▓▓█  ░██░▒██▀▀█▄  ▒▓█  ▄ ▓▓█  ░██░  ▒   ██▒               
+ -- ▓█   ▓██▒▒███████▒▒▒█████▓ ░██▓ ▒██▒░▒████▒▒▒█████▓ ▒██████▒▒               
+ -- ▒▒   ▓▒█░░▒▒ ▓░▒░▒░▒▓▒ ▒ ▒ ░ ▒▓ ░▒▓░░░ ▒░ ░░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░               
+  -- ▒   ▒▒ ░░░▒ ▒ ░ ▒░░▒░ ░ ░   ░▒ ░ ▒░ ░ ░  ░░░▒░ ░ ░ ░ ░▒  ░ ░               
+  -- ░   ▒   ░ ░ ░ ░ ░ ░░░ ░ ░   ░░   ░    ░    ░░░ ░ ░ ░  ░  ░                 
+      -- ░  ░  ░ ░       ░        ░        ░  ░   ░           ░                 
+          -- ░                                                                  
+ -- ▄▄▄▄    ██▓    ▄▄▄       ▄████▄   ██ ▄█▀ ███▄ ▄███▓ ▄▄▄        ▄████ ▓█████ 
+-- ▓█████▄ ▓██▒   ▒████▄    ▒██▀ ▀█   ██▄█▒ ▓██▒▀█▀ ██▒▒████▄     ██▒ ▀█▒▓█   ▀ 
+-- ▒██▒ ▄██▒██░   ▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ▓██    ▓██░▒██  ▀█▄  ▒██░▄▄▄░▒███   
+-- ▒██░█▀  ▒██░   ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄ ▒██    ▒██ ░██▄▄▄▄██ ░▓█  ██▓▒▓█  ▄ 
+-- ░▓█  ▀█▓░██████▒▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄▒██▒   ░██▒ ▓█   ▓██▒░▒▓███▀▒░▒████▒
+-- ░▒▓███▀▒░ ▒░▓  ░▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒░ ▒░   ░  ░ ▒▒   ▓▒█░ ░▒   ▒ ░░ ▒░ ░
+-- ▒░▒   ░ ░ ░ ▒  ░ ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░░  ░      ░  ▒   ▒▒ ░  ░   ░  ░ ░  ░
+ -- ░    ░   ░ ░    ░   ▒   ░        ░ ░░ ░ ░      ░     ░   ▒   ░ ░   ░    ░   
+ -- ░          ░  ░     ░  ░░ ░      ░  ░          ░         ░  ░      ░    ░  ░
+      -- ░                  ░                                                   
 function get_sets()
 	-- Set macro book/set --
     send_command('input /macro book 1;wait .1;input /macro set 1')
@@ -215,7 +233,7 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		ammo="Staunch Tathlum +1",
-		head={ name="Nyame Helm", augments={'Path: B',}},
+		head="Null masuqe",
 		body="Shamash Robe",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -237,7 +255,7 @@ function get_sets()
     
 	sets.Refresh = set_combine(sets.PDT,  {
 		ammo="Sroda Tathlum",
-		head="Volte Beret",
+		head="Null masuqe",
 		body="Jhakri robe +2",
 		hands="Volte Gloves",
 		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},

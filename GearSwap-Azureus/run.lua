@@ -124,7 +124,7 @@ function get_sets()
   
   sets.TP.EvasionTank = {
     ammo="Yamarang",
-    head="Nyame Helm",
+    head="Null masuqe",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",

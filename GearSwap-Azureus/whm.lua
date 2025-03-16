@@ -1,5 +1,16 @@
--- White Mage GearSwap
--- Abbreviation WHM
+   -- _____                                                             
+  -- /  _  \ __________ _________   ____  __ __  ______                 
+ -- /  /_\  \\___   /  |  \_  __ \_/ __ \|  |  \/  ___/                 
+-- /    |    \/    /|  |  /|  | \/\  ___/|  |  /\___ \                  
+-- \____|__  /_____ \____/ |__|    \___  >____//____  >                 
+        -- \/      \/                  \/           \/                  
+ -- __      __.__    .__  __              _____                         
+-- /  \    /  \  |__ |__|/  |_  ____     /     \ _____     ____   ____  
+-- \   \/\/   /  |  \|  \   __\/ __ \   /  \ /  \\__  \   / ___\_/ __ \ 
+ -- \        /|   Y  \  ||  | \  ___/  /    Y    \/ __ \_/ /_/  >  ___/ 
+  -- \__/\  / |___|  /__||__|  \___  > \____|__  (____  /\___  / \___  >
+       -- \/       \/              \/          \/     \//_____/      \/ 
+
 
 function get_sets()
 	-- Set macro book/set --
@@ -61,7 +72,7 @@ function get_sets()
 		main="Daybreak",
 		sub="Genmei Shield",
 		ammo="Clarus stone",
-		head="Befouled Crown",
+		head="Null masuqe",
 		body="Telchine chasuble ",
 		hands="Dynasty Mitts",
 		legs="Piety Pantaloons +1",
@@ -161,7 +172,7 @@ function get_sets()
 		main="Daybreak",
 		sub="Genmei Shield",	
 		range="Dunna",
-		head="Befouled Crown",
+		head="Null masuqe",
 		body="Ischemia Chasu.",
 		hands="Regal cuffs",
 		legs="Merlinic Shalwar",
@@ -185,7 +196,7 @@ function get_sets()
     -- Heal the damn MP/HP up.
     sets.heal = {
 		range="Dunna",
-		head="Befouled Crown",
+		head="Null masuqe",
 		body="Jhakri robe +2",
 		hands="Bagua Mitaines +1",
 		legs="Assid. Pants +1",
@@ -203,7 +214,7 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
+		head="Null masuqe",
 		body="Shamash Robe",
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
@@ -220,7 +231,7 @@ function get_sets()
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
 		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
+		head="Null masuqe",
 		body="Shamash Robe",
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
@@ -241,7 +252,7 @@ function get_sets()
 	sets.Refresh = set_combine(sets.PDT,  {
 		main="Daybreak",
 		sub="Genmei shield",
-		head="Befouled crown",
+		head="Null masuqe",
 		body="Shamash robe",
 		hands="Bagua mitaines +1",
 		right_ring="Stikini ring +1"
@@ -300,7 +311,7 @@ function get_sets()
 	 
 	sets.engaged.TP = {
 		ammo="Amar Cluster",
-		head="Aya. Zucchetto +2",
+		head="Null masuqe",
 		body="Ayanmo Corazza +2",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",

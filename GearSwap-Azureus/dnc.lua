@@ -46,8 +46,8 @@ function get_sets()
 		head="Maxixi Tiara +3", -- +45 second duration 
 		body="Maculele casaque +3",
 		hands="Macu. Bangles +2",
-		legs="Maculele Tights +2",
-		feet="Macu. Toe Sh. +2"		
+		legs="Maculele Tights +3",
+		feet="Macu. Toe Sh. +3"		
 	}
 	
 	sets.JA.StepAccuracy = {
@@ -93,9 +93,9 @@ function get_sets()
 	
 	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
 	
-	-- equipment Sets Toggle--
+	-- equipment Sets Toggle-- Ctrl+F9  or Alt+F9
     sets.equipment = {}
-    sets.equipment.index = {"TreasureHunter","TP","Accuracy","Tank","Movement","Evasion"}
+    sets.equipment.index = {"Movement","Tank","TP","Accuracy","TreasureHunter"}
 	equipment_ind = 1
 
 	sets.equipment.TP = {
@@ -103,24 +103,24 @@ function get_sets()
 		head="Blistering sallet +1",
 		body="Horos Casaque +3",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs="Maculele tights +2",
-		feet="Macu. Toe Sh. +2",
+		legs="Maculele Tights +3",
+		feet="Macu. Toe Sh. +3",
 		neck="Null loop",
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
 		right_ear="Maculele Earring +1",
-		left_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
 		right_ring="Hetairoi Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}
 	
 	sets.equipment.Accuracy =  {
 		ammo="Yamarang",
-		head="Malignance Chapeau",
+		head="Maculele Tiara +3",
 		body="Maculele casaque +3",
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+		hands="Malignance gloves",
+		legs="Maculele Tights +3",
+		feet="Macu. Toe Sh. +3",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Telos Earring",
@@ -130,48 +130,53 @@ function get_sets()
 		back="Null shawl"
 	}
 
-	 sets.equipment.Tank = {
+	sets.equipment.Tank = {
+		ammo="Yamarang",
+		head="Null Masque",
+		body="Macu. Casaque +3",
+		hands="Macu. Bangles +2",
+		legs="Maculele Tights +3",
+		feet="Macu. Toe Sh. +3",
+		neck={ name="Bathy Choker +1", augments={'Path: A',}},
+		waist="Null Belt",
+		left_ear="Infused Earring",
+		right_ear="Eabani Earring",
+		left_ring="Defending Ring",
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back="Null Shawl"
+	}
+	 
+ 	sets.equipment.Movement = {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Maculele casaque +3",
 		hands="Macu. Bangles +2",
 		legs="Malignance tights",
-		feet="Macu. Toe Sh. +2",
+		feet="Macu. Toe Sh. +3",
 		neck="Null loop",
 		waist="Null belt",
+		left_ear="Infused Earring",
+		right_ear="Eabani Earring",
+		left_ring="Shneddick Ring",
+		right_ring="Fortified Ring",
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+	}	
+	
+    sets.equipment.TreasureHunter = {
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Volte Jupon",
+		hands="Macu. Bangles +2",
+		legs="Volte Hose",
+		feet="Volte Boots",
+		neck="Null loop",
+		waist="Chaac Belt",
 		left_ear="Infused Earring",
 		right_ear="Eabani Earring",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
-	 }	
-	 
- 	sets.equipment.Movement = set_combine(sets.Tank,{
-		left_ring="Shneddick Ring"
-	})
-	
-	sets.equipment.Evasion = {
-		ammo="Yamarang",
-		head="Malignance Chapeau",
-		body="Maculele casaque +3",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Bathy choker +1",
-		waist="Null belt",
-		left_ear="Eabani Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Fortified Ring",
-		back="Null shawl"
 	}	
-	
-    sets.equipment.TreasureHunter = set_combine(sets.Tank,{
-		body="Volte Jupon",
-		legs="Volte Hose",
-		feet="Volte Boots",
-		waist="Chaac Belt"
-	})	
 	
  -- Weapon Skill Sets
 	-- 	80% DEX for Rudra 60% DEX for Mandalic Stab
@@ -202,10 +207,10 @@ function get_sets()
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Odr Earring",
-		right_ear={ name="Macu. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+15','Mag. Acc.+15','"Store TP"+5',}},
+		right_ear="Macu. Earring +1",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
 	}
 	
     sets.Aeolian = {	
@@ -235,15 +240,11 @@ function get_sets()
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Sherida Earring",
-		right_ear={ name="Macu. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+15','Mag. Acc.+15','"Store TP"+5',}},
+		right_ear="Macu. Earring +1",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}	
+		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}	
 	})
-	
----- .:: Preshot Sets ::. ---->
-	--sets.preshot = {}
-	--sets.preshot.RA = {}	
 	
  -- Precast Sets  --
 	sets.precast = {}
@@ -263,9 +264,9 @@ function get_sets()
 		back="Null shawl"	
 	}		
 	
- -- Weapon Toggle--
+ -- Weapon Toggle--  Ctrl+F8 or Alt+F8
   sets.weapon = {}
-  sets.weapon.index = {'TerpsichoreTwashtar','TerpsichoreCentovente','AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TwashtarGleti', 'TauretCentovente', 'TauretCrepuscularKnife'}
+  sets.weapon.index = {'TerpsichoreTwashtar','TerpsichoreCentovente','TerpsichoreGleti','AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TwashtarGleti', 'TauretCentovente', 'TauretCrepuscularKnife'}
   weapon_ind = 1     
   
  sets.weapon.TerpsichoreTwashtar = {
@@ -275,7 +276,11 @@ function get_sets()
  sets.weapon.TerpsichoreCentovente = {
 	main="Terpsichore",
 	sub="Centovente"
- } 
+ }
+ sets.weapon.TerpsichoreGleti = {
+	main="Terpsichore",
+	sub="Gleti's knife"
+ }  
  sets.weapon.AeneasCentovente = {
 	main="Aeneas",
 	sub="Centovente"
@@ -331,7 +336,7 @@ function precast(spell,action)
 	if spell.name == "Reverse Flourish" then
 		equip(sets.JA.ReverseFlourish)
 	end	
-	if spell.name == "Climactic Flourish" then -- Climactic Flourish forces one more critical hit Forced hits receive damage +28%. 
+	if spell.name == "Climactic Flourish" then  
 		equip(sets.JA.ClimacticFlourish)
 	end
 	if spell.name == "Striking Flourish" then -- +65% Critical Hit Rate for the main hit and Double Attack of the stacked attack round or Weapon Skill
@@ -379,17 +384,18 @@ end
 
 function aftercast(spell)
 	equip_current()
+	if (spell.english == 'Climactic Flourish') then
+		equip({head="Maculele Tiara +3"})
+    end
 end
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the equipment check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
-	equip(sets.equipment[sets.equipment.index[equipment_ind]]) 
-
+	equip(sets.equipment[sets.equipment.index[equipment_ind]])
+	if (buffactive['Climactic Flourish']) then
+		equip({head="Maculele Tiara +3"})
+	end
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket

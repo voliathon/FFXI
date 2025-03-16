@@ -1,4 +1,20 @@
--- The Official Azureus Scholar Lua Script of Awesome
+              -- ,                                                    
+            -- /'/                                                    
+          -- /' /                                                     
+       -- ,/'  /   ____             ____     ____              ____   
+      -- /`--,/   '  _/'/'    /   )'    )--/'    )  /'    /  /'    )--
+    -- /'    /    _/' /'    /'  /'       /(___,/' /'    /'  '---,     
+-- (,/'     (_,_/'__,(___,/(__/'        (________(___,/(__(___,/      
+           -- _                                                       
+         -- /' `\              /'                /'                   
+       -- /'   ._)           /'                /'                     
+      -- (____    ____     /'__     ____     /' ____      ____        
+           -- ) /'    )--/'    )  /'    )--/' /'    )   )'    )--     
+         -- /'/'       /'    /' /'    /' /' /'    /'  /'              
+-- (_____,/' (___,/  /'    /(__(___,/'  (__(___,/(__/'                
+                                                                   
+                                                                   
+                                                                   
 -- Created by Voliathon
 -- Level 1
 
@@ -291,7 +307,7 @@ function get_sets()
 		main="Malignance Pole",
 		sub="Khonsu",
 		ammo="Crepuscular Pebble",
-		head="Arbatel Bonnet +3",
+		head="Null masuqe",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
@@ -310,7 +326,7 @@ function get_sets()
 		main="Bolelabunga",
 		sub="Genmei Shield",
 		ammo="Staunch Tathlum +1",
-		head="Arbatel Bonnet +3",
+		head="Null masuqe",
 		body="Arbatel Gown +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Arbatel pants +3",

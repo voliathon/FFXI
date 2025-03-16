@@ -55,7 +55,7 @@ function get_sets()
   --Tank Gear
   sets.TP.TankMovement = {
     ammo="Staunch Tathlum +1",
-    head={ name="Gleti's Mask", augments={'Path: A',}},
+    head="Null masuqe",
     body={ name="Gleti's Cuirass", augments={'Path: A',}},
     hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
     legs={ name="Gleti's Breeches", augments={'Path: A',}},
@@ -72,7 +72,7 @@ function get_sets()
   --MDT melee set
   sets.TP.TakingLessMagicDamage = {
     ammo="Staunch Tathlum +1",
-    head="Nyame helm",
+    head="Null masuqe",
 	body={ name="Nyame Mail", augments={'Path: B',}},
     hands="Nyame gauntlets",
     legs="Nyame flanchard",
@@ -88,7 +88,7 @@ function get_sets()
   
   sets.TP.Accuracy = {
     ammo="Coiste bodhar",
-    head="Flam. Zucchetto +2",
+    head="Null masuqe",
     body="Gleti's Cuirass",
     hands="Gleti's gauntlets",
     legs="Gleti's breeches",
@@ -190,7 +190,7 @@ function get_sets()
 
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
-    head="Erilaz Galea +1",
+    head="Null masuqe",
     body="Dread Jupon",
     hands="Regal Gauntlets",
     legs="Futhark Trousers +1",
