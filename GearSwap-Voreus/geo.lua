@@ -191,7 +191,6 @@ function get_sets()
 
 	-- PDT Set
     sets.PDT = {
-		range="Dunna",
 		head="Azimuth Hood +3",
 		body="Nyame mail",
 		hands="Azimuth gloves +3",
@@ -202,7 +201,7 @@ function get_sets()
 		left_ear="Ammurapi Earring",
 		right_ear="Infused Earring",
 		left_ring="Fortified Ring",
-		right_ring="Defending Ring",
+		right_ring="Stikini Ring +1",
 		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	}
 
@@ -224,43 +223,35 @@ function get_sets()
 
     -- .Pet sets are for when Luopan is present.
     sets.PetDT = {
-		range="Dunna",
 		head="Azimuth Hood +3",
-		body="Nyame mail",
+		body={ name="Telchine Chas.", augments={'Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -3%',}},
 		hands="Geo. Mitaines +3",
-		legs="Nyame flanchard",
-		feet="Bagua Sandals +3",
-		neck="Null loop",
+		legs={ name="Telchine Braconi", augments={'Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+		feet={ name="Bagua Sandals +3", augments={'Enhances "Radial Arcana" effect',}},
+		neck="Null Loop",
 		waist="Isa Belt",
-		left_ear="Ammurapi Earring",
+		left_ear="Digni. Earring",
 		right_ear="Infused Earring",
-		left_ring="Yacuruna Ring",
-		right_ring="Defending Ring",
-		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5'}}
+		left_ring="Shneddick Ring",
+		right_ring="Stikini Ring +1",
+		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	}
 
-	-- Magic Defense and Magic Defense Set
-    sets.MDT = {
-		range="Dunna",
-		head="Azimuth Hood +3",		
-		body="Nyame mail",
+	-- When I gotta kite shite, I put on my Sandals and shit...
+    sets.Kiting = {
+		head="Azimuth Hood +3",
+		body="Shamash robe",
 		hands="Azimuth gloves +3",
 		legs="Nyame flanchard",
 		feet="Azimuth gaiters +3",
 		neck="Null loop",
-		waist="Slipor Sash",
+		waist="Isa Belt",
 		left_ear="Ammurapi Earring",
 		right_ear="Infused Earring",
-		left_ring="Yacuruna Ring",
-		right_ring="Defending Ring",
-		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
+		left_ring="Shneddick Ring",
+		right_ring="Stikini Ring +1",
+		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%'}}
 	}
-
-		
-	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = set_combine(sets.PDT,  {
-		left_ring="Shneddick Ring"
-	})
     
 	sets.Refresh = set_combine(sets.PDT,  {
 		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
@@ -318,20 +309,19 @@ function get_sets()
 	  
     -- Engaged Sets Toggle--
 	sets.engaged = {}
-	sets.engaged.index = {'TP','Movement','PETDT', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	sets.engaged.index = {'TP','Movement','PETDT', 'TakingLessPhysicalDamage', 'Accuracy', 'Refresh'}
 	engaged_ind = 1  	 
 	 
     sets.engaged.TP = set_combine(sets.TP, {})
-	sets.engaged.Movement = set_combine(sets.PDT, {left_ring="Shneddick Ring"})
+	sets.engaged.Movement = set_combine(sets.Kiting, {})
 	sets.engaged.PETDT = set_combine(sets.PetDT, {})
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
-	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
 	sets.engaged.Accuracy = {
 		head="Azimuth Hood +3",
-		body="Jhakri Robe +2",
-		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Nyame Sollerets",
+		body="Nyame mail",
+		hands="Azimuth gloves +3",
+		legs="Azimuth tights +3",
+		feet="Azimuth gaiters +3",
 		neck="Null loop",
 		waist="Null Belt",
 		left_ear="Digni. Earring",
