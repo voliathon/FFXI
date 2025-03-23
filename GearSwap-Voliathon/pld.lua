@@ -66,7 +66,7 @@ function get_sets()
   sets.TP.Movement = {
     ammo="Staunch Tathlum +1",
     head="Chevalier's armet +3",
-    body="Sakpata's Plate",
+	body="Chevalier's Cuirass +3",
     hands="Sakpata's Gauntlets",
     legs="Chevalier's cuisses +3",
     feet="Sakpata's Leggings",
@@ -99,7 +99,7 @@ function get_sets()
   sets.TP.Turtle = {
     ammo="Staunch Tathlum +1",
     head="Chevalier's armet +3",
-    body="Sakpata's Plate",
+	body="Chevalier's Cuirass +3",
     hands="Sakpata's Gauntlets",
     legs="Chevalier's cuisses +3",
     feet="Sakpata's Leggings",
@@ -132,7 +132,9 @@ function get_sets()
   sets.TP.Accuracy = {
     ammo="Amar Cluster",
 	head="Chevalier's armet +3",
+	body="Chevalier's Cuirass +3",
 	legs="Chevalier's cuisses +3",
+	feet="Chevalier's Sabatons +2",
     neck="Null loop",
     left_ear="Dignitary's Earring",
 	right_ear="Chev. earring +1",
@@ -170,7 +172,7 @@ function get_sets()
     body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    feet="Eschite greaves",
     neck="Moonlight necklace",
     waist="Null belt",
     left_ear="Cryptic Earring",
@@ -233,11 +235,13 @@ function get_sets()
   --FastCast set
   sets.FastCast = {
     ammo="Staunch Tathlum +1",
+	head="Chevalier's armet +3",
     hands="Regal Gauntlets",
-    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-    neck="Loricate Torque +1",
+	legs="Carmine cuisses +1",
+    feet="Chevalier's Sabatons +2",
+    neck="Voltsurge Torque",
     waist="Siegel Sash",
-    left_ear="Mimir Earring",
+    left_ear="Etiolation Earring",
     right_ear="Loquac. Earring",
     left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
     right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
@@ -262,12 +266,10 @@ function get_sets()
     back={ name="Weard Mantle", augments={'VIT+2','DEX+2','Phalanx +4'}}
  }
 
-
---TODO - Moonlight Necklace
- -- SIR
+ -- Spell Interruption Rate
  sets.SIR = {
     ammo="Staunch Tathlum +1", --11
-    body="Chevalier's cuirass +2", --15
+    body="Chevalier's cuirass +3", --20
     hands="Regal Gauntlets", --10
     legs="Sakpata's cuisses", 
     feet="Odyssean greaves", --20
@@ -283,7 +285,7 @@ function get_sets()
   sets.Enmity = {
     ammo="Staunch tathlum +1",
     head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+    body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}, --20
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     feet="Eschite greaves",
@@ -339,7 +341,7 @@ function precast(spell,abil)
 	end
   end
   if spell.action_type == 'Magic' then
-    equip(sets.SIR)
+    equip(sets.FastCast)
   end
   
 end
