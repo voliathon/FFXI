@@ -1,22 +1,18 @@
 function get_sets()
--- Set macro book/set --
-	send_command('input /macro book 17;wait .1;input /macro set 2')
+  -- Set macro book/set --
+  send_command('input /macro book 17;wait .1;input /macro set 2')
 
-	-- Binds for modes
-	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-	send_command('bind ^f8 gs c C8') 
-	send_command('bind !f9 gs c toggle TP set')
-	send_command('bind ^f9 gs c reverse TP set')
+  -- Binds for modes
+  --Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+  send_command('bind ^f8 gs c C8') 
+  send_command('bind !f9 gs c toggle TP set')
+  send_command('bind ^f9 gs c reverse TP set')
 
-	-- Modes --
-	Lionheart = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F8
-	ShadowType = 'None'
+  -- Modes --
+  Lionheart = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F8
 	
   --Job Ability Sets--
   sets.JA = {}
-  sets.JA.Waltz = {legs="Dashing subligar"}
-  sets.JA.Step = 	{}
-  sets.JA.Stun = {}
   sets.JA.Lunge = {}
   sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +3"}
   sets.JA.Gambit = {hands="Runeist mitons +2"}
@@ -25,12 +21,121 @@ function get_sets()
   sets.JA.Pflug = {feet="Runeist bottes +2"}
   sets.JA.Pulse = {head="Erilaz galea +3",legs="Runeist Trousers +2"}
   sets.JA.Swordplay = {hands="Futhark mitons +1"}	
-	
+
+  sets.Enhancing = {
+    ammo="Staunch Tathlum +1",
+    head="Erilaz galea +3",
+    body="Erilaz surcoat +3",
+    hands="Regal Gauntlets",
+    legs="Futhark Trousers +3",
+    feet="Carmine greaves +1",
+    neck="Voltsurge Torque",
+    waist="Siegel Sash",
+    left_ear="Magnetic Earring",
+    right_ear="Halasz Earring",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+	back="Solemnity cape"
+  }
+
+  sets.Regen = {
+    ammo="Staunch Tathlum +1",
+    head="Rune. Bandeau +3",
+    body="Erilaz surcoat +3",
+    hands="Regal Gauntlets",
+    legs="Futhark Trousers +3",
+    feet="Carmine greaves +1",
+    neck="Voltsurge Torque",
+    waist="Sroda Belt",
+    left_ear="Magnetic Earring",
+    right_ear="Erilaz Earring +1",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+	back="Solemnity cape"
+  }
+
+  --Fast Cast set
+  sets.FastCast = {
+    ammo="Staunch Tathlum +1",
+    head="Rune. Bandeau +3",
+    body="Erilaz surcoat +3",
+    hands="Regal Gauntlets",
+    legs="Futhark Trousers +3",
+    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
+    neck="Null loop",
+    waist="Siegel Sash",
+    left_ear="Mimir Earring",
+    right_ear="Loquac. Earring",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+  }
+
+  sets.Phalanx = {
+    ammo="Staunch Tathlum +1",
+    head="Futhark Bandeau +3",
+    body={ name="Herculean Vest", augments={'"Dbl.Atk."+2','STR+4','Phalanx +5','Accuracy+15 Attack+15','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+    hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
+    legs={ name="Taeon Tights", augments={'Evasion+21','Spell interruption rate down -10%','Phalanx +3'}},
+    feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
+    neck="Moonlight necklace",
+    waist="Siegel Sash",
+    left_ear="Magnetic Earring",
+    right_ear="Mimir Earring",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+ }
+
+ --108 SIR-
+ sets.SIR = {
+    ammo="Staunch Tathlum +1", --11
+	head="Erilaz galea +3", --20
+    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
+    hands="Regal Gauntlets", --10
+    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
+    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
+    neck="Moonlight necklace", --15
+    waist="Audumbla sash", --10
+    left_ear="Halasz Earring", --5
+    right_ear="Magnetic Earring" --8
+ }
+ 
+  --Enmity set for high hate generating spells and JAs
+  sets.Enmity = {
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}, 
+	waist="Sinew Belt", --3
+	legs="Erilaz leg guards +3", --13 
+	neck="Moonlight necklace",  --15
+	body="Emet Harness +1",  --10   
+	feet="Erilaz Greaves +3", --8
+	right_ear="Cryptic earring" --4
+  }
+
+  sets.Stoneskin = {
+    ammo="Staunch Tathlum +1",
+    head="Rune. Bandeau +3",
+    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
+    hands="Regal Gauntlets",
+    legs={ name="Futhark Trousers +3", augments={'Enhances "Inspire" effect',}},
+    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
+    neck="Null loop",
+    waist="Siegel Sash",
+    left_ear="Magnetic Earring",
+    right_ear="Earthcry Earring",
+    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
+  }
+  
+  -- This will eventually be Magic Fruit whenever I get that level
+  sets.Cure = {
+  
+  }	
 	
   --TP Sets--
   sets.TP = {}
---					  1		      2         3 		   4 		        5   
-  sets.TP.index = {'BadAss', 'Hybrid', 'Accuracy', 'TreasureHunter', 'MovementEvasionTank'}
+--					  1		      2         3 		       4 		     5   	   6
+  sets.TP.index = {'BadAss', 'Hybrid', 'Accuracy', 'TreasureHunter', 'Movement', 'Tank'}
   TP_ind = 1
 
   
@@ -100,7 +205,7 @@ function get_sets()
 	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
   
-  sets.TP.MovementEvasionTank = {
+  sets.TP.Movement = {
     ammo="Staunch Tathlum +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body="Erilaz Surcoat +3",
@@ -116,7 +221,21 @@ function get_sets()
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
 
-
+  sets.TP.Tank = {
+    ammo="Staunch Tathlum +1",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body="Erilaz Surcoat +3",
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs="Erilaz leg guards +3",
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Null loop",
+    waist="Null belt",
+    left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    right_ear="Erilaz Earring +1",
+    left_ring="Fortified Ring",
+    right_ring="Defending Ring",
+    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
+  }
 
   --Weaponskill Sets--
 
@@ -137,8 +256,8 @@ function get_sets()
     back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
   }
 
-  --single, doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
-  sets.Single = {
+  --doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
+  sets.Dimidiation = {
     ammo="Knobkierrie",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body={ name="Nyame Mail", augments={'Path: B',}},
@@ -188,128 +307,11 @@ function get_sets()
     back="Toro Cape"
   }
   
-  sets.Enhancing = {
-    ammo="Staunch Tathlum +1",
-    head="Erilaz galea +3",
-    body="Erilaz surcoat +3",
-    hands="Regal Gauntlets",
-    legs="Futhark Trousers +3",
-    feet="Carmine greaves +1",
-    neck="Voltsurge Torque",
-    waist="Siegel Sash",
-    left_ear="Magnetic Earring",
-    right_ear="Halasz Earring",
-    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-	back="Solemnity cape"
-  }
-
-  sets.Regen = {
-    ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +3",
-    body="Erilaz surcoat +3",
-    hands="Regal Gauntlets",
-    legs="Futhark Trousers +3",
-    feet="Carmine greaves +1",
-    neck="Voltsurge Torque",
-    waist="Sroda Belt",
-    left_ear="Magnetic Earring",
-    right_ear="Erilaz Earring +1",
-    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-	back="Solemnity cape"
-  }
-
-
-  --Fast Cast set
-  sets.FastCast = {
-    ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +3",
-    body="Erilaz surcoat +3",
-    hands="Regal Gauntlets",
-    legs="Futhark Trousers +3",
-    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-    neck="Null loop",
-    waist="Siegel Sash",
-    left_ear="Mimir Earring",
-    right_ear="Loquac. Earring",
-    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-  }
-
-  --Phalanx--  24
-  sets.Phalanx = {
-    ammo="Staunch Tathlum +1",
-    head="Futhark Bandeau +3",
-    body={ name="Herculean Vest", augments={'"Dbl.Atk."+2','STR+4','Phalanx +5','Accuracy+15 Attack+15','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
-    hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
-    legs={ name="Taeon Tights", augments={'Evasion+21','Spell interruption rate down -10%','Phalanx +3'}},
-    feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-    neck="Moonlight necklace",
-    waist="Siegel Sash",
-    left_ear="Magnetic Earring",
-    right_ear="Mimir Earring",
-    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
- }
-
- --108 SIR-
- sets.SIR = {
-    ammo="Staunch Tathlum +1", --11
-	head="Erilaz galea +3", --20
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
-    hands="Regal Gauntlets", --10
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck="Moonlight necklace", --15
-    waist="Audumbla sash", --10
-    left_ear="Halasz Earring", --5
-    right_ear="Magnetic Earring" --8
- }
- 
-  --Enmity set for high hate generating spells and JAs
-  sets.Enmity = {
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}, 
-	waist="Sinew Belt", --3
-	legs="Erilaz leg guards +3", --13 
-	neck="Moonlight necklace",  --15
-	body="Emet Harness +1",  --10   
-	feet="Erilaz Greaves +3", --8
-	right_ear="Cryptic earring" --4
-  }
-
-  sets.Stoneskin = {
-    ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +3",
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +3", augments={'Enhances "Inspire" effect',}},
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck="Null loop",
-    waist="Siegel Sash",
-    left_ear="Magnetic Earring",
-    right_ear="Earthcry Earring",
-    left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
-  }
-  
-  -- This will eventually be Magic Fruit whenever I get that level
-  sets.Cure = {
-  
-  }
-
 end
 
 
 function precast(spell,abil)
 
-	-- Dancer Abilities --
-  if string.find(spell.english, 'Waltz') then
-	equip(sets.JA.Waltz)
-  end	
-  
   --equips favorite weapon if disarmed
   if player.equipment.main == "empty" or player.equipment.sub == "empty" then
     equip({main="Epeolatry",sub="Utu Grip"})
@@ -373,7 +375,7 @@ function precast(spell,abil)
     equip(sets.Resolution)
   end
   if spell.name == 'Dimidiation' or spell.name == 'Spinning Slash'  then
-    equip(sets.Single)
+    equip(sets.Dimidiation)
   end
   if spell.name == 'Shockwave' then
     equip(sets.Shockwave)
@@ -389,7 +391,7 @@ function precast(spell,abil)
   
   if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
     if TP_ind == 4 then
-      equip(sets.TP.EvasionTank) 
+      equip(sets.TP.Tank) 
     end
   end
 end
