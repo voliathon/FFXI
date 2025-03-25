@@ -45,7 +45,7 @@ function get_sets()
 	sets.JA.Samba = {
 		head="Maxixi Tiara +3", -- +45 second duration 
 		body="Maculele casaque +3",
-		hands="Macu. Bangles +2",
+		hands="Macu. Bangles +3",
 		legs="Maculele Tights +3",
 		feet="Macu. Toe Sh. +3"		
 	}
@@ -70,7 +70,7 @@ function get_sets()
 	--The amount of TP restored is calculated using this formula
 	--This effect depends on the # of Finishing Moves available when using it.  The Max # is 3 <(^.^<))
     sets.JA.ReverseFlourish = {
-		hands="Macu. Bangles +2", --SquareMod +13 whatever that means.
+		hands="Macu. Bangles +3", --Increases the square mod in the equation of TP return for Reverse Flourish by 14. 
 		back="Toetapper Mantle"
 	}
 	sets.JA.ClimacticFlourish = {head="Maculele Tiara +3"}
@@ -85,7 +85,7 @@ function get_sets()
 		ammo="Yamarang"
 	}
 	
-	sets.JA.Trance = {head="Horos Tiara +1"}
+	sets.JA.Trance = {head="Horos Tiara +3"}
 	sets.JA.FanDance = {hands="Horos Bangles +1"}
 	sets.JA.NoFootRise = {body="Horos Casaque +3"}
 	sets.JA.SaberDance = {legs="Horos Tights +3"}
@@ -134,7 +134,7 @@ function get_sets()
 		ammo="Yamarang",
 		head="Null Masque",
 		body="Macu. Casaque +3",
-		hands="Macu. Bangles +2",
+		hands="Macu. Bangles +3",
 		legs="Maculele Tights +3",
 		feet="Macu. Toe Sh. +3",
 		neck={ name="Bathy Choker +1", augments={'Path: A',}},
@@ -150,7 +150,7 @@ function get_sets()
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Maculele casaque +3",
-		hands="Macu. Bangles +2",
+		hands="Macu. Bangles +3",
 		legs="Malignance tights",
 		feet="Macu. Toe Sh. +3",
 		neck="Null loop",
@@ -166,7 +166,7 @@ function get_sets()
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Volte Jupon",
-		hands="Macu. Bangles +2",
+		hands="Macu. Bangles +3",
 		legs="Volte Hose",
 		feet="Volte Boots",
 		neck="Null loop",

@@ -39,6 +39,8 @@ function get_sets()
 	-- Refer to sets.midshot.RA.DoubleShot
 	sets.VelocityShot = {body="Amini Caban +2", back=BelenusCape.ranged_ws}
 	sets.BountyShot = {hands="Amini Glovelettes +2"}
+	sets.FlashShot = {hands="Arcadian bracers +3"}
+	sets.StealthShot = {feet="Arcadian socks +3"}
 	sets.DecoyShot = {}
 	sets.Overkill = {}
 	sets.HoverShot = {}
@@ -55,13 +57,13 @@ function get_sets()
 		body="Oshosi vest +1", --snapshot 14
 		hands="Carmine finger gauntlets +1", --rapid shot 11 snapshot 8
 		legs="Adhemar kecks +1", --rapid shot 13 snapshot 10
-		feet="Meg. Jam. +2", --snapshot 10
+		feet="Arcadian Socks +3", --Rapidshot 10
 		neck="Scout's gorget +2", --snapshot 4
 		waist="Yemaya Belt",
 		left_ear="Telos Earring",
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",
-		right_ring="Hetairoi Ring",
+		right_ring="Chirich Ring +1",
 		back={ name="Belenus's Cape", augments={'"Snapshot"+10'}}
     }
 	
@@ -81,7 +83,7 @@ function get_sets()
 		-- This needs to be the best TP set imaginable. TA, DW, Quadruple shit, Double attack. Really push this shit!
     sets.engaged.TP = set_combine(sets.engaged.TakingLessPhysicalDamage, {
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
-		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6'}},
+		body="Malignance Tabard",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
 		legs="Malignance Tights",
 		feet="Malignance Boots",
@@ -172,13 +174,13 @@ function get_sets()
 		left_ear="Telos Earring",
 		right_ear="Crep. Earring",
 		left_ring="Dingir Ring",
-		right_ring="Hetairoi Ring",
+		right_ring="Chirich Ring +1",
 		back="Null Shawl"
 	})
 
     sets.midshot.RA.DoubleShot = set_combine(sets.midshot.RA,{
 		head="Oshosi Mask +1",
-		body="Oshosi Vest +1",
+		body="Arcadian jerkin +3",
 		hands="Oshosi Gloves +1",
 		legs="Osh. Trousers +1",
 		feet="Osh. Leggings +1"
