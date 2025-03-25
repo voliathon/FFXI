@@ -125,11 +125,11 @@ function get_sets()
 		sub="Enki Strap",
 		ammo="Ghastly tathlum +1",
 		head="Ea Hat +1",
-		body="Ea Houppe. +1",
+		body="Azimuth coat +3",
 		hands="Bagua mitaines +3",
 		legs="Azimuth Tights +3",
 		feet="Azimuth gaiters +3",
-		neck="Mizu. Kubikazari",
+		neck="Sibyl Scarf",
 		waist="Acuity belt +1",
 		left_ear="Barkaro. Earring",
 		right_ear="Regal Earring",
@@ -165,7 +165,7 @@ function get_sets()
     sets.Enfeebling = {
 		ammo="Pemphredo Tathlum",
 		head="Azimuth Hood +3",
-		body="Azimuth coat +2",
+		body="Azimuth coat +3",
 		hands="Regal Cuffs",
 		legs="Azimuth Tights +3",
 		feet="Azimuth gaiters +3",
@@ -256,7 +256,7 @@ function get_sets()
 	sets.Refresh = set_combine(sets.PDT,  {
 		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
 		head="Befouled Crown",
-		body="Jhakri Robe +2",
+		body="Azimuth coat +3",
 		hands="Bagua mitaines +3",
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
@@ -318,7 +318,7 @@ function get_sets()
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
 	sets.engaged.Accuracy = {
 		head="Azimuth Hood +3",
-		body="Nyame mail",
+		body="Azimuth coat +3",
 		hands="Azimuth gloves +3",
 		legs="Azimuth tights +3",
 		feet="Azimuth gaiters +3",
