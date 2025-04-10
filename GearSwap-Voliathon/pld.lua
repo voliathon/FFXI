@@ -240,7 +240,7 @@ function get_sets()
 	legs="Carmine cuisses +1",
     feet="Chevalier's Sabatons +2",
     neck="Voltsurge Torque",
-    waist="Siegel Sash",
+    waist="Audumbla sash",
     left_ear="Etiolation Earring",
     right_ear="Loquac. Earring",
     left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},

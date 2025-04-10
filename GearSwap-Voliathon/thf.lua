@@ -33,7 +33,7 @@ function get_sets()
 	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
-	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
+	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
 	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +2"}
@@ -50,7 +50,7 @@ function get_sets()
 		body="Volte Jupon",
 		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect',}},
 		legs="Malignance Tights",
-		feet="Skulk. Poulaines +2",
+		feet="Skulk. Poulaines +3",
 		neck="Anu Torque",
 		waist="Chaac Belt",
 		left_ear="Suppanomimi",
@@ -62,7 +62,7 @@ function get_sets()
 	
 	sets.engaged.TP = {
 		ammo="Coiste Bodhar",
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		head="Skulker's bonnet +3",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Malignance Tights",
@@ -78,11 +78,11 @@ function get_sets()
 	
 	sets.engaged.Accuracy =  {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head="Malignance Chapeau",
+		head="Skulker's bonnet +3",
 		body="Malignance Tabard",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Skulk. Poulaines +3",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Digni. Earring",
@@ -98,7 +98,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Skulk. Poulaines +3",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Infused Earring",
