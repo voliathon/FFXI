@@ -43,19 +43,10 @@ function get_sets()
 	-- Maximizing Corsair Rolls
 	sets.CorsairRoll = {
 		main={name="Rostam",bag="Wardrobe 6"},
-        -- phantom roll effects +50 (chance to proc job-present-boost)
         head = "Lanun Tricorne +3",
-        -- phantom roll +7
-        --neck="Regal Necklace",
-        -- increased area of effect
         left_ring="Luzaf's Ring",
-		--phantom roll +5
-		--right_ring="Barataria Ring",
-        -- duration +55
         hands="Chasseur's Gants +3",
-        -- duration +30
         back=CamulusCape.melee_double_attack,
-		-- duration +20
 		range='Compensator'
     }
 	
