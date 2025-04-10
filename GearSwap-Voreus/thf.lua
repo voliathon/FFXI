@@ -33,7 +33,7 @@ function get_sets()
 		body="Volte Jupon",
 		hands="Gleti's Gauntlets",
 		legs="Gleti's Breeches",
-		feet="Gleti's Boots",
+		feet="Skulk. Poulaines +2",
 		neck="Anu Torque",
 		waist="Chaac Belt",
 		left_ear="Sherida Earring",
@@ -81,7 +81,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Gleti's Gauntlets",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Skulk. Poulaines +2",
 		neck="Null loop",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Digni. Earring",
@@ -114,7 +114,7 @@ function get_sets()
     sets.WSD = {	
 		ammo="Oshasha's Treatise",
 		head={ name="Nyame Helm", augments={'Path: B',}},
-		body={ name="Nyame Mail", augments={'Path: B',}},
+		body="Skulker's vest +2",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
@@ -184,9 +184,17 @@ function get_sets()
 	
  -- Weapon Toggle--
   sets.weapon = {}
-  sets.weapon.index = {'NaeglingGleti', 'TauretGleti', 'AeneasGleti'}
+  sets.weapon.index = {'GandringGleti', 'GandringTauret', 'NaeglingGleti', 'TauretGleti', 'AeneasGleti'}
   weapon_ind = 1     
-  
+ 
+ sets.weapon.GandringGleti = {
+	main="Gandring",
+	sub="Gleti's knife"
+ } 
+ sets.weapon.GandringTauret = {
+	main="Gandring",
+	sub="Tauret"
+ }    
  sets.weapon.NaeglingGleti = {
 	main="Naegling",
 	sub="Gleti's knife"
