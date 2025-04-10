@@ -29,7 +29,7 @@ function get_sets()
 		body="Volte Jupon",
 		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect',}},
 		legs="Volte Hose",
-		feet="Skulk. Poulaines +2",
+		feet="Skulk. Poulaines +3",
 		neck="Anu Torque",
 		waist="Chaac Belt",
 		left_ear="Sherida Earring",
@@ -42,7 +42,7 @@ function get_sets()
 	sets.TP.TP = {
 		ammo="Ginsen",
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
-		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6',}},
+		body="Malignance Tabard",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Samnuha tights",
 		feet="Malignance Boots",
@@ -61,7 +61,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Skulk. Poulaines +3",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Odr Earring",
@@ -77,7 +77,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Skulk. Armlets +2",
 		legs="Skulk. Culottes +2",
-		feet="Skulk. Poulaines +2",
+		feet="Skulk. Poulaines +3",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Infused Earring",
@@ -93,7 +93,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Skulk. Poulaines +3",
 		neck="Bathy choker +1",
 		waist="Null belt",
 		left_ear="Eabani Earring",
@@ -115,7 +115,7 @@ function get_sets()
 	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
-	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
+	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
 	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +2"}

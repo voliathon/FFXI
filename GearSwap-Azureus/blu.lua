@@ -33,7 +33,7 @@ function get_sets()
 	sets.JA = {}
     sets.JA.BurstAffinity = {legs="Assimilator's shalwar +2",feet="Hashishin basmak +3"} 
     sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +2", head="Hashishin kavuk +3"}
-    sets.JA.Diffusion = {}
+    sets.JA.Diffusion = {feet="Luhlaza Charuqs +1"}
     sets.JA.Enchainment = {body="Luhlaza Jubbah +1"}
     sets.JA.Efflux = {back=Rosmerta.WSD, legs="Hashishin Tayt +3"}
 	sets.JA.AzureLore = {}
@@ -56,10 +56,26 @@ function get_sets()
 		back="Perimede Cape"
     }
 	
-	-- Enhancing
-    sets.Enhancing =  {
- --TODO - Might need this but might not.  I'm abit unsure...
-    }
+	-- Duration
+    -- sets.Duration =  {
+		-- ammo="Pemphredo Tathlum",
+		-- head={ name="Telchine Cap", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		-- body={ name="Telchine Chas.", augments={'"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		-- hands={ name="Telchine Gloves", augments={'Accuracy+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		-- legs={ name="Telchine Braconi", augments={'Accuracy+15 Attack+15','"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		-- feet={ name="Telchine Pigaches", augments={'Accuracy+5 Attack+5','"Conserve MP"+5','Enh. Mag. eff. dur. +10',}},
+		-- neck={ name="Mirage Stole +2", augments={'Path: A',}},
+		-- waist="Emphatikos Rope",
+		-- left_ear="Magnetic Earring",
+		-- right_ear={ name="Hashi. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','"Dbl.Atk."+4',}},
+		-- left_ring="Stikini Ring +1",
+		-- right_ring="Stikini Ring +1",
+		-- back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10',}}
+    -- }
+	
+	sets.MightyGuard = {
+		feet="Luhlaza Charuqs +1"
+	}
 
 	-- Magic Accuracy
     sets.MagicAccuracy = {
@@ -86,11 +102,11 @@ function get_sets()
 	
     sets.engaged.TP = {
 		ammo="Coiste Bodhar",
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		head="Malignance Chapeau",
 		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs={ name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9',}},
-		feet={ name="Herculean Boots", augments={'Rng.Atk.+24','Attack+30','"Store TP"+10','Accuracy+20 Attack+20',}},
+		legs="Malignance tights",
+		feet="Malignance boots",
 		neck="Mirage Stole +2",
 		waist="Windbuffet Belt +1",
 		left_ear="Suppanomimi",
@@ -408,7 +424,7 @@ function precast(spell,abil)
 	
 	--JA Lookups
 	if spell.name == "Diffusion" then
-		equip(sets.Diffusion)
+		equip(sets.JA.Diffusion)
 	end
 	
 	if spell.name == "Chain Affinity" then
@@ -494,6 +510,10 @@ function BlueMageSpellLogic(spell)
 
 	if spell.name == 'Cruel Joke' then
 		equip(sets.CruelJoke)
+	end
+
+	if spell.name == 'Mighty Guard' then
+		equip(sets.MightyGuard)
 	end
 
     -- Physical spells with no particular (or known) stat mods //sets.BlueMagicPhysical
