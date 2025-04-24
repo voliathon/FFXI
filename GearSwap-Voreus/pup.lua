@@ -10,14 +10,21 @@ packets = require('packets')
 
 function get_sets()
 
--- Set macro book/set --
+	-- !f8 is the keybinding for toggling your weapons.
+	-- ^f8 is for reversing the weapon toggle.
+	-- ^f9 switches between different engaged gear sets.
     send_command('input /macro book 2;wait .1;input /macro set 1')
-	
--- Binds for modes
 	send_command('bind !f8 gs c C8') 
 	send_command('bind ^f8 gs c Reverse Toggle Weapon')
 	send_command('bind ^f9 gs c C9') 
 	
+	-- Precast Gear Sets
+    -- The sets defined under sets.precast are for various abilities, and the script swaps gear depending on the spell or ability being used, like:
+
+    -- Maneuver: Boosts automaton performance.
+    -- Activate: Restores the automaton's MP with the right gear.
+    -- Overdrive: Boosts the Overdrive effect for the automaton.
+
     sets.precast = {}
     sets.precast.Maneuver = {
 		body="Kara. Farsetto +3", 
@@ -33,19 +40,19 @@ function get_sets()
 	sets.precast.RoleReversal = {legs="Pitre Churidars +3"}
 	sets.precast.TacticalSwitch = {feet="Pitre Babouches +3"}
 
-	sets.ValorEdgeOverdrive = {}
-	sets.SharpshotOverdrive = {}
 	
-   --local automaton_type = get_automaton_type()
-	
-	
---	Pseudocode Outloud
-	--	Determine if Master Only, Automaton Only, or both
-	--	MasterOnly: BadAss, Movement, Regen, DT, Accuracy, TH, Refresh? Maybe on Refresh. Pup with Refresh? o'Rly???
-	--	AutomatonOnly: Store TP Ranger Automaton, Double Attack Melee, Magic Frame Boom Boom of Doom?
-	--	Both: Dual TP
-	
-  --Engaged Sets--
+  -- Engaged Sets
+  -- These are your combat sets based on different playstyles and needs:
+
+  -- BadAss: Optimized for damage.
+  -- DT (Damage Taken): For tanking.
+  -- Regen: For passive regeneration.
+  -- RangerTP: For automaton ranged combat.
+  -- MeleeTP: For automaton melee combat.
+  -- MagicAutomaton: For automaton magic.
+  -- TankAutomaton: For when your automaton is tanking.
+
+  -- These sets dynamically change based on combat conditions, so if you're engaging as a melee or ranged automaton, your gear changes accordingly.
   sets.engaged = {}
   sets.engaged.index = {'BadAss', 'Movement', 'Regen', 'DT', 'Accuracy', 'TH', 'RangerTP', 'MeleeTP', 'MagicAutomaton', 'TankAutomaton'}
   engaged_ind = 1
@@ -405,34 +412,53 @@ end)
 -- Variable to track if message has been sent
 tp_threshold_reached = false
 
--- Function to check Automaton's TP with state tracking and auto change into the Automaton Weaponskill set based on the automaton type
--- There is a condition where upon getting 1000TP the automaton can WS instantly. If that occurs none of this even gets called.
--- I'm not really sure how to handle that scenario. However, this code works. 
-function check_pet_tp()
-    local automatonType = get_automaton_type()
-    if pet and pet.tp then
-        if pet.tp > 1000 and not tp_threshold_reached then
-            tp_threshold_reached = true
-            if automatonType == 'Ranger' then
-                windower.add_to_chat(207, 'Automaton Ranger WSD Gear Equipped ')
-                equip(sets.PetWS.Arcuballista)
-            elseif automatonType == 'Melee' then
-                windower.add_to_chat(207, 'Automaton Melee WSD Gear Equipped ')
-                equip(sets.PetWS.BoneCrusher)
-            elseif automatonType == 'Magic' then
-                windower.add_to_chat(207, 'Automaton Magic WSD Gear Equipped ')
-                equip(sets.PetWS.MagicMortar)
-            else
-                equip_current()
-            end
-        elseif pet.tp <= 1000 then
-            tp_threshold_reached = false
-        end
-    end
-end
+-- Packet handler for automaton TP and gear swapping logic
+-- windower.register_event('incoming chunk', function(id, data)
+    -- local player = windower.ffxi.get_player()
+    
+	-- --Check to see your specific Automaton only
+	-- --if player and player.pet_index and packet['Pet Index'] == player.pet_index then
+		-- -- Process the packet for your automaton
+		-- --windower.add_to_chat(207, 'This packet is for your automaton!')
+		-- if id == 0x068 then 
+			-- --windower.add_to_chat(207, 'Processing packet ID 0x068 (Pet Update)')
 
--- Register the event to check pet TP
-windower.register_event('prerender', check_pet_tp)
+			-- local packet = packets.parse('incoming', data)
+			-- -- if packet then
+				-- -- windower.add_to_chat(207, 'Packet Parsed Successfully')
+				-- -- windower.add_to_chat(207, 'Pet Index (from packet): ' .. tostring(packet['Pet Index']))
+				-- -- windower.add_to_chat(207, 'Pet TP (from packet): ' .. tostring(packet['Pet TP']))
+			-- -- end
+
+			-- local pet_tp = packet['Pet TP'] or 0
+			-- windower.add_to_chat(207, 'Automaton TP: ' .. tostring(packet['Pet TP']))
+
+			-- -- TP threshold handling with added debug messages
+			-- if pet_tp > 1000 then
+				-- local automatonType = get_automaton_type() -- Use your existing function
+				-- windower.add_to_chat(207, 'Automaton Type: ' .. tostring(automatonType)) -- Debug automaton type
+
+				-- if automatonType == 'Ranger' then
+					-- windower.add_to_chat(207, 'Equipping Ranger WSD Gear.')
+					-- equip(sets.PetWS.Arcuballista)
+				-- elseif automatonType == 'Melee' then
+					-- windower.add_to_chat(207, 'Equipping Melee WSD Gear.')
+					-- equip(sets.PetWS.BoneCrusher)
+				-- elseif automatonType == 'Magic' then
+					-- windower.add_to_chat(207, 'Equipping Magic WSD Gear.')
+					-- equip(sets.PetWS.MagicMortar)
+				-- else
+					-- windower.add_to_chat(207, 'No specific gear set found. Equipping current set.')
+					-- equip_current()
+				-- end
+			-- else
+				-- equip_current()
+			-- end
+
+		-- end --end 0x068 packet
+
+
+-- end)
 
 
 

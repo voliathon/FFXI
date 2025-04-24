@@ -31,9 +31,9 @@ function get_sets()
 		ammo="Yetshila +1",
 		head="Gleti's Mask",
 		body="Volte Jupon",
-		hands="Gleti's Gauntlets",
+		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect',}},
 		legs="Gleti's Breeches",
-		feet="Skulk. Poulaines +2",
+		feet="Skulk. Poulaines +3",
 		neck="Anu Torque",
 		waist="Chaac Belt",
 		left_ear="Sherida Earring",
@@ -65,7 +65,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Gleti's Gauntlets",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Skulk. Poulaines +3",
 		neck="Null loop",
 		waist="Eschan Stone",
 		left_ear="Digni. Earring",
@@ -81,7 +81,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Gleti's Gauntlets",
 		legs="Malignance Tights",
-		feet="Skulk. Poulaines +2",
+		feet="Skulk. Poulaines +3",
 		neck="Null loop",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Digni. Earring",
@@ -106,7 +106,7 @@ function get_sets()
 	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +2"}
-	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
+	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	
 	
  -- Weapon Skill Sets
