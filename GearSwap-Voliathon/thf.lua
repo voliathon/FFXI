@@ -30,7 +30,7 @@ function get_sets()
     sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
 	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
 	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
-	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
+	sets.JA['Conspirator'] = {body="Skulker's Vest +3"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
 	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
@@ -79,7 +79,7 @@ function get_sets()
 	sets.engaged.Accuracy =  {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
 		head="Skulker's bonnet +3",
-		body="Malignance Tabard",
+		body="Skulker's Vest +3",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Malignance Tights",
 		feet="Skulk. Poulaines +3",
@@ -128,7 +128,7 @@ function get_sets()
     sets.WSD = {	
 		ammo="Yetshila +1",
 		head={ name="Nyame Helm", augments={'Path: B',}},
-		body={ name="Nyame Mail", augments={'Path: B',}},
+		body="Skulker's Vest +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
