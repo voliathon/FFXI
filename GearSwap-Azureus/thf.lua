@@ -41,7 +41,7 @@ function get_sets()
 	
 	sets.TP.TP = {
 		ammo="Ginsen",
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}},
+		head="Skulker's bonnet +3",
 		body="Malignance Tabard",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Samnuha tights",
@@ -57,8 +57,8 @@ function get_sets()
 	
 	sets.TP.Accuracy =  {
 		ammo="Yamarang",
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		head="Skulker's bonnet +3",
+		body="Skulker's Vest +3",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Malignance Tights",
 		feet="Skulk. Poulaines +3",
@@ -89,7 +89,7 @@ function get_sets()
 	
 	sets.TP.Evasion = {
 		ammo="Yamarang",
-		head="Malignance Chapeau",
+		head="Skulker's bonnet +3",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -112,14 +112,14 @@ function get_sets()
     sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
 	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
 	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
-	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
+	sets.JA['Conspirator'] = {body="Skulker's Vest +3"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
 	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
-	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
+	sets.JA['Accomplice'] = {head="Skulker's bonnet +3",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +2"}
-	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
+	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	
 	
  -- Weapon Skill Sets
@@ -127,7 +127,7 @@ function get_sets()
     sets.WSD = {	
 		ammo="Crepuscular pebble",
 		head="Pillager's bonnet +3",
-		body="Nyame mail",
+		body="Skulker's Vest +3",
 		hands="Nyame Gauntlets",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
@@ -157,7 +157,7 @@ function get_sets()
 	}
 	
     sets.Aeolian = {	
-		ammo="Pemphredo Tathlum",
+		ammo="Seeth. bomblet +1",
 		head="Nyame Helm",
 		body="Nyame mail",
 		hands="Nyame Gauntlets",
@@ -259,7 +259,7 @@ function precast(spell,action)
 	
 	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
 	-- 60% DEX Modifier Mandalic Stab
-    elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
+    elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" or spell.name == "SharkBite" or spell.name == "Savage Blade" then
 		equip(sets.WSD)
 
 	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit

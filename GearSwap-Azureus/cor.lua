@@ -360,9 +360,11 @@ function precast(spell,abil)
 		equip(sets.SavageBlade)
 	end
 	
-	if spell.type == 'WeaponSkill' then
-		equip(sets.LastStand)
-	end
+	-- disabled cuz this was getting hit in divergence
+	
+--	if spell.type == 'WeaponSkill' then
+--		equip(sets.LastStand)
+--	end
 
 	--Corsair Rolls	
 	if string.find(spell.english,'Blitzer') then
