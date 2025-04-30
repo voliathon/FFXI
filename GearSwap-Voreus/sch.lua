@@ -60,7 +60,7 @@ function get_sets()
 	}
 	
     sets.Klimaform = set_combine(sets.Duration,  {
-		feet="Arbatel Loafers +2"
+		feet="Arbatel loafers +3"
 	})
 	
 	-- Stoneskin
@@ -123,7 +123,7 @@ function get_sets()
 		body="Agwu's robe",
 		hands="Agwu's gages",
 		legs="Agwu's slops",
-		feet="Arbatel loafers +2",
+		feet="Arbatel loafers +3",
 		neck={ name="Argute Stole +1", augments={'Path: A',}},
 		waist={ name="Acuity Belt +1", augments={'Path: A',}},
 		left_ear="Malignance Earring",
@@ -148,7 +148,7 @@ function get_sets()
 		body="Agwu's Robe", -- Magic accuracy and damage
 		hands="Agwu's Gages", -- Magic accuracy and damage
 		legs="Arbatel pants +2", -- Magic accuracy and damage
-		feet="Arbatel Loafers +2", -- Magic accuracy and damage
+		feet="Arbatel loafers +3", -- Magic accuracy and damage
 		neck="Argute Stole +1", -- Magic skill and damage
 		waist="Null belt",
 		left_ear="Malignance Earring",
@@ -202,7 +202,7 @@ function get_sets()
 		body="Arbatel Gown +2",
 		hands="Arbatel Bracers +2",
 		legs="Arbatel pants +2",
-		feet="Arbatel Loafers +2",
+		feet="Arbatel loafers +3",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Crep. Earring",
