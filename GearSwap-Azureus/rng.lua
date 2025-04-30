@@ -25,14 +25,14 @@ function get_sets()
 	
 	-- Initialize any Belenus capes that we need to use 
 	BelenusCapes()
-
+--
 	-- Job Abilities
     sets.EagleEyeShot = {legs="Arcadian Braccae +3"}
 	sets.Scavenge = {feet="Orion Socks +1"}
-	sets.Shadowbind = {hands="Orion Bracers +2"}
+	sets.Shadowbind = {hands="Orion Bracers +3"}
 	sets.Camouflage = {body="Orion Jerkin +2"}
-	sets.Sharpshot = {legs="Orion Braccae +2"}
-	sets.Barrage = {hands="Orion Bracers +2"}
+	sets.Sharpshot = {legs="Orion Braccae +3"}
+	sets.Barrage = {hands="Orion Bracers +3"}
 	sets.UnlimitedShot = {feet="Amini Bottillons +2"}
 	-- Important about Double Shot...
 	-- Even though Double Shot is a Job Ability, I'm covering it in the midshot for Ranged Attacks.
@@ -56,7 +56,7 @@ function get_sets()
 		head="Orion Beret +3", --rapid shot 18
 		body="Oshosi vest +1", --snapshot 14
 		hands="Carmine finger gauntlets +1", --rapid shot 11 snapshot 8
-		legs="Adhemar kecks +1", --rapid shot 13 snapshot 10
+		legs="Orion Braccae +3", --rapid shot 16 snapshot 15
 		feet="Arcadian Socks +3", --Rapidshot 10
 		neck="Scout's gorget +2", --snapshot 4
 		waist="Yemaya Belt",
@@ -89,7 +89,7 @@ function get_sets()
 		feet="Malignance Boots",
 		neck="Null loop",
 		waist="Windbuffet Belt +1",
-		left_ear="Brutal Earring",
+		left_ear="Sherida Earring",
 		right_ear="Amini Earring +1",
 		left_ring="Chirich Ring +1",
 		right_ring="Epona's Ring",
@@ -104,7 +104,7 @@ function get_sets()
 		feet="Malignance Boots",
 		neck="Null loop",
 		waist="Null belt",
-		left_ear="Hearty Earring",
+		left_ear="Sherida Earring",
 		right_ear="Amini Earring +1",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",
@@ -120,7 +120,7 @@ function get_sets()
 		feet="Malignance Boots",
 		neck="Null loop",
 		waist="Null belt",
-		left_ear="Hearty Earring",
+		left_ear="Sherida Earring",
 		right_ear="Amini Earring +1",
 		left_ring="Defending Ring",
 		right_ring="Fortified Ring",

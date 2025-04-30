@@ -45,7 +45,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Samnuha tights",
-		feet="Malignance Boots",
+		feet="Plun. poulaines +3",
 		neck="Clotharius Torque",
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
@@ -110,7 +110,7 @@ function get_sets()
 	
     sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
     sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
-	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
+	sets.JA["Assassin's Charge"] = {feet="Plun. poulaines +3"}
 	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
 	sets.JA['Conspirator'] = {body="Skulker's Vest +3"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
