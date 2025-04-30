@@ -12,77 +12,21 @@ function get_sets()
   --Job Ability Sets--
   sets.JA = {}
   sets.JA.Waltz = {legs="Dashing subligar"}
-  sets.JA.Step = 	{}
-  sets.JA.Stun = {}
+  sets.JA.MightyStrikes = {}
+  sets.JA.Berserk = {}
+  sets.JA.Defender = {}
+  sets.JA.Warcry = {}
+  sets.JA.Agressor = {}
+  sets.JA.Retaliation = {}
+  sets.JA.WarriorsCharge = {}
+  sets.JA.Tomahawk = {}
+  sets.JA.Restraint = {}
+  sets.JA.BloodRage = {}
 	
 	
-  --Precast Sets--
-  --Fast Cast set
-  sets.Fastcast = {
-    ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +2",
-    body="Dread Jupon",
-    hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
-    neck="Loricate Torque +1",
-    waist="Siegel Sash",
-    left_ear="Mimir Earring",
-    right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring"
-  }
-
-  --Phalanx--
-  sets.Phalanx = {
-    ammo="Staunch Tathlum +1",
-    head={ name="Fu. Bandeau +1", augments={'Enhances "Battuta" effect'}},
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3'}},
-    hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect'}},
-    feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-    neck={ name="Loricate Torque +1", augments={'Path: A'}},
-    waist="Siegel Sash",
-    left_ear="Magnetic Earring",
-    right_ear="Halasz Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}
- }
-
- --88 SIR
- sets.SIR = {
-    ammo="Staunch Tathlum +1", --11
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}}, --10
-    hands="Regal Gauntlets", --10
-    legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}, --20
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}}, --9
-    neck="Null loop", --5
-    waist="Audumbla sash", --10
-    left_ear="Halasz Earring", --5
-    right_ear="Magnetic Earring" --8
- }
- 
   --Enmity set for high hate generating spells and JAs
   sets.Enmity = {back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%',}}, waist="Sinew Belt", legs="Erilaz Leg Guards +1", neck="Moonlight necklace", body="Emet Harness +1"}
 
-  sets.Stoneskin = {
-    ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +2",
-    body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-    hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
-    feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-    neck="Null loop",
-    waist="Siegel Sash",
-    left_ear="Magnetic Earring",
-    right_ear="Earthcry Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+7','Enmity+10','Phys. dmg. taken-10%'}}  
-  }	
-	
-  
   --TP Sets--
   sets.TP = {}
   --				  1		     2            3 		     4 		       5		   6              7
@@ -219,8 +163,7 @@ function get_sets()
     back="Vespid Mantle"
   }
 
-  --single, doesn't carry FTP 
-  sets.Single = {
+  sets.SavageBlade = {
     ammo="Knobkierrie",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body={ name="Nyame Mail", augments={'Path: B',}},
@@ -254,7 +197,7 @@ function get_sets()
   }
 
   --magic WS
-  sets.HercSlash = {
+  sets.HerculeanSlash = {
     ammo="Pemphredo Tathlum",
     head="Sakpata's Helm",
     body="Crepuscular Mail",
@@ -268,6 +211,22 @@ function get_sets()
     left_ring="Stikini Ring +1",
     right_ring="Stikini Ring +1",
     back="Engulfer Cape +1"
+  }
+  
+  sets.UkkosFury = {
+    ammo="Yetshila +1",
+    head="Boii Mask +2",
+    body="Hjarrandi Breast.",
+    hands="Flam. Manopolas +2",
+    legs="Boii cuisses +2",
+    feet="Boii Calligae +2",
+    neck="Fotia Gorget",
+    waist="Sailfi belt +1",
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear={ name="Boii Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
+    left_ring="Epaminondas's Ring",
+    right_ring="Rajas Ring",
+    back="Vespid Mantle"	
   }
 
 	--Weapon Sets--
@@ -293,28 +252,26 @@ function precast(spell,abil)
 	-- Dancer Abilities --
   if string.find(spell.english, 'Waltz') then
 	equip(sets.JA.Waltz)
-  end	
+  end	  
   
- 
-  if spell.skill == 'Enhancing Magic' then
-	equip(sets.Fastcast)
-  end
-  if spell.action_type == 'Magic' then
-    equip(sets.Fastcast)
+  if spell.name == 'Provoke' then
+	equip(sets.Enmity)
   end
   
-  
+  if spell.name == "Ukko'sFury" then
+	equip(sets.UkkosFury)
+  end
   if spell.name == 'Resolution' then
     equip(sets.Resolution)
   end
-  if spell.name == 'Dimidiation' or spell.name == 'Spinning Slash' or spell.name == 'Savage Blade' then
-    equip(sets.Single)
+  if spell.name == 'Savage Blade' then
+    equip(sets.SavageBlade)
   end
   if spell.name == 'Shockwave' then
     equip(sets.Shockwave)
   end
   if spell.name == 'Herculean Slash' or spell.name == 'Freezebite' or spell.name == 'Frostbite' then
-    equip(sets.HercSlash)
+    equip(sets.HerculeanSlash)
   end
 
     --Utsusemi Check
@@ -322,12 +279,6 @@ function precast(spell,abil)
     equip({neck="Magoraga Beads"})
   end
   
-  if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
-    if TP_ind == 4 then
-      equip(sets.TP.Tank) else
-      equip(sets.TP.Tank)
-    end
-  end
 end
 
 
@@ -335,7 +286,7 @@ end
 --Should NOT put Job Abilities here.  Ony Magic Fren!  Fren is Doggo Speak for Friend
 function midcast(spell,act,arg)
   
-  if spell.name == 'Flash' or spell.name == "Stun" then
+  if spell.name == 'Flash' then
     equip(sets.Enmity)
   end
   if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then

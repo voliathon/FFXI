@@ -42,6 +42,7 @@ function get_sets()
 	}
 	
 	sets.Cursna = {
+		hands="Theophany mitts +3", 
 		legs="Theophany pantaloons +1",
 		left_ring="Ephedra ring"
 	}
@@ -76,7 +77,7 @@ function get_sets()
 		head="Umuthi Hat",
 		body="Shango Robe",
 		hands="Carapacho Cuffs",
-		legs="Geomancy Pants +2",
+		legs="Ebers pantaloons +3",
 		feet="Regal pumps +1",
 		waist="Austerity Belt +1",
 		left_ear="Infused Earring",
@@ -104,12 +105,12 @@ function get_sets()
 		neck="Nodens gorget",
         head="Vanya Hood",
 		body="Annointed kalasiris",
-		hands="Telchine gloves",
+		hands="Theophany mitts +3",
 		right_ring="Stikini ring +1",
 		left_ring="Veneficium Ring", 
 		waist="Austerity belt+1", 
 		back="Pahtli Cape",
-		legs="Ebers Pantaloons +2",
+		legs="Ebers Pantaloons +3",
 		feet="Vanya Clogs",
 		left_ear="Mendi. Earring",
 		right_ear="Glorious earring"
@@ -193,32 +194,13 @@ function get_sets()
       body="Twilight Cloak",
 	}
 
-
-    -- Heal the damn MP/HP up.
-    sets.heal = {
-		range="Dunna",
-		head="Befouled Crown",
-		body="Ebers bliaut +2",
-		hands="Ebers mitts +2",
-		legs="Assid. Pants +1",
-		feet="Bagua Sandals +1",
-		neck="Sanctity Necklace",
-		waist="Austerity Belt +1",
-		left_ear="Barkaro. Earring",
-		right_ear="Gwati Earring",
-		left_ring="Sheltered Ring",
-		right_ring="Paguroidea Ring",
-		back="Felicitas cape +1"
-	}
-
-
 	-- PDT Set
     sets.PDT = {
 		ammo="Staunch Tathlum +1",
 		head="Nyame Helm",
 		body="Shamash Robe",
 		hands="Nyame gauntlets",
-		legs="Ebers Pantaloons +2",
+		legs="Ebers Pantaloons +3",
 		feet="Ebers duckbills +2",
 		neck="Null loop",
 		waist="Null belt",
@@ -304,7 +286,7 @@ function get_sets()
 	 sets.Yagrush = set_combine(sets.FastCast,  {
 		main="Yagrush",
 		hands="Eber Mitts +2",
-		legs="Ebers pantaloons +2",
+		legs="Ebers Pantaloons +3",
 		back="Mending cape"
 	 })
 
