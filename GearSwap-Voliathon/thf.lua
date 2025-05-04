@@ -70,7 +70,7 @@ function get_sets()
 		neck="Clotharius Torque",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Suppanomimi",
-		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
+		right_ear="Sherida Earring",
 		left_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		right_ring={name="Chirich Ring +1", bag="Wardrobe 5"},
 		back=ThiefCapes.TP
@@ -117,7 +117,7 @@ function get_sets()
 		feet="Malignance Boots",
 		neck="Null loop",
 		waist="Null belt",
-		left_ear="Digni. Earring",
+		left_ear="Sherida Earring",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
 		left_ring="Shneddick ring",
 		right_ring="Defending Ring",
@@ -152,7 +152,7 @@ function get_sets()
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		right_ear="Brutal Earring",
+		right_ear="Sherida Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Mummu Ring",
 		back=ThiefCapes.DEXWS
