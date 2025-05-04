@@ -33,7 +33,7 @@ function get_sets()
 	sets.Camouflage = {body="Orion Jerkin +2"}
 	sets.Sharpshot = {legs="Orion Braccae +3"}
 	sets.Barrage = {hands="Orion Bracers +3"}
-	sets.UnlimitedShot = {feet="Amini Bottillons +2"}
+	sets.UnlimitedShot = {feet="Amini Bottillons +3"}
 	-- Important about Double Shot...
 	-- Even though Double Shot is a Job Ability, I'm covering it in the midshot for Ranged Attacks.
 	-- Refer to sets.midshot.RA.DoubleShot
@@ -101,7 +101,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Amini Bottillons +3",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Sherida Earring",
@@ -117,7 +117,7 @@ function get_sets()
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
-		feet="Malignance Boots",
+		feet="Amini Bottillons +3",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Sherida Earring",
@@ -147,7 +147,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Amini Bottillons +3",
 		neck="Scout's Gorget +2",
 		waist="K. Kachina Belt +1",
 		left_ear="Telos Earring",
@@ -207,7 +207,7 @@ function get_sets()
 		body="Amini Caban +2",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
-		feet="Amini Bottillons +2",
+		feet="Amini Bottillons +3",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
@@ -254,7 +254,7 @@ function get_sets()
 		body="Amini Caban +2",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
-		feet="Amini Bottillons +2",
+		feet="Amini Bottillons +3",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
@@ -270,7 +270,7 @@ function get_sets()
 		body="Nyame mail",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
-		feet="Amini Bottillons +2",
+		feet="Amini Bottillons +3",
 		neck="Fotia Gorget",
 		waist="Sailfi Belt +1",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
@@ -285,7 +285,7 @@ function get_sets()
 		body="Nisroch Jerkin",
 		hands="Amini Glove. +2",
 		legs="Amini Bragues +2",
-		feet="Amini Bottillons +2",
+		feet="Amini Bottillons +3",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
