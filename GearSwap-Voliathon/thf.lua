@@ -63,7 +63,7 @@ function get_sets()
 	sets.engaged.TP = {
 		ammo="Coiste Bodhar",
 		head="Skulker's bonnet +3",
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		body="Pillager's Vest +3",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Malignance Tights",
 		feet="Malignance Boots",

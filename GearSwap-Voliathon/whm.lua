@@ -11,7 +11,7 @@ function get_sets()
 	
     -- Job Abilities for White Mage --
     sets.Benediction = {body="Piety Bliaut +1"}
-    sets.AfflatusSolace = {body="Ebers Bliaut +2", back="Alaunus's Cape"}
+    sets.AfflatusSolace = {body="Ebers bliaut +3", back="Alaunus's Cape"}
     sets.DivineCaress = {hands="Ebers Mitts +2", back="Mending cape"}
 	sets.Devotion = {heads="Piety Cap +1"}
 	
@@ -42,12 +42,14 @@ function get_sets()
 	}
 	
 	sets.Cursna = {
+		body="Ebers bliaut +3",
 		hands="Theophany mitts +3", 
 		legs="Theophany pantaloons +1",
 		left_ring="Ephedra ring"
 	}
 	
 	sets.BarSpells = {
+		body="Ebers bliaut +3",
 		legs="Piety pantaloons +3"
 	}
 
@@ -104,7 +106,7 @@ function get_sets()
 		sub="Genmei Shield",
 		neck="Nodens gorget",
         head="Vanya Hood",
-		body="Annointed kalasiris",
+		body="Ebers bliaut +3",
 		hands="Theophany mitts +3",
 		right_ring="Stikini ring +1",
 		left_ring="Veneficium Ring", 
@@ -148,7 +150,8 @@ function get_sets()
 	
 	sets.MagicAccuracy = {
 		neck="Null loop",
-		waist="Null belt"
+		waist="Null belt",
+		body="Ebers bliaut +3"
 	}
 
 	
@@ -236,7 +239,7 @@ function get_sets()
 		main="Daybreak",
 		sub="Genmei shield",
 		head="Befouled crown",
-		body="Shamash robe",
+		body="Ebers bliaut +3",
 		hands="Ebers mitts +2",
 		waist="Null belt",
 		right_ring="Stikini ring +1",
