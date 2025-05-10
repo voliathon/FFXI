@@ -409,57 +409,47 @@ windower.register_event('status change', function()
 	end
 end)
 
--- Variable to track if message has been sent
-tp_threshold_reached = false
 
--- Packet handler for automaton TP and gear swapping logic
+-- local last_pet_tp = 0 -- Store the last known TP value
+
 -- windower.register_event('incoming chunk', function(id, data)
-    -- local player = windower.ffxi.get_player()
-    
-	-- --Check to see your specific Automaton only
-	-- --if player and player.pet_index and packet['Pet Index'] == player.pet_index then
-		-- -- Process the packet for your automaton
-		-- --windower.add_to_chat(207, 'This packet is for your automaton!')
-		-- if id == 0x068 then 
-			-- --windower.add_to_chat(207, 'Processing packet ID 0x068 (Pet Update)')
+    -- if id == 0x068 then -- Pet Update Packet
+        -- local packet = packets.parse('incoming', data)
+        -- if packet and packet['Pet TP'] then
+            -- local pet_tp = packet['Pet TP']
+            
+            -- -- Only process if TP crosses the 1000 threshold
+            -- --if pet_tp >= 1000 and last_pet_tp < 1000 then
+			-- if pet_tp >= 1000 then            
+				-- local automatonType = get_automaton_type()
+               -- send_command('@input /echo Automaton TP Threshold Reached! TP: ' .. tostring(pet_tp))
+               -- send_command('@input /echo Automaton Type: ' .. tostring(automatonType))
 
-			-- local packet = packets.parse('incoming', data)
-			-- -- if packet then
-				-- -- windower.add_to_chat(207, 'Packet Parsed Successfully')
-				-- -- windower.add_to_chat(207, 'Pet Index (from packet): ' .. tostring(packet['Pet Index']))
-				-- -- windower.add_to_chat(207, 'Pet TP (from packet): ' .. tostring(packet['Pet TP']))
-			-- -- end
-
-			-- local pet_tp = packet['Pet TP'] or 0
-			-- windower.add_to_chat(207, 'Automaton TP: ' .. tostring(packet['Pet TP']))
-
-			-- -- TP threshold handling with added debug messages
-			-- if pet_tp > 1000 then
-				-- local automatonType = get_automaton_type() -- Use your existing function
-				-- windower.add_to_chat(207, 'Automaton Type: ' .. tostring(automatonType)) -- Debug automaton type
-
-				-- if automatonType == 'Ranger' then
-					-- windower.add_to_chat(207, 'Equipping Ranger WSD Gear.')
-					-- equip(sets.PetWS.Arcuballista)
-				-- elseif automatonType == 'Melee' then
-					-- windower.add_to_chat(207, 'Equipping Melee WSD Gear.')
-					-- equip(sets.PetWS.BoneCrusher)
-				-- elseif automatonType == 'Magic' then
-					-- windower.add_to_chat(207, 'Equipping Magic WSD Gear.')
-					-- equip(sets.PetWS.MagicMortar)
-				-- else
-					-- windower.add_to_chat(207, 'No specific gear set found. Equipping current set.')
-					-- equip_current()
-				-- end
-			-- else
-				-- equip_current()
-			-- end
-
-		-- end --end 0x068 packet
-
-
+                -- if automatonType == 'Ranger' then
+                   -- send_command('@input /echo Equipping Ranger WSD Gear.')
+                    -- equip(sets.PetWS.Arcuballista)
+                -- elseif automatonType == 'Melee' then
+                   -- send_command('@input /echo Equipping Melee WSD Gear.')
+                    -- equip(sets.PetWS.BoneCrusher)
+                -- elseif automatonType == 'Magic' then
+                   -- send_command('@input /echo Equipping Magic WSD Gear.')
+                    -- equip(sets.PetWS.MagicMortar)
+                -- else
+                   -- send_command('@input /echo No specific gear set found. Equipping current set.')
+                    -- equip_current()
+                -- end
+            -- elseif pet_tp < 1000 and last_pet_tp >= 1000 then
+               -- send_command('@input /echo Automaton TP dropped below 1000. Equipping normal set.')
+                -- equip_current()
+            -- end
+            
+            -- -- Update last known TP
+            -- last_pet_tp = pet_tp
+        -- else
+           -- send_command('@input /echo Invalid packet or missing Pet TP data.')
+        -- end
+    -- end -- End packet check
 -- end)
-
 
 
 -- Function to determine the automaton type

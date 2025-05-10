@@ -14,7 +14,7 @@ function get_sets()
 	Burst = 'Disabled'	
 	
     -- Job Abilities for Scholar --
-    sets.Immanence = {hands="Arbatel Bracers +2"}
+    sets.Immanence = {hands="Arbatel bracers +3"}
     sets.Celerity = {feet="Pedagogy Loafers +3"}
     sets.Alacrity = {feet="Pedagogy Loafers +3"}
     sets.Stormsurge = {feet={ name="Peda. Loafers +3", augments={'Enhances "Stormsurge" effect'}},}
@@ -121,7 +121,7 @@ function get_sets()
 		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
 		head="Agwu's cap",
 		body="Agwu's robe",
-		hands="Agwu's gages",
+		hands="Arbatel bracers +3",
 		legs="Agwu's slops",
 		feet="Arbatel loafers +3",
 		neck={ name="Argute Stole +1", augments={'Path: A',}},
@@ -136,6 +136,7 @@ function get_sets()
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
 		head="Agwu's Cap",
 		body="Agwu's Robe",
+		hands="Arbatel bracers +3",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring"
 	})
@@ -146,7 +147,7 @@ function get_sets()
 		ammo="Ghastly Tathlum +1",
 	    head="Pixie Hairpin +1", -- Dark magic damage
 		body="Agwu's Robe", -- Magic accuracy and damage
-		hands="Agwu's Gages", -- Magic accuracy and damage
+		hands="Arbatel bracers +3", -- Magic accuracy and damage
 		legs="Arbatel pants +2", -- Magic accuracy and damage
 		feet="Arbatel loafers +3", -- Magic accuracy and damage
 		neck="Argute Stole +1", -- Magic skill and damage
@@ -166,7 +167,7 @@ function get_sets()
 		body="Arbatel Gown +2",
 		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
 		legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
-		feet="Agwu's Pigaches",
+		feet="Arbatel loafers +3",
 		neck={ name="Argute Stole +1", augments={'Path: A',}},
 		waist="Fucho-no-Obi",
 		left_ear="Malignance Earring",
@@ -182,7 +183,7 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +2",
 		body="Arbatel Gown +2",
-		hands="Arbatel Bracers +2",
+		hands="Arbatel bracers +3",
 		legs="Arbatel pants +2",
 		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
 		neck="Malison Medallion",
@@ -200,7 +201,7 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +2",
 		body="Arbatel Gown +2",
-		hands="Arbatel Bracers +2",
+		hands="Arbatel bracers +3",
 		legs="Arbatel pants +2",
 		feet="Arbatel loafers +3",
 		neck="Null loop",
@@ -218,9 +219,9 @@ function get_sets()
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap", -- Magic accuracy and damage
 		body="Agwu's Robe", -- Magic accuracy and damage
-		hands="Arbatel Bracers +2", -- Magic accuracy and damage
+		hands="Arbatel bracers +3", -- Magic accuracy and damage
 		legs="Agwu's Slops", -- Magic accuracy and damage
-		feet="Agwu's Pigaches", -- Magic accuracy and damage
+		feet="Arbatel loafers +3", -- Magic accuracy and damage
 		neck="Argute Stole +1", -- Magic skill and damage
 		waist="Eschan stone",
 		left_ear="Malignance Earring", -- Magic accuracy and damage
@@ -237,9 +238,9 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +2",
 		body="Arbatel Gown +2",
-		hands="Arbatel Bracers +2",
+		hands="Arbatel bracers +3",
 		legs="Arbatel pants +2",
-		feet="Agwu's Pigaches",
+		feet="Arbatel loafers +3",
 		neck={ name="Argute Stole +1", augments={'Path: A',}},
 		waist="Null belt",
 		left_ear="Crep. Earring",
@@ -344,7 +345,7 @@ function get_sets()
 		body="Nyame Mail",
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
-		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+		feet="Arbatel loafers +3",
 		neck={ name="Argute Stole +1", augments={'Path: A',}},
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -505,7 +506,7 @@ function midcast(spell)
 	end
 	if buffactive["Perpetuance"] then
 	--send_command('@input /echo Fuck yeah Bracers are equipped!')
-		equip({hands="Arbatel Bracers +2"})
+		equip({hands="Arbatel bracers +3"})
 	end
 	
 end
