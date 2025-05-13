@@ -36,7 +36,8 @@ function get_sets()
 		head="Horos Tiara +3", --Waltz Potency +15%
 		body="Maxixi Casaque +3", --Waltz Potency +19%, Waltz Received Potency +8%, Waltz Recast -2 
 		legs="Dashing subligar", --Waltz Potency +10% 
-		feet="Maxixi Toe Shoes +3", --Waltz Potency +14% 
+		feet="Maxixi Toe Shoes +3", --Waltz Potency +14%
+		neck="Etoile Gorget +2",
 		ammo="Yamarang", --Waltz Potency +5% 
 		back="Toetapper Mantle" --Waltz Potency +5%
 
@@ -105,7 +106,7 @@ function get_sets()
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Maculele Tights +3",
 		feet="Macu. Toe Sh. +3",
-		neck="Null loop",
+		neck="Etoile Gorget +2",
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
 		right_ear="Maculele Earring +1",
@@ -187,7 +188,7 @@ function get_sets()
 		hands="Maxixi Bangles +3",
 		legs="Horos tights +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck="Fotia Gorget",
+		neck="Etoile Gorget +2",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Sherida Earring",
@@ -204,7 +205,7 @@ function get_sets()
 		hands="Gleti's Gauntlets",
 		legs="Gleti's Breeches",
 		feet="Gleti's Boots",
-		neck="Fotia Gorget",
+		neck="Etoile Gorget +2",
 		waist="Fotia Belt",
 		left_ear="Odr Earring",
 		right_ear="Macu. Earring +1",
