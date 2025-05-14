@@ -37,7 +37,7 @@ function get_sets()
 	-- Important about Double Shot...
 	-- Even though Double Shot is a Job Ability, I'm covering it in the midshot for Ranged Attacks.
 	-- Refer to sets.midshot.RA.DoubleShot
-	sets.VelocityShot = {body="Amini Caban +2", back=BelenusCape.ranged_ws}
+	sets.VelocityShot = {body="Amini Caban +3", back=BelenusCape.ranged_ws}
 	sets.BountyShot = {hands="Amini Glovelettes +2"}
 	sets.FlashShot = {hands="Arcadian bracers +3"}
 	sets.StealthShot = {feet="Arcadian socks +3"}
@@ -54,7 +54,7 @@ function get_sets()
 	-- Baby Bear already has 10% Snapshot merits
     sets.Snapshot = {
 		head="Orion Beret +3", --rapid shot 18
-		body="Oshosi vest +1", --snapshot 14
+		body="Amini Caban +3", --velocity shot 11
 		hands="Carmine finger gauntlets +1", --rapid shot 11 snapshot 8
 		legs="Orion Braccae +3", --rapid shot 16 snapshot 15
 		feet="Arcadian Socks +3", --Rapidshot 10
@@ -68,7 +68,7 @@ function get_sets()
     }
 	
 	sets.VelocityShotActive = set_combine(sets.Snapshot,{
-		body="Amini Caban +2", --Velocity Shot 9%
+		body="Amini Caban +3", --Velocity Shot 11%
 
     })
 	
@@ -76,12 +76,26 @@ function get_sets()
 	
 	--Engaged Sets--
 	sets.engaged = {}
---				    	    1		     2           3 		   	   		 			4 				   5			6
-	sets.engaged.index = {'Movement', 'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'RangedAccuracy'}
+--				    	    1		    2      3 		 4 			   5
+	sets.engaged.index = {'Movement', 'TP', 'Tank', 'Accuracy', 'RangedAccuracy'}
 	engaged_ind = 1 
 	
-		-- This needs to be the best TP set imaginable. TA, DW, Quadruple shit, Double attack. Really push this shit!
-    sets.engaged.TP = set_combine(sets.engaged.TakingLessPhysicalDamage, {
+	sets.engaged.Tank = {
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Amini Bottillons +3",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Sherida Earring",
+		right_ear="Amini Earring +1",
+		left_ring="Defending Ring",
+		right_ring="Fortified Ring",
+		back=BelenusCape.double_atk
+	}
+
+    sets.engaged.TP = set_combine(sets.engaged.Tank, {
 		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
 		body="Malignance Tabard",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
@@ -96,38 +110,7 @@ function get_sets()
         back=BelenusCape.double_atk
     })
 	
-	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.engaged.TakingLessPhysicalDamage, {
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Amini Bottillons +3",
-		neck="Null loop",
-		waist="Null belt",
-		left_ear="Sherida Earring",
-		right_ear="Amini Earring +1",
-		left_ring="Defending Ring",
-		right_ring="Fortified Ring",
-		back=BelenusCape.double_atk
-	})
-	
-	
-	sets.engaged.TakingLessMagicDamage = set_combine(sets.engaged.TakingLessPhysicalDamage, {
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Amini Bottillons +3",
-		neck="Null loop",
-		waist="Null belt",
-		left_ear="Sherida Earring",
-		right_ear="Amini Earring +1",
-		left_ring="Defending Ring",
-		right_ring="Fortified Ring",
-		back="Null shawl"		
-	})
-	
-	sets.engaged.Accuracy = set_combine(sets.engaged.TakingLessPhysicalDamage, {
+	sets.engaged.Accuracy = set_combine(sets.engaged.Tank, {
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
@@ -142,9 +125,9 @@ function get_sets()
 		back="Null shawl"	
 	})
 	
-	sets.engaged.RangedAccuracy = set_combine(sets.engaged.TakingLessPhysicalDamage, {
+	sets.engaged.RangedAccuracy = set_combine(sets.engaged.Tank, {
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		body="Amini Caban +3",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Amini Bottillons +3",
@@ -153,19 +136,19 @@ function get_sets()
 		left_ear="Telos Earring",
 		right_ear="Crep. Earring",
 		left_ring="Dingir Ring",
-		right_ring="Chirich Ring +1",
+		right_ring="Cacoethic Ring +1",
 		back="Null shawl"
 	})
 	
-	sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage, {
+	sets.engaged.Movement = set_combine(sets.engaged.Tank, {
 		left_ring="Shneddick Ring"
 	})
 	
 	--MIDSHOT LOGIC OF DOOM
 	sets.midshot = {}
-    sets.midshot.RA = set_combine(sets.engaged.TakingLessPhysicalDamage,{
+    sets.midshot.RA = set_combine(sets.engaged.Tank,{
 		head="Arcadian Beret +3",
-		body="Ikenga's Vest",
+		body="Amini Caban +3",
 		hands="Amini Glove. +2",
 		legs="Amini Bragues +2",
 		feet="Ikenga's Clogs",
@@ -174,7 +157,7 @@ function get_sets()
 		left_ear="Telos Earring",
 		right_ear="Crep. Earring",
 		left_ring="Dingir Ring",
-		right_ring="Chirich Ring +1",
+		right_ring="Cacoethic Ring +1",
 		back="Null Shawl"
 	})
 
@@ -204,7 +187,7 @@ function get_sets()
 	
 	sets.Coronach = {
 		head="Orion Beret +3",
-		body="Amini Caban +2",
+		body="Amini Caban +3",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
 		feet="Amini Bottillons +3",
@@ -251,7 +234,7 @@ function get_sets()
 	--Last Stand   AGI/RAtt/RAcc/WSD
     sets.LastStand = {
 		head="Orion Beret +3",
-		body="Amini Caban +2",
+		body="Amini Caban +3",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
 		feet="Amini Bottillons +3",
