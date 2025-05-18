@@ -15,12 +15,12 @@ function get_sets()
   sets.JA = {}
   sets.JA.Lunge = {}
   sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +3"}
-  sets.JA.Gambit = {hands="Runeist mitons +2"}
-  sets.JA.Rayke = {feet="Futhark boots +1"}
+  sets.JA.Gambit = {hands="Runeist mitons +3"}
+  sets.JA.Rayke = {feet="Futhark boots +3"}
   sets.JA.Battuta = {head="Futhark bandeau +3"}
-  sets.JA.Pflug = {feet="Runeist bottes +2"}
-  sets.JA.Pulse = {head="Erilaz galea +3",legs="Runeist Trousers +2"}
-  sets.JA.Swordplay = {hands="Futhark mitons +1"}	
+  sets.JA.Pflug = {feet="Runeist bottes +3"}
+  sets.JA.Pulse = {head="Erilaz galea +3",legs="Runeist Trousers +3"}
+  sets.JA.Swordplay = {hands="Futhark mitons +3"}	
 
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
@@ -350,7 +350,7 @@ function precast(spell,abil)
     equip(sets.Enmity,sets.JA.Pflug)
   end
   if spell.name == 'Elemental Sforzo' or spell.name == 'Liement' then
-    equip(sets.Enmity,{body="Futhark coat +1"})
+    equip(sets.Enmity,{body="Futhark coat +3"})
   end
   if spell.name == 'Gambit' then
     equip(sets.Enmity,sets.JA.Gambit)
@@ -369,7 +369,7 @@ function precast(spell,abil)
   end
   if spell.name == 'One for All' or spell.name == 'Embolden' or spell.name == 'Odyllic Subterfuge' or spell.name == 'Warcry'
     or spell.name == 'Swordplay' or spell.name == 'Meditate' or spell.name == 'Provoke' then
-    equip(sets.Enmity, {hands="Futhark mitons +1"})
+    equip(sets.Enmity, {hands="Futhark mitons +3"})
   end
   if spell.name == 'Resolution' then
     equip(sets.Resolution)
