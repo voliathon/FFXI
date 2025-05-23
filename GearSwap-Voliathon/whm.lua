@@ -10,11 +10,12 @@ function get_sets()
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
     -- Job Abilities for White Mage --
-    sets.Benediction = {body="Piety Bliaut +1"}
-    sets.AfflatusSolace = {body="Ebers bliaut +3", back="Alaunus's Cape"}
-    sets.DivineCaress = {hands="Ebers Mitts +2", back="Mending cape"}
-	sets.Devotion = {heads="Piety Cap +1"}
+    sets.Benediction = {body="Piety Bliaut +3"}
+    sets.AfflatusSolace = {body="Ebers bliaut +3", feet="Piety duckbills +3", back="Alaunus's Cape"}
+    sets.DivineCaress = {hands="Ebers mitts +3", back="Mending cape"}
+	sets.Devotion = {heads="Piety Cap +3"}
 	
+	-- Fast Cast
 	-- Cursna
 	-- Regen
 	-- Devotion
@@ -31,7 +32,7 @@ function get_sets()
 		body="Inyanga Jubbah +2",
 		hands="Gende. Gages +1",
 		legs="Ayanmo cosciales +2",
-		feet="Theophany duckbills +3",
+		feet="Regal pumps +1",
 		neck="Voltsurge Torque",
 		waist="Witful Belt",
 		left_ear="Loquac. Earring",
@@ -42,21 +43,33 @@ function get_sets()
 	}
 	
 	sets.Cursna = {
+		main="Yagrush",
+		sub="Ammurapi Shield",
+		ammo="Pemphredo Tathlum",
+		head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
 		body="Ebers bliaut +3",
 		hands="Theophany mitts +3", 
-		legs="Theophany pantaloons +1",
-		left_ring="Ephedra ring"
+		legs="Th. Pant. +3",
+		feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
+		neck="Nicander's Necklace",
+		waist="Austerity Belt +1",
+		left_ear="Magnetic Earring",
+		right_ear={ name="Ebers Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Damage taken-3%',}},
+		left_ring="Ephedra Ring",
+		right_ring="Purity Ring",
+		back="Tempered Cape +1"	
 	}
 	
+	--TODO
 	sets.BarSpells = {
 		body="Ebers bliaut +3",
 		legs="Piety pantaloons +3"
 	}
 
-	-- Enhancing Spells \\Generalized//
+	--TODO
     sets.EnhancingMagic = {
 		main="Daybreak",
-		sub="Genmei Shield",
+		sub="Ammurapi Shield",
 		ammo="Clarus stone",
 		head="Befouled Crown",
 		body="Telchine chasuble ",
@@ -74,7 +87,7 @@ function get_sets()
 	-- Stoneskin
 	sets.Stoneskin = {
 		main="Daybreak",
-		sub="Genmei Shield",
+		sub="Ammurapi Shield",
 		ammo="Clarus stone",
 		head="Umuthi Hat",
 		body="Shango Robe",
@@ -91,48 +104,39 @@ function get_sets()
 
 	sets.Enhancing = {}
 
-	--Regen Max Duration
-	sets.Regen = set_combine(sets.Duration,  {
-		main="Musa",
-		sub="Khonsu",
-		head="Arbatel Bonnet +3",
-		hands="Ebers mitts +2",
-		body="Piety Bliaut +1",
-		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
-	})
+	sets.Regen = {
+		main="Bolelabunga",
+		sub="Ammurapi shield",
+		head="Inyanga tiara +2",
+		hands="Ebers mitts +3",
+		body="Piety Bliaut +3",
+		legs="Th. Pant. +3",
+		feet="Theophany duckbills +3",
+		waist="Embla sash"
+	}
 	
     sets.Cure = {
 		main="Daybreak",
-		sub="Genmei Shield",
-		neck="Nodens gorget",
+		sub="Ammurapi Shield",
         head="Vanya Hood",
 		body="Ebers bliaut +3",
 		hands="Theophany mitts +3",
+		legs="Ebers Pantaloons +3",
+		feet="Vanya Clogs",		
+		neck="Nodens gorget",
 		right_ring="Stikini ring +1",
 		left_ring="Veneficium Ring", 
 		waist="Austerity belt+1", 
 		back="Pahtli Cape",
-		legs="Ebers Pantaloons +3",
-		feet="Vanya Clogs",
 		left_ear="Mendi. Earring",
 		right_ear="Glorious earring"
 	}
 
 
-	-- Protecting the party
-    sets.Protect = {
-		ring1="Sheltered Ring"
-	}
-
-	-- MDF the party
-    sets.Shell = {
-		ring1="Sheltered Ring"
-	}
-
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		main="Daybreak",
-		sub="Genmei Shield",	
+		sub="Ammurapi Shield",	
 		ammo="Dosis Tathlum",
 		head="Merlinic Hood",
 		body="Shamash robe",
@@ -157,7 +161,7 @@ function get_sets()
 	
     sets.DarkMagic = {
 		main="Daybreak",
-		sub="Genmei Shield",	
+		sub="Ammurapi Shield",	
 		range="Dunna",
 		head="Bagua Galero +1",
 		body="Geomancy tunic +3",
@@ -175,18 +179,18 @@ function get_sets()
 
     sets.Enfeebling = {
 		main="Daybreak",
-		sub="Genmei Shield",	
-		range="Dunna",
-		head="Befouled Crown",
-		body="Ischemia Chasu.",
+		sub="Ammurapi Shield",	
+		range="Pemphredo Tathlum",
+		head="Theophany cap +3",
+		body="Theo. Bliaut +3",
 		hands="Regal cuffs",
-		legs="Merlinic Shalwar",
+		legs="Chironic hose",
 		feet="Theophany duckbills +3",
 		neck="Null loop",
 		waist="Null belt",
-		left_ear="Barkaro. Earring",
-		right_ear="Gwati Earring",
-		left_ring="Jhakri ring",
+		left_ear="Malignance Earring",
+		right_ear="Ebers Earring +1",
+		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
 		back="Seshaw cape"
 	}
@@ -197,12 +201,12 @@ function get_sets()
       body="Twilight Cloak",
 	}
 
-	-- PDT Set
-    sets.PDT = {
+	-- Tank Set
+    sets.Tank = {
 		ammo="Staunch Tathlum +1",
 		head="Nyame Helm",
 		body="Shamash Robe",
-		hands="Nyame gauntlets",
+		hands="Ebers mitts +3",
 		legs="Ebers Pantaloons +3",
 		feet="Ebers duckbills +2",
 		neck="Null loop",
@@ -213,40 +217,53 @@ function get_sets()
 		right_ring="Defending Ring",
 		back="Solemnity Cape"
 	}
-
-	-- Magic Defense and Magic Defense Set
-    sets.MDT = {
-		ammo="Staunch Tathlum +1",
-		head="Nyame Helm",
-		body="Shamash Robe",
-		hands="Nyame gauntlets",
-		legs="Nyame flanchard",
-		feet="Nyame sollerets",
-		neck="Null loop",
-		waist="Null belt",
-		left_ear="Genmei Earring",
-		right_ear="Infused Earring",
-		left_ring="Fortified Ring",
-		right_ring="Defending Ring",
-		back="Solemnity Cape"
-	}
-
 		
 	-- When I gotta kite shite, I put on my Sandals and shit...
     sets.Kiting = {left_ring="Shneddick ring"}
 	
-	sets.Refresh = set_combine(sets.PDT,  {
+	sets.Refresh = set_combine(sets.Tank,  {
 		main="Daybreak",
 		sub="Genmei shield",
 		head="Befouled crown",
 		body="Ebers bliaut +3",
-		hands="Ebers mitts +2",
+		hands="Ebers mitts +3",
 		waist="Null belt",
 		right_ring="Stikini ring +1",
 		left_ring="Stikini ring +1",
 		ammo="Homiliary"
 	})
 	
+   sets.Yagrush = set_combine(sets.FastCast,  {
+		main="Yagrush",
+		hands="Ebers mitts +3",
+		legs="Ebers Pantaloons +3",
+		back="Mending cape"
+	 })
+
+	  -- Engaged Sets Toggle--
+	sets.engaged = {}
+	sets.engaged.index = {'TP','Movement', 'Tank', 'Accuracy', 'Refresh'}
+	engaged_ind = 1  	 
+	 
+	sets.engaged.TP = {
+		ammo="Amar Cluster",
+		head="Aya. Zucchetto +2",
+		body="Ayanmo Corazza +2",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Aya. Gambieras +2",
+		neck="Null loop",
+		waist="Grunfeld Rope",
+		left_ear="Brutal Earring",
+		right_ear="Cessance Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back="Moonlight Cape"	
+	}
+	sets.engaged.Movement = set_combine(sets.Kiting, {})
+	sets.engaged.Tank = set_combine(sets.Tank, {})
+	sets.engaged.Accuracy = {}
+	sets.engaged.Refresh = set_combine(sets.Refresh, {})
 	
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
@@ -284,50 +301,15 @@ function get_sets()
 		right_ring="Chirich Ring +1",
 		back="Moonlight Cape"	 
 	 }
-	 
-	 
-	 sets.Yagrush = set_combine(sets.FastCast,  {
-		main="Yagrush",
-		hands="Eber Mitts +2",
-		legs="Ebers Pantaloons +3",
-		back="Mending cape"
-	 })
-
-	  -- Engaged Sets Toggle--
-	sets.engaged = {}
-	sets.engaged.index = {'TP','Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
-	engaged_ind = 1  	 
-	 
-	sets.engaged.TP = {
-		ammo="Amar Cluster",
-		head="Aya. Zucchetto +2",
-		body="Ayanmo Corazza +2",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Aya. Gambieras +2",
-		neck="Null loop",
-		waist="Grunfeld Rope",
-		left_ear="Brutal Earring",
-		right_ear="Cessance Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
-		back="Moonlight Cape"	
-	}
-	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
-	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
-	sets.engaged.Accuracy = {}
-	sets.engaged.Refresh = set_combine(sets.Refresh, {})
-	 
+	
 end
 
 function precast(spell,abil)
 	if spell.action_type == 'Magic' then
 		equip(sets.FastCast)
 	end
-		--Can add stuff here for other magic. Doesn't have to go to idle at all
+	--Can add stuff here for other magic. Doesn't have to go to idle at all
 	
-
 	--WS Lookups
 	if spell.name == "Hexa Strike" then
 		equip(sets.WSD)
@@ -335,9 +317,6 @@ function precast(spell,abil)
 	if spell.name == "Mystic Boon" then
 		equip(sets.MysticBoon)
 	end	
-	-- Add logic for Waltz
-	-- Add logic for Utsusemi
-  
   
 end
 
@@ -378,9 +357,9 @@ function aftercast(spell)
 end
 
 --This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
+--If I want a manual 'Refresh' set or 'Tank' set I can do that in game with equipsets.  
 --But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
+--I'm also deciding not to use a Binding Key to put my in a Tank, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
@@ -421,4 +400,3 @@ windower.register_event('status change', function()
 		send_command('@input /tell <me> Wakies Wakies Voluzera We hit 0 HP on accident. We shall live forever!!!')
 	end
 end)
-

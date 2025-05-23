@@ -21,7 +21,7 @@ function get_sets()
 	sets.JA.Stun = {}
 	sets.JA.Sengikori = {feet="Kasuga sune-ate +3"}	
 	sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
-	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +3", feet="Wakido sune-ate +2"}
+	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +3", feet="Wakido sune-ate +3"}
 	sets.JA.WardingCircle = {head="Wakido kabuto +2"}
 	sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
 	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
