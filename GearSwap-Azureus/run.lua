@@ -1,6 +1,6 @@
 function get_sets()
 -- Set macro book/set --
-	send_command('input /macro book 17;wait .1;input /macro set 2')
+	send_command('input /macro book 15;wait .1;input /macro set 1')
 
 	-- Binds for modes
 	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
@@ -124,7 +124,7 @@ function get_sets()
   
   sets.TP.EvasionTank = {
     ammo="Yamarang",
-    head="Null masuqe",
+    head="Null masque",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",

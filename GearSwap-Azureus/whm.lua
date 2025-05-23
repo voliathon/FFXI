@@ -14,7 +14,7 @@
 
 function get_sets()
 	-- Set macro book/set --
-    send_command('input /macro book 1;wait .1;input /macro set 1')
+    send_command('input /macro book 6;wait .1;input /macro set 1')
 	
 	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
     send_command('bind !f9 gs c toggle Engaged set')
@@ -72,7 +72,7 @@ function get_sets()
 		main="Daybreak",
 		sub="Genmei Shield",
 		ammo="Clarus stone",
-		head="Null masuqe",
+		head="Null masque",
 		body="Telchine chasuble ",
 		hands="Dynasty Mitts",
 		legs="Piety Pantaloons +1",
@@ -120,17 +120,6 @@ function get_sets()
 		feet="Vanya Clogs"
 	}
 
-
-	-- Protecting the party
-    sets.Protect = {
-		ring1="Sheltered Ring"
-	}
-
-	-- MDF the party
-    sets.Shell = {
-		ring1="Sheltered Ring"
-	}
-
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		main="Daybreak",
@@ -172,7 +161,7 @@ function get_sets()
 		main="Daybreak",
 		sub="Genmei Shield",	
 		range="Dunna",
-		head="Null masuqe",
+		head="Null masque",
 		body="Ischemia Chasu.",
 		hands="Regal cuffs",
 		legs="Merlinic Shalwar",
@@ -193,28 +182,10 @@ function get_sets()
 	}
 
 
-    -- Heal the damn MP/HP up.
-    sets.heal = {
-		range="Dunna",
-		head="Null masuqe",
-		body="Jhakri robe +2",
-		hands="Bagua Mitaines +1",
-		legs="Assid. Pants +1",
-		feet="Bagua Sandals +1",
-		neck="Sanctity Necklace",
-		waist="Austerity Belt +1",
-		left_ear="Barkaro. Earring",
-		right_ear="Gwati Earring",
-		left_ring="Sheltered Ring",
-		right_ring="Paguroidea Ring",
-		back="Felicitas cape +1"
-	}
-
-
 	-- PDT Set
     sets.PDT = {
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body="Shamash Robe",
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
@@ -231,7 +202,7 @@ function get_sets()
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body="Shamash Robe",
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
@@ -250,12 +221,19 @@ function get_sets()
     sets.Kiting = {left_ring="Schneddick Ring"}
 	
 	sets.Refresh = set_combine(sets.PDT,  {
-		main="Daybreak",
-		sub="Genmei shield",
-		head="Null masuqe",
-		body="Shamash robe",
-		hands="Bagua mitaines +1",
-		right_ring="Stikini ring +1"
+		ammo="Staunch Tathlum +1",
+		head="Null Masque",
+		body="Shamash Robe",
+		hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12',}},
+		legs="Assid. Pants +1",
+		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20',}},
+		neck="Null Loop",
+		waist="Null Belt",
+		left_ear="Genmei Earring",
+		right_ear="Infused Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back="Null Shawl"
 	})
 	
 	
@@ -311,7 +289,7 @@ function get_sets()
 	 
 	sets.engaged.TP = {
 		ammo="Amar Cluster",
-		head="Null masuqe",
+		head="Null masque",
 		body="Ayanmo Corazza +2",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",

@@ -16,7 +16,7 @@ function get_sets()
 	NinjaCapes()
 	
 	-- Set macro book/set --
-    send_command('input /macro book 6;wait .1;input /macro set 1')
+    send_command('input /macro book 3;wait .1;input /macro set 1')
 	
 	-- Binds for switching weapon modes
     send_command('bind !f8 gs c toggle weapon set')
@@ -42,7 +42,7 @@ function get_sets()
 
 	sets.TP.Movement = {
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body="Hattori Ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -120,7 +120,7 @@ function get_sets()
 
 	sets.TP.EvasionTank = {
 		ammo="Amar Cluster",
-		head="Null masuqe",
+		head="Null masque",
 		body="Hattori ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",

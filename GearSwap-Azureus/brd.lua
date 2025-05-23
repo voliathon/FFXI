@@ -217,7 +217,7 @@ function get_sets()
   }
   
   sets.engaged.Refresh = {
-    head="Null masuqe",
+    head="Null masque",
     body="Annoint. Kalasiris",
     hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12'}},
     legs="Assid. Pants +1",

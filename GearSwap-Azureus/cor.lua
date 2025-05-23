@@ -12,7 +12,7 @@ end
 
 function get_sets()
 	-- Set macro book/set --
-    send_command('input /macro book 19;wait .1;input /macro set 1')
+    send_command('input /macro book 4;wait .1;input /macro set 1')
 	
 	-- Binds for switching weapon modes
     send_command('bind !f8 gs c toggle weapon set')
@@ -245,7 +245,7 @@ function get_sets()
     }
 	
 	sets.engaged.DTMovement = {
-		head="Null masuqe",
+		head="Null masque",
 		body="Chasseur's Frac +3",
 		hands="Malignance Gloves",
 		legs="Chasseur's Culottes +3",

@@ -307,7 +307,7 @@ function get_sets()
 		main="Malignance Pole",
 		sub="Khonsu",
 		ammo="Crepuscular Pebble",
-		head="Null masuqe",
+		head="Null masque",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
@@ -326,7 +326,7 @@ function get_sets()
 		main="Bolelabunga",
 		sub="Genmei Shield",
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body="Arbatel Gown +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Arbatel pants +3",
@@ -361,7 +361,7 @@ function get_sets()
 		right_ear="Hearty Earring",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
-		back="Null shawl"
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	})
 	
 	

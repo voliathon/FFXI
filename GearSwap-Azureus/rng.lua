@@ -12,7 +12,7 @@ end
 
 function get_sets()
 	-- Set macro book/set --
-    send_command('input /macro book 19;wait .1;input /macro set 1')
+    send_command('input /macro book 9;wait .1;input /macro set 1')
 	
 	-- Binds for switching weapon modes
     send_command('bind !f8 gs c toggle weapon set')
@@ -128,7 +128,7 @@ function get_sets()
 	sets.engaged.RangedAccuracy = set_combine(sets.engaged.Tank, {
 		head="Malignance Chapeau",
 		body="Amini Caban +3",
-		hands="Malignance Gloves",
+		hands="Amini Glove. +3",
 		legs="Malignance Tights",
 		feet="Amini Bottillons +3",
 		neck="Scout's Gorget +2",
@@ -149,7 +149,7 @@ function get_sets()
     sets.midshot.RA = set_combine(sets.engaged.Tank,{
 		head="Arcadian Beret +3",
 		body="Amini Caban +3",
-		hands="Amini Glove. +2",
+		hands="Amini Glove. +3",
 		legs="Amini Bragues +2",
 		feet="Ikenga's Clogs",
 		neck={ name="Scout's Gorget +2", augments={'Path: A',}},
@@ -266,7 +266,7 @@ function get_sets()
 	sets.Jishnu = {
 		head="Orion Beret +3",
 		body="Nisroch Jerkin",
-		hands="Amini Glove. +2",
+		hands="Amini Glove. +3",
 		legs="Amini Bragues +2",
 		feet="Amini Bottillons +3",
 		neck="Fotia Gorget",
@@ -278,9 +278,15 @@ function get_sets()
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}	
 	}
 	
+	sets.Trueflight = {
+	
+	}
+	
+	sets.Trueflight.Obi = set_combine(sets.Trueflight, {waist="Hachirin-no-Obi"})	
+	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'DWSavageRNG','SavageRNGShield','TauretCrep','FomalhautPerunShield','AnnihilatorPerunShield','FomalhautDivergence','AnnihilatorDivergence'}
+	sets.weapon.index = {'DWSavageRNG','SavageRNGShield','TauretCrep','FomalhautPerunShield','AnnihilatorPerunShield','FomalhautDual','AnnihilatorDual','GastroDual'}
 	weapon_ind = 1
 	
 	sets.weapon.DWSavageRNG = {
@@ -316,17 +322,23 @@ function get_sets()
 		range="Annihilator"
 	}
 	
-	sets.weapon.FomalhautDivergence = {
+	sets.weapon.FomalhautDual = {
 		main="Perun +1",
 		sub="Crepuscular Knife",
 		range="Fomalhaut"
 	}
 
-	sets.weapon.AnnihilatorDivergence = {
+	sets.weapon.AnnihilatorDual = {
 		main="Perun +1",
 		sub="Crepuscular Knife",
 		range="Annihilator"
-	}	
+	}
+	
+	sets.weapon.GastroDual = {
+		main="Malevolence",
+		sub="Malevolence",
+		range="Gastrophetes"
+	}
 	
 end
 
@@ -354,11 +366,12 @@ function precast(spell,abil)
 		equip(sets.Wildfire)
 	end
 	
-	if world.weather_element == "Light" and spell.name == "Trueflight" then 
-		equip(sets.WildfireHachi)
-	else
-		equip(sets.Wildfire)	
-	end
+    if spell.name == "Trueflight" and (world.day == "Lightsday" or world.weather_element == "Light" or world.weather_intensity > 1) then
+        equip(sets.Trueflight.Obi)
+    else
+        equip(sets.Trueflight)
+    end
+
 
 	if spell.name == "Coronach" or spell.name == "Empyreal Arrow" then
 		equip(sets.Coronach)

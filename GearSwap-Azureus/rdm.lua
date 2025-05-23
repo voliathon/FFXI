@@ -17,14 +17,12 @@ function get_sets()
 	-- Set macro book/set --
     send_command('input /macro book 11;wait .1;input /macro set 1')
 	
-	-- Binds for modes
-	-- Toggle Weapon F8 Key
-	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c Reverse Toggle Weapon')
-	
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c C9')
-	send_command('bind ^f9 gs c reverse Engaged set')
+	-- Binds for switching weapon modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	-- Binds for switching TP modes
+	send_command('bind !f9 gs c toggle TP set')
+	send_command('bind ^f9 gs c reverse TP set')
 	
     -- Job Abilities for Red Mage --
     sets.Chainspell = {body="Vitiation tabard +1"}
@@ -231,7 +229,7 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -248,7 +246,7 @@ function get_sets()
 	-- Magic Defense and Magic Defense Set
     sets.MDT = {
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -352,17 +350,17 @@ function get_sets()
     back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+13 Attack+13','"Dbl.Atk."+10','Damage taken-5%',}}
   }
 	 
-	  -- Engaged Sets Toggle--
-	sets.engaged = {}
-	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
-	engaged_ind = 1  	 
+	  -- TP Sets Toggle--
+	sets.TP = {}
+	sets.TP.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh'}
+	TP_ind = 1  	 
 	 
-	sets.engaged.TP = set_combine(sets.TP, {}) 
-	sets.engaged.Refresh = set_combine(sets.RefreshSelf, {})
-	sets.engaged.Accuracy = set_combine(sets.Accuracy, {})
-	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
-	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
-	sets.engaged.Movement = set_combine(sets.Movement, {})	 
+	sets.TP.TP = set_combine(sets.TP, {}) 
+	sets.TP.Refresh = set_combine(sets.RefreshSelf, {})
+	sets.TP.Accuracy = set_combine(sets.Accuracy, {})
+	sets.TP.TakingLessMagicDamage = set_combine(sets.MDT, {})
+	sets.TP.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
+	sets.TP.Movement = set_combine(sets.Movement, {})	 
 
 
 
@@ -501,14 +499,9 @@ function aftercast(spell)
 	end
 end
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
-	equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+	equip(sets.TP[sets.TP.index[TP_ind]])
 	enspellCheck()
 end
 
@@ -516,38 +509,34 @@ function equip_weapon()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text output
+--158 is a green color for the text output
+--Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C8' then -- Toggling Weapons--	
-		weapon_ind = weapon_ind +1
-		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_weapon()
-	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+	if command =='toggle weapon set' then
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
 		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_weapon()
-	elseif command == 'C9' then
-		engaged_ind = engaged_ind +1
-		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()
-	elseif command == 'Reverse Engaged Set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+	elseif command == 'toggle TP set' then
+		TP_ind = TP_ind -1
+		if TP_ind == 0 then TP_ind = #sets.TP.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse TP set' then
+		TP_ind = TP_ind +1
+		if TP_ind > #sets.TP.index then TP_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
 		equip_current()
-	elseif command == 'C10' then
-		if Burst == 'Disabled' then 
-			Burst = 'Enabled'
-		else
-			Burst = 'Disabled'
-		end
-		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
-	end	 
+	end
 end
 
 

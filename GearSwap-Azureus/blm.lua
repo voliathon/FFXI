@@ -20,7 +20,7 @@
       -- ░                  ░                                                   
 function get_sets()
 	-- Set macro book/set --
-    send_command('input /macro book 1;wait .1;input /macro set 1')
+    send_command('input /macro book 7;wait .1;input /macro set 1')
 	
 	bonus = 0
 
@@ -233,7 +233,7 @@ function get_sets()
 	-- PDT Set
     sets.PDT = {
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body="Shamash Robe",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
@@ -254,13 +254,13 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		ammo="Sroda Tathlum",
-		head="Null masuqe",
-		body="Jhakri robe +2",
+		ammo="Staunch Tathlum +1",
+		head="Null Masque",
+		body="Jhakri Robe +2",
 		hands="Volte Gloves",
 		legs={ name="Merlinic Shalwar", augments={'Accuracy+19','Pet: INT+5','"Refresh"+2',}},
-		feet="Volte Gaiters",
-		neck="Sanctity Necklace",
+		feet={ name="Merlinic Crackows", augments={'Pet: Mag. Acc.+18','"Rapid Shot"+1','"Refresh"+2','Accuracy+20 Attack+20','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+		neck="Null Loop",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",

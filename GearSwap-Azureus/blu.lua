@@ -119,7 +119,7 @@ function get_sets()
 	-- Let's Turtle Yo!
     sets.engaged.TakingLessPhysicalDamage = {
 		ammo="Crepuscular Pebble",
-		head="Null masuqe",
+		head="Null masque",
 		body="Hashishin Mintan +3",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
@@ -136,7 +136,7 @@ function get_sets()
 	-- Fuck taking Magic Damage
 	sets.engaged.TakingLessMagicDamage = {
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body="Hashishin Mintan +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Hashishin Tayt +3",
@@ -167,7 +167,7 @@ function get_sets()
 	}
 	
 	sets.engaged.Refresh = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
-		head="Null masuqe",
+		head="Null masque",
 		body="Hashishin mintan +3",
 		neck="Null loop",
 		legs="Rawhide trousers",
@@ -180,7 +180,7 @@ function get_sets()
 	-- If you're not first, you're last
     sets.engaged.MovementEvasion = {
 		ammo="Staunch Tathlum +1",
-		head="Null masuqe",
+		head="Null masque",
 		body="Hashishin Mintan +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},

@@ -292,11 +292,6 @@ function aftercast(spell)
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 	equip(sets.TP[sets.TP.index[TP_ind]])
