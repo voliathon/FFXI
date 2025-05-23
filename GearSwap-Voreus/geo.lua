@@ -121,8 +121,8 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main={ name="Marin Staff +1", augments={'Path: A',}},
-		sub="Enki Strap",
+		main="Wizard's rod",
+		sub="Ammurapi Shield",
 		ammo="Ghastly tathlum +1",
 		head="Ea Hat +1",
 		body="Azimuth coat +3",
@@ -334,7 +334,7 @@ function get_sets()
 	 
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'IdrisGenmei','Maxentius','MarinStaff'}
+	sets.weapon.index = {'IdrisGenmei','Maxentius','Nuke'}
 	weapon_ind = 1
 	
 	sets.weapon.IdrisGenmei = {
@@ -345,9 +345,9 @@ function get_sets()
 		main="Maxentius",
 		sub="Ammurapi shield"
 	}
-	sets.weapon.MarinStaff = {
-		main="Marin staff +1",
-		sub="Enki strap"
+	sets.weapon.Nuke = {
+		main="Wizard's rod",
+		sub="Ammurapi Shield",
 	}		 
 
 	 

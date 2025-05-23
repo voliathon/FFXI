@@ -42,8 +42,8 @@ function get_sets()
 	})
 
 	sets.Duration = {
-		main={ name="Gada", augments={'Enh. Mag. eff. dur. +6','Mag. Acc.+14',}},
-		sub="Ammurapi Shield",
+		main="Musa",
+		sub="Khonsu",
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
 		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
@@ -103,9 +103,9 @@ function get_sets()
 	
 	--Regen Max Duration
 	sets.Regen = set_combine(sets.Duration,  {
-		main="Bolelabunga",
-		sub="Ammurapi shield",
-		head="Arbatel Bonnet +2"
+		main="Musa",
+		sub="Khonsu",
+		head="Arbatel Bonnet +3"
 	})
 
 	
@@ -116,8 +116,8 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main={ name="Marin Staff +1", augments={'Path: A',}},
-		sub="Enki Strap",
+		main="Wizard's rod",
+		sub="Ammurapi Shield",
 		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
 		head="Agwu's cap",
 		body="Agwu's robe",
@@ -142,7 +142,7 @@ function get_sets()
 	})
 	
 	sets.Kaustra = {
-		--main="Bunzi's Rod",
+		main="Wizard's rod",
 		sub="Ammurapi Shield",
 		ammo="Ghastly Tathlum +1",
 	    head="Pixie Hairpin +1", -- Dark magic damage
@@ -160,8 +160,8 @@ function get_sets()
 	}
 	
     sets.DrainAspir = {
-		main={ name="Marin Staff +1", augments={'Path: A',}},
-		sub="Khonsu",
+		main="Wizard's rod",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
 		body="Arbatel Gown +2",
@@ -178,10 +178,10 @@ function get_sets()
 	}
 	
 	sets.Cursna = {
-		main="Marin staff +1",
-		sub="Khonsu",
+		main="Wizard's rod",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel bracers +3",
 		legs="Arbatel pants +2",
@@ -196,10 +196,10 @@ function get_sets()
 	}	
 	
     sets.MagicAccuracy = {
-		--main="Musa",
-		sub="Khonsu",
+		main="Wizard's rod",
+		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel bracers +3",
 		legs="Arbatel pants +2",
@@ -214,8 +214,8 @@ function get_sets()
 	}	
 	
 	sets.Helix = {
-		--main="Bunzi's Rod", -- High magic damage and skill
-		sub="Ammurapi Shield", -- Magic accuracy and skill
+		main="Wizard's rod",
+		sub="Ammurapi Shield",
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap", -- Magic accuracy and damage
 		body="Agwu's Robe", -- Magic accuracy and damage
@@ -233,10 +233,10 @@ function get_sets()
 
 
     sets.Enfeebling = set_combine(sets.FastCast,  {
-		main="Bunzi's Rod",
+		main="Wizard's rod",
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Arbatel Bonnet +2",
+		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel bracers +3",
 		legs="Arbatel pants +2",
@@ -257,8 +257,6 @@ function get_sets()
 	})
 
 	sets.TP = set_combine(sets.PDT,  {
-		main="Malignance Pole",
-		sub="Khonsu",
 		ammo="Crepuscular Pebble",
 		head="Null masuqe",
 		body="Nyame Mail",
@@ -276,8 +274,8 @@ function get_sets()
 
 	-- PDT Set
     sets.PDT = {
-		main="Bolelabunga",
-		sub="Ammurapi Shield",
+		main="Musa",
+		sub="Khonsu",
 		ammo="Homiliary",
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body="Shamash Robe",
@@ -300,12 +298,12 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		main="Bolelabunga",
-		sub="Ammurapi Shield",
+		main="Musa",
+		sub="Khonsu",
 		ammo="Homiliary",
 		head="Befouled Crown",
 		body="Jhakri Robe +2",
-		hands={ name="Merlinic Dastanas", augments={'Spell interruption rate down -6%','Pet: Crit.hit rate +2','"Refresh"+1',}},
+		hands={ name="Chironic Gloves", augments={'Accuracy+6','CHR+1','"Refresh"+2','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
 		neck="Elite Royal Collar",
@@ -502,7 +500,7 @@ function midcast(spell)
 	
 	if buffactive["Rapture"] or buffactive["Ebullience"] then
 	--send_command('@input /echo Fuck yeah Bonnet is equipped!')
-		equip({head="Arbatel Bonnet +2"})
+		equip({head="Arbatel Bonnet +3"})
 	end
 	if buffactive["Perpetuance"] then
 	--send_command('@input /echo Fuck yeah Bracers are equipped!')
