@@ -38,7 +38,7 @@ function get_sets()
 	-- Even though Double Shot is a Job Ability, I'm covering it in the midshot for Ranged Attacks.
 	-- Refer to sets.midshot.RA.DoubleShot
 	sets.VelocityShot = {body="Amini Caban +3", back=BelenusCape.ranged_ws}
-	sets.BountyShot = {hands="Amini Glovelettes +2"}
+	sets.BountyShot = {hands="Amini Glove. +3"}
 	sets.FlashShot = {hands="Arcadian bracers +3"}
 	sets.StealthShot = {feet="Arcadian socks +3"}
 	sets.DecoyShot = {}
@@ -85,7 +85,7 @@ function get_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
-		feet="Amini Bottillons +3",
+		feet="Malignance Boots",
 		neck="Null loop",
 		waist="Null belt",
 		left_ear="Sherida Earring",
@@ -170,21 +170,6 @@ function get_sets()
 	})	
 	
 	--WeaponSkills
-	sets.HotShot = {
-		head="Nyame helm",
-		body="Nyame mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Fotia Gorget",
-		waist="Orpheus's Sash",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
-		right_ear="Amini Earring +1",
-		left_ring="Sroda Ring",
-		right_ring="Epaminondas's Ring",
-		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'}}	
-	}
-	
 	sets.Coronach = {
 		head="Orion Beret +3",
 		body="Amini Caban +3",
@@ -208,7 +193,7 @@ function get_sets()
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck="Scout's Gorget +2",
-		waist="Orpheus's Sash",
+		waist="Fotia belt",
 		left_ear="Crep. Earring",
 		right_ear="Friomisi Earring",
 		left_ring="Dingir Ring",
@@ -216,20 +201,8 @@ function get_sets()
 		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}	
 	}
 
-    sets.WildfireHachi = {
-		head="Nyame Helm",
-		body="Nyame mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Scout's Gorget +2",
-		waist="Hachirin-no-obi",
-		left_ear="Crep. Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Dingir Ring",
-		right_ring="Epaminondas's Ring",
-		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}	
-	}
+	sets.Wildfire.Obi = set_combine(sets.Wildfire, {waist="Hachirin-no-Obi"})	
+	sets.Wildfire.Sash = set_combine(sets.Wildfire, {waist="Orpheus's Sash"})
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
     sets.LastStand = {
@@ -279,10 +252,22 @@ function get_sets()
 	}
 	
 	sets.Trueflight = {
-	
+		head="Nyame Helm",
+		body="Nyame mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Scout's Gorget +2",
+		waist="Fotia belt",
+		left_ear="Crep. Earring",
+		right_ear="Friomisi Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}	
 	}
 	
 	sets.Trueflight.Obi = set_combine(sets.Trueflight, {waist="Hachirin-no-Obi"})	
+	sets.Trueflight.Sash = set_combine(sets.Trueflight, {waist="Orpheus's Sash"})
 	
 	--Weapon Sets--
 	sets.weapon = {}
@@ -358,18 +343,47 @@ function precast(spell,abil)
 	end
 
 	--Weapon skill lookups	
-	if spell.name == "Hot Shot" then  
-		equip(sets.HotShot)
-	end
+    if spell.name == "Wildfire" or spell.name == "Hot Shot" then
+        if buffactive[178] or buffactive[589] then  -- Firestorm / Firestorm II
+            send_command('@input /echo Firestorm detected! Equipping Hachirin-no-Obi.')
+            equip(sets.Wildfire.Obi)
+        else
+            local target = windower.ffxi.get_mob_by_target("t")
+            
+            if target and target.distance then
+                local dist = target.distance / 2  -- Convert squared distance to yalms
+
+                if dist <= 3 then  -- Close range (Orpheus Sash gets higher than 10% bonus)
+                    send_command('@input /echo Close range detected! Equipping Orpheus Sash.')
+                    equip(sets.Wildfire.Sash)
+                else
+                    send_command('@input /echo No storm effect detected. Equipping Fotia Belt for TP bonus.')
+                    equip(sets.Wildfire)
+                end
+            end
+        end
+    end
+
 	
-	if spell.name == "Wildfire" then  
-		equip(sets.Wildfire)
-	end
-	
-    if spell.name == "Trueflight" and (world.day == "Lightsday" or world.weather_element == "Light" or world.weather_intensity > 1) then
-        equip(sets.Trueflight.Obi)
-    else
-        equip(sets.Trueflight)
+    if spell.name == "Trueflight" then
+        if buffactive[184] or buffactive[595] then  -- Aurorastorm / Aurorastorm II
+            send_command('@input /echo Aurorastorm detected! Equipping Hachirin-no-Obi.')
+            equip(sets.Trueflight.Obi)
+        else
+            local target = windower.ffxi.get_mob_by_target("t")
+            
+            if target and target.distance then
+                local dist = target.distance / 2  -- Convert squared distance to yalms
+
+                if dist <= 3 then  -- Close range (Orpheus Sash gets higher than 10% bonus)
+                    send_command('@input /echo Close range detected! Equipping Orpheus Sash.')
+                    equip(sets.Trueflight.Sash)
+                else
+                    send_command('@input /echo No storm effect detected. Equipping Fotia Belt for TP bonus.')
+                    equip(sets.Trueflight)
+                end
+            end
+        end
     end
 
 
@@ -455,11 +469,6 @@ function aftercast(spell)
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
