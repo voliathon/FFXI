@@ -122,9 +122,9 @@ function get_sets()
 		head="Agwu's cap",
 		body="Agwu's robe",
 		hands="Arbatel bracers +3",
-		legs="Agwu's slops",
+		legs="Arbatel pants +3",
 		feet="Arbatel loafers +3",
-		neck={ name="Argute Stole +1", augments={'Path: A',}},
+		neck="Argute Stole +2",
 		waist={ name="Acuity Belt +1", augments={'Path: A',}},
 		left_ear="Malignance Earring",
 		right_ear="Barkaro. Earring",
@@ -148,9 +148,9 @@ function get_sets()
 	    head="Pixie Hairpin +1", -- Dark magic damage
 		body="Agwu's Robe", -- Magic accuracy and damage
 		hands="Arbatel bracers +3", -- Magic accuracy and damage
-		legs="Arbatel pants +2", -- Magic accuracy and damage
+		legs="Arbatel pants +3", -- Magic accuracy and damage
 		feet="Arbatel loafers +3", -- Magic accuracy and damage
-		neck="Argute Stole +1", -- Magic skill and damage
+		neck="Argute Stole +2", -- Magic skill and damage
 		waist="Null belt",
 		left_ear="Malignance Earring",
 		right_ear="Halasz Earring",
@@ -168,7 +168,7 @@ function get_sets()
 		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
 		legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
 		feet="Arbatel loafers +3",
-		neck={ name="Argute Stole +1", augments={'Path: A',}},
+		neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Fucho-no-Obi",
 		left_ear="Malignance Earring",
 		right_ear={ name="Arbatel Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Enmity-3',}},
@@ -184,7 +184,7 @@ function get_sets()
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel bracers +3",
-		legs="Arbatel pants +2",
+		legs="Arbatel pants +3",
 		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
 		neck="Malison Medallion",
 		waist="Null belt",
@@ -202,7 +202,7 @@ function get_sets()
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel bracers +3",
-		legs="Arbatel pants +2",
+		legs="Arbatel pants +3",
 		feet="Arbatel loafers +3",
 		neck="Null loop",
 		waist="Null belt",
@@ -222,7 +222,7 @@ function get_sets()
 		hands="Arbatel bracers +3", -- Magic accuracy and damage
 		legs="Agwu's Slops", -- Magic accuracy and damage
 		feet="Arbatel loafers +3", -- Magic accuracy and damage
-		neck="Argute Stole +1", -- Magic skill and damage
+		neck="Argute Stole +2", -- Magic skill and damage
 		waist="Eschan stone",
 		left_ear="Malignance Earring", -- Magic accuracy and damage
 		right_ear="Halasz Earring",
@@ -239,9 +239,9 @@ function get_sets()
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +2",
 		hands="Arbatel bracers +3",
-		legs="Arbatel pants +2",
+		legs="Arbatel pants +3",
 		feet="Arbatel loafers +3",
-		neck={ name="Argute Stole +1", augments={'Path: A',}},
+		neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Null belt",
 		left_ear="Crep. Earring",
 		right_ear="Malignance Earring",
@@ -277,16 +277,16 @@ function get_sets()
 		main="Musa",
 		sub="Khonsu",
 		ammo="Homiliary",
-		head={ name="Nyame Helm", augments={'Path: B',}},
+		head="Arbatel Bonnet +3",
 		body="Shamash Robe",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		legs="Arbatel pants +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null Loop",
 		waist="Plat. Mog. Belt",
 		left_ear="Infused Earring",
 		right_ear="Hearty Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Defending ring",
 		right_ring="Stikini Ring +1",
 		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
@@ -301,12 +301,12 @@ function get_sets()
 		main="Musa",
 		sub="Khonsu",
 		ammo="Homiliary",
-		head="Befouled Crown",
+		head={ name="Chironic Hat", augments={'Rng.Atk.+25','"Drain" and "Aspir" potency +7','"Refresh"+2','Accuracy+11 Attack+11',}},
 		body="Jhakri Robe +2",
 		hands={ name="Chironic Gloves", augments={'Accuracy+6','CHR+1','"Refresh"+2','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
-		neck="Elite Royal Collar",
+		neck="Sanctity necklace",
 		waist="Fucho-no-Obi",
 		left_ear="Infused Earring",
 		right_ear="Genmei Earring",
@@ -344,7 +344,7 @@ function get_sets()
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
 		feet="Arbatel loafers +3",
-		neck={ name="Argute Stole +1", augments={'Path: A',}},
+		neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Friomisi Earring",
@@ -397,7 +397,7 @@ function precast(spell,abil)
 	if spell.name == 'Immanence' then
 		equip(sets.Immanence)
 	elseif spell.name == 'Penury'  or spell.name == 'Parsimony' then
-		equip({legs="Arbatel pants +2"})
+		equip({legs="Arbatel pants +3"})
 	elseif spell.name == 'Celerity' or spell.name == 'Alacrity' or spell.name == 'Stormsurge' then
 		equip({feet="Pedagogy loafers +3"})
 	elseif spell.name == 'Stun' then
