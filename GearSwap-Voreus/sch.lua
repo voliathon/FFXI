@@ -4,9 +4,14 @@ function get_sets()
     send_command('input /macro book 4;wait .1;input /macro set 1')
 	
 	bonus = 0
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c toggle Engaged set')
-	send_command('bind ^f9 gs c reverse Engaged set')
+	
+	-- Binds for switching boomstick modes
+    send_command('bind !f8 gs c toggle boomstick set')
+	send_command('bind ^f8 gs c reverse boomstick set')
+	
+	-- Toggle fight sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+    send_command('bind !f9 gs c toggle fight set')
+	send_command('bind ^f9 gs c reverse fight set')
 	
 	-- Toggle Burst Mode
 	send_command('bind ^f10 gs c C10')
@@ -163,7 +168,7 @@ function get_sets()
 		main="Wizard's rod",
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
+		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','boomstick skill damage +8%',}},
 		body="Arbatel Gown +2",
 		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
 		legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
@@ -274,8 +279,6 @@ function get_sets()
 
 	-- PDT Set
     sets.PDT = {
-		main="Musa",
-		sub="Khonsu",
 		ammo="Homiliary",
 		head="Arbatel Bonnet +3",
 		body="Shamash Robe",
@@ -298,8 +301,6 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		main="Musa",
-		sub="Khonsu",
 		ammo="Homiliary",
 		head={ name="Chironic Hat", augments={'Rng.Atk.+25','"Drain" and "Aspir" potency +7','"Refresh"+2','Accuracy+11 Attack+11',}},
 		body="Jhakri Robe +2",
@@ -317,17 +318,17 @@ function get_sets()
 	
 	
     ------------------------------------------------------------------------------------------------------------------
-    -- Weaponskill sets
+    -- boomstickskill sets
     ------------------------------------------------------------------------------------------------------------------
 
-	-- All Weaponskills for Scholar unless explicitly defined below sets.precast.WS 
+	-- All boomstickskills for Scholar unless explicitly defined below sets.precast.WS 
 	sets.WSD = {
 		ammo="Crepuscular Pebble",
 		head="Nyame helm",
 		body="Nyame Mail",
 		hands="Nyame gauntlets",
 		legs="Nyame flanchard",
-		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','Weapon skill damage +10%','Accuracy+17 Attack+17',}},
+		feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -2%','"Store TP"+6','boomstick skill damage +10%','Accuracy+17 Attack+17',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -369,20 +370,38 @@ function get_sets()
 		back="Pahtli cape"
 	} 
 
-	  -- Engaged Sets Toggle--
-	sets.engaged = {}
-	sets.engaged.index = {'TP', 'Movement', 'Tank', 'Refresh'}
-	engaged_ind = 1  	 
+	-- fight Sets Toggle--
+	sets.fight = {}
+	sets.fight.index = {'TP', 'Movement', 'Tank', 'Refresh'}
+	fight_ind = 1  	 
 	 
-	sets.engaged.TP = set_combine(sets.TP, {}) 
-	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.Tank = set_combine(sets.PDT, {})
-	sets.engaged.Refresh = set_combine(sets.Refresh, {})
+	sets.fight.TP = set_combine(sets.TP, {}) 
+	sets.fight.Movement = set_combine(sets.Kiting, {})
+	sets.fight.Tank = set_combine(sets.PDT, {})
+	sets.fight.Refresh = set_combine(sets.Refresh, {})
+	 
+	--boomstick Sets--
+	sets.boomstick = {}
+	sets.boomstick.index = {'Musa','DaybreakShield','MarinStaff'}
+	boomstick_ind = 1
+	
+	sets.boomstick.Musa = {
+		main="Musa",
+		sub="Khonsu"
+	}
+	sets.boomstick.DaybreakShield = {
+		main="Daybreak",
+		sub="Ammurapi Shield"
+	}
+	sets.boomstick.MarinStaff = {
+		main="Marin staff +1",
+		sub="Enki strap"
+	}	 
 	 
 end
 
 -- Scholar Job Abilities where equip needs to be used upon activation.
--- Weaponskills
+-- boomstickskills
 -- Hitting Grimoire equipment as a clean up. Should always be in a form of Light Arts and Dark Arts on Scholar
 function precast(spell,abil)
 	if spell.skill == 'Elemental Magic' then
@@ -517,27 +536,38 @@ end
 
 --This function should only get kicked off when you're engaging.  
 --If I want a manual 'Refresh' set or 'PDT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
+--But I don't want to fuck myself by ignoring the fight check.
 --I'm also deciding not to use a Binding Key to put my in a PDT,Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip(sets.boomstick[sets.boomstick.index[boomstick_ind]]) 
+	equip(sets.fight[sets.fight.index[fight_ind]]) 
 end
 
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--Function use for Changing the fight Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'toggle Engaged set' then
-		engaged_ind = engaged_ind +1
-		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+	if command =='toggle boomstick set' then
+		boomstick_ind = boomstick_ind -1
+		if boomstick_ind == 0 then boomstick_ind = #sets.boomstick.index end
+		send_command('@input /echo <----- Weapon changed to '..sets.boomstick.index[boomstick_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse boomstick set' then
+		boomstick_ind = boomstick_ind +1
+		if boomstick_ind > #sets.boomstick.index then boomstick_ind = 1 end
+		send_command('@input /echo <----- Weapon changed to '..sets.boomstick.index[boomstick_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse Engaged set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+	elseif command == 'toggle fight set' then
+		fight_ind = fight_ind -1
+		if fight_ind == 0 then fight_ind = #sets.fight.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.fight.index[fight_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse fight set' then
+		fight_ind = fight_ind +1
+		if fight_ind > #sets.fight.index then fight_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.fight.index[fight_ind]..' ----->')
 		equip_current()
 	elseif command == 'C10' then
 		if Burst == 'Disabled' then 
@@ -546,7 +576,7 @@ function self_command(command)
 			Burst = 'Disabled'
 		end
 		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
-	end	  
+	end	   
 end
 
 
