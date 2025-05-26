@@ -25,7 +25,7 @@ function get_sets()
 	
 	-- Initialize any Belenus capes that we need to use 
 	BelenusCapes()
---
+
 	-- Job Abilities
     sets.EagleEyeShot = {legs="Arcadian Braccae +3"}
 	sets.Scavenge = {feet="Orion Socks +1"}
@@ -69,11 +69,9 @@ function get_sets()
 	
 	sets.VelocityShotActive = set_combine(sets.Snapshot,{
 		body="Amini Caban +3", --Velocity Shot 11%
-
     })
 	
 
-	
 	--Engaged Sets--
 	sets.engaged = {}
 --				    	    1		    2      3 		 4 			   5
@@ -403,7 +401,6 @@ function precast(spell,abil)
 		equip(sets.SavageBlade)
 	end
 	
-
 	--Ranger Job Abilities
 	if spell.name == "Eagle Eye Shot" then
 		equip(sets.EagleEyeShot)
@@ -448,7 +445,6 @@ function precast(spell,abil)
 end
 
 
-
 --Midcast Function <-- This shit is really your midshot function
 function midcast(spell,abil)
 	if spell.action_type == 'Ranged Attack' then
@@ -459,8 +455,6 @@ function midcast(spell,abil)
 		end
 	end
 end
-
-
 
 
 --Aftercast Function

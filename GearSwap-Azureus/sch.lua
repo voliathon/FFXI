@@ -51,9 +51,14 @@ function get_sets()
     send_command('input /macro book 8;wait .1;input /macro set 1')
 	
 	bonus = 0
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c toggle Engaged set')
-	send_command('bind ^f9 gs c reverse Engaged set')
+	
+	-- Binds for switching boomstick modes
+    send_command('bind !f8 gs c toggle boomstick set')
+	send_command('bind ^f8 gs c reverse boomstick set')
+	
+	-- Toggle fight sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+    send_command('bind !f9 gs c toggle fight set')
+	send_command('bind ^f9 gs c reverse fight set')
 	
 	-- Toggle Burst Mode
 	send_command('bind ^f10 gs c C10')
@@ -142,11 +147,6 @@ function get_sets()
 		back="Pahtli Cape"
 	})
 
-	-- Protecting the party
-    sets.Protect = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-	
 	--Regen Max Duration
 	sets.Regen = set_combine(sets.Duration,  {
 		main="Musa",
@@ -304,8 +304,6 @@ function get_sets()
 	})
 
 	sets.TP = set_combine(sets.PDT,  {
-		main="Malignance Pole",
-		sub="Khonsu",
 		ammo="Crepuscular Pebble",
 		head="Null masque",
 		body="Nyame Mail",
@@ -323,8 +321,6 @@ function get_sets()
 
 	-- PDT Set
     sets.PDT = {
-		main="Bolelabunga",
-		sub="Genmei Shield",
 		ammo="Staunch Tathlum +1",
 		head="Null masque",
 		body="Arbatel Gown +3",
@@ -347,8 +343,6 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.PDT,  {
-		main="Bolelabunga",
-		sub="Genmei Shield",
 		ammo="Staunch Tathlum +1",
 		head={ name="Chironic Hat", augments={'AGI+9','CHR+8','"Refresh"+2','Accuracy+3 Attack+3','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
 		body="Arbatel Gown +3",
@@ -418,15 +412,33 @@ function get_sets()
 		back="Pahtli cape"
 	} 
 
-	  -- Engaged Sets Toggle--
-	sets.engaged = {}
-	sets.engaged.index = {'TP', 'Movement', 'Tank', 'Refresh'}
-	engaged_ind = 1  	 
+	-- fight Sets Toggle--
+	sets.fight = {}
+	sets.fight.index = {'TP', 'Movement', 'Tank', 'Refresh'}
+	fight_ind = 1  	 
 	 
-	sets.engaged.TP = set_combine(sets.TP, {}) 
-	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.Tank = set_combine(sets.PDT, {})
-	sets.engaged.Refresh = set_combine(sets.Refresh, {})
+	sets.fight.TP = set_combine(sets.TP, {}) 
+	sets.fight.Movement = set_combine(sets.Kiting, {})
+	sets.fight.Tank = set_combine(sets.PDT, {})
+	sets.fight.Refresh = set_combine(sets.Refresh, {})
+	 
+	--boomstick Sets--
+	sets.boomstick = {}
+	sets.boomstick.index = {'Musa','DaybreakShield','MarinStaff'}
+	boomstick_ind = 1
+	
+	sets.boomstick.Musa = {
+		main="Musa",
+		sub="Khonsu"
+	}
+	sets.boomstick.DaybreakShield = {
+		main="Daybreak",
+		sub="Ammurapi Shield"
+	}
+	sets.boomstick.MarinStaff = {
+		main="Marin staff +1",
+		sub="Enki strap"
+	}	 
 	 
 end
 
@@ -566,27 +578,38 @@ end
 
 --This function should only get kicked off when you're engaging.  
 --If I want a manual 'Refresh' set or 'PDT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
+--But I don't want to fuck myself by ignoring the fight check.
 --I'm also deciding not to use a Binding Key to put my in a PDT,Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip(sets.boomstick[sets.boomstick.index[boomstick_ind]]) 
+	equip(sets.fight[sets.fight.index[fight_ind]]) 
 end
 
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+--Function use for Changing the fight Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'toggle Engaged set' then
-		engaged_ind = engaged_ind +1
-		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+	if command =='toggle boomstick set' then
+		boomstick_ind = boomstick_ind -1
+		if boomstick_ind == 0 then boomstick_ind = #sets.boomstick.index end
+		send_command('@input /echo <----- Weapon changed to '..sets.boomstick.index[boomstick_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse boomstick set' then
+		boomstick_ind = boomstick_ind +1
+		if boomstick_ind > #sets.boomstick.index then boomstick_ind = 1 end
+		send_command('@input /echo <----- Weapon changed to '..sets.boomstick.index[boomstick_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse Engaged set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+	elseif command == 'toggle fight set' then
+		fight_ind = fight_ind -1
+		if fight_ind == 0 then fight_ind = #sets.fight.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.fight.index[fight_ind]..' ----->')
+		equip_current()	
+	elseif command == 'reverse fight set' then
+		fight_ind = fight_ind +1
+		if fight_ind > #sets.fight.index then fight_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.fight.index[fight_ind]..' ----->')
 		equip_current()
 	elseif command == 'C10' then
 		if Burst == 'Disabled' then 
@@ -595,7 +618,7 @@ function self_command(command)
 			Burst = 'Disabled'
 		end
 		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
-	end	  
+	end	   
 end
 
 
