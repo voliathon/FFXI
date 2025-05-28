@@ -25,9 +25,9 @@ function get_sets()
 		
     sets.JA = {}
     sets.JA.Boost = {hands="Anchorite's Gloves +3"}
-    sets.JA.Chakra = {body="Anchorite's Cyclas +2", hands="Hes. Gloves +3"}
+    sets.JA.Chakra = {body="Anchorite's Cyclas +3", hands="Hes. Gloves +3"}
     sets.JA.Counterstance = {feet="Hesychast's Gaiters +3"}
-    sets.JA.Focus = {head="Anchorite's Crown +2"}
+    sets.JA.Focus = {head="Anchorite's Crown +3"}
     sets.JA.Dodge = {feet="Anchorite's Gaiters +3"}
     sets.JA.Mantra = {feet="Hes. Gaiters +3"}
     sets.JA.Footwork = {feet="Bhikku gaiters +3"}
@@ -318,7 +318,7 @@ end
 function aftercast(spell)
 	equip_current()
 	if (buffactive['Counterstance']) then
-		equip({body="Hesychast's cyclas +3"})
+		equip({body="Hesychast's cyclas +3",legs="Anch. Hose +3",feet="Hes. Gaiters +3"})
 	elseif (spell.name == 'Impetus') then
 		equip({body="Bhikku Cyclas +3"})
 	elseif (spell.name == 'Footwork') then
@@ -330,7 +330,7 @@ end
 function equip_current()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
 	if (buffactive['Counterstance']) then
-		equip({body="Hesychast's cyclas +3"})
+		equip({body="Hesychast's cyclas +3",legs="Anch. Hose +3",feet="Hes. Gaiters +3"})
 	end
 	if (buffactive['Impetus']) then
 		equip({body="Bhikku Cyclas +3"})
@@ -374,6 +374,6 @@ end
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies Voliathon!!! For some Weird Ass Reason my you dead')
+	send_command('@input /tell <me> Wakies Wakies Voliathon!!! For some Weird Ass Reason you dead')
 	end
 end)

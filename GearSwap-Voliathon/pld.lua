@@ -70,7 +70,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Chevalier's cuisses +3",
     feet="Sakpata's Leggings",
-    neck="Null loop",
+    neck="Kgt. Beads +2",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear="Chev. earring +1",
@@ -103,7 +103,7 @@ function get_sets()
     hands="Sakpata's Gauntlets",
     legs="Chevalier's cuisses +3",
     feet="Sakpata's Leggings",
-    neck="Null loop",
+    neck="Kgt. Beads +2",
     waist="Null belt",
     left_ear="Tuisto Earring",
     right_ear="Chev. earring +1",
@@ -345,7 +345,6 @@ function precast(spell,abil)
   end
   
 end
-
 
 
 -- Midcast
