@@ -137,9 +137,6 @@ function get_sets()
   
   })
   
-  -- TODO
-  -- Waltz
-  
   -- Mordant Rime  70%CHR / 30% DEX
   -- Evisceration   50% DEX  Critical Hits
   -- Rudra's Storm  80% DEX  Dmg varies with TP

@@ -126,7 +126,7 @@ function get_sets()
 		waist="Acerbic Sash +1",
 		left_ear="Mendi. Earring",
 		right_ear="Magnetic Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Mephitas's ring +1",
 		right_ring={ name="Mephitas's Ring +1", augments={'Path: A',}},
 		back="Pahtli Cape"
 	})
@@ -368,14 +368,11 @@ end
 function precast(spell,abil)
 	if spell.name == 'Impact' then 
 		equip(sets.Impact)
-	elseif spell.skill == 'Elemental Magic' then
-		equip(sets.ElementalMagic)
-		get_obi(spell)
 	elseif spell.action_type == 'Magic' then
 		equip(sets.FastCast)
+		get_obi(spell)
 	end
-		
-	
+			
 
 	--WS Lookups
 	if spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
@@ -656,11 +653,13 @@ function get_obi(spell)
     if use_hachirin_no_obi(spell) then
 		--Debug
 		--send_command('@input /echo Waist: Hachirin-no-Obi')
-        return { equip({waist = "Hachirin-no-obi"}) }
+        --return { equip({waist = "Hachirin-no-obi"}) }
+		return true
     else
 		--Debug
-		--send_command('@input /echo Waist: Tengu-no-Obi')	
-        return { equip({waist = "Eschan Stone"}) }
+		--send_command('@input /echo Waist: Tengu-no-Obi')
+		return false
+        --return { equip({waist = "Eschan Stone"}) }
     end
 end
 

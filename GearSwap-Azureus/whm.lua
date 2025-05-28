@@ -113,7 +113,7 @@ function get_sets()
 		body="Chironic doublet",
 		hands="Telchine gloves",
 		right_ring="Stikini ring +1",
-		left_ring="Veneficium Ring", 
+		left_ring="Mephitas's ring +1", 
 		waist="Austerity belt+1", 
 		back="Pahtli Cape",
 		legs="Geomancy Pants +2",

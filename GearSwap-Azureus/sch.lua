@@ -142,7 +142,7 @@ function get_sets()
 		waist="Null belt",
 		left_ear="Mendi. Earring",
 		right_ear="Magnetic Earring",
-		left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+		left_ring="Mephitas's ring +1",
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back="Pahtli Cape"
 	})
@@ -183,7 +183,7 @@ function get_sets()
 	
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
 		head="Agwu's Cap",
-		body="Agwu's Robe",
+		body="Arbatel gown +3",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring"
 	})
@@ -262,17 +262,18 @@ function get_sets()
 	
 	sets.Helix = {
 		main="Bunzi's Rod", -- High magic damage and skill
-		sub="Ammurapi Shield", -- Magic accuracy and skill
-		ammo="Sroda Tathlum",
+		sub="Culminus Shield", -- Magic accuracy and skill
+		ammo="Ghastly Tathlum +1",
 		head="Agwu's Cap", -- Magic accuracy and damage
-		body="Agwu's Robe", -- Magic accuracy and damage
-		hands="Arbatel Bracers +3", -- Magic accuracy and damage
-		legs="Agwu's Slops", -- Magic accuracy and damage
-		feet="Agwu's Pigaches", -- Magic accuracy and damage
+		body="Arbatel gown +3",
+		hands="Arbatel Bracers +3",
+		legs="Arbatel pants +3",
+		feet="Arbatel Loafers +3",
+		feet="Arbatel Loafers +3", -- Magic accuracy and damage
 		neck="Argute Stole +2", -- Magic skill and damage
 		waist="Eschan stone",
 		left_ear="Malignance Earring", -- Magic accuracy and damage
-		right_ear="Halasz Earring",
+		right_ear="Arbatel Earring +1",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring",
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
@@ -446,12 +447,14 @@ end
 -- Weaponskills
 -- Hitting Grimoire equipment as a clean up. Should always be in a form of Light Arts and Dark Arts on Scholar
 function precast(spell,abil)
-	if spell.skill == 'Elemental Magic' then
-		equip(sets.ElementalMagic)
-		get_obi(spell)
-	elseif (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
+	--if spell.skill == 'Elemental Magic' then
+		--equip(sets.ElementalMagic)
+		--get_obi(spell)
+	--else
+	if (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
         (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
 			equip(sets.FastCastGrimoire)
+			get_obi(spell)
 			--send_command('@input /echo yeah we hit this shit in precast.')	
 	end 
 	
@@ -748,10 +751,12 @@ function get_obi(spell)
     if use_hachirin_no_obi(spell) then
 		--Debug
 		--send_command('@input /echo Waist: Hachirin-no-Obi')
-        return { equip({waist = "Hachirin-no-obi"}) }
+        --return { equip({waist = "Hachirin-no-obi"}) }
+		return true
     else
 		--Debug
 		--send_command('@input /echo Waist: Tengu-no-Obi')	
-        return { equip({waist = "Eschan Stone"}) }
+        --return { equip({waist = "Eschan Stone"}) }
+		return false
     end
 end

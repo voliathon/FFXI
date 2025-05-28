@@ -142,7 +142,7 @@ function get_sets()
 		waist="Witful Belt",
 		left_ear="Loquac. Earring",
 		right_ear="Mendi. Earring",
-		left_ring="Lebeche Ring",
+		left_ring="Mephitas's Ring +1",
 		right_ring="Stikini Ring +1",
 		back="Pahtli Cape"
 	}
@@ -381,11 +381,9 @@ end
 function precast(spell,abil)
 	if spell.name == 'Impact' then 
 		equip(sets.Impact)
-	elseif spell.skill == 'Elemental Magic' then
-		equip(sets.ElementalMagic)
-		get_obi(spell)	
 	elseif spell.action_type == 'Magic' then
 		equip(sets.FastCast)
+		get_obi(spell)
 	end
 
 	--WS Lookups
@@ -621,10 +619,12 @@ function get_obi(spell)
     if use_hachirin_no_obi(spell) then
 		--Debug
 		--send_command('@input /echo Waist: Hachirin-no-Obi')
-        return { equip({waist = "Hachirin-no-obi"}) }
+        --return { equip({waist = "Hachirin-no-obi"}) }
+		return true
     else
 		--Debug
 		--send_command('@input /echo Waist: Tengu-no-Obi')	
-        return { equip({waist = "Eschan Stone"}) }
+        --return { equip({waist = "Eschan Stone"}) }
+		return false
     end
 end

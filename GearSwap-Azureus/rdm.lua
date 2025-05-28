@@ -115,7 +115,7 @@ function get_sets()
 		left_ear="Magnetic Earring",
 		right_ear="Mendi. Earring",
 		left_ring="Stikini Ring +1",
-		right_ring="Lebeche Ring",
+		right_ring="Mephitas's Ring +1",
 		back="Oretan. Cape +1"
 	})
 
@@ -432,7 +432,7 @@ function precast(spell,abil)
 		equip(sets.FastCast)
 	end
 	if spell.skill == 'Elemental Magic' then
-		equip(sets.ElementalMagic)
+		equip(sets.FastCast)
 		get_obi(spell)
 	end
 	--WS Lookups
@@ -673,10 +673,12 @@ function get_obi(spell)
     if use_hachirin_no_obi(spell) then
 		--Debug
 		--send_command('@input /echo Waist: Hachirin-no-Obi')
-        return { equip({waist = "Hachirin-no-obi"}) }
+        --return { equip({waist = "Hachirin-no-obi"}) }
+		return true
     else
 		--Debug
 		--send_command('@input /echo Waist: Tengu-no-Obi')	
-        return { equip({waist = "Eschan Stone"}) }
+        --return { equip({waist = "Eschan Stone"}) }
+		return false
     end
 end
