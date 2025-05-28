@@ -96,7 +96,7 @@ function get_sets()
 		waist="Witful Belt",
 		left_ear="Mendi. Earring",
 		right_ear="Meili Earring",
-		left_ring="Stikini Ring +1",
+		left_ring="Mephitas's ring +1",
 		right_ring="Stikini Ring +1",
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	})

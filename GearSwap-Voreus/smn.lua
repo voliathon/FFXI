@@ -168,7 +168,7 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Meili Earring",
 		right_ear="Mendi. Earring",
-		left_ring="Kishar Ring",
+		left_ring="Mephitas's ring +1",
 		right_ring="Lebeche Ring",
 		back="Fi follet cape +1"
 	})
