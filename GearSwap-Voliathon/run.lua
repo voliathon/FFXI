@@ -2,10 +2,10 @@ function get_sets()
   -- Set macro book/set --
   send_command('input /macro book 17;wait .1;input /macro set 2')
 
-	-- Binds for modes
+	-- Binds for switching weapons
     send_command('bind !f8 gs c toggle weapon set')
 	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching equip modes	
+	-- Binds for switching equip 	
     send_command('bind !f9 gs c toggle equip set')
 	send_command('bind ^f9 gs c reverse equip set')
 
@@ -132,15 +132,15 @@ function get_sets()
   
   }	
 	
-  --TP Sets--
-  sets.TP = {}
+  --equip Sets--
+  sets.equip = {}
 --					  1		      2         3 		       4 		     5   	   6
-  sets.TP.index = {'BadAss', 'Hybrid', 'Accuracy', 'TreasureHunter', 'Movement', 'Tank'}
-  TP_ind = 1
+  sets.equip.index = {'BadAss', 'Hybrid', 'Accuracy', 'TreasureHunter', 'Movement', 'Tank'}
+  equip_ind = 1
 
   
   --offensive melee set
-  sets.TP.BadAss = {
+  sets.equip.BadAss = {
     ammo="Ginsen",
     head="Adhemar Bonnet +1",
     body="Ashera harness",
@@ -157,7 +157,7 @@ function get_sets()
   }
 
   --Hybrid Gear
-  sets.TP.Hybrid = {
+  sets.equip.Hybrid = {
     ammo="Staunch Tathlum +1",
 	head="Nyame Helm",
     body="Runeist coat +3",
@@ -173,7 +173,7 @@ function get_sets()
     back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
   }
 
-  sets.TP.Accuracy = {
+  sets.equip.Accuracy = {
     ammo="Amar Cluster",
     head="Erilaz galea +3",
     body="Erilaz surcoat +3",
@@ -189,13 +189,13 @@ function get_sets()
     back={ name="Ogma's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
   }
   
-  sets.TP.TreasureHunter = {
+  sets.equip.TreasureHunter = {
     ammo="Staunch Tathlum +1",
     head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
     body="Nyame Mail",
     hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
     legs="Erilaz leg guards +3",
-    feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
+    feet={ name="Herculean Boots", augments={'"Store equip"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
     neck="Null loop",
     waist="Chaac Belt",
     left_ear="Sherida Earring",
@@ -205,7 +205,7 @@ function get_sets()
 	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
   
-  sets.TP.Movement = {
+  sets.equip.Movement = {
     ammo="Staunch Tathlum +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body="Erilaz Surcoat +3",
@@ -221,7 +221,7 @@ function get_sets()
     back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
   }
 
-  sets.TP.Tank = {
+  sets.equip.Tank = {
     ammo="Staunch Tathlum +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
     body="Erilaz Surcoat +3",
@@ -239,7 +239,7 @@ function get_sets()
 
   --Weaponskill Sets--
 
-  --multi, carries FTP -- Need STR for the modifier
+  --multi, carries Fequip -- Need STR for the modifier
   sets.Resolution = {
     ammo="Yetshila +1",
     head={ name="Nyame Helm", augments={'Path: B',}},
@@ -256,7 +256,7 @@ function get_sets()
     back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
   }
 
-  --doesn't carry FTP -- This will be dimidiation  Need DEX for the modifier
+  --doesn't carry Fequip -- This will be dimidiation  Need DEX for the modifier
   sets.Dimidiation = {
     ammo="Knobkierrie",
     head={ name="Nyame Helm", augments={'Path: B',}},
@@ -266,7 +266,7 @@ function get_sets()
     feet={ name="Nyame sollerets", augments={'Path: B',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','equip Bonus +250'}},
     right_ear="Ishvara Earring",
     left_ring="Rajas Ring",
     right_ring="Epaminondas's Ring",
@@ -306,19 +306,42 @@ function get_sets()
     right_ring="Fenrir Ring +1",
     back="Toro Cape"
   }
-  
+ 
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'Epeolatry','Lycurgos','Naegling','LoxoticMace','Lionheart'}
+	weapon_ind = 1 
+	
+	sets.weapon.Epeolatry = {
+		main="Epeolatry",
+		sub="Utu Grip"
+	}
+	
+	sets.weapon.Lycurgos = {
+		main="Lycurgos",
+		sub="Utu Grip"
+	}
+	
+	sets.weapon.Naegling = {
+		main="Naegling",
+		sub="Blurred Shield +1"
+	}
+	
+	sets.weapon.LoxoticMace = {
+		main="Loxotic Mace +1",
+		sub="Blurred Shield +1"
+	}
+	
+	sets.weapon.Lionheart = {
+		main="Lionheart",
+		sub="Utu Grip"
+	}
+ 
 end
 
 
 function precast(spell,abil)
 
-  --equips favorite weapon if disarmed
-  if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip({main="Epeolatry",sub="Utu Grip"})
-    add_to_chat(158,'Epeolatry Weapon: [ON]')
-	Lionheart = 'OFF'
-  end
-  
   if spell.skill == 'Enhancing Magic' then
 	equip(sets.FastCast)
   end
@@ -389,11 +412,6 @@ function precast(spell,abil)
     equip({neck="Magoraga Beads"})
   end
   
-  if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
-    if TP_ind == 4 then
-      equip(sets.TP.Tank) 
-    end
-  end
 end
 
 
@@ -452,36 +470,6 @@ function midcast(spell,act,arg)
     equip(sets.Enmity)
   end
   
-	--Weapon Sets--
-	sets.weapon = {}
-	sets.weapon.index = {'Epeolatry','Lycurgos','Naegling','LoxoticMace','Lionheart'}
-	weapon_ind = 1 
-	
-	sets.weapon.Epeolatry = {
-		main="Epeolatry",
-		sub="Utu Grip"
-	}
-	
-	sets.weapon.Lycurgos = {
-		main="Lycurgos",
-		sub="Utu Grip"
-	}
-	
-	sets.weapon.Naegling = {
-		main="Naegling",
-		sub="Blurred Shield +1"
-	}
-	
-	sets.weapon.LoxoticMace = {
-		main="Loxotic Mace +1",
-		sub="Blurred Shield +1"
-	}
-	
-	sets.weapon.Lionheart = {
-		main="Lionheart",
-		sub="Utu Grip"
-	}
-  
 end
 
 
@@ -494,15 +482,16 @@ end
 
 
 function equip_current()
-	equip(sets.TP[sets.TP.index[TP_ind]]) 
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+	equip(sets.equip[sets.equip.index[equip_ind]]) 
 	if (buffactive['Battuta']) then
 		equip({hands="Turms mittens +1", feet="Turms leggings +1", left_ear="Cryptic earring"})
 	end
 end
 
---Function use for Changing the TP Set. 
---123 is a red color for the text output
---158 is a green color for the text output
+--Function use for Changing the equip Set. 
+--123 is a red color for the text ouequiput
+--158 is a green color for the text ouequiput
 function self_command(command)
 	if command =='toggle weapon set' then
 		weapon_ind = weapon_ind -1

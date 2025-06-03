@@ -2,10 +2,10 @@ function get_sets()
 -- Set macro book/set --
     send_command('input /macro book 7;wait .1;input /macro set 1')
 	
-	-- Binds for modes
+	-- Binds for switching weapons
     send_command('bind !f8 gs c toggle weapon set')
 	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching equip modes	
+	-- Binds for switching equip 	
     send_command('bind !f9 gs c toggle equip set')
 	send_command('bind ^f9 gs c reverse equip set')
 
