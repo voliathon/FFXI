@@ -2,14 +2,14 @@ function get_sets()
   -- Set macro book/set --
   send_command('input /macro book 17;wait .1;input /macro set 2')
 
-  -- Binds for modes
-  --Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-  send_command('bind ^f8 gs c C8') 
-  send_command('bind !f9 gs c toggle TP set')
-  send_command('bind ^f9 gs c reverse TP set')
+	-- Binds for modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	-- Binds for switching equip modes	
+    send_command('bind !f9 gs c toggle equip set')
+	send_command('bind ^f9 gs c reverse equip set')
 
-  -- Modes --
-  Lionheart = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F8
+
 	
   --Job Ability Sets--
   sets.JA = {}
@@ -452,6 +452,35 @@ function midcast(spell,act,arg)
     equip(sets.Enmity)
   end
   
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'Epeolatry','Lycurgos','Naegling','LoxoticMace','Lionheart'}
+	weapon_ind = 1 
+	
+	sets.weapon.Epeolatry = {
+		main="Epeolatry",
+		sub="Utu Grip"
+	}
+	
+	sets.weapon.Lycurgos = {
+		main="Lycurgos",
+		sub="Utu Grip"
+	}
+	
+	sets.weapon.Naegling = {
+		main="Naegling",
+		sub="Blurred Shield +1"
+	}
+	
+	sets.weapon.LoxoticMace = {
+		main="Loxotic Mace +1",
+		sub="Blurred Shield +1"
+	}
+	
+	sets.weapon.Lionheart = {
+		main="Lionheart",
+		sub="Utu Grip"
+	}
   
 end
 
@@ -471,39 +500,29 @@ function equip_current()
 	end
 end
 
+--Function use for Changing the TP Set. 
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	if command == 'C8' then -- Lionheart to Epeolatry --	
-        if Lionheart == 'ON' then
-            Lionheart = 'OFF'
-			equip({main="Epeolatry", sub="Utu Grip"})
-            add_to_chat(158,'Epeolatry Weapon: [ON]')
-			add_to_chat(123,'Lionheart Weapon: [OFF]')
-		else
-            Lionheart = 'ON'
-			equip({main="Lionheart", sub="Utu Grip"})
-            add_to_chat(158,'Lionheart Weapon: [ON]')
-            add_to_chat(123,'Epeolatry Weapon: [OFF]')				
-        end
-       -- status_change(player.status)
-	elseif command == 'toggle TP set' then
-		TP_ind = TP_ind -1
-		if TP_ind == 0 then TP_ind = #sets.TP.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()	
-	elseif command == 'reverse TP set' then
-		TP_ind = TP_ind +1
-		if TP_ind > #sets.TP.index then TP_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
+	elseif command == 'toggle equip set' then
+		equip_ind = equip_ind +1
+		if equip_ind > #sets.equip.index then equip_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse equip set' then
+		equip_ind = equip_ind -1
+		if equip_ind == 0 then equip_ind = #sets.equip.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
 		equip_current()
 	end
 end
-
-
--- Send tell to self if I died --
-windower.register_event('status change', function()
-	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
-	end
-end)

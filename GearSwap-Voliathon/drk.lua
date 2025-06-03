@@ -43,42 +43,43 @@
     -- Fried Popoto
     -- Stats: (HP +30, VIT +2, Element: Fire +20, Defense +20% (Cap:145), Subtle Blow +8)
         -- This food is as cheap as it gets, excluding the crystal it costs less than 300 gil to make 6 of these a synth. Making these in bulk to store and use for Ambuscade spam and similar events will cost you next to nothing. Even if you have to shout and pay a level 90+ cook 50-100k to make them for you. It would still only cost you roughly 10-20k a stack of Fried Popotos.
-    -- Purchased from the Auction House, crafted only.
+            -- Purchased from the Auction House, crafted only.
 
 function get_sets()
-    -- Set macro book/set --
+-- Set macro book/set --
 	send_command('input /macro book 12;wait .1;input /macro set 2')
 
-	--Swapping Weapons
-	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c C8') 
-	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-	send_command('bind !f9 gs c toggle TP set')
-	send_command('bind ^f9 gs c reverse TP set')
+	-- Binds for modes
+    send_command('bind !f8 gs c toggle weapon set')
+	send_command('bind ^f8 gs c reverse weapon set')
+	-- Binds for switching equip modes	
+    send_command('bind !f9 gs c toggle equip set')
+	send_command('bind ^f9 gs c reverse equip set')
 
-	-- Modes --
-	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang via ctrl + F8
+
 	
   --Job Ability Sets--
   sets.JA = {}
-  sets.JA.BloodWeapon = { body="Fallen's Cuirass +1" }
+  sets.JA.BloodWeapon = { body="Fallen's Cuirass +3" }
   sets.JA.Souleater = { head="Ignominy Burgeonet +3"}
   sets.JA.ArcaneCircle = { feet="Ignominy Sollerets +2"}
-  sets.JA.LastResort = { feet="Fallen's Sollerets +1", back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}} }
+  sets.JA.LastResort = { feet="Fallen's Sollerets +3"}
   sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
-  sets.JA.DarkSeal = { head="Fallen's Burgeonet +1"}
-  sets.JA.NetherVoid = { legs="Heathen's Flanchard +3"}
+  sets.JA.DarkSeal = { head="Fallen's Burgeonet +3"}
+  sets.JA.NetherVoid = { legs="Heathen's Flanchard +2"}
 
   -- Dancer's Abilities --
   sets.JA.Waltz = {legs="Dashing subligar"}
+  sets.JA.Step = 	{}
   
-  --TP Sets--
-  sets.TP = {}
+  
+  --equip Sets--
+  sets.equip = {}
 --					  1		   2              3 		   4		  5 		  6		           7
-  sets.TP.index = {'Movement', 'BadAss', 'NewTurtle', 'Evasion', 'Accuracy', 'TreasureHunter', 'Reraise'}
-  TP_ind = 1
+  sets.equip.index = {'Movement', 'BadAss', 'NewTurtle', 'Evasion', 'Accuracy', 'TreasureHunter', 'Reraise'}
+  equip_ind = 1
 
-  sets.TP.Movement = {
+  sets.equip.Movement = {
     ammo="Coiste Bodhar",
     head="Heathen's burgeonet +3",
     body="Sakpata's Plate",
@@ -95,7 +96,7 @@ function get_sets()
   }
   
   --offensive melee set
-  sets.TP.BadAss = {
+  sets.equip.BadAss = {
     ammo="Coiste Bodhar",
     head="Flam. Zucchetto +2",
     body="Sakpata's Plate",
@@ -112,7 +113,7 @@ function get_sets()
   }
 
   --New Tank Gear
-  sets.TP.NewTurtle = {
+  sets.equip.NewTurtle = {
     ammo="Coiste Bodhar",
     head="Sakpata's Helm",
     body="Sakpata's Plate",
@@ -129,7 +130,7 @@ function get_sets()
   }  
 
   --Evasion
-  sets.TP.Evasion = {
+  sets.equip.Evasion = {
     ammo="Staunch Tathlum +1",
     head="Nyame Helm",
     body="Nyame Mail",
@@ -145,7 +146,7 @@ function get_sets()
     back="Moonlight Cape"
   }
   
-  sets.TP.Accuracy = {
+  sets.equip.Accuracy = {
     ammo="Amar Cluster",
     head="Heathen's burgeonet +3",
     body="Nyame Mail",
@@ -161,12 +162,12 @@ function get_sets()
 	back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
   }
   
-  sets.TP.TreasureHunter = {
+  sets.equip.TreasureHunter = {
     waist="Chaac Belt",
 	body="Volte jupon"
   }
   
-  sets.TP.Reraise = {
+  sets.equip.Reraise = {
     ammo="Staunch Tathlum +1",
     head="Crepuscular Helm",
     body="Crepuscular Mail",
@@ -192,7 +193,7 @@ function get_sets()
     feet="Heathen's sollerets +3",
     neck="Abyssal Bead Necklace +2",
     waist="Sailfi Belt +1",
-    left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
+    left_ear={ name="Moonshade Earring", augments={'Attack+4','equip Bonus +250'}},
     right_ear="Thrud Earring",
     left_ring="Epaminondas's Ring",
     right_ring="Sroda ring",
@@ -284,15 +285,46 @@ function get_sets()
     neck="Warder's Charm",
     waist="Grunfeld Rope",
     left_ear="Cryptic Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear={ name="Moonshade Earring", augments={'Attack+4','equip Bonus +250',}},
     left_ring="Moonlight Ring",
     right_ring="Epaminondas's Ring",
     back="Vespid Mantle"  
   }
 
   sets.DarkMagic = {
-	legs="Heathen's flanchard +3"
+	legs="Heathen's flanchard +2"
   }
+
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'Apocalypse','Naegling','LoxoticMace','Lycurgos','Dolichenus'}
+	weapon_ind = 1 
+	
+	sets.weapon.Apocalypse = {
+		main="Apocalypse",
+		sub="Utu Grip"
+	}
+	
+	
+	sets.weapon.Naegling = {
+		main="Naegling",
+		sub="Blurred Shield +1"
+	}
+	
+	sets.weapon.LoxoticMace = {
+		main="Loxotic Mace +1",
+		sub="Blurred Shield +1"
+	}
+	
+	sets.weapon.Lycurgos = {
+		main="Lycurgos",
+		sub="Utu Grip"
+	}
+	
+	sets.weapon.Dolichenus = {
+		main="Dolichenus",
+		sub="Blurred Shield +1"
+	}
 
 end
 
@@ -303,7 +335,6 @@ function precast(spell,abil)
 	equip(sets.JA.Waltz)
   end	
   
-
   if spell.name == 'Blood Weapon' then
     equip(sets.JA.BloodWeapon)
   end  
@@ -348,19 +379,21 @@ function precast(spell,abil)
   
 end
 
+
+
 -- Midcast
 function midcast(spell,act,arg)
   if spell.name == "Dread Spikes" then
 	equip({body="Heathen's Cuirass +3"})
   end
 
+  if string.find(spell.name,'Absorb-TP') then
+	equip({hands="Heathen's gauntlets +3"})
+  end
+
   if spell.skill == 'Dark Magic' then
 	equip(sets.DarkMagic)
   end
-
-  if string.find(spell.name,'Absorb-TP') then
-		equip({hands="Heathen's gauntlets +3"})
-	end
 
   if spell.skill == 'Enhancing Magic' then
 	if spell.name == 'Phalanx' then
@@ -384,57 +417,40 @@ function midcast(spell,act,arg)
   
 end
 
-
 function aftercast(spell)
   equip_current()
+
 end
 
 
 function equip_current()
-	weaponSelector()
-	equip(sets.TP[sets.TP.index[TP_ind]]) 
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+	equip(sets.equip[sets.equip.index[equip_ind]]) 
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+--Function use for Changing the Weapon Set and equip Set.  
+--123 is a red color for the text ouequiput
+--158 is a green color for the text ouequiput
 function self_command(command)
-	if command == 'C8' then -- Naegling to Crepuscular scythe --	
-      if Naegling == 'ON' then
-		Naegling = 'OFF'
-		equip({main="Apocalypse"})
-		equip({sub="Utu grip"})
-		add_to_chat(158,'Apocalypse: [ON]')
-		add_to_chat(123,'Naegling Weapon: [OFF]')
-	  else
-		Naegling = 'ON'
-		equip({main="Naegling"})
-		equip({sub="Blurred shield +1"})
-		add_to_chat(158,'Naegling Weapon: [ON]')
-		add_to_chat(123,'Apocalypse: [OFF]')				
-	  end
-       -- status_change(player.status)
-	elseif command == 'toggle TP set' then
-		TP_ind = TP_ind -1
-		if TP_ind == 0 then TP_ind = #sets.TP.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()	
-	elseif command == 'reverse TP set' then
-		TP_ind = TP_ind +1
-		if TP_ind > #sets.TP.index then TP_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
+	elseif command == 'toggle equip set' then
+		equip_ind = equip_ind +1
+		if equip_ind > #sets.equip.index then equip_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse equip set' then
+		equip_ind = equip_ind -1
+		if equip_ind == 0 then equip_ind = #sets.equip.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
 		equip_current()
 	end
-
-end
-
-function weaponSelector()
-  if Naegling == 'ON' then
-	equip({main="Naegling"})
-	equip({sub="Blurred shield +1"})
-  else
-	equip({main="Apocalypse"})
-	equip({sub="Utu grip"})
-  end
-  
 end
