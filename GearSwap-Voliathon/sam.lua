@@ -9,21 +9,14 @@ function get_sets()
     send_command('bind !f9 gs c toggle equip set')
 	send_command('bind ^f9 gs c reverse equip set')
 
-	-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
-	ShiningOne = 'OFF' -- Toogle on/off the Lionheart and Epeolatry via ctrl + F9
-	ShadowType = 'None'
-	
 	--Job Ability Sets--
 	sets.JA = {}
 	sets.JA.Waltz = {legs="Dashing subligar"}
-	sets.JA.Step = 	{}
-	sets.JA.Stun = {}
 	sets.JA.Sengikori = {feet="Kasuga sune-ate +3"}	
-	sets.JA.Meditate = {head="Wakido kabuto +2", hands="Sao. Kote +2"}
+	sets.JA.Meditate = {head="Wakido kabuto +3", hands="Sao. Kote +3"}
 	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +3", feet="Wakido sune-ate +3"}
-	sets.JA.WardingCircle = {head="Wakido kabuto +2"}
-	sets.JA.ThirdEye = {legs="Sakonji Haidate +1"}
+	sets.JA.WardingCircle = {head="Wakido kabuto +3"}
+	sets.JA.ThirdEye = {legs="Sakonji Haidate +3"}
 	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
 	
 	--equip Sets--
@@ -141,7 +134,7 @@ function get_sets()
 	sets.Fudo = {
 		ammo="Knobkierrie",
 		head="Nyame Helm",
-		body="Nyame mail",
+		body="Sakonji domaru +3",
 		hands="Kasuga kote +3",
 		legs="Wakido Haidate +3",
 		feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
@@ -157,7 +150,7 @@ function get_sets()
 	sets.Shoha = {
 		ammo="Knobkierrie",
 		head="Mpaca's Cap",
-		body="Nyame mail",
+		body="Sakonji domaru +3",
 		hands="Kasuga kote +3",
 		legs="Wakido Haidate +3",
 		feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
@@ -206,7 +199,7 @@ function get_sets()
 	sets.Stardiver = {
 		ammo="Coiste Bodhar",
 		head="Mpaca's Cap",
-		body="Nyame mail",
+		body="Sakonji domaru +3",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
 		feet="Kas. Sune-Ate +2",
@@ -233,7 +226,6 @@ function get_sets()
 		main="Masamune",
 		sub="Utu Grip"
 	}
-	
 	
 	sets.weapon.ShiningOne = {
 		main="Shining One",
@@ -287,11 +279,6 @@ function precast(spell,abil)
     equip(sets.Stardiver)
   end
   
-  --prevents casting Utsusemi if you already have 3 or more shadows
-  if spell.name == 'Utsusemi: Ichi' and ShadowType == 'Ni' and (buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)']) then
-    cancel_spell()
-  end
-    --Utsusemi Check
   if string.find(spell.name,'Utsusemi') then
     equip({neck="Magoraga Beads"})
   end
@@ -304,14 +291,12 @@ function aftercast(spell)
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
-	equip(sets.equip[sets.equip.index[equip_ind]]) 
+	equip(sets.equip[sets.equip.index[equip_ind]])
+	if (buffactive['Third Eye']) then
+		equip({legs="Sakonji haidate +3"})
+	end
 end
 
 --Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
@@ -321,12 +306,12 @@ function self_command(command)
 	if command =='toggle weapon set' then
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()	
 	elseif command == 'reverse weapon set' then
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()
 	elseif command == 'toggle equip set' then
 		equip_ind = equip_ind +1
@@ -340,11 +325,3 @@ function self_command(command)
 		equip_current()
 	end
 end
-
-
--- Send tell to self if I died --
-windower.register_event('status change', function()
-	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
-	end
-end)

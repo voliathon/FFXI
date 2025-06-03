@@ -43,24 +43,20 @@
     -- Fried Popoto
     -- Stats: (HP +30, VIT +2, Element: Fire +20, Defense +20% (Cap:145), Subtle Blow +8)
         -- This food is as cheap as it gets, excluding the crystal it costs less than 300 gil to make 6 of these a synth. Making these in bulk to store and use for Ambuscade spam and similar events will cost you next to nothing. Even if you have to shout and pay a level 90+ cook 50-100k to make them for you. It would still only cost you roughly 10-20k a stack of Fried Popotos.
-            -- Purchased from the Auction House, crafted only.
-
--- Created by Voliathon
--- Modified 11/29/2022
+    -- Purchased from the Auction House, crafted only.
 
 function get_sets()
--- Set macro book/set --
+    -- Set macro book/set --
 	send_command('input /macro book 12;wait .1;input /macro set 2')
 
-	-- Binds for modes
-	--Swapping Swords
+	--Swapping Weapons
+	send_command('bind !f8 gs c C8') 
 	send_command('bind ^f8 gs c C8') 
 	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
 	send_command('bind !f9 gs c toggle TP set')
 	send_command('bind ^f9 gs c reverse TP set')
 
 	-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
 	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang via ctrl + F8
 	
   --Job Ability Sets--
@@ -72,15 +68,9 @@ function get_sets()
   sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
   sets.JA.DarkSeal = { head="Fallen's Burgeonet +1"}
   sets.JA.NetherVoid = { legs="Heathen's Flanchard +3"}
-  sets.JA.ArcaneCrest = {}
-  sets.JA.ScarletDelirium = {}
-  sets.JA.SoulEnslavement = {}
-  sets.JA.ConsumeMana = {}
 
   -- Dancer's Abilities --
   sets.JA.Waltz = {legs="Dashing subligar"}
-  sets.JA.Step = 	{}
-  
   
   --TP Sets--
   sets.TP = {}
@@ -159,7 +149,7 @@ function get_sets()
     ammo="Amar Cluster",
     head="Heathen's burgeonet +3",
     body="Nyame Mail",
-    hands="Nyame Gauntlets",
+    hands="Heathen's gauntlets +3",
     legs="Ignominy flanchard +3",
     feet="Nyame Sollerets",
     neck="Null loop",
@@ -300,11 +290,8 @@ function get_sets()
     back="Vespid Mantle"  
   }
 
-  --Magic acc for enfeebles, handy for VW
-  sets.MagicAcc = {}
-
   sets.DarkMagic = {
-	legs="Heathen's flanchard +2"
+	legs="Heathen's flanchard +3"
   }
 
 end
@@ -316,13 +303,7 @@ function precast(spell,abil)
 	equip(sets.JA.Waltz)
   end	
   
-  --equips favorite weapon if disarmed
-  if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip({main="Apocalypse",sub="Utu grip"})
-    add_to_chat(158,'Apocalypse: [ON]')
-	Naegling = 'OFF'
-  end
-  
+
   if spell.name == 'Blood Weapon' then
     equip(sets.JA.BloodWeapon)
   end  
@@ -344,18 +325,7 @@ function precast(spell,abil)
   if spell.name == 'Nether Void' then
     equip(sets.JA.NetherVoid)
   end  
-  if spell.name == 'Arcane Crest' then
-    equip(sets.JA.ArcaneCrest)
-  end  
-  if spell.name == 'Scarlet Delirium' then
-    equip(sets.JA.ScarletDelirium)
-  end  
-  if spell.name == 'Soul Enslavement' then
-    equip(sets.JA.SoulEnslavement)
-  end  
-  if spell.name == 'Consume Mana' then
-    equip(sets.JA.ConsumeMana)
-  end
+
   
   if spell.name == 'Catastrophe' then
     equip(sets.Catastrophe)
@@ -369,12 +339,6 @@ function precast(spell,abil)
     equip({neck="Magoraga Beads"})
   end
   
-  if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
-    if TP_ind == 4 then
-      equip(sets.Evasion)
-    end
-  end
-  
   if spell.skill == 'Enhancing Magic' then
 	equip(sets.FastCast)
   end
@@ -383,8 +347,6 @@ function precast(spell,abil)
   end
   
 end
-
-
 
 -- Midcast
 function midcast(spell,act,arg)
@@ -397,7 +359,7 @@ function midcast(spell,act,arg)
   end
 
   if string.find(spell.name,'Absorb-TP') then
-		equip({hands="Heathen's gauntlets +2"})
+		equip({hands="Heathen's gauntlets +3"})
 	end
 
   if spell.skill == 'Enhancing Magic' then
@@ -425,15 +387,9 @@ end
 
 function aftercast(spell)
   equip_current()
-
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	weaponSelector()
 	equip(sets.TP[sets.TP.index[TP_ind]]) 
@@ -482,11 +438,3 @@ function weaponSelector()
   end
   
 end
-
-
--- Send tell to self if I died --
-windower.register_event('status change', function()
-	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
-	end
-end)

@@ -36,15 +36,17 @@ function get_sets()
 
 	-- Binds for modes
 	--Swapping Shields
+	send_command('bind !f7 gs c C7') 
 	send_command('bind ^f7 gs c C7') 
-	--Swapping Swords
+	--Swapping Weapons
+	send_command('bind !f8 gs c C8') 
 	send_command('bind ^f8 gs c C8') 
 	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
 	send_command('bind !f9 gs c toggle TP set')
 	send_command('bind ^f9 gs c reverse TP set')
 
 	-- Modes --
-	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang via ctrl + F8
+	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang and Malevolence via ctrl + F8
 	Aegis = 'OFF'
 	
   --Job Ability Sets--
