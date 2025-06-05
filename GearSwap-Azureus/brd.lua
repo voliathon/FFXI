@@ -17,15 +17,12 @@ function get_sets()
 	--Job Ability Sets--
 	sets.JA = {}
 	
-	sets.JA.Nightingale = {feet="Bihu Slippers +1"}
+	sets.JA.Nightingale = {feet="Bihu Slippers +3"}
     sets.JA.Troubadour = {body="Bihu Justaucorps +3"}
-    sets.JA.SoulVoice = {legs="Bihu Cannions +1"}
+    sets.JA.SoulVoice = {legs="Bihu Cannions +3"}
 	
 	-- Dancer's Abilities --
 	sets.JA.Waltz = {legs="Dashing subligar"}
-	sets.JA.Step = {}
-	sets.JA.Stun = {}	
-  
 	
   --Fast Cast Set--
   sets.FastCast = {
@@ -341,6 +338,11 @@ function precast(spell,abil)
 		end
 		
 	end
+	
+	if string.find(spell.english,'Waltz') then 
+		equip(sets.JA.Waltz)
+	end
+	
 	if spell.type == 'BardSong' then
 		if spell.name == 'Honor March' then
 			equip(sets.FastCast,{main="Carnwenhan",range="Marsyas",ammo="empty"})
@@ -366,9 +368,10 @@ function precast(spell,abil)
 	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
 		equip(sets.WSD)
 	end
-	-- Add logic for Waltz
-	-- Add logic for Utsusemi
-  
+
+  	if string.find(spell.english,'Warp') then 
+		--DO NOTHING
+	end
   
 end
 
