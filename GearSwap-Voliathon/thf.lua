@@ -196,6 +196,22 @@ function get_sets()
 		back="Relucent Cape"	
 	}		
 	
+	sets.Phalanx = {
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body={ name="Herculean Vest", augments={'"Dbl.Atk."+2','STR+4','Phalanx +5','Accuracy+15 Attack+15','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+		hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
+		legs={ name="Herculean Trousers", augments={'Pet: STR+3','AGI+2','Phalanx +5','Accuracy+10 Attack+10',}},
+		feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
+		neck="Voltsurge Torque",
+		waist="Flume Belt +1",
+		left_ear="Loquac. Earring",
+		right_ear="Magnetic Earring",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1",
+		back="Solemnity Cape"	
+	}
+	
  -- Weapon Toggle--
   sets.weapon = {}
   sets.weapon.index = {'NaeglingCrepuscularKnife', 'TauretSandung', 'TauretCrepuscularKnife', 'GandringSandung', 'GandringTauret'}
@@ -252,17 +268,15 @@ function precast(spell,action)
 
 	--elseif spell.action_type == 'Ranged Attack' then
 	--    equip(sets.preshot.RA)
-
-	-- Ninja Spells --
-	elseif spell.skill == 'Ninjutsu' then
-	    equip(sets.precast.Fastcast)
-	end	
+	end
 end	
 
 
 -- Midcast Functions --
 function midcast(spell,action)
-		
+		if spell.name == "Phalanx" then	
+			equip(sets.Phalanx)
+		end
 end	
 
 
