@@ -111,10 +111,10 @@ function get_sets()
     sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
     sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
 	sets.JA["Assassin's Charge"] = {feet="Plun. poulaines +3"}
-	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
+	sets.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 	sets.JA['Conspirator'] = {body="Skulker's Vest +3"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
-	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
+	sets.JA['Mug'] = {head="Plunderer's Bonnet +3"}
 	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
 	sets.JA['Accomplice'] = {head="Skulker's bonnet +3",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
@@ -126,38 +126,38 @@ function get_sets()
  -- Generic Sets
     sets.WSD = {	
 		ammo="Crepuscular pebble",
-		head="Pillager's bonnet +3",
+		head="Skulker's bonnet +3",
 		body="Skulker's Vest +3",
 		hands="Nyame Gauntlets",
 		legs="Nyame flanchard",
 		feet="Nyame sollerets",
 		neck="Assassin's gorget +2",
-		waist="Grunfeld Rope",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
-		right_ear="Odr Earring",
-		left_ring="Epaminondas's Ring",
-		right_ring="Hetairoi Ring",
+		waist="Kentarch belt +1",
+		left_ear="Sherida earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
+		left_ring="Ilabrat Ring",
+		right_ring="Epaminondas's Ring",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
 	}
 	
 	sets.Evisceration = {
 		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body="Nyame mail",
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs="Meg. Chausses +2",
-		feet="Malignance Boots",
+		head="Skulker's bonnet +3",
+		body="Plunderer's Vest +3",
+		hands="Gleti's gauntlets",
+		legs="Gleti's breeches",
+		feet="Gleti's boots",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		right_ear="Odr Earring",
-		left_ring="Epaminondas's Ring",
-		right_ring="Hetairoi Ring",
+		left_ear="Odr earring",
+		right_ear="Sherida Earring",
+		left_ring="Ilabrat Ring",
+		right_ring="Cacoethic ring +1",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}	
 	}
 	
     sets.Aeolian = {	
-		ammo="Seeth. bomblet +1",
+		ammo="Ghastly tathlum +1",
 		head="Nyame Helm",
 		body="Nyame mail",
 		hands="Nyame Gauntlets",
