@@ -66,7 +66,7 @@ function get_sets()
   sets.JA.LastResort = { feet="Fallen's Sollerets +3"}
   sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
   sets.JA.DarkSeal = { head="Fallen's Burgeonet +3"}
-  sets.JA.NetherVoid = { legs="Heathen's Flanchard +2"}
+  sets.JA.NetherVoid = { legs="Heathen's Flanchard +3"}
 
   -- Dancer's Abilities --
   sets.JA.Waltz = {legs="Dashing subligar"}
@@ -292,7 +292,7 @@ function get_sets()
   }
 
   sets.DarkMagic = {
-	legs="Heathen's flanchard +2"
+	legs="Heathen's flanchard +3"
   }
 
 	--Weapon Sets--
@@ -383,6 +383,9 @@ end
 
 -- Midcast
 function midcast(spell,act,arg)
+  if (buffactive['Dark Seal']) then
+	equip({head="Fallen's burgeonet +1"})
+  end
   if spell.name == "Dread Spikes" then
 	equip({body="Heathen's Cuirass +3"})
   end
