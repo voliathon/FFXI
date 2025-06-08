@@ -101,22 +101,11 @@ function get_sets()
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	})
 
-	-- Protecting the party
-    sets.Protect = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-	
 	--Regen Max Duration
 	sets.Regen = set_combine(sets.Duration,  {
 		main="Musa",
 		sub="Khonsu",
 		head="Arbatel Bonnet +3"
-	})
-
-	
-	-- MDF the party
-    sets.Shell = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
 	})
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
@@ -169,7 +158,7 @@ function get_sets()
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','boomstick skill damage +8%',}},
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
 		legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
 		feet="Arbatel loafers +3",
@@ -187,7 +176,7 @@ function get_sets()
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +3",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands="Arbatel bracers +3",
 		legs="Arbatel pants +3",
 		feet={ name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
@@ -205,7 +194,7 @@ function get_sets()
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +3",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands="Arbatel bracers +3",
 		legs="Arbatel pants +3",
 		feet="Arbatel loafers +3",
@@ -242,7 +231,7 @@ function get_sets()
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +3",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands="Arbatel bracers +3",
 		legs="Arbatel pants +3",
 		feet="Arbatel loafers +3",
@@ -281,7 +270,7 @@ function get_sets()
     sets.PDT = {
 		ammo="Homiliary",
 		head="Arbatel Bonnet +3",
-		body="Shamash Robe",
+		body="Arbatel Gown +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Arbatel pants +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
@@ -303,7 +292,7 @@ function get_sets()
 	sets.Refresh = set_combine(sets.PDT,  {
 		ammo="Homiliary",
 		head={ name="Chironic Hat", augments={'Rng.Atk.+25','"Drain" and "Aspir" potency +7','"Refresh"+2','Accuracy+11 Attack+11',}},
-		body="Jhakri Robe +2",
+		body="Arbatel Gown +3",
 		hands={ name="Chironic Gloves", augments={'Accuracy+6','CHR+1','"Refresh"+2','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
@@ -357,7 +346,7 @@ function get_sets()
 	 --Max MP WS.. equip mp gear noob
 	sets.Myrkr = {
 		head="Pixie Hairpin +1",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands="Regal Cuffs",
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
 		feet="Skaoi Boots",
