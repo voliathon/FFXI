@@ -50,8 +50,13 @@ function get_sets()
   sets.JA.Waltz = {legs="Dashing subligar"}
   sets.JA.Invicible = {legs="Cab. breeches +3"}
   sets.JA.HolyCircle = {feet="Reverence leggings +3"} -- Grants resistance against undead to party members within area of effect. 
-  sets.JA.Sentinel = {feet="Cab. leggings +3"}
-  sets.JA.Cover = {head="Reverence coronet +3"}
+  sets.JA.Sentinel = {feet="Cab. leggings +3"} -- Begins damage reduction at -128% PDT instead of -90%
+  sets.JA.Cover = {head="Reverence coronet +3"} -- 10 more seconds on cover
+  sets.JA.Rampart = {head="Cab. coronet +3"} -- Duration up 30 seconds
+  sets.JA.Fealty = {body="Cab. surcoat +1"}
+  sets.JA.Chivalry = {hands="Cab. gauntlets +3"}
+  sets.JA.DivineEmblem = {feet="Chev. sabatons +2"}
+  
 
   --equip Sets--
   sets.equip = {}
@@ -228,7 +233,7 @@ function get_sets()
     back="Moonlight Cape"
   }
 
-  --FastCast set
+  --Fast Cast--
   sets.FastCast = {
     ammo="Staunch Tathlum +1",
 	head="Chevalier's armet +3",
@@ -323,11 +328,36 @@ function precast(spell,abil)
 
   if string.find(spell.english, 'Waltz') then
 	equip(sets.JA.Waltz)
-  end	
+  end	 
+  if spell.name == 'Invicible' then
+	equip(sets.JA.Invicible)
+  end
+  if spell.name == 'Holy Circle' then
+	equip(sets.JA.HolyCircle)
+  end
+  if spell.name == 'Sentinel' then
+	equip(sets.JA.Sentinel)
+  end
+  if spell.name == 'Cover' then
+	equip(sets.JA.Cover)
+  end
+  if spell.name == 'Rampart' then
+	equip(sets.JA.Rampart)
+  end
+  if spell.name == 'Fealty' then
+	equip(sets.JA.Fealty)
+  end
+  if spell.name == 'Chivalry' then
+	equip(sets.JA.Chivalry)
+  end
+  if spell.name == 'Divine Emblem' then
+	equip(sets.JA.DivineEmblem)
+  end
   
   if spell.name == 'Shield Bash' then
 	equip(sets.ShieldBash)
   end
+  
   if spell.name == 'Provoke' or spell.name == 'Flash' or spell.name == "Stun"  then
     equip(sets.Enmity)
   end
@@ -375,9 +405,6 @@ function midcast(spell,act,arg)
   if spell.name == 'Flash' or spell.name == "Stun" then
     equip(sets.Enmity)
   end
-  --if spell.name == "Repose" or spell.skill == 'Enfeebling Magic' or spell.skill == 'Dark Magic' then
-  --  equip(sets.MagicAcc)
-  --end
   
 end
 
@@ -385,7 +412,7 @@ end
 function aftercast(spell)
   equip_current()
   if (buffactive['Cover']) then
-	equip({body="Cab. surcoat +3"})
+	equip({body="Cab. surcoat +1"})
   end
 end
 
@@ -394,7 +421,7 @@ function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 	equip(sets.equip[sets.equip.index[equip_ind]])
   if (buffactive['Cover']) then
-		equip({body="Cab. surcoat +3"})
+		equip({body="Cab. surcoat +1"})
     end
 end
 

@@ -384,8 +384,9 @@ end
 -- Midcast
 function midcast(spell,act,arg)
   if (buffactive['Dark Seal']) then
-	equip({head="Fallen's burgeonet +1"})
+	equip({head="Fallen's burgeonet +3"})
   end
+  
   if spell.name == "Dread Spikes" then
 	equip({body="Heathen's Cuirass +3"})
   end
@@ -405,9 +406,7 @@ function midcast(spell,act,arg)
 	if spell.name == "Blink" or spell.name == "Stoneskin" then
       equip(sets.SIR)
 	end
-	if string.find(spell.name,'Protect') then
-		equip(sets.Enhancing)
-	end
+
   
   end
   
