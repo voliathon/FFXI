@@ -291,8 +291,38 @@ function get_sets()
     back="Vespid Mantle"  
   }
 
-  sets.DarkMagic = {
-	legs="Heathen's flanchard +3"
+  sets.Drain = {
+    ammo="Pemphredo Tathlum",
+    head="Fall. Burgeonet +3",
+    body="Heath. Cuirass +3",
+    hands={ name="Fall. Fin. Gaunt. +3", augments={'Enhances "Diabolic Eye" effect',}},
+    legs="Heath. Flanchard +3",
+    feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
+    neck="Voltsurge Torque",
+    waist="Austerity Belt +1",
+    left_ear="Magnetic Earring",
+    right_ear="Brutal Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Archon Ring",
+    back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+  }
+  
+  sets.DreadSpikes  = {
+	main="Crepuscular scythe",
+	sub="Utu grip",
+    ammo="Staunch Tathlum +1",
+    head="Ratri Sallet +1",
+    body="Heath. Cuirass +3",
+    hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
+    legs={ name="Sakpata's Cuisses", augments={'Path: A',}},
+    feet={ name="Sakpata's Leggings", augments={'Path: A',}},
+    neck="Null Loop",
+    waist="Flume Belt +1",
+    left_ear="Tuisto Earring",
+    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    left_ring="Fortified Ring",
+    right_ring="Moonlight Ring",
+    back="Engulfer Cape +1"	
   }
 
 	--Weapon Sets--
@@ -383,20 +413,17 @@ end
 
 -- Midcast
 function midcast(spell,act,arg)
-  if (buffactive['Dark Seal']) then
-	equip({head="Fallen's burgeonet +3"})
-  end
   
   if spell.name == "Dread Spikes" then
-	equip({body="Heathen's Cuirass +3"})
+	equip(sets.DreadSpikes)
   end
 
   if string.find(spell.name,'Absorb-TP') then
 	equip({hands="Heathen's gauntlets +3"})
   end
 
-  if spell.skill == 'Dark Magic' then
-	equip(sets.DarkMagic)
+  if string.find(spell.english,'Drain') then
+	equip(sets.Drain)
   end
 
   if spell.skill == 'Enhancing Magic' then
