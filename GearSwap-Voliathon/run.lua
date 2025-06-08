@@ -2,13 +2,12 @@ function get_sets()
   -- Set macro book/set --
   send_command('input /macro book 17;wait .1;input /macro set 2')
 
-	-- Binds for switching weapons
-    send_command('bind !f8 gs c toggle weapon set')
-	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching equip 	
-    send_command('bind !f9 gs c toggle equip set')
-	send_command('bind ^f9 gs c reverse equip set')
-
+  -- Binds for switching weapons
+  send_command('bind !f8 gs c toggle weapon set')
+  send_command('bind ^f8 gs c reverse weapon set')
+  -- Binds for switching equip 	
+  send_command('bind !f9 gs c toggle equip set')
+  send_command('bind ^f9 gs c reverse equip set')
 
 	
   --Job Ability Sets--
@@ -506,12 +505,12 @@ function self_command(command)
 	elseif command == 'toggle equip set' then
 		equip_ind = equip_ind +1
 		if equip_ind > #sets.equip.index then equip_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
+		send_command('@input /echo <----- Equipment changed to '..sets.equip.index[equip_ind]..' ----->')
 		equip_current()
 	elseif command == 'reverse equip set' then
 		equip_ind = equip_ind -1
 		if equip_ind == 0 then equip_ind = #sets.equip.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
+		send_command('@input /echo <----- Equipment changed to '..sets.equip.index[equip_ind]..' ----->')
 		equip_current()
 	end
 end

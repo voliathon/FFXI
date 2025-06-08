@@ -28,44 +28,38 @@
         -- This food is as cheap as it gets, excluding the crystal it costs less than 300 gil to make 6 of these a synth. Making these in bulk to store and use for Ambuscade spam and similar events will cost you next to nothing. Even if you have to shout and pay a level 90+ cook 50-100k to make them for you. It would still only cost you roughly 10-20k a stack of Fried Popotos.
             -- Purchased from the Auction House, crafted only.
 
--- Created by Voliathon
-
 function get_sets()
 -- Set macro book/set --
 	send_command('input /macro book 11;wait .1;input /macro set 1')
 
-	-- Binds for modes
-	--Swapping Shields
-	send_command('bind !f7 gs c C7') 
-	send_command('bind ^f7 gs c C7') 
-	--Swapping Weapons
-	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c C8') 
-	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-	send_command('bind !f9 gs c toggle TP set')
-	send_command('bind ^f9 gs c reverse TP set')
+  --Swapping Shields
+  send_command('bind !f7 gs c C7') 
+  send_command('bind ^f7 gs c C7') 
+  -- Binds for switching weapons
+  send_command('bind !f8 gs c toggle weapon set')
+  send_command('bind ^f8 gs c reverse weapon set')
+  -- Binds for switching equip 	
+  send_command('bind !f9 gs c toggle equip set')
+  send_command('bind ^f9 gs c reverse equip set')
 
-	-- Modes --
-	Naegling = 'OFF' -- Toogle on/off the Naegling and Burtgang and Malevolence via ctrl + F8
-	Aegis = 'OFF'
+  Aegis = 'OFF'
 	
   --Job Ability Sets--
   sets.JA = {}
   
-  -- Dancer's Abilities --
   sets.JA.Waltz = {legs="Dashing subligar"}
-  sets.JA.Step = 	{}
-  sets.JA.Stun = {}
-	
-	
+  sets.JA.Invicible = {legs="Cab. breeches +3"}
+  sets.JA.HolyCircle = {feet="Reverence leggings +3"} -- Grants resistance against undead to party members within area of effect. 
+  sets.JA.Sentinel = {feet="Cab. leggings +3"}
+  sets.JA.Cover = {head="Reverence coronet +3"}
 
-  --TP Sets--
-  sets.TP = {}
+  --equip Sets--
+  sets.equip = {}
 --					  1		      2         3 		   4		  5 		     6		        7
-  sets.TP.index = {'Movement', 'BadAss', 'Turtle', 'Evasion', 'Accuracy', 'TreasureHunter', 'Reraise'}
-  TP_ind = 1
+  sets.equip.index = {'Movement', 'BadAss', 'Turtle', 'Evasion', 'Accuracy', 'TreasureHunter', 'Reraise'}
+  equip_ind = 1
 
-  sets.TP.Movement = {
+  sets.equip.Movement = {
     ammo="Staunch Tathlum +1",
     head="Chevalier's armet +3",
 	body="Chevalier's Cuirass +3",
@@ -82,7 +76,7 @@ function get_sets()
   }
   
   --offensive melee set
-  sets.TP.BadAss = {
+  sets.equip.BadAss = {
     ammo="Staunch Tathlum +1",
     head="Flam. Zucchetto +2",
     body="Sakpata's Plate",
@@ -98,7 +92,7 @@ function get_sets()
     back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5'}}
   }
 
-  sets.TP.Turtle = {
+  sets.equip.Turtle = {
     ammo="Staunch Tathlum +1",
     head="Chevalier's armet +3",
 	body="Chevalier's Cuirass +3",
@@ -115,7 +109,7 @@ function get_sets()
   }  
 
   --Evasion
-  sets.TP.Evasion = {
+  sets.equip.Evasion = {
     ammo="Staunch Tathlum +1",
     head="Chevalier's armet +3",
     body="Nyame Mail",
@@ -131,7 +125,7 @@ function get_sets()
     back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Enmity+10','Chance of successful block +5'}}
   }
   
-  sets.TP.Accuracy = {
+  sets.equip.Accuracy = {
     ammo="Amar Cluster",
 	head="Chevalier's armet +3",
 	body="Chevalier's Cuirass +3",
@@ -145,12 +139,12 @@ function get_sets()
 	waist="Null belt"
   }
   
-  sets.TP.TreasureHunter = {
+  sets.equip.TreasureHunter = {
     waist="Chaac Belt",
 	body="Volte jupon"
   }
   
-  sets.TP.Reraise = {
+  sets.equip.Reraise = {
     ammo="Staunch Tathlum +1",
     head="Crepuscular Helm",
     body="Crepuscular Mail",
@@ -306,6 +300,22 @@ function get_sets()
 	right_ear="Chevalier's earring +1"
   })
 
+
+  --Weapon Sets--
+  sets.weapon = {}
+  sets.weapon.index = {'Burtgang','Naegling','Malevolence'}
+  weapon_ind = 1 
+	
+  sets.weapon.Burtgang = {
+	main="Burtgang"
+  }
+  sets.weapon.Naegling = {
+	main="Naegling"
+  }
+  sets.weapon.Malevolence = {
+	main="Malevolence"
+  }
+
 end
 
 -- Precast Logic --
@@ -374,45 +384,43 @@ end
 
 function aftercast(spell)
   equip_current()
+  if (buffactive['Cover']) then
+	equip({body="Cab. surcoat +3"})
+  end
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	weaponSelector()
-	equip(sets.TP[sets.TP.index[TP_ind]]) 
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+	equip(sets.equip[sets.equip.index[equip_ind]])
+  if (buffactive['Cover']) then
+		equip({body="Cab. surcoat +3"})
+    end
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+--Function use for Changing the equip Set.  Ctrl+F9 is your meal ticket
+--123 is a red color for the text ouequiput
+--158 is a green color for the text ouequiput
 function self_command(command)
-	if command == 'C8' then -- Naegling to Burtgang --	
-      if Naegling == 'ON' then
-		Naegling = 'OFF'
-		equip({main="Burtgang"})
-		add_to_chat(158,'Burtgang Weapon: [ON]')
-		add_to_chat(123,'Naegling Weapon: [OFF]')
-	  else
-		Naegling = 'ON'
-		equip({main="Naegling"})
-		add_to_chat(158,'Naegling Weapon: [ON]')
-		add_to_chat(123,'Burtgang Weapon: [OFF]')				
-	  end
-       -- status_change(player.status)
-	elseif command == 'toggle TP set' then
-		TP_ind = TP_ind -1
-		if TP_ind == 0 then TP_ind = #sets.TP.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+	if command =='toggle weapon set' then
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_current()	
-	elseif command == 'reverse TP set' then
-		TP_ind = TP_ind +1
-		if TP_ind > #sets.TP.index then TP_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
+	elseif command == 'reverse weapon set' then
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_current()
+	elseif command == 'toggle equip set' then
+		equip_ind = equip_ind +1
+		if equip_ind > #sets.equip.index then equip_ind = 1 end
+		send_command('@input /echo <----- Equipment changed to '..sets.equip.index[equip_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse equip set' then
+		equip_ind = equip_ind -1
+		if equip_ind == 0 then equip_ind = #sets.equip.index end
+		send_command('@input /echo <----- Equipment changed to '..sets.equip.index[equip_ind]..' ----->')
 		equip_current()
 	end
 	if command == 'C7' then
@@ -429,26 +437,3 @@ function self_command(command)
 	  end
    end
 end
-
-function weaponSelector()
-  if Naegling == 'ON' then
-	equip({main="Naegling"})
-  else
-	equip({main="Burtgang"})
-  end
-  
-  if Aegis == 'ON' then
-	equip({sub="Aegis"})
-  else
-	equip({sub="Priwen"})		
-  end
-  
-end
-
-
--- Send tell to self if I died --
-windower.register_event('status change', function()
-	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
-	end
-end)
