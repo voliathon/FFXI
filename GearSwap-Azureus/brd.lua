@@ -18,7 +18,7 @@ function get_sets()
 	sets.JA = {}
 	
 	sets.JA.Nightingale = {feet="Bihu Slippers +3"}
-    sets.JA.Troubadour = {body="Bihu Justaucorps +3"}
+    sets.JA.Troubadour = {body="Bihu Justaucorps +4"}
     sets.JA.SoulVoice = {legs="Bihu Cannions +3"}
 	
 	-- Dancer's Abilities --
@@ -235,7 +235,7 @@ function get_sets()
   sets.SavageBlade = {
     range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
     head="Nyame Helm",
-    body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+    body="Bihu Justaucorps +4",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
 	feet="Nyame sollerets",
@@ -253,7 +253,7 @@ function get_sets()
   sets.WSD = {
     range={ name="Linos", augments={'Accuracy+15','"Store TP"+3','Quadruple Attack +3',}},
     head="Nyame Helm",
-    body={ name="Bihu Jstcorps. +3", augments={'Enhances "Troubadour" effect',}},
+    body="Bihu Justaucorps +4",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",		
 	feet="Nyame sollerets",

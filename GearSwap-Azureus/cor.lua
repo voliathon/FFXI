@@ -31,7 +31,7 @@ function get_sets()
 		body="Lanun Frac +3" 
 	}
     sets.WildCard = { 
-		feet="Lanun Bottes +3" 
+		feet="Lanun Bottes +4" 
 	}
     sets.SnakeEye = { 
 		legs="Lanun Trews +3" 
@@ -100,7 +100,7 @@ function get_sets()
 		body="Lanun Frac +3",
 		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Lanun Bottes +4", augments={'Enhances "Wild Card" effect',}},
 		neck="Commodore charm +2",
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -116,7 +116,7 @@ function get_sets()
 		body="Lanun Frac +3",
 		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Lanun Bottes +4", augments={'Enhances "Wild Card" effect',}},
 		neck="Commodore charm +2",
 		waist="Hachirin-no-Obi",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -135,10 +135,10 @@ function get_sets()
 	--Last Stand   AGI/RAtt/RAcc/WSD
     sets.LastStand = {
 		head="Lanun tricorne +3",
-		body="Laksa. Frac +3",
+		body="Laksa. Frac +4",
 		hands="Chasseur's Gants +3",
 		legs="Nyame Flanchard",
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Lanun Bottes +4", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -151,10 +151,10 @@ function get_sets()
 	--Savage Blade  50% STR / 50% MND
     sets.SavageBlade = {
 		head="Nyame Helm",
-		body="Laksamana's frac +3",
+		body="Laksa. Frac +4",
 		hands="Chasseur's Gants +3",
 		legs="Nyame flanchard",
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Lanun Bottes +4", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
@@ -170,7 +170,7 @@ function get_sets()
 		body="Lanun Frac +3",
 		hands="Nyame Gauntlets",
 		legs="Nyame flanchard",
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Lanun Bottes +4", augments={'Enhances "Wild Card" effect',}},
 		neck="Commodore charm +2",
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
