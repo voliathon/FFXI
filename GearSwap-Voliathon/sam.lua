@@ -14,7 +14,7 @@ function get_sets()
 	sets.JA.Waltz = {legs="Dashing subligar"}
 	sets.JA.Sengikori = {feet="Kasuga sune-ate +3"}	
 	sets.JA.Meditate = {head="Wakido kabuto +3", hands="Sao. Kote +3"}
-	sets.JA.Hasso = {hands="Wakido kote +3", legs="Kasuga haidate +3", feet="Wakido sune-ate +3"}
+	sets.JA.Hasso = {hands="Wakido kote +4", legs="Kasuga haidate +3", feet="Wakido sune-ate +3"}
 	sets.JA.WardingCircle = {head="Wakido kabuto +3"}
 	sets.JA.ThirdEye = {legs="Sakonji Haidate +3"}
 	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
@@ -31,7 +31,7 @@ function get_sets()
 	ammo="Coiste bodhar",
 	head="Flamma zucchetto +2",
 	body="Kasuga domaru +3",
-	hands="Wakido kote +3",
+	hands="Wakido kote +4",
 	legs="Kasuga haidate +3",
 	feet="Tatenashi sune-ate +1",
 	neck="Samurai's nodowa +2",
@@ -134,10 +134,10 @@ function get_sets()
 	sets.Fudo = {
 		ammo="Knobkierrie",
 		head="Nyame Helm",
-		body="Sakonji domaru +3",
+		body="Sakonji domaru +4",
 		hands="Kasuga kote +3",
 		legs="Wakido Haidate +3",
-		feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
+		feet="Nyame sollerets",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Thrud Earring",
@@ -150,10 +150,10 @@ function get_sets()
 	sets.Shoha = {
 		ammo="Knobkierrie",
 		head="Mpaca's Cap",
-		body="Sakonji domaru +3",
+		body="Sakonji domaru +4",
 		hands="Kasuga kote +3",
 		legs="Wakido Haidate +3",
-		feet={ name="Valorous Greaves", augments={'STR+3','Weapon Skill Acc.+4','Weapon skill damage +6%','Accuracy+12 Attack+12','Mag. Acc.+10 "Mag.Atk.Bns."+10'}},
+		feet="Nyame sollerets",
 		neck="Fotia Gorget",
 		waist="Sailfi Belt +1",
 		left_ear="Thrud Earring",
@@ -199,7 +199,7 @@ function get_sets()
 	sets.Stardiver = {
 		ammo="Coiste Bodhar",
 		head="Mpaca's Cap",
-		body="Sakonji domaru +3",
+		body="Sakonji domaru +4",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
 		feet="Kas. Sune-Ate +2",

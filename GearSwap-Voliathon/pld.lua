@@ -55,7 +55,7 @@ function get_sets()
   sets.JA.Rampart = {head="Cab. coronet +3"} -- Duration up 30 seconds
   sets.JA.Fealty = {body="Cab. surcoat +1"}
   sets.JA.Chivalry = {hands="Cab. gauntlets +3"}
-  sets.JA.DivineEmblem = {feet="Chev. sabatons +2"}
+  sets.JA.DivineEmblem = {feet="Chev. sabatons +3"}
   
 
   --equip Sets--
@@ -135,7 +135,7 @@ function get_sets()
 	head="Chevalier's armet +3",
 	body="Chevalier's Cuirass +3",
 	legs="Chevalier's cuisses +3",
-	feet="Chevalier's Sabatons +2",
+	feet="Chev. sabatons +3",
     neck="Null loop",
     left_ear="Dignitary's Earring",
 	right_ear="Chev. earring +1",
@@ -173,7 +173,7 @@ function get_sets()
     body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet="Eschite greaves",
+    feet="Chev. sabatons +3",
     neck="Moonlight necklace",
     waist="Null belt",
     left_ear="Cryptic Earring",
@@ -239,7 +239,7 @@ function get_sets()
 	head="Chevalier's armet +3",
     hands="Regal Gauntlets",
 	legs="Carmine cuisses +1",
-    feet="Chevalier's Sabatons +2",
+    feet="Chev. sabatons +3",
     neck="Voltsurge Torque",
     waist="Audumbla sash",
     left_ear="Etiolation Earring",
@@ -289,7 +289,7 @@ function get_sets()
     body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}, --20
     hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    feet="Eschite greaves",
+    feet="Chev. sabatons +3",
     neck="Moonlight necklace",
     waist="Creed baudrier",
     left_ear="Cryptic Earring",
