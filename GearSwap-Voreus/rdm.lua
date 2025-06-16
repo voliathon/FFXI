@@ -13,12 +13,11 @@ function get_sets()
 	-- Set macro book/set --
     send_command('input /macro book 1;wait .1;input /macro set 1')
 	
-	-- Binds for modes
 	-- Toggle Weapon F8 Key
 	send_command('bind !f8 gs c C8') 
 	send_command('bind ^f8 gs c Reverse Toggle Weapon')
 	
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+	-- Toggle Equipment F9
     send_command('bind !f9 gs c C9')
 	send_command('bind ^f9 gs c Reverse Engaged Set')
 	
@@ -29,30 +28,26 @@ function get_sets()
 	
     -- Job Abilities for Red Mage --
     sets.Chainspell = {body="Vitiation tabard +3"}
-    sets.Stymie = {}
-    sets.Spontaneity = {}
     sets.Composure = {head="Lethargy Chappel +3",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Leth. Fuseau +3",feet="Lethargy Houseaux +3"}
 	sets.Saboteur = {hands="Lethargy gantherots +3"}
 	sets.Dispel = {neck="Duelist's torque +2"}
 
-
     -- Fast Cast for Red Mage --
     sets.FastCast = {
 		ammo="Impatiens",
-		head="Atrophy Chapeau +3",
-		body="Vitiation tabard +3",
-		hands="Leyline Gloves",
-		legs="Aya. Cosciales +2",
-		feet="Nyame sollerets",
+		head="Atro. Chapeau +4",
+		body={ name="Viti. Tabard +3", augments={'Enhances "Chainspell" effect',}},
+		hands="Leth. Ganth. +3",
+		legs="Querkening Brais",
+		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
 		neck="Incanter's Torque",
 		waist="Embla Sash",
-		left_ear="Loquacious Earring",
-		right_ear="Lethargy Earring +1",
+		left_ear="Loquac. Earring",
+		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
 		left_ring="Kishar Ring",
 		right_ring="Freke Ring",
 		back=RedMageCapes.FastCast
 	}
-
 
 	-- Enhancing Spells \\Generalized//
     sets.Enhancing = {
@@ -61,7 +56,7 @@ function get_sets()
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9'}},
 		body="Vitiation tabard +3",
-		hands="Vitiation Gloves +3",
+		hands="Atro. gloves +4",
 		legs="Atrophy Tights +3",
 		feet="Lethargy Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
@@ -92,8 +87,7 @@ function get_sets()
 		right_ring="Hetairoi Ring",
 		back=RedMageCapes.TP,
 		ammo="Ginsen"
-	}
-	
+	}	
 
     sets.Cure = set_combine(sets.FastCast,  {
 		head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}},
@@ -145,11 +139,11 @@ function get_sets()
 	
     sets.Enfeebling = set_combine(sets.FastCast,  {
 		ammo="Regal Gem",
-		head="Vitiation chapeau +3",
+		head="Vitiation chapeau +4",
 		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +3",
 		legs={ name="Chironic Hose", augments={'Attack+14','Mag. Acc.+13','"Treasure Hunter"+1','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
-		feet="Vitiation Boots +3",
+		feet="Vitiation Boots +4",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Eschan Stone",
 		left_ear="Snotra Earring",
@@ -239,7 +233,7 @@ function get_sets()
 	sets.RefreshSelf = set_combine(sets.PDT,  {
 		body="Lethargy sayon +3",
 		ammo="Homiliary",
-		head="Vitiation Chapeau +3",
+		head="Vitiation chapeau +4",
 	    hands={ name="Chironic Gloves", augments={'Accuracy+6','CHR+1','"Refresh"+2','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
 	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
@@ -253,7 +247,7 @@ function get_sets()
 		body="Lethargy sayon +3",
 		legs="Leth. Fuseau +3",
 		ammo="Homiliary",
-		head="Vitiation Chapeau +3",
+		head="Vitiation chapeau +4",
 		waist="Fucho-no-obi",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1"
@@ -278,14 +272,15 @@ function get_sets()
 		right_ring="Hetairoi Ring",
 		back=RedMageCapes.DualWield	
 	})
+	
+	
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
-	 
 	 sets.SavageBlade = {
-		head="Nyame Helm",
+		head="Vitiation chapeau +4",
 		body="Nyame mail",
-		hands="Nyame gauntlets",
+		hands="Atro. gloves +4",
 		legs="Nyame flanchard",
 		feet="Leth. Houseaux +3",
 		neck="Rep. Plat. Medal",
@@ -293,7 +288,7 @@ function get_sets()
 		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
 		right_ear="Sherida Earring",
 		left_ring="Cornelia's Ring",
-		right_ring="Petrov Ring",
+		right_ring="Sroda Ring",
 		back=RedMageCapes.STRWS,
 		ammo="Oshasha's Treatise"
 	 }
@@ -343,39 +338,39 @@ function get_sets()
 	sets.engaged.Accuracy = set_combine(sets.Accuracy, {})
 	sets.engaged.RefreshSelf = set_combine(sets.RefreshSelf, {})
 	sets.engaged.EnspellActive = set_combine(sets.EnspellActive, {})
-	 
-end
+		 
 
- -- Weapon Toggle--
- sets.weapon = {}
- sets.weapon.index = {'Nuke', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingTauret'}
- weapon_ind = 1     
-  
- sets.weapon.Nuke = {
-	main="Wizard's rod",
-	sub="Ammurapi Shield"
- } 
- sets.weapon.HiEnspell = {
-	main="Crocea Mors",
-	sub="Daybreak"
- }  
- sets.weapon.LowEnspell = {
-	main="Infiltrator",
-	sub="Sacro Bulwark"
- }  
- sets.weapon.Refresh = {
-	main="Bolelabunga",
-	sub="Sacro Bulwark"
- }  
- sets.weapon.NaeglingShield = {
-	main="Naegling",
-	sub="Sacro Bulwark"
- }
- sets.weapon.NaeglingTauret = {
-	main="Naegling",
-	sub="Tauret"
- }
+	 -- Weapon Toggle--
+	 sets.weapon = {}
+	 sets.weapon.index = {'Nuke', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingTauret'}
+	 weapon_ind = 1     
+	  
+	 sets.weapon.Nuke = {
+		main="Wizard's rod",
+		sub="Ammurapi Shield"
+	 } 
+	 sets.weapon.HiEnspell = {
+		main="Crocea Mors",
+		sub="Daybreak"
+	 }  
+	 sets.weapon.LowEnspell = {
+		main="Infiltrator",
+		sub="Sacro Bulwark"
+	 }  
+	 sets.weapon.Refresh = {
+		main="Bolelabunga",
+		sub="Sacro Bulwark"
+	 }  
+	 sets.weapon.NaeglingShield = {
+		main="Naegling",
+		sub="Sacro Bulwark"
+	 }
+	 sets.weapon.NaeglingTauret = {
+		main="Naegling",
+		sub="Tauret"
+	 }
  
+end
 
 function precast(spell,abil)
 	--Should probably Fast Cast everything here for Red Mage but holy smokes FastCast is already...Fast for RDM.
@@ -401,16 +396,12 @@ function precast(spell,abil)
 		equip(sets.SeraphBlade)
 	end
 
-	-- Add logic for Waltz
-	-- Add logic for Utsusemi
-    
 end
 
 function midcast(spell)
 	if spell.name == "Dispel" then
 		equip(sets.Dispel)
 	end
-
 	if spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Refresh' or spell.name == 'Refresh II' or spell.name == 'Refresh III' then
 			equip(sets.Refresh)
@@ -456,11 +447,6 @@ function aftercast(spell)
 	end
 end
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
@@ -471,7 +457,7 @@ function equip_weapon()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
+
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
@@ -646,5 +632,3 @@ function get_obi(spell)
         return { equip({waist = "Eschan Stone"}) }
     end
 end
-
-
