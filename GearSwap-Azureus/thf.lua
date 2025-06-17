@@ -27,7 +27,7 @@ function get_sets()
 		ammo="Yetshila +1",
 		head={ name="Herculean Helm", augments={'AGI+1','Rng.Atk.+19','"Treasure Hunter"+1','Accuracy+10 Attack+10','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
 		body="Volte Jupon",
-		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect',}},
+		hands="Plun. Armlets +4",
 		legs="Volte Hose",
 		feet="Skulk. Poulaines +3",
 		neck="Anu Torque",
@@ -119,7 +119,7 @@ function get_sets()
 	sets.JA['Accomplice'] = {head="Skulker's bonnet +3",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +2"}
-	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
+	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +4"}
 	
 	
  -- Weapon Skill Sets
