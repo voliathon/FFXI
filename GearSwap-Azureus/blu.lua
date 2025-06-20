@@ -197,7 +197,7 @@ function get_sets()
 	-- Blue Mage Skill
     sets.BlueMagicSkill = {
         neck="Mirage Stole +2",
-        body="Assimilator's Jubbah +3",
+        body="Assim. Jubbah +4",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
 		back={ name="Cornflower Cape", augments={'MP+16','DEX+2','Accuracy+2','Blue Magic skill +10'}},
@@ -207,7 +207,7 @@ function get_sets()
 	sets.CruelJoke = {
 		ammo="Pemphredo Tathlum",
 		head="Hashishin kavuk +3",
-		body="Hashishin mintan +3",
+		body="Assim. Jubbah +4",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
 		feet="Hashishin basmak +3",
@@ -225,7 +225,7 @@ function get_sets()
     sets.BlueMagicPhysical = {
 		ammo="Ginsen",
 		head="Malignance Chapeau",
-		body="Assim. Jubbah +3",
+		body="Assim. Jubbah +4",
 		hands="Hashishin Bazubands +3",
 		legs="Hashishin Tayt +3",
 		feet="Malignance Boots",
@@ -327,7 +327,7 @@ function get_sets()
     sets.WSD = {
 		ammo="Coiste Bodhar",
 		head="Hashishin kavuk +3",
-		body="Assim. Jubbah +3",
+		body="Assim. Jubbah +4",
 		hands="Nyame Gauntlets",
 		legs="Luhlaza Shalwar +3",
 		feet="Nyame sollerets",

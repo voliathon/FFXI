@@ -53,7 +53,7 @@ function get_sets()
 	
 	sets.JA.StepAccuracy = {
 		head="Maxixi Tiara +3",
-		hands="Maxixi Bangles +3",
+		hands="Maxixi Bangles +4",
 		feet="Horos Shoes +3"
 	}
 	
@@ -64,7 +64,7 @@ function get_sets()
 	
 	sets.JA.FeatherStep  = {
 		head="Maxixi Tiara +3",
-		hands="Maxixi Bangles +3",
+		hands="Maxixi Bangles +4",
 		feet="Maculele Toe Shoes +2"
 	}
 	
@@ -87,7 +87,7 @@ function get_sets()
 	}
 	
 	sets.JA.Trance = {head="Horos Tiara +3"}
-	sets.JA.FanDance = {hands="Horos Bangles +1"}
+	sets.JA.FanDance = {hands="Horos Bangles +3"}
 	sets.JA.NoFootRise = {body="Horos Casaque +3"}
 	sets.JA.SaberDance = {legs="Horos Tights +3"}
 	sets.JA.ClosedPosition = {feet="Horos Shoes +3"}
@@ -185,7 +185,7 @@ function get_sets()
 		ammo="Crepuscular Pebble",
 		head="Maculele Tiara +3",
 		body={ name="Nyame Mail", augments={'Path: B',}},
-		hands="Maxixi Bangles +3",
+		hands="Maxixi Bangles +4",
 		legs="Horos tights +3",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Etoile Gorget +2",
@@ -235,7 +235,7 @@ function get_sets()
 		ammo="Coiste Bodhar",
 		head="Maculele Tiara +3",
 		body="Horos Casaque +3",
-		hands="Gleti's Gauntlets",
+		hands="Maxixi bangles +4",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck="Fotia Gorget",
