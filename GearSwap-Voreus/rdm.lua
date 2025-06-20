@@ -244,7 +244,7 @@ function get_sets()
 
     
 	sets.Refresh = set_combine(sets.Enhancing,  {
-		body="Lethargy sayon +3",
+		body="Atrophy tabard +4",
 		legs="Leth. Fuseau +3",
 		ammo="Homiliary",
 		head="Vitiation chapeau +4",

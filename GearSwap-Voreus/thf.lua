@@ -31,7 +31,7 @@ function get_sets()
 		ammo="Yetshila +1",
 		head="Gleti's Mask",
 		body="Volte Jupon",
-		hands={ name="Plun. Armlets +3", augments={'Enhances "Perfect Dodge" effect',}},
+		hands="Plun. Armlets +4",
 		legs="Gleti's Breeches",
 		feet="Skulk. Poulaines +3",
 		neck="Anu Torque",
@@ -47,7 +47,7 @@ function get_sets()
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
 		head={ name="Herculean Helm", augments={'Accuracy+17','"Triple Atk."+4','DEX+4',}},
 		body="Malignance Tabard",
-		hands={ name="Herculean Gloves", augments={'"Triple Atk."+3','DEX+9','Accuracy+15',}},
+		hands="Plun. Armlets +4",
 		legs="Malignance Tights",
 		feet={ name="Herculean Boots", augments={'Accuracy+23 Attack+23','"Triple Atk."+3','DEX+9','Attack+3',}},
 		neck="Anu torque",
@@ -99,14 +99,14 @@ function get_sets()
     sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
 	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
 	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
-	sets.JA['Conspirator'] = {body="Skulker's Vest +2"}
+	sets.JA['Conspirator'] = {body="Skulker's vest +3"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
 	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
 	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +2"}
-	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
+	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +4"}
 	
 	
  -- Weapon Skill Sets
@@ -114,7 +114,7 @@ function get_sets()
     sets.WSD = {	
 		ammo="Oshasha's Treatise",
 		head={ name="Nyame Helm", augments={'Path: B',}},
-		body="Skulker's vest +2",
+		body="Skulker's vest +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
