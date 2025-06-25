@@ -78,7 +78,7 @@ function get_sets()
 		body="Zendik Robe",
 		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
 		legs="Pinga Pants",
-		feet="Pedagogy Loafers +3",
+		feet="Acad. loafers +3",
 		neck="Baetyl pendant",
 		waist="Embla Sash",
 		left_ear="Malignance Earring",
@@ -90,7 +90,7 @@ function get_sets()
 	
 	sets.FastCastGrimoire = set_combine(sets.FastCast,  {
 		head="Pedagogy Mortarboard +3",
-		feet="Academic's loafer +1"
+		feet="Acad. loafers +3"
 	})
 
 	sets.Duration = {

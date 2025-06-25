@@ -29,10 +29,10 @@ function get_sets()
 	-- Job Abilities
     sets.EagleEyeShot = {legs="Arcadian Braccae +3"}
 	sets.Scavenge = {feet="Orion Socks +1"}
-	sets.Shadowbind = {hands="Orion Bracers +3"}
+	sets.Shadowbind = {hands="Orion Bracers +4"}
 	sets.Camouflage = {body="Orion Jerkin +2"}
 	sets.Sharpshot = {legs="Orion Braccae +3"}
-	sets.Barrage = {hands="Orion Bracers +3"}
+	sets.Barrage = {hands="Orion Bracers +4"}
 	sets.UnlimitedShot = {feet="Amini Bottillons +3"}
 	-- Important about Double Shot...
 	-- Even though Double Shot is a Job Ability, I'm covering it in the midshot for Ranged Attacks.
@@ -41,10 +41,6 @@ function get_sets()
 	sets.BountyShot = {hands="Amini Glove. +3"}
 	sets.FlashShot = {hands="Arcadian bracers +3"}
 	sets.StealthShot = {feet="Arcadian socks +3"}
-	sets.DecoyShot = {}
-	sets.Overkill = {}
-	sets.HoverShot = {}
-	
 
 	-- Preshot
 	-- Snapshot caps at 70% from any combination of merits, gear, and/or Flurry/Flurry II. 
@@ -53,7 +49,7 @@ function get_sets()
 	-- When velocity shot is up, the total aiming delay reduction is 25%  Just from Velocity shot
 	-- Baby Bear already has 10% Snapshot merits
     sets.Snapshot = {
-		head="Orion Beret +3", --rapid shot 18
+		head="Orion Beret +4", --rapid shot 18
 		body="Amini Caban +3", --velocity shot 11
 		hands="Carmine finger gauntlets +1", --rapid shot 11 snapshot 8
 		legs="Orion Braccae +3", --rapid shot 16 snapshot 15
@@ -169,7 +165,7 @@ function get_sets()
 	
 	--WeaponSkills
 	sets.Coronach = {
-		head="Orion Beret +3",
+		head="Orion Beret +4",
 		body="Amini Caban +3",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
@@ -204,7 +200,7 @@ function get_sets()
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
     sets.LastStand = {
-		head="Orion Beret +3",
+		head="Orion Beret +4",
 		body="Amini Caban +3",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
@@ -220,7 +216,7 @@ function get_sets()
 
 	--Savage Blade  50% STR / 50% MND
     sets.SavageBlade = {
-		head="Orion Beret +3",
+		head="Orion Beret +4",
 		body="Nyame mail",
 		hands="Nyame Gauntlets",
 		legs="Arcadian Braccae +3",
@@ -235,7 +231,7 @@ function get_sets()
 	}
 	
 	sets.Jishnu = {
-		head="Orion Beret +3",
+		head="Orion Beret +4",
 		body="Nisroch Jerkin",
 		hands="Amini Glove. +3",
 		legs="Amini Bragues +3",
@@ -431,15 +427,6 @@ function precast(spell,abil)
 	end
 	if spell.name == "Bounty Shot" then
 		equip(sets.BountyShot)
-	end
-	if spell.name == "Decoy Shot" then
-		equip(sets.DecoyShot)
-	end
-	if spell.name == "Overkill" then
-		equip(sets.Overkill)
-	end
-	if spell.name == "Hover Shot" then
-		equip(sets.HoverShot)
 	end
 	
 end
