@@ -29,7 +29,7 @@ function get_sets()
 	sets.JA = {}
 	sets.JA.Waltz = {head="Mummu bonnet+2",legs="Dashing subligar"}
 	sets.JA.Yonin = {head="Mochizuki Hatsuburi +3", legs="Hattori Hakama +2"}
-	sets.JA.Innin = {head="Hattori zukin +2"}
+	sets.JA.Innin = {head="Hattori Zukin +3"}
 	sets.JA.Futae = {hands="Hattori tekko +2"}
 	sets.JA.MijinGakure = {legs="Mochizuki Hakama +3"}
 	
@@ -43,7 +43,7 @@ function get_sets()
 
 	sets.TP.Movement = {
 		ammo="Staunch Tathlum +1",
-		head="Hattori Zukin +2",
+		head="Hattori Zukin +3",
 		body="Hattori Ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -60,7 +60,7 @@ function get_sets()
 	--offensive melee set
 	sets.TP.TP = {
 		ammo="Coiste Bodhar",
-		head="Hattori Zukin +2",
+		head="Hattori Zukin +3",
 		body="Hachiya chainmail +3",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -77,7 +77,7 @@ function get_sets()
 	--Hybrid Gear
 	sets.TP.Hybrid = {
 		ammo="Coiste Bodhar",
-		head="Hattori Zukin +2",
+		head="Hattori Zukin +3",
 		body="Hattori ningi +2",
 		hands="Malignance Gloves",
 		legs="Hattori hakama +2",
@@ -93,7 +93,7 @@ function get_sets()
 
 	sets.TP.Accuracy = {
 		ammo="Amar Cluster",
-		head="Hattori Zukin +2",
+		head="Hattori Zukin +3",
 		feet="Hattori Kyahan +3",		
 		neck={ name="Ninja Nodowa +2", augments={'Path: A'}},
 		waist="Null belt",
@@ -122,7 +122,7 @@ function get_sets()
 
 	sets.TP.EvasionTank = {
 		ammo="Amar Cluster",
-		head="Hattori Zukin +2",
+		head="Hattori Zukin +3",
 		body="Hattori ningi +2",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
@@ -154,7 +154,7 @@ function get_sets()
 	
 	sets.TP.DualWield = {
 		ammo="Coiste Bodhar",
-		head="Hattori Zukin +2",
+		head="Hattori Zukin +3",
 		body="Hachiya chainmail +3",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Mochizuki hakama +3",
@@ -358,7 +358,7 @@ function get_sets()
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'HeishiKuni','HeishiCrep','HeishiTauret','NagKuni','NagCrep','TauretMal','TauretCrep'}
+	sets.weapon.index = {'HeishiKuni','HeishiCrep','HeishiTauret','HeishiYagyu','NagKuni','NagCrep','TauretMal','TauretCrep'}
 	weapon_ind = 1
 
 	--Blade:Ten*/Chi*/Teki*/To*
@@ -375,6 +375,11 @@ function get_sets()
 	sets.weapon.HeishiTauret = {
 		main="Heishi Shorinken",
 		sub="Tauret"
+	}
+	
+	sets.weapon.HeishiYagyu = {
+		main="Heishi Shorinken",
+		sub="Yagyu Darkblade"	
 	}
 	
 	sets.weapon.NagKuni = {

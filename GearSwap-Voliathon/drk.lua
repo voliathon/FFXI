@@ -46,7 +46,7 @@
             -- Purchased from the Auction House, crafted only.
 
 function get_sets()
--- Set macro book/set --
+	-- Set macro book/set --
 	send_command('input /macro book 12;wait .1;input /macro set 2')
 
 	-- Binds for modes
@@ -70,8 +70,7 @@ function get_sets()
 
   -- Dancer's Abilities --
   sets.JA.Waltz = {legs="Dashing subligar"}
-  sets.JA.Step = 	{}
-  
+ 
   
   --equip Sets--
   sets.equip = {}
@@ -186,9 +185,9 @@ function get_sets()
   --Catastrophe
   sets.Catastrophe = {
     ammo="Knobkierrie",
-    head="Ratri Sallet +1",
-    body="Nyame Mail",
-    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
+    head="Nyame Helm",
+    body="Ig. Cuirass +4",
+    hands="Nyame gauntlets",
     legs="Fallen's flanchard +3",
     feet="Heathen's sollerets +3",
     neck="Abyssal Bead Necklace +2",
@@ -203,10 +202,24 @@ function get_sets()
   --STR and WSD gears
   sets.STRWSD = {
     ammo="Amar Cluster",
-    head="Ratri Sallet +1",
-    body="Nyame Mail",
-    hands={ name="Valorous Mitts", augments={'CHR+13','Crit.hit rate+3','Weapon skill damage +8%','Mag. Acc.+5 "Mag.Atk.Bns."+5'}},
+    head="Nyame helm",
+    body="Ig. Cuirass +4",
+    hands="Nyame gauntlets",
     legs="Fallen's flanchard +3",
+    feet="Heathen's sollerets +3",
+    neck="Abyssal Bead Necklace +2",
+    waist="Fotia Belt",
+    left_ring="Epaminondas's Ring",
+    right_ring="Sroda ring",
+    back={ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+  }
+
+  sets.SavageBlade = {
+    ammo="Knobkierrie",
+    head="Nyame helm",
+    body="Ig. Cuirass +4",
+    hands="Nyame gauntlets",
+    legs="Nyame flanchard",
     feet="Heathen's sollerets +3",
     neck="Abyssal Bead Necklace +2",
     waist="Fotia Belt",
@@ -391,8 +404,11 @@ function precast(spell,abil)
   if spell.name == 'Catastrophe' then
     equip(sets.Catastrophe)
   end
-  if spell.name == 'Savage Blade' or spell.name == 'Cross Reaper' then
+  if spell.name == 'Cross Reaper' then
     equip(sets.STRWSD)
+  end
+  if spell.name == 'Savage Blade' then
+	equip(sets.SavageBlade)
   end
 
     --Utsusemi Check
