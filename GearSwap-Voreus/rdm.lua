@@ -57,7 +57,7 @@ function get_sets()
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9'}},
 		body="Vitiation tabard +3",
 		hands="Atro. gloves +4",
-		legs="Atrophy Tights +3",
+		legs="Atrophy Tights +4",
 		feet="Lethargy Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A'}},
 		waist="Embla Sash",
@@ -86,14 +86,14 @@ function get_sets()
 		left_ring="Ilabrat Ring",
 		right_ring="Hetairoi Ring",
 		back=RedMageCapes.TP,
-		ammo="Ginsen"
+		ammo="Coiste Bodhar"
 	}	
 
     sets.Cure = set_combine(sets.FastCast,  {
 		head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}},
 		body={ name="Vanya Robe", augments={'MP+50','"Cure" potency +7%','Enmity-6',}},
 		hands={ name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}},
-		legs="Atrophy Tights +3",
+		legs="Atrophy Tights +4",
 		feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6'}},
 		neck="Phalaina locket",
 		waist="Embla Sash",
