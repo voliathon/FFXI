@@ -37,7 +37,7 @@ function get_sets()
     sets.JA.Enchainment = {body="Luhlaza Jubbah +1"}
     sets.JA.Efflux = {back=Rosmerta.WSD, legs="Hashishin Tayt +3"}
 	sets.JA.AzureLore = {}
-	sets.JA.Assimilation = {}
+	sets.JA.Assimilation = {legs="Luhlaza shalwar +4"}
 	
 	--Fast Cast
 	sets.FastCast = {
@@ -329,7 +329,7 @@ function get_sets()
 		head="Hashishin kavuk +3",
 		body="Assim. Jubbah +4",
 		hands="Nyame Gauntlets",
-		legs="Luhlaza Shalwar +3",
+		legs="Luhlaza Shalwar +4",
 		feet="Nyame sollerets",
 		neck="Mirage Stole +2",
 		waist="Fotia Belt",
@@ -345,7 +345,7 @@ function get_sets()
 		head="Hashishin kavuk +3",
 		body="Abnoba Kaftan",
 		hands="Nyame Gauntlets",
-		legs={name="Herculean Trousers", augments={'Attack+20','"Triple Atk."+3','STR+3','Accuracy+9'}},
+		legs="Luhlaza Shalwar +4",
 		feet="Nyame sollerets",
 		neck="Mirage Stole +2",
 		waist="Fotia Belt",
@@ -439,6 +439,9 @@ function precast(spell,abil)
 		equip(sets.Efflux)
 	end
 	
+	if spell.name == "Assimilation" then
+		equip(sets.Assimilation)
+	end	
 	
 end
 
