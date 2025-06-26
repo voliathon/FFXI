@@ -68,6 +68,10 @@ function get_sets()
 		back=RedMageCapes.FastCast
 	}
 	
+	sets.Gain = set_combine(sets.Enhancing,  {
+		hands="Viti. gloves +4"
+	})
+	
 	-- Stoneskin
 	sets.Stoneskin = set_combine(sets.FastCast,  {
 		legs="Querkening Brais"
@@ -409,8 +413,10 @@ function midcast(spell)
 			equip(sets.Stoneskin)
 		elseif spell.name == 'Enfire' or spell.name == 'Enfire II' or spell.name == 'Enstone' or spell.name == 'Enstone II' or spell.name == 'Enblizzard' or spell.name == 'Enblizzard II' or spell.name == 'Enaero' or spell.name == 'Enaero II' or spell.name == 'Enthunder' or spell.name == 'Enthunder II' or spell.name == 'Enwater' or spell.name == 'Enwater II' then
 			equip(sets.Enspell)
+		elseif string.find(spell.english,'Gain') then
+			equip(sets.Gain)
 		else
-			--gain and temper hits here
+			--temper hits here
 			equip(sets.Enhancing)
 		end
 	end
