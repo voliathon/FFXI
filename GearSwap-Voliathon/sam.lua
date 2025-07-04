@@ -16,7 +16,7 @@ function get_sets()
 	sets.JA.Meditate = {head="Wakido kabuto +3", hands="Sao. Kote +3"}
 	sets.JA.Hasso = {hands="Wakido kote +4", legs="Kasuga haidate +3", feet="Wakido sune-ate +3"}
 	sets.JA.WardingCircle = {head="Wakido kabuto +3"}
-	sets.JA.ThirdEye = {legs="Sakonji Haidate +3"}
+	sets.JA.ThirdEye = {legs="Sakonji Haidate +4"}
 	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
 	
 	--equip Sets--
@@ -295,7 +295,7 @@ function equip_current()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 	equip(sets.equip[sets.equip.index[equip_ind]])
 	if (buffactive['Third Eye']) then
-		equip({legs="Sakonji haidate +3"})
+		equip({legs="Sakonji Haidate +4"})
 	end
 end
 

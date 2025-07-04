@@ -65,7 +65,7 @@ function get_sets()
   sets.JA.ArcaneCircle = { feet="Ignominy Sollerets +2"}
   sets.JA.LastResort = { feet="Fallen's Sollerets +3"}
   sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
-  sets.JA.DarkSeal = { head="Fallen's Burgeonet +3"}
+  sets.JA.DarkSeal = { head="Fallen's Burgeonet +4"}
   sets.JA.NetherVoid = { legs="Heathen's Flanchard +3"}
 
   -- Dancer's Abilities --
@@ -306,9 +306,9 @@ function get_sets()
 
   sets.Drain = {
     ammo="Pemphredo Tathlum",
-    head="Fall. Burgeonet +3",
+    head="Fall. Burgeonet +4",
     body="Heath. Cuirass +3",
-    hands={ name="Fall. Fin. Gaunt. +3", augments={'Enhances "Diabolic Eye" effect',}},
+    hands={ name="Fall. Fin. Gaunt. +4", augments={'Enhances "Diabolic Eye" effect',}},
     legs="Heath. Flanchard +3",
     feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
     neck="Voltsurge Torque",

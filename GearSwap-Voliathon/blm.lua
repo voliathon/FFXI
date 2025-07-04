@@ -99,25 +99,8 @@ function get_sets()
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	})
 
-	-- Protecting the party
-    sets.Protect = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-	
-	--Regen Max Duration
-	sets.Regen = set_combine(sets.Duration,  {	
-	})
-
-	
-	-- MDF the party
-    sets.Shell = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Marin staff +1", 
-		sub="Enki strap", 
 		ammo="Sroda Tathlum",
 		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
@@ -143,8 +126,6 @@ function get_sets()
 	})	
 	
 	sets.Kaustra = {
-		main="Marin staff +1", 
-		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
 		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
@@ -322,7 +303,7 @@ function get_sets()
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'MalignancePole','DaybreakShield','MarinStaff'}
+	sets.weapon.index = {'MalignancePole','DaybreakShield','Bunzi','MarinStaff'}
 	weapon_ind = 1
 	
 	sets.weapon.MalignancePole = {
@@ -333,6 +314,10 @@ function get_sets()
 		main="Daybreak",
 		sub="Ammurapi Shield"
 	}
+	sets.weapon.Bunzi = {
+		main="Bunzi's rod",
+		sub="Ammurapi Shield"
+	}	
 	sets.weapon.MarinStaff = {
 		main="Marin staff +1",
 		sub="Enki strap"
