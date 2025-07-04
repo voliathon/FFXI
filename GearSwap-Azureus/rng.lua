@@ -40,7 +40,7 @@ function get_sets()
 	sets.VelocityShot = {body="Amini Caban +3", back=BelenusCape.ranged_ws}
 	sets.BountyShot = {hands="Amini Glove. +3"}
 	sets.FlashShot = {hands="Arcadian bracers +3"}
-	sets.StealthShot = {feet="Arcadian socks +3"}
+	sets.StealthShot = {feet="Arcadian socks +4"}
 
 	-- Preshot
 	-- Snapshot caps at 70% from any combination of merits, gear, and/or Flurry/Flurry II. 
@@ -53,7 +53,7 @@ function get_sets()
 		body="Amini Caban +3", --velocity shot 11
 		hands="Carmine finger gauntlets +1", --rapid shot 11 snapshot 8
 		legs="Orion Braccae +3", --rapid shot 16 snapshot 15
-		feet="Arcadian Socks +3", --Rapidshot 10
+		feet="Arcadian socks +4", --Rapidshot 10
 		neck="Scout's gorget +2", --snapshot 4
 		waist="Yemaya Belt",
 		left_ear="Telos Earring",

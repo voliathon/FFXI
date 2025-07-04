@@ -133,8 +133,6 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Marin staff +1", 
-		sub="Enki strap", 
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap",
 		body="Agwu's Robe",
@@ -157,8 +155,6 @@ function get_sets()
 	})	
 	
 	sets.Kaustra = {
-		main="Marin staff +1", 
-		sub="Enki strap", 
 		ammo="Sroda Tathlum",
 		head="Agwu's Cap",
 		body="Agwu's Robe",
@@ -347,7 +343,7 @@ function get_sets()
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'MalignancePole','DaybreakShield','MarinStaff'}
+	sets.weapon.index = {'MalignancePole','DaybreakShield','Bunzi','MarinStaff'}
 	weapon_ind = 1
 	
 	sets.weapon.MalignancePole = {
@@ -358,6 +354,10 @@ function get_sets()
 		main="Daybreak",
 		sub="Ammurapi Shield"
 	}
+	sets.weapon.Bunzi = {
+		main="Bunzi's rod",
+		sub="Ammurapi Shield"
+	}		
 	sets.weapon.MarinStaff = {
 		main="Marin staff +1",
 		sub="Enki strap"

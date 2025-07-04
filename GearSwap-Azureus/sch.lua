@@ -131,7 +131,6 @@ function get_sets()
 	
     sets.Cure = set_combine(sets.FastCast,  {
 	    main="Daybreak",
-		sub="Culminus",
 		ammo="Pemphredo Tathlum",
 		head={ name="Kaykaus Mitra", augments={'MP+60','MND+10','Mag. Acc.+15'}},
 		body="Vanya robe",
@@ -139,7 +138,7 @@ function get_sets()
 		legs="Pinga Pants",
 		feet="Pedagogy Loafers +3",
 		neck="Incanter's Torque",
-		waist="Null belt",
+		waist="Luminary sash",
 		left_ear="Mendi. Earring",
 		right_ear="Magnetic Earring",
 		left_ring="Mephitas's ring +1",
@@ -156,20 +155,14 @@ function get_sets()
 		back={ name="Bookworm's Cape", augments={'INT+2','MND+2','Helix eff. dur. +15','"Regen" potency+10'}}	
 	})
 
-	
-	-- MDF the party
-    sets.Shell = set_combine(sets.Duration,  {
-		ring1="Sheltered Ring"
-	})
-
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		main="Bunzi's Rod",
 		sub="Ammurapi shield",
 		ammo="Ghastly Tathlum +1",
-		head="Arbatel bonnet +3",
-		body="Arbatel gown +3",
-		hands="Arbatel Bracers +3",
+		head="Agwu's Cap",
+		body="Agwu's robe",
+		hands="Agwu's gages",
 		legs="Arbatel pants +3",
 		feet="Arbatel Loafers +3",
 		neck="Argute stole +2",
@@ -182,15 +175,12 @@ function get_sets()
 	}
 	
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
-		head="Agwu's Cap",
-		body="Arbatel gown +3",
+		hands="Arbatel bracers +3",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring"
 	})
 	
 	sets.Kaustra = {
-		main="Bunzi's Rod",
-		sub="Ammurapi Shield",
 		ammo="Ghastly Tathlum +1",
 	    head="Pixie Hairpin +1", -- Dark magic damage
 		body="Agwu's Robe", -- Magic accuracy and damage
@@ -207,8 +197,6 @@ function get_sets()
 	}
 	
     sets.DrainAspir = {
-		main={ name="Marin Staff +1", augments={'Path: A',}},
-		sub="Khonsu",
 		ammo="Pemphredo Tathlum",
 		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','Weapon skill damage +8%',}},
 		body="Arbatel Gown +3",
@@ -225,8 +213,6 @@ function get_sets()
 	}
 	
 	sets.Cursna = {
-		main="Marin staff +1",
-		sub="Khonsu",
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +3",
@@ -277,12 +263,10 @@ function get_sets()
 		left_ring="Mujin Band",
 		right_ring="Locus Ring",
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
-}
+	}
 
 
     sets.Enfeebling = set_combine(sets.FastCast,  {
-		main="Bunzi's Rod",
-		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +3",
 		body="Arbatel Gown +3",
@@ -425,7 +409,7 @@ function get_sets()
 	 
 	--boomstick Sets--
 	sets.boomstick = {}
-	sets.boomstick.index = {'Musa','DaybreakShield','MarinStaff'}
+	sets.boomstick.index = {'Musa','DaybreakShield','Bunzi','MarinStaff'}
 	boomstick_ind = 1
 	
 	sets.boomstick.Musa = {
@@ -436,6 +420,10 @@ function get_sets()
 		main="Daybreak",
 		sub="Ammurapi Shield"
 	}
+	sets.boomstick.Bunzi = {
+		main="Bunzi's rod",
+		sub="Ammurapi Shield"
+	}	
 	sets.boomstick.MarinStaff = {
 		main="Marin staff +1",
 		sub="Enki strap"

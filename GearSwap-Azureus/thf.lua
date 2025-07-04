@@ -40,19 +40,19 @@ function get_sets()
 	}
 	
 	sets.TP.TP = {
-		ammo="Ginsen",
-		head="Skulker's bonnet +3",
+		ammo="Coiste Bodhar",
+		head="Skulker's Bonnet +3",
 		body="Skulker's Vest +3",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs="Malignance tights",
-		feet="Plun. poulaines +3",
-		neck="Assassin's gorget +2",
+		legs="Malignance Tights",
+		feet={ name="Plun. Poulaines +5", augments={'Enhances "Assassin\'s Charge" effect',}},
+		neck={ name="Asn. Gorget +2", augments={'Path: A',}},
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
 		right_ear="Telos Earring",
 		left_ring="Chirich Ring +1",
 		right_ring="Hetairoi Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%'}}
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
 	}
 	
 	sets.TP.Accuracy =  {
@@ -110,7 +110,7 @@ function get_sets()
 	
     sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
     sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
-	sets.JA["Assassin's Charge"] = {feet="Plun. poulaines +3"}
+	sets.JA["Assassin's Charge"] = {feet="Plun. poulaines +4"}
 	sets.JA['Feint'] = {legs="Plunderer's Culottes +3"}
 	sets.JA['Conspirator'] = {body="Skulker's Vest +3"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
@@ -126,7 +126,7 @@ function get_sets()
  -- Generic Sets
     sets.WSD = {	
 		ammo="Crepuscular pebble",
-		head="Skulker's bonnet +3",
+		head="Pillager's bonnet +4",
 		body="Skulker's Vest +3",
 		hands="Nyame Gauntlets",
 		legs="Nyame flanchard",
@@ -142,11 +142,11 @@ function get_sets()
 	
 	sets.Evisceration = {
 		ammo="Yetshila +1",
-		head="Skulker's bonnet +3",
+		head="Pillager's bonnet +4",
 		body="Plunderer's Vest +3",
 		hands="Gleti's gauntlets",
 		legs="Gleti's breeches",
-		feet="Gleti's boots",
+		feet={ name="Plun. Poulaines +5", augments={'Enhances "Assassin\'s Charge" effect',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Odr earring",

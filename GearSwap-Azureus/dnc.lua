@@ -54,7 +54,7 @@ function get_sets()
 	sets.JA.StepAccuracy = {
 		head="Maxixi Tiara +3",
 		hands="Maxixi Bangles +4",
-		feet="Horos Shoes +3"
+		feet="Horos Shoes +4"
 	}
 	
 	sets.JA.Jig = {
@@ -78,7 +78,7 @@ function get_sets()
 	sets.JA.StrikingFlourish = {body="Maculele casaque +3"}
 	sets.JA.ViolentFlourish = {
 		head="Mummu Bonnet +2",
-		body="Horos Casaque +3",
+		body="Horos Casaque +4",
 		legs="Horos Tights +3",
 		feet="Mummu Gamash. +2",
 		left_ring="Stikini ring +1",
@@ -88,9 +88,9 @@ function get_sets()
 	
 	sets.JA.Trance = {head="Horos Tiara +3"}
 	sets.JA.FanDance = {hands="Horos Bangles +3"}
-	sets.JA.NoFootRise = {body="Horos Casaque +3"}
+	sets.JA.NoFootRise = {body="Horos Casaque +4"}
 	sets.JA.SaberDance = {legs="Horos Tights +3"}
-	sets.JA.ClosedPosition = {feet="Horos Shoes +3"}
+	sets.JA.ClosedPosition = {feet="Horos Shoes +4"}
 	
 	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
 	
@@ -102,10 +102,10 @@ function get_sets()
 	sets.equipment.TP = {
 		ammo="Coiste Bodhar",
 		head="Blistering sallet +1",
-		body="Horos Casaque +3",
+		body="Horos Casaque +4",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Maculele Tights +3",
-		feet="Macu. Toe Sh. +3",
+		feet="Horos Shoes +4",
 		neck="Etoile Gorget +2",
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",
@@ -234,7 +234,7 @@ function get_sets()
 	sets.PyrrhicKleos = set_combine(sets.Evisceration,  {
 		ammo="Coiste Bodhar",
 		head="Maculele Tiara +3",
-		body="Horos Casaque +3",
+		body="Horos Casaque +4",
 		hands="Maxixi bangles +4",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
