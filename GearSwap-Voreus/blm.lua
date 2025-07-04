@@ -121,8 +121,6 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Marin staff +1", 
-		sub="Enki strap", 
 		ammo="Sroda Tathlum",
 		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
@@ -148,8 +146,6 @@ function get_sets()
 	})	
 	
 	sets.Kaustra = {
-		main="Marin staff +1", 
-		sub="Enki strap", 
 		ammo="Pemphredo Tathlum",
 		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
@@ -234,8 +230,7 @@ function get_sets()
 		left_ring="Shneddick ring"
 	})
 
-    
-	sets.Refresh = set_combine(sets.PDT,  {
+    sets.Refresh = set_combine(sets.PDT,  {
 		head="Befouled Crown",
 		body="Wicce Coat +3",
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
@@ -248,14 +243,13 @@ function get_sets()
 		right_ring="Stikini Ring +1"
 	})
 	
-	
 	sets.ElementalDebuff = {
 		ammo="Pemphredo Tathlum",
 		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
 		hands="Wicce Gloves +3",
 		legs="Arch. tonban +3",
-		feet="Arch. sabots +3",
+		feet="Arch. sabots +4",
 		neck="Null loop",
 		waist="Eschan Stone",
 		left_ear="Malignance Earring",
@@ -326,7 +320,7 @@ function get_sets()
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'MalignancePole','DaybreakShield','MarinStaff'}
+	sets.weapon.index = {'MalignancePole','DaybreakShield','Bunzi','MarinStaff'}
 	weapon_ind = 1
 	
 	sets.weapon.MalignancePole = {
@@ -337,10 +331,15 @@ function get_sets()
 		main="Daybreak",
 		sub="Ammurapi Shield"
 	}
+	sets.weapon.Bunzi = {
+		main="Bunzi's rod",
+		sub="Ammurapi Shield"
+	}
 	sets.weapon.MarinStaff = {
 		main="Marin staff +1",
 		sub="Enki strap"
 	}	
+	
 end
 
 function precast(spell,abil)

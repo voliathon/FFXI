@@ -72,6 +72,10 @@ function get_sets()
 		hands="Viti. gloves +4"
 	})
 	
+	sets.Spikes = set_combine(sets.Enhancing,  {
+		legs="Viti. tights +4"
+	})	
+	
 	-- Stoneskin
 	sets.Stoneskin = set_combine(sets.FastCast,  {
 		legs="Querkening Brais"
@@ -80,7 +84,7 @@ function get_sets()
 	sets.TP = {
 		head="Malignance Chapeau",
 		body="Malignance tabard",
-		hands="Lethargy gantherots +3",
+		hands="Bunzi's gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Anu Torque",
@@ -258,7 +262,7 @@ function get_sets()
 	})
 
 	sets.Enspell = set_combine(sets.Enhancing,  {
-		legs="Vitiation Tights +3"
+		legs="Vitiation Tights +4"
 	})	
 	
 	sets.EnspellActive = set_combine(sets.TP, {
@@ -289,8 +293,8 @@ function get_sets()
 		feet="Leth. Houseaux +3",
 		neck="Rep. Plat. Medal",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
-		right_ear="Sherida Earring",
+		left_ear="Sherida Earring",
+		right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
 		left_ring="Cornelia's Ring",
 		right_ring="Sroda Ring",
 		back=RedMageCapes.STRWS,
@@ -346,13 +350,17 @@ function get_sets()
 
 	 -- Weapon Toggle--
 	 sets.weapon = {}
-	 sets.weapon.index = {'Nuke', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingTauret'}
+	 sets.weapon.index = {'Nuke', 'Nuke2', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingTauret'}
 	 weapon_ind = 1     
 	  
 	 sets.weapon.Nuke = {
 		main="Wizard's rod",
 		sub="Ammurapi Shield"
 	 } 
+	 sets.weapon.Nuke2 = {
+		main="Bunzi's rod",
+		sub="Ammurapi Shield"
+	 } 	 
 	 sets.weapon.HiEnspell = {
 		main="Crocea Mors",
 		sub="Daybreak"
@@ -415,6 +423,8 @@ function midcast(spell)
 			equip(sets.Enspell)
 		elseif string.find(spell.english,'Gain') then
 			equip(sets.Gain)
+		elseif string.find(spell.english,'Spikes') then
+			equip(sets.Spikes)
 		else
 			--temper hits here
 			equip(sets.Enhancing)

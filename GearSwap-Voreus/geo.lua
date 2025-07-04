@@ -33,7 +33,7 @@ function get_sets()
     sets.FullCircle = {head="Azimuth Hood +3"}
     sets.CurativeRecantation = {hands="Bagua mitaines +3"}
     sets.MendingHalation = {legs="Bagua Pants +3"}
-    sets.RadialArcana = {feet="Bagua Sandals +3"}
+    sets.RadialArcana = {feet="Bagua Sandals +4"}
 
     -- Fast Cast for Geomancer --
     sets.FastCast = {
@@ -81,8 +81,6 @@ function get_sets()
 
 	-- Enhancing Spells \\Generalized//
     sets.EnhancingMagic = {
-		main="Daybreak",
-		sub="Ammurapi Shield",
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
 		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
 		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
@@ -121,8 +119,6 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Wizard's rod",
-		sub="Ammurapi Shield",
 		ammo="Ghastly tathlum +1",
 		head="Ea Hat +1",
 		body="Azimuth coat +3",
@@ -227,7 +223,7 @@ function get_sets()
 		body={ name="Telchine Chas.", augments={'Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -3%',}},
 		hands="Geo. Mitaines +4",
 		legs={ name="Telchine Braconi", augments={'Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
-		feet={ name="Bagua Sandals +3", augments={'Enhances "Radial Arcana" effect',}},
+		feet={ name="Bagua Sandals +4", augments={'Enhances "Radial Arcana" effect',}},
 		neck="Null Loop",
 		waist="Isa Belt",
 		left_ear="Digni. Earring",
@@ -334,7 +330,7 @@ function get_sets()
 	 
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'IdrisGenmei','Maxentius','Nuke'}
+	sets.weapon.index = {'IdrisGenmei','Maxentius','Nuke','Nuke2'}
 	weapon_ind = 1
 	
 	sets.weapon.IdrisGenmei = {
@@ -349,7 +345,10 @@ function get_sets()
 		main="Wizard's rod",
 		sub="Ammurapi Shield",
 	}		 
-
+	sets.weapon.Nuke2 = {
+		main="Bunzi's rod",
+		sub="Ammurapi Shield",
+	}
 	 
 end
 
