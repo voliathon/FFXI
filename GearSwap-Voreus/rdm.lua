@@ -27,7 +27,7 @@ function get_sets()
 	Burst = 'Disabled'
 	
     -- Job Abilities for Red Mage --
-    sets.Chainspell = {body="Vitiation tabard +3"}
+    sets.Chainspell = {body="Vitiation tabard +4"}
     sets.Composure = {head="Lethargy Chappel +3",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Leth. Fuseau +3",feet="Lethargy Houseaux +3"}
 	sets.Saboteur = {hands="Lethargy gantherots +3"}
 	sets.Dispel = {neck="Duelist's torque +2"}
@@ -36,7 +36,7 @@ function get_sets()
     sets.FastCast = {
 		ammo="Impatiens",
 		head="Atro. Chapeau +4",
-		body={ name="Viti. Tabard +3", augments={'Enhances "Chainspell" effect',}},
+		body={ name="Vitiation Tabard +4", augments={'Enhances "Chainspell" effect',}},
 		hands="Leth. Ganth. +3",
 		legs="Querkening Brais",
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
@@ -55,7 +55,7 @@ function get_sets()
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9'}},
-		body="Vitiation tabard +3",
+		body="Vitiation tabard +4",
 		hands="Atro. gloves +4",
 		legs="Atrophy Tights +4",
 		feet="Lethargy Houseaux +3",
@@ -69,11 +69,11 @@ function get_sets()
 	}
 	
 	sets.Gain = set_combine(sets.Enhancing,  {
-		hands="Viti. gloves +4"
+		hands="Vitiation gloves +4"
 	})
 	
 	sets.Spikes = set_combine(sets.Enhancing,  {
-		legs="Viti. tights +4"
+		legs="Vitiation tights +4"
 	})	
 	
 	-- Stoneskin

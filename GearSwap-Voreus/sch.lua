@@ -22,7 +22,7 @@ function get_sets()
     sets.Immanence = {hands="Arbatel bracers +3"}
     sets.Celerity = {feet="Pedagogy Loafers +3"}
     sets.Alacrity = {feet="Pedagogy Loafers +3"}
-    sets.Stormsurge = {feet={ name="Peda. Loafers +3", augments={'Enhances "Stormsurge" effect'}},}
+    sets.Stormsurge = {feet={ name="Pedagogy Loafers +3", augments={'Enhances "Stormsurge" effect'}},}
 
     -- Fast Cast for Scholar --
     sets.FastCast = {
@@ -38,7 +38,7 @@ function get_sets()
 		right_ear="Loquac. Earring",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
-		back="Perimede Cape"
+		back="Fi Follet Cape +1"
 	}
 	
 	sets.FastCastGrimoire = set_combine(sets.FastCast,  {
@@ -152,7 +152,7 @@ function get_sets()
 		head={ name="Chironic Hat", augments={'DEX+3','"Drain" and "Aspir" potency +5','boomstick skill damage +8%',}},
 		body="Arbatel Gown +3",
 		hands={ name="Amalric Gages", augments={'INT+10','Elem. magic skill +15','Dark magic skill +15',}},
-		legs={ name="Peda. Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
+		legs={ name="Pedagogy Pants +3", augments={'Enhances "Tabula Rasa" effect',}},
 		feet="Arbatel loafers +3",
 		neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Fucho-no-Obi",
@@ -354,7 +354,7 @@ function get_sets()
 	 
 	--boomstick Sets--
 	sets.boomstick = {}
-	sets.boomstick.index = {'Musa','DaybreakShield','Bunzi','MarinStaff'}
+	sets.boomstick.index = {'Musa','DaybreakShield','Bunzi','MarinStaff','Wizard','WizardDuel'}
 	boomstick_ind = 1
 	
 	sets.boomstick.Musa = {
@@ -373,7 +373,14 @@ function get_sets()
 		main="Marin staff +1",
 		sub="Enki strap"
 	}	 
-	 
+	sets.boomstick.Wizard = {
+		main="Wizard's rod",
+		sub="Ammurapi Shield"
+	}
+	sets.boomstick.WizardDuel = {
+		main="Bunzi's rod",
+		sub="Wizard's rod"
+	}	
 end
 
 -- Scholar Job Abilities where equip needs to be used upon activation.
