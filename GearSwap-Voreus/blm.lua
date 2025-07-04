@@ -320,7 +320,7 @@ function get_sets()
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'MalignancePole','DaybreakShield','Bunzi','MarinStaff'}
+	sets.weapon.index = {'MalignancePole','DaybreakShield','Bunzi','MarinStaff','Wizard'}
 	weapon_ind = 1
 	
 	sets.weapon.MalignancePole = {
@@ -339,6 +339,10 @@ function get_sets()
 		main="Marin staff +1",
 		sub="Enki strap"
 	}	
+	sets.weapon.Wizard = {
+		main="Wizard's rod",
+		sub="Ammurapi Shield"
+	}
 	
 end
 
