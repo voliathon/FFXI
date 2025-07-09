@@ -26,12 +26,12 @@ function get_sets()
     sets.TP.TreasureHunter = {
 		ammo="Yetshila +1",
 		head={ name="Herculean Helm", augments={'AGI+1','Rng.Atk.+19','"Treasure Hunter"+1','Accuracy+10 Attack+10','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
-		body="Volte Jupon",
+		body="Malignance Tabard",
 		hands="Plun. Armlets +4",
-		legs="Volte Hose",
+		legs="Skulk. Culottes +2",
 		feet="Skulk. Poulaines +3",
 		neck="Anu Torque",
-		waist="Chaac Belt",
+		waist="Null Belt",
 		left_ear="Sherida Earring",
 		right_ear="Odr Earring",
 		left_ring="Epona's Ring",
@@ -42,7 +42,7 @@ function get_sets()
 	sets.TP.TP = {
 		ammo="Coiste Bodhar",
 		head="Skulker's Bonnet +3",
-		body="Skulker's Vest +3",
+		body="Pillager's vest +4",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Malignance Tights",
 		feet={ name="Plun. Poulaines +5", augments={'Enhances "Assassin\'s Charge" effect',}},
@@ -111,7 +111,7 @@ function get_sets()
     sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
     sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
 	sets.JA["Assassin's Charge"] = {feet="Plun. poulaines +4"}
-	sets.JA['Feint'] = {legs="Plunderer's Culottes +3"}
+	sets.JA['Feint'] = {legs="Plun. Culottes +4"}
 	sets.JA['Conspirator'] = {body="Skulker's Vest +3"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet +3"}
@@ -129,7 +129,7 @@ function get_sets()
 		head="Pillager's bonnet +4",
 		body="Skulker's Vest +3",
 		hands="Nyame Gauntlets",
-		legs="Nyame flanchard",
+		legs="Plun. Culottes +4",
 		feet="Nyame sollerets",
 		neck="Assassin's gorget +2",
 		waist="Kentarch belt +1",

@@ -62,7 +62,7 @@ function get_sets()
     body="Fili Hongreline +3",
     hands="Fili Manchettes +3",
     legs="Brioso Cannions +3",
-    feet="Brioso Slippers +3",
+    feet="Brioso Slippers +4",
     neck="Mnbw. Whistle +1",
     waist="Null belt",
     left_ear="Musical Earring",
@@ -79,7 +79,7 @@ function get_sets()
     body="Fili Hongreline +3",
     hands="Fili Manchettes +3",
     legs="Inyanga Shalwar +2",
-    feet="Brioso Slippers +3",
+    feet="Brioso Slippers +4",
     neck="Mnbw. Whistle +1",
     waist="Kobo Obi",
     left_ear="Musical Earring",
@@ -125,9 +125,9 @@ function get_sets()
 
   sets.Sleep = set_combine(sets.MagicAccuracy, { 
     head="Fili calot +3",
-	hands="Brioso Cuffs +3",
+	hands="Brioso Cuffs +4",
 	body="Brioso Justaucorps +3",
-	feet="Brioso Slippers +3",
+	feet="Brioso Slippers +4",
 	legs="Inyanga Shalwar +2",
 	range="Daurdabla",
 	main="Carnwenhan"

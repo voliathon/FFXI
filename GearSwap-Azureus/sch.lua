@@ -78,7 +78,7 @@ function get_sets()
 		body="Zendik Robe",
 		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
 		legs="Pinga Pants",
-		feet="Acad. loafers +3",
+		feet="Acad. loafers +4",
 		neck="Baetyl pendant",
 		waist="Embla Sash",
 		left_ear="Malignance Earring",
@@ -90,7 +90,7 @@ function get_sets()
 	
 	sets.FastCastGrimoire = set_combine(sets.FastCast,  {
 		head="Pedagogy Mortarboard +3",
-		feet="Acad. loafers +3"
+		feet="Acad. loafers +4"
 	})
 
 	sets.Duration = {
@@ -157,8 +157,6 @@ function get_sets()
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
-		main="Bunzi's Rod",
-		sub="Ammurapi shield",
 		ammo="Ghastly Tathlum +1",
 		head="Agwu's Cap",
 		body="Agwu's robe",

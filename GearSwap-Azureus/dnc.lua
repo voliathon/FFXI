@@ -54,7 +54,7 @@ function get_sets()
 	sets.JA.StepAccuracy = {
 		head="Maxixi Tiara +3",
 		hands="Maxixi Bangles +4",
-		feet="Horos Shoes +4"
+		feet="Horos Toe Shoes +4"
 	}
 	
 	sets.JA.Jig = {
@@ -90,7 +90,7 @@ function get_sets()
 	sets.JA.FanDance = {hands="Horos Bangles +3"}
 	sets.JA.NoFootRise = {body="Horos Casaque +4"}
 	sets.JA.SaberDance = {legs="Horos Tights +3"}
-	sets.JA.ClosedPosition = {feet="Horos Shoes +4"}
+	sets.JA.ClosedPosition = {feet="Horos Toe Shoes +4"}
 	
 	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
 	
@@ -105,7 +105,7 @@ function get_sets()
 		body="Horos Casaque +4",
 		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
 		legs="Maculele Tights +3",
-		feet="Horos Shoes +4",
+		feet="Horos Toe Shoes +4",
 		neck="Etoile Gorget +2",
 		waist="Windbuffet Belt +1",
 		left_ear="Sherida Earring",

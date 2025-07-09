@@ -59,7 +59,7 @@ function get_sets()
 		left_ear="Telos Earring",
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",
-		right_ring="Chirich Ring +1",
+		right_ring="Cacoethic Ring +1",
 		back={ name="Belenus's Cape", augments={'"Snapshot"+10'}}
     }
 	
