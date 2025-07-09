@@ -122,8 +122,8 @@ function get_sets()
 	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +4"}
 	
 	
- -- Weapon Skill Sets
- -- Generic Sets
+    -- Weapon Skill Sets
+    -- Generic Sets
     sets.WSD = {	
 		ammo="Crepuscular pebble",
 		head="Pillager's bonnet +4",
@@ -172,11 +172,11 @@ function get_sets()
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
 	}
 	
----- .:: Preshot Sets ::. ---->
+    ---- .:: Preshot Sets ::. ---->
 	--sets.preshot = {}
 	--sets.preshot.RA = {}	
 	
- -- Precast Sets  --
+    -- Precast Sets  --
 	sets.precast = {}
 	sets.precast.Fastcast = {
 		ammo="Staunch Tathlum +1",
