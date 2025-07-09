@@ -29,14 +29,14 @@ function get_sets()
     sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
     sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
 	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
-	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
+	sets.JA['Feint'] = {legs="Plunderer's Culottes +1"}
 	sets.JA['Conspirator'] = {body="Skulker's Vest +3"}
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
-	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
+	sets.JA['Mug'] = {head="Plunderer's Bonnet +1"}
 	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
 	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
-	sets.JA['Hide'] = {body="Pillager's Vest +2"}
+	sets.JA['Hide'] = {body="Pillager's Vest +4"}
 	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
 
 	-- Engaged Sets Toggle--
@@ -51,7 +51,7 @@ function get_sets()
 		hands="Plun. Armlets +4",
 		legs="Malignance Tights",
 		feet="Skulk. Poulaines +3",
-		neck="Anu Torque",
+		neck="Asn. Gorget +2",
 		waist="Chaac Belt",
 		left_ear="Suppanomimi",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
@@ -63,11 +63,11 @@ function get_sets()
 	sets.engaged.TP = {
 		ammo="Coiste Bodhar",
 		head="Skulker's bonnet +3",
-		body="Pillager's Vest +3",
+		body="Pillager's Vest +4",
 		hands="Plun. Armlets +4",
 		legs="Malignance Tights",
 		feet="Skulk. Poulaines +3",
-		neck="Clotharius Torque",
+		neck="Asn. Gorget +2",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Suppanomimi",
 		right_ear="Sherida Earring",
@@ -115,7 +115,7 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Null loop",
+		neck="Asn. Gorget +2",
 		waist="Null belt",
 		left_ear="Sherida Earring",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
@@ -144,15 +144,15 @@ function get_sets()
 	-- Stat Modifier: 	50% DEX  CritHit Modifier
 	sets.Evisceration = {
 		ammo="Yetshila +1",
-		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
-		body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
+		head={ name="Blistering Sallet +1", augments={'Path: A',}},
+		body="Pill. Vest +4",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs="Meg. Chausses +2",
-		feet={ name="Herculean Boots", augments={'Accuracy+15 Attack+15','"Triple Atk."+3','Accuracy+5',}},
+		legs="Malignance Tights",
+		feet="Skulk. Poulaines +3",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		right_ear="Sherida Earring",
+		left_ear="Sherida Earring",
+		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
 		left_ring="Epaminondas's Ring",
 		right_ring="Mummu Ring",
 		back=ThiefCapes.DEXWS

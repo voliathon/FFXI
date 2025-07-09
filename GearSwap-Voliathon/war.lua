@@ -15,17 +15,18 @@ function get_sets()
   sets.JA.MightyStrikes = {}
   sets.JA.Berserk = {}
   sets.JA.Defender = {}
-  sets.JA.Warcry = {}
+  sets.JA.Warcry = {head="Agoge mask +4"}
   sets.JA.Agressor = {}
-  sets.JA.Retaliation = {}
+  sets.JA.Retaliation = {hands="Pumm. mufflers +4"}
   sets.JA.WarriorsCharge = {}
   sets.JA.Tomahawk = {}
   sets.JA.Restraint = {}
   sets.JA.BloodRage = {}
+  sets.JA.Restraint = {hands="Boii Mufflers +2"}
 	
 	
   --Enmity set for high hate generating spells and JAs
-  sets.Enmity = {back={ name="Ogma's cape", augments={'Enmity+10','Phys. dmg. taken-4%',}}, waist="Sinew Belt", legs="Erilaz Leg Guards +1", neck="Moonlight necklace", body="Emet Harness +1"}
+  sets.Enmity = {}
 
   --TP Sets--
   sets.TP = {}
@@ -38,14 +39,15 @@ function get_sets()
     head="Flam. Zucchetto +2",
     body="Hjarrandi breastplate",
     hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
-    legs="Pumm. Cuisses +3",
-    feet="Pumm. Calligae +3",
-    neck="Clotharius Torque",
+    legs="Pumm. Cuisses +4",
+    feet="Pumm. Calligae +4",
+    neck="Null loop",
     waist="Ioskeha Belt +1",
     left_ear={ name="Schere Earring", augments={'Path: A',}},
     right_ear="Boii Earring +1",
-    left_ring="Flamma Ring",
-    right_ring="Chirich Ring +1"  
+    left_ring="Chirich Ring +1",
+    right_ring="Chirich Ring +1",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
   
   --offensive melee set
@@ -54,15 +56,15 @@ function get_sets()
     head="Flam. Zucchetto +2",
     body="Sakpata's breastplate",
     hands="Sakpata's gauntlets",
-    legs="Pumm. cuisses +3",
-    feet="Pumm. Calligae +3",
-    neck="Clotharius Torque",
+    legs="Pumm. Cuisses +4",
+    feet="Pumm. Calligae +4",
+    neck="Null loop",
     waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
     right_ear="Boii Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Moonlight Cape"
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
   
   sets.TP.TwoHandedTP = {
@@ -70,14 +72,15 @@ function get_sets()
     head="Flam. Zucchetto +2",
     body="Hjarrandi Breast.",
     hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
-    legs="Pumm. Cuisses +3",
-    feet="Pumm. Calligae +3",
-    neck="Clotharius Torque",
+    legs="Pumm. Cuisses +4",
+    feet="Pumm. Calligae +4",
+    neck="Null loop",
     waist="Ioskeha Belt +1",
     left_ear={ name="Schere Earring", augments={'Path: A',}},
     right_ear="Boii Earring +1",
-    left_ring="Flamma Ring",
-    right_ring="Chirich Ring +1"  
+    left_ring="Chirich Ring +1",
+    right_ring="Chirich Ring +1",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
 
   --Tank Gear
@@ -94,7 +97,7 @@ function get_sets()
     right_ear="Boii Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back="Engulfer Cape +1"
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
 
   sets.TP.Movement = {
@@ -109,7 +112,7 @@ function get_sets()
     right_ear="Boii Earring +1",
     left_ring="Shneddick ring",
     right_ring="Moonlight Ring",
-    back="Engulfer Cape +1"	
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
   
   sets.TP.Accuracy = {
@@ -117,15 +120,15 @@ function get_sets()
     head="Flam. Zucchetto +2",
     body="Sakpata's Plate",
     hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Pumm. Calligae +3",
+    legs="Pumm. Cuisses +4",
+    feet="Pumm. Calligae +4",
     neck="Null loop",
     waist="Null belt",
     left_ear="Dignitary's Earring",
     right_ear="Boii Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Vespid Mantle"
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
   
   sets.TP.TreasureHunter = {
@@ -133,15 +136,15 @@ function get_sets()
     head="Flam. Zucchetto +2",
     body="Volte Jupon",
     hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Pumm. Calligae +3",
+    legs="Pumm. Cuisses +4",
+    feet="Pumm. Calligae +4",
     neck="Null loop",
     waist="Chaac Belt",
     left_ear="Tuisto Earring",
     right_ear="Boii Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back="Vespid Mantle"
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
   }
 
 
@@ -150,33 +153,33 @@ function get_sets()
   sets.Resolution = {
     ammo="Knobkierrie",
     head="Flam. Zucchetto +2",
-    body="Hjarrandi Breast.",
-    hands="Sakpata's Gauntlets",
+    body="Pumm. Lorica +4",
+    hands="Boii Mufflers +2",
     legs="Sakpata's Cuisses",
-    feet="Pumm. Calligae +3",
+    feet="Pumm. Calligae +4",
     neck="Fotia Gorget",
     waist="Ioskeha Belt +1",
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
     right_ear="Boii Earring +1",
     left_ring="Epaminondas's Ring",
     right_ring="Rajas Ring",
-    back="Vespid Mantle"
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
   }
 
   sets.SavageBlade = {
     ammo="Knobkierrie",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Nyame Mail", augments={'Path: B',}},
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    head="Agoge mask +4",
+    body="Pumm. Lorica +4",
+    hands="Boii Mufflers +2",
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
     neck="Fotia Gorget",
-    waist="Sailfi belt +1",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    right_ear={ name="Boii Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
+    right_ear="Thrud Earring",
     left_ring="Epaminondas's Ring",
-    right_ring="Rajas Ring",
-    back="Vespid Mantle"
+    right_ring="Sroda Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
   }
 
   --Stat Modifier: 	30% STR / 30% MND   Sleep Weaponskill
@@ -193,7 +196,7 @@ function get_sets()
     right_ear="Gwati Earring",
     left_ring="Stikini Ring +1",
     right_ring="Stikini Ring +1",
-    back="Engulfer Cape +1"
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
   }
 
   --magic WS
@@ -210,13 +213,13 @@ function get_sets()
     right_ear="Gwati Earring",
     left_ring="Stikini Ring +1",
     right_ring="Stikini Ring +1",
-    back="Engulfer Cape +1"
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
   }
   
   sets.UkkosFury = {
     ammo="Yetshila +1",
     head="Boii Mask +2",
-    body="Hjarrandi Breast.",
+    body="Pumm. Lorica +4",
     hands="Flam. Manopolas +2",
     legs="Boii cuisses +2",
     feet="Boii Calligae +2",
@@ -226,7 +229,7 @@ function get_sets()
     right_ear={ name="Boii Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
     left_ring="Epaminondas's Ring",
     right_ring="Rajas Ring",
-    back="Vespid Mantle"	
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
   }
 
 	--Weapon Sets--
@@ -257,6 +260,12 @@ function precast(spell,abil)
   if spell.name == 'Provoke' then
 	equip(sets.Enmity)
   end
+  if spell.name == 'Warcry' then
+	equip(sets.JA.Warcry)
+  end  
+  if spell.name == 'Retaliation' then
+	equip(sets.JA.Retaliation)
+  end
   
   if spell.name == "Ukko'sFury" then
 	equip(sets.UkkosFury)
@@ -264,7 +273,7 @@ function precast(spell,abil)
   if spell.name == 'Resolution' then
     equip(sets.Resolution)
   end
-  if spell.name == 'Savage Blade' then
+  if spell.name == 'Savage Blade' or spell.name == 'Steel Cyclone' then
     equip(sets.SavageBlade)
   end
   if spell.name == 'Shockwave' then
