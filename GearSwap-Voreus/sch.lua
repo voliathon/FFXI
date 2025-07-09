@@ -26,24 +26,24 @@ function get_sets()
 
     -- Fast Cast for Scholar --
     sets.FastCast = {
-		ammo="Pemphredo Tathlum",
-		head="Amalric coif +1",
-		body="Zendik Robe",
-		hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
-		legs="Pinga Pants",
-		feet="Pedagogy Loafers +3",
-		neck="Baetyl pendant",
+		ammo="Impatiens",
+		head={ name="Merlinic Hood", augments={'Mag. Acc.+7','Magic burst dmg.+10%','MND+9','"Mag.Atk.Bns."+9',}},
+		body={ name="Agwu's Robe", augments={'Path: A',}},
+		hands={ name="Agwu's Gages", augments={'Path: A',}},
+		legs={ name="Agwu's Slops", augments={'Path: A',}},
+		feet="Academic's loafers +4",
+		neck="Incanter's Torque",
 		waist="Embla Sash",
 		left_ear="Malignance Earring",
 		right_ear="Loquac. Earring",
-		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
-		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
-		back="Fi Follet Cape +1"
+		left_ring="Lebeche Ring",
+		right_ring="Kishar Ring",
+		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 	
 	sets.FastCastGrimoire = set_combine(sets.FastCast,  {
 		head="Pedagogy Mortarboard +3",
-		feet="Academic's loafer +1"
+		feet="Academic's loafers +4"
 	})
 
 	sets.Duration = {
@@ -122,7 +122,7 @@ function get_sets()
 		right_ear="Barkaro. Earring",
 		left_ring="Freke Ring",
 		right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		back={ name="Aurist's Cape +1", augments={'Path: A',}}
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 	}
 	
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
@@ -144,7 +144,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
 		right_ring="Metamorph Ring +1",	
-		back="Null shawl"
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 	}
 	
     sets.DrainAspir = {
@@ -160,7 +160,7 @@ function get_sets()
 		right_ear={ name="Arbatel Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Enmity-3',}},
 		left_ring="Excelsis Ring",
 		right_ring="Evanescence Ring",
-		back="Null shawl"
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 	}
 	
 	sets.Cursna = {
@@ -192,7 +192,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
-		back="Null shawl"
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 	}	
 	
 	sets.Helix = {
@@ -208,7 +208,7 @@ function get_sets()
 		right_ear="Halasz Earring",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring",
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 	}
 
     sets.Enfeebling = set_combine(sets.FastCast,  {
@@ -224,7 +224,7 @@ function get_sets()
 		right_ear="Malignance Earring",
 		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+		back="Aurist's cape +1"
 	})
 
 
@@ -246,7 +246,7 @@ function get_sets()
 		right_ear="Telos Earring",
 		left_ring={name="Chirich Ring +1", bag="Wardrobe"},
 		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-		back="Null shawl"	
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}	
 	})
 
 	-- PDT Set
@@ -263,7 +263,7 @@ function get_sets()
 		right_ear="Hearty Earring",
 		left_ring="Defending ring",
 		right_ring="Stikini Ring +1",
-		back={ name="Aurist's Cape +1", augments={'Path: A',}}
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 	}
 
 	-- When I gotta kite shite, I put on my Sandals and shit...
@@ -307,7 +307,7 @@ function get_sets()
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Chirich Ring +1",
-		back="Null shawl"
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 	}
 	
 	sets.Cataclysm = {
@@ -323,7 +323,7 @@ function get_sets()
 		right_ear="Friomisi Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Hetairoi Ring",
-		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}	
+		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}}
 	}
 	
 	 --Max MP WS.. equip mp gear noob

@@ -31,7 +31,7 @@ function get_sets()
     sets.Bolster = {body="Bagua tunic +3"}
     sets.LifeCycle = {body="Geomancy Tunic +2", back="Nantosuelta's Cape"}
     sets.FullCircle = {head="Azimuth Hood +3"}
-    sets.CurativeRecantation = {hands="Bagua mitaines +3"}
+    sets.CurativeRecantation = {hands="Bagua mitaines +4"}
     sets.MendingHalation = {legs="Bagua Pants +3"}
     sets.RadialArcana = {feet="Bagua Sandals +4"}
 
@@ -122,7 +122,7 @@ function get_sets()
 		ammo="Ghastly tathlum +1",
 		head="Ea Hat +1",
 		body="Azimuth coat +3",
-		hands="Bagua mitaines +3",
+		hands="Bagua mitaines +4",
 		legs="Azimuth Tights +3",
 		feet="Azimuth gaiters +3",
 		neck="Sibyl Scarf",
@@ -253,7 +253,7 @@ function get_sets()
 		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
 		head="Befouled Crown",
 		body="Azimuth coat +3",
-		hands="Bagua mitaines +3",
+		hands="Bagua mitaines +4",
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
 		neck="Sanctity Necklace",
