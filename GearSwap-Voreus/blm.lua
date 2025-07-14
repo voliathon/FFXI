@@ -248,7 +248,7 @@ function get_sets()
 		head="Wicce Petasos +3",
 		body="Wicce Coat +3",
 		hands="Wicce Gloves +3",
-		legs="Arch. tonban +3",
+		legs="Arch. tonban +4",
 		feet="Arch. sabots +4",
 		neck="Null loop",
 		waist="Eschan Stone",
