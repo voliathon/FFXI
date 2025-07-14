@@ -31,7 +31,7 @@ function get_sets()
 	sets.JA.Yonin = {head="Mochizuki Hatsuburi +3", legs="Hattori Hakama +2"}
 	sets.JA.Innin = {head="Hattori Zukin +3"}
 	sets.JA.Futae = {hands="Hattori tekko +2"}
-	sets.JA.MijinGakure = {legs="Mochizuki Hakama +3"}
+	sets.JA.MijinGakure = {legs="Mochizuki hakama +4"}
 	
 
     
@@ -157,7 +157,7 @@ function get_sets()
 		head="Hattori Zukin +3",
 		body="Hachiya chainmail +3",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs="Mochizuki hakama +3",
+		legs="Mochizuki hakama +4",
 		feet="Hiza. Sune-Ate +2",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -174,7 +174,7 @@ function get_sets()
 		head="Hachiya hatsuburi +3",
 		body="Nyame mail",
 		hands="Nyame gauntlets",
-		legs="Mochizuki hakama +3",
+		legs="Mochizuki hakama +4",
 		feet="Hattori Kyahan +3",
 		neck="Fotia gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -193,7 +193,7 @@ function get_sets()
 		head="Mpaca's cap",
 		body="Nyame mail",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs="Mochizuki hakama +3",
+		legs="Mochizuki hakama +4",
 		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -231,7 +231,7 @@ function get_sets()
 		head="Hachiya hatsuburi +3",
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
-		legs="Mochizuki hakama +3",
+		legs="Mochizuki hakama +4",
 		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Grunfeld Rope",

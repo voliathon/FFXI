@@ -22,7 +22,7 @@ function get_sets()
   sets.JA.Tomahawk = {}
   sets.JA.Restraint = {}
   sets.JA.BloodRage = {}
-  sets.JA.Restraint = {hands="Boii Mufflers +2"}
+  sets.JA.Restraint = {hands="Boii Mufflers +3"}
 	
 	
   --Enmity set for high hate generating spells and JAs
@@ -154,7 +154,7 @@ function get_sets()
     ammo="Knobkierrie",
     head="Flam. Zucchetto +2",
     body="Pumm. Lorica +4",
-    hands="Boii Mufflers +2",
+    hands="Boii Mufflers +3",
     legs="Sakpata's Cuisses",
     feet="Pumm. Calligae +4",
     neck="Fotia Gorget",
@@ -170,7 +170,7 @@ function get_sets()
     ammo="Knobkierrie",
     head="Agoge mask +4",
     body="Pumm. Lorica +4",
-    hands="Boii Mufflers +2",
+    hands="Boii Mufflers +3",
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
     neck="Fotia Gorget",
