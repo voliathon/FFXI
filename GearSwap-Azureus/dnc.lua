@@ -58,7 +58,7 @@ function get_sets()
 	}
 	
 	sets.JA.Jig = {
-		legs="Horos Tights +3", --50%
+		legs="Horos Tights +4", --50%
 		feet="Maxixi Toe Shoes +3" --50%
 	}
 	
@@ -79,7 +79,7 @@ function get_sets()
 	sets.JA.ViolentFlourish = {
 		head="Mummu Bonnet +2",
 		body="Horos Casaque +4",
-		legs="Horos Tights +3",
+		legs="Horos Tights +4",
 		feet="Mummu Gamash. +2",
 		left_ring="Stikini ring +1",
 		right_ring="Stikini ring +1",
@@ -89,7 +89,7 @@ function get_sets()
 	sets.JA.Trance = {head="Horos Tiara +3"}
 	sets.JA.FanDance = {hands="Horos Bangles +3"}
 	sets.JA.NoFootRise = {body="Horos Casaque +4"}
-	sets.JA.SaberDance = {legs="Horos Tights +3"}
+	sets.JA.SaberDance = {legs="Horos Tights +4"}
 	sets.JA.ClosedPosition = {feet="Horos Toe Shoes +4"}
 	
 	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
@@ -186,10 +186,10 @@ function get_sets()
 		head="Maculele Tiara +3",
 		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands="Maxixi Bangles +4",
-		legs="Horos tights +3",
+		legs="Horos Tights +4",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Etoile Gorget +2",
-		waist="Fotia Belt",
+		waist="Kentarch belt +1",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Sherida Earring",
 		left_ring="Epaminondas's Ring",
