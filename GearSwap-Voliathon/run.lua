@@ -145,7 +145,7 @@ function get_sets()
     body="Ashera harness",
     hands="Adhemar wristbands +1",
     legs="Erilaz leg guards +3",
-    feet={ name="Herculean Boots", augments={'Accuracy+15 Attack+15','"Triple Atk."+3','Accuracy+5',}},
+    feet="Erilaz greaves +3",
     neck="Anu Torque",
     waist="Ioskeha Belt +1",
     left_ear="Sherida Earring",
