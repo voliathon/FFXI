@@ -27,7 +27,7 @@ function get_sets()
 	BelenusCapes()
 
 	-- Job Abilities
-    sets.EagleEyeShot = {legs="Arcadian Braccae +3"}
+    sets.EagleEyeShot = {legs="Arcadian Braccae +4"}
 	sets.Scavenge = {feet="Orion Socks +1"}
 	sets.Shadowbind = {hands="Orion Bracers +4"}
 	sets.Camouflage = {body="Orion Jerkin +2"}
@@ -168,7 +168,7 @@ function get_sets()
 		head="Orion Beret +4",
 		body="Amini Caban +3",
 		hands="Nyame Gauntlets",
-		legs="Arcadian Braccae +3",
+		legs="Arcadian Braccae +4",
 		feet="Amini Bottillons +3",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -203,7 +203,7 @@ function get_sets()
 		head="Orion Beret +4",
 		body="Amini Caban +3",
 		hands="Nyame Gauntlets",
-		legs="Arcadian Braccae +3",
+		legs="Arcadian Braccae +4",
 		feet="Amini Bottillons +3",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
@@ -219,7 +219,7 @@ function get_sets()
 		head="Orion Beret +4",
 		body="Nyame mail",
 		hands="Nyame Gauntlets",
-		legs="Arcadian Braccae +3",
+		legs="Arcadian Braccae +4",
 		feet="Amini Bottillons +3",
 		neck="Fotia Gorget",
 		waist="Sailfi Belt +1",

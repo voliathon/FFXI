@@ -180,20 +180,20 @@ function get_sets()
 		back=CamulusCape.agi_ws		
 	}
 
-	--Snapshot Magic goes here - Precast Magic
+	--Snapshot Magic goes here - Precast Magic at 100 job points corsair obtained 5% snapshot effect
     sets.Snapshot = {
-		head="Chasseur's tricorne +3",
-		body="Oshosi Vest +1",
-		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
-		legs="Laksamana's Trews +3",
-		feet="Meg. Jam. +2",
-		neck="Commodore charm +2",
-		waist="Yemaya Belt",
+		head="Chasseur's tricorne +3", --rapidshot 18
+		body="Oshosi Vest +1", --snapshot 14
+		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}, --snapshot 8 rapid shot 11
+		legs="Laksamana's Trews +3", --snapshot 15
+		feet="Meg. Jam. +2", --snapshot 10
+		neck="Commodore charm +2", --snapshot 4
+		waist="Yemaya Belt", --rapid shot 5
 		left_ear="Telos Earring",
 		right_ear="Enervating Earring",
 		left_ring="Dingir Ring",
-		right_ring="Hetairoi Ring",
-		back=CamulusCape.snapshot
+		right_ring="Cacoethic Ring +1",
+		back=CamulusCape.snapshot --snapshot 10
     }
 	
 	--MIDCAST LOGIC OF DOOM
