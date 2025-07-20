@@ -32,7 +32,7 @@ function get_sets()
 		back="Visucius's Mantle",
 		neck="Buffoon's collar"
 	}
-    sets.precast.Overdrive = {main="Pitre Tobe +3"}
+    sets.precast.Overdrive = {main="Pitre Tobe +4"}
 	sets.precast.Repair = {range="Animator P +1", ammo="Automat. Oil +3", feet="Foire Babouches +2"}
 	sets.precast.Waltz = {legs="Dashing subligar"}
 	sets.precast.Activate = {main="Ohtas", right_ear="Karagoz Earring", feet="Mpaca's boots"}
@@ -128,7 +128,7 @@ function get_sets()
   -- Xiucoatl is needed for Store TP Ranger Automaton
   sets.engaged.RangerTP = {
     head={ name="Herculean Helm", augments={'Pet: Accuracy+16 Pet: Rng. Acc.+16','Pet: "Store TP"+11',}},
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    body={ name="Pitre Tobe +4", augments={'Enhances "Overdrive" effect',}},
     hands={ name="Herculean Gloves", augments={'Pet: Accuracy+29 Pet: Rng. Acc.+29','Pet: "Store TP"+11','Pet: "Mag.Atk.Bns."+11',}},
     legs={ name="Herculean Trousers", augments={'Pet: "Store TP"+11','Pet: AGI+2','Pet: Attack+11 Pet: Rng.Atk.+11',}},
     feet={ name="Herculean Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Store TP"+10','Pet: AGI+4',}},
@@ -144,7 +144,7 @@ function get_sets()
   -- Ohtas is needed for Double Attack Melee
   sets.engaged.MeleeTP = {
 	head={ name="Taeon Chapeau", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    body={ name="Pitre Tobe +4", augments={'Enhances "Overdrive" effect',}},
 	hands={ name="Taeon Gloves", augments={'Pet: Accuracy+24 Pet: Rng. Acc.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
 	legs="Kara. Pantaloni +3",
 	feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
@@ -200,7 +200,7 @@ function get_sets()
 
 	sets.WS.AsuranFists = {
 		head={ name="Pitre Taj +3", augments={'Enhances "Optimization" effect',}},
-		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+		body={ name="Pitre Tobe +4", augments={'Enhances "Overdrive" effect',}},
 		hands={ name="Pitre Dastanas +3", augments={'Enhances "Fine-Tuning" effect',}},
 		legs={ name="Pitre Churidars +3", augments={'Enhances "Ventriloquy" effect',}},
 		feet={ name="Pitre Babouches +3", augments={'Enhances "Role Reversal" effect',}},
@@ -260,7 +260,7 @@ function get_sets()
 	sets.PetWS = {}
 	sets.PetWS.Arcuballista = {
 		head="Kara. Cappello +3",
-		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+		body={ name="Pitre Tobe +4", augments={'Enhances "Overdrive" effect',}},
 		hands="Mpaca's gloves",
 		legs="Kara. Pantaloni +3",
 		feet={ name="Herculean Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Store TP"+10','Pet: AGI+4',}},
@@ -274,7 +274,7 @@ function get_sets()
 	}
 	sets.PetWS.BoneCrusher = {
 		head="Kara. Cappello +3",
-		body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+		body={ name="Pitre Tobe +4", augments={'Enhances "Overdrive" effect',}},
 		hands="Mpaca's gloves",
 		legs="Kara. Pantaloni +3",
 		feet={ name="Taeon Boots", augments={'Pet: Accuracy+25 Pet: Rng. Acc.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
