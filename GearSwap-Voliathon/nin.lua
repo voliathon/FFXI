@@ -28,7 +28,7 @@ function get_sets()
 	--Job Ability Sets--
 	sets.JA = {}
 	sets.JA.Waltz = {head="Mummu bonnet+2",legs="Dashing subligar"}
-	sets.JA.Yonin = {head="Mochizuki Hatsuburi +3", legs="Hattori Hakama +2"}
+	sets.JA.Yonin = {head="Mochi. hatsuburi +4", legs="Hattori Hakama +2"}
 	sets.JA.Innin = {head="Hattori Zukin +3"}
 	sets.JA.Futae = {hands="Hattori tekko +2"}
 	sets.JA.MijinGakure = {legs="Mochizuki hakama +4"}
@@ -244,8 +244,8 @@ function get_sets()
 
 	--Teki/To/Chi/Yu
 	sets.TekiToChiYu = {
-		ammo="Pemphredo Tathlum",
-		head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect'}},
+		ammo="Seething Bomblet +1",
+		head={ name="Mochi. hatsuburi +4", augments={'Enhances "Yonin" and "Innin" effect'}},
 		body={ name="Nyame Mail", augments={'Path: B'}},
 		hands={ name="Nyame Gauntlets", augments={'Path: B'}},
 		legs={ name="Nyame Flanchard", augments={'Path: B'}},
@@ -253,7 +253,7 @@ function get_sets()
 		neck="Fotia Gorget",
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-		right_ear={ name="Hattori Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Store TP"+5'}},
+		right_ear="Lugra earring +1",
 		left_ring="Epaminondas's Ring",
 		right_ring="Sroda Ring",
 		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
@@ -261,8 +261,8 @@ function get_sets()
 
 	--Blade: Ku
 	sets.Ku = {
-		ammo="Yetshila +1",
-		head="Mpaca's Cap",
+		ammo="Coiste bodhar",
+		head="Blistering sallet +1",
 		body="Nyame Mail",
 		hands="Malignance Gloves",
 		legs="Mpaca's Hose",
@@ -270,7 +270,7 @@ function get_sets()
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist="Grunfeld Rope",
 		left_ear="Hattori Earring +1",
-		right_ear="Brutal Earring",
+		right_ear="Lugra Earring +1",
 		left_ring="Sroda Ring",
 		right_ring="Mummu Ring",
 		back=NinjaCapes.TP
@@ -286,7 +286,7 @@ function get_sets()
 		feet="Nyame Sollerets",
 		neck="Sanctity Necklace",
 		waist="Grunfeld Rope",
-		left_ear="Hecate's Earring",
+		left_ear="Lugra Earring +1",
 		right_ear="Hattori Earring +1",
 		left_ring="Sroda Ring",
 		right_ring="Stikini Ring +1",
@@ -340,21 +340,36 @@ function get_sets()
 	}
 
 	sets.NUKE = {
-		ammo="Pemphredo Tathlum",
-		head="Mochi. hatsuburi +3",
-		body="Samnuha coat",
-		hands="Hattori Tekko +2",
+		ammo="Ghastly Tathlum +1",
+		head="Mochi. hatsuburi +4",
+		body="Nyame mail",
+		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
-		feet="Mochi. Kyahan +3",
+		feet="Mochi. Kyahan +4",
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
 		left_ear="Hecate's Earring",
 		right_ear="Friomisi Earring",
-		left_ring="Fenrir Ring +1",
+		left_ring="Metamorph ring +1",
 		right_ring="Locus Ring",
 		back=NinjaCapes.NUKE
 	}
 
+	sets.FutaeNuke = {
+		ammo="Ghastly Tathlum +1",
+		head="Mochi. hatsuburi +4",
+		body="Nyame mail",
+		hands="Hattori tekko +2",
+		legs="Nyame Flanchard",
+		feet="Mochi. Kyahan +4",
+		neck="Sanctity Necklace",
+		waist="Orpheus's Sash",
+		left_ear="Hecate's Earring",
+		right_ear="Friomisi Earring",
+		left_ring="Metamorph ring +1",
+		right_ring="Locus Ring",
+		back=NinjaCapes.NUKE	
+	}
 	
 	--Weapon Sets--
 	sets.weapon = {}
