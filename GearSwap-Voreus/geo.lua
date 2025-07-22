@@ -28,7 +28,7 @@ function get_sets()
 	Burst = 'Disabled'	
 	
     -- Job Abilities for Geomancer --
-    sets.Bolster = {body="Bagua tunic +3"}
+    sets.Bolster = {body="Bagua tunic +4"}
     sets.LifeCycle = {body="Geomancy Tunic +2", back="Nantosuelta's Cape"}
     sets.FullCircle = {head="Azimuth Hood +3"}
     sets.CurativeRecantation = {hands="Bagua mitaines +4"}
@@ -57,7 +57,7 @@ function get_sets()
 		sub="Ammurapi Shield",
 		range="Dunna",
         head="Azimuth Hood +3",
-        body="Bagua tunic +3",
+        body="Bagua tunic +4",
 		hands="Geo. Mitaines +4",		
 		legs="Bagua pants +3",
 		feet="Azimuth gaiters +3",
