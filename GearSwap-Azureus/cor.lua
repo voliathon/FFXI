@@ -28,7 +28,7 @@ function get_sets()
 
 	-- Job Abilities
     sets.RandomDeal = { 
-		body="Lanun Frac +3" 
+		body="Lanun Frac +4" 
 	}
     sets.WildCard = { 
 		feet="Lanun Bottes +4" 
@@ -66,7 +66,7 @@ function get_sets()
 	--    Affinity
     sets.QuickDraw = {
 		head="Laksa. Tricorne +4",
-		body="Lanun Frac +3",
+		body="Lanun Frac +4",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Chass. Bottes +3",
@@ -81,7 +81,7 @@ function get_sets()
 	
     sets.QuickDrawDark = {
 		head="Pixie Hairpin +1",
-		body="Lanun Frac +3",
+		body="Lanun Frac +4",
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet="Chass. Bottes +3",
@@ -97,7 +97,7 @@ function get_sets()
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
-		body="Lanun Frac +3",
+		body="Lanun Frac +4",
 		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
 		feet={ name="Lanun Bottes +4", augments={'Enhances "Wild Card" effect',}},
@@ -113,7 +113,7 @@ function get_sets()
 	
 	sets.LeadenSaluteHachi = {
 		head="Pixie Hairpin +1",
-		body="Lanun Frac +3",
+		body="Lanun Frac +4",
 		hands="Nyame gauntlets",
 		legs="Nyame Flanchard",
 		feet={ name="Lanun Bottes +4", augments={'Enhances "Wild Card" effect',}},
@@ -167,7 +167,7 @@ function get_sets()
 	--Aeolian Edge 40% DEX / 40% INT
 	sets.AeolianEdge = {
 		head="Nyame Helm",
-		body="Lanun Frac +3",
+		body="Lanun Frac +4",
 		hands="Nyame Gauntlets",
 		legs="Nyame flanchard",
 		feet={ name="Lanun Bottes +4", augments={'Enhances "Wild Card" effect',}},
