@@ -312,7 +312,7 @@ function get_sets()
 	}
 	
 	sets.Utsusemi = set_combine(sets.FastCast,  {
-		body="Mochizuki chainmail +3",
+		body="Mochizuki chainmail +4",
 		feet="Hattori Kyahan +3",
 		back=NinjaCapes.TP
 	})
