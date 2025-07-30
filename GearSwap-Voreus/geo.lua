@@ -29,7 +29,7 @@ function get_sets()
 	
     -- Job Abilities for Geomancer --
     sets.Bolster = {body="Bagua tunic +4"}
-    sets.LifeCycle = {body="Geomancy Tunic +2", back="Nantosuelta's Cape"}
+    sets.LifeCycle = {body="Geomancy Tunic +4", back="Nantosuelta's Cape"}
     sets.FullCircle = {head="Azimuth Hood +3"}
     sets.CurativeRecantation = {hands="Bagua mitaines +4"}
     sets.MendingHalation = {legs="Bagua Pants +3"}
@@ -145,7 +145,7 @@ function get_sets()
 		sub="Ammurapi Shield",
 		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
 		head={ name="Bagua Galero +3", augments={'Enhances "Primeval Zeal" effect',}},
-		body="Shango Robe",
+		body="Geo. tunic +4",
 		hands="Geo. Mitaines +4",
 		legs="Azimuth Tights +3",
 		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
