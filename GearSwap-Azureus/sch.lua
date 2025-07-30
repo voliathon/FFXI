@@ -93,6 +93,8 @@ function get_sets()
 		feet="Acad. loafers +4"
 	})
 
+	--Sublimation gear gears called from an equipset in the game...
+
 	sets.Duration = {
 		main="Musa",
 		sub="Khonsu",

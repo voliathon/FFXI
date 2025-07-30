@@ -185,7 +185,7 @@ function get_sets()
 		head="Chasseur's tricorne +3", --rapidshot 18
 		body="Oshosi Vest +1", --snapshot 14
 		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}, --snapshot 8 rapid shot 11
-		legs="Laksamana's Trews +3", --snapshot 15
+		legs="Laksa. Trews +4", --snapshot 15
 		feet="Meg. Jam. +2", --snapshot 10
 		neck="Commodore charm +2", --snapshot 4
 		waist="Yemaya Belt", --rapid shot 5
