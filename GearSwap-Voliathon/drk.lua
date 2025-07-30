@@ -61,7 +61,7 @@ function get_sets()
   --Job Ability Sets--
   sets.JA = {}
   sets.JA.BloodWeapon = { body="Fallen's Cuirass +3" }
-  sets.JA.Souleater = { head="Ignominy Burgeonet +3"}
+  sets.JA.Souleater = { head="Ignominy Burgeonet +4"}
   sets.JA.ArcaneCircle = { feet="Ignominy Sollerets +2"}
   sets.JA.LastResort = { feet="Fallen's Sollerets +3"}
   sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
@@ -437,6 +437,10 @@ function midcast(spell,act,arg)
   if string.find(spell.name,'Absorb-TP') then
 	equip({hands="Heathen's gauntlets +3"})
   end
+  
+  if string.find(spell.name,'Absorb-') then
+	equip({hands="Ignominy Burgeonet +4"})
+  end  
 
   if string.find(spell.english,'Drain') then
 	equip(sets.Drain)

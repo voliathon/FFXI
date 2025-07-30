@@ -6,9 +6,9 @@
 
 function NinjaCapes()
 	NinjaCapes = {}
-	NinjaCapes.TP = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+	NinjaCapes.TP = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
 	NinjaCapes.STRWS = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
-	NinjaCapes.NUKE = { name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
+	NinjaCapes.NUKE = { name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10'}}
 end
 
 function get_sets()
@@ -61,7 +61,7 @@ function get_sets()
 	sets.TP.TP = {
 		ammo="Coiste Bodhar",
 		head="Hattori Zukin +3",
-		body="Hachiya chainmail +3",
+		body="Hachiya chainmail +4",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
@@ -155,7 +155,7 @@ function get_sets()
 	sets.TP.DualWield = {
 		ammo="Coiste Bodhar",
 		head="Hattori Zukin +3",
-		body="Hachiya chainmail +3",
+		body="Hachiya chainmail +4",
 		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Mochizuki hakama +4",
 		feet="Hiza. Sune-Ate +2",
@@ -168,10 +168,10 @@ function get_sets()
 		back=NinjaCapes.TP
 	}
 
-	
+-------------------------------------------------------------------------------------------	
 	sets.SavageBlade = {
 		ammo="Coiste bodhar",
-		head="Hachiya hatsuburi +3",
+		head="Hachiya hatsuburi +4",
 		body="Nyame mail",
 		hands="Nyame gauntlets",
 		legs="Mochizuki hakama +4",
@@ -189,17 +189,17 @@ function get_sets()
 	--Stat Mod: STR30/DEX30 --Stick WSD on this shit
 	--Skillchain Gravitation
 	sets.Ten = {
-		ammo="Coiste Bodhar",
-		head="Mpaca's cap",
-		body="Nyame mail",
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
-		legs="Mochizuki hakama +4",
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
+		head="Hachi. Hatsu. +4",
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Mochi. Hakama +4", augments={'Enhances "Mijin Gakure" effect',}},
 		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		right_ear="Ishvara Earring",
-		left_ring="Rajas Ring",
+		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
+		left_ring="Sroda Ring",
 		right_ring="Epaminondas's Ring",
 		back=NinjaCapes.STRWS
 	}
@@ -228,7 +228,7 @@ function get_sets()
 	--Skillchain: Darkness / Gravitation
 	sets.Hi = {
 		ammo="Yetshila +1",
-		head="Hachiya hatsuburi +3",
+		head="Hachiya hatsuburi +4",
 		body="Ken. Samue +1",
 		hands="Ken. Tekko +1",
 		legs="Mochizuki hakama +4",
@@ -244,19 +244,19 @@ function get_sets()
 
 	--Teki/To/Chi/Yu
 	sets.TekiToChiYu = {
-		ammo="Seething Bomblet +1",
-		head={ name="Mochi. hatsuburi +4", augments={'Enhances "Yonin" and "Innin" effect'}},
-		body={ name="Nyame Mail", augments={'Path: B'}},
-		hands={ name="Nyame Gauntlets", augments={'Path: B'}},
-		legs={ name="Nyame Flanchard", augments={'Path: B'}},
-		feet={ name="Nyame Sollerets", augments={'Path: B'}},
+		ammo={ name="Seeth. Bomblet +1", augments={'Path: A',}},
+		head={ name="Mochi. Hatsu. +4", augments={'Enhances "Yonin" and "Innin" effect',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Fotia Gorget",
-		waist="Orpheus's Sash",
-		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250'}},
-		right_ear="Lugra earring +1",
-		left_ring="Epaminondas's Ring",
-		right_ring="Sroda Ring",
-		back={ name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+		left_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+		right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
+		left_ring="Sroda Ring",
+		right_ring="Epaminondas's Ring",
+		back=NinjaCapes.STRWS
 	}
 
 	--Blade: Ku
@@ -264,7 +264,7 @@ function get_sets()
 		ammo="Coiste bodhar",
 		head="Blistering sallet +1",
 		body="Nyame Mail",
-		hands="Malignance Gloves",
+		hands="Mochi. tekko +4",
 		legs="Mpaca's Hose",
 		feet="Hattori Kyahan +3",
 		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
@@ -279,7 +279,7 @@ function get_sets()
 	--Blade: Kamu
 	sets.Kamu = {
 		ammo="Pemphredo Tathlum",
-		head="Mpaca's Cap",
+		head="Hachiya hatsuburi +4",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Mpaca's Hose",
