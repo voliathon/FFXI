@@ -43,7 +43,7 @@ function get_sets()
 	-- Maximizing Corsair Rolls
 	sets.CorsairRoll = {
 		main={name="Rostam",bag="Wardrobe 6"},
-        head = "Lanun Tricorne +3",
+        head = "Lanun Tricorne +4",
         left_ring="Luzaf's Ring",
         hands="Chasseur's Gants +3",
         back=CamulusCape.melee_double_attack,
@@ -134,7 +134,7 @@ function get_sets()
 
 	--Last Stand   AGI/RAtt/RAcc/WSD
     sets.LastStand = {
-		head="Lanun tricorne +3",
+		head="Lanun Tricorne +4",
 		body="Laksa. Frac +4",
 		hands="Chasseur's Gants +3",
 		legs="Nyame Flanchard",

@@ -1,3 +1,13 @@
+
+-- Intarabus's Cape function
+function IntarabusCapes()
+    Intarabus = {}
+    Intarabus.TP = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+    Intarabus.STRWSD = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	Intarabus.DEXWSD = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+	Intarabus.FASTCAST = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Spell interruption rate down-10%',}}
+end
+
 function get_sets()
 	-- Setting to the BRD Macro Book #5 and Set #1 --
     send_command('input /macro book 5;wait .1;input /macro set 1')
@@ -11,17 +21,17 @@ function get_sets()
     send_command('bind !f9 gs c C9')
 	send_command('bind ^f9 gs c reverse Engaged set')
 	
+	-- Let's also initialize any Intarabus's Capes that we need to use 
+	IntarabusCapes()
+	
 	-- Modes --
 	Marsyas = 'OFF' -- Toogle on/off the Marsyas and Gjallarhorn via ctrl + F8
 	
 	--Job Ability Sets--
 	sets.JA = {}
-	
 	sets.JA.Nightingale = {feet="Bihu Slippers +3"}
     sets.JA.Troubadour = {body="Bihu Justaucorps +4"}
     sets.JA.SoulVoice = {legs="Bihu Cannions +3"}
-	
-	-- Dancer's Abilities --
 	sets.JA.Waltz = {legs="Dashing subligar"}
 	
   --Fast Cast Set--
@@ -37,7 +47,7 @@ function get_sets()
     right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
     right_ring="Rahab Ring",
-    back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}
+    back=Intarabus.FASTCAST
   }
   
   --Stoneskin Set
@@ -53,7 +63,7 @@ function get_sets()
     right_ear="Loquac. Earring",
     left_ring="Stikini Ring +1",
     right_ring="Rahab Ring",
-    back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}  
+    back=Intarabus.FASTCAST 
   }
  
   --Magic Accuracy for those pesky songs that don't want to stick--
@@ -86,7 +96,7 @@ function get_sets()
     right_ear="Fili Earring +1",
     left_ring="Lebeche Ring",
     right_ring="Stikini Ring +1",
-    back={ name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Haste+10','Spell interruption rate down-10%'}}
+    back=Intarabus.FASTCAST
   }
   
   sets.Ballad = set_combine(sets.Songs, { 
@@ -131,7 +141,6 @@ function get_sets()
 	legs="Inyanga Shalwar +2",
 	range="Daurdabla",
 	main="Carnwenhan"
-  
   })
   
   -- Mordant Rime  70%CHR / 30% DEX
@@ -158,7 +167,7 @@ function get_sets()
     right_ear="Cessance Earring",
 	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
 	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}},
+    back=Intarabus.TP,
 	range="Linos"	
   }
   
@@ -191,7 +200,7 @@ function get_sets()
     right_ear="Eabani Earring",
     left_ring="Defending Ring",
     right_ring="Fortified Ring",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}
+    back=Intarabus.TP
   }
   
   sets.engaged.TakingLessMagicDamage = {
@@ -245,7 +254,7 @@ function get_sets()
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
     left_ring="Sroda Ring",
     right_ring="Epaminondas's Ring",
-    back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+    back=Intarabus.STRWSD
   }
   
   --All in One who gives a fuck Weapon Skill set of Doom
@@ -263,7 +272,7 @@ function get_sets()
     right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
     left_ring="Sroda Ring",
     right_ring="Epaminondas's Ring",
-    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+    back=Intarabus.DEXWSD
   }
 
   -- Weapon Toggle--
@@ -373,6 +382,10 @@ function precast(spell,abil)
 		--DO NOTHING
 	end
   
+	if spell.skill == 'Enhancing Magic' or 	string.find(spell.english,'Cur') then 
+		equip(sets.FastCast)
+	end
+  
 end
 
 function midcast(spell)
@@ -466,4 +479,3 @@ windower.register_event('status change', function()
 		send_command('@input /tell <me> Wakies Wakies my Campbellkitty. We hit 0 HP on accident. We shall live forever!!!')
 	end
 end)
-

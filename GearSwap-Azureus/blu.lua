@@ -2,12 +2,12 @@
 -- I'm gonna call this the "Get GUD or Get REKT Script" because I'm not adding super detailed logic for every scenario.
 -- I want Blue Mage fun and straight to the point for all conditions that we use.
 
--- Rosmerta Cape function for tracking what I've got on Mazusu for Blue Mage
+-- Rosmerta Cape function
 function RosmertaCapes()
     Rosmerta = {}
-    Rosmerta.TP = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}
-    Rosmerta.WSD = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
-	Rosmerta.MagicDMG = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10'}}
+    Rosmerta.TP = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+    Rosmerta.WSD = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	Rosmerta.MagicDMG = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10'}}
 end
 
 --User Event Function called once on load.  It's used to define variables, and specifically "sets"
@@ -26,8 +26,6 @@ function get_sets()
 	
 	-- Let's also initialize any Rosmerta Capes that we need to use 
 	RosmertaCapes()
-	-- Initialize the BlueMageMappers so that we can reference this in our BlueMageLocic function
-	--BlueMageMappers()
 
 	--Job Ability Sets--
 	sets.JA = {}
