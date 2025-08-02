@@ -37,7 +37,7 @@ function get_sets()
 	sets.precast.Waltz = {legs="Dashing subligar"}
 	sets.precast.Activate = {main="Ohtas", right_ear="Karagoz Earring", feet="Mpaca's boots"}
 	sets.precast.Ventriloquy = {feet="Karagoz scarpe +3"}
-	sets.precast.RoleReversal = {legs="Pitre Churidars +3"}
+	sets.precast.RoleReversal = {legs="Pitre Churidars +4"}
 	sets.precast.TacticalSwitch = {feet="Pitre Babouches +3"}
 
 	
@@ -161,7 +161,7 @@ function get_sets()
 	head="Karagoz Cappello +3",
 	body="Karagoz Farsetto +3",
 	hands="Karagoz Guanti +3",
-	legs="Pitre Churidars +3",
+	legs="Pitre Churidars +4",
 	feet="Pitre Babouches +3",
 	waist="Incarnation sash",
 	neck="Adad Amulet"
@@ -200,9 +200,9 @@ function get_sets()
 
 	sets.WS.AsuranFists = {
 		head={ name="Pitre Taj +3", augments={'Enhances "Optimization" effect',}},
-		body={ name="Pitre Tobe +4", augments={'Enhances "Overdrive" effect',}},
+		body="Foire tobe +4",
 		hands={ name="Pitre Dastanas +3", augments={'Enhances "Fine-Tuning" effect',}},
-		legs={ name="Pitre Churidars +3", augments={'Enhances "Ventriloquy" effect',}},
+		legs={ name="Pitre Churidars +4", augments={'Enhances "Ventriloquy" effect',}},
 		feet={ name="Pitre Babouches +3", augments={'Enhances "Role Reversal" effect',}},
 		neck="Rep. Plat. Medal",
 		waist="Cetl Belt",
@@ -214,7 +214,7 @@ function get_sets()
 	}
 	sets.WS.VictorySmite = {
 		head={ name="Herculean Helm", augments={'Accuracy+17','"Triple Atk."+4','DEX+4',}},
-		body="Tali'ah Manteel +2",
+		body="Foire tobe +4",
 		hands={ name="Herculean Gloves", augments={'"Triple Atk."+3','DEX+9','Accuracy+15',}},
 		legs="Hiza. Hizayoroi +2",
 		feet={ name="Herculean Boots", augments={'Accuracy+23 Attack+23','"Triple Atk."+3','DEX+9','Attack+3',}},
@@ -229,7 +229,7 @@ function get_sets()
 	
 	sets.WS.StringingPummel = {
 		head={ name="Herculean Helm", augments={'Accuracy+17','"Triple Atk."+4','DEX+4',}},
-		body="Tali'ah Manteel +2",
+		body="Foire tobe +4",
 		hands={ name="Herculean Gloves", augments={'"Triple Atk."+3','DEX+9','Accuracy+15',}},
 		legs="Hiza. Hizayoroi +2",
 		feet={ name="Herculean Boots", augments={'Accuracy+23 Attack+23','"Triple Atk."+3','DEX+9','Attack+3',}},
@@ -244,7 +244,7 @@ function get_sets()
     
 	sets.WS.ShijinSpiral = {
 		head={ name="Herculean Helm", augments={'Accuracy+17','"Triple Atk."+4','DEX+4',}},
-		body="Tali'ah Manteel +2",
+		body="Foire tobe +4",
 		hands={ name="Herculean Gloves", augments={'"Triple Atk."+3','DEX+9','Accuracy+15',}},
 		legs="Hiza. Hizayoroi +2",
 		feet={ name="Herculean Boots", augments={'Accuracy+23 Attack+23','"Triple Atk."+3','DEX+9','Attack+3',}},
