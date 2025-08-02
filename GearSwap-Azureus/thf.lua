@@ -25,7 +25,7 @@ function get_sets()
 
     sets.TP.TreasureHunter = {
 		ammo="Yetshila +1",
-		head={ name="Herculean Helm", augments={'AGI+1','Rng.Atk.+19','"Treasure Hunter"+1','Accuracy+10 Attack+10','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
+		head="Skulker's bonnet +3",
 		body="Malignance Tabard",
 		hands="Plun. Armlets +4",
 		legs="Skulk. Culottes +3",
