@@ -1,3 +1,17 @@
+ -- █████╗ ███████╗██╗   ██╗██████╗ ███████╗██╗   ██╗███████╗    
+-- ██╔══██╗╚══███╔╝██║   ██║██╔══██╗██╔════╝██║   ██║██╔════╝    
+-- ███████║  ███╔╝ ██║   ██║██████╔╝█████╗  ██║   ██║███████╗    
+-- ██╔══██║ ███╔╝  ██║   ██║██╔══██╗██╔══╝  ██║   ██║╚════██║    
+-- ██║  ██║███████╗╚██████╔╝██║  ██║███████╗╚██████╔╝███████║    
+-- ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚══════╝    
+                                                              
+        -- ██████╗  █████╗ ██████╗ ██████╗                       
+        -- ██╔══██╗██╔══██╗██╔══██╗██╔══██╗                      
+        -- ██████╔╝███████║██████╔╝██║  ██║                      
+        -- ██╔══██╗██╔══██║██╔══██╗██║  ██║                      
+        -- ██████╔╝██║  ██║██║  ██║██████╔╝                      
+        -- ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝                       
+                                                              
 
 -- Intarabus's Cape function
 function IntarabusCapes()
@@ -10,28 +24,28 @@ end
 
 function get_sets()
 	-- Setting to the BRD Macro Book #5 and Set #1 --
-    send_command('input /macro book 5;wait .1;input /macro set 1')
-	
+	send_command('input /macro book 5;wait .1;input /macro set 1')
+
 	-- Binds for modes
 	-- Toggle Weapon F8 Key
 	send_command('bind !f8 gs c C8') 
 	send_command('bind ^f8 gs c Reverse Toggle Weapon')
-	
+
 	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c C9')
+	send_command('bind !f9 gs c C9')
 	send_command('bind ^f9 gs c reverse Engaged set')
-	
+
 	-- Let's also initialize any Intarabus's Capes that we need to use 
 	IntarabusCapes()
-	
+
 	-- Modes --
 	Marsyas = 'OFF' -- Toogle on/off the Marsyas and Gjallarhorn via ctrl + F8
-	
+
 	--Job Ability Sets--
 	sets.JA = {}
 	sets.JA.Nightingale = {feet="Bihu Slippers +3"}
-    sets.JA.Troubadour = {body="Bihu Justaucorps +4"}
-    sets.JA.SoulVoice = {legs="Bihu Cannions +3"}
+	sets.JA.Troubadour = {body="Bihu Justaucorps +4"}
+	sets.JA.SoulVoice = {legs="Bihu Cannions +3"}
 	sets.JA.Waltz = {legs="Dashing subligar"}
 	
   --Fast Cast Set--
