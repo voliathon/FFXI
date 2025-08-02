@@ -15,7 +15,7 @@ function get_sets()
   sets.JA.Lunge = {}
   sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +3"}
   sets.JA.Gambit = {hands="Runeist mitons +3"}
-  sets.JA.Rayke = {feet="Futhark boots +3"}
+  sets.JA.Rayke = {feet="Futhark boots +4"}
   sets.JA.Battuta = {head="Futhark bandeau +3"}
   sets.JA.Pflug = {feet="Runeist bottes +3"}
   sets.JA.Pulse = {head="Erilaz galea +3",legs="Runeist Trousers +3"}
