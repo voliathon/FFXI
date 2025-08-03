@@ -157,7 +157,7 @@ function get_sets()
 
     sets.midshot.RA.DoubleShot = set_combine(sets.midshot.RA,{
 		head="Oshosi Mask +1",
-		body="Arcadian jerkin +3",
+		body="Arcadian jerkin +4",
 		hands="Oshosi Gloves +1",
 		legs="Osh. Trousers +1",
 		feet="Osh. Leggings +1"
