@@ -118,7 +118,7 @@ function get_sets()
 	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
 	sets.JA['Accomplice'] = {head="Skulker's bonnet +3",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
-	sets.JA['Hide'] = {body="Pillager's Vest +2"}
+	sets.JA['Hide'] = {body="Pillager's vest +4"}
 	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +4"}
 	
 	
