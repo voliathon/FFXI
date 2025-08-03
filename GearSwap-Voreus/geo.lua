@@ -32,7 +32,7 @@ function get_sets()
     sets.LifeCycle = {body="Geomancy Tunic +4", back="Nantosuelta's Cape"}
     sets.FullCircle = {head="Azimuth Hood +3"}
     sets.CurativeRecantation = {hands="Bagua mitaines +4"}
-    sets.MendingHalation = {legs="Bagua Pants +3"}
+    sets.MendingHalation = {legs="Bagua Pants +4"}
     sets.RadialArcana = {feet="Bagua Sandals +4"}
 
     -- Fast Cast for Geomancer --
@@ -59,7 +59,7 @@ function get_sets()
         head="Azimuth Hood +3",
         body="Bagua tunic +4",
 		hands="Geo. Mitaines +4",		
-		legs="Bagua pants +3",
+		legs="Bagua Pants +4",
 		feet="Azimuth gaiters +3",
 		waist="Witful belt",
 		neck="Incanter's torque",
@@ -180,7 +180,7 @@ function get_sets()
 	
 	sets.Entrust = set_combine(sets.Geomancy, {
 		main="Solstice",
-		legs="Bagua Pants +3",
+		legs="Bagua Pants +4",
 		feet="Azimuth gaiters +3",
 		back="Lifestream cape"	
 	})
