@@ -45,7 +45,7 @@ function get_sets()
 	
 	sets.engaged.TP = {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head={ name="Herculean Helm", augments={'Accuracy+17','"Triple Atk."+4','DEX+4',}},
+		head="Skulk. bonnet +3",
 		body="Malignance Tabard",
 		hands="Plun. Armlets +4",
 		legs="Malignance Tights",
@@ -61,7 +61,7 @@ function get_sets()
 	
 	sets.engaged.Accuracy =  {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head="Malignance Chapeau",
+		head="Skulk. bonnet +3",
 		body="Malignance Tabard",
 		hands="Gleti's Gauntlets",
 		legs="Malignance Tights",
@@ -103,7 +103,7 @@ function get_sets()
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
 	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
-	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
+	sets.JA['Accomplice'] = {head="Skulk. bonnet +3",}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +2"}
 	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +4"}
