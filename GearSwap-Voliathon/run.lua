@@ -1,3 +1,13 @@
+
+-- Ogma's Cape function
+function OgmaCapes()
+    Ogma = {}
+    Ogma.TP = { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+    Ogma.TANK = { name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+	Ogma.DEXWSD = { name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+end
+
+
 function get_sets()
   -- Set macro book/set --
   send_command('input /macro book 17;wait .1;input /macro set 2')
@@ -9,6 +19,8 @@ function get_sets()
   send_command('bind !f9 gs c toggle equip set')
   send_command('bind ^f9 gs c reverse equip set')
 
+  -- Let's also initialize any Ogma's Capes that we need to use 
+  OgmaCapes()
 	
   --Job Ability Sets--
   sets.JA = {}
@@ -82,7 +94,7 @@ function get_sets()
     right_ear="Mimir Earring",
     left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
     right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+    back=Ogma.TANK
  }
 
  --108 SIR-
@@ -123,7 +135,7 @@ function get_sets()
     right_ear="Earthcry Earring",
     left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
     right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}  
+    back=Ogma.TANK  
   }
   
   -- This will eventually be Magic Fruit whenever I get that level
@@ -140,7 +152,7 @@ function get_sets()
   
   --offensive melee set
   sets.equip.BadAss = {
-    ammo="Ginsen",
+    ammo="Coiste Bodhar",
     head="Adhemar Bonnet +1",
     body="Ashera harness",
     hands="Adhemar wristbands +1",
@@ -152,7 +164,7 @@ function get_sets()
     right_ear="Erilaz earring +1",
     left_ring="Moonlight Ring",
     right_ring="Chirich Ring +1",
-    back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+    back=Ogma.TP
   }
 
   --Hybrid Gear
@@ -169,7 +181,7 @@ function get_sets()
     right_ear="Erilaz Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Fortified Ring",
-    back={ name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+    back=Ogma.TANK
   }
 
   sets.equip.Accuracy = {
@@ -185,7 +197,7 @@ function get_sets()
     right_ear="Erilaz Earring +1",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
-    back={ name="Ogma's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}}
+    back=Ogma.TP
   }
   
   sets.equip.TreasureHunter = {
@@ -201,7 +213,7 @@ function get_sets()
     right_ear="Erilaz Earring +1",
     left_ring="Moonlight Ring",
     right_ring="Defending Ring",
-	back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
+	back=Ogma.TANK
   }
   
   sets.equip.Movement = {
@@ -217,7 +229,7 @@ function get_sets()
     right_ear="Erilaz Earring +1",
     left_ring="Shneddick Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
+    back=Ogma.TANK
   }
 
   sets.equip.Tank = {
@@ -233,7 +245,7 @@ function get_sets()
     right_ear="Erilaz Earring +1",
     left_ring="Fortified Ring",
     right_ring="Defending Ring",
-    back={ name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4',}}
+    back=Ogma.TANK
   }
 
   --Weaponskill Sets--
@@ -252,7 +264,7 @@ function get_sets()
     right_ear="Moonshade Earring",
     right_ring="Rajas Ring",
     left_ring="Moonlight Ring",
-    back={ name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
+    back=Ogma.TP
   }
 
   --doesn't carry Fequip -- This will be dimidiation  Need DEX for the modifier
@@ -269,7 +281,7 @@ function get_sets()
     right_ear="Ishvara Earring",
     left_ring="Rajas Ring",
     right_ring="Epaminondas's Ring",
-    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+    back=Ogma.DEXWSD
   }
 
   --added effect
@@ -372,7 +384,7 @@ function precast(spell,abil)
     equip(sets.Enmity,sets.JA.Pflug)
   end
   if spell.name == 'Elemental Sforzo' or spell.name == 'Liement' then
-    equip(sets.Enmity,{body="Futhark coat +3"})
+    equip(sets.Enmity,{body="Futhark coat +4"})
   end
   if spell.name == 'Gambit' then
     equip(sets.Enmity,sets.JA.Gambit)
