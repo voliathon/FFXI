@@ -37,7 +37,7 @@ function get_sets()
 		legs="Lanun Trews +3" 
 	}
     sets.Fold = { 
-		hands="Lanun Gants +3" 
+		hands="Lanun Gants +4" 
 	}
 	
 	-- Maximizing Corsair Rolls
@@ -216,7 +216,7 @@ function get_sets()
     sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA,{
 		head="Oshosi Mask +1",
 		body="Chasseur's frac +3",
-		hands="Lanun Gants +3",
+		hands="Lanun Gants +4",
 		legs="Osh. Trousers +1",
 		feet="Osh. Leggings +1"
 	})
@@ -424,7 +424,7 @@ function aftercast(spell)
   --This could be an issue if you need DT while Triple Shot is up. Frac+3 is fine. 
   --I'm taking the stance I'd rather see this gear when Triple Shot is up as compared to not seeing it
   if (buffactive['Triple Shot']) then
-	equip({body="Chasseur's Frac +3", hands="Lanun Gants +3"})
+	equip({body="Chasseur's Frac +3", hands="Lanun Gants +4"})
   end
 end
 
