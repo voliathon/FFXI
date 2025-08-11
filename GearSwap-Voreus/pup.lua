@@ -28,7 +28,7 @@ function get_sets()
     sets.precast = {}
     sets.precast.Maneuver = {
 		body="Kara. Farsetto +3", 
-		hands="Foire Dastanas +2", 
+		hands="Foire Dastanas +3", 
 		back="Visucius's Mantle",
 		neck="Buffoon's collar"
 	}
@@ -38,7 +38,7 @@ function get_sets()
 	sets.precast.Activate = {main="Ohtas", right_ear="Karagoz Earring", feet="Mpaca's boots"}
 	sets.precast.Ventriloquy = {feet="Karagoz scarpe +3"}
 	sets.precast.RoleReversal = {legs="Pitre Churidars +4"}
-	sets.precast.TacticalSwitch = {feet="Pitre Babouches +3"}
+	sets.precast.TacticalSwitch = {feet="Pitre Babouches +4"}
 
 	
   -- Engaged Sets
@@ -92,7 +92,7 @@ function get_sets()
   })
   
   sets.engaged.Regen = {
-    head={ name="Pitre Taj +3", augments={'Enhances "Optimization" effect'}},
+    head={ name="Pitre Taj +4", augments={'Enhances "Optimization" effect'}},
     body="Hiza. Haramaki +2",
     hands="Karagoz Guanti +3",
     legs="Kara. Pantaloni +3",
@@ -162,7 +162,7 @@ function get_sets()
 	body="Karagoz Farsetto +3",
 	hands="Karagoz Guanti +3",
 	legs="Pitre Churidars +4",
-	feet="Pitre Babouches +3",
+	feet="Pitre Babouches +4",
 	waist="Incarnation sash",
 	neck="Adad Amulet"
   }
@@ -199,11 +199,11 @@ function get_sets()
 	--Shoulder Tackle/One Inch Punch --- VIT 100%
 
 	sets.WS.AsuranFists = {
-		head={ name="Pitre Taj +3", augments={'Enhances "Optimization" effect',}},
+		head={ name="Pitre Taj +4", augments={'Enhances "Optimization" effect',}},
 		body="Foire tobe +4",
-		hands={ name="Pitre Dastanas +3", augments={'Enhances "Fine-Tuning" effect',}},
+		hands={ name="Pitre Dastanas +4", augments={'Enhances "Fine-Tuning" effect',}},
 		legs={ name="Pitre Churidars +4", augments={'Enhances "Ventriloquy" effect',}},
-		feet={ name="Pitre Babouches +3", augments={'Enhances "Role Reversal" effect',}},
+		feet={ name="Pitre Babouches +4", augments={'Enhances "Role Reversal" effect',}},
 		neck="Rep. Plat. Medal",
 		waist="Cetl Belt",
 		left_ear="Telos Earring",
