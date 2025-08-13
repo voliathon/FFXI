@@ -143,7 +143,7 @@ function get_sets()
 	sets.Evisceration = {
 		ammo="Yetshila +1",
 		head="Pillager's bonnet +4",
-		body="Plunderer's Vest +3",
+		body="Plun. Vest +4",
 		hands="Gleti's gauntlets",
 		legs="Gleti's breeches",
 		feet={ name="Plun. Poulaines +4", augments={'Enhances "Assassin\'s Charge" effect',}},

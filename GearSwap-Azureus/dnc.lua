@@ -44,7 +44,7 @@ function get_sets()
 	}
 	
 	sets.JA.Samba = {
-		head="Maxixi Tiara +3", -- +45 second duration 
+		head="Maxixi Tiara +4", -- +45 second duration 
 		body="Maculele casaque +3",
 		hands="Macu. Bangles +3",
 		legs="Maculele Tights +3",
@@ -52,7 +52,7 @@ function get_sets()
 	}
 	
 	sets.JA.StepAccuracy = {
-		head="Maxixi Tiara +3",
+		head="Maxixi Tiara +4",
 		hands="Maxixi Bangles +4",
 		feet="Horos Toe Shoes +4"
 	}
@@ -63,9 +63,9 @@ function get_sets()
 	}
 	
 	sets.JA.FeatherStep  = {
-		head="Maxixi Tiara +3",
+		head="Maxixi Tiara +4",
 		hands="Maxixi Bangles +4",
-		feet="Maculele Toe Shoes +2"
+		feet="Macu. Toe Sh. +3"
 	}
 	
 	--The amount of TP restored is calculated using this formula

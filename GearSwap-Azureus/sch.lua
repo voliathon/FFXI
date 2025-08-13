@@ -89,7 +89,7 @@ function get_sets()
 	}
 	
 	sets.FastCastGrimoire = set_combine(sets.FastCast,  {
-		head="Pedagogy Mortarboard +3",
+		head="Pedagogy Mortarboard +4",
 		feet="Acad. loafers +4"
 	})
 
@@ -175,6 +175,7 @@ function get_sets()
 	}
 	
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
+		head="Pedagogy Mortarboard +4",
 		hands="Arbatel bracers +3",
 		left_ring="Mujin Band",
 		right_ring="Locus Ring"
