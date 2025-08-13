@@ -44,7 +44,7 @@ function get_sets()
 	sets.TP.Movement = {
 		ammo="Staunch Tathlum +1",
 		head="Hattori Zukin +3",
-		body="Hattori Ningi +2",
+		body="Hattori Ningi +3",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Hattori Kyahan +3",
@@ -78,7 +78,7 @@ function get_sets()
 	sets.TP.Hybrid = {
 		ammo="Coiste Bodhar",
 		head="Hattori Zukin +3",
-		body="Hattori ningi +2",
+		body="Hattori Ningi +3",
 		hands="Malignance Gloves",
 		legs="Hattori hakama +2",
 		feet="Malignance Boots",
@@ -123,7 +123,7 @@ function get_sets()
 	sets.TP.EvasionTank = {
 		ammo="Amar Cluster",
 		head="Hattori Zukin +3",
-		body="Hattori ningi +2",
+		body="Hattori Ningi +3",
 		hands="Malignance Gloves",
 		legs="Malignance Tights",
 		feet="Hattori Kyahan +3",
@@ -318,7 +318,7 @@ function get_sets()
 	})
 
 	sets.Migawari = set_combine(sets.FastCast,  {
-		feet="Hattori ningi +2"
+		feet="Hattori Ningi +3"
 	})
 
 

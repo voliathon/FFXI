@@ -25,20 +25,20 @@ function get_sets()
   --Job Ability Sets--
   sets.JA = {}
   sets.JA.Lunge = {}
-  sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +3"}
+  sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +4"}
   sets.JA.Gambit = {hands="Runeist mitons +3"}
   sets.JA.Rayke = {feet="Futhark boots +4"}
-  sets.JA.Battuta = {head="Futhark bandeau +3"}
+  sets.JA.Battuta = {head="Futhark bandeau +4"}
   sets.JA.Pflug = {feet="Runeist bottes +3"}
   sets.JA.Pulse = {head="Erilaz galea +3",legs="Runeist Trousers +3"}
-  sets.JA.Swordplay = {hands="Futhark mitons +3"}	
+  sets.JA.Swordplay = {hands="Futhark mitons +4"}	
 
   sets.Enhancing = {
     ammo="Staunch Tathlum +1",
     head="Erilaz galea +3",
     body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
-    legs="Futhark Trousers +3",
+    legs="Futhark Trousers +4",
     feet="Carmine greaves +1",
     neck="Voltsurge Torque",
     waist="Siegel Sash",
@@ -51,10 +51,10 @@ function get_sets()
 
   sets.Regen = {
     ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +3",
+    head="Rune. Bandeau +4",
     body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
-    legs="Futhark Trousers +3",
+    legs="Futhark Trousers +4",
     feet="Carmine greaves +1",
     neck="Voltsurge Torque",
     waist="Sroda Belt",
@@ -68,10 +68,10 @@ function get_sets()
   --Fast Cast set
   sets.FastCast = {
     ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +3",
+    head="Rune. Bandeau +4",
     body="Erilaz surcoat +3",
     hands="Regal Gauntlets",
-    legs="Futhark Trousers +3",
+    legs="Futhark Trousers +4",
     feet={ name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}},
     neck="Null loop",
     waist="Siegel Sash",
@@ -83,7 +83,7 @@ function get_sets()
 
   sets.Phalanx = {
     ammo="Staunch Tathlum +1",
-    head="Futhark Bandeau +3",
+    head="Futhark bandeau +4",
     body={ name="Herculean Vest", augments={'"Dbl.Atk."+2','STR+4','Phalanx +5','Accuracy+15 Attack+15','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
     hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
     legs={ name="Herculean Trousers", augments={'Pet: STR+3','AGI+2','Phalanx +5','Accuracy+10 Attack+10',}},
@@ -124,10 +124,10 @@ function get_sets()
 
   sets.Stoneskin = {
     ammo="Staunch Tathlum +1",
-    head="Rune. Bandeau +3",
+    head="Rune. Bandeau +4",
     body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
     hands="Regal Gauntlets",
-    legs={ name="Futhark Trousers +3", augments={'Enhances "Inspire" effect',}},
+    legs={ name="Futhark Trousers +4", augments={'Enhances "Inspire" effect',}},
     feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
     neck="Null loop",
     waist="Siegel Sash",
@@ -403,7 +403,7 @@ function precast(spell,abil)
   end
   if spell.name == 'One for All' or spell.name == 'Embolden' or spell.name == 'Odyllic Subterfuge' or spell.name == 'Warcry'
     or spell.name == 'Swordplay' or spell.name == 'Meditate' or spell.name == 'Provoke' then
-    equip(sets.Enmity, {hands="Futhark mitons +3"})
+    equip(sets.Enmity, {hands="Futhark mitons +4"})
   end
   if spell.name == 'Resolution' then
     equip(sets.Resolution)
