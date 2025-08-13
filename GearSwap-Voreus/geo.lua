@@ -120,14 +120,14 @@ function get_sets()
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
 		ammo="Ghastly tathlum +1",
-		head="Ea Hat +1",
+		head="Agwu's cap",
 		body="Azimuth coat +3",
 		hands="Bagua mitaines +4",
 		legs="Azimuth Tights +3",
 		feet="Azimuth gaiters +3",
 		neck="Sibyl Scarf",
 		waist="Acuity belt +1",
-		left_ear="Barkaro. Earring",
+		left_ear="Malignance Earring",
 		right_ear="Regal Earring",
 		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
 		right_ring="Freke Ring",
@@ -135,8 +135,7 @@ function get_sets()
 	}
 
 	sets.BurstMagic = set_combine(sets.ElementalMagic,  {
-		ammo={ name="Ghastly Tathlum +1", augments={'Path: A'}},
-		left_ring="Mujin band",
+		head="Ea Hat +1",
 		right_ring="Locus Ring"
 	})		
 
