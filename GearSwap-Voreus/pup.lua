@@ -28,7 +28,7 @@ function get_sets()
     sets.precast = {}
     sets.precast.Maneuver = {
 		body="Kara. Farsetto +3", 
-		hands="Foire Dastanas +3", 
+		hands="Foire Dastanas +4", 
 		back="Visucius's Mantle",
 		neck="Buffoon's collar"
 	}
