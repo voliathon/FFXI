@@ -2,8 +2,8 @@
 -- Ogma's Cape function
 function OgmaCapes()
     Ogma = {}
-    Ogma.TP = { name="Ogma's cape", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
-    Ogma.TANK = { name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%'}}
+    Ogma.TP = { name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+    Ogma.TANK = { name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','System: 1 ID: 640 Val: 4'}}
 	Ogma.DEXWSD = { name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
 end
 
@@ -25,7 +25,7 @@ function get_sets()
   --Job Ability Sets--
   sets.JA = {}
   sets.JA.Lunge = {}
-  sets.JA.Vallation = {body="Runeist Coat +3",legs="Futhark Trousers +4"}
+  sets.JA.Vallation = {body="Runeist Coat +4",legs="Futhark Trousers +4"}
   sets.JA.Gambit = {hands="Runeist mitons +3"}
   sets.JA.Rayke = {feet="Futhark boots +4"}
   sets.JA.Battuta = {head="Futhark bandeau +4"}
@@ -171,7 +171,7 @@ function get_sets()
   sets.equip.Hybrid = {
     ammo="Staunch Tathlum +1",
 	head="Nyame Helm",
-    body="Runeist coat +3",
+    body="Runeist Coat +4",
     hands="Erilaz Gauntlets +3",
     legs="Erilaz leg guards +3",
     feet="Erilaz Greaves +3",

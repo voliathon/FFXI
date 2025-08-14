@@ -3,8 +3,8 @@
 
 function ThiefCapes()
 	ThiefCapes = {}
-	ThiefCapes.TP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Damage taken-5%'}}
-	ThiefCapes.DEXWS = { name="Toutatis's Cape", augments={'DEX+15','Accuracy+20 Attack+20','DEX+5','Weapon skill damage +10%'}}
+	ThiefCapes.TP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}}
+	ThiefCapes.DEXWS = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
 end
 
 
@@ -34,7 +34,7 @@ function get_sets()
 	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
 	sets.JA['Mug'] = {head="Plunderer's Bonnet +1"}
 	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
-	sets.JA['Accomplice'] = {head="Skulker's Bonnet +2",}
+	sets.JA['Accomplice'] = {head="Skulker's Bonnet +3"}
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's Vest +4"}
 	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
