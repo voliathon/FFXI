@@ -90,7 +90,7 @@ function get_sets()
     neck="Mnbw. Whistle +1",
     waist="Null belt",
     left_ear="Musical Earring",
-    right_ear="Digni. Earring",
+    right_ear="Fili Earring +1",
 	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
 	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
     back="Null shawl"
@@ -150,7 +150,7 @@ function get_sets()
   sets.Sleep = set_combine(sets.MagicAccuracy, { 
     head="Fili calot +3",
 	hands="Brioso Cuffs +4",
-	body="Brioso Justaucorps +3",
+	body="Brioso Justaucorps +4",
 	feet="Brioso Slippers +4",
 	legs="Inyanga Shalwar +2",
 	range="Daurdabla",
