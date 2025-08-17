@@ -1,149 +1,413 @@
+-- Intarabus's Cape function
+function IntarabusCapes()
+    Intarabus = {}
+    Intarabus.TP = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+    Intarabus.STRWSD = { name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
+	Intarabus.DEXWSD = { name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%'}}
+	Intarabus.FASTCAST = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Spell interruption rate down-10%',}}
+end
+
 function get_sets()
--- Set macro book/set --
-    send_command('input /macro book 8;wait .1;input /macro set 1')
-	
+	-- Setting to the BRD Macro Book #5 and Set #1 --
+	send_command('input /macro book 5;wait .1;input /macro set 1')
+
 	-- Binds for modes
-	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-  	send_command('bind ^f8 gs c C8') 
+	-- Toggle Weapon F8 Key
+	send_command('bind !f8 gs c C8') 
+	send_command('bind ^f8 gs c Reverse Toggle Weapon')
+
+	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+	send_command('bind !f9 gs c C9')
+	send_command('bind ^f9 gs c reverse Engaged set')
+
+	-- Let's also initialize any Intarabus's Capes that we need to use 
+	IntarabusCapes()
 
 	-- Modes --
-	Capacity = 'OFF' -- Press ctrl + F11 if you want to be in Capacity mode  --	
-	Marsyas = 'OFF' -- Toogle on/off the Marsyas and Gjallarhorn via ctrl + F9
-	
-    -- Precast Sets
-    sets.precast = {}
-	sets.precast.JA = {}
-    sets.precast.JA.Nightingale = {feet="Bihu Slippers +1"}
-    sets.precast.JA.Troubadour = {body="Bihu Justaucorps +1"}
-    sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
-	
-    sets.precast['Honor March'] = {range="Marsyas",ammo=empty}
-	
+	Marsyas = 'OFF' -- Toogle on/off the Marsyas and Gjallarhorn via ctrl + F8
 
+	--Job Ability Sets--
+	sets.JA = {}
+	sets.JA.Nightingale = {feet="Bihu Slippers +3"}
+	sets.JA.Troubadour = {body="Bihu Justaucorps +4"}
+	sets.JA.SoulVoice = {legs="Bihu Cannions +3"}
+	sets.JA.Waltz = {legs="Dashing subligar"}
 	
-  --Idle Sets--
-  sets.Idle = {
-    main="Mafic cudgel",
-    sub="Genmei Shield",
-    head="Inyanga Tiara +2",
-    body="Inyanga Jubbah +2",
-    hands="Inyan. Dastanas +2",
-    legs="Inyanga Shalwar +2",
-    feet="Ayanmo gambieras +2",
-    neck="Loricate torque +1",
-    waist="Refoccilation Stone",
-    left_ear="Genmei Earring",
-    right_ear="Musical Earring",
-    left_ring="Moonbeam Ring",
-    right_ring="Defending Ring",
-    back="Intarabus's cape"
-  }
-
-  sets.MagicAccuracy = {
-	main="Grioavolr",
-	sub="Clerisy strap",
-    head="Inyanga Tiara +2",
-    body="Inyanga Jubbah +2",
-    hands="Inyan. Dastanas +2",
-    legs="Inyanga Shalwar +2",
-    feet="Aya. Gambieras +2",
-    neck="Mnbw. Whistle +1",
-    waist="Refoccilation Stone",
-    left_ear="Enchntr. Earring +1",
-    right_ear="Musical Earring",
-    left_ring="Adoulin Ring",
-    right_ring="Sangoma Ring",
-    back="Intarabus's cape"
+  --Fast Cast Set--
+  sets.FastCast = {
+    head="Bunzi's Hat",
+    body="Zendik Robe",
+    hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
+    legs="Aya. Cosciales +2",
+    feet="Fili cothurnes +3",
+    neck="Voltsurge Torque",
+    waist="Embla Sash",
+    left_ear="Mendi. Earring",
+    right_ear="Loquac. Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Rahab Ring",
+    back=Intarabus.FASTCAST
   }
   
-  sets.Songs = {
-    main="Kali",
-    sub="Genmei Shield",
-    head="Fili Calot +1",
-    body="Fili Hongreline",
-    hands="Fili Manchettes +1",
-    legs="Fili Rhingrave +1",
-    feet="Fili Cothurnes +1",
-    neck="Mnbw. Whistle +1",
-    waist="Witful Belt",
-    left_ear="Enchntr. Earring +1",
-    right_ear="Musical Earring",
-    left_ring="Adoulin Ring",
-    right_ring="Sangoma Ring",
-    back="Intarabus's cape"
+  --Stoneskin Set
+  sets.Stoneskin = {
+    head="Umuthi Hat",
+    body="Zendik Robe",
+    hands="Carapacho Cuffs",
+    legs="Doyen Pants",
+    feet={ name="Kaykaus Boots", augments={'Mag. Acc.+15','"Cure" potency +5%','"Fast Cast"+3'}},
+    neck="Nodens Gorget",
+    waist="Siegel Sash",
+    left_ear="Earthcry Earring",
+    right_ear="Loquac. Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Rahab Ring",
+    back=Intarabus.FASTCAST 
   }
+ 
+  --Magic Accuracy for those pesky songs that don't want to stick--
+  sets.MagicAccuracy = {
+    head="Aya. Zucchetto +2",
+    body="Brioso Just. +1",
+    hands="Inyan. Dastanas +2",
+    legs="Inyanga Shalwar +2",
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Aoidos' Matinee",
+    waist={ name="Acuity Belt +1", augments={'Path: A',}},
+    left_ear="Regal Earring",
+    right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back={ name="Aurist's Cape +1", augments={'Path: A',}}
+  }
+  
+  --Maximizing Song Potency first then duration-- 
+  sets.Songs = {
+	main="Carnwenhan",
+    head="Brioso Roundlet +1",
+    body="Brioso Just. +1",
+    hands="Inyan. Dastanas +2",
+    legs="Inyanga Shalwar +2",
+    feet="Brioso Slippers +1",
+    neck="Aoidos' Matinee",
+    waist="Witful Belt",
+    left_ear="Loquac. Earring",
+    right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back={ name="Fi Follet Cape +1", augments={'Path: A',}}
+  }
+  
+  sets.Ballad = set_combine(sets.Songs, { 
+	legs="Fili Rhingrave +3"
+  })
   
   sets.Cure = {
-    head="Reveal. Crown +1",
-    body="Inyanga Jubbah +2",
-    hands="Revealer's Mitts",
-    legs="Praeco Slacks",
-    feet="Vanya Clogs",
-    neck="Weike Torque",
+    head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%'}},
+    body={ name="Kaykaus Bliaut", augments={'MP+60','"Cure" potency +5%','"Conserve MP"+6'}},
+    hands="Inyan. Dastanas +2",
+    legs={ name="Kaykaus Tights", augments={'MP+60','Spell interruption rate down +10%','"Cure" spellcasting time -5%'}},
+    feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6'}},
+    neck="Nodens Gorget",
     waist="Acerbic Sash +1",
-    left_ear="Enchntr. Earring +1",
-    left_ring="Globidonta Ring"
+    left_ear="Magnetic Earring",
+    right_ear="Mendi. Earring",
+    left_ring="Lebeche Ring",
+    right_ring="Sirona's Ring",
+    back="Oretan. Cape +1"
   }
-
-  --Weaponskill Sets--
-  sets.WS = {}
-
-  --multi, Shoha, Fudo, Kasha need STR for the modifier
-  sets.Single = {
-
-  }
-
-  --Job Ability Sets--
-  sets.JA = {}
   
-  -- Dancer's Abilities --
-  sets.JA.Waltz = {legs="Dashing subligar"}
-  sets.JA.Step = 	{}
-  sets.JA.Stun = {}
+  sets.Cursna = {
+    head={ name="Kaykaus Mitra", augments={'MP+60','MND+10','Mag. Acc.+15'}},
+    body={ name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}},
+    hands="Inyan. Dastanas +2",
+    legs={ name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3'}},
+    feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6'}},
+    neck="Incanter's Torque",
+    waist="Gishdubar Sash",
+    left_ear="Healing Earring",
+    right_ear="Magnetic Earring",
+    left_ring="Ephedra Ring",
+    right_ring="Ephedra Ring",
+    back="Oretan. Cape +1"  
+  }
+
+  sets.Sleep = set_combine(sets.MagicAccuracy, { 
+    head="Fili calot +3",
+	hands="Brioso Cuffs +1",
+	body="Brioso Justaucorps +1",
+	feet="Brioso Slippers +1",
+	legs="Inyanga Shalwar +2",
+--	range="Daurdabla",
+	main="Carnwenhan"
+  })
+  
+  -- Mordant Rime  70%CHR / 30% DEX
+  -- Evisceration   50% DEX  Critical Hits
+  -- Rudra's Storm  80% DEX  Dmg varies with TP
+  -- Exenterator  85% AGI w/ capped merits.  Duration of accuracy down varies with TP
+  -- Aeolian Edge  40% DEX / 40% INT  Dmg varies with TP
+
+  -- Engaged Sets Toggle--
+  sets.engaged = {}
+  sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'Movement'}
+  engaged_ind = 1    
+  
+  --TP Set--
+  sets.engaged.TP = {
+	ammo="Coiste bodhar",
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
+    body="Ayanmo Corazza +2",
+    hands={ name="Bunzi's Gloves", augments={'Path: A',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Null Loop",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Telos Earring",
+    right_ear="Cessance Earring",
+    left_ring="Ilabrat Ring",
+    right_ring="Petrov Ring",
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}}	
+  }
+  
+  --Accuracy Set--
+  sets.engaged.Accuracy = {
+  	ammo="Coiste bodhar",
+    head="Fili calot +3",
+    body="Fili Hongreline +3",
+    hands="Fili Manchettes +3",
+    legs="Fili Rhingrave +3",
+    feet="Fili cothurnes +3",
+    neck="Bard's charm +2",
+    waist="Null belt",
+    left_ear="Telos Earring",
+    right_ear="Fili Earring +1",
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+    back="Null shawl",
+	range="Linos"
+  }
+  
+  sets.engaged.TakingLessPhysicalDamage = {
+  	ammo="Coiste bodhar",
+    head="Fili Calot +3",
+    body="Fili Hongreline +3",
+    hands="Fili Manchettes +3",
+    legs="Fili Rhingrave +3",
+    neck={ name="Bard's Charm +2", augments={'Path: A',}},
+    waist="Null belt",
+    left_ear="Infused Earring",
+    right_ear="Eabani Earring",
+    left_ring="Defending Ring",
+    right_ring="Fortified Ring",
+    back=Intarabus.TP
+  }
+  
+  sets.engaged.TakingLessMagicDamage = {
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Fili Manchettes +3",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Null loop",
+    waist="Null belt",
+    left_ear="Infused Earring",
+    right_ear="Eabani Earring",
+    left_ring="Defending Ring",
+    right_ring="Fortified ring",
+    back="Null shawl",
+	ammo="Coiste bodhar"
+  }
+  
+  sets.engaged.Refresh = {
+    head="Null masque",
+    body="Annoint. Kalasiris",
+    hands={ name="Chironic Gloves", augments={'"Fast Cast"+1','Pet: "Mag.Atk.Bns."+10','"Refresh"+2','Accuracy+12 Attack+12'}},
+    legs="Assid. Pants +1",
+    feet={ name="Chironic Slippers", augments={'Phys. dmg. taken -1%','Pet: Attack+9 Pet: Rng.Atk.+9','"Refresh"+2','Mag. Acc.+20 "Mag.Atk.Bns."+20'}},
+    neck="Bathy Choker +1",
+    waist="Fucho-no-Obi",
+    left_ear="Infused Earring",
+    right_ear="Fili Earring +1",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
+    back="Null shawl",
+	ammo="Coiste bodhar"
+  }
+  
+  sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
+	right_ring="Shneddick ring"
+  })
+  
+  --Weaponskill Sets--
+  --Savage Blade
+  sets.SavageBlade = {
+    ammo="Oshasha's Treatise",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Rep. Plat. Medal",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Telos Earring",
+    right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+    left_ring="Sroda Ring",
+    right_ring="Cornelia's Ring",
+    back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+  }
+  
+  --All in One who gives a fuck Weapon Skill set of Doom
+  --Rudra Evisceration Mordant go here
+  sets.WSD = {
+    ammo="Oshasha's Treatise",
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Rep. Plat. Medal",
+    waist={ name="Sailfi Belt +1", augments={'Path: A',}},
+    left_ear="Telos Earring",
+    right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+    left_ring="Sroda Ring",
+    right_ring="Cornelia's Ring",
+    back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+  }
+
+  -- Weapon Toggle--
+  sets.weapon = {}
+  sets.weapon.index = {'CarnwenhanShield', 'CarnwenhanGleti', 'NaeglingShield', 'NaeglingGleti', 'TauretShield', 'TauretGleti'}
+  weapon_ind = 1     
+  
+ sets.weapon.CarnwenhanShield = {
+	main="Carnwenhan",
+	sub="Ammurapi shield"
+ } 
+ sets.weapon.CarnwenhanGleti = {
+	main="Carnwenhan",
+	sub="Gleti's knife"
+ }
+
+ sets.weapon.NaeglingShield = {
+	main="Naegling",
+	sub="Ammurapi shield"
+ }
+ sets.weapon.NaeglingGleti = {
+	main="Naegling",
+	sub="Gleti's knife"
+ }  
  
+ sets.weapon.TauretShield = {
+	main="Tauret",
+	sub="Ammurapi shield"
+ } 
+  sets.weapon.TauretGleti = {
+	main="Tauret",
+	sub="Gleti's knife"
+ } 
+
 end
 
 
 function precast(spell,abil)
+	--equips favorite Instrument if disarmed
+	if player.equipment.range == "empty" or player.equipment.sub == "empty" then
+		if spell.name == 'Honor March' then
+			equip(sets.FastCast,{range="Marsyas",ammo="empty"})
+			add_to_chat(158,'Marsyas Weapon: [ON]')
+			Daurdabla = 'OFF'
+			Marsyas = 'ON'
+		else
+			equip(sets.FastCast,{range="Daurdabla",ammo="empty"})
+			add_to_chat(158,'Daurdabla Weapon: [ON]')
+			Daurdabla = 'ON'
+			Marsyas = 'OFF'
+		end
+		
+	end
+	
+	if string.find(spell.english,'Waltz') then 
+		equip(sets.JA.Waltz)
+	end
+	
 	if spell.type == 'BardSong' then
 		if spell.name == 'Honor March' then
-			equip({range="Marsyas"})
-		end
-	equip_song_gear(spell)
-	elseif spell.action_type == 'Magic' then
-		equip_current()
-		--Can add stuff here for other magic. Doesn't have to go to idle at all
+			equip(sets.FastCast,{main="Carnwenhan",range="Marsyas",ammo="empty"})
+		elseif  player.equipment.ammo == "Coiste bodhar" then
+			equip(sets.FastCast,{range="Marsyas",ammo="empty"})
+			--Eventually this will be Daurdable or 3 song harp
+		end		
 	end
-	--equips favorite weapon if disarmed
-	if player.equipment.range == "empty" or player.equipment.sub == "empty" then
-		equip({range="Marsyas"})
-		add_to_chat(158,'Marsyas Weapon: [ON]')
-		Gjallarhorn = 'OFF'
+	if spell.name == 'Nightingale' then
+		equip(sets.JA.Nightingale)
+	end 
+	if spell.name == 'Troubadour' then
+		equip(sets.JA.Troubadour)
 	end
+	if spell.name == 'Soul Voice' then
+		equip(sets.JA.SoulVoice)
+	end
+
+	
 	--WS Lookups
-	if spell.name == "Rudra's Storm"  then
-		equip(sets.Single)
+	if spell.name == "Savage Blade" then
+		equip(sets.SavageBlade)
+	end
+	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
+		equip(sets.WSD)
+	end
+
+  	if string.find(spell.english,'Warp') then 
+		--DO NOTHING
 	end
   
+	if spell.skill == 'Enhancing Magic' or 	string.find(spell.english,'Cur') then 
+		equip(sets.FastCast)
+	end
   
 end
-
-
-function aftercast(spell)
-	if spell.type == 'BardSong' then
-		equip_current()
-	elseif spell.action_type == 'Magic' then
-		equip_current()
-		--Can add stuff here for other magic. Doesn't have to go to idle at all
-	end
-end
-
 
 function midcast(spell)
 	if string.find(spell.english,'Cur') then 
 		equip(sets.Cure)
 	end
+	if spell.name == 'Stoneskin' then
+		equip(sets.Stoneskin)
+	end
+	if spell.type == 'BardSong' then
+	  if string.find(spell.english,'Lullaby') then
+	    equip(sets.Sleep,{main="Carnwenhan"})
+	  elseif string.find(spell.english,'Elegy') then
+		equip(sets.MagicAccuracy,{main="Carnwenhan"})
+	  elseif string.find(spell.english,'Ballad') then
+	    equip(sets.Ballad,{main="Carnwenhan",})
+	  else
+		equip(sets.Songs,{main="Carnwenhan"})
+	  end
+	end
+	if spell.name == 'Cursna' then
+		equip(sets.Cursna)
+	end
+	if string.find(spell.english,'Warp') then 
+		--DO NOTHING
+	end
+	--Enhancing Magic Check
+	if spell.skill == 'Enhancing Magic' then
+		equip(sets.Enhancing)
+	end
 end
+
+
+--We need to do some thinking and testing for this set...
+function aftercast(spell)
+	if string.find(spell.english,'Warp') then
+		--do fuck all nothing
+	else
+		equip_current()
+	end
+end
+
 
 
 
@@ -153,45 +417,45 @@ end
 --I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
 --I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.Idle) 
+	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip_weapon()
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
+
+--Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
 --123 is a red color for the text output
 --158 is a green color for the text output
 function self_command(command)
-	 if command == 'C8' then -- Gjallarhorn to Marsyas --	
-         if  Marsyas == 'OFF' then 
-             Marsyas = 'ON'
-			 equip({range="Marsyas"})
-             add_to_chat(158,'Marsyas Weapon: [ON]')
-			 add_to_chat(123,'Gjallarhorn Weapon: [OFF]')
-			 Gjallarhorn = 'OFF'
-		 else
-			 Marsyas = 'OFF'
-             Gjallarhorn = 'ON'
-			 equip({range="Gjallarhorn"})
-             add_to_chat(158,'Gjallarhorn: [ON]')
-             add_to_chat(123,'Marsyas Weapon: [OFF]')				
-        
-		 end
-	 end
+	if command == 'C8' then -- Toggling Weapons--	
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	end	 
 end
+
 
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
+		send_command('@input /tell <me> Wakies Wakies my Campbellkitty. We hit 0 HP on accident. We shall live forever!!!')
 	end
 end)
-
-
-function equip_song_gear(spell)
-    if spell.target.type == 'MONSTER' then
-		equip(sets.MagicAccuracy,{range="Marsyas",ammo="empty"})
-		Marsyas = 'ON'
-		Gjallarhorn = 'OFF'
-	else
-		equip(sets.Songs)
-	end
-end
