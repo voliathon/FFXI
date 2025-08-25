@@ -6,7 +6,7 @@ function CamulusCapes()
 	CamulusCape = {}
 --    CamulusCape.storetp={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+9','"Store TP"+10'} }
     CamulusCape.ranged_ws={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%'} }	
-    CamulusCape.matk={ name="Camulus's Mantle", augments={'Weapon skill damage +10%'} }
+    CamulusCape.matk={ name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10'}}
     CamulusCape.str_ws={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'} }
     CamulusCape.melee_double_attack={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%'} }
 	CamulusCape.snapshot={ name="Camulus's Mantle", augments={'"Snapshot"+10'}}
@@ -31,27 +31,27 @@ function get_sets()
 	CamulusCapes()
 
 	-- Job Abilities
-    sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +2", hands="Lanun Gants +2", back=CamulusCape.melee_double_attack })
-    sets.RandomDeal = set_combine(sets.DamageTaken, { body="Lanun Frac +2" })
-    sets.WildCard = set_combine(sets.DamageTaken, { feet="Lanun Bottes +3" })
-    sets.SnakeEye = set_combine(sets.DamageTaken, { legs="Lanun Trews +2" })
-    sets.Fold = set_combine(sets.DamageTaken, { hands="Lanun Gants +2" })
+    sets.TripleShot = set_combine(sets.DamageTaken, { body="Chasseur's Frac +2", hands="Lanun Gants +1", back=CamulusCape.melee_double_attack })
+    sets.RandomDeal = set_combine(sets.DamageTaken, { body="Lanun Frac +1" })
+    sets.WildCard = set_combine(sets.DamageTaken, { feet="Lanun Bottes +1" })
+    sets.SnakeEye = set_combine(sets.DamageTaken, { legs="Lanun Trews +1" })
+    sets.Fold = set_combine(sets.DamageTaken, { hands="Lanun Gants +1" })
 	
 	-- Maximizing Corsair Rolls
 	sets.CorsairRoll = {
 		main="Rostam",
         -- phantom roll effects +50 (chance to proc job-present-boost)
-        head = "Lanun Tricorne +2",
+        head = "Lanun Tricorne +1",
         -- phantom roll +7
         --neck="Regal Necklace",
         -- increased area of effect
         left_ring="Luzaf's Ring",
 		--phantom roll +5
-		--right_ring="Barataria Ring",
+		right_ring="Barataria Ring",
         -- duration +55
         hands="Chasseur's Gants +2",
         -- duration +30
-        back=CamulusCape.melee_double_attack,
+        back=CamulusCape.str_ws,
 		-- duration +20
 		range='Compensator'
     }
@@ -92,7 +92,7 @@ function get_sets()
 	--    Affinity
     sets.QuickDraw = {
 		ammo="Living Bullet",
-		head="Laksamana's tricorne +3",
+		head="Laksamana's tricorne +1",
 		body="Chasseur's frac +2",
 		hands="Chasseur's gants +2",
 		legs="Chasseur's Culottes +2",
@@ -125,10 +125,10 @@ function get_sets()
 	--Leaden Salute     AGI/MAB/WSD  100% AGI
     sets.LeadenSalute = {
 		head="Pixie Hairpin +1",
-		body="Lanun Frac +2",
+		body="Lanun Frac +1",
 		hands="Nyame Gauntlets",
 		legs="Chasseur's culottes +2",
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Lanun Bottes +1", augments={'Enhances "Wild Card" effect',}},
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -151,7 +151,7 @@ function get_sets()
 		body="Laksamana's frac +3",
 		hands="Chasseur's Gants +2",
 		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Lanun Bottes +1", augments={'Enhances "Wild Card" effect',}},
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -163,27 +163,28 @@ function get_sets()
 
 	--Savage Blade  50% STR / 50% MND
     sets.SavageBlade = {
-		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4'}},
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs={ name="Herculean Trousers", augments={'AGI+4','Attack+10','Weapon skill damage +6%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Fotia Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
-		right_ear="Ishvara Earring",
+		left_ear="Brutal Earring",
+		right_ear="Cessance Earring",
 		left_ring="Epaminondas's Ring",
 		right_ring="Sroda Ring",
-		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}
+		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	}
 
 	--Aeolian Edge 40% DEX / 40% INT
 	sets.AeolianEdge = {
 		head="Nyame Helm",
-		body="Lanun Frac +2",
+		body="Lanun Frac +1",
 		hands="Nyame Gauntlets",
 		legs="Chasseur's culottes +2",
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		feet={ name="Lanun Bottes +1", augments={'Enhances "Wild Card" effect',}},
 		neck="Sanctity Necklace",
 		waist="Orpheus's Sash",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -197,7 +198,7 @@ function get_sets()
     sets.Snapshot = {
 		head="Chasseur's tricorne +2",
 		body="Oshosi Vest +1",
-		hands="Lanun Gants +2",
+		hands="Lanun Gants +1",
 		legs="Laksamana's Trews +3",
 		feet="Meg. Jam. +2",
 		neck="Clotharius Torque",
@@ -244,18 +245,19 @@ function get_sets()
 	
 		-- This needs to be the best TP set imaginable. TA, DW, Quadruple shit, Double attack. Really push this shit!
     sets.engaged.TP = set_combine(sets.DamageTaken, {
-		head={ name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3'}},
-		body={ name="Herculean Vest", augments={'INT+5','"Dbl.Atk."+2','Quadruple Attack +3','Accuracy+6 Attack+6'}},
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20'}},
-		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6'}},
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck="Clotharius Torque",
-		waist="Windbuffet Belt +1",
+		neck="Null Loop",
+		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Brutal Earring",
 		right_ear="Cessance Earring",
 		left_ring="Chirich Ring +1",
-		right_ring="Epona's Ring",
-        back=CamulusCape.melee_double_attack
+		right_ring="Ilabrat Ring",
+		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
     })
 	
 	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.DamageTaken, {})
@@ -411,7 +413,7 @@ function aftercast(spell)
   --This could be an issue if you need DT while Triple Shot is up. Frac+2 is fine. 
   --I'm taking the stance I'd rather see this gear when Triple Shot is up as compared to not seeing it
   if (buffactive['Triple Shot']) then
-	equip({body="Chasseur's Frac +2", hands="Lanun Gants +2"})
+	equip({body="Chasseur's Frac +2", hands="Lanun Gants +1"})
   end
 end
 
