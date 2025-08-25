@@ -2,7 +2,7 @@ function RedMageCapes()
 	RedMageCapes = {}
 	RedMageCapes.TP = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 	RedMageCapes.FastCast = {name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10'}}
-	RedMageCapes.DualWield = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dual Wield"+10'}}
+	RedMageCapes.DualWield = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10'}}
 	RedMageCapes.STRWS = {name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%'}}
 end
 
@@ -266,13 +266,13 @@ function get_sets()
 	})	
 	
 	sets.EnspellActive = set_combine(sets.TP, {
-		range="Ullr",
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
 		head="Malignance Chapeau",
-		body="Ayanmo Corazza +2",
+		body="Malignance Tabard",
 		hands="Aya. Manopolas +2",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
-		neck={ name="Dls. Torque +2", augments={'Path: A',}},
+		neck="Anu Torque",
 		waist="Orpheus's Sash",
 		left_ear="Sherida Earring",
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
