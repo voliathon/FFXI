@@ -316,7 +316,7 @@ function get_sets()
 	sets.weapon.GastroDual = {
 		main="Malevolence",
 		sub="Malevolence",
-		range="Gastrophetes"
+		range="Gastraphetes"
 	}
 	
 end
