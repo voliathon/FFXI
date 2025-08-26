@@ -45,11 +45,11 @@ function get_sets()
 	
 	sets.engaged.TP = {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head="Skulk. bonnet +3",
+		head="Skulker's Bonnet +3",
 		body="Malignance Tabard",
 		hands="Plun. Armlets +4",
 		legs="Malignance Tights",
-		feet={ name="Herculean Boots", augments={'Accuracy+23 Attack+23','"Triple Atk."+3','DEX+9','Attack+3',}},
+		feet="Malignance boots",
 		neck="Anu torque",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Sherida Earring",
@@ -61,7 +61,7 @@ function get_sets()
 	
 	sets.engaged.Accuracy =  {
 		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head="Skulk. bonnet +3",
+		head="Skulker's Bonnet +3",
 		body="Malignance Tabard",
 		hands="Gleti's Gauntlets",
 		legs="Malignance Tights",
