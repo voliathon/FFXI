@@ -13,20 +13,26 @@ function get_sets()
 	-- Set macro book/set --
     send_command('input /macro book 1;wait .1;input /macro set 1')
 	
-	-- Toggle Weapon F8 Key
+	-- Default Disabled Burst unless set with F11
+	Burst = 'Disabled'
+		
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
 	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c Reverse Toggle Weapon')
-	
-	-- Toggle Equipment F9
-    send_command('bind !f9 gs c C9')
-	send_command('bind ^f9 gs c Reverse Engaged Set')
+	send_command('bind ^f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind ^f10 gs c C10') 
+	send_command('bind !f10 gs c reverse Idle set')
 	
 	-- Toggle Burst Mode
-	send_command('bind ^f10 gs c C10')
-	-- Default Disabled Burst unless set with F10
-	Burst = 'Disabled'
+	send_command('bind ^f11 gs c C11')
 	
-    -- Job Abilities for Red Mage --
+	-- Job Abilities for Red Mage --
     sets.Chainspell = {body="Vitiation tabard +4"}
     sets.Composure = {head="Lethargy Chappel +3",body="Lethargy sayon +3",hands="Lethargy gantherots +3",legs="Leth. Fuseau +3",feet="Lethargy Houseaux +3"}
 	sets.Saboteur = {hands="Lethargy gantherots +3"}
@@ -68,6 +74,20 @@ function get_sets()
 		back=RedMageCapes.FastCast
 	}
 	
+	sets.Refresh = set_combine(sets.Enhancing,  {
+		body="Atrophy tabard +4",
+		legs="Leth. Fuseau +3",
+		ammo="Homiliary",
+		head="Vitiation chapeau +4",
+		waist="Fucho-no-obi",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1"
+	})
+
+	sets.Enspell = set_combine(sets.Enhancing,  {
+		legs="Vitiation Tights +4"
+	})	
+	
 	sets.Gain = set_combine(sets.Enhancing,  {
 		hands="Vitiation gloves +4"
 	})
@@ -81,22 +101,6 @@ function get_sets()
 		legs="Querkening Brais"
 	})
 	
-	sets.TP = {
-		head="Malignance Chapeau",
-		body="Malignance tabard",
-		hands="Bunzi's gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Anu Torque",
-		waist="Sailfi belt +1",
-		left_ear="Sherida Earring",
-		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5'}},
-		left_ring="Ilabrat Ring",
-		right_ring="Hetairoi Ring",
-		back=RedMageCapes.TP,
-		ammo="Coiste Bodhar"
-	}	
-
     sets.Cure = set_combine(sets.FastCast,  {
 		head={ name="Vanya Hood", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6'}},
 		body={ name="Vanya Robe", augments={'MP+50','"Cure" potency +7%','Enmity-6',}},
@@ -175,7 +179,45 @@ function get_sets()
       body="Twilight Cloak"
 	}
 
-	sets.Accuracy = {
+	-- Engaged Sets Toggle--
+	sets.engaged = {}
+	sets.engaged.index = {'TP', 'EnspellActive', 'Accuracy','PDT', 'MDT', 'RefreshSelf', 'Movement'}
+	engaged_ind = 1  	 
+
+
+	sets.engaged.TP = {
+		head="Malignance Chapeau",
+		body="Malignance tabard",
+		hands="Bunzi's gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Anu Torque",
+		waist="Sailfi belt +1",
+		left_ear="Sherida Earring",
+		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5'}},
+		left_ring="Ilabrat Ring",
+		right_ring="Hetairoi Ring",
+		back=RedMageCapes.TP,
+		ammo="Coiste Bodhar"
+	}
+
+    sets.engaged.EnspellActive = set_combine(sets.TP, {
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Aya. Manopolas +2",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Anu Torque",
+		waist="Orpheus's Sash",
+		left_ear="Sherida Earring",
+		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
+		left_ring="Ilabrat Ring",
+		right_ring="Hetairoi Ring",
+		back=RedMageCapes.DualWield	
+	})
+
+	sets.engaged.Accuracy = {
 		head="Leth. Chappel +3",
 		body="Lethargy Sayon +3",
 		hands="Leth. Ganth. +3",
@@ -189,9 +231,9 @@ function get_sets()
 		right_ring="Rajas Ring",
 		back=RedMageCapes.TP
 	}
-
+	
 	-- PDT Set
-    sets.PDT = {
+    sets.engaged.PDT = {
 		head="Lethargy Chappel +3",
 		body="Lethargy sayon +3",
 		hands="Lethargy gantherots +3",
@@ -205,9 +247,9 @@ function get_sets()
 		right_ring="Defending Ring",
 		back=RedMageCapes.TP		
 	}
-
+	
 	-- Magic Defense and Magic Defense Set
-    sets.MDT = {
+    sets.engaged.MDT = {
 		head="Nyame Helm",
 		body="Nyame mail",
 		hands="Nyame gauntlets",
@@ -222,7 +264,19 @@ function get_sets()
 		back=RedMageCapes.TP		
 	}
 	
-    sets.Movement = {		
+	sets.engaged.RefreshSelf = set_combine(sets.PDT,  {
+		body="Lethargy sayon +3",
+		ammo="Homiliary",
+		head="Vitiation chapeau +4",
+	    hands={ name="Chironic Gloves", augments={'Accuracy+6','CHR+1','"Refresh"+2','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
+		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
+	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
+		waist="Fucho-no-obi",
+		left_ring="Stikini Ring +1",
+		right_ring="Stikini Ring +1"
+	})
+
+    sets.engaged.Movement = {		
 		ammo="Homiliary",
 		head="Leth. Chappel +3",
 		body="Lethargy Sayon +3",
@@ -238,49 +292,23 @@ function get_sets()
 		back=RedMageCapes.TP		
 	}
 
-	sets.RefreshSelf = set_combine(sets.PDT,  {
-		body="Lethargy sayon +3",
-		ammo="Homiliary",
-		head="Vitiation chapeau +4",
-	    hands={ name="Chironic Gloves", augments={'Accuracy+6','CHR+1','"Refresh"+2','Mag. Acc.+15 "Mag.Atk.Bns."+15',}},
-		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
-	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
-		waist="Fucho-no-obi",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
+
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'Refresh', 'Craft'}
+	idle_ind = 1      
+	
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.Refresh = set_combine(sets.engaged.RefreshSelf,  { })
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		sub="Bv. escutcheon",
+		hands="Tanner's gloves",
+		neck="Tanner's torque",
+		left_ring="Artificer's Ring"
 	})
 
-    
-	sets.Refresh = set_combine(sets.Enhancing,  {
-		body="Atrophy tabard +4",
-		legs="Leth. Fuseau +3",
-		ammo="Homiliary",
-		head="Vitiation chapeau +4",
-		waist="Fucho-no-obi",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
-	})
-
-	sets.Enspell = set_combine(sets.Enhancing,  {
-		legs="Vitiation Tights +4"
-	})	
-	
-	sets.EnspellActive = set_combine(sets.TP, {
-		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Aya. Manopolas +2",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Anu Torque",
-		waist="Orpheus's Sash",
-		left_ear="Sherida Earring",
-		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
-		left_ring="Ilabrat Ring",
-		right_ring="Hetairoi Ring",
-		back=RedMageCapes.DualWield	
-	})
-	
 	
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
@@ -333,20 +361,6 @@ function get_sets()
 		ammo="Oshasha's Treatise"	 
 	 }
 	 
-
-	-- Engaged Sets Toggle--
-	sets.engaged = {}
-	sets.engaged.index = {'TP', 'Movement', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'RefreshSelf','EnspellActive'}
-	engaged_ind = 1  	 
-	 
-	sets.engaged.TP = set_combine(sets.TP, {}) 
-	sets.engaged.Movement = set_combine(sets.Movement, {})
-	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
-	sets.engaged.TakingLessMagicDamage = set_combine(sets.MDT, {})
-	sets.engaged.Accuracy = set_combine(sets.Accuracy, {})
-	sets.engaged.RefreshSelf = set_combine(sets.RefreshSelf, {})
-	sets.engaged.EnspellActive = set_combine(sets.EnspellActive, {})
-		 
 
 	 -- Weapon Toggle--
 	 sets.weapon = {}
@@ -454,50 +468,68 @@ function midcast(spell)
 
 end
 
---We need to do some thinking and testing for this set...
 function aftercast(spell)
-	if string.find(spell.english,'Warp') then
-		--do fuck all nothing
-	else
-		equip_current()
-	end
+	equip_current()
 end
 
+
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
+	status_change()
 	enspellCheck()
 end
+
 
 function equip_weapon()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
+	end
+end
 
---123 is a red color for the text output
---158 is a green color for the text output
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
+--F11 --> BURST Mode
+--F12 --> Occult Acumen
 function self_command(command)
-	if command == 'C8' then -- Toggling Weapons--	
+	if command == 'C8' then 
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
-	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+	elseif command == 'reverse Weapon set' then 
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
 	elseif command == 'C9' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	elseif command == 'Reverse Engaged Set' then
+	elseif command == 'reverse Engaged set' then
 		engaged_ind = engaged_ind -1
 		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
 	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	elseif command == 'C11' then
 		if Burst == 'Disabled' then 
 			Burst = 'Enabled'
 		else
@@ -505,6 +537,7 @@ function self_command(command)
 		end
 		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
 	end	 
+--Consider Occult Acumen in the future here	
 end
 
 
