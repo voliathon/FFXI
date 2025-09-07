@@ -11,98 +11,18 @@ function get_sets()
 -- Set macro book/set --
     send_command('input /macro book 1;wait .1;input /macro set 1') -- set macro book/set here	
 	
-	-- Binds for switching weapon modes
-    send_command('bind !f8 gs c toggle weapon set')
-	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching TP modes
-	send_command('bind !f9 gs c toggle TP set')
-	send_command('bind ^f9 gs c reverse TP set')
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind !f8 gs c C8') 
+	send_command('bind ^f8 gs c reverse Weapon set')
 
-	-- TP Sets Toggle--
-    sets.TP = {}
-    sets.TP.index = {"TreasureHunter","TP","Accuracy","Tank","Evasion"}
-	TP_ind = 1
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind !f9 gs c C9')
+	send_command('bind ^f9 gs c reverse Engaged set')
 
-    sets.TP.TreasureHunter = {
-		ammo="Yetshila +1",
-		head="Skulker's bonnet +3",
-		body="Malignance Tabard",
-		hands="Plun. Armlets +4",
-		legs="Skulk. Culottes +3",
-		feet="Skulk. Poulaines +3",
-		neck="Anu Torque",
-		waist="Null Belt",
-		left_ear="Sherida Earring",
-		right_ear="Odr Earring",
-		left_ring="Epona's Ring",
-		right_ring="Hetairoi Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
-	}
-	
-	sets.TP.TP = {
-		ammo="Coiste Bodhar",
-		head="Skulker's Bonnet +3",
-		body="Pillager's vest +4",
-		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-		legs="Malignance Tights",
-		feet={ name="Plun. Poulaines +4", augments={'Enhances "Assassin\'s Charge" effect',}},
-		neck={ name="Asn. Gorget +2", augments={'Path: A',}},
-		waist="Windbuffet Belt +1",
-		left_ear="Sherida Earring",
-		right_ear="Telos Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Hetairoi Ring",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
-	}
-	
-	sets.TP.Accuracy =  {
-		ammo="Yamarang",
-		head="Skulker's bonnet +3",
-		body="Skulker's Vest +3",
-		hands="Plun. Armlets +4",
-		legs="Malignance Tights",
-		feet="Skulk. Poulaines +3",
-		neck="Assassin's gorget +2",
-		waist="Null belt",
-		left_ear="Odr Earring",
-		right_ear="Telos Earring",
-		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-		back="Null shawl"
-	}
-
-	 sets.TP.Tank = {
-		ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Skulk. Armlets +2",
-		legs="Skulk. Culottes +3",
-		feet="Skulk. Poulaines +3",
-		neck="Null loop",
-		waist="Null belt",
-		left_ear="Infused Earring",
-		right_ear="Eabani Earring",
-		left_ring="Shneddick Ring",
-		right_ring="Chirich Ring +1",
-		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
-	 }	
-	
-	sets.TP.Evasion = {
-		ammo="Yamarang",
-		head="Skulker's bonnet +3",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Skulk. Poulaines +3",
-		neck="Assassin's gorget +2",
-		waist="Null belt",
-		left_ear="Eabani Earring",
-		right_ear="Infused Earring",
-		left_ring="Defending Ring",
-		right_ring="Fortified Ring",
-		back="Null shawl"
-	}	
-	
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 
 	-- Job Abilities Sets --
     sets.JA = {}
@@ -120,10 +40,136 @@ function get_sets()
 	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
 	sets.JA['Hide'] = {body="Pillager's vest +4"}
 	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +4"}
+
+	sets.Fastcast = {
+		ammo="Staunch Tathlum +1",
+		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
+		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
+		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
+		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
+		neck="Voltsurge Torque",
+		waist="Kasiri Belt",
+		left_ear="Loquac. Earring",
+		right_ear="Halasz Earring",
+		left_ring="Lebeche Ring",
+		right_ring="Defending Ring",
+		back="Null shawl"	
+	}
+
+	-- Engaged Sets Toggle--
+    sets.engaged = {}
+    sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Evasion","Movement"}
+	engaged_ind = 1
+
+    sets.engaged.TreasureHunter = {
+		ammo="Yetshila +1",
+		head="Skulker's bonnet +3",
+		body="Malignance Tabard",
+		hands="Plun. Armlets +4",
+		legs="Skulk. Culottes +3",
+		feet="Skulk. Poulaines +3",
+		neck="Anu Torque",
+		waist="Null Belt",
+		left_ear="Sherida Earring",
+		right_ear="Odr Earring",
+		left_ring="Epona's Ring",
+		right_ring="Hetairoi Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
+	}
 	
+	sets.engaged.TP = {
+		ammo="Coiste Bodhar",
+		head="Skulker's Bonnet +3",
+		body="Pillager's vest +4",
+		hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+		legs="Malignance Tights",
+		feet={ name="Plun. Poulaines +4", augments={'Enhances "Assassin\'s Charge" effect',}},
+		neck={ name="Asn. Gorget +2", augments={'Path: A',}},
+		waist="Windbuffet Belt +1",
+		left_ear="Sherida Earring",
+		right_ear="Telos Earring",
+		left_ring="Chirich Ring +1",
+		right_ring="Hetairoi Ring",
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
+	}
+	
+	sets.engaged.Accuracy =  {
+		ammo="Yamarang",
+		head="Skulker's bonnet +3",
+		body="Skulker's Vest +3",
+		hands="Plun. Armlets +4",
+		legs="Malignance Tights",
+		feet="Skulk. Poulaines +3",
+		neck="Assassin's gorget +2",
+		waist="Null belt",
+		left_ear="Odr Earring",
+		right_ear="Telos Earring",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back="Null shawl"
+	}
+
+	 sets.engaged.Tank = {
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Skulk. Armlets +2",
+		legs="Skulk. Culottes +3",
+		feet="Skulk. Poulaines +3",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Infused Earring",
+		right_ear="Eabani Earring",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
+	 }	
+	
+	sets.engaged.Evasion = {
+		ammo="Yamarang",
+		head="Skulker's bonnet +3",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Skulk. Poulaines +3",
+		neck="Assassin's gorget +2",
+		waist="Null belt",
+		left_ear="Eabani Earring",
+		right_ear="Infused Earring",
+		left_ring="Defending Ring",
+		right_ring="Fortified Ring",
+		back="Null shawl"
+	}	
+
+	sets.engaged.Movement = set_combine(sets.engaged.Tank, {
+		left_ring="Shneddick ring"
+	})
+  	
+
+  -- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+  sets.idle = {}
+  sets.idle.index = {'PDTMovement', 'Craft', 'Fishing'}
+  idle_ind = 1      
+  sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+  
+  sets.idle.Craft = set_combine(sets.engaged.Movement, {
+	hands="Goldsmith's Cuffs",
+	left_ring="Craftmaster's Ring",
+	right_ring="Craftkeeper's ring",
+	back="Shaper's Shawl"
+  })
+
+  sets.idle.Fishing = {
+	hands="Fisherman's cuffs",
+	left_ring="Shneddick Ring",
+	right_ring="Duck ring",
+	waist="Fisherman's ring",
+	range="Ebisu Fishing rod"
+  } 
+  
 	
     -- Weapon Skill Sets
-    -- Generic Sets
     sets.WSD = {	
 		ammo="Crepuscular pebble",
 		head="Pillager's bonnet +4",
@@ -171,28 +217,6 @@ function get_sets()
 		right_ring="Dingir Ring",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
 	}
-	
-    ---- .:: Preshot Sets ::. ---->
-	--sets.preshot = {}
-	--sets.preshot.RA = {}	
-	
-    -- Precast Sets  --
-	sets.precast = {}
-	sets.precast.Fastcast = {
-		ammo="Staunch Tathlum +1",
-		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
-		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
-		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
-		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
-		feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
-		neck="Voltsurge Torque",
-		waist="Kasiri Belt",
-		left_ear="Loquac. Earring",
-		right_ear="Halasz Earring",
-		left_ring="Lebeche Ring",
-		right_ring="Defending Ring",
-		back="Null shawl"	
-	}		
 	
  -- Weapon Toggle--
   sets.weapon = {}
@@ -271,7 +295,7 @@ function precast(spell,action)
 
 	-- Ninja Spells --
 	elseif spell.skill == 'Ninjutsu' then
-	    equip(sets.precast.Fastcast)
+	    equip(sets.Fastcast)
 	end	
 end	
 
@@ -282,45 +306,73 @@ function midcast(spell,action)
 end	
 
 
---We need to do some thinking and testing for this set...
 function aftercast(spell)
-	if string.find(spell.english,'Warp') then
-		--do fuck all nothing
-	else
-		equip_current()
-	end
+	equip_current()
 end
 
 
 function equip_current()
-	equip(sets.weapon[sets.weapon.index[weapon_ind]])
-	equip(sets.TP[sets.TP.index[TP_ind]])
+	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip_weapon()
+	status_change()
 end
 
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
-function self_command(command)
-	if command =='toggle weapon set' then
-		weapon_ind = weapon_ind -1
-		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse weapon set' then
-		weapon_ind = weapon_ind +1
-		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()
-	elseif command == 'toggle TP set' then
-		TP_ind = TP_ind -1
-		if TP_ind == 0 then TP_ind = #sets.TP.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse TP set' then
-		TP_ind = TP_ind +1
-		if TP_ind > #sets.TP.index then TP_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
-		equip_current()
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
 	end
 end
+	
+
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
+function self_command(command)
+	if command == 'C8' then 
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	end	 
+end
+
+
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+		send_command('@input /tell <me> Wakies Wakies my Campbellkitty. We hit 0 HP on accident. We shall live forever!!!')
+	end
+end)
+
