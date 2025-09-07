@@ -51,21 +51,26 @@ function get_sets()
     send_command('input /macro book 8;wait .1;input /macro set 1')
 	
 	bonus = 0
-	
-	-- Binds for switching boomstick modes
-    send_command('bind !f8 gs c toggle boomstick set')
-	send_command('bind ^f8 gs c reverse boomstick set')
-	
-	-- Toggle fight sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c toggle fight set')
-	send_command('bind ^f9 gs c reverse fight set')
-	
-	-- Toggle Burst Mode
-	send_command('bind ^f10 gs c C10')
-	-- Default Disabled Burst unless set with F10
+	-- Default Disabled Burst unless set with F11
 	Burst = 'Disabled'	
 	
-    -- Job Abilities for Scholar --
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind ^f8 gs c C8') 
+	send_command('bind !f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind ^f10 gs c C10') 
+	send_command('bind !f10 gs c reverse Idle set')
+	
+	-- Toggle Burst Mode
+	send_command('bind ^f11 gs c C11')
+	
+	-- Job Abilities for Scholar --
     sets.Immanence = {hands="Arbatel Bracers +3"}
     sets.Celerity = {feet="Pedagogy Loafers +3"}
     sets.Alacrity = {feet="Pedagogy Loafers +3"}
@@ -289,24 +294,13 @@ function get_sets()
       body="Twilight Cloak"
 	})
 
-	sets.TP = set_combine(sets.PDT,  {
-		ammo="Crepuscular Pebble",
-		head="Null masque",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Null loop",
-		waist="Windbuffet Belt +1",
-		left_ear="Crep. Earring",
-		right_ear="Telos Earring",
-		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-		back="Null shawl"	
-	})
+	-- Engaged Sets Toggle--
+	sets.engaged = {}
+	sets.engaged.index = {'PDT', 'Refresh', 'Movement', 'TP'}
+	engaged_ind = 1  
 
 	-- PDT Set
-    sets.PDT = {
+    sets.engaged.PDT = {
 		ammo="Staunch Tathlum +1",
 		head="Null masque",
 		body="Arbatel Gown +3",
@@ -322,13 +316,7 @@ function get_sets()
 		back="Null shawl"
 	}
 
-	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = set_combine(sets.PDT,  {
-		left_ring="Shneddick ring"
-	})
-
-    
-	sets.Refresh = set_combine(sets.PDT,  {
+	sets.engaged.Refresh = set_combine(sets.PDT,  {
 		ammo="Staunch Tathlum +1",
 		head={ name="Chironic Hat", augments={'AGI+9','CHR+8','"Refresh"+2','Accuracy+3 Attack+3','Mag. Acc.+19 "Mag.Atk.Bns."+19',}},
 		body="Arbatel Gown +3",
@@ -343,13 +331,73 @@ function get_sets()
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},	
 		back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 	})
+
+	-- When I gotta kite shite, I put on my Sandals and shit...
+    sets.engaged.Movement = {
+		ammo="Staunch Tathlum +1",
+		head="Null masque",
+		body="Arbatel Gown +3",
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs="Arbatel pants +3",
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Infused Earring",
+		right_ear="Hearty Earring",
+		left_ring="Shneddick ring",
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
+		back="Null shawl"
+	}
 	
+	sets.engaged.TP = set_combine(sets.PDT,  {
+		ammo="Crepuscular Pebble",
+		head="Null masque",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Null loop",
+		waist="Windbuffet Belt +1",
+		left_ear="Crep. Earring",
+		right_ear="Telos Earring",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back="Null shawl"	
+	})
+
 	
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'RefreshMovement', 'PureRefresh', 'Craft', 'Fishing'}
+	idle_ind = 1      
+	
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.RefreshMovement = set_combine(sets.engaged.Refresh,  {
+		left_ring="Shneddick ring"
+	})
+
+	sets.idle.PureRefresh = set_combine(sets.engaged.Refresh,  {})
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		hands="Goldsmith's Cuffs",
+		left_ring="Craftmaster's Ring",
+		right_ring="Craftkeeper's ring",
+		back="Shaper's Shawl"
+	})
+
+	sets.idle.Fishing = {
+		hands="Fisherman's cuffs",
+		left_ring="Shneddick Ring",
+		right_ring="Duck ring",
+		waist="Fisherman's ring",
+		range="Ebisu Fishing rod"
+	}  
+  
+  
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
-
-	-- All Weaponskills for Scholar unless explicitly defined below sets.precast.WS 
 	sets.WSD = {
 		ammo="Crepuscular Pebble",
 		head="Nyame helm",
@@ -398,34 +446,24 @@ function get_sets()
 		back="Pahtli cape"
 	} 
 
-	-- fight Sets Toggle--
-	sets.fight = {}
-	sets.fight.index = {'TP', 'Movement', 'Tank', 'Refresh'}
-	fight_ind = 1  	 
-	 
-	sets.fight.TP = set_combine(sets.TP, {}) 
-	sets.fight.Movement = set_combine(sets.Kiting, {})
-	sets.fight.Tank = set_combine(sets.PDT, {})
-	sets.fight.Refresh = set_combine(sets.Refresh, {})
-	 
-	--boomstick Sets--
-	sets.boomstick = {}
-	sets.boomstick.index = {'Musa','DaybreakShield','Bunzi','MarinStaff'}
-	boomstick_ind = 1
+	-- Weapon Toggle--
+	sets.weapon = {}
+	sets.weapon.index = {'Musa','DaybreakShield','Bunzi','MarinStaff'}
+	weapon_ind = 1
 	
-	sets.boomstick.Musa = {
+	sets.weapon.Musa = {
 		main="Musa",
 		sub="Khonsu"
 	}
-	sets.boomstick.DaybreakShield = {
+	sets.weapon.DaybreakShield = {
 		main="Daybreak",
 		sub="Ammurapi Shield"
 	}
-	sets.boomstick.Bunzi = {
+	sets.weapon.Bunzi = {
 		main="Bunzi's rod",
 		sub="Ammurapi Shield"
 	}	
-	sets.boomstick.MarinStaff = {
+	sets.weapon.MarinStaff = {
 		main="Marin staff +1",
 		sub="Enki strap"
 	}	 
@@ -568,56 +606,77 @@ function aftercast(spell)
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'PDT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the fight check.
---I'm also deciding not to use a Binding Key to put my in a PDT,Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.boomstick[sets.boomstick.index[boomstick_ind]]) 
-	equip(sets.fight[sets.fight.index[fight_ind]]) 
+	equip_weapon()
+	status_change()
 end
 
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
 
---Function use for Changing the fight Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
+	end
+end
+	
+
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
+--F11 --> BURST Mode
+--F12 --> Occult Acumen
 function self_command(command)
-	if command =='toggle boomstick set' then
-		boomstick_ind = boomstick_ind -1
-		if boomstick_ind == 0 then boomstick_ind = #sets.boomstick.index end
-		send_command('@input /echo <----- Weapon changed to '..sets.boomstick.index[boomstick_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse boomstick set' then
-		boomstick_ind = boomstick_ind +1
-		if boomstick_ind > #sets.boomstick.index then boomstick_ind = 1 end
-		send_command('@input /echo <----- Weapon changed to '..sets.boomstick.index[boomstick_ind]..' ----->')
+	if command == 'C8' then 
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	elseif command == 'toggle fight set' then
-		fight_ind = fight_ind -1
-		if fight_ind == 0 then fight_ind = #sets.fight.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.fight.index[fight_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse fight set' then
-		fight_ind = fight_ind +1
-		if fight_ind > #sets.fight.index then fight_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.fight.index[fight_ind]..' ----->')
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
 	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	elseif command == 'C11' then
 		if Burst == 'Disabled' then 
 			Burst = 'Enabled'
 		else
 			Burst = 'Disabled'
 		end
 		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
-	end	   
+	end	 
+--Consider Occult Acumen in the future here	
 end
 
 
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-		send_command('@input /tell <me> We shall live forever!!!  It is time to get back up and try again')
+		send_command('@input /tell <me> Wakies Wakies my Campbellkitty. We hit 0 HP on accident. We shall live forever!!!')
 	end
 end)
 
