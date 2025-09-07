@@ -254,16 +254,28 @@ function get_sets()
     
   -- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
   sets.idle = {}
-  sets.idle.index = {'PDTMovement', 'Refresh', 'Craft'}
+  sets.idle.index = {'PDTMovement', 'Refresh', 'Craft', 'Fishing'}
   idle_ind = 1      
-  sets.idle.PDTMovement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
-	feet="Fili cothurnes +3"
+  sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+  
+  sets.idle.Refresh = set_combine(sets.engaged.Refresh,  {
+  	feet="Fili cothurnes +3"
   })
   
-  sets.idle.Refresh = set_combine(sets.engaged.Refresh,  {})
-  
-  --TODO Craft stuff here
-  sets.idle.Craft = set_combine(sets.engaged.PDTMovement,  {})  
+  sets.idle.Craft = set_combine(sets.engaged.Movement, {
+	hands="Goldsmith's Cuffs",
+	left_ring="Craftmaster's Ring",
+	right_ring="Craftkeeper's ring",
+	back="Shaper's Shawl"
+  })
+
+  sets.idle.Fishing = {
+	hands="Fisherman's cuffs",
+	left_ring="Shneddick Ring",
+	right_ring="Duck ring",
+	waist="Fisherman's ring",
+	range="Ebisu Fishing rod"
+  }  
 
 
   -- Mordant Rime  70%CHR / 30% DEX
@@ -452,19 +464,11 @@ function midcast(spell)
 end
 
 
---We need to do some thinking and testing for this set...
 function aftercast(spell)
 	equip_current()
 end
 
 
-
-
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
@@ -485,13 +489,16 @@ function status_change()
 end
 	
 
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
 function self_command(command)
-	if command == 'C8' then -- Toggling Weapons--	
+	if command == 'C8' then 
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
 		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
-	elseif command == 'reverse Weapon set' then --Reverse Toggling of Weapons
+	elseif command == 'reverse Weapon set' then 
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
 		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
