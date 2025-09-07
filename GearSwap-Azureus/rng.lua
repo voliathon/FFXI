@@ -138,7 +138,19 @@ function get_sets()
 	})
 	
 	sets.engaged.Movement = set_combine(sets.engaged.Tank, {
-		left_ring="Shneddick Ring"
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Amini Glove. +3",
+		legs="Amini Bragues +3",
+		feet="Malignance Boots",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Sherida Earring",
+		right_ear="Amini Earring +1",
+		left_ring="Shneddick Ring",
+		right_ring="Defending Ring",
+		back=BelenusCape.double_atk	
+
 	})
 	
 	

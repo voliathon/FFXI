@@ -143,7 +143,19 @@ function get_sets()
 	}	
 
 	sets.engaged.Movement = set_combine(sets.engaged.Tank, {
-		left_ring="Shneddick ring"
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Skulk. Armlets +2",
+		legs="Skulk. Culottes +3",
+		feet="Skulk. Poulaines +3",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Infused Earring",
+		right_ear="Eabani Earring",
+		left_ring="Shneddick ring",
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}	
 	})
   	
 
