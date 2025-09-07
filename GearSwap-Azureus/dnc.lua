@@ -21,13 +21,18 @@ function get_sets()
 -- Set macro book/set --
     send_command('input /macro book 2;wait .1;input /macro set 1') -- set macro book/set here	
 	
-	-- Binds for switching weapon modes
-    send_command('bind !f8 gs c toggle weapon set')
-	send_command('bind ^f8 gs c reverse weapon set')
-	
-	-- Binds for switching gear sets
-    send_command('bind !f9 gs c toggle engage set')
-	send_command('bind ^f9 gs c reverse engage set')
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind !f8 gs c C8') 
+	send_command('bind ^f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 
 	
 	-- Job Abilities Sets --
@@ -36,7 +41,7 @@ function get_sets()
 		head="Horos Tiara +3", --Waltz Potency +15%
 		body="Maxixi Casaque +3", --Waltz Potency +19%, Waltz Received Potency +8%, Waltz Recast -2 
 		legs="Dashing subligar", --Waltz Potency +10% 
-		feet="Maxixi Toe Shoes +3", --Waltz Potency +14%
+		feet="Maxixi Toe Shoes +4", --Waltz Potency +14%
 		neck="Etoile Gorget +2",
 		ammo="Yamarang", --Waltz Potency +5% 
 		back="Toetapper Mantle" --Waltz Potency +5%
@@ -59,7 +64,7 @@ function get_sets()
 	
 	sets.JA.Jig = {
 		legs="Horos Tights +4", --50%
-		feet="Maxixi Toe Shoes +3" --50%
+		feet="Maxixi Toe Shoes +4" --50%
 	}
 	
 	sets.JA.FeatherStep  = {
@@ -94,12 +99,28 @@ function get_sets()
 	
 	sets.AnimatedFlourish = {} --Add enmity gear? idk Probably it is provoke after all
 	
-	-- equipment Sets Toggle-- Ctrl+F9  or Alt+F9
-    sets.equipment = {}
-    sets.equipment.index = {"Movement","Tank","TP","Accuracy","TreasureHunter"}
-	equipment_ind = 1
+	sets.Fastcast = {
+		ammo="Staunch Tathlum +1",
+		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
+		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
+		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
+		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
+		neck="Voltsurge Torque",
+		waist="Kasiri Belt",
+		left_ear="Loquac. Earring",
+		right_ear="Halasz Earring",
+		left_ring="Lebeche Ring",
+		right_ring="Defending Ring",
+		back="Null shawl"	
+	}	
+	
+	-- Engaged Sets Toggle-- Ctrl+F9  or Alt+F9
+    sets.engaged = {}
+    sets.engaged.index = {"TP","Tank","Movement","TreasureHunter","Accuracy"}
+	engaged_ind = 1
 
-	sets.equipment.TP = {
+	sets.engaged.TP = {
 		ammo="Coiste Bodhar",
 		head="Blistering sallet +1",
 		body="Horos Casaque +4",
@@ -115,39 +136,7 @@ function get_sets()
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}
 	
-	sets.equipment.Accuracy =  {
-		ammo="Yamarang",
-		head="Maculele Tiara +3",
-		body="Maculele casaque +3",
-		hands="Malignance gloves",
-		legs="Maculele Tights +3",
-		feet="Macu. Toe Sh. +3",
-		neck="Null loop",
-		waist="Null belt",
-		left_ear="Telos Earring",
-		right_ear="Maculele Earring +1",
-		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-		back="Null shawl"
-	}
-
-	sets.equipment.Tank = {
-		ammo="Yamarang",
-		head="Null Masque",
-		body="Macu. Casaque +3",
-		hands="Macu. Bangles +3",
-		legs="Maculele Tights +3",
-		feet="Macu. Toe Sh. +3",
-		neck={ name="Bathy Choker +1", augments={'Path: A',}},
-		waist="Null Belt",
-		left_ear="Infused Earring",
-		right_ear="Eabani Earring",
-		left_ring="Defending Ring",
-		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-		back="Null Shawl"
-	}
-	 
- 	sets.equipment.Movement = {
+ 	sets.engaged.Movement = {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Maculele casaque +3",
@@ -163,7 +152,39 @@ function get_sets()
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}	
 	
-    sets.equipment.TreasureHunter = {
+	sets.engaged.Tank = {
+		ammo="Yamarang",
+		head="Null Masque",
+		body="Macu. Casaque +3",
+		hands="Macu. Bangles +3",
+		legs="Maculele Tights +3",
+		feet="Macu. Toe Sh. +3",
+		neck={ name="Bathy Choker +1", augments={'Path: A',}},
+		waist="Null Belt",
+		left_ear="Infused Earring",
+		right_ear="Eabani Earring",
+		left_ring="Defending Ring",
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back="Null Shawl"
+	}
+
+	sets.engaged.Accuracy =  {
+		ammo="Yamarang",
+		head="Maculele Tiara +3",
+		body="Maculele casaque +3",
+		hands="Malignance gloves",
+		legs="Maculele Tights +3",
+		feet="Macu. Toe Sh. +3",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Telos Earring",
+		right_ear="Maculele Earring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back="Null shawl"
+	}
+
+    sets.engaged.TreasureHunter = {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Volte Jupon",
@@ -178,6 +199,29 @@ function get_sets()
 		right_ring="Fortified Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%'}}
 	}	
+	
+	
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'Craft', 'Fishing'}
+	idle_ind = 1      
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		hands="Goldsmith's Cuffs",
+		left_ring="Craftmaster's Ring",
+		right_ring="Craftkeeper's ring",
+		back="Shaper's Shawl"
+	})
+
+	sets.idle.Fishing = {
+		hands="Fisherman's cuffs",
+		left_ring="Shneddick Ring",
+		right_ring="Duck ring",
+		waist="Fisherman's ring",
+		range="Ebisu Fishing rod"
+	}  	
+	
 	
  -- Weapon Skill Sets
 	-- 	80% DEX for Rudra 60% DEX for Mandalic Stab
@@ -247,24 +291,7 @@ function get_sets()
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%'}}	
 	})
 	
- -- Precast Sets  --
-	sets.precast = {}
-	sets.precast.Fastcast = {
-		ammo="Staunch Tathlum +1",
-		head={ name="Herculean Helm", augments={'Magic dmg. taken -3%','CHR+2','Weapon skill damage +8%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}},
-		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
-		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
-		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
-		feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
-		neck="Voltsurge Torque",
-		waist="Kasiri Belt",
-		left_ear="Loquac. Earring",
-		right_ear="Halasz Earring",
-		left_ring="Lebeche Ring",
-		right_ring="Defending Ring",
-		back="Null shawl"	
-	}		
-	
+
  -- Weapon Toggle--  Ctrl+F8 or Alt+F8
   sets.weapon = {}
   sets.weapon.index = {'TerpsichoreTwashtar','TerpsichoreCentovente','TerpsichoreGleti','AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TwashtarGleti', 'TauretCentovente', 'TauretCrepuscularKnife'}
@@ -378,7 +405,7 @@ function precast(spell,action)
 	end
 	-- Ninja Spells --
 	if spell.skill == 'Ninjutsu' then
-	    equip(sets.precast.Fastcast)
+	    equip(sets.Fastcast)
 	end	
 end	
 
@@ -392,44 +419,68 @@ end
 
 
 function equip_current()
-	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
-	equip(sets.equipment[sets.equipment.index[equipment_ind]])
+	equip_weapon() 
+	status_change()
 	if (buffactive['Climactic Flourish']) then
 		equip({head="Maculele Tiara +3"})
 	end
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
+
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
+	end
+end
+	
+
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
 function self_command(command)
-	if command =='toggle weapon set' then
-		weapon_ind = weapon_ind -1
-		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse weapon set' then
+	if command == 'C8' then 
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	elseif command == 'toggle engage set' then
-		equipment_ind = equipment_ind -1
-		if equipment_ind == 0 then equipment_ind = #sets.equipment.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.equipment.index[equipment_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse engage set' then
-		equipment_ind = equipment_ind +1
-		if equipment_ind > #sets.equipment.index then equipment_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.equipment.index[equipment_ind]..' ----->')
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	end
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	end	 
 end
 
 
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies Baby Girl.  Daddy will not let this stand!')
+		send_command('@input /tell <me> Wakies Wakies my Campbellkitty. We hit 0 HP on accident. We shall live forever!!!')
 	end
 end)
