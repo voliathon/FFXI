@@ -141,7 +141,7 @@ function get_sets()
 	--MIDSHOT LOGIC OF DOOM
 	sets.midshot = {}
     sets.midshot.RA = set_combine(sets.engaged.Tank,{
-		head="Arcadian Beret +3",
+		head="Arcadian Beret +4",
 		body="Amini Caban +3",
 		hands="Amini Glove. +3",
 		legs="Amini Bragues +3",

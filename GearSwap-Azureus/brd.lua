@@ -27,19 +27,23 @@ function get_sets()
 	send_command('input /macro book 5;wait .1;input /macro set 1')
 
 	-- Binds for modes
-	-- Toggle Weapon F8 Key
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
 	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c Reverse Toggle Weapon')
+	send_command('bind ^f8 gs c reverse Weapon set')
 
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
 	send_command('bind !f9 gs c C9')
 	send_command('bind ^f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 
 	-- Let's also initialize any Intarabus's Capes that we need to use 
 	IntarabusCapes()
 
 	-- Modes --
-	Marsyas = 'OFF' -- Toogle on/off the Marsyas and Gjallarhorn via ctrl + F8
+	Marsyas = 'OFF'
 
 	--Job Ability Sets--
 	sets.JA = {}
@@ -157,12 +161,6 @@ function get_sets()
 	main="Carnwenhan"
   })
   
-  -- Mordant Rime  70%CHR / 30% DEX
-  -- Evisceration   50% DEX  Critical Hits
-  -- Rudra's Storm  80% DEX  Dmg varies with TP
-  -- Exenterator  85% AGI w/ capped merits.  Duration of accuracy down varies with TP
-  -- Aeolian Edge  40% DEX / 40% INT  Dmg varies with TP
-
   -- Engaged Sets Toggle--
   sets.engaged = {}
   sets.engaged.index = {'TP', 'TakingLessPhysicalDamage', 'TakingLessMagicDamage', 'Accuracy', 'Refresh', 'Movement'}
@@ -252,6 +250,27 @@ function get_sets()
   sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
 	feet="Fili cothurnes +3"
   })
+  
+    
+  -- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+  sets.idle = {}
+  sets.idle.index = {'PDTMovement', 'Refresh', 'Craft'}
+  idle_ind = 1      
+  sets.idle.PDTMovement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
+	feet="Fili cothurnes +3"
+  })
+  
+  sets.idle.Refresh = set_combine(sets.engaged.Refresh,  {})
+  
+  --TODO Craft stuff here
+  sets.idle.Craft = set_combine(sets.engaged.PDTMovement,  {})  
+
+
+  -- Mordant Rime  70%CHR / 30% DEX
+  -- Evisceration   50% DEX  Critical Hits
+  -- Rudra's Storm  80% DEX  Dmg varies with TP
+  -- Exenterator  85% AGI w/ capped merits.  Duration of accuracy down varies with TP
+  -- Aeolian Edge  40% DEX / 40% INT  Dmg varies with TP
   
   --Weaponskill Sets--
   --Savage Blade
@@ -435,11 +454,7 @@ end
 
 --We need to do some thinking and testing for this set...
 function aftercast(spell)
-	if string.find(spell.english,'Warp') then
-		--do fuck all nothing
-	else
-		equip_current()
-	end
+	equip_current()
 end
 
 
@@ -453,36 +468,54 @@ end
 function equip_current()
 	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
+	status_change()
 end
 
 function equip_weapon()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
+	end
+end
+	
+
 function self_command(command)
 	if command == 'C8' then -- Toggling Weapons--	
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
-	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+	elseif command == 'reverse Weapon set' then --Reverse Toggling of Weapons
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
 	elseif command == 'C9' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
 	elseif command == 'reverse Engaged set' then
 		engaged_ind = engaged_ind -1
 		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
 	end	 
 end
 
