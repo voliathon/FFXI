@@ -12,13 +12,17 @@ function get_sets()
 	send_command('input /macro book 5;wait .1;input /macro set 1')
 
 	-- Binds for modes
-	-- Toggle Weapon F8 Key
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
 	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c Reverse Toggle Weapon')
+	send_command('bind ^f8 gs c reverse Weapon set')
 
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
 	send_command('bind !f9 gs c C9')
 	send_command('bind ^f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 
 	-- Let's also initialize any Intarabus's Capes that we need to use 
 	IntarabusCapes()
@@ -179,8 +183,8 @@ function get_sets()
     hands="Fili Manchettes +2",
     legs="Fili Rhingrave +2",
     feet="Fili cothurnes +2",
-    neck="Bard's charm +2",
-    waist="Null belt",
+    neck="Null loop",
+    waist="Eschan stone",
     left_ear="Telos Earring",
     right_ear="Fili Earring +1",
 	left_ring={name="Chirich Ring +1", bag="Wardrobe 1"},
@@ -196,11 +200,11 @@ function get_sets()
     hands="Fili Manchettes +2",
     legs="Fili Rhingrave +2",
     neck="Null loop",
-    waist="Null belt",
+    waist="Slipor Sash",
     left_ear="Infused Earring",
     right_ear="Eabani Earring",
     left_ring="Defending Ring",
-    right_ring="Fortified Ring",
+    right_ring="Warden's Ring",
     back=Intarabus.TP
   }
   
@@ -211,11 +215,11 @@ function get_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Null loop",
-    waist="Null belt",
+    waist="Slipor Sash",
     left_ear="Infused Earring",
     right_ear="Eabani Earring",
     left_ring="Defending Ring",
-    right_ring="Fortified ring",
+    right_ring="Warden's ring",
     back="Null shawl",
 	ammo="Coiste bodhar"
   }
@@ -237,8 +241,47 @@ function get_sets()
   }
   
   sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
-	feet="Fili Cothurnes +2"
+  	ammo="Coiste bodhar",
+    head="Fili calot +2",
+    body="Fili Hongreline +3",
+    hands="Fili Manchettes +2",
+    legs="Fili Rhingrave +2",
+	feet="Fili Cothurnes +2",
+    neck="Null loop",
+    waist="Slipor Sash",
+    left_ear="Infused Earring",
+    right_ear="Eabani Earring",
+    left_ring="Defending Ring",
+    right_ring="Warden's Ring",
+    back=Intarabus.TP
   })
+  
+
+  -- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+  sets.idle = {}
+  sets.idle.index = {'PDTMovement', 'Refresh', 'Craft'}
+  idle_ind = 1      
+  sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+  
+  sets.idle.Refresh = set_combine(sets.engaged.Refresh,  {
+  	feet="Fili cothurnes +3"
+  })
+  
+  sets.idle.Craft = set_combine(sets.engaged.Movement, {
+	sub="Bv. escutcheon",
+	hands="Tanner's gloves",
+	neck="Tanner's torque",
+	left_ring="Artificer's Ring"
+  })
+
+  -- sets.idle.Fishing = {
+	-- hands="Fisherman's cuffs",
+	-- left_ring="Shneddick Ring",
+	-- right_ring="Duck ring",
+	-- waist="Fisherman's ring",
+	-- range="Ebisu Fishing rod"
+  -- }  
+  
   
   --Weaponskill Sets--
   --Savage Blade
@@ -316,12 +359,12 @@ function precast(spell,abil)
 	if player.equipment.range == "empty" or player.equipment.sub == "empty" then
 		if spell.name == 'Honor March' then
 			equip(sets.FastCast,{range="Marsyas",ammo="empty"})
-			add_to_chat(158,'Marsyas Weapon: [ON]')
+			--add_to_chat(158,'Marsyas Weapon: [ON]')
 			Daurdabla = 'OFF'
 			Marsyas = 'ON'
 		else
 			equip(sets.FastCast,{range="Blurred harp",ammo="empty"})
-			add_to_chat(158,'Daurdabla Weapon: [ON]')
+			--add_to_chat(158,'Daurdabla Weapon: [ON]')
 			Daurdabla = 'ON'
 			Marsyas = 'OFF'
 		end
@@ -400,56 +443,64 @@ function midcast(spell)
 end
 
 
---We need to do some thinking and testing for this set...
 function aftercast(spell)
-	if string.find(spell.english,'Warp') then
-		--do fuck all nothing
-	else
-		equip_current()
-	end
+	equip_current()
 end
 
 
-
-
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
+	status_change()
 end
 
 function equip_weapon()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
+	end
+end
+	
+
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
 function self_command(command)
-	if command == 'C8' then -- Toggling Weapons--	
+	if command == 'C8' then 
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
-	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+	elseif command == 'reverse Weapon set' then 
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
 	elseif command == 'C9' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
 	elseif command == 'reverse Engaged set' then
 		engaged_ind = engaged_ind -1
 		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
 	end	 
 end
 
@@ -457,6 +508,6 @@ end
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-		send_command('@input /tell <me> Wakies Wakies my Campbellkitty. We hit 0 HP on accident. We shall live forever!!!')
+		send_command('@input /tell <me> Wake up Voreus')
 	end
 end)
