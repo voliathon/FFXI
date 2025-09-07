@@ -470,7 +470,6 @@ end
 
 
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
 	status_change()
 end
