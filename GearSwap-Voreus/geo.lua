@@ -13,19 +13,24 @@ function get_sets()
     send_command('input /macro book 5;wait .1;input /macro set 1')
 	
 	bonus = 0
-
-	-- Binds for switching weapon modes
-    send_command('bind !f8 gs c toggle weapon set')
-	send_command('bind ^f8 gs c reverse weapon set')
+	-- Default Disabled Burst unless set with F11
+	Burst = 'Disabled'	
 	
-	-- Binds for switching gear sets
-    send_command('bind !f9 gs c toggle engage set')
-	send_command('bind ^f9 gs c reverse engage set')
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind ^f8 gs c C8') 
+	send_command('bind !f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind ^f10 gs c C10') 
+	send_command('bind !f10 gs c reverse Idle set')
 	
 	-- Toggle Burst Mode
-	send_command('bind ^f10 gs c C10')
-	-- Default Disabled Burst unless set with F10
-	Burst = 'Disabled'	
+	send_command('bind ^f11 gs c C11')
 	
     -- Job Abilities for Geomancer --
     sets.Bolster = {body="Bagua tunic +4"}
@@ -46,8 +51,8 @@ function get_sets()
 		waist="Witful Belt",
 		left_ear="Loquac. Earring",
 		right_ear="Malignance Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 
@@ -65,8 +70,8 @@ function get_sets()
 		neck="Incanter's torque",
 		left_ear="Malignance Earring",
 		right_ear="Azimuth earring +1",
-		left_ring="Stikini ring +1",
-		right_ring="Stikini ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
         back="Lifestream cape"
 	}
 
@@ -90,8 +95,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Loquac. Earring",
 		right_ear="Mimir Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Fi Follet Cape +1", augments={'Path: A',}}
 	}
 
@@ -153,7 +158,7 @@ function get_sets()
 		left_ear="Malignance Earring",
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Damage taken-4%',}},
 		left_ring="Evanescence Ring",
-		right_ring="Stikini Ring +1",
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 
@@ -169,7 +174,7 @@ function get_sets()
 		left_ear="Malignance Earring",
 		right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+13','Damage taken-4%',}},
 		left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
-		right_ring="Stikini Ring +1",
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Aurist's Cape +1", augments={'Path: A',}}
 	}
 
@@ -184,8 +189,13 @@ function get_sets()
 		back="Lifestream cape"	
 	})
 
+	-- Engaged Sets Toggle--
+	sets.engaged = {}
+	sets.engaged.index = {'PDT', 'PetDT', 'Refresh', 'TP', 'Accuracy', 'Movement'}
+	engaged_ind = 1  
+
 	-- PDT Set
-    sets.PDT = {
+    sets.engaged.PDT = {
 		head="Azimuth Hood +3",
 		body="Nyame mail",
 		hands="Azimuth gloves +3",
@@ -196,11 +206,43 @@ function get_sets()
 		left_ear="Ammurapi Earring",
 		right_ear="Infused Earring",
 		left_ring="Fortified Ring",
-		right_ring="Stikini Ring +1",
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	}
 
-	sets.TP = set_combine(sets.PDT,  {
+    -- .Pet sets are for when Luopan is present.
+    sets.engaged.PetDT = {
+		head="Azimuth Hood +3",
+		body={ name="Telchine Chas.", augments={'Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -3%',}},
+		hands="Geo. Mitaines +4",
+		legs={ name="Telchine Braconi", augments={'Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
+		feet={ name="Bagua Sandals +4", augments={'Enhances "Radial Arcana" effect',}},
+		neck="Null Loop",
+		waist="Isa Belt",
+		left_ear="Digni. Earring",
+		right_ear="Infused Earring",
+		left_ring="Shneddick Ring",
+		right_ring="Stikini Ring +1",
+		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
+	}
+	
+	sets.engaged.Refresh = set_combine(sets.engaged.PDT,  {
+		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
+		head="Befouled Crown",
+		body="Azimuth coat +3",
+		hands="Bagua mitaines +4",
+		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
+		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
+		neck="Sanctity Necklace",
+		waist="Fucho-no-Obi",
+		left_ear="Ammurapi Earring",
+		right_ear="Infused Earring",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
+		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
+	})	
+	
+	sets.engaged.TP = set_combine(sets.engaged.PDT,  {
 		ammo="Crepuscular Pebble",
 		head={ name="Blistering Sallet +1", augments={'Path: A',}},
 		body={ name="Nyame Mail", augments={'Path: B',}},
@@ -215,25 +257,24 @@ function get_sets()
 		right_ring="Chirich Ring +1",
 		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
 	})
-
-    -- .Pet sets are for when Luopan is present.
-    sets.PetDT = {
+	
+	sets.engaged.Accuracy = {
 		head="Azimuth Hood +3",
-		body={ name="Telchine Chas.", augments={'Mag. Evasion+25','Pet: "Regen"+3','Pet: Damage taken -3%',}},
-		hands="Geo. Mitaines +4",
-		legs={ name="Telchine Braconi", augments={'Mag. Evasion+22','Pet: "Regen"+3','Pet: Damage taken -4%',}},
-		feet={ name="Bagua Sandals +4", augments={'Enhances "Radial Arcana" effect',}},
-		neck="Null Loop",
-		waist="Isa Belt",
+		body="Azimuth coat +3",
+		hands="Azimuth gloves +3",
+		legs="Azimuth tights +3",
+		feet="Azimuth gaiters +3",
+		neck="Null loop",
+		waist="Null Belt",
 		left_ear="Digni. Earring",
-		right_ear="Infused Earring",
-		left_ring="Shneddick Ring",
-		right_ring="Stikini Ring +1",
-		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
-	}
+		right_ear="Crep. Earring",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		back="Null shawl"	
+	}	
 
 	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {
+    sets.engaged.Movement = {
 		head="Azimuth Hood +3",
 		body="Shamash robe",
 		hands="Azimuth gloves +3",
@@ -244,26 +285,30 @@ function get_sets()
 		left_ear="Ammurapi Earring",
 		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
-		right_ring="Stikini Ring +1",
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%'}}
 	}
     
-	sets.Refresh = set_combine(sets.PDT,  {
-		range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
-		head="Befouled Crown",
-		body="Azimuth coat +3",
-		hands="Bagua mitaines +4",
-		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11',}},
-		feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8',}},
-		neck="Sanctity Necklace",
-		waist="Fucho-no-Obi",
-		left_ear="Ammurapi Earring",
-		right_ear="Infused Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back={ name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Damage taken-5%',}}
-	})
+
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'RefreshMovement', 'PureRefresh', 'Craft'}
+	idle_ind = 1      
 	
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.RefreshMovement = set_combine(sets.engaged.Refresh,  {
+		left_ring="Shneddick ring"
+	})
+
+	sets.idle.PureRefresh = set_combine(sets.engaged.Refresh,  { })
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		sub="Bv. escutcheon",
+		hands="Tanner's gloves",
+		neck="Tanner's torque",
+		left_ring="Artificer's Ring"
+	})	
 	
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
@@ -302,30 +347,6 @@ function get_sets()
 		back="Null shawl"	 
 	 }
 	  
-    -- Engaged Sets Toggle--
-	sets.engaged = {}
-	sets.engaged.index = {'TP','Movement','PETDT', 'TakingLessPhysicalDamage', 'Accuracy', 'Refresh'}
-	engaged_ind = 1  	 
-	 
-    sets.engaged.TP = set_combine(sets.TP, {})
-	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.PETDT = set_combine(sets.PetDT, {})
-	sets.engaged.TakingLessPhysicalDamage = set_combine(sets.PDT, {})
-	sets.engaged.Accuracy = {
-		head="Azimuth Hood +3",
-		body="Azimuth coat +3",
-		hands="Azimuth gloves +3",
-		legs="Azimuth tights +3",
-		feet="Azimuth gaiters +3",
-		neck="Null loop",
-		waist="Null Belt",
-		left_ear="Digni. Earring",
-		right_ear="Crep. Earring",
-		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
-		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
-		back="Null shawl"	
-	}
-	sets.engaged.Refresh = set_combine(sets.Refresh, {})
 	 
 	--Weapon Sets--
 	sets.weapon = {}
@@ -413,51 +434,67 @@ function midcast(spell)
 	end	
 end
 
---We need to do some thinking and testing for this set...
 function aftercast(spell)
 	equip_current()
 end
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'Tank' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a  Tank, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+
 function equip_current()
-	equip(sets.weapon[sets.weapon.index[weapon_ind]]) 
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
+	equip_weapon()
+	status_change()
 end
 
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
 
---Function use for Changing the Weapon Set.  Ctrl+F8 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
+	end
+end
+	
 
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
+--F11 --> BURST Mode
+--F12 --> Occult Acumen
 function self_command(command)
-	if command =='toggle weapon set' then
-		weapon_ind = weapon_ind -1
-		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse weapon set' then
+	if command == 'C8' then 
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()
-	elseif command == 'toggle engage set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse engage set' then
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
 	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	elseif command == 'C11' then
 		if Burst == 'Disabled' then 
 			Burst = 'Enabled'
 		else
@@ -465,12 +502,14 @@ function self_command(command)
 		end
 		send_command('@input /echo <----- Burst Mode changed to '..Burst..' ----->')
 	end	 
+--Consider Occult Acumen in the future here	
 end
+
 
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-		send_command('@input /tell <me> Wakies Wakies my baby Bear. We hit 0 HP on accident. We shall live forever!!!')
+		send_command('@input /tell <me> Wake up Voreus!')
 	end
 end)
 
