@@ -69,8 +69,8 @@ function get_sets()
 		waist="Embla Sash",
 		left_ear="Mimir Earring",
 		right_ear="Lethargy Earring +1",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back=RedMageCapes.FastCast
 	}
 	
@@ -80,8 +80,8 @@ function get_sets()
 		ammo="Homiliary",
 		head="Vitiation chapeau +4",
 		waist="Fucho-no-obi",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
+		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"}
 	})
 
 	sets.Enspell = set_combine(sets.Enhancing,  {
@@ -161,7 +161,7 @@ function get_sets()
 		left_ear="Snotra Earring",
 		right_ear="Vor Earring",
 		left_ring="Kishar Ring",
-		right_ring="Stikini Ring +1",
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back=RedMageCapes.FastCast
 	})
 
@@ -272,8 +272,8 @@ function get_sets()
 		legs={ name="Merlinic Shalwar", augments={'DEX+2','Accuracy+14','"Refresh"+2','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
 	    feet={ name="Merlinic Crackows", augments={'INT+1','Pet: "Mag.Atk.Bns."+28','"Refresh"+2','Accuracy+8 Attack+8'}},
 		waist="Fucho-no-obi",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1"
+		left_ring={name="Stikini Ring +1", bag="Wardrobe"},
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"}		
 	})
 
     sets.engaged.Movement = {		
@@ -288,19 +288,23 @@ function get_sets()
 		left_ear="Sherida Earring",
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
 		left_ring="Shneddick Ring",
-		right_ring="Stikini Ring +1",
+		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back=RedMageCapes.TP		
 	}
 
 
 	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
 	sets.idle = {}
-	sets.idle.index = {'PDTMovement', 'Refresh', 'Craft'}
+	sets.idle.index = {'PDTMovement', 'RefreshMovement', 'PureRefresh', 'Craft'}
 	idle_ind = 1      
 	
 	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
 
-	sets.idle.Refresh = set_combine(sets.engaged.RefreshSelf,  { })
+	sets.idle.RefreshMovement = set_combine(sets.engaged.RefreshSelf,  {
+		left_ring="Shneddick ring"
+	})
+
+	sets.idle.PureRefresh = set_combine(sets.engaged.RefreshSelf,  { })
 
 	sets.idle.Craft = set_combine(sets.engaged.Movement, {
 		sub="Bv. escutcheon",

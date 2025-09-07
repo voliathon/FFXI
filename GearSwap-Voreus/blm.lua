@@ -248,7 +248,7 @@ function get_sets()
 	})
 
 	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.engaged.Movement = set_combine(sets.engaged.PDT,  {
+    sets.engaged.Movement = {
 		ammo="Impatiens",
 		head="Wicce Petasos +3",
 		body={ name="Nyame Mail", augments={'Path: B',}},
@@ -263,7 +263,7 @@ function get_sets()
 		right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
 		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}	
 
-	})
+	}
 
 	sets.engaged.TP = set_combine(sets.engaged.PDT,  {
 		ammo="Oshasha's Treatise",
@@ -571,13 +571,6 @@ end
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
 		send_command('@input /tell <me> Wake up Voreus!')
-	end
-end)
-
--- Send tell to self if I died --
-windower.register_event('status change', function()
-	if player.status == 'Dead' then
-		send_command('@input /tell <me> We shall live forever!!!  It is time to get back up and try again')
 	end
 end)
 
