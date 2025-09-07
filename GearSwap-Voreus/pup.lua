@@ -16,7 +16,9 @@ function get_sets()
     send_command('input /macro book 2;wait .1;input /macro set 1')
 	send_command('bind !f8 gs c C8') 
 	send_command('bind ^f8 gs c Reverse Toggle Weapon')
-	send_command('bind ^f9 gs c C9') 
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse engaged set')
+	
 	
 	-- Precast Gear Sets
     -- The sets defined under sets.precast are for various abilities, and the script swaps gear depending on the spell or ability being used, like:
@@ -410,69 +412,32 @@ windower.register_event('status change', function()
 end)
 
 
--- local last_pet_tp = 0 -- Store the last known TP value
+-- This function runs several times per second. Perfect for monitoring things like TP.
+-- job_tick() is a built in function that is part of Gearswap. Because this shit exists, Gearswap will run it.
+function job_tick()
+    if pet.isvalid and pet.status == 'Engaged' then
+        if pet.tp >= 950 then
+            send_command('@input /echo AUTO: Pet WS Engaged (TP='..pet.tp..')')
+            -- UPDATED LINE: Call our new logic function
+            equip(which_automaton_ws()) 
+            return
+    end
+    
+    return false
+end
 
--- windower.register_event('incoming chunk', function(id, data)
-    -- if id == 0x068 then -- Pet Update Packet
-        -- local packet = packets.parse('incoming', data)
-        -- if packet and packet['Pet TP'] then
-            -- local pet_tp = packet['Pet TP']
-            
-            -- -- Only process if TP crosses the 1000 threshold
-            -- --if pet_tp >= 1000 and last_pet_tp < 1000 then
-			-- if pet_tp >= 1000 then            
-				-- local automatonType = get_automaton_type()
-               -- send_command('@input /echo Automaton TP Threshold Reached! TP: ' .. tostring(pet_tp))
-               -- send_command('@input /echo Automaton Type: ' .. tostring(automatonType))
-
-                -- if automatonType == 'Ranger' then
-                   -- send_command('@input /echo Equipping Ranger WSD Gear.')
-                    -- equip(sets.PetWS.Arcuballista)
-                -- elseif automatonType == 'Melee' then
-                   -- send_command('@input /echo Equipping Melee WSD Gear.')
-                    -- equip(sets.PetWS.BoneCrusher)
-                -- elseif automatonType == 'Magic' then
-                   -- send_command('@input /echo Equipping Magic WSD Gear.')
-                    -- equip(sets.PetWS.MagicMortar)
-                -- else
-                   -- send_command('@input /echo No specific gear set found. Equipping current set.')
-                    -- equip_current()
-                -- end
-            -- elseif pet_tp < 1000 and last_pet_tp >= 1000 then
-               -- send_command('@input /echo Automaton TP dropped below 1000. Equipping normal set.')
-                -- equip_current()
-            -- end
-            
-            -- -- Update last known TP
-            -- last_pet_tp = pet_tp
-        -- else
-           -- send_command('@input /echo Invalid packet or missing Pet TP data.')
-        -- end
-    -- end -- End packet check
--- end)
 
 
 -- Function to determine the automaton type
-function get_automaton_type()
-    local head = pet.head
+function which_automaton_ws()
     local frame = pet.frame
-
-    if head == 'Sharpshot Head' or frame == 'Sharpshot Frame' then
-        return 'Ranger'
-    elseif head == 'Stormwaker Head' or frame == 'Stormwaker Frame' then
+    if frame == 'Sharpshot Frame' then
+        return equip()
+    elseif frame == 'Stormwaker Frame' then
         return 'Magic'
-    elseif head == 'Valoredge Head' or frame == 'Valoredge Frame' then
+    elseif frame == 'Valoredge Frame' then
         return 'Melee'
     else
         return 'Unknown'
     end
 end
-
-
-
--- TODO - WIP - Function to equip gear based on automaton magic casting
-function equip_magic_gear(spell)
-    equip(sets.PetWS.Nuke)
-    add_to_chat(123, 'Equipping Magic Gear for '..spell)
-end
-

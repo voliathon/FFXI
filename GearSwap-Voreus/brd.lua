@@ -28,25 +28,25 @@ function get_sets()
 
 	--Job Ability Sets--
 	sets.JA = {}
-	sets.JA.Nightingale = {feet="Bihu Slippers +3"}
-	sets.JA.Troubadour = {body="Bihu Justaucorps +4"}
-	sets.JA.SoulVoice = {legs="Bihu Cannions +3"}
+	sets.JA.Nightingale = {feet="Bihu Slippers +1"}
+	sets.JA.Troubadour = {body="Bihu Justaucorps +1"}
+	sets.JA.SoulVoice = {legs="Bihu Cannions +1"}
 	sets.JA.Waltz = {legs="Dashing subligar"}
 	
   --Fast Cast Set--
   sets.FastCast = {
     head="Bunzi's Hat",
-    body="Zendik Robe",
+    body="Inyanga jubbah +2",
     hands={ name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Song spellcasting time -4%'}},
     legs="Aya. Cosciales +2",
-    feet="Fili cothurnes +3",
+    feet="Fili cothurnes +2",
     neck="Voltsurge Torque",
     waist="Embla Sash",
-    left_ear="Mendi. Earring",
+    left_ear="Etiolation Earring",
     right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Rahab Ring",
-    back=Intarabus.FASTCAST
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 1"},
+    right_ring="Kishar Ring",
+    back="Fi follet cape +1"
   }
   
   --Stoneskin Set
@@ -60,8 +60,8 @@ function get_sets()
     waist="Siegel Sash",
     left_ear="Earthcry Earring",
     right_ear="Loquac. Earring",
-    left_ring="Stikini Ring +1",
-    right_ring="Rahab Ring",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 1"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
     back=Intarabus.FASTCAST 
   }
  
@@ -76,30 +76,31 @@ function get_sets()
     waist={ name="Acuity Belt +1", augments={'Path: A',}},
     left_ear="Regal Earring",
     right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 1"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
     back={ name="Aurist's Cape +1", augments={'Path: A',}}
   }
   
   --Maximizing Song Potency first then duration-- 
   sets.Songs = {
 	main="Carnwenhan",
-    head="Brioso Roundlet +1",
-    body="Brioso Just. +1",
-    hands="Inyan. Dastanas +2",
+	sub="Kali",
+    head="Fili calot +2",
+    body="Fili Hongreline +3",
+    hands="Fili Manchettes +2",
     legs="Inyanga Shalwar +2",
     feet="Brioso Slippers +1",
     neck="Mnbw. whistle +1",
     waist="Witful Belt",
     left_ear="Loquac. Earring",
     right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
-    left_ring="Stikini Ring +1",
-    right_ring="Stikini Ring +1",
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 1"},
+	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
     back={ name="Fi Follet Cape +1", augments={'Path: A',}}
   }
   
   sets.Ballad = set_combine(sets.Songs, { 
-	legs="Fili Rhingrave +3"
+	legs="Fili Rhingrave +2"
   })
   
   sets.Cure = {
@@ -133,12 +134,12 @@ function get_sets()
   }
 
   sets.Sleep = set_combine(sets.MagicAccuracy, { 
-    head="Fili calot +3",
-	hands="Brioso Cuffs +1",
-	body="Brioso Justaucorps +1",
-	feet="Brioso Slippers +1",
+    head="Fili calot +2",
+	hands="Fili manchettes +2",
+	body="Fili Hongreline +3",
+	feet="Fili cothurnes +2",
 	legs="Inyanga Shalwar +2",
---	range="Daurdabla",
+	range="Blurred harp",
 	main="Carnwenhan"
   })
   
@@ -173,16 +174,16 @@ function get_sets()
   --Accuracy Set--
   sets.engaged.Accuracy = {
   	ammo="Coiste bodhar",
-    head="Fili calot +3",
+    head="Fili calot +2",
     body="Fili Hongreline +3",
-    hands="Fili Manchettes +3",
-    legs="Fili Rhingrave +3",
-    feet="Fili cothurnes +3",
+    hands="Fili Manchettes +2",
+    legs="Fili Rhingrave +2",
+    feet="Fili cothurnes +2",
     neck="Bard's charm +2",
     waist="Null belt",
     left_ear="Telos Earring",
     right_ear="Fili Earring +1",
-	left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+	left_ring={name="Chirich Ring +1", bag="Wardrobe 1"},
 	right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
     back="Null shawl",
 	range="Linos"
@@ -190,11 +191,11 @@ function get_sets()
   
   sets.engaged.TakingLessPhysicalDamage = {
   	ammo="Coiste bodhar",
-    head="Fili Calot +3",
+    head="Fili calot +2",
     body="Fili Hongreline +3",
-    hands="Fili Manchettes +3",
-    legs="Fili Rhingrave +3",
-    neck={ name="Bard's Charm +2", augments={'Path: A',}},
+    hands="Fili Manchettes +2",
+    legs="Fili Rhingrave +2",
+    neck="Null loop",
     waist="Null belt",
     left_ear="Infused Earring",
     right_ear="Eabani Earring",
@@ -206,7 +207,7 @@ function get_sets()
   sets.engaged.TakingLessMagicDamage = {
     head="Nyame Helm",
     body="Nyame Mail",
-    hands="Fili Manchettes +3",
+    hands="Fili Manchettes +2",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Null loop",
@@ -229,14 +230,14 @@ function get_sets()
     waist="Fucho-no-Obi",
     left_ear="Infused Earring",
     right_ear="Fili Earring +1",
-	left_ring={name="Stikini Ring +1", bag="Wardrobe 3"},
+	left_ring={name="Stikini Ring +1", bag="Wardrobe 1"},
 	right_ring={name="Stikini Ring +1", bag="Wardrobe 5"},
     back="Null shawl",
 	ammo="Coiste bodhar"
   }
   
   sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
-	right_ring="Shneddick ring"
+	feet="Fili Cothurnes +2"
   })
   
   --Weaponskill Sets--
@@ -319,7 +320,7 @@ function precast(spell,abil)
 			Daurdabla = 'OFF'
 			Marsyas = 'ON'
 		else
-			equip(sets.FastCast,{range="Daurdabla",ammo="empty"})
+			equip(sets.FastCast,{range="Blurred harp",ammo="empty"})
 			add_to_chat(158,'Daurdabla Weapon: [ON]')
 			Daurdabla = 'ON'
 			Marsyas = 'OFF'
@@ -333,9 +334,9 @@ function precast(spell,abil)
 	
 	if spell.type == 'BardSong' then
 		if spell.name == 'Honor March' then
-			equip(sets.FastCast,{main="Carnwenhan",range="Marsyas",ammo="empty"})
+			equip(sets.FastCast,{main="Carnwenhan",sub="Kali",range="Marsyas",ammo="empty"})
 		elseif  player.equipment.ammo == "Coiste bodhar" then
-			equip(sets.FastCast,{range="Marsyas",ammo="empty"})
+			equip(sets.FastCast,{main="Carnwenhan",sub="Kali",range="Marsyas",ammo="empty"})
 			--Eventually this will be Daurdable or 3 song harp
 		end		
 	end
@@ -358,7 +359,7 @@ function precast(spell,abil)
 		equip(sets.WSD)
 	end
 
-  	if string.find(spell.english,'Warp') then 
+  	if string.find(spell.english,'Warp') or string.find(spell.english,'Tele') then 
 		--DO NOTHING
 	end
   
@@ -389,7 +390,7 @@ function midcast(spell)
 	if spell.name == 'Cursna' then
 		equip(sets.Cursna)
 	end
-	if string.find(spell.english,'Warp') then 
+  	if string.find(spell.english,'Warp') or string.find(spell.english,'Tele') then 
 		--DO NOTHING
 	end
 	--Enhancing Magic Check
