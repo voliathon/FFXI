@@ -600,7 +600,7 @@ function midcast(spell)
 	
 end
 
---We need to do some thinking and testing for this set...
+
 function aftercast(spell)
 	equip_current()
 end
