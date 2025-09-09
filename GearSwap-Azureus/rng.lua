@@ -375,97 +375,90 @@ function precast(spell,abil)
 		end
 	end
 
-	--Weapon skill lookups	
-    if spell.name == "Wildfire" or spell.name == "Hot Shot" then
-        if buffactive[178] or buffactive[589] then  -- Firestorm / Firestorm II
-            send_command('@input /echo Firestorm detected! Equipping Hachirin-no-Obi.')
-            equip(sets.Wildfire.Obi)
-        else
-            local target = windower.ffxi.get_mob_by_target("t")
-            
-            if target and target.distance then
-                local dist = target.distance / 2  -- Convert squared distance to yalms
-
-                if dist <= 3 then  -- Close range (Orpheus Sash gets higher than 10% bonus)
-                    send_command('@input /echo Close range detected! Equipping Orpheus Sash.')
-                    equip(sets.Wildfire.Sash)
-                else
-                    send_command('@input /echo No storm effect detected. Equipping Fotia Belt for TP bonus.')
-                    equip(sets.Wildfire)
-                end
-            end
-        end
-    end
-
+	--Monk Weapon Skills
+    if spell.type == 'WeaponSkill' then	
 	
-    if spell.name == "Trueflight" then
-        if buffactive[184] or buffactive[595] then  -- Aurorastorm / Aurorastorm II
-            send_command('@input /echo Aurorastorm detected! Equipping Hachirin-no-Obi.')
-            equip(sets.Trueflight.Obi)
-        else
-            local target = windower.ffxi.get_mob_by_target("t")
-            
-            if target and target.distance then
-                local dist = target.distance / 2  -- Convert squared distance to yalms
+		if spell.name == "Wildfire" or spell.name == "Hot Shot" then
+			if buffactive[178] or buffactive[589] then  -- Firestorm / Firestorm II
+				send_command('@input /echo Firestorm detected! Equipping Hachirin-no-Obi.')
+				equip(sets.Wildfire.Obi)
+			else
+				local target = windower.ffxi.get_mob_by_target("t")
+				
+				if target and target.distance then
+					local dist = target.distance / 2  -- Convert squared distance to yalms
 
-                if dist <= 3 then  -- Close range (Orpheus Sash gets higher than 10% bonus)
-                    send_command('@input /echo Close range detected! Equipping Orpheus Sash.')
-                    equip(sets.Trueflight.Sash)
-                else
-                    send_command('@input /echo No storm effect detected. Equipping Fotia Belt for TP bonus.')
-                    equip(sets.Trueflight)
-                end
-            end
-        end
-    end
+					if dist <= 3 then  -- Close range (Orpheus Sash gets higher than 10% bonus)
+						send_command('@input /echo Close range detected! Equipping Orpheus Sash.')
+						equip(sets.Wildfire.Sash)
+					else
+						send_command('@input /echo No storm effect detected. Equipping Fotia Belt for TP bonus.')
+						equip(sets.Wildfire)
+					end
+				end
+			end
+		elseif spell.name == "Trueflight" then
+			if buffactive[184] or buffactive[595] then  -- Aurorastorm / Aurorastorm II
+				send_command('@input /echo Aurorastorm detected! Equipping Hachirin-no-Obi.')
+				equip(sets.Trueflight.Obi)
+			else
+				local target = windower.ffxi.get_mob_by_target("t")
+				
+				if target and target.distance then
+					local dist = target.distance / 2  -- Convert squared distance to yalms
 
-
-	if spell.name == "Coronach" or spell.name == "Empyreal Arrow" then
-		equip(sets.Coronach)
-	end
-	
-	if spell.name == "Last Stand" then
-		equip(sets.LastStand)
-	end
-	
-	if spell.name == "Jishnu's Radiance" then
-		equip(sets.Jishnu)
-	end	
-	
-	if spell.name == "Savage Blade" then
-		equip(sets.SavageBlade)
+					if dist <= 3 then  -- Close range (Orpheus Sash gets higher than 10% bonus)
+						send_command('@input /echo Close range detected! Equipping Orpheus Sash.')
+						equip(sets.Trueflight.Sash)
+					else
+						send_command('@input /echo No storm effect detected. Equipping Fotia Belt for TP bonus.')
+						equip(sets.Trueflight)
+					end
+				end
+			end
+		elseif spell.name == "Coronach" or spell.name == "Empyreal Arrow" then
+			equip(sets.Coronach)
+		elseif spell.name == "Last Stand" then
+			equip(sets.LastStand)
+		elseif spell.name == "Jishnu's Radiance" then
+			equip(sets.Jishnu)
+		elseif spell.name == "Savage Blade" then
+			equip(sets.SavageBlade)
+		end
 	end
 	
 	--Ranger Job Abilities
-	if spell.name == "Eagle Eye Shot" then
-		equip(sets.EagleEyeShot)
-	end
-	if spell.name == "Scavenge" then
-		equip(sets.Scavenge)
-	end
-	if spell.name == "Shadowbind" then
-		equip(sets.Shadowbind)
-	end
-	if spell.name == "Camouflage" then
-		equip(sets.Camouflage)
-	end
-	if spell.name == "Sharpshot" then
-		equip(sets.Sharpshot)
-	end
-	if spell.name == "Barrage" then
-		equip(sets.Barrage)
-	end
-	if spell.name == "Unlimited Shot" then
-		equip(sets.UnlimitedShot)
-	end	
-	if spell.name == "Velocity Shot" then
-		equip(sets.VelocityShot)
-	end
-	if spell.name == "Double Shot" then
-		equip(sets.midshot.RA.DoubleShot)
-	end
-	if spell.name == "Bounty Shot" then
-		equip(sets.BountyShot)
+	if spell.type == 'JobAbility' then
+		if spell.name == "Eagle Eye Shot" then
+			equip(sets.EagleEyeShot)
+		end
+		if spell.name == "Scavenge" then
+			equip(sets.Scavenge)
+		end
+		if spell.name == "Shadowbind" then
+			equip(sets.Shadowbind)
+		end
+		if spell.name == "Camouflage" then
+			equip(sets.Camouflage)
+		end
+		if spell.name == "Sharpshot" then
+			equip(sets.Sharpshot)
+		end
+		if spell.name == "Barrage" then
+			equip(sets.Barrage)
+		end
+		if spell.name == "Unlimited Shot" then
+			equip(sets.UnlimitedShot)
+		end	
+		if spell.name == "Velocity Shot" then
+			equip(sets.VelocityShot)
+		end
+		if spell.name == "Double Shot" then
+			equip(sets.midshot.RA.DoubleShot)
+		end
+		if spell.name == "Bounty Shot" then
+			equip(sets.BountyShot)
+		end
 	end
 	
 end

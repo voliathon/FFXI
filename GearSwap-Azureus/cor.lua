@@ -367,30 +367,27 @@ function precast(spell,abil)
 		equip(sets.Snapshot)
 	end
 
-	if spell.english == "Leaden Salute" and (world.weather_element == "Dark" or world.day_element == "Dark" or world.weather_element == "Darkness") then 
-		add_to_chat(125, "Hachirin-no-Obi has been equipped for this WS")
-		equip(sets.LeadenSaluteHachi)
-	elseif spell.english == "Leaden Salute" and spell.target.distance < 15 then 
-		equip(sets.LeadenSalute)
-	elseif spell.english == "Leaden Salute" then
-		set_combine(sets.LeadenSalute,{ waist = "Eschan stone"})
-	end
+	--Corsair Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.english == "Leaden Salute" and (world.weather_element == "Dark" or world.day_element == "Dark" or world.weather_element == "Darkness") then 
+			add_to_chat(125, "Hachirin-no-Obi has been equipped for this WS")
+			equip(sets.LeadenSaluteHachi)
+		elseif spell.english == "Leaden Salute" and spell.target.distance < 15 then 
+			equip(sets.LeadenSalute)
+		elseif spell.english == "Leaden Salute" then
+			set_combine(sets.LeadenSalute,{ waist = "Eschan stone"})
+		end
 
-	if spell.name == "Last Stand" then
-		equip(sets.LastStand)
-	end
-	if spell.name == "Wildfire" then
-		equip(sets.Wildfire)
-	end
-	if spell.name == "Savage Blade" then
-		equip(sets.SavageBlade)
-	end
-	
-	-- disabled cuz this was getting hit in divergence
-	
---	if spell.type == 'WeaponSkill' then
---		equip(sets.LastStand)
---	end
+		if spell.name == "Last Stand" then
+			equip(sets.LastStand)
+		elseif spell.name == "Wildfire" then
+			equip(sets.Wildfire)
+		elseif spell.name == "Savage Blade" then
+			equip(sets.SavageBlade)
+		else
+			equip(sets.SavageBlade)
+		end
+	end	
 
 	--Corsair Rolls	
 	if string.find(spell.english,'Blitzer') then
@@ -403,26 +400,23 @@ function precast(spell,abil)
 		equip(sets.CastersRoll)
 	elseif string.find(spell.english,'Courser') then
 		equip(sets.CoursersRoll)
-	end
-	if string.find(spell.english,'Roll') or spell.name == "Double-Up" then
+	elseif string.find(spell.english,'Roll') or spell.name == "Double-Up" then
 		equip(sets.CorsairRoll)
 	end
 	
 	--Corsair Job Abilities
-	if spell.name == "Random Deal" then
-		equip(sets.RandomDeal)
-	end
-	if spell.name == "Wild Card" then
-		equip(sets.WildCard)
-	end
-	if spell.name == "Snake Eye" then
-		equip(sets.SnakeEye)
-	end
-	if spell.name == "Fold" then
-		equip(sets.Fold)
-	end
-	if spell.name == "Triple Shot" then
-		equip(sets.midcast.RA.TripleShot)
+	if spell.type == 'JobAbility' then
+		if spell.name == "Random Deal" then
+			equip(sets.RandomDeal)
+		elseif spell.name == "Wild Card" then
+			equip(sets.WildCard)
+		elseif spell.name == "Snake Eye" then
+			equip(sets.SnakeEye)
+		elseif spell.name == "Fold" then
+			equip(sets.Fold)
+		elseif spell.name == "Triple Shot" then
+			equip(sets.midcast.RA.TripleShot)
+		end
 	end
 	
 end

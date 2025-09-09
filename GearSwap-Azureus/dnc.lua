@@ -292,117 +292,104 @@ function get_sets()
 	})
 	
 
- -- Weapon Toggle--  Ctrl+F8 or Alt+F8
-  sets.weapon = {}
-  sets.weapon.index = {'TerpsichoreTwashtar','TerpsichoreCentovente','TerpsichoreGleti','AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TwashtarGleti', 'TauretCentovente', 'TauretCrepuscularKnife'}
-  weapon_ind = 1     
-  
- sets.weapon.TerpsichoreTwashtar = {
-	main="Terpsichore",
-	sub="Twashtar"
- }
- sets.weapon.TerpsichoreCentovente = {
-	main="Terpsichore",
-	sub="Centovente"
- }
- sets.weapon.TerpsichoreGleti = {
-	main="Terpsichore",
-	sub="Gleti's knife"
- }  
- sets.weapon.AeneasCentovente = {
-	main="Aeneas",
-	sub="Centovente"
- }
- sets.weapon.AeneasTauret = {
-	main="Aeneas",
-	sub="Tauret"
- }  
- sets.weapon.TwashtarCentovente = {
-	main="Twashtar",
-	sub="Centovente"
- }  
- sets.weapon.TwashtarCrepuscularKnife = {
-	main="Twashtar",
-	sub="Crepuscular Knife"
- }  
- sets.weapon.TwashtarGleti = {
-	main="Twashtar",
-	sub="Gleti's knife"
- }  
-  sets.weapon.TauretCentovente = {
-	main="Tauret",
-	sub="Centovente"
- } 
- sets.weapon.TauretCrepuscularKnife = {
-	main="Tauret",
-	sub="Crepuscular Knife"
- } 
+	-- Weapon Toggle--  Ctrl+F8 or Alt+F8
+	sets.weapon = {}
+	sets.weapon.index = {'TerpsichoreTwashtar','TerpsichoreCentovente','TerpsichoreGleti','AeneasCentovente', 'AeneasTauret', 'TwashtarCentovente', 'TwashtarCrepuscularKnife', 'TwashtarGleti', 'TauretCentovente', 'TauretCrepuscularKnife'}
+	weapon_ind = 1     
+
+	sets.weapon.TerpsichoreTwashtar = {
+		main="Terpsichore",
+		sub="Twashtar"
+	}
+	sets.weapon.TerpsichoreCentovente = {
+		main="Terpsichore",
+		sub="Centovente"
+	}
+	sets.weapon.TerpsichoreGleti = {
+		main="Terpsichore",
+		sub="Gleti's knife"
+	}  
+	sets.weapon.AeneasCentovente = {
+		main="Aeneas",
+		sub="Centovente"
+	}
+	sets.weapon.AeneasTauret = {
+		main="Aeneas",
+		sub="Tauret"
+	}  
+	sets.weapon.TwashtarCentovente = {
+		main="Twashtar",
+		sub="Centovente"
+	}  
+	sets.weapon.TwashtarCrepuscularKnife = {
+		main="Twashtar",
+		sub="Crepuscular Knife"
+	}  
+	sets.weapon.TwashtarGleti = {
+		main="Twashtar",
+		sub="Gleti's knife"
+	}  
+	sets.weapon.TauretCentovente = {
+		main="Tauret",
+		sub="Centovente"
+	} 
+	sets.weapon.TauretCrepuscularKnife = {
+		main="Tauret",
+		sub="Crepuscular Knife"
+	} 
 end	
 	
 
 -- Precast Function --
 function precast(spell,action)
-    -- Dancer Abilities --
-    if string.find(spell.english, 'Waltz') then
-	    equip(sets.JA.Waltz)
+	-- Dancer Abilities --
+	if spell.type == 'JobAbility' then
+		if string.find(spell.english, 'Waltz') then
+			equip(sets.JA.Waltz)
+		elseif string.find(spell.english, 'Samba') then
+			equip(sets.JA.Samba)	
+		elseif spell.name == "Quickstep" or spell.name == "Box Step" or spell.name == "Stutter Step" then
+			equip(sets.JA.StepAccuracy)
+		elseif spell.name == "Feather Step" then
+			equip(sets.JA.FeatherStep) --This set also has StepAccuracy associated
+		elseif spell.name == "Spectral Jig" or spell.name == "Chocobo Jig" or spell.name == "Chocobo Jig II" then
+			equip(sets.JA.Jig)
+		elseif spell.name == "Violent Flourish" then
+			equip(sets.JA.ViolentFlourish)
+		elseif spell.name == "Reverse Flourish" then
+			equip(sets.JA.ReverseFlourish)
+		elseif spell.name == "Climactic Flourish" then  
+			equip(sets.JA.ClimacticFlourish)
+		elseif spell.name == "Striking Flourish" then -- +65% Critical Hit Rate for the main hit and Double Attack of the stacked attack round or Weapon Skill
+			equip(sets.JA.StrikingFlourish)
+		elseif spell.name == "Trance" then
+			equip(sets.JA.Trance)
+		elseif spell.name == "Fan Dance" then
+			equip(sets.JA.FanDance)
+		elseif spell.name == "No Foot Rise" then
+			equip(sets.JA.NoFootRise)
+		elseif spell.name == "Saber Dance" then
+			equip(sets.JA.SaberDance)
+		elseif spell.name == "Closed Position" then
+			equip(sets.JA.ClosedPosition)
+		end
 	end
-	if string.find(spell.english, 'Samba') then
-	    equip(sets.JA.Samba)	
+
+	--Dancer Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Pyrrhic Kleos" then
+			equip(sets.PyrrhicKleos)
+		elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
+			equip(sets.Rudra)
+		elseif spell.name == "Evisceration" then
+			equip(sets.Evisceration)
+		elseif spell.name == "Aeolian Edge" then
+			equip(sets.Aeolian)
+		else
+			equip(sets.Rudra)
+		end
 	end
-	if spell.name == "Quickstep" or spell.name == "Box Step" or spell.name == "Stutter Step" then
-		equip(sets.JA.StepAccuracy)
-	end
-	if spell.name == "Feather Step" then
-		equip(sets.JA.FeatherStep) --This set also has StepAccuracy associated
-	end
-	if spell.name == "Spectral Jig" or spell.name == "Chocobo Jig" or spell.name == "Chocobo Jig II" then
-		equip(sets.JA.Jig)
-	end
-	if spell.name == "Violent Flourish" then
-		equip(sets.JA.ViolentFlourish)
-	end	
-	if spell.name == "Reverse Flourish" then
-		equip(sets.JA.ReverseFlourish)
-	end	
-	if spell.name == "Climactic Flourish" then  
-		equip(sets.JA.ClimacticFlourish)
-	end
-	if spell.name == "Striking Flourish" then -- +65% Critical Hit Rate for the main hit and Double Attack of the stacked attack round or Weapon Skill
-		equip(sets.JA.StrikingFlourish)
-	end
-	if spell.name == "Trance" then
-		equip(sets.JA.Trance)
-	end	
-	if spell.name == "Fan Dance" then
-		equip(sets.JA.FanDance)
-	end	
-	if spell.name == "No Foot Rise" then
-		equip(sets.JA.NoFootRise)
-	end	
-	if spell.name == "Saber Dance" then
-		equip(sets.JA.SaberDance)
-	end	
-	if spell.name == "Closed Position" then
-		equip(sets.JA.ClosedPosition)
-	end	
-	-- Weapon Skill --
-	-- STR 40% DEX 40% Pyrrhic Kleos
-	if spell.name == "Pyrrhic Kleos" then
-		equip(sets.PyrrhicKleos)
-	end
-	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
-	-- 60% DEX Modifier Mandalic Stab
-    if spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
-		equip(sets.Rudra)
-	end
-		-- 50% DEX Modifier Evisceration / Crits per hits
-	if spell.name == "Evisceration" then
-		equip(sets.Evisceration)
-	end
-	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
-	if spell.name == "Aeolian Edge" then
-		equip(sets.Aeolian)
-	end
+	
 	-- Ninja Spells --
 	if spell.skill == 'Ninjutsu' then
 	    equip(sets.Fastcast)

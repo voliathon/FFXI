@@ -248,7 +248,19 @@ function get_sets()
   }
   
   sets.engaged.Movement = set_combine(sets.engaged.TakingLessPhysicalDamage,  {
-	feet="Fili cothurnes +3"
+    ammo="Staunch Tathlum +1",
+    head="Fili Calot +3",
+    body="Fili Hongreline +3",
+    hands="Fili Manchettes +3",
+    legs="Fili Rhingrave +3",
+	feet="Fili cothurnes +3",
+    neck={ name="Bard's Charm +2", augments={'Path: A',}},
+    waist="Null belt",
+    left_ear="Infused Earring",
+    right_ear="Eabani Earring",
+    left_ring="Defending Ring",
+    right_ring="Fortified Ring",
+    back=Intarabus.TP
   })
   
     
@@ -393,10 +405,6 @@ function precast(spell,abil)
 		
 	end
 	
-	if string.find(spell.english,'Waltz') then 
-		equip(sets.JA.Waltz)
-	end
-	
 	if spell.type == 'BardSong' then
 		if spell.name == 'Honor March' then
 			equip(sets.FastCast,{main="Carnwenhan",range="Marsyas",ammo="empty"})
@@ -404,29 +412,31 @@ function precast(spell,abil)
 			equip(sets.FastCast,{range="Daurdabla",ammo="empty"})
 		end		
 	end
-	if spell.name == 'Nightingale' then
-		equip(sets.JA.Nightingale)
-	end 
-	if spell.name == 'Troubadour' then
-		equip(sets.JA.Troubadour)
-	end
-	if spell.name == 'Soul Voice' then
-		equip(sets.JA.SoulVoice)
-	end
 
+	-- Bard Abilities --
+	if spell.type == 'JobAbility' then	
+		if string.find(spell.english,'Waltz') then 
+			equip(sets.JA.Waltz)
+		elseif spell.name == 'Nightingale' then
+			equip(sets.JA.Nightingale)
+		elseif spell.name == 'Troubadour' then
+			equip(sets.JA.Troubadour)
+		elseif spell.name == 'Soul Voice' then
+			equip(sets.JA.SoulVoice)
+		end
+	end
 	
-	--WS Lookups
-	if spell.name == "Savage Blade" then
-		equip(sets.SavageBlade)
+	--Bard Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Savage Blade" then
+			equip(sets.SavageBlade)
+		elseif spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
+			equip(sets.WSD)
+		else
+			equip(sets.WSD)
+		end
 	end
-	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
-		equip(sets.WSD)
-	end
-
-  	if string.find(spell.english,'Warp') then 
-		--DO NOTHING
-	end
-  
+  	
 	if spell.skill == 'Enhancing Magic' or 	string.find(spell.english,'Cur') then 
 		equip(sets.FastCast)
 	end

@@ -34,6 +34,7 @@ function get_sets()
 
 	--Job Ability Sets--
 	sets.JA = {}
+    sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}	
     sets.JA.BurstAffinity = {legs="Assimilator's shalwar +3",feet="Hashishin basmak +3"} 
     sets.JA.ChainAffinity = {feet="Assimilator's Charuqs +4", head="Hashishin kavuk +3"}
     sets.JA.Diffusion = {feet="Luhlaza Charuqs +1"}
@@ -437,43 +438,33 @@ function precast(spell,abil)
 		equip(sets.FastCast)
 	end
 
-	--WS Lookups
-	if spell.name == "Savage Blade" or spell.name == "Expiacion" then
-		equip(sets.WSD)
+	--Blue Mage Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Savage Blade" or spell.name == "Expiacion" then
+			equip(sets.WSD)
+		elseif spell.name == "Sanguine Blade" then
+			equip(sets.SanguineBlade)
+		elseif spell.name == "Chant du Cygne" then
+			equip(sets.ChantduCygne)
+		elseif spell.name == "Requiescat" then
+			equip(sets.Requiescat)
+		end
 	end
 	
-	if spell.name == "Sanguine Blade" then
-		equip(sets.SanguineBlade)
+	-- Blue Mage Abilities --
+	if spell.type == 'JobAbility' then
+		if spell.name == "Diffusion" then
+			equip(sets.JA.Diffusion)
+		elseif spell.name == "Chain Affinity" then
+			equip(sets.ChainAffinity)
+		elseif spell.name == "Burst Affinity" then
+			equip(sets.BurstAffinity)
+		elseif spell.name == "Efflux" then
+			equip(sets.Efflux)
+		elseif spell.name == "Assimilation" then
+			equip(sets.Assimilation)
+		end	
 	end
-	
-	if spell.name == "Chant du Cygne" then
-		equip(sets.ChantduCygne)
-	end
-	
-	if spell.name == "Requiescat" then
-		equip(sets.Requiescat)
-	end
-	
-	--JA Lookups
-	if spell.name == "Diffusion" then
-		equip(sets.JA.Diffusion)
-	end
-	
-	if spell.name == "Chain Affinity" then
-		equip(sets.ChainAffinity)
-	end
-	
-	if spell.name == "Burst Affinity" then
-		equip(sets.BurstAffinity)
-	end
-	
-	if spell.name == "Efflux" then
-		equip(sets.Efflux)
-	end
-	
-	if spell.name == "Assimilation" then
-		equip(sets.Assimilation)
-	end	
 	
 end
 
