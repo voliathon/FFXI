@@ -12,18 +12,24 @@ function NinjaCapes()
 end
 
 function get_sets()
-	--instantiate NinjaCapes fn()
-	NinjaCapes()
-	
+
 	-- Set macro book/set --
     send_command('input /macro book 6;wait .1;input /macro set 2')
 	
-	-- Binds for switching weapon modes
-    send_command('bind !f8 gs c toggle weapon set')
-	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching TP modes
-	send_command('bind !f9 gs c toggle TP set')
-	send_command('bind ^f9 gs c reverse TP set')
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind ^f8 gs c C8') 
+	send_command('bind !f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
+
+	NinjaCapes()
 
 	--Job Ability Sets--
 	sets.JA = {}
@@ -34,31 +40,90 @@ function get_sets()
 	sets.JA.MijinGakure = {legs="Mochizuki hakama +4"}
 	
 
-    
-	--TP Sets--
-	sets.TP = {}
-	--					  1		      2         3 		   4 		        5		     6   		     7		  8
-	sets.TP.index = {'Movement', 'TP', 'Hybrid', 'Accuracy', 'TreasureHunter', 'EvasionTank', 'BuckWildMode','DualWield'}
-	TP_ind = 1
-
-	sets.TP.Movement = {
+	--Fast Cast set
+	sets.FastCast = {
 		ammo="Staunch Tathlum +1",
-		head="Hattori Zukin +3",
-		body="Hattori Ningi +3",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
+		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
+		body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Taeon Tights", augments={'Evasion+21','Spell interruption rate down -10%','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
+		neck="Moonlight necklace",
+		waist="Audumbla Sash",
+		left_ear="Loquac. Earring",
+		right_ear="Magnetic Earring",
+		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		back="Solemnity Cape"
+	}
+	
+	sets.Utsusemi = set_combine(sets.FastCast,  {
+		body="Mochizuki chainmail +4",
 		feet="Hattori Kyahan +3",
-		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
-		waist="Null belt",
-		left_ear="Brutal Earring",
-		right_ear="Cryptic Earring",
-		left_ring="Shneddick Ring",
-		right_ring="Chirich Ring +1",
+		back=NinjaCapes.TP
+	})
+
+	sets.Migawari = set_combine(sets.FastCast,  {
+		feet="Hattori Ningi +3"
+	})
+
+	--Phalanx--  23
+	sets.Phalanx = {
+		ammo="Staunch Tathlum +1",
+		head="Futhark Bandeau +3",
+		body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3'}},
+		hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
+		legs={ name="Herculean Trousers", augments={'Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Pet: Accuracy+16 Pet: Rng. Acc.+16','Phalanx +4','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
+		feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
+		neck="Null loop",
+		waist="Siegel Sash",
+		left_ear="Magnetic Earring",
+		right_ear="Mimir Earring",
+		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.TP
 	}
 
+	sets.NUKE = {
+		ammo="Ghastly Tathlum +1",
+		head="Mochi. hatsuburi +4",
+		body="Nyame mail",
+		hands="Nyame gauntlets",
+		legs="Nyame Flanchard",
+		feet="Mochi. Kyahan +4",
+		neck="Sanctity Necklace",
+		waist="Orpheus's Sash",
+		left_ear="Hecate's Earring",
+		right_ear="Friomisi Earring",
+		left_ring="Metamorph ring +1",
+		right_ring="Locus Ring",
+		back=NinjaCapes.NUKE
+	}
+
+	sets.FutaeNuke = {
+		ammo="Ghastly Tathlum +1",
+		head="Mochi. hatsuburi +4",
+		body="Nyame mail",
+		hands="Hattori tekko +2",
+		legs="Nyame Flanchard",
+		feet="Mochi. Kyahan +4",
+		neck="Sanctity Necklace",
+		waist="Orpheus's Sash",
+		left_ear="Hecate's Earring",
+		right_ear="Friomisi Earring",
+		left_ring="Metamorph ring +1",
+		right_ring="Locus Ring",
+		back=NinjaCapes.NUKE	
+	}
+	
+    
+	--Engaged Sets--
+	sets.engaged = {}
+	sets.engaged.index = {'TP', 'Hybrid', 'Accuracy', 'TreasureHunter', 'EvasionTank', 'BuckWildMode','DualWield','Movement'}
+	engaged_ind = 1
+
 	--offensive melee set
-	sets.TP.TP = {
+	sets.engaged.TP = {
 		ammo="Coiste Bodhar",
 		head="Hattori Zukin +3",
 		body="Hachiya chainmail +4",
@@ -75,7 +140,7 @@ function get_sets()
 	}
 
 	--Hybrid Gear
-	sets.TP.Hybrid = {
+	sets.engaged.Hybrid = {
 		ammo="Coiste Bodhar",
 		head="Hattori Zukin +3",
 		body="Hattori Ningi +3",
@@ -91,7 +156,7 @@ function get_sets()
 		back=NinjaCapes.TP
 	}
 
-	sets.TP.Accuracy = {
+	sets.engaged.Accuracy = {
 		ammo="Amar Cluster",
 		head="Hattori Zukin +3",
 		feet="Hattori Kyahan +3",		
@@ -104,7 +169,7 @@ function get_sets()
 		back=NinjaCapes.TP
 	}
 
-	sets.TP.TreasureHunter = {
+	sets.engaged.TreasureHunter = {
 		ammo="Staunch Tathlum +1",
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
 		body="Volte jupon",
@@ -120,7 +185,7 @@ function get_sets()
 		back=NinjaCapes.TP
 	}
 
-	sets.TP.EvasionTank = {
+	sets.engaged.EvasionTank = {
 		ammo="Amar Cluster",
 		head="Hattori Zukin +3",
 		body="Hattori Ningi +3",
@@ -136,7 +201,7 @@ function get_sets()
 		back=NinjaCapes.TP
 	}
 	
-	sets.TP.BuckWildMode = {
+	sets.engaged.BuckWildMode = {
 		ammo="Coiste Bodhar",
 		head="Ken. Jinpachi +1",
 		body="Ken. Samue +1",
@@ -152,7 +217,7 @@ function get_sets()
 		back=NinjaCapes.TP		
 	}
 	
-	sets.TP.DualWield = {
+	sets.engaged.DualWield = {
 		ammo="Coiste Bodhar",
 		head="Hattori Zukin +3",
 		body="Hachiya chainmail +4",
@@ -167,8 +232,41 @@ function get_sets()
 		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=NinjaCapes.TP
 	}
+	
+	sets.engaged.Movement = {
+		ammo="Staunch Tathlum +1",
+		head="Hattori Zukin +3",
+		body="Hattori Ningi +3",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Hattori Kyahan +3",
+		neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
+		waist="Null belt",
+		left_ear="Brutal Earring",
+		right_ear="Cryptic Earring",
+		left_ring="Shneddick Ring",
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
+		back=NinjaCapes.TP
+	}
 
--------------------------------------------------------------------------------------------	
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'Craft'}
+	idle_ind = 1      
+	
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		main="Caduceus",
+		sub="Br. escutcheon",
+		body="Alchemist's smock",
+		neck="Alchemist's torque",
+		left_ring="Artificer's Ring",
+		right_ring="Craftmaster's ring",
+		waist="Alchemist's belt"
+	}) 
+	
+	
 	sets.SavageBlade = {
 		ammo="Coiste bodhar",
 		head="Hachiya hatsuburi +4",
@@ -293,83 +391,6 @@ function get_sets()
 		back=NinjaCapes.STRWS
 	}	
 
-
-	--Fast Cast set
-	sets.FastCast = {
-		ammo="Staunch Tathlum +1",
-		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20',}},
-		body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3',}},
-		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs={ name="Taeon Tights", augments={'Evasion+21','Spell interruption rate down -10%','Phalanx +3',}},
-		feet={ name="Taeon Boots", augments={'Spell interruption rate down -9%','Phalanx +3',}},
-		neck="Moonlight necklace",
-		waist="Audumbla Sash",
-		left_ear="Loquac. Earring",
-		right_ear="Magnetic Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back="Solemnity Cape"
-	}
-	
-	sets.Utsusemi = set_combine(sets.FastCast,  {
-		body="Mochizuki chainmail +4",
-		feet="Hattori Kyahan +3",
-		back=NinjaCapes.TP
-	})
-
-	sets.Migawari = set_combine(sets.FastCast,  {
-		feet="Hattori Ningi +3"
-	})
-
-
-	--Phalanx--  23
-	sets.Phalanx = {
-		ammo="Staunch Tathlum +1",
-		head="Futhark Bandeau +3",
-		body={ name="Taeon Tabard", augments={'Spell interruption rate down -10%','Phalanx +3'}},
-		hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14'}},
-		legs={ name="Herculean Trousers", augments={'Pet: "Dbl.Atk."+2 Pet: Crit.hit rate +2','Pet: Accuracy+16 Pet: Rng. Acc.+16','Phalanx +4','Mag. Acc.+11 "Mag.Atk.Bns."+11'}},
-		feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7'}},
-		neck="Null loop",
-		waist="Siegel Sash",
-		left_ear="Magnetic Earring",
-		right_ear="Mimir Earring",
-		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
-		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
-		back=NinjaCapes.TP
-	}
-
-	sets.NUKE = {
-		ammo="Ghastly Tathlum +1",
-		head="Mochi. hatsuburi +4",
-		body="Nyame mail",
-		hands="Nyame gauntlets",
-		legs="Nyame Flanchard",
-		feet="Mochi. Kyahan +4",
-		neck="Sanctity Necklace",
-		waist="Orpheus's Sash",
-		left_ear="Hecate's Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Metamorph ring +1",
-		right_ring="Locus Ring",
-		back=NinjaCapes.NUKE
-	}
-
-	sets.FutaeNuke = {
-		ammo="Ghastly Tathlum +1",
-		head="Mochi. hatsuburi +4",
-		body="Nyame mail",
-		hands="Hattori tekko +2",
-		legs="Nyame Flanchard",
-		feet="Mochi. Kyahan +4",
-		neck="Sanctity Necklace",
-		waist="Orpheus's Sash",
-		left_ear="Hecate's Earring",
-		right_ear="Friomisi Earring",
-		left_ring="Metamorph ring +1",
-		right_ring="Locus Ring",
-		back=NinjaCapes.NUKE	
-	}
 	
 	--Weapon Sets--
 	sets.weapon = {}
@@ -506,47 +527,66 @@ function checkNinjutsuElementals(spell)
 	end
 end
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.weapon[sets.weapon.index[weapon_ind]])
-	equip(sets.TP[sets.TP.index[TP_ind]])
+	equip_weapon()
+	status_change()
+	--TODO YONIN and the other one check
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
-function self_command(command)
-	if command =='toggle weapon set' then
-		weapon_ind = weapon_ind -1
-		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse weapon set' then
-		weapon_ind = weapon_ind +1
-		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()
-	elseif command == 'toggle TP set' then
-		TP_ind = TP_ind -1
-		if TP_ind == 0 then TP_ind = #sets.TP.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse TP set' then
-		TP_ind = TP_ind +1
-		if TP_ind > #sets.TP.index then TP_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
-		equip_current()
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
+
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
 	end
 end
+	
 
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
+function self_command(command)
+	if command == 'C8' then 
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	end	 
+end
 
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies  For some Weird Ass Reason my character died')
+		send_command('@input /tell <me> Wakies Voliathon! You died.')
 	end
 end)

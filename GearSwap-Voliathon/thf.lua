@@ -11,16 +11,19 @@ end
 function get_sets()
 	--Instantiate ThiefCapes fn()
 	ThiefCapes()
-
-	-- Set macro book/set --
-    send_command('input /macro book 14;wait .1;input /macro set 1') -- set macro book/set here	
 	
-	-- Binds for switching weapon modes
-    send_command('bind !f8 gs c toggle weapon set')
-	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching engaged modes
-	send_command('bind !f9 gs c toggle engaged set')
-	send_command('bind ^f9 gs c reverse engaged set')
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind ^f8 gs c C8') 
+	send_command('bind !f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 
 	-- Job Abilities Sets --
     sets.JA = {}
@@ -39,6 +42,38 @@ function get_sets()
 	sets.JA['Hide'] = {body="Pillager's Vest +4"}
 	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
 
+	sets.Fastcast = {
+		ammo="Staunch Tathlum",
+		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
+		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
+		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
+		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
+		neck="Voltsurge Torque",
+		waist="Kasiri Belt",
+		left_ear="Loquac. Earring",
+		right_ear="Halasz Earring",
+		left_ring="Lebeche Ring",
+		right_ring="Defending Ring",
+		back="Relucent Cape"	
+	}		
+	
+	sets.Phalanx = {
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body={ name="Herculean Vest", augments={'"Dbl.Atk."+2','STR+4','Phalanx +5','Accuracy+15 Attack+15','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
+		hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
+		legs={ name="Herculean Trousers", augments={'Pet: STR+3','AGI+2','Phalanx +5','Accuracy+10 Attack+10',}},
+		feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
+		neck="Voltsurge Torque",
+		waist="Flume Belt +1",
+		left_ear="Loquac. Earring",
+		right_ear="Magnetic Earring",
+		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
+		back="Solemnity Cape"	
+	}
+
 	-- Engaged Sets Toggle--
     sets.engaged = {}
     sets.engaged.index = {"TreasureHunter","TP","Accuracy","Tank","Movement"}
@@ -55,8 +90,8 @@ function get_sets()
 		waist="Chaac Belt",
 		left_ear="Suppanomimi",
 		right_ear={ name="Skulker's Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+8','Mag. Acc.+8',}},
-		left_ring="Shneddick ring",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 5"},
 		back=ThiefCapes.TP
 	}
 	
@@ -122,7 +157,27 @@ function get_sets()
 		left_ring="Shneddick ring",
 		right_ring="Defending Ring",
 		back=ThiefCapes.TP
-	 }		
+	 }
+
+
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'Craft'}
+	idle_ind = 1      
+	
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		main="Caduceus",
+		sub="Br. escutcheon",
+		body="Alchemist's smock",
+		neck="Alchemist's torque",
+		left_ring="Artificer's Ring",
+		right_ring="Craftmaster's ring",
+		waist="Alchemist's belt"
+	})	 
+	 	 
+	 
  -- Weapon Skill Sets
  -- Generic Sets
     sets.WSD = {	
@@ -174,71 +229,33 @@ function get_sets()
 		back=ThiefCapes.DEXWS
 	}
 	
----- .:: Preshot Sets ::. ---->
-	--sets.preshot = {}
-	--sets.preshot.RA = {}	
-	
- -- Precast Sets  --
-	sets.precast = {}
-	sets.precast.Fastcast = {
-		ammo="Staunch Tathlum",
-		head={ name="Herculean Helm", augments={'AGI+6','CHR+1','Weapon skill damage +7%',}},
-		body={ name="Taeon Tabard", augments={'Evasion+20','Spell interruption rate down -9%','Phalanx +3',}},
-		hands={ name="Taeon Gloves", augments={'Mag. Evasion+20','Spell interruption rate down -10%','Phalanx +3',}},
-		legs={ name="Taeon Tights", augments={'DEF+16','Spell interruption rate down -10%','Phalanx +3',}},
-		feet={ name="Taeon Boots", augments={'DEF+20','Spell interruption rate down -9%','Phalanx +3',}},
-		neck="Voltsurge Torque",
-		waist="Kasiri Belt",
-		left_ear="Loquac. Earring",
-		right_ear="Halasz Earring",
-		left_ring="Lebeche Ring",
-		right_ring="Defending Ring",
-		back="Relucent Cape"	
-	}		
-	
-	sets.Phalanx = {
-		ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",
-		body={ name="Herculean Vest", augments={'"Dbl.Atk."+2','STR+4','Phalanx +5','Accuracy+15 Attack+15','Mag. Acc.+12 "Mag.Atk.Bns."+12',}},
-		hands={ name="Herculean Gloves", augments={'"Drain" and "Aspir" potency +4','Phys. dmg. taken -2%','Phalanx +5','Accuracy+19 Attack+19','Mag. Acc.+14 "Mag.Atk.Bns."+14',}},
-		legs={ name="Herculean Trousers", augments={'Pet: STR+3','AGI+2','Phalanx +5','Accuracy+10 Attack+10',}},
-		feet={ name="Herculean Boots", augments={'Pet: "Mag.Atk.Bns."+4','Pet: Attack+3 Pet: Rng.Atk.+3','Phalanx +4','Mag. Acc.+7 "Mag.Atk.Bns."+7',}},
-		neck="Voltsurge Torque",
-		waist="Flume Belt +1",
-		left_ear="Loquac. Earring",
-		right_ear="Magnetic Earring",
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
-		back="Solemnity Cape"	
-	}
-	
- -- Weapon Toggle--
-  sets.weapon = {}
-  sets.weapon.index = {'NaeglingCrepuscularKnife', 'TauretSandung', 'TauretCrepuscularKnife', 'GandringSandung', 'GandringTauret'}
-  weapon_ind = 1     
+	-- Weapon Toggle--
+	sets.weapon = {}
+	sets.weapon.index = {'NaeglingCrepuscularKnife', 'TauretSandung', 'TauretCrepuscularKnife', 'GandringSandung', 'GandringTauret'}
+	weapon_ind = 1     
   
- sets.weapon.NaeglingCrepuscularKnife = {
-	main="Naegling",
-	sub="Crepuscular Knife"
- } 
-  sets.weapon.TauretSandung = {
-	main="Tauret",
-	sub="Sandung"
- } 
- sets.weapon.TauretCrepuscularKnife = {
-	main="Tauret",
-	sub="Crepuscular Knife"
- } 
- 
- sets.weapon.GandringSandung = {
-	main="Gandring",
-	sub="Sandung" 
- }
- 
- sets.weapon.GandringTauret = {
-	main="Gandring",
-	sub="Tauret" 
- } 
+	sets.weapon.NaeglingCrepuscularKnife = {
+		main="Naegling",
+		sub="Crepuscular Knife"
+	} 
+	sets.weapon.TauretSandung = {
+		main="Tauret",
+		sub="Sandung"
+	} 
+	sets.weapon.TauretCrepuscularKnife = {
+		main="Tauret",
+		sub="Crepuscular Knife"
+	} 
+
+	sets.weapon.GandringSandung = {
+		main="Gandring",
+		sub="Sandung" 
+	}
+
+	sets.weapon.GandringTauret = {
+		main="Gandring",
+		sub="Tauret" 
+	} 
 end	
 	
 
@@ -274,60 +291,76 @@ end
 
 -- Midcast Functions --
 function midcast(spell,action)
-		if spell.name == "Phalanx" then	
-			equip(sets.Phalanx)
-		end
+	if spell.name == "Phalanx" then	
+		equip(sets.Phalanx)
+	end
 end	
 
 
---We need to do some thinking and testing for this set...
 function aftercast(spell)
-	if string.find(spell.english,'Warp') then
-		--do fuck all nothing
-	else
-		equip_current()
-	end
+	equip_current()
 end
 
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
+	status_change()
 end
-
 
 function equip_weapon()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
-function self_command(command)
-	if command =='toggle weapon set' then
-		weapon_ind = weapon_ind -1
-		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse weapon set' then
-		weapon_ind = weapon_ind +1
-		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()
-	elseif command == 'toggle engaged set' then
-		engaged_ind = engaged_ind -1
-		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse engaged set' then
-		engaged_ind = engaged_ind +1
-		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
-		equip_current()
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
 	end
 end
+	
+
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
+function self_command(command)
+	if command == 'C8' then 
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	end	 
+end
+
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+		send_command('@input /tell <me> Wakies Voliathon! You died.')
+	end
+end)

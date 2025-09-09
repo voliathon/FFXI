@@ -23,34 +23,34 @@ function get_sets()
 		-- Modes --
 	Godhands = 'OFF' -- Toogle on/off the Godhands and Spharai via ctrl + F8
 		
+	sets.Waltz = {legs="Dashing subligar"}
+
     sets.JA = {}
-    sets.JA.Boost = {hands="Anchorite's Gloves +3"}
-    sets.JA.Chakra = {body="Anchorite's Cyclas +3", hands="Hes. Gloves +3"}
-    sets.JA.Counterstance = {feet="Hesychast's Gaiters +3"}
-    sets.JA.Focus = {head="Anchorite's Crown +3"}
-    sets.JA.Dodge = {feet="Anchorite's Gaiters +3"}
-    sets.JA.Mantra = {feet="Hes. Gaiters +3"}
-    sets.JA.Footwork = {feet="Bhikku gaiters +3"}
-	sets.JA.Impetus={body="Bhikku Cyclas +3"}
-	sets.JA.PerfectCounter={head="Bhikku Crown +3"}
-    sets.JA.HundredFists = {legs="Hes. Hose +3"}
-	sets.JA.Waltz = {legs="Dashing subligar"}
-	sets.JA.FormlessStrikes = {body="Hesychast's Cyclas +3"}
+    sets.JA['Boost'] = {hands="Anchorite's Gloves +4"}
+    sets.JA['Chakra'] = {body="Anchorite's Cyclas +3", hands="Hes. Gloves +3"}
+    sets.JA['Counterstance'] = {feet="Hesychast's Gaiters +3"}
+    sets.JA['Focus'] = {head="Anchorite's Crown +3"}
+    sets.JA['Dodge'] = {feet="Anchorite's Gaiters +4"}
+    sets.JA['Mantra'] = {feet="Hes. Gaiters +3"}
+    sets.JA['Footwork'] = {feet="Bhikku gaiters +3"}
+	sets.JA['Impetus']={body="Bhikku Cyclas +3"}
+	sets.JA['PerfectCounter']={head="Bhikku Crown +3"}
+    sets.JA['HundredFists'] = {legs="Hes. Hose +3"}
+	sets.JA['FormlessStrikes'] = {body="Hesychast's Cyclas +3"}
 
 	
-	--TP Sets--
-	sets.TP = {}
--- 					  1		      2           3 		4		  5         6
-  sets.TP.index = {'BadAss', 'SubtleBlow', 'Tank', 'Movement', 'Accuracy', 'TH'}
-  TP_ind = 1
+	--Engaged Sets--
+	sets.engaged = {}
+	sets.engaged.index = {'BadAss', 'SubtleBlow', 'Tank', 'Movement', 'Accuracy', 'TH'}
+	engaged_ind = 1
 	
-    sets.TP.BadAss = {
+    sets.engaged.BadAss = {
 		ammo="Coiste Bodhar",
 		head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20'}},
 		body="Bhikku Cyclas +3",
 		hands="Bhikku gloves +3",
 		legs="Bhikku Hose +3",
-		feet="Anchorite's Gaiters +3",
+		feet="Anchorite's Gaiters +4",
 		neck="Monk's nodowa +2",
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
@@ -60,16 +60,23 @@ function get_sets()
 		back=MonkCapes.TP
     }	
 
-    sets.TP.Impetus = {
-		body="Bhikku Cyclas +3",
-		back={ name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}}		
+	sets.engaged.SubtleBlow = {
+		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+		head="Bhikku Crown +3",
+		body="Mpaca's Doublet",
+		hands={ name="Hes. Gloves +3", augments={'Enhances "Invigorate" effect',}},
+		legs="Mpaca's Hose",
+		feet="Bhikku Gaiters +3",
+		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
+		waist="Moonbow Belt +1",
+		left_ear="Sherida Earring",
+		right_ear={ name="Schere Earring", augments={'Path: A',}},
+		left_ring="Chirich Ring +1",
+		right_ring="Chirich Ring +1",
+		back=MonkCapes.TP
 	}
-	
-	sets.TP.Movement = {
-		left_ring="Shneddick Ring",
-	}
-	
-	sets.TP.Tank = {
+
+	sets.engaged.Tank = {
 		ammo="Staunch Tathlum +1",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
@@ -85,23 +92,23 @@ function get_sets()
 		back=MonkCapes.TP
 	}
 	
-	sets.TP.SubtleBlow = {
-		ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-		head="Bhikku Crown +3",
-		body="Mpaca's Doublet",
-		hands={ name="Hes. Gloves +3", augments={'Enhances "Invigorate" effect',}},
-		legs="Mpaca's Hose",
-		feet="Bhikku Gaiters +3",
+	sets.engaged.Movement = {
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
 		right_ear={ name="Schere Earring", augments={'Path: A',}},
-		left_ring="Chirich Ring +1",
+		left_ring="Shneddick Ring",
 		right_ring="Chirich Ring +1",
 		back=MonkCapes.TP
-	}
-    
-	sets.TP.Accuracy = {
+	}	
+	
+	sets.engaged.Accuracy = {
 		ammo="Coiste Bodhar",
 		head="Bhikku Crown +3",
 		body="Mpaca's Doublet",
@@ -117,13 +124,32 @@ function get_sets()
 		back=MonkCapes.TP	
 	}
 	
-	sets.TP.TH = set_combine(sets.TP.Tank, {
+	sets.engaged.TH = set_combine(sets.engaged.Tank, {
 		head={ name="Herculean Helm", augments={'Attack+19','STR+5','"Treasure Hunter"+2','Accuracy+20 Attack+20'}},
 		body="Volte jupon",
 		hands={ name="Herculean Gloves", augments={'"Waltz" potency +4%','"Rapid Shot"+1','"Treasure Hunter"+2'}},
 		feet={ name="Herculean Boots", augments={'"Store TP"+7','Mag. Acc.+5','"Treasure Hunter"+2','Mag. Acc.+18 "Mag.Atk.Bns."+18'}},
 		waist="Chaac Belt"
 	})
+	
+
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'Craft'}
+	idle_ind = 1      
+	
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		main="Caduceus",
+		sub="Br. escutcheon",
+		body="Alchemist's smock",
+		neck="Alchemist's torque",
+		left_ring="Artificer's Ring",
+		right_ring="Craftmaster's ring",
+		waist="Alchemist's belt"
+	}) 
+	
 
 	--Victory Smite --- STR 80%
 	--Ascetic's Fury/Dragon Kick --- STR 50% VIT 50%
@@ -156,9 +182,9 @@ function get_sets()
 	
 	sets.WS.FinalHeaven = {
 		ammo="Knobkierrie",
-		head="Hesychast's crown +3",
+		head="Hesychast's crown +4",
 		body="Bhikku Cyclas +3",
-		hands="Anchorite's gloves +3",
+		hands="Anchorite's Gloves +4",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 		neck="Monk's nodowa +2",
@@ -224,7 +250,7 @@ function get_sets()
 		body="Bhikku Cyclas +3",
 		hands="Ken. Tekko +1",
 		legs="Ken. Hakama +1",
-		feet="Anchorite's Gaiters +3",
+		feet="Anchorite's Gaiters +4",
 		neck={ name="Mnk. Nodowa +2", augments={'Path: A',}},
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
@@ -248,17 +274,12 @@ function get_sets()
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
 		back=MonkCapes.VITWS
-	}
-    
-    sets.status = {}
-    sets.status.Engaged = sets.TP
-    sets.status.Idle = set_combine(sets.TP.Tank, {})
-	
+	}	
 
 end
 
 function precast(spell)
-	--Mon Weapon Skills
+	--Monk Weapon Skills
     if spell.name == 'Tornado Kick' or spell.name == 'Dragon Kick' or spell.name == "Ascetic's Fury" then
         equip(sets.WS.TornadoKick)
 	elseif spell.name == 'Victory Smite' then
@@ -273,46 +294,11 @@ function precast(spell)
 		equip(sets.WS.HowlingFist)
 	elseif spell.name == 'Cataclysm' then
 		equip(sets.WS.Cataclysm)
-    end
-	--Waltz
-	if string.find(spell.name, 'Waltz') then
-		equip(sets.JA.Waltz)
+    elseif string.find(spell.name, 'Waltz') then
+		equip(sets.Waltz)
+	elseif spell.type == 'JobAbility' then
+	        equip(sets.JA[spell.english])
 	end
-	--Monk Job Abilities
-	if spell.name == 'Boost' then
-        equip(sets.JA.Boost)
-    end
-	if spell.name == 'Chakra' then
-        equip(sets.JA.Chakra)
-    end
-	if spell.name == 'Counterstance' then
-        equip(sets.JA.Counterstance)
-    end
-	if spell.name == 'Focus' then
-        equip(sets.JA.Focus)
-    end
-	if spell.name == 'Dodge' then
-        equip(sets.JA.Dodge)
-    end
-	if spell.name == 'Mantra' then
-        equip(sets.JA.Mantra)
-    end
-	if spell.name == 'Footwork' then
-        equip(sets.JA.Footwork)
-    end
-	if spell.name == 'Impetus' then
-        equip(sets.JA.Impetus)
-    end
-	if spell.name == 'Perfect Counter' then
-        equip(sets.JA.PerfectCounter)
-    end
-	if spell.name == 'Hundred Fists' then
-        equip(sets.JA.HundredFists)
-    end
-	if spell.name == 'Formless Strikes' then
-		equip(sets.JA.FormlessStrikes)
-	end
-	
 end
 
 function aftercast(spell)
@@ -322,13 +308,14 @@ function aftercast(spell)
 	elseif (spell.name == 'Impetus') then
 		equip({body="Bhikku Cyclas +3"})
 	elseif (spell.name == 'Footwork') then
-		equip({feet="Anchorite's Gaiters +3"})
+		equip({feet="Anchorite's Gaiters +4"})
 	end
 end
 
 
 function equip_current()
-	equip(sets.TP[sets.TP.index[TP_ind]]) 
+	equip_weapon()
+	status_change()
 	if (buffactive['Counterstance']) then
 		equip({body="Hesychast's cyclas +3",legs="Anch. Hose +3",feet="Hes. Gaiters +3"})
 	end
@@ -336,44 +323,64 @@ function equip_current()
 		equip({body="Bhikku Cyclas +3"})
 	end
 	if (buffactive['Footwork']) then
-		equip({feet="Anchorite's Gaiters +3"})
+		equip({feet="Anchorite's Gaiters +4"})
 	end	
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
-function self_command(command)
-	if command == 'C8' then -- Godhands to Spharai --	
-        if Godhands == 'ON' then
-            Godhands = 'OFF'
-			equip({main="Spharai"})
-            add_to_chat(158,'Spharai Weapon: [ON]')
-			add_to_chat(123,'Godhands Weapon: [OFF]')
-		else
-            Godhands = 'ON'
-			equip({main="Godhands"})
-            add_to_chat(158,'Godhands Weapon: [ON]')
-            add_to_chat(123,'Spharai Weapon: [OFF]')				
-        end
-       -- status_change(player.status)
-	elseif command == 'toggle TP set' then
-		TP_ind = TP_ind -1
-		if TP_ind == 0 then TP_ind = #sets.TP.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse TP set' then
-		TP_ind = TP_ind +1
-		if TP_ind > #sets.TP.index then TP_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.TP.index[TP_ind]..' ----->')
-		equip_current()
-	end
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
+	end
+end
+	
+
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
+function self_command(command)
+	if command == 'C8' then 
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	end	 
+end
 
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies Voliathon!!! For some Weird Ass Reason you dead')
+		send_command('@input /tell <me> Wakies Voliathon! You died.')
 	end
 end)
