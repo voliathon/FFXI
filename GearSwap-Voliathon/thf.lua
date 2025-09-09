@@ -25,22 +25,22 @@ function get_sets()
 	send_command('bind !f10 gs c C10') 
 	send_command('bind ^f10 gs c reverse Idle set')
 
+    sets.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
+	
 	-- Job Abilities Sets --
     sets.JA = {}
-    sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
-	
-    sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
-    sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
-	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
-	sets.JA['Feint'] = {legs="Plunderer's Culottes +1"}
-	sets.JA['Conspirator'] = {body="Skulker's Vest +3"}
-	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
-	sets.JA['Mug'] = {head="Plunderer's Bonnet +1"}
-	sets.JA['Despoil'] = {feet="Skulk. Poulaines +3"}
-	sets.JA['Accomplice'] = {head="Skulker's Bonnet +3"}
-	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
-	sets.JA['Hide'] = {body="Pillager's Vest +4"}
-	sets.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +3"}
+    sets.JA.SneakAttack = {hands="Skulker's armlets +2"}
+    sets.JA.TrickAttack = {hands="Pillager's Armlets +2"}
+	sets.JA.AssassinsCharge = {feet="Plunderer's Poulaines +1"}
+	sets.JA.Feint = {legs="Plunderer's Culottes +1"}
+	sets.JA.Conspirator = {body="Skulker's Vest +3"}
+	sets.JA.Steal = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
+	sets.JA.Mug = {head="Plunderer's Bonnet +1"}
+	sets.JA.Despoil = {feet="Skulk. Poulaines +3"}
+	sets.JA.Accomplice = {head="Skulker's Bonnet +3"}
+	sets.JA.Flee = {feet="Pillager's Poulaines +2"}
+	sets.JA.Hide = {body="Pillager's Vest +4"}
+	sets.JA.PerfectDodge = {hands="Plunderer's Armlets +3"}
 
 	sets.Fastcast = {
 		ammo="Staunch Tathlum",
@@ -263,11 +263,35 @@ end
 function precast(spell,action)
     -- Dancer Abilities --
     if string.find(spell.english, 'Waltz') then
-	    equip(sets.JA.Waltz)
+	    equip(sets.Waltz)
 		
 	-- Thief Abilities --
 	elseif spell.type == 'JobAbility' then
-	        equip(sets.JA[spell.english])
+		if spell.name == 'Sneak Attack' then
+			equip(sets.SneakAttack)
+		elseif spell.name == 'Trick Attack' then
+			equip(sets.JA.TrickAttack)
+		elseif spell.name == "Assassin's Charge" then
+			equip(sets.JA.AssassinsCharge)
+		elseif spell.name == 'Feint' then
+			equip(sets.JA.Feint)
+		elseif spell.name == 'Conspirator' then
+			equip(sets.JA.Conspirator)
+		elseif spell.name == 'Steal' then
+			equip(sets.JA.Steal)
+		elseif spell.name == 'Mug' then
+			equip(sets.JA.Mug)
+		elseif spell.name == 'Despoil' then
+			equip(sets.JA.Despoil)
+		elseif spell.name == 'Accomplice' then
+			equip(sets.JA.Accomplice)
+		elseif spell.name == 'Flee' then
+			equip(sets.JA.Flee)
+		elseif spell.name == 'Hide' then
+			equip(sets.JA.Hide)
+		elseif spell.name == 'Perfect Dodge' then
+			equip(sets.JA.PerfectDodge)
+		end
 			
 	-- Weapon Skill --
 	-- 50% DEX Modifier Evisceration / Crits per hits
