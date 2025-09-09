@@ -299,6 +299,8 @@ function precast(spell,action)
 			equip(sets.WSD)
 		elseif spell.name == "Aeolian Edge" then
 			equip(sets.Aeolian)
+		else
+			equip(sets.WSD)
 		end
 	end
 	

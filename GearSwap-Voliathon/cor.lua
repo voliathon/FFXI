@@ -253,6 +253,21 @@ function get_sets()
 		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
 		--Archon Ring
 	}
+	
+	sets.LeadenSaluteHachi = {
+		head="Pixie Hairpin +1",
+		body="Lanun Frac +1",
+		hands="Nyame gauntlets",
+		legs="Nyame Flanchard",
+		feet={ name="Lanun Bottes +1", augments={'Enhances "Wild Card" effect',}},
+		neck="Sanctity Necklace",
+		waist="Hachirin-no-Obi",
+		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Friomisi Earring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
+		back=CamulusCape.agi_ws
+	}	
 
 	--Wildfire    AGI/MAB/WSD
     sets.Wildfire = set_combine(sets.LeadenSalute,{
@@ -366,19 +381,25 @@ function precast(spell,abil)
 
 	--Corsair Weapon Skills
     if spell.type == 'WeaponSkill' then	
-		if spell.name == "Leaden Salute" then
+		if spell.english == "Leaden Salute" and (world.weather_element == "Dark" or world.day_element == "Dark" or world.weather_element == "Darkness") then 
+			add_to_chat(125, "Hachirin-no-Obi has been equipped for this WS")
+			equip(sets.LeadenSaluteHachi)
+		elseif spell.english == "Leaden Salute" and spell.target.distance < 15 then 
 			equip(sets.LeadenSalute)
-		elseif spell.name == "Last Stand" then
+		elseif spell.english == "Leaden Salute" then
+			set_combine(sets.LeadenSalute,{ waist = "Eschan stone"})
+		end
+
+		if spell.name == "Last Stand" then
 			equip(sets.LastStand)
 		elseif spell.name == "Wildfire" then
 			equip(sets.Wildfire)
 		elseif spell.name == "Savage Blade" then
 			equip(sets.SavageBlade)
 		else
-			--TODO: Catch all for now
 			equip(sets.SavageBlade)
 		end
-	end
+	end	
 
 	--Corsair Rolls	
 	if string.find(spell.english,'Blitzer') then
