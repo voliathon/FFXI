@@ -25,10 +25,9 @@ function get_sets()
 	send_command('bind !f10 gs c C10') 
 	send_command('bind ^f10 gs c reverse Idle set')
 
-    sets.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
-	
 	-- Job Abilities Sets --
     sets.JA = {}
+    sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
     sets.JA.SneakAttack = {hands="Skulker's armlets +2"}
     sets.JA.TrickAttack = {hands="Pillager's Armlets +2"}
 	sets.JA.AssassinsCharge = {feet="Plunderer's Poulaines +1"}
@@ -261,14 +260,10 @@ end
 
 -- Precast Function --
 function precast(spell,action)
-    -- Dancer Abilities --
-    if string.find(spell.english, 'Waltz') then
-	    equip(sets.Waltz)
-		
 	-- Thief Abilities --
-	elseif spell.type == 'JobAbility' then
+	if spell.type == 'JobAbility' then
 		if spell.name == 'Sneak Attack' then
-			equip(sets.SneakAttack)
+			equip(sets.JA.SneakAttack)
 		elseif spell.name == 'Trick Attack' then
 			equip(sets.JA.TrickAttack)
 		elseif spell.name == "Assassin's Charge" then
@@ -291,25 +286,22 @@ function precast(spell,action)
 			equip(sets.JA.Hide)
 		elseif spell.name == 'Perfect Dodge' then
 			equip(sets.JA.PerfectDodge)
+		elseif string.find(spell.english, 'Waltz') then
+			equip(sets.JA.Waltz)
 		end
-			
-	-- Weapon Skill --
-	-- 50% DEX Modifier Evisceration / Crits per hits
-	elseif spell.name =="Evisceration" then
-		equip(sets.Evisceration)
-	
-	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
-	-- 60% DEX Modifier Mandalic Stab
-    elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
-		equip(sets.WSD)
-
-	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
-	elseif spell.name == "Aeolian Edge" then
-		equip(sets.Aeolian)
-
-	--elseif spell.action_type == 'Ranged Attack' then
-	--    equip(sets.preshot.RA)
 	end
+			
+	--Thief Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name =="Evisceration" then
+			equip(sets.Evisceration)
+		elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
+			equip(sets.WSD)
+		elseif spell.name == "Aeolian Edge" then
+			equip(sets.Aeolian)
+		end
+	end
+	
 end	
 
 

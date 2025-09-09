@@ -15,10 +15,10 @@ function get_sets()
 	send_command('bind !f10 gs c C10') 
 	send_command('bind ^f10 gs c reverse Idle set')
 		
-	sets.Waltz = {legs="Dashing subligar"}
 	
 	--Job Ability Sets--
 	sets.JA = {}
+	sets.JA.Waltz = {legs="Dashing subligar"}
 	sets.JA.MightyStrikes = {hands="Agoge mufflers +1"}
 	sets.JA.Berserk = {
 		body="Pumm. Lorica +4", 
@@ -291,56 +291,52 @@ end
 
 function precast(spell,abil)
 
-	if string.find(spell.english, 'Waltz') then
-		equip(sets.Waltz)
-	elseif spell.type == 'JobAbility' then
-	        equip(sets.JA[spell.english])
-	elseif spell.name == "Ukko'sFury" then
-		equip(sets.UkkosFury)
-	elseif spell.name == 'Resolution' then
-		equip(sets.Resolution)
-	elseif spell.name == 'Savage Blade' or spell.name == 'Steel Cyclone' then
-		equip(sets.SavageBlade)
-	elseif spell.name == 'Shockwave' then
-		equip(sets.Shockwave)
-	elseif spell.name == 'Herculean Slash' or spell.name == 'Freezebite' or spell.name == 'Frostbite' then
-		equip(sets.HerculeanSlash)
-	elseif string.find(spell.name,'Utsusemi') then
+	if string.find(spell.name,'Utsusemi') then
 		equip({neck="Magoraga Beads"})
 	end
-  
+
+	--Warrior Weaponskills
+    if spell.type == 'WeaponSkill' then
+		if spell.name == "Ukko'sFury" then
+			equip(sets.UkkosFury)
+		elseif spell.name == 'Resolution' then
+			equip(sets.Resolution)
+		elseif spell.name == 'Savage Blade' or spell.name == 'Steel Cyclone' then
+			equip(sets.SavageBlade)
+		elseif spell.name == 'Shockwave' then
+			equip(sets.Shockwave)
+		elseif spell.name == 'Herculean Slash' or spell.name == 'Freezebite' or spell.name == 'Frostbite' then
+			equip(sets.HerculeanSlash)
+		end
+	end
+
 	--Warrior Job Abilities
-	if spell.name == 'Defender' then
-        equip(sets.JA.Defender)
-    end
-	if spell.name == 'Warcry' then
-        equip(sets.JA.Warcry)
-    end
-	if spell.name == 'Aggressor' then
-        equip(sets.JA.Aggressor)
-    end
-	if spell.name == 'Retaliation' then
-        equip(sets.JA.Retaliation)
-    end
-	if spell.name == "Warrior's Charge" then
-        equip(sets.JA.WarriorsCharge)
-    end
-	if spell.name == 'Tomahawk' then
-        equip(sets.JA.Tomahawk)
-    end 
-	if spell.name == 'Restraint' then
-        equip(sets.JA.Restraint)
-    end 
-	if spell.name == 'Blood Rage' then
-        equip(sets.JA.BloodRage)
-    end 
-	if spell.name == 'Might Strikes' then
-        equip(sets.JA.MightyStrikes)
-    end 
-	if spell.name == 'Berserk' then
-        equip(sets.JA.Berserk)
-    end 
-	
+	if spell.type == 'JobAbility' then
+		if spell.name == 'Defender' then
+			equip(sets.JA.Defender)
+		elseif spell.name == 'Warcry' then
+			equip(sets.JA.Warcry)
+		elseif spell.name == 'Aggressor' then
+			equip(sets.JA.Aggressor)
+		elseif spell.name == 'Retaliation' then
+			equip(sets.JA.Retaliation)
+		elseif spell.name == "Warrior's Charge" then
+			equip(sets.JA.WarriorsCharge)
+		elseif spell.name == 'Tomahawk' then
+			equip(sets.JA.Tomahawk)
+		elseif spell.name == 'Restraint' then
+			equip(sets.JA.Restraint)
+		elseif spell.name == 'Blood Rage' then
+			equip(sets.JA.BloodRage)
+		elseif spell.name == 'Might Strikes' then
+			equip(sets.JA.MightyStrikes)
+		elseif spell.name == 'Berserk' then
+			equip(sets.JA.Berserk)
+		elseif string.find(spell.english, 'Waltz') then
+			equip(sets.JA.Waltz)
+		end 
+	end
+
 end
 
 

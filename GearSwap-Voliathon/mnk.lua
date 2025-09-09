@@ -31,9 +31,8 @@ function get_sets()
 	--Settings MonkCapes fn()
 	MonkCapes()
 		
-	sets.Waltz = {legs="Dashing subligar"}
-
     sets.JA = {}
+	sets.JA.Waltz = {legs="Dashing subligar"}
     sets.JA.Boost = {hands="Anchorite's Gloves +4"}
     sets.JA.Chakra = {body="Anchorite's Cyclas +3", hands="Hes. Gloves +3"}
     sets.JA.Counterstance = {feet="Hesychast's Gaiters +3"}
@@ -308,60 +307,53 @@ end
 
 function precast(spell)
 	--Monk Weapon Skills
-	if spell.name == 'Tornado Kick' or spell.name == 'Dragon Kick' or spell.name == "Ascetic's Fury" then
-        equip(sets.WS.TornadoKick)
-	elseif spell.name == 'Victory Smite' then
-		equip(sets.WS.VictorySmite)
-	elseif spell.name == 'Raging Fists' or spell.name == 'Combo' then
-		equip(sets.WS.RagingFists)
-    elseif spell.name == 'Final Heaven' then
-        equip(sets.WS.FinalHeaven)
-	elseif spell.name == 'Shijin Spiral' then
-		equip(sets.WS.ShijinSpiral)
-	elseif spell.name == 'Howling Fist' then
-		equip(sets.WS.HowlingFist)
-	elseif spell.name == 'Cataclysm' then
-		equip(sets.WS.Cataclysm)
-	end
-    
-	if string.find(spell.name, 'Waltz') then
-		equip(sets.Waltz)
-	end
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == 'Tornado Kick' or spell.name == 'Dragon Kick' or spell.name == "Ascetic's Fury" then
+			equip(sets.WS.TornadoKick)
+		elseif spell.name == 'Victory Smite' then
+			equip(sets.WS.VictorySmite)
+		elseif spell.name == 'Raging Fists' or spell.name == 'Combo' then
+			equip(sets.WS.RagingFists)
+		elseif spell.name == 'Final Heaven' then
+			equip(sets.WS.FinalHeaven)
+		elseif spell.name == 'Shijin Spiral' then
+			equip(sets.WS.ShijinSpiral)
+		elseif spell.name == 'Howling Fist' then
+			equip(sets.WS.HowlingFist)
+		elseif spell.name == 'Cataclysm' then
+			equip(sets.WS.Cataclysm)
+		end
+    end
 	
 	--Monk Job Abilities
-	if spell.name == 'Boost' then
-        equip(sets.JA.Boost)
-    end
-	if spell.name == 'Chakra' then
-        equip(sets.JA.Chakra)
-    end
-	if spell.name == 'Counterstance' then
-        equip(sets.JA.Counterstance)
-    end
-	if spell.name == 'Focus' then
-        equip(sets.JA.Focus)
-    end
-	if spell.name == 'Dodge' then
-        equip(sets.JA.Dodge)
-    end
-	if spell.name == 'Mantra' then
-        equip(sets.JA.Mantra)
-    end
-	if spell.name == 'Footwork' then
-        equip(sets.JA.Footwork)
-    end
-	if spell.name == 'Impetus' then
-        equip(sets.JA.Impetus)
-    end
-	if spell.name == 'Perfect Counter' then
-        equip(sets.JA.PerfectCounter)
-    end
-	if spell.name == 'Hundred Fists' then
-        equip(sets.JA.HundredFists)
-    end
-	if spell.name == 'Formless Strikes' then
-		equip(sets.JA.FormlessStrikes)
+	if spell.type == 'JobAbility' then
+		if spell.name == 'Boost' then
+			equip(sets.JA.Boost)
+		elseif spell.name == 'Chakra' then
+			equip(sets.JA.Chakra)
+		elseif spell.name == 'Counterstance' then
+			equip(sets.JA.Counterstance)
+		elseif spell.name == 'Focus' then
+			equip(sets.JA.Focus)
+		elseif spell.name == 'Dodge' then
+			equip(sets.JA.Dodge)
+		elseif spell.name == 'Mantra' then
+			equip(sets.JA.Mantra)
+		elseif spell.name == 'Footwork' then
+			equip(sets.JA.Footwork)
+		elseif spell.name == 'Impetus' then
+			equip(sets.JA.Impetus)
+		elseif spell.name == 'Perfect Counter' then
+			equip(sets.JA.PerfectCounter)
+		elseif spell.name == 'Hundred Fists' then
+			equip(sets.JA.HundredFists)
+		elseif spell.name == 'Formless Strikes' then
+			equip(sets.JA.FormlessStrikes)
+		elseif string.find(spell.name, 'Waltz') then
+			equip(sets.JA.Waltz)
+		end
 	end
+	
 end
 
 function aftercast(spell)

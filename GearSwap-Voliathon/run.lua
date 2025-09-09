@@ -376,100 +376,66 @@ function precast(spell,abil)
 	if spell.skill == 'Enhancing Magic' then
 		equip(sets.FastCast)
 	end
+	if string.find(spell.name,'Utsusemi') then
+		equip({neck="Magoraga Beads"})
+	end
 	if spell.action_type == 'Magic' then
 		equip(sets.FastCast)
 	end
 
-	if spell.name == 'Lunge' or spell.name == 'Swipe' then
-		equip(sets.JA.Lunge)
-	end
-	--prevents Valiance/Vallation/Liement from being prevented by each other (cancels whichever is active)
-	if spell.name == 'Valiance' or spell.name == 'Vallation' or spell.name == 'Liement' then
-		if buffactive['Valiance'] then
-			cast_delay(0.2)
-			windower.ffxi.cancel_buff(535)
-		elseif buffactive['Vallation'] then
-			cast_delay(0.2)
-			windower.ffxi.cancel_buff(531)
-		elseif buffactive['Liement'] then
-			cast_delay(0.2)
-			windower.ffxi.cancel_buff(537)
+	--Rune Fencer Job Abilities
+	if spell.type == 'JobAbility' then
+		if spell.name == 'Lunge' or spell.name == 'Swipe' then
+			equip(sets.JA.Lunge)
+		elseif spell.name == 'Vallation' or spell.name == 'Valiance' then
+			equip(sets.Enmity,sets.JA.Vallation)
+		elseif spell.name == 'Pflug' then
+			equip(sets.Enmity,sets.JA.Pflug)
+		elseif spell.name == 'Elemental Sforzo' or spell.name == 'Liement' then
+			equip(sets.Enmity,{body="Futhark coat +4"})
+		elseif spell.name == 'Gambit' then
+			equip(sets.Enmity,sets.JA.Gambit)
+		elseif spell.name == 'Embolden' then
+			equip({back={ name="Evasionist's Cape", augments={'Enmity+5','"Embolden"+14','"Dbl.Atk."+2','Damage taken-3%'}}})
+		elseif spell.name == 'Rayke' then
+			equip(sets.Enmity,sets.JA.Rayke)
+		elseif spell.name == 'Battuta' then
+			equip(sets.Enmity,sets.JA.Battuta)
+		elseif spell.name == 'Vivacious Pulse' then
+			equip(sets.Enmity,sets.JA.Pulse)
+		elseif spell.name == 'One for All' or spell.name == 'Embolden' or spell.name == 'Odyllic Subterfuge' or spell.name == 'Warcry'
+		or spell.name == 'Swordplay' or spell.name == 'Meditate' or spell.name == 'Provoke' then
+			equip(sets.Enmity, {hands="Futhark mitons +4"})
 		end
 	end
-	if spell.name == 'Vallation' or spell.name == 'Valiance' then
-		equip(sets.Enmity,sets.JA.Vallation)
-	end
-	if spell.name == 'Pflug' then
-		equip(sets.Enmity,sets.JA.Pflug)
-	end
-	if spell.name == 'Elemental Sforzo' or spell.name == 'Liement' then
-		equip(sets.Enmity,{body="Futhark coat +4"})
-	end
-	if spell.name == 'Gambit' then
-		equip(sets.Enmity,sets.JA.Gambit)
-	end
-	if spell.name == 'Embolden' then
-		equip({back={ name="Evasionist's Cape", augments={'Enmity+5','"Embolden"+14','"Dbl.Atk."+2','Damage taken-3%'}}})
-	end  
-	if spell.name == 'Rayke' then
-		equip(sets.Enmity,sets.JA.Rayke)
-	end
-	if spell.name == 'Battuta' then
-		equip(sets.Enmity,sets.JA.Battuta)
-	end
-	if spell.name == 'Vivacious Pulse' then
-		equip(sets.Enmity,sets.JA.Pulse)
-	end
-	if spell.name == 'One for All' or spell.name == 'Embolden' or spell.name == 'Odyllic Subterfuge' or spell.name == 'Warcry'
-	or spell.name == 'Swordplay' or spell.name == 'Meditate' or spell.name == 'Provoke' then
-		equip(sets.Enmity, {hands="Futhark mitons +4"})
-	end
-	if spell.name == 'Resolution' then
-		equip(sets.Resolution)
-	end
-	if spell.name == 'Dimidiation' or spell.name == 'Spinning Slash'  then
-		equip(sets.Dimidiation)
-	end
-	if spell.name == 'Shockwave' then
-		equip(sets.Shockwave)
-	end
-	if spell.name == 'Herculean Slash' or spell.name == 'Freezebite' or spell.name == 'Frostbite' then
-		equip(sets.HercSlash)
+
+	--Rune Fencer Weapon Skills	
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == 'Resolution' then
+			equip(sets.Resolution)
+		elseif spell.name == 'Dimidiation' or spell.name == 'Spinning Slash'  then
+			equip(sets.Dimidiation)
+		elseif spell.name == 'Shockwave' then
+			equip(sets.Shockwave)
+		elseif spell.name == 'Herculean Slash' or spell.name == 'Freezebite' or spell.name == 'Frostbite' then
+			equip(sets.HercSlash)
+		end
 	end
 
-	--Utsusemi Check
-	if string.find(spell.name,'Utsusemi') then
-		equip({neck="Magoraga Beads"})
-	end
-  
 end
 
 
-
---Should NOT put Job Abilities here.  Ony Magic Fren!  Fren is Doggo Speak for Friend
 function midcast(spell,act,arg)
-	--Unsure if needed cause it should be good enough for precast....
-	--prevents Valiance/Vallation/Liement from being prevented by each other (cancels whichever is active)
-	if spell.name == 'Valiance' or spell.name == 'Vallation' or spell.name == 'Liement' then
-		if buffactive['Valiance'] then
-			cast_delay(0.2)
-			windower.ffxi.cancel_buff(535)
-		elseif buffactive['Vallation'] then
-			cast_delay(0.2)
-			windower.ffxi.cancel_buff(531)
-		elseif buffactive['Liement'] then
-			cast_delay(0.2)
-			windower.ffxi.cancel_buff(537)
-		end
+	--Rune Fencer Job Abilities
+	if spell.type == 'JobAbility' then
+		if spell.name == 'Vallation' or spell.name == 'Valiance' then
+			equip(sets.Enmity,sets.JA.Vallation)
+		elseif spell.name == 'Pflug' then
+			equip(sets.Enmity,sets.JA.Pflug)
+		end  
 	end
-	if spell.name == 'Vallation' or spell.name == 'Valiance' then
-		equip(sets.Enmity,sets.JA.Vallation)
-	end
-	if spell.name == 'Pflug' then
-		equip(sets.Enmity,sets.JA.Pflug)
-	end  
-
-
+	
+	
 	if spell.skill == 'Elemental Magic' then
 		equip(sets.JA.Lunge)
 	end

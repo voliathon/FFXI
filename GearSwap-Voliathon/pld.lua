@@ -51,10 +51,9 @@ function get_sets()
 
 	Aegis = 'OFF'
 
-	sets.Waltz = {legs="Dashing subligar"}
-
 	--Job Ability Sets--
 	sets.JA = {}
+	sets.JA.Waltz = {legs="Dashing subligar"}
 	sets.JA.Invicible = {legs="Cab. breeches +3"}
 	sets.JA.HolyCircle = {feet="Reverence leggings +3"} -- Grants resistance against undead to party members within area of effect. 
 	sets.JA.Sentinel = {feet="Cab. leggings +3"} -- Begins damage reduction at -128% PDT instead of -90%
@@ -366,55 +365,48 @@ end
 
 -- Precast Logic --
 function precast(spell,abil)
-
-	if string.find(spell.english, 'Waltz') then
-		equip(sets.Waltz)
+	--Paladin Job Abilities
+	if spell.type == 'JobAbility' then
+		if string.find(spell.english, 'Waltz') then
+			equip(sets.JA.Waltz)
+		elseif spell.name == 'Provoke' then
+			equip(sets.Enmity)
+		elseif spell.name == 'Shield Bash' then
+			equip(sets.ShieldBash)
+		elseif spell.name == 'Invicible' then
+			equip(sets.JA.Invicible)
+		elseif spell.name == 'Holy Circle' then
+			equip(sets.JA.HolyCircle)
+		elseif spell.name == 'Sentinel' then
+			equip(sets.JA.Sentinel)
+		elseif spell.name == 'Cover' then
+			equip(sets.JA.Cover)
+		elseif spell.name == 'Rampart' then
+			equip(sets.JA.Rampart)
+		elseif spell.name == 'Fealty' then
+			equip(sets.JA.Fealty)
+		elseif spell.name == 'Chivalry' then
+			equip(sets.JA.Chivalry)
+		elseif spell.name == 'Divine Emblem' then
+			equip(sets.JA.DivineEmblem)
+		end
 	end
-	if spell.name == 'Provoke' then
-		equip(sets.Enmity)
-	end
-	if spell.name == 'Shield Bash' then
-		equip(sets.ShieldBash)
-	end		
-	if spell.name == 'Invicible' then
-		equip(sets.JA.Invicible)
-	end
-	if spell.name == 'Holy Circle' then
-		equip(sets.JA.HolyCircle)
-	end
-	if spell.name == 'Sentinel' then
-		equip(sets.JA.Sentinel)
-	end
-	if spell.name == 'Cover' then
-		equip(sets.JA.Cover)
-	end
-	if spell.name == 'Rampart' then
-		equip(sets.JA.Rampart)
-	end
-	if spell.name == 'Fealty' then
-		equip(sets.JA.Fealty)
-	end
-	if spell.name == 'Chivalry' then
-		equip(sets.JA.Chivalry)
-	end
-	if spell.name == 'Divine Emblem' then
-		equip(sets.JA.DivineEmblem)
-	end
-
+	
 	if spell.name == 'Flash' or spell.name == "Stun"  then
 		equip(sets.Enmity)
 	end
 
-	if spell.name == 'Atonement' then
-		equip(sets.Atonement)
+	--Paladin Weapon Skills
+    if spell.type == 'WeaponSkill' then
+		if spell.name == 'Atonement' then
+			equip(sets.Atonement)
+		elseif spell.name == 'Savage Blade' then
+			equip(sets.STRWSD)
+		elseif spell.name == 'Aeolian Edge' then
+			equip(sets.AeolianEdge)
+		end
 	end
-	if spell.name == 'Savage Blade' then
-		equip(sets.STRWSD)
-	end
-	if spell.name == 'Aeolian Edge' then
-		equip(sets.AeolianEdge)
-	end
-
+	
 	--Utsusemi Check
 	if string.find(spell.name,'Utsusemi') then
 		equip({neck="Magoraga Beads"})

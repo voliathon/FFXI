@@ -441,11 +441,7 @@ end
 
 
 function precast(spell) 
-	--equips favorite weapon if disarmed
-	if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-		equip_current()
-	end
-	
+
 	if string.find(spell.english,'Utsusemi') then
         equip(sets.Utsusemi)
     end
@@ -454,46 +450,49 @@ function precast(spell)
         equip(sets.Migawari)
     end
 
-	if spell.name == 'Yonin' then
-		equip(sets.JA.Yonin)
-	end
-	if spell.name == 'Innin' then
-		equip(sets.JA.Innin)
-	end
-	if spell.name == 'Futae' then
-		equip(sets.JA.Futae)
-	end
-	if spell.name == 'MijinGakure' then
-		equip(sets.JA.MijinGakure)
-	end	
-	if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
-		equip(sets.TP.EvasionTank) 
-	end
-	
-	 
 	if spell.action_type == 'Magic' or spell.action_type == 'Ninjutsu' then
 		equip(sets.FastCast)
 	end
-	if string.find(spell.english,'Waltz') then
-        equip(sets.Waltz)
-    end
 	
-	if spell.name == 'Savage Blade' then
-		equip(sets.SavageBlade)
-	elseif spell.name == 'Blade: Ten' then
-		equip(sets.Ten)
-	elseif spell.name == 'Blade: Shun' then
-		equip(sets.Shun)
-	elseif spell.name == 'Blade: Hi' then
-		equip(sets.Hi)
-	elseif spell.name == 'Blade: Teki' or spell.name == 'Blade: To' or 
-	spell.name == 'Blade: Chi' or spell.name == 'Blade: Yu' then
-		equip(sets.TekiToChiYu)
-	elseif spell.name == 'Blade: Ku' then
-		equip(sets.Ku)
-	elseif spell.name == 'Blade: Kamu' then
-		equip(sets.Kamu)
+	--Ninja Job Abilities
+	if spell.type == 'JobAbility' then
+		if spell.name == 'Yonin' then
+			equip(sets.JA.Yonin)
+		elseif spell.name == 'Innin' then
+			equip(sets.JA.Innin)
+		elseif spell.name == 'Futae' then
+			equip(sets.JA.Futae)
+		elseif spell.name == 'MijinGakure' then
+			equip(sets.JA.MijinGakure)
+		elseif string.find(spell.english,'Waltz') then
+			equip(sets.JA.Waltz)
+		end
     end
+			
+	
+	if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
+		equip(sets.TP.EvasionTank) 
+	end
+
+	--Ninja Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == 'Savage Blade' then
+			equip(sets.SavageBlade)
+		elseif spell.name == 'Blade: Ten' then
+			equip(sets.Ten)
+		elseif spell.name == 'Blade: Shun' then
+			equip(sets.Shun)
+		elseif spell.name == 'Blade: Hi' then
+			equip(sets.Hi)
+		elseif spell.name == 'Blade: Teki' or spell.name == 'Blade: To' or spell.name == 'Blade: Chi' or spell.name == 'Blade: Yu' then
+			equip(sets.TekiToChiYu)
+		elseif spell.name == 'Blade: Ku' then
+			equip(sets.Ku)
+		elseif spell.name == 'Blade: Kamu' then
+			equip(sets.Kamu)
+		end
+	end
+	
 end
 
 function midcast(spell)
@@ -530,7 +529,6 @@ end
 function equip_current()
 	equip_weapon()
 	status_change()
-	--TODO YONIN and the other one check
 end
 
 function equip_weapon()
@@ -544,6 +542,12 @@ function status_change()
 	elseif player.status == 'Idle' then
 		equip(sets.idle[sets.idle.index[idle_ind]])
 	end
+	
+	if (buffactive['Yonin']) then
+		equip({head="Mochi. hatsuburi +4", legs="Hattori Hakama +2"})	
+	elseif (buffactive['Innin']) then 
+		equip({head="Hattori Zukin +3"})
+	end	
 end
 	
 

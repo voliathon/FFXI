@@ -65,6 +65,7 @@ function get_sets()
 	
 	--Job Ability Sets--
 	sets.JA = {}
+	sets.JA.Waltz = {legs="Dashing subligar"}
 	sets.JA.BloodWeapon = { body="Fallen's Cuirass +3" }
 	sets.JA.Souleater = { head="Ignominy Burgeonet +4"}
 	sets.JA.ArcaneCircle = { feet="Ignominy Sollerets +2"}
@@ -72,9 +73,6 @@ function get_sets()
 	sets.JA.WeaponBash = { hands="Ignominy Gauntlets +2"}
 	sets.JA.DarkSeal = { head="Fallen's Burgeonet +4"}
 	sets.JA.NetherVoid = { legs="Heathen's Flanchard +3"}
-
-	-- Dancer's Abilities --
-	sets.Waltz = {legs="Dashing subligar"}
 
 	sets.Enhancing = {
 		ammo="Staunch Tathlum +1",
@@ -393,43 +391,40 @@ end
 
 -- Precast Logic --
 function precast(spell,abil)
-	-- Dancer Abilities --
-	if string.find(spell.english, 'Waltz') then
-		equip(sets.JA.Waltz)
-	end	
-
-	if spell.name == 'Blood Weapon' then
-		equip(sets.JA.BloodWeapon)
-	end  
-	if spell.name == 'Souleater' then
-		equip(sets.JA.Souleater)
-	end  
-	if spell.name == 'Arcane Circle' then
-		equip(sets.JA.ArcaneCircle)
-	end  
-	if spell.name == 'Last Resort' then
-		equip(sets.JA.LastResort)
-	end  
-	if spell.name == 'Weapon Bash' then
-		equip(sets.JA.WeaponBash)
-	end  
-	if spell.name == 'Dark Seal' then
-		equip(sets.JA.DarkSeal)
-	end  
-	if spell.name == 'Nether Void' then
-		equip(sets.JA.NetherVoid)
-	end  
-
-	if spell.name == 'Catastrophe' then
-		equip(sets.Catastrophe)
+	-- Dark Knight Abilities --
+	if spell.type == 'JobAbility' then	
+		if string.find(spell.english, 'Waltz') then
+			equip(sets.JA.Waltz)
+		elseif spell.name == 'Blood Weapon' then
+			equip(sets.JA.BloodWeapon)
+		elseif spell.name == 'Souleater' then
+			equip(sets.JA.Souleater)
+		elseif spell.name == 'Arcane Circle' then
+			equip(sets.JA.ArcaneCircle)
+		elseif spell.name == 'Last Resort' then
+			equip(sets.JA.LastResort)
+		elseif spell.name == 'Weapon Bash' then
+			equip(sets.JA.WeaponBash)
+		elseif spell.name == 'Dark Seal' then
+			equip(sets.JA.DarkSeal)
+		elseif spell.name == 'Nether Void' then
+			equip(sets.JA.NetherVoid)
+		end  
 	end
-	if spell.name == 'Cross Reaper' then
-		equip(sets.STRWSD)
+	
+	--Dark Knight Weaponskills
+    if spell.type == 'WeaponSkill' then		
+		if spell.name == 'Catastrophe' then
+			equip(sets.Catastrophe)
+		elseif spell.name == 'Cross Reaper' then
+			equip(sets.STRWSD)
+		elseif spell.name == 'Savage Blade' then
+			equip(sets.SavageBlade)
+		else
+			equip(sets.SavageBlade)
+		end
 	end
-	if spell.name == 'Savage Blade' then
-		equip(sets.SavageBlade)
-	end
-
+	
 	--Utsusemi Check
 	if string.find(spell.name,'Utsusemi') then
 		equip({neck="Magoraga Beads"})

@@ -2,12 +2,21 @@ function get_sets()
 -- Set macro book/set --
     send_command('input /macro book 7;wait .1;input /macro set 1')
 	
-	-- Binds for switching weapons
-    send_command('bind !f8 gs c toggle weapon set')
-	send_command('bind ^f8 gs c reverse weapon set')
-	-- Binds for switching equip 	
-    send_command('bind !f9 gs c toggle equip set')
-	send_command('bind ^f9 gs c reverse equip set')
+	-- Set macro book/set --
+    send_command('input /macro book 15;wait .1;input /macro set 1')
+	
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind ^f8 gs c C8') 
+	send_command('bind !f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 
 	--Job Ability Sets--
 	sets.JA = {}
@@ -19,116 +28,134 @@ function get_sets()
 	sets.JA.ThirdEye = {legs="Sakonji Haidate +4"}
 	sets.JA.Sekkanoki = {hands="Kasuga kote +3"}
 	
-	--equip Sets--
-	sets.equip = {}
-	--					  1		          2                  3 			4 		     5
-	sets.equip.index = {'BadAss', 'Tank','Movement', 'Accuracy', 'Reraise', 'SubtleBlow'}
-	equip_ind = 1
+	--Engaged Sets--
+	sets.engaged = {}
+	sets.engaged.index = {'BadAss', 'Tank','Movement', 'Accuracy', 'Reraise', 'SubtleBlow'}
+	engaged_ind = 1
 
-  --offensive melee set
-  sets.equip.BadAss = {
-  	sub="Utu grip",
-	ammo="Coiste bodhar",
-	head="Flamma zucchetto +2",
-	body="Kasuga domaru +3",
-	hands="Wakido kote +4",
-	legs="Kasuga haidate +3",
-	feet="Wakido sune-ate +4",
-	neck="Samurai's nodowa +2",
-	waist="Ioskeha Belt +1",
-	left_ear="Schere earring",
-	right_ear="Brutal Earring",
-    left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
-	right_ring="Flamma ring",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
-  }
+	--offensive melee set
+	sets.engaged.BadAss = {
+		sub="Utu grip",
+		ammo="Coiste bodhar",
+		head="Flamma zucchetto +2",
+		body="Kasuga domaru +3",
+		hands="Wakido kote +4",
+		legs="Kasuga haidate +3",
+		feet="Wakido sune-ate +4",
+		neck="Samurai's nodowa +2",
+		waist="Ioskeha Belt +1",
+		left_ear="Schere earring",
+		right_ear="Brutal Earring",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring="Flamma ring",
+		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+	}
 
-  --Tank equip
-  sets.equip.Tank = {
-	sub="Utu grip",
-    ammo="Staunch Tathlum +1",
-    head="Kasuga Kabuto +3",
-	body="Kasuga domaru +3",
-    hands="Nyame Gauntlets",
-	legs="Kasuga haidate +3",
-    feet="Nyame Sollerets",
-	neck="Samurai's nodowa +2",
-    waist="Null belt",
-    left_ear="Infused Earring",
-    right_ear="Hearty Earring",
-    left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
-  }
+	--Tank equip
+	sets.engaged.Tank = {
+		sub="Utu grip",
+		ammo="Staunch Tathlum +1",
+		head="Kasuga Kabuto +3",
+		body="Kasuga domaru +3",
+		hands="Nyame Gauntlets",
+		legs="Kasuga haidate +3",
+		feet="Nyame Sollerets",
+		neck="Samurai's nodowa +2",
+		waist="Null belt",
+		left_ear="Infused Earring",
+		right_ear="Hearty Earring",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
+		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+	}
 
-  --Movement equip
-  sets.equip.Movement = {
-	sub="Utu grip",
-    ammo="Staunch Tathlum +1",
-    head="Kasuga Kabuto +3",
-	body="Kasuga domaru +3",
-    hands="Nyame Gauntlets",
-	legs="Kasuga haidate +3",
-    feet="Nyame Sollerets",
-	neck="Samurai's nodowa +2",
-    waist="Null belt",
-    left_ear="Infused Earring",
-    right_ear="Hearty Earring",
-    left_ring="Shneddick Ring",
-    right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
-  }
-  
-  --Reraise equip
-  sets.equip.Reraise = {
-	sub="Utu grip",
-    ammo="Staunch Tathlum +1",
-    head="Crepuscular Helm",
-	body="Crepuscular mail",
-    hands="Nyame Gauntlets",
-	legs="Kasuga haidate +3",
-    feet="Nyame Sollerets",
-    neck="Null loop",
-    waist="Ioskeha Belt +1",
-    left_ear="Infused Earring",
-    right_ear="Genmei Earring",
-    left_ring="Fortified Ring",
-    right_ring="Defending Ring",
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
-  }  
+	--Movement equip
+	sets.engaged.Movement = {
+		sub="Utu grip",
+		ammo="Staunch Tathlum +1",
+		head="Kasuga Kabuto +3",
+		body="Kasuga domaru +3",
+		hands="Nyame Gauntlets",
+		legs="Kasuga haidate +3",
+		feet="Nyame Sollerets",
+		neck="Samurai's nodowa +2",
+		waist="Null belt",
+		left_ear="Infused Earring",
+		right_ear="Hearty Earring",
+		left_ring="Shneddick Ring",
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
+		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+	}
 
-  sets.equip.Accuracy = {
-	ammo="Amar cluster",
-	head="Kasuga Kabuto +3",
-	body="Kasuga domaru +3",
-	hands="Kasuga kote +3",
-	legs="Kasuga haidate +3",
-	feet="Kasuga sune-ate +3",
-	neck="Samurai's nodowa +2",
-	waist="Null belt",
-	left_ear="Cessance earring",
-	right_ear="Brutal Earring",
-    left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
-  }
-  
-  sets.equip.SubtleBlow = {
-    ammo="Coiste bodhar",
-    head="Ken. Jinpachi +1",
-    body="Ken. Samue +1",
-    hands="Ken. Tekko +1",
-    legs="Ken. Hakama +1",
-    feet="Ken. Sune-Ate +1",
-    neck="Sam. Nodowa +2",
-    waist={ name="Sailfi Belt +1", augments={'Path: A'}},
-    left_ear="Cessance Earring",
-    right_ear="Digni. Earring",
-    left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
-    right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
-    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
-  }  
+	--Reraise equip
+	sets.engaged.Reraise = {
+		sub="Utu grip",
+		ammo="Staunch Tathlum +1",
+		head="Crepuscular Helm",
+		body="Crepuscular mail",
+		hands="Nyame Gauntlets",
+		legs="Kasuga haidate +3",
+		feet="Nyame Sollerets",
+		neck="Null loop",
+		waist="Ioskeha Belt +1",
+		left_ear="Infused Earring",
+		right_ear="Genmei Earring",
+		left_ring="Fortified Ring",
+		right_ring="Defending Ring",
+		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+	}  
 
+	sets.engaged.Accuracy = {
+		ammo="Amar cluster",
+		head="Kasuga Kabuto +3",
+		body="Kasuga domaru +3",
+		hands="Kasuga kote +3",
+		legs="Kasuga haidate +3",
+		feet="Kasuga sune-ate +3",
+		neck="Samurai's nodowa +2",
+		waist="Null belt",
+		left_ear="Cessance earring",
+		right_ear="Brutal Earring",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
+		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+	}
+
+	sets.engaged.SubtleBlow = {
+		ammo="Coiste bodhar",
+		head="Ken. Jinpachi +1",
+		body="Ken. Samue +1",
+		hands="Ken. Tekko +1",
+		legs="Ken. Hakama +1",
+		feet="Ken. Sune-Ate +1",
+		neck="Sam. Nodowa +2",
+		waist={ name="Sailfi Belt +1", augments={'Path: A'}},
+		left_ear="Cessance Earring",
+		right_ear="Digni. Earring",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
+		back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%'}}
+	}  
+
+
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'Craft'}
+	idle_ind = 1      
+	
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		main="Caduceus",
+		sub="Br. escutcheon",
+		body="Alchemist's smock",
+		neck="Alchemist's torque",
+		left_ring="Artificer's Ring",
+		right_ring="Craftmaster's ring",
+		waist="Alchemist's belt"
+	})
+	
+	
   --Weaponskill Sets--
   --Mumei, Fudo, Kasha, Gekko, Yuk 
 	sets.Fudo = {
@@ -236,52 +263,45 @@ end
 
 
 function precast(spell,abil)
-  if string.find(spell.english, 'Waltz') then
-	equip(sets.JA.Waltz)
-  end	
-  
-  --equips favorite weapon if disarmed
-  if player.equipment.main == "empty" or player.equipment.sub == "empty" then
-    equip_current()
-  end
-  
-  if spell.name == 'Hasso' then
-    equip(sets.JA.Hasso)
-  end
-  if spell.name == 'Meditate' then
-    equip(sets.JA.Meditate)
-  end
-  if spell.name == 'Warding Circle' then
-    equip(sets.JA.WardingCircle)
-  end
-  if spell.name == "Third Eye" then
-	equip(sets.JA.ThirdEye)
-  end
-  if spell.name == 'Sengikori' then
-	equip(sets.JA.Sengikori)
-  end
-  if spell.name == 'Sekkanoki' then
-	equip(sets.JA.Sekkanoki)
-  end
-  
-  --Weaponskill Lookups
-  if spell.name == 'Tachi: Fudo' or spell.name == 'Tachi: Kasha' or spell.name == 'Tachi:Mumei' or spell.name == 'Tachi:Gekko' or spell.name == 'Tachi:Yukikaze' then
-    equip(sets.Fudo)
-  elseif spell.name == 'Tachi: Shoha' then
-	equip(sets.Shoha)
-  elseif spell.name == 'Tachi: Jinpu' then
-    equip(sets.Jinpu)
-  elseif spell.name == 'Tachi: Ageha' then
-    equip(sets.Ageha)
-  elseif spell.name == 'Impulse Drive' or spell.name == 'Sonic Thrust' then 
-	equip(sets.Fudo)
-  elseif spell.name == 'Stardiver' then
-    equip(sets.Stardiver)
-  end
-  
-  if string.find(spell.name,'Utsusemi') then
-    equip({neck="Magoraga Beads"})
-  end
+
+	if string.find(spell.name,'Utsusemi') then
+		equip({neck="Magoraga Beads"})
+	end
+
+    if spell.type == 'JobAbility' then
+		if spell.name == 'Hasso' then
+			equip(sets.JA.Hasso)
+		elseif spell.name == 'Meditate' then
+			equip(sets.JA.Meditate)
+		elseif spell.name == 'Warding Circle' then
+			equip(sets.JA.WardingCircle)
+		elseif spell.name == "Third Eye" then
+			equip(sets.JA.ThirdEye)
+		elseif spell.name == 'Sengikori' then
+			equip(sets.JA.Sengikori)
+		elseif spell.name == 'Sekkanoki' then
+			equip(sets.JA.Sekkanoki)
+		elseif string.find(spell.english, 'Waltz') then
+			equip(sets.JA.Waltz)
+		end	
+	end
+	
+	--Weaponskill Lookups
+    if spell.type == 'WeaponSkill' then
+		if spell.name == 'Tachi: Fudo' or spell.name == 'Tachi: Kasha' or spell.name == 'Tachi:Mumei' or spell.name == 'Tachi:Gekko' or spell.name == 'Tachi:Yukikaze' then
+			equip(sets.Fudo)
+		elseif spell.name == 'Tachi: Shoha' then
+			equip(sets.Shoha)
+		elseif spell.name == 'Tachi: Jinpu' then
+			equip(sets.Jinpu)
+		elseif spell.name == 'Tachi: Ageha' then
+			equip(sets.Ageha)
+		elseif spell.name == 'Impulse Drive' or spell.name == 'Sonic Thrust' then 
+			equip(sets.Fudo)
+		elseif spell.name == 'Stardiver' then
+			equip(sets.Stardiver)
+		end
+	end
   
 end
 
@@ -292,36 +312,68 @@ end
 
 
 function equip_current()
-	equip(sets.weapon[sets.weapon.index[weapon_ind]])
-	equip(sets.equip[sets.equip.index[equip_ind]])
+	equip_weapon()
+	status_change()
 	if (buffactive['Third Eye']) then
 		equip({legs="Sakonji Haidate +4"})
-	end
+	end	
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
-function self_command(command)
-	if command =='toggle weapon set' then
-		weapon_ind = weapon_ind -1
-		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()	
-	elseif command == 'reverse weapon set' then
-		weapon_ind = weapon_ind +1
-		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Weapon changed to '..sets.weapon.index[weapon_ind]..' ----->')
-		equip_current()
-	elseif command == 'toggle equip set' then
-		equip_ind = equip_ind +1
-		if equip_ind > #sets.equip.index then equip_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
-		equip_current()
-	elseif command == 'reverse equip set' then
-		equip_ind = equip_ind -1
-		if equip_ind == 0 then equip_ind = #sets.equip.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.equip.index[equip_ind]..' ----->')
-		equip_current()
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
+
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
 	end
 end
+	
+
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
+function self_command(command)
+	if command == 'C8' then 
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
+		engaged_ind = engaged_ind +1
+		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Engaged set' then
+		engaged_ind = engaged_ind -1
+		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		equip_current()
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
+	end	 
+end
+
+-- Send tell to self if I died --
+windower.register_event('status change', function()
+	if player.status == 'Dead' then
+		send_command('@input /tell <me> Wakies Voliathon! You died.')
+	end
+end)
+

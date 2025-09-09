@@ -363,24 +363,21 @@ function precast(spell,abil)
 		--Regular Pew Pew Action outside of WS - Snapshot Glory
 		equip(sets.Snapshot)
 	end
-	
-	if spell.name == "Leaden Salute" then
-		equip(sets.LeadenSalute)
-	end
-	if spell.name == "Last Stand" then
-		equip(sets.LastStand)
-	end
-	if spell.name == "Wildfire" then
-		equip(sets.Wildfire)
-	end
-	
-	--Weapon skill lookups
-	if spell.name == "Savage Blade" then
-		equip(sets.SavageBlade)
-	end
-	
-	if spell.type == 'WeaponSkill' then
-		equip(sets.LastStand)
+
+	--Corsair Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Leaden Salute" then
+			equip(sets.LeadenSalute)
+		elseif spell.name == "Last Stand" then
+			equip(sets.LastStand)
+		elseif spell.name == "Wildfire" then
+			equip(sets.Wildfire)
+		elseif spell.name == "Savage Blade" then
+			equip(sets.SavageBlade)
+		else
+			--TODO: Catch all for now
+			equip(sets.SavageBlade)
+		end
 	end
 
 	--Corsair Rolls	
@@ -394,28 +391,24 @@ function precast(spell,abil)
 		equip(sets.CastersRoll)
 	elseif string.find(spell.english,'Courser') then
 		equip(sets.CoursersRoll)
-	end
-	if string.find(spell.english,'Roll') or spell.name == "Double-Up" then
+	elseif string.find(spell.english,'Roll') or spell.name == "Double-Up" then
 		equip(sets.CorsairRoll)
 	end
 	
 	--Corsair Job Abilities
-	if spell.name == "Random Deal" then
-		equip(sets.RandomDeal)
+	if spell.type == 'JobAbility' then
+		if spell.name == "Random Deal" then
+			equip(sets.RandomDeal)
+		elseif spell.name == "Wild Card" then
+			equip(sets.WildCard)
+		elseif spell.name == "Snake Eye" then
+			equip(sets.SnakeEye)
+		elseif spell.name == "Fold" then
+			equip(sets.Fold)
+		elseif spell.name == "Triple Shot" then
+			equip(sets.midcast.RA.TripleShot)
+		end
 	end
-	if spell.name == "Wild Card" then
-		equip(sets.WildCard)
-	end
-	if spell.name == "Snake Eye" then
-		equip(sets.SnakeEye)
-	end
-	if spell.name == "Fold" then
-		equip(sets.Fold)
-	end
-	if spell.name == "Triple Shot" then
-		equip(sets.midcast.RA.TripleShot)
-	end
-	
 end
 
 
