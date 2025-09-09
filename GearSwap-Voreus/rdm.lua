@@ -284,7 +284,7 @@ function get_sets()
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Null loop",
-		waist="Sailfi belt +1",
+		waist="Slipor sash",
 		left_ear="Sherida Earring",
 		right_ear={ name="Leth. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
 		left_ring="Shneddick Ring",

@@ -2,27 +2,24 @@
 -- D.A.D. Technique <--Concept taken from bg-wiki
 -- Another important technique to be aware of is amicably known as D.A.D. (or performing Deactivate, Activate, Deploy, in that order). Because using Activate summons your Automaton with 100% HP & more importantly… 100% MP, this means you can exploit Deactivates short cooldown timer, to essentially give your Automaton an unlimited MP pool. Whenever your mage frame Automaton is running low on MP, (and as long as they aren't damaged) simply D.A.D. to fill their MP pool right back up to full! 
 
--- Import the necessary libraries
-require('tables')
-require('strings')
-packets = require('packets')
-
-
 function get_sets()
 
-	-- !f8 is the keybinding for toggling your weapons.
-	-- ^f8 is for reversing the weapon toggle.
-	-- ^f9 switches between different engaged gear sets.
-    send_command('input /macro book 2;wait .1;input /macro set 1')
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
 	send_command('bind !f8 gs c C8') 
-	send_command('bind ^f8 gs c Reverse Toggle Weapon')
+	send_command('bind ^f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
 	send_command('bind ^f9 gs c C9')
-	send_command('bind !f9 gs c reverse engaged set')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 	
 	
 	-- Precast Gear Sets
     -- The sets defined under sets.precast are for various abilities, and the script swaps gear depending on the spell or ability being used, like:
-
     -- Maneuver: Boosts automaton performance.
     -- Activate: Restores the automaton's MP with the right gear.
     -- Overdrive: Boosts the Overdrive effect for the automaton.
@@ -85,12 +82,23 @@ function get_sets()
     left_ear="Enmerkar Earring",
     right_ear="Handler's Earring +1",
     left_ring="Shneddick Ring",
-    right_ring="Varar Ring +1",
+	right_ring={name="Varar Ring +1", bag="Wardrobe 5"},
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
   }
   
   sets.engaged.Movement = set_combine(sets.engaged.DT, {
-	left_ring="Shneddick ring"
+      head="Malignance Chapeau",
+    body="Kara. Farsetto +3",
+    hands="Karagoz Guanti +3",
+    legs="Kara. Pantaloni +3",
+    feet="Malignance Boots",
+    neck="Null loop",
+    waist="Plat. Mog. Belt",
+    left_ear="Enmerkar Earring",
+    right_ear="Handler's Earring +1",
+	left_ring="Shneddick ring",
+	right_ring={name="Varar Ring +1", bag="Wardrobe 5"},
+    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
   })
   
   sets.engaged.Regen = {
@@ -104,7 +112,7 @@ function get_sets()
     left_ear="Enmerkar Earring",
     right_ear="Hypaspist Earring",
     left_ring="Shneddick Ring",
-    right_ring="Varar Ring +1",
+	right_ring={name="Varar Ring +1", bag="Wardrobe 5"},
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%'}}  
   }
   
@@ -138,8 +146,8 @@ function get_sets()
     waist="Klouskap Sash",
     left_ear="Enmerkar Earring",
     right_ear="Kyrene's Earring",
-    left_ring="Varar Ring +1",
-    right_ring="Varar Ring +1",
+	left_ring={name="Varar Ring +1", bag="Wardrobe 2"},
+	right_ring={name="Varar Ring +1", bag="Wardrobe 5"},
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
   }
 
@@ -154,7 +162,7 @@ function get_sets()
 	waist="Incarnation Sash",
 	left_ear="Enmerkar Earring",
 	right_ear="Rimeice Earring",
-	left_ring="Varar Ring +1",
+	left_ring={name="Varar Ring +1", bag="Wardrobe 2"},
 	right_ring="Cath Palug ring",
 	back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}    
   }
@@ -184,6 +192,22 @@ function get_sets()
     right_ring="Overbearing Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
   }
+  
+  
+  -- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+  sets.idle = {}
+  sets.idle.index = {'PDTMovement', 'Craft'}
+  idle_ind = 1
+
+  sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+  
+  
+  sets.idle.Craft = set_combine(sets.engaged.Movement, {
+	sub="Bv. escutcheon",
+	hands="Tanner's gloves",
+	neck="Tanner's torque",
+	left_ring="Artificer's Ring"
+  })
   
 
 --Weapon Skill Sets
@@ -270,8 +294,8 @@ function get_sets()
 		waist="Klouskap Sash",
 		left_ear="Enmerkar Earring",
 		right_ear="Kyrene's Earring",
-		left_ring="Varar Ring +1",
-		right_ring="Varar Ring +1",
+		left_ring={name="Varar Ring +1", bag="Wardrobe 2"},
+		right_ring={name="Varar Ring +1", bag="Wardrobe 5"},
 		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}	
 	}
 	sets.PetWS.BoneCrusher = {
@@ -285,7 +309,7 @@ function get_sets()
 		left_ear="Enmerkar Earring",
 		right_ear="Kyrene's Earring",
 		left_ring="Cath Palug ring",
-		right_ring="Varar Ring +1",
+		right_ring={name="Varar Ring +1", bag="Wardrobe 5"},
 		back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}	
 	}
 	sets.PetWS.MagicMortar = {}
@@ -358,86 +382,70 @@ function precast(spell)
 end
 
 function aftercast(spell)
-	equip_current()	
+	equip_current()
 end
 
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'MDT' or 'DT' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a MDT, PDT, DT, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
+
 function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
 	equip_weapon()
+	status_change()
 end
-
 
 function equip_weapon()
 	equip(sets.weapon[sets.weapon.index[weapon_ind]])
 end
 
---Function use for Changing the TP Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
+	end
+end
+	
+
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
 function self_command(command)
-	if command == 'C8' then -- Toggling Weapons--	
+	if command == 'C8' then 
 		weapon_ind = weapon_ind +1
 		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
-	elseif command == 'Reverse Toggle Weapon' then --Reverse Toggling of Weapons
+	elseif command == 'reverse Weapon set' then 
 		weapon_ind = weapon_ind -1
 		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
 		equip_weapon()
 	elseif command == 'C9' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	elseif command == 'reverse engaged set' then
+	elseif command == 'reverse Engaged set' then
 		engaged_ind = engaged_ind -1
 		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
-	end	
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 		
+	end	 
 end
 
 
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-	send_command('@input /tell <me> Wakies Wakies Voreus!!! For some Weird Ass Reason my you dead')
+		send_command('@input /tell <me> Wake up Voreus!')
 	end
 end)
-
-
--- This function runs several times per second. Perfect for monitoring things like TP.
--- job_tick() is a built in function that is part of Gearswap. Because this shit exists, Gearswap will run it.
-function job_tick()
-    if pet.isvalid and pet.status == 'Engaged' then
-        if pet.tp >= 950 then
-            send_command('@input /echo AUTO: Pet WS Engaged (TP='..pet.tp..')')
-            -- UPDATED LINE: Call our new logic function
-            equip(which_automaton_ws()) 
-            return
-    end
-    
-    return false
-end
-
-
-
--- Function to determine the automaton type
-function which_automaton_ws()
-    local frame = pet.frame
-    if frame == 'Sharpshot Frame' then
-        return equip()
-    elseif frame == 'Stormwaker Frame' then
-        return 'Magic'
-    elseif frame == 'Valoredge Frame' then
-        return 'Melee'
-    else
-        return 'Unknown'
-    end
-end

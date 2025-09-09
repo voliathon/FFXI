@@ -260,7 +260,8 @@ function get_sets()
   -- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
   sets.idle = {}
   sets.idle.index = {'PDTMovement', 'Refresh', 'Craft'}
-  idle_ind = 1      
+  idle_ind = 1
+  
   sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
   
   sets.idle.Refresh = set_combine(sets.engaged.Refresh,  {
