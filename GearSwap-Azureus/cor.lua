@@ -147,8 +147,8 @@ function get_sets()
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Ishvara Earring",
-		left_ring="Epaminondas's Ring",
-		right_ring="Dingir Ring",
+		left_ring="Dingir Ring",
+		right_ring="Epaminondas's Ring",
 		back=CamulusCape.agi_ws
 	}
 
@@ -163,8 +163,8 @@ function get_sets()
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250'}},
 		right_ear="Ishvara Earring",
-		left_ring="Epaminondas's Ring",
-		right_ring="Sroda Ring",
+		left_ring="Sroda Ring",
+		right_ring="Epaminondas's Ring",
 		back=CamulusCape.str_ws
 	}
 
@@ -212,8 +212,8 @@ function get_sets()
 		waist="K. Kachina Belt +1",
 		left_ear="Telos Earring",
 		right_ear="Crep. Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Dingir Ring",
+		left_ring="Dingir Ring",
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
 		back=CamulusCape.agi_ws
 	}
 
@@ -243,8 +243,8 @@ function get_sets()
 		waist="Windbuffet Belt +1",
 		left_ear="Brutal Earring",
 		right_ear="Cessance Earring",
-	    left_ring={name="Chirich Ring +1",bag="Wardrobe 3"},
-		right_ring="Epona's Ring",
+		left_ring={name="Chirich Ring +1", bag="Wardrobe 3"},
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
         back=CamulusCape.melee_double_attack
     }
 	
@@ -259,7 +259,7 @@ function get_sets()
 		left_ear="Hearty Earring",
 		right_ear="Infused Earring",
 		left_ring="Shneddick Ring",
-		right_ring="Chirich Ring +1",	
+		right_ring={name="Chirich Ring +1", bag="Wardrobe 4"},
         back=CamulusCape.melee_double_attack
 	}
 	
