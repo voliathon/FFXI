@@ -363,20 +363,21 @@ function precast(spell,abil)
 		equip(sets.FastCast)
 	end
 	
-	--WS Lookups
-	if spell.name == "Garland of Bliss" then
-		equip(sets.GarlandofBliss)
+	--Summoner Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Garland of Bliss" then
+			equip(sets.GarlandofBliss)
+		elseif spell.name == "Shattersoul" then
+			equip(sets.Shattersoul)
+		elseif spell.name == "Shell Crusher" then
+			equip(sets.ShellCrusher)
+		elseif spell.name == "Black Halo" then
+			equip(sets.BlackHalo)
+		else
+			equip(sets.BlackHalo)
+		end
 	end
-	if spell.name == "Shattersoul" then
-		equip(sets.Shattersoul)
-	end
-	if spell.name == "Shell Crusher" then
-		equip(sets.ShellCrusher)
-	end
-	if spell.name == "Black Halo" then
-		equip(sets.BlackHalo)
-	end
-
+	
 	if spell.name == "Avatar's Favor" then
 		equip(sets.AvatarFavor)
 	end	

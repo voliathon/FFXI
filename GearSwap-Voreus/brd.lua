@@ -320,37 +320,37 @@ function get_sets()
     back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
   }
 
-  -- Weapon Toggle--
-  sets.weapon = {}
-  sets.weapon.index = {'CarnwenhanShield', 'CarnwenhanGleti', 'NaeglingShield', 'NaeglingGleti', 'TauretShield', 'TauretGleti'}
-  weapon_ind = 1     
-  
- sets.weapon.CarnwenhanShield = {
-	main="Carnwenhan",
-	sub="Ammurapi shield"
- } 
- sets.weapon.CarnwenhanGleti = {
-	main="Carnwenhan",
-	sub="Gleti's knife"
- }
+	-- Weapon Toggle--
+	sets.weapon = {}
+	sets.weapon.index = {'CarnwenhanShield', 'CarnwenhanGleti', 'NaeglingShield', 'NaeglingGleti', 'TauretShield', 'TauretGleti'}
+	weapon_ind = 1     
 
- sets.weapon.NaeglingShield = {
-	main="Naegling",
-	sub="Ammurapi shield"
- }
- sets.weapon.NaeglingGleti = {
-	main="Naegling",
-	sub="Gleti's knife"
- }  
- 
- sets.weapon.TauretShield = {
-	main="Tauret",
-	sub="Ammurapi shield"
- } 
-  sets.weapon.TauretGleti = {
-	main="Tauret",
-	sub="Gleti's knife"
- } 
+	sets.weapon.CarnwenhanShield = {
+		main="Carnwenhan",
+		sub="Ammurapi shield"
+	} 
+	sets.weapon.CarnwenhanGleti = {
+		main="Carnwenhan",
+		sub="Gleti's knife"
+	}
+
+	sets.weapon.NaeglingShield = {
+		main="Naegling",
+		sub="Ammurapi shield"
+	}
+	sets.weapon.NaeglingGleti = {
+		main="Naegling",
+		sub="Gleti's knife"
+	}  
+
+	sets.weapon.TauretShield = {
+		main="Tauret",
+		sub="Ammurapi shield"
+	} 
+	sets.weapon.TauretGleti = {
+		main="Tauret",
+		sub="Gleti's knife"
+	} 
 
 end
 
@@ -384,29 +384,31 @@ function precast(spell,abil)
 			--Eventually this will be Daurdable or 3 song harp
 		end		
 	end
-	if spell.name == 'Nightingale' then
-		equip(sets.JA.Nightingale)
-	end 
-	if spell.name == 'Troubadour' then
-		equip(sets.JA.Troubadour)
-	end
-	if spell.name == 'Soul Voice' then
-		equip(sets.JA.SoulVoice)
-	end
-
 	
-	--WS Lookups
-	if spell.name == "Savage Blade" then
-		equip(sets.SavageBlade)
+	-- Bard Abilities --
+	if spell.type == 'JobAbility' then	
+		if string.find(spell.english,'Waltz') then 
+			equip(sets.JA.Waltz)
+		elseif spell.name == 'Nightingale' then
+			equip(sets.JA.Nightingale)
+		elseif spell.name == 'Troubadour' then
+			equip(sets.JA.Troubadour)
+		elseif spell.name == 'Soul Voice' then
+			equip(sets.JA.SoulVoice)
+		end
 	end
-	if spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
-		equip(sets.WSD)
+	
+	--Bard Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Savage Blade" then
+			equip(sets.SavageBlade)
+		elseif spell.name == "Rudra's Storm" or spell.name == "Evisceration" or spell.name == "Mordant Rime" then
+			equip(sets.WSD)
+		else
+			equip(sets.WSD)
+		end
 	end
-
-  	if string.find(spell.english,'Warp') or string.find(spell.english,'Tele') then 
-		--DO NOTHING
-	end
-  
+  	
 	if spell.skill == 'Enhancing Magic' or 	string.find(spell.english,'Cur') then 
 		equip(sets.FastCast)
 	end

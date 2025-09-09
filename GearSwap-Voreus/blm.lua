@@ -389,51 +389,38 @@ function precast(spell,abil)
 		equip(sets.FastCast)
 	end
 		
-	--Can add stuff here for other magic. Doesn't have to go to idle at all
-	
-
-	--WS Lookups
-	if spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
-		equip(sets.WSD)
+	--Scholar Weapon Skills	
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
+			equip(sets.WSD)
+		elseif spell.name == "Rock Crusher" then
+			equip(sets.WSD)
+		elseif spell.name == "Earth Crusher" then
+			equip(sets.WSD)
+		elseif spell.name == "Starburst" then
+			equip(sets.WSD)
+		elseif spell.name == "Sunburst" then
+			equip(sets.WSD)
+		elseif spell.name == "Shell Crusher" then
+			equip(sets.WSD)
+		elseif spell.name == "Full Swing" then
+			equip(sets.WSD)
+		elseif spell.name == "Spirit Taker" then
+			equip(sets.WSD)
+		elseif spell.name == "Retribution" then
+			equip(sets.WSD)
+		elseif spell.name == "Omniscience" then
+			equip(sets.WSD)
+		elseif spell.name == "Cataclysm" then
+			equip(sets.Cataclysm)
+		elseif spell.name == "Myrkr" then
+			equip(sets.Myrkr)
+		elseif spell.name == "Shattersoul" then
+			equip(sets.WSD)
+		elseif spell.name == "Black Halo" then
+			equip(sets.WSD)
+		end
 	end
-	if spell.name == "Rock Crusher" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Earth Crusher" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Starburst" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Sunburst" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Shell Crusher" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Full Swing" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Spirit Taker" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Retribution" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Omniscience" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Cataclysm" then
-		equip(sets.Cataclysm)
-	end
-	if spell.name == "Myrkr" then
-		equip(sets.Myrkr)
-	end
-	if spell.name == "Shattersoul" then
-		equip(sets.WSD)
-	end
-	-- Add logic for Waltz
-	-- Add logic for Utsusemi
   
 end
 

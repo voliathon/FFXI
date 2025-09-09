@@ -368,7 +368,7 @@ function get_sets()
 
 	 -- Weapon Toggle--
 	 sets.weapon = {}
-	 sets.weapon.index = {'Nuke', 'Nuke2', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingTauret'}
+	 sets.weapon.index = {'Nuke', 'Nuke2', 'HiEnspell', 'LowEnspell', 'Refresh', 'NaeglingShield', 'NaeglingTauret', 'Maxentius'}
 	 weapon_ind = 1     
 	  
 	 sets.weapon.Nuke = {
@@ -399,7 +399,10 @@ function get_sets()
 		main="Naegling",
 		sub="Tauret"
 	 }
- 
+ 	 sets.weapon.Maxentius = {
+		main="Maxentius",
+		sub="Sacro Bulwark"
+	 } 
 end
 
 function precast(spell,abil)
@@ -417,15 +420,19 @@ function precast(spell,abil)
 		equip(sets.ElementalMagic)
 		get_obi(spell)
 	end
-	--WS Lookups
-	if spell.name == "Savage Blade" then
-		equip(sets.SavageBlade)
-	elseif spell.name == "Sanguine Blade" then
-		equip(sets.SanguineBlade)
-	elseif spell.name == "Seraph Blade" or spell.name == "Shining Blade" then
-		equip(sets.SeraphBlade)
+	
+	--Red Mage Weapon Skills
+    if spell.type == 'WeaponSkill' then
+		if spell.name == "Savage Blade" then
+			equip(sets.SavageBlade)
+		elseif spell.name == "Sanguine Blade" then
+			equip(sets.SanguineBlade)
+		elseif spell.name == "Seraph Blade" or spell.name == "Shining Blade" then
+			equip(sets.SeraphBlade)
+		else
+			equip(sets.SavageBlade)
+		end
 	end
-
 end
 
 function midcast(spell)

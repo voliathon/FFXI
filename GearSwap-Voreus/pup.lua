@@ -18,8 +18,6 @@ function get_sets()
 	send_command('bind ^f10 gs c reverse Idle set')
 	
 	
-	-- Precast Gear Sets
-    -- The sets defined under sets.precast are for various abilities, and the script swaps gear depending on the spell or ability being used, like:
     -- Maneuver: Boosts automaton performance.
     -- Activate: Restores the automaton's MP with the right gear.
     -- Overdrive: Boosts the Overdrive effect for the automaton.
@@ -336,49 +334,44 @@ function get_sets()
 end
 
 function precast(spell)
-  if string.find(spell.name, 'Maneuver') then
-	equip(sets.precast.Maneuver)
-  end
-  if string.find(spell.name, 'Repair') then
-	equip(sets.precast.Repair)
-  end  
-  if spell.name == 'Tactical Switch' then
-	equip(sets.precast.TacticalSwitch)
-  end
-  if spell.name == 'Ventriloquy' then
-	equip(sets.precast.Ventriloquy)
-  end
-  if spell.name == 'Role Reversal' then
-	equip(sets.precast.RoleReversal)
-  end
-  if spell.name == 'Overdrive' then
-	equip(sets.precast.Overdrive)
-  end  
+	-- Puppetmaster Abilities --
+	if spell.type == 'JobAbility' then
+		if string.find(spell.name, 'Maneuver') then
+			equip(sets.precast.Maneuver)
+		elseif string.find(spell.name, 'Repair') then
+			equip(sets.precast.Repair)
+		elseif spell.name == 'Tactical Switch' then
+			equip(sets.precast.TacticalSwitch)
+		elseif spell.name == 'Ventriloquy' then
+			equip(sets.precast.Ventriloquy)
+		elseif spell.name == 'Role Reversal' then
+			equip(sets.precast.RoleReversal)
+		elseif spell.name == 'Overdrive' then
+			equip(sets.precast.Overdrive)
+		elseif string.find(spell.name, 'Waltz') then
+			equip(sets.precast.Waltz)
+		end			
+	end  
 
-  -- Dancer Abilities --
-  if string.find(spell.name, 'Waltz') then
-	equip(sets.precast.Waltz)
-  end	
-
-  --Weaponskills  
-  if spell.name == 'Stringing Pummel' then
-	equip(sets.WS.StringingPummel)
-  elseif spell.name == 'Asuran Fists' then
-    equip(sets.WS.AsuranFists)
-  elseif spell.name == 'Victory Smite' then
-	equip(sets.WS.VictorySmite)
-  elseif spell.name == 'Howling Fist' then
-	equip(sets.WS.HowlingFist)
-  elseif spell.name == 'Raging Fist' then
-	equip(sets.WS.RagingFist)
-  elseif spell.name == 'Shijin Spiral' then
-	equip(sets.WS.ShijinSpiral)
-  elseif spell.type=="WeaponSkill" then
-	equip(sets.WS.StringingPummel)
-  elseif sets.precast[spell.name] then
-	equip(sets.precast[spell.name])
-  end
-
+	--Puppetmaster Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == 'Stringing Pummel' then
+			equip(sets.WS.StringingPummel)
+		elseif spell.name == 'Asuran Fists' then
+			equip(sets.WS.AsuranFists)
+		elseif spell.name == 'Victory Smite' then
+			equip(sets.WS.VictorySmite)
+		elseif spell.name == 'Howling Fist' then
+			equip(sets.WS.HowlingFist)
+		elseif spell.name == 'Raging Fist' then
+			equip(sets.WS.RagingFist)
+		elseif spell.name == 'Shijin Spiral' then
+			equip(sets.WS.ShijinSpiral)
+		else
+			equip(sets.WS.StringingPummel)
+		end
+	end
+	
 end
 
 function aftercast(spell)
@@ -447,5 +440,25 @@ end
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
 		send_command('@input /tell <me> Wake up Voreus!')
+	end
+end)
+
+-- https://github.com/Broguypal/FFXIpublicLUAs/blob/main/PUP.lua#L731
+-- Registering event for pet changes -- Essentially, this checks the Pet TP every second, and if it reaches 850+ it automatically swaps to the appropriate pet weaponskill set.
+windower.register_event('time change', function(new, old)
+	if new > old and pet.isvalid and pet.status == "Engaged" then 
+		if pet.tp >= 850 and player.tp <= 400 then
+			if pet.frame == "Sharpshot Frame" then
+				equip(sets.PetWS.Arcuballista)
+			end
+			if pet.frame == "Valoredge Frame" or pet.frame == "Harlequin Frame" then
+				equip(sets.PetWS.BoneCrusher)
+			end
+		end
+		--Insert this command if you want your character to automatically cast repair if your pet falls below a certain health percentage while engaged (Delete the "--[[ ... ]]")
+		--[[if pet.hpp <= 40 then windower.send_command('input /ja "Repair" <me>') end ]]
+	end
+	if new > old then
+		check_pet_status()
 	end
 end)

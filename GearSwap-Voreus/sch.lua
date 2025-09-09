@@ -419,49 +419,59 @@ end
 -- boomstickskills
 -- Hitting Grimoire equipment as a clean up. Should always be in a form of Light Arts and Dark Arts on Scholar
 function precast(spell,abil)
-	if spell.skill == 'Elemental Magic' then
-		equip(sets.ElementalMagic)
-		get_obi(spell)
-	elseif (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
+	if spell.name == 'Stun' then
+		equip(sets.MagicAccuracy)
+	end
+
+	if (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
         (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
 			equip(sets.FastCastGrimoire)
+			get_obi(spell)
 			--send_command('@input /echo yeah we hit this shit in precast.')	
 	end 
 	
-	if spell.name == 'Immanence' then
-		equip(sets.Immanence)
-	elseif spell.name == 'Penury'  or spell.name == 'Parsimony' then
-		equip({legs="Arbatel pants +3"})
-	elseif spell.name == 'Celerity' or spell.name == 'Alacrity' or spell.name == 'Stormsurge' then
-		equip({feet="Pedagogy loafers +3"})
-	elseif spell.name == 'Stun' then
-		equip(sets.MagicAccuracy)
-	elseif spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
-		equip(sets.WSD)
-	elseif spell.name == "Rock Crusher" then
-		equip(sets.WSD)
-	elseif spell.name == "Earth Crusher" then
-		equip(sets.WSD)
-	elseif spell.name == "Starburst" then
-		equip(sets.WSD)
-	elseif spell.name == "Sunburst" then
-		equip(sets.WSD)
-	elseif spell.name == "Shell Crusher" then
-		equip(sets.WSD)
-	elseif spell.name == "Full Swing" then
-		equip(sets.WSD)
-	elseif spell.name == "Spirit Taker" then
-		equip(sets.WSD)
-	elseif spell.name == "Retribution" then
-		equip(sets.WSD)
-	elseif spell.name == "Omniscience" then
-		equip(sets.WSD)
-	elseif spell.name == "Cataclysm" then
-		equip(sets.Cataclysm)
-	elseif spell.name == "Myrkr" then
-		equip(sets.Myrkr)
-	elseif spell.name == "Shattersoul" then
-		equip(sets.WSD)
+	--Scholar Job Abilities
+	if spell.type == 'JobAbility' then
+		if spell.name == 'Immanence' then
+			equip(sets.Immanence)
+		elseif spell.name == 'Penury'  or spell.name == 'Parsimony' then
+			equip({legs="Arbatel pants +3"})
+		elseif spell.name == 'Celerity' or spell.name == 'Alacrity' or spell.name == 'Stormsurge' then
+			equip({feet="Pedagogy loafers +3"})
+		end
+	end
+	
+	--Scholar Weapon Skills	
+    if spell.type == 'WeaponSkill' then		
+		if spell.name == "Hexa Strike" or spell.name == "Savage Blade" then
+			equip(sets.WSD)
+		elseif spell.name == "Rock Crusher" then
+			equip(sets.WSD)
+		elseif spell.name == "Earth Crusher" then
+			equip(sets.WSD)
+		elseif spell.name == "Starburst" then
+			equip(sets.WSD)
+		elseif spell.name == "Sunburst" then
+			equip(sets.WSD)
+		elseif spell.name == "Shell Crusher" then
+			equip(sets.WSD)
+		elseif spell.name == "Full Swing" then
+			equip(sets.WSD)
+		elseif spell.name == "Spirit Taker" then
+			equip(sets.WSD)
+		elseif spell.name == "Retribution" then
+			equip(sets.WSD)
+		elseif spell.name == "Omniscience" then
+			equip(sets.WSD)
+		elseif spell.name == "Cataclysm" then
+			equip(sets.Cataclysm)
+		elseif spell.name == "Myrkr" then
+			equip(sets.Myrkr)
+		elseif spell.name == "Shattersoul" then
+			equip(sets.WSD)
+		elseif spell.name == "Black Halo" then
+			equip(sets.WSD)
+		end
 	end
 	
 end

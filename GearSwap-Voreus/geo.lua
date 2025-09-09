@@ -380,13 +380,31 @@ function precast(spell,abil)
 		get_obi(spell)
 	end
 
-	--WS Lookups
-	if spell.name == "Exudation" then
-		equip(sets.Exudation)
+	if spell.type == 'JobAbility' then	
+		if string.find(spell.english,'Bolster') then 
+			equip(sets.JA.Bolster)
+		elseif spell.name == 'Life Cycle' then
+			equip(sets.JA.LifeCycle)
+		elseif spell.name == 'Full Circle' then
+			equip(sets.JA.FullCircle)
+		elseif spell.name == 'Curative Recantation' then
+			equip(sets.JA.CurativeRecantation)
+		elseif spell.name == 'Mending Halation' then
+			equip(sets.JA.MendingHalation)
+		elseif spell.name == 'Radial Arcana' then
+			equip(sets.JA.RadialArcana)
+		end
 	end
-	if spell.name == "Black Halo" then
-		equip(sets.BlackHalo)
-	end	
+
+	--Geomancer Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Exudation" then
+			equip(sets.Exudation)
+		end
+		if spell.name == "Black Halo" then
+			equip(sets.BlackHalo)
+		end	
+	end
  
   
 end

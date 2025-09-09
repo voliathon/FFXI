@@ -32,18 +32,18 @@ function get_sets()
     sets.JA = {}
     sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
 	
-    sets.JA['Sneak Attack'] = {hands="Skulker's armlets +2"}
-    sets.JA['Trick Attack'] = {hands="Pillager's Armlets +2"}
-	sets.JA["Assassin's Charge"] = {feet="Plunderer's Poulaines +1"}
-	sets.JA['Feint'] = {legs="Plunderer's Culottes"}
-	sets.JA['Conspirator'] = {body="Skulker's vest +3"}
-	sets.JA['Steal'] = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
-	sets.JA['Mug'] = {head="Plunderer's Bonnet"}
-	sets.JA['Despoil'] = {feet="Skulker's Poulaines +2"}
-	sets.JA['Accomplice'] = {head="Skulk. bonnet +3",}
-	sets.JA['Flee'] = {feet="Pillager's Poulaines +2"}
-	sets.JA['Hide'] = {body="Pillager's Vest +2"}
-	sets.JA['Perfect Dodge'] = {hands="Plun. Armlets +4"}	
+    sets.JA.Sneak Attack = {hands="Skulker's armlets +2"}
+    sets.JA.Trick Attack = {hands="Pillager's Armlets +2"}
+	sets.JA.AssassinsCharge = {feet="Plunderer's Poulaines +1"}
+	sets.JA.Feint = {legs="Plunderer's Culottes"}
+	sets.JA.Conspirator = {body="Skulker's vest +3"}
+	sets.JA.Steal = { hands="Pillager's Armlets +2", legs="Pillager's Culottes +2", feet="Pillager's Poulaines +2"}
+	sets.JA.Mug = {head="Plunderer's Bonnet"}
+	sets.JA.Despoil = {feet="Skulker's Poulaines +2"}
+	sets.JA.Accomplice = {head="Skulk. bonnet +3",}
+	sets.JA.Flee = {feet="Pillager's Poulaines +2"}
+	sets.JA.Hide = {body="Pillager's Vest +2"}
+	sets.JA.PerfectDodge = {hands="Plun. Armlets +4"}	
 	
 	sets.Fastcast = {
 		ammo="Staunch Tathlum",
@@ -214,65 +214,80 @@ function get_sets()
 	}
 	
 	
- -- Weapon Toggle--
-  sets.weapon = {}
-  sets.weapon.index = {'GandringGleti', 'GandringTauret', 'NaeglingGleti', 'TauretGleti', 'AeneasGleti'}
-  weapon_ind = 1     
- 
- sets.weapon.GandringGleti = {
-	main="Gandring",
-	sub="Gleti's knife"
- } 
- sets.weapon.GandringTauret = {
-	main="Gandring",
-	sub="Tauret"
- }    
- sets.weapon.NaeglingGleti = {
-	main="Naegling",
-	sub="Gleti's knife"
- } 
-  sets.weapon.TauretGleti = {
-	main="Tauret",
-	sub="Gleti's knife"
- } 
- sets.weapon.AeneasGleti = {
-	main="Aeneas",
-	sub="Gleti's Knife"
- } 
+	-- Weapon Toggle--
+	sets.weapon = {}
+	sets.weapon.index = {'GandringGleti', 'GandringTauret', 'NaeglingGleti', 'TauretGleti', 'AeneasGleti'}
+	weapon_ind = 1     
+
+	sets.weapon.GandringGleti = {
+		main="Gandring",
+		sub="Gleti's knife"
+	} 
+	sets.weapon.GandringTauret = {
+		main="Gandring",
+		sub="Tauret"
+	}    
+	sets.weapon.NaeglingGleti = {
+		main="Naegling",
+		sub="Gleti's knife"
+	} 
+	sets.weapon.TauretGleti = {
+		main="Tauret",
+		sub="Gleti's knife"
+	} 
+	sets.weapon.AeneasGleti = {
+		main="Aeneas",
+		sub="Gleti's Knife"
+	} 
 end	
 	
 
 -- Precast Function --
 function precast(spell,action)
-    -- Dancer Abilities --
-    if string.find(spell.english, 'Waltz') then
-	    equip(sets.JA.Waltz)
-		
 	-- Thief Abilities --
-	elseif spell.type == 'JobAbility' then
-	        equip(sets.JA[spell.english])
+	if spell.type == 'JobAbility' then
+		if spell.name == 'Sneak Attack' then
+			equip(sets.JA.SneakAttack)
+		elseif spell.name == 'Trick Attack' then
+			equip(sets.JA.TrickAttack)
+		elseif spell.name == "Assassin's Charge" then
+			equip(sets.JA.AssassinsCharge)
+		elseif spell.name == 'Feint' then
+			equip(sets.JA.Feint)
+		elseif spell.name == 'Conspirator' then
+			equip(sets.JA.Conspirator)
+		elseif spell.name == 'Steal' then
+			equip(sets.JA.Steal)
+		elseif spell.name == 'Mug' then
+			equip(sets.JA.Mug)
+		elseif spell.name == 'Despoil' then
+			equip(sets.JA.Despoil)
+		elseif spell.name == 'Accomplice' then
+			equip(sets.JA.Accomplice)
+		elseif spell.name == 'Flee' then
+			equip(sets.JA.Flee)
+		elseif spell.name == 'Hide' then
+			equip(sets.JA.Hide)
+		elseif spell.name == 'Perfect Dodge' then
+			equip(sets.JA.PerfectDodge)
+		elseif string.find(spell.english, 'Waltz') then
+			equip(sets.JA.Waltz)
+		end
+	end
 			
-	-- Weapon Skill --
-	-- 50% DEX Modifier Evisceration / Crits per hits
-	elseif spell.name =="Evisceration" then
-		equip(sets.Evisceration)
+	--Thief Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name =="Evisceration" then
+			equip(sets.Evisceration)
+		elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
+			equip(sets.WSD)
+		elseif spell.name == "Aeolian Edge" then
+			equip(sets.Aeolian)
+		else
+			equip(sets.WSD)
+		end
+	end
 	
-	-- 80% DEX Modifier Rudra's Storm <--This is a quad hit to Crit Hit DMG+
-	-- 60% DEX Modifier Mandalic Stab
-    elseif spell.name == "Rudra's Storm" or spell.name == "Mandalic Stab" then
-		equip(sets.WSD)
-
-	-- DEX 40% INT 40% Modifier Aeolian Edge | Also pack on all of that MAB+MACC shit
-	elseif spell.name == "Aeolian Edge" then
-		equip(sets.Aeolian)
-
-	--elseif spell.action_type == 'Ranged Attack' then
-	--    equip(sets.preshot.RA)
-
-	-- Ninja Spells --
-	elseif spell.skill == 'Ninjutsu' then
-	    equip(sets.Fastcast)
-	end	
 end	
 
 
