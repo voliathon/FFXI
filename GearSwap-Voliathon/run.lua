@@ -432,14 +432,9 @@ function midcast(spell,act,arg)
 			equip(sets.Enmity,sets.JA.Vallation)
 		elseif spell.name == 'Pflug' then
 			equip(sets.Enmity,sets.JA.Pflug)
-		end  
+		end
 	end
-	
-	
-	if spell.skill == 'Elemental Magic' then
-		equip(sets.JA.Lunge)
-	end
-
+		
 	if spell.skill == 'Enhancing Magic' then
 		if spell.name == 'Phalanx' then
 			equip(sets.SIR,sets.Phalanx)

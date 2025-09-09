@@ -5,26 +5,27 @@ function get_sets()
 	-- Set macro book/set --
     send_command('input /macro book 1;wait .1;input /macro set 1')
 	
-	-- Toggle Engaged sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-    send_command('bind !f9 gs c toggle Engaged set')
-	send_command('bind ^f9 gs c reverse Engaged set')
+	
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind ^f8 gs c C8') 
+	send_command('bind !f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 	
     -- Job Abilities for White Mage --
-    sets.Benediction = {body="Piety Bliaut +3"}
-    sets.AfflatusSolace = {body="Ebers bliaut +3", feet="Piety duckbills +3", back="Alaunus's Cape"}
-    sets.DivineCaress = {hands="Ebers mitts +3", back="Mending cape"}
-	sets.Devotion = {heads="Piety Cap +3"}
+	sets.JA = {}
+    sets.JA.Benediction = {body="Piety Bliaut +3"}
+    sets.JA.AfflatusSolace = {body="Ebers bliaut +3", feet="Piety duckbills +3", back="Alaunus's Cape"}
+    sets.JA.DivineCaress = {hands="Ebers mitts +3", back="Mending cape"}
+	sets.JA.Devotion = {heads="Piety Cap +3"}
 	
-	-- Fast Cast
-	-- Cursna
-	-- Regen
-	-- Devotion
-	-- Benediction
-	-- Barspells
-	-- Divine
-	-- Enhancing
-	-- Enfeebling
-
     -- Fast Cast for White Mage --
     sets.FastCast = {
 		ammo="Pemphredo Tathlum",
@@ -41,6 +42,17 @@ function get_sets()
 		right_ring="Stikini Ring +1",
 		back="Perimede Cape"
 	}
+	
+	sets.Regen = set_combine(sets.FastCast, {
+		main="Bolelabunga",
+		sub="Ammurapi Shield",
+		head="Inyanga Tiara +2",
+		body="Piety Bliaut +3",
+		hands="Ebers mitts +3",
+		waist="Embla sash",
+		legs="Th. Pant. +3",
+		feet="Bunzi's sabots"
+	})
 	
 	sets.Cursna = {
 		main="Yagrush",
@@ -66,7 +78,6 @@ function get_sets()
 		legs="Piety pantaloons +3"
 	}
 
-	--TODO
     sets.EnhancingMagic = {
 		main="Daybreak",
 		sub="Ammurapi Shield",
@@ -131,7 +142,6 @@ function get_sets()
 		left_ear="Mendi. Earring",
 		right_ear="Glorious earring"
 	}
-
 
   	-- Elemental Magic sets...  When shit needs to die, this is the set to make it happen
 	sets.ElementalMagic = {
@@ -201,8 +211,13 @@ function get_sets()
       body="Twilight Cloak",
 	}
 
+	--Engaged Sets--
+	sets.engaged = {}
+	sets.engaged.index = {'Tank', 'Refresh', 'TP', 'Movement'}
+	engaged_ind = 1
+
 	-- Tank Set
-    sets.Tank = {
+    sets.engaged.Tank = {
 		ammo="Staunch Tathlum +1",
 		head="Nyame Helm",
 		body="Shamash Robe",
@@ -218,10 +233,7 @@ function get_sets()
 		back="Solemnity Cape"
 	}
 		
-	-- When I gotta kite shite, I put on my Sandals and shit...
-    sets.Kiting = {left_ring="Shneddick ring"}
-	
-	sets.Refresh = set_combine(sets.Tank,  {
+	sets.engaged.Refresh = set_combine(sets.Tank,  {
 		main="Daybreak",
 		sub="Genmei shield",
 		head="Befouled crown",
@@ -233,19 +245,8 @@ function get_sets()
 		ammo="Homiliary"
 	})
 	
-   sets.Yagrush = set_combine(sets.FastCast,  {
-		main="Yagrush",
-		hands="Ebers mitts +3",
-		legs="Ebers Pantaloons +3",
-		back="Mending cape"
-	 })
-
-	  -- Engaged Sets Toggle--
-	sets.engaged = {}
-	sets.engaged.index = {'TP','Movement', 'Tank', 'Accuracy', 'Refresh'}
-	engaged_ind = 1  	 
-	 
-	sets.engaged.TP = {
+	-- TP Set
+    sets.engaged.TP = {
 		ammo="Amar Cluster",
 		head="Aya. Zucchetto +2",
 		body="Ayanmo Corazza +2",
@@ -259,17 +260,59 @@ function get_sets()
 		left_ring="Chirich Ring +1",
 		right_ring="Chirich Ring +1",
 		back="Moonlight Cape"	
+	}	
+	
+    sets.engaged.Movement = {
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		body="Shamash Robe",
+		hands="Ebers mitts +3",
+		legs="Ebers Pantaloons +3",
+		feet="Ebers duckbills +2",
+		neck="Null loop",
+		waist="Null belt",
+		left_ear="Genmei Earring",
+		right_ear="Infused Earring",
+		left_ring="Shneddick ring",
+		right_ring="Defending Ring",
+		back="Solemnity Cape"	
 	}
-	sets.engaged.Movement = set_combine(sets.Kiting, {})
-	sets.engaged.Tank = set_combine(sets.Tank, {})
-	sets.engaged.Accuracy = {}
-	sets.engaged.Refresh = set_combine(sets.Refresh, {})
+	
+   sets.Yagrush = set_combine(sets.FastCast,  {
+		main="Yagrush",
+		hands="Ebers mitts +3",
+		legs="Ebers Pantaloons +3",
+		back="Mending cape"
+	 })
+
+
+	-- Idle Sets Toggle-- Alt+F10 or Ctrl+F10
+	sets.idle = {}
+	sets.idle.index = {'PDTMovement', 'RefreshMovement', 'PureRefresh', 'Craft'}
+	idle_ind = 1      
+	
+	sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+
+	sets.idle.RefreshMovement = set_combine(sets.engaged.Refresh,  {
+		left_ring="Shneddick ring"
+	})
+
+	sets.idle.PureRefresh = set_combine(sets.engaged.Refresh,  {})
+
+	sets.idle.Craft = set_combine(sets.engaged.Movement, {
+		main="Caduceus",
+		sub="Br. escutcheon",
+		body="Alchemist's smock",
+		neck="Alchemist's torque",
+		left_ring="Artificer's Ring",
+		right_ring="Craftmaster's ring",
+		waist="Alchemist's belt"
+	}) 
+
 	
     ------------------------------------------------------------------------------------------------------------------
     -- Weaponskill sets
     ------------------------------------------------------------------------------------------------------------------
-
-	-- All Weaponskills for Geomancer unless explicitly defined below sets.precast.WS 
      sets.WSD = {
 		ammo="Amar Cluster",
 		head="Nyame Helm",
@@ -301,23 +344,62 @@ function get_sets()
 		right_ring="Chirich Ring +1",
 		back="Moonlight Cape"	 
 	 }
+
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'Daybreak','Yagrush','Bunzi','Maxentius'}
+	weapon_ind = 1 
 	
+	sets.weapon.Daybreak = {
+		main="Daybreak",
+		sub="Genmei shield"
+	}
+
+	sets.weapon.Yagrush = {
+		main="Yagrush",
+		sub="Ammurapi shield"
+	}
+	
+	sets.weapon.Bunzi = {
+		main="Bunzi's rod",
+		sub="Ammurapi shield"
+	}	
+
+	sets.weapon.Maxentius = {
+		main="Maxentius",
+		sub="Genmei shield"
+	}	
 end
 
 function precast(spell,abil)
+	--White Mage Abilities
+	if spell.type == 'JobAbility' then
+		if spell.name == 'Benediction' then
+			equip(sets.JA.Benediction)
+		elseif spell.name == 'Afflatus Solace' then
+			equip(sets.JA.AfflatusSolace)
+		elseif spell.name == 'Divine Caress' then
+			equip(sets.JA.DivineCaress)
+		elseif spell.name == 'Devotion' then
+			equip(sets.JA.Devotion)
+		end
+	end
+	
+	--White Mage Weapon Skills
+    if spell.type == 'WeaponSkill' then	
+		if spell.name == "Hexa Strike" then
+			equip(sets.WSD)
+		elseif spell.name == "Mystic Boon" then
+			equip(sets.MysticBoon)
+		else
+			equip(sets.WSD)
+		end
+	end
+
 	if spell.action_type == 'Magic' then
 		equip(sets.FastCast)
 	end
-	--Can add stuff here for other magic. Doesn't have to go to idle at all
 	
-	--WS Lookups
-	if spell.name == "Hexa Strike" then
-		equip(sets.WSD)
-	end
-	if spell.name == "Mystic Boon" then
-		equip(sets.MysticBoon)
-	end	
-  
 end
 
 function midcast(spell)
@@ -326,77 +408,88 @@ function midcast(spell)
 		if string.find(spell.english, 'Bar') then
 			equip(sets.BarSpells)
 		elseif string.find(spell.english, 'Boost') then
-			equip(sets.BoostSpells)
+			equip(sets.Enhancing)
 		else
 			equip(sets.Enhancing)
 		end
 	end
+	
 	if string.find(spell.english,'Regen') then 
 		equip(sets.Regen)
-	end	
-	if spell.skill == 'Enfeebling Magic' then
-		equip(sets.Enfeebling)
-	end
-	if string.find(spell.english,'Cur') then 
+	elseif string.find(spell.english,'Cur') then 
 		equip(sets.Cure)
-	end
-	if spell.name == 'Stoneskin' then
+	elseif spell.name == 'Stoneskin' then
 		equip(sets.Stoneskin)
-	end
-	if spell.skill == 'Elemental Magic' then
+	elseif spell.name == 'Cursna' then
+		equip(sets.Cursna)
+	elseif string.find(spell.english, 'na') then
+		equip(sets.Yagrush)
+	elseif spell.skill == 'Enfeebling Magic' then
+		equip(sets.Enfeebling)		
+	elseif spell.skill == 'Elemental Magic' then
 		equip(sets.ElementalMagic)
 	end
-	if string.find(spell.english, 'na') then
-		equip(sets.Yagrush)
+end
+
+function equip_current()
+	equip_weapon()
+	status_change()
+end
+
+function equip_weapon()
+	equip(sets.weapon[sets.weapon.index[weapon_ind]])
+end
+
+-- Only want to handle engaged vs idle for this play style
+function status_change()
+	if player.status == 'Engaged' then
+		equip(sets.engaged[sets.engaged.index[engaged_ind]])
+	elseif player.status == 'Idle' then
+		equip(sets.idle[sets.idle.index[idle_ind]])
 	end
 end
+	
 
---We need to do some thinking and testing for this set...
-function aftercast(spell)
-	equip_current()
-end
-
---This function should only get kicked off when you're engaging.  
---If I want a manual 'Refresh' set or 'Tank' set I can do that in game with equipsets.  
---But I don't want to fuck myself by ignoring the engaged check.
---I'm also deciding not to use a Binding Key to put my in a Tank, Refresh Set.
---I dunno, I'm just against hitting Ctrl+f# all the time for that shit
-function equip_current()
-	equip(sets.engaged[sets.engaged.index[engaged_ind]]) 
-end
-
-
---Function use for Changing the Engaged Set.  Ctrl+F9 is your meal ticket
---123 is a red color for the text output
---158 is a green color for the text output
+--Alt+F8 or Ctrl+F8  --> Toggle WEAPONS
+--Alt+F9 or Ctrl+F9  --> Toggle ENGAGED Equipment
+--Alt+F10 or Ctrl+F10  --> Toggle IDLE Equipment
 function self_command(command)
-	if command == 'C7' then -- Mecistopins Mantle toggle 
-		if Capacity == 'OFF' then
-			Capacity = 'ON'
-			equip({back="Mecistopins mantle"})
-            add_to_chat(158,'Capacity mantle: [ON]')
-		else
-			Capacity = 'OFF'
-			equip_current()
-   		    add_to_chat(123,'Capacity mantle: [OFF]')
-		end
-	elseif command == 'toggle Engaged set' then
+	if command == 'C8' then 
+		weapon_ind = weapon_ind +1
+		if weapon_ind > #sets.weapon.index then weapon_ind = 1 end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'reverse Weapon set' then 
+		weapon_ind = weapon_ind -1
+		if weapon_ind == 0 then weapon_ind = #sets.weapon.index end
+		send_command('@input /echo <----- WEAPONS changed to '..sets.weapon.index[weapon_ind]..' ----->')
+		equip_weapon()
+	elseif command == 'C9' then
 		engaged_ind = engaged_ind +1
 		if engaged_ind > #sets.engaged.index then engaged_ind = 1 end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
 	elseif command == 'reverse Engaged set' then
 		engaged_ind = engaged_ind -1
 		if engaged_ind == 0 then engaged_ind = #sets.engaged.index end
-		send_command('@input /echo <----- Gear Set changed to '..sets.engaged.index[engaged_ind]..' ----->')
+		send_command('@input /echo <----- ENGAGED changed to '..sets.engaged.index[engaged_ind]..' ----->')
 		equip_current()
+	elseif command == 'C10' then
+		idle_ind = idle_ind +1
+		if idle_ind > #sets.idle.index then idle_ind = 1 end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current()
+	elseif command == 'reverse Idle set' then
+		idle_ind = idle_ind -1
+		if idle_ind == 0 then idle_ind = #sets.idle.index end
+		send_command('@input /echo <----- IDLE changed to '..sets.idle.index[idle_ind]..' ----->')
+		equip_current() 
 	end	 
 end
-
 
 -- Send tell to self if I died --
 windower.register_event('status change', function()
 	if player.status == 'Dead' then
-		send_command('@input /tell <me> Wakies Wakies Voluzera We hit 0 HP on accident. We shall live forever!!!')
+		send_command('@input /tell <me> Wakies Voliathon! You died.')
 	end
 end)
