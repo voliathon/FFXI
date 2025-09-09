@@ -312,7 +312,7 @@ function get_sets()
 	
 	--Weapon Sets--
 	sets.weapon = {}
-	sets.weapon.index = {'DWSavageCOR','SavageCORShield','Tauret','FomalhautRostamShield','DeathPenaltyRostamShield','FomalhautDivergence','DeathPenaltyDivergence'}
+	sets.weapon.index = {'DWSavageCOR','SavageCORShield','Tauret','DeathPenaltyRostamShield','DeathPenaltyDivergence'}
 	weapon_ind = 1
 	
 	sets.weapon.DWSavageCOR = {
@@ -333,24 +333,12 @@ function get_sets()
 		range="Ataktos"
 	}
 	
-	sets.weapon.FomalhautRostamShield = {
-		main="Rostam",
-		sub="Nusku Shield",
-		range="Fomalhaut"
-	}
-	
 	sets.weapon.DeathPenaltyRostamShield = {
 		main="Rostam",
 		sub="Nusku Shield",
 		range="Death Penalty"
 	}
 	
-	sets.weapon.FomalhautDivergence = {
-		main="Rostam",
-		sub="Crepuscular Knife",
-		range="Fomalhaut"
-	}
-
 	sets.weapon.DeathPenaltyDivergence = {
 		main="Rostam",
 		sub="Crepuscular Knife",

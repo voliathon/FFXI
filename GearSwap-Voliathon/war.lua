@@ -19,21 +19,21 @@ function get_sets()
 	
 	--Job Ability Sets--
 	sets.JA = {}
-	sets.JA['MightyStrikes'] = {hands="Agoge mufflers +1"}
-	sets.JA['Berserk'] = {
+	sets.JA.MightyStrikes = {hands="Agoge mufflers +1"}
+	sets.JA.Berserk = {
 		body="Pumm. Lorica +4", 
 		back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%'}},
 		feet="Agoge Calligae +1"
 	}
-	sets.JA['Defender'] = {}
-	sets.JA['Warcry'] = {head="Agoge mask +4"}
-	sets.JA['Aggressor'] = {head="Pumm. Mask +2",body="Agoge Lorica +1"}
-	sets.JA['Retaliation'] = {hands="Pumm. mufflers +4"}
-	sets.JA['WarriorsCharge'] = {legs="Agoge Cuisses +1"}
-	sets.JA['Tomahawk'] = {feet="Agoge Calligae +1"}
-	sets.JA['Restraint'] = {hands="Boii Mufflers +3"}
-	sets.JA['BloodRage'] = {body="Boii Lorica +1"}
-	sets.JA['Restraint'] = {hands="Boii Mufflers +3"}
+	sets.JA.Defender = {}
+	sets.JA.Warcry = {head="Agoge mask +4"}
+	sets.JA.Aggressor = {head="Pumm. Mask +2",body="Agoge Lorica +1"}
+	sets.JA.Retaliation = {hands="Pumm. mufflers +4"}
+	sets.JA.WarriorsCharge = {legs="Agoge Cuisses +1"}
+	sets.JA.Tomahawk = {feet="Agoge Calligae +1"}
+	sets.JA.Restraint = {hands="Boii Mufflers +3"}
+	sets.JA.BloodRage = {body="Boii Lorica +1"}
+	sets.JA.Restraint = {hands="Boii Mufflers +3"}
 
 
 	--Enmity set for high hate generating spells and JAs
@@ -309,6 +309,38 @@ function precast(spell,abil)
 		equip({neck="Magoraga Beads"})
 	end
   
+	--Warrior Job Abilities
+	if spell.name == 'Defender' then
+        equip(sets.JA.Defender)
+    end
+	if spell.name == 'Warcry' then
+        equip(sets.JA.Warcry)
+    end
+	if spell.name == 'Aggressor' then
+        equip(sets.JA.Aggressor)
+    end
+	if spell.name == 'Retaliation' then
+        equip(sets.JA.Retaliation)
+    end
+	if spell.name == "Warrior's Charge" then
+        equip(sets.JA.WarriorsCharge)
+    end
+	if spell.name == 'Tomahawk' then
+        equip(sets.JA.Tomahawk)
+    end 
+	if spell.name == 'Restraint' then
+        equip(sets.JA.Restraint)
+    end 
+	if spell.name == 'Blood Rage' then
+        equip(sets.JA.BloodRage)
+    end 
+	if spell.name == 'Might Strikes' then
+        equip(sets.JA.MightyStrikes)
+    end 
+	if spell.name == 'Berserk' then
+        equip(sets.JA.Berserk)
+    end 
+	
 end
 
 

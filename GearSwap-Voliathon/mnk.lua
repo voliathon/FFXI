@@ -8,35 +8,43 @@ function MonkCapes()
 end	
 
 function get_sets()
-	--Settings MonkCapes fn()
-	MonkCapes()
 	
 	-- Set macro book/set --
     send_command('input /macro book 15;wait .1;input /macro set 1')
 	
-		-- Binds for modes
-	--Toggle TP sets button, change if you want; currently ALT+F9 toggles forward, CTRL+F9 toggles backwards
-  	send_command('bind ^f8 gs c C8') 
-    send_command('bind !f9 gs c toggle TP set')
-	send_command('bind ^f9 gs c reverse TP set')
+	-- Binds for modes
+	-- Toggle Weapon sets | Ctrl F8 or Alt F8
+	send_command('bind ^f8 gs c C8') 
+	send_command('bind !f8 gs c reverse Weapon set')
+
+	-- Toggle Engaged sets | Ctrl F9 or Alt F9
+	send_command('bind ^f9 gs c C9')
+	send_command('bind !f9 gs c reverse Engaged set')
+
+	-- Toggle Idle sets | Ctrl F10 or Alt F10
+	send_command('bind !f10 gs c C10') 
+	send_command('bind ^f10 gs c reverse Idle set')
 	
 		-- Modes --
 	Godhands = 'OFF' -- Toogle on/off the Godhands and Spharai via ctrl + F8
+	
+	--Settings MonkCapes fn()
+	MonkCapes()
 		
 	sets.Waltz = {legs="Dashing subligar"}
 
     sets.JA = {}
-    sets.JA['Boost'] = {hands="Anchorite's Gloves +4"}
-    sets.JA['Chakra'] = {body="Anchorite's Cyclas +3", hands="Hes. Gloves +3"}
-    sets.JA['Counterstance'] = {feet="Hesychast's Gaiters +3"}
-    sets.JA['Focus'] = {head="Anchorite's Crown +3"}
-    sets.JA['Dodge'] = {feet="Anchorite's Gaiters +4"}
-    sets.JA['Mantra'] = {feet="Hes. Gaiters +3"}
-    sets.JA['Footwork'] = {feet="Bhikku gaiters +3"}
-	sets.JA['Impetus']={body="Bhikku Cyclas +3"}
-	sets.JA['PerfectCounter']={head="Bhikku Crown +3"}
-    sets.JA['HundredFists'] = {legs="Hes. Hose +3"}
-	sets.JA['FormlessStrikes'] = {body="Hesychast's Cyclas +3"}
+    sets.JA.Boost = {hands="Anchorite's Gloves +4"}
+    sets.JA.Chakra = {body="Anchorite's Cyclas +3", hands="Hes. Gloves +3"}
+    sets.JA.Counterstance = {feet="Hesychast's Gaiters +3"}
+    sets.JA.Focus = {head="Anchorite's Crown +3"}
+    sets.JA.Dodge = {feet="Anchorite's Gaiters +4"}
+    sets.JA.Mantra = {feet="Hes. Gaiters +3"}
+    sets.JA.Footwork = {feet="Bhikku gaiters +3"}
+	sets.JA.Impetus={body="Bhikku Cyclas +3"}
+	sets.JA.PerfectCounter={head="Bhikku Crown +3"}
+    sets.JA.HundredFists = {legs="Hes. Hose +3"}
+	sets.JA.FormlessStrikes = {body="Hesychast's Cyclas +3"}
 
 	
 	--Engaged Sets--
@@ -55,8 +63,8 @@ function get_sets()
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
 		right_ear="Schere Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=MonkCapes.TP
     }	
 
@@ -71,8 +79,8 @@ function get_sets()
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
 		right_ear={ name="Schere Earring", augments={'Path: A',}},
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=MonkCapes.TP
 	}
 
@@ -87,8 +95,8 @@ function get_sets()
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
 		right_ear={ name="Schere Earring", augments={'Path: A',}},
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=MonkCapes.TP
 	}
 	
@@ -104,7 +112,7 @@ function get_sets()
 		left_ear="Sherida Earring",
 		right_ear={ name="Schere Earring", augments={'Path: A',}},
 		left_ring="Shneddick Ring",
-		right_ring="Chirich Ring +1",
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=MonkCapes.TP
 	}	
 	
@@ -119,8 +127,8 @@ function get_sets()
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
 		right_ear="Schere Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Chirich Ring +1",bag="Wardrobe 5"},
 		back=MonkCapes.TP	
 	}
 	
@@ -223,7 +231,7 @@ function get_sets()
 		waist="Moonbow Belt +1",
 		left_ear="Sherida Earring",
 		right_ear="Schere Earring",
-		left_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
 		right_ring="Mummu Ring",
 		back=MonkCapes.TP	
 	}
@@ -239,7 +247,7 @@ function get_sets()
 		waist="Moonbow Belt +1",
 		left_ear="Moonshade Earring",
 		right_ear="Schere Earring",
-		left_ring="Chirich Ring +1",
+		left_ring={name="Chirich Ring +1",bag="Wardrobe 4"},
 		right_ring="Mummu Ring",
 		back=MonkCapes.TP	
 	}
@@ -271,16 +279,36 @@ function get_sets()
 		waist="Yamabuki-no-Obi",
 		left_ear="Friomisi Earring",
 		right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-		left_ring="Stikini Ring +1",
-		right_ring="Stikini Ring +1",
+		left_ring={name="Stikini Ring +1",bag="Wardrobe 4"},
+		right_ring={name="Stikini Ring +1",bag="Wardrobe 5"},
 		back=MonkCapes.VITWS
-	}	
+	}
+
+	--Weapon Sets--
+	sets.weapon = {}
+	sets.weapon.index = {'Spharai','Godhands','MalignancePole'}
+	weapon_ind = 1 
+	
+	sets.weapon.Spharai = {
+		main="Spharai",
+		sub=""
+	}
+	
+	sets.weapon.Godhands = {
+		main="Godhands",
+		sub=""
+	}
+	
+	sets.weapon.MalignancePole = {
+		main="Malignance Pole",
+		sub="Khonsu"
+	}
 
 end
 
 function precast(spell)
 	--Monk Weapon Skills
-    if spell.name == 'Tornado Kick' or spell.name == 'Dragon Kick' or spell.name == "Ascetic's Fury" then
+	if spell.name == 'Tornado Kick' or spell.name == 'Dragon Kick' or spell.name == "Ascetic's Fury" then
         equip(sets.WS.TornadoKick)
 	elseif spell.name == 'Victory Smite' then
 		equip(sets.WS.VictorySmite)
@@ -294,10 +322,45 @@ function precast(spell)
 		equip(sets.WS.HowlingFist)
 	elseif spell.name == 'Cataclysm' then
 		equip(sets.WS.Cataclysm)
-    elseif string.find(spell.name, 'Waltz') then
+	end
+    
+	if string.find(spell.name, 'Waltz') then
 		equip(sets.Waltz)
-	elseif spell.type == 'JobAbility' then
-	        equip(sets.JA[spell.english])
+	end
+	
+	--Monk Job Abilities
+	if spell.name == 'Boost' then
+        equip(sets.JA.Boost)
+    end
+	if spell.name == 'Chakra' then
+        equip(sets.JA.Chakra)
+    end
+	if spell.name == 'Counterstance' then
+        equip(sets.JA.Counterstance)
+    end
+	if spell.name == 'Focus' then
+        equip(sets.JA.Focus)
+    end
+	if spell.name == 'Dodge' then
+        equip(sets.JA.Dodge)
+    end
+	if spell.name == 'Mantra' then
+        equip(sets.JA.Mantra)
+    end
+	if spell.name == 'Footwork' then
+        equip(sets.JA.Footwork)
+    end
+	if spell.name == 'Impetus' then
+        equip(sets.JA.Impetus)
+    end
+	if spell.name == 'Perfect Counter' then
+        equip(sets.JA.PerfectCounter)
+    end
+	if spell.name == 'Hundred Fists' then
+        equip(sets.JA.HundredFists)
+    end
+	if spell.name == 'Formless Strikes' then
+		equip(sets.JA.FormlessStrikes)
 	end
 end
 
