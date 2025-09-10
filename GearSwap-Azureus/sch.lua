@@ -481,8 +481,7 @@ function precast(spell,abil)
 		equip(sets.MagicAccuracy)
 	end
 
-	if (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
-        (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
+	if (spell.type == "WhiteMagic"  or spell.type == "BlackMagic") then
 			equip(sets.FastCastGrimoire)
 			get_obi(spell)
 			--send_command('@input /echo yeah we hit this shit in precast.')	
