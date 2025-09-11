@@ -69,6 +69,7 @@ function get_sets()
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
   }	
 	
+  --change Shneddick
   sets.engaged.DT = {
     head="Malignance Chapeau",
     body="Kara. Farsetto +3",
@@ -85,7 +86,7 @@ function get_sets()
   }
   
   sets.engaged.Movement = set_combine(sets.engaged.DT, {
-      head="Malignance Chapeau",
+     head="Malignance Chapeau",
     body="Kara. Farsetto +3",
     hands="Karagoz Guanti +3",
     legs="Kara. Pantaloni +3",
@@ -197,7 +198,7 @@ function get_sets()
   sets.idle.index = {'PDTMovement', 'Craft'}
   idle_ind = 1
 
-  sets.idle.PDTMovement = set_combine(sets.engaged.Movement,  {})
+  sets.idle.PDTMovement = sets.engaged.Movement
   
   
   sets.idle.Craft = set_combine(sets.engaged.Movement, {
@@ -446,7 +447,7 @@ end)
 -- https://github.com/Broguypal/FFXIpublicLUAs/blob/main/PUP.lua#L731
 -- Registering event for pet changes -- Essentially, this checks the Pet TP every second, and if it reaches 850+ it automatically swaps to the appropriate pet weaponskill set.
 windower.register_event('time change', function(new, old)
-	if new > old and pet.isvalid and pet.status == "Engaged" then 
+	if pet.isvalid and pet.status == "Engaged" then 
 		if pet.tp >= 850 and player.tp <= 400 then
 			if pet.frame == "Sharpshot Frame" then
 				equip(sets.PetWS.Arcuballista)
@@ -458,7 +459,5 @@ windower.register_event('time change', function(new, old)
 		--Insert this command if you want your character to automatically cast repair if your pet falls below a certain health percentage while engaged (Delete the "--[[ ... ]]")
 		--[[if pet.hpp <= 40 then windower.send_command('input /ja "Repair" <me>') end ]]
 	end
-	if new > old then
-		check_pet_status()
-	end
+
 end)

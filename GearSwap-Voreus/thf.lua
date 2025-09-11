@@ -32,8 +32,8 @@ function get_sets()
     sets.JA = {}
     sets.JA.Waltz = {head="Mummu Bonnet +2", legs="Dashing subligar"}
 	
-    sets.JA.Sneak Attack = {hands="Skulker's armlets +2"}
-    sets.JA.Trick Attack = {hands="Pillager's Armlets +2"}
+    sets.JA.SneakAttack = {hands="Skulker's armlets +2"}
+    sets.JA.TrickAttack = {hands="Pillager's Armlets +2"}
 	sets.JA.AssassinsCharge = {feet="Plunderer's Poulaines +1"}
 	sets.JA.Feint = {legs="Plunderer's Culottes"}
 	sets.JA.Conspirator = {body="Skulker's vest +3"}
