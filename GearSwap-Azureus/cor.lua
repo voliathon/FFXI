@@ -38,7 +38,7 @@ function get_sets()
 		feet="Lanun Bottes +4" 
 	}
     sets.SnakeEye = { 
-		legs="Lanun Trews +3" 
+		legs="Lanun Trews +4" 
 	}
     sets.Fold = { 
 		hands="Lanun Gants +4" 
